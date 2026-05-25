@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-05-24T22:37:47.771300",
+  "timestamp": "2026-05-24T22:38:40.525557",
   "version": "9.1",
   "total_tests": 59,
-  "passed": 56,
-  "failed": 3,
-  "success_rate": 94.91525423728814,
+  "passed": 57,
+  "failed": 2,
+  "success_rate": 96.61016949152543,
   "results": [
     {
       "name": "Page: /",
@@ -283,13 +283,13 @@
     },
     {
       "name": "Git: Dashboard",
-      "passed": false,
-      "message": "Uncommitted changes: 304 files"
+      "passed": true,
+      "message": "Clean"
     },
     {
       "name": "Git: Scripts",
       "passed": false,
-      "message": "Uncommitted changes: 21 files"
+      "message": "Uncommitted changes: 1 files"
     },
     {
       "name": "Vault: Files",
