@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-05-24T22:46:09.160162",
+  "timestamp": "2026-05-24T22:47:28.002312",
   "version": "9.1",
   "total_tests": 59,
-  "passed": 57,
-  "failed": 2,
-  "success_rate": 96.61016949152543,
+  "passed": 58,
+  "failed": 1,
+  "success_rate": 98.30508474576271,
   "results": [
     {
       "name": "Page: /",
@@ -268,8 +268,8 @@
     },
     {
       "name": "Data: Grades",
-      "passed": false,
-      "message": "'str' object has no attribute 'get'"
+      "passed": true,
+      "message": "88 grades across categories"
     },
     {
       "name": "Data: Plays",
@@ -289,7 +289,7 @@
     {
       "name": "Git: Scripts",
       "passed": false,
-      "message": "Uncommitted changes: 3 files"
+      "message": "Uncommitted changes: 1 files"
     },
     {
       "name": "Vault: Files",
