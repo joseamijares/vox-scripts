@@ -1,0 +1,1 @@
+{"timestamp": "2026-05-24T22:16:42.096317", "signal": {"ticker": "QQQ", "source": "insider", "signal_type": "STRONG_INSIDER_BUY", "value": 80, "raw_data": {"buy_pct": 0.72, "note": "Simulated \u2014 use FMP or SEC API for real data"}, "confidence": 0.3, "timestamp": "2026-05-24T22:16:42.095979"}}

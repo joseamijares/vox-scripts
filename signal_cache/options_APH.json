@@ -1,0 +1,1 @@
+{"timestamp": "2026-05-24T22:16:55.297356", "signal": {"ticker": "APH", "source": "options_flow", "signal_type": "BULLISH_FLOW", "value": 80, "raw_data": {"call_put_ratio": 2.8461538461538463, "contracts": 50}, "confidence": 0.6, "timestamp": "2026-05-24T22:16:55.296595"}}

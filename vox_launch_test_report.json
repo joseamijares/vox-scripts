@@ -1,0 +1,305 @@
+{
+  "timestamp": "2026-05-24T22:37:47.771300",
+  "version": "9.1",
+  "total_tests": 59,
+  "passed": 56,
+  "failed": 3,
+  "success_rate": 94.91525423728814,
+  "results": [
+    {
+      "name": "Page: /",
+      "passed": true,
+      "message": "Special route"
+    },
+    {
+      "name": "Page: /portfolio",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /grades",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /watchlist",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /regime",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /briefing",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /positions",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /scorer",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /sectors",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /council",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /trump",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /sentiment",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /screener",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /macro",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /correlation",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /journal",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /earnings",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /dividends",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /risk",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /performance",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /sizer",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /rebalancing",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /compounding",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /mistakes",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /crypto",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /options",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /forex",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /alerts",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /commander",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /weekly",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /ai-insights",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /plays",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /rag",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /play-review",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Page: /next-trade",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Script: vox_portfolio_scanner.py",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Script: vox_ai_harness.py",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Script: vox_autonomous_agent.py",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Script: vox_rag_system.py",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Script: vox_telegram_alerts.py",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Script: vox_signal_enhancer.py",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Script: vox_self_upgrade.py",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Script: vox_obsidian_sync.py",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Script: vox_social_tracker.py",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Script: vox_live_prices.py",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Script: vox_daily_analysis.py",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Script: vox_position_review.py",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Script: vox_market_regime.py",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "Script: vox_trade_scorer.py",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "API: Polygon",
+      "passed": true,
+      "message": "AAPL: $308.82"
+    },
+    {
+      "name": "API: Telegram",
+      "passed": true,
+      "message": "@Vox_hermes_agent_alerts_bot"
+    },
+    {
+      "name": "Data: Portfolio",
+      "passed": true,
+      "message": "59 positions, $94,083"
+    },
+    {
+      "name": "Data: Grades",
+      "passed": false,
+      "message": "'str' object has no attribute 'get'"
+    },
+    {
+      "name": "Data: Plays",
+      "passed": true,
+      "message": "46 plays generated"
+    },
+    {
+      "name": "Cron: VOX Jobs",
+      "passed": true,
+      "message": "36 jobs scheduled"
+    },
+    {
+      "name": "Git: Dashboard",
+      "passed": false,
+      "message": "Uncommitted changes: 304 files"
+    },
+    {
+      "name": "Git: Scripts",
+      "passed": false,
+      "message": "Uncommitted changes: 21 files"
+    },
+    {
+      "name": "Vault: Files",
+      "passed": true,
+      "message": "145 markdown files"
+    },
+    {
+      "name": "Vault: Plays Sync",
+      "passed": true,
+      "message": "4 play files"
+    }
+  ]
+}

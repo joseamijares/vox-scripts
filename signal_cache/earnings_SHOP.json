@@ -1,0 +1,1 @@
+{"timestamp": "2026-05-24T22:16:49.959303", "signal": {"ticker": "SHOP", "source": "earnings_history", "signal_type": "FREQUENT_MISS", "value": 40, "raw_data": {"beat_rate": 0.41000000000000003, "quarters": 4, "note": "Simulated fallback"}, "confidence": 0.4, "timestamp": "2026-05-24T22:16:49.958563"}}

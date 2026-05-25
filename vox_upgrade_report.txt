@@ -1,0 +1,61 @@
+
+============================================================
+VOX SELF-IMPROVEMENT REPORT
+Generated: 2026-05-24 22:00
+Version: 9.0
+============================================================
+
+PERFORMANCE METRICS:
+
+❌ Play Win Rate
+   Current: 0.0% | Target: 60% | Trend: DECLINING
+
+❌ High-Confidence Accuracy
+   Current: 0.0% | Target: 75% | Trend: STABLE
+
+❌ Grade Coverage
+   Current: 14.0% | Target: 100% | Trend: DECLINING
+
+
+PROPOSED IMPROVEMENTS (7):
+
+• Improve Play Win Rate from 0.0% to 60%
+  Impact: +30% | Effort: MEDIUM | Component: harness
+
+• Improve High-Confidence Accuracy from 0.0% to 75%
+  Impact: +38% | Effort: MEDIUM | Component: harness
+
+• Improve Grade Coverage from 14.0% to 100%
+  Impact: +43% | Effort: MEDIUM | Component: harness
+
+• Expand grade coverage to all portfolio positions (currently missing many tickers)
+  Impact: +15% | Effort: HIGH | Component: grade_system
+
+• Initialize RAG vector database for portfolio knowledge retrieval
+  Impact: +20% | Effort: MEDIUM | Component: rag
+
+• Add options flow analysis as new signal source
+  Impact: +10% | Effort: MEDIUM | Component: signal_enhancer
+
+• Implement play review feedback loop for continuous learning
+  Impact: +15% | Effort: LOW | Component: agent
+
+
+SIGNAL WEIGHT OPTIMIZATION:
+
+Signal                    Old      New   Accuracy
+--------------------------------------------------
+grade                   0.250    0.250      50.0%
+technical               0.150    0.150      50.0%
+fundamental             0.150    0.150      50.0%
+sentiment               0.100    0.100      50.0%
+earnings                0.100    0.100      50.0%
+macro                   0.100    0.100      50.0%
+llm_council             0.100    0.100      50.0%
+trump                   0.050    0.050      50.0%
+
+
+RECOMMENDATION:
+Apply 6 high-impact improvements immediately.
+
+============================================================

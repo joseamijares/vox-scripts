@@ -1,0 +1,55 @@
+{
+  "last_updated": "2026-05-23",
+  "usd_mxn_rate": 17.31,
+  "grand_total_usd": 195944.92,
+  "grand_total_mxn": 3391806.54,
+  "by_broker": {
+    "eToro": {
+      "value_usd": 84237.75,
+      "value_mxn": 1458155.45,
+      "pct_of_total": 42.99
+    },
+    "Binance": {
+      "value_usd": 19760.15,
+      "value_mxn": 342048.24,
+      "pct_of_total": 10.08
+    },
+    "Bitso": {
+      "value_usd": 0.12,
+      "value_mxn": 2.1,
+      "pct_of_total": 0.0
+    },
+    "IBKR": {
+      "value_usd": 1270.0,
+      "value_mxn": 21983.7,
+      "pct_of_total": 0.65
+    },
+    "Schwab": {
+      "value_usd": 1661.35,
+      "value_mxn": 28757.97,
+      "pct_of_total": 0.85
+    },
+    "GBM USA": {
+      "value_usd": 14539.94,
+      "value_mxn": 251686.36,
+      "pct_of_total": 7.42
+    },
+    "GBM Main": {
+      "value_usd": 74071.21,
+      "value_mxn": 1282172.73,
+      "pct_of_total": 37.8
+    },
+    "Revolut": {
+      "value_usd": 404.39,
+      "value_mxn": 6999.99,
+      "pct_of_total": 0.21
+    }
+  },
+  "by_asset_class": {
+    "social_trading": 84237.75,
+    "us_brokers": 17471.29,
+    "mexican_broker": 74071.21,
+    "crypto_exchanges": 19760.27,
+    "savings": 404.39
+  }
+}

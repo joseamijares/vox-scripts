@@ -1,0 +1,1 @@
+{"timestamp": "2026-05-24T22:16:42.923949", "signal": {"ticker": "XRP", "source": "insider", "signal_type": "INSIDER_BUY", "value": 65, "raw_data": {"buy_pct": 0.6799999999999999, "note": "Simulated \u2014 use FMP or SEC API for real data"}, "confidence": 0.3, "timestamp": "2026-05-24T22:16:42.923604"}}
