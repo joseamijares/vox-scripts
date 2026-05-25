@@ -1,0 +1,199 @@
+{
+  "broker": "gbm",
+  "broker_name": "GBM Plus",
+  "account_type": "Main",
+  "last_updated": "2026-05-22",
+  "data_source": "gbm_app_export",
+  "currency": "MXN",
+  "portfolio_summary": {
+    "total_value_mxn": 1282172.73,
+    "sic_value_mxn": 1266337.73,
+    "national_value_mxn": 15835.0,
+    "sic_positions_count": 16,
+    "national_positions_count": 2
+  },
+  "sic_positions": [
+    {
+      "ticker": "AAPL",
+      "qty": 7.0,
+      "cost_avg_mxn": 2653.23,
+      "price_mxn": 5285.62,
+      "market_value_mxn": 36999.4,
+      "pnl_mxn": 18426.76,
+      "day_change_pct": 1.12,
+      "market": "SIC_Global"
+    },
+    {
+      "ticker": "AMZN",
+      "qty": 11.0,
+      "cost_avg_mxn": 1166.9,
+      "price_mxn": 4652.54,
+      "market_value_mxn": 51178.0,
+      "pnl_mxn": 38342.08,
+      "day_change_pct": 1.51,
+      "market": "SIC_Global"
+    },
+    {
+      "ticker": "AVGO",
+      "qty": 2.0,
+      "cost_avg_mxn": 6173.2,
+      "price_mxn": 7184.7,
+      "market_value_mxn": 14369.41,
+      "pnl_mxn": 2023.01,
+      "day_change_pct": -0.55,
+      "market": "SIC_Global"
+    },
+    {
+      "ticker": "BYND",
+      "qty": 33.0,
+      "cost_avg_mxn": 1100.35,
+      "price_mxn": 13.66,
+      "market_value_mxn": 450.94,
+      "pnl_mxn": -35860.8,
+      "day_change_pct": 0.45,
+      "market": "SIC_Global"
+    },
+    {
+      "ticker": "CRWD",
+      "qty": 16.0,
+      "cost_avg_mxn": 4509.0,
+      "price_mxn": 11234.15,
+      "market_value_mxn": 179746.4,
+      "pnl_mxn": 107602.39,
+      "day_change_pct": -0.07,
+      "market": "SIC_Global"
+    },
+    {
+      "ticker": "GOOGL",
+      "qty": 20.0,
+      "cost_avg_mxn": 2731.91,
+      "price_mxn": 6705.32,
+      "market_value_mxn": 134106.4,
+      "pnl_mxn": 79468.01,
+      "day_change_pct": -0.25,
+      "market": "SIC_Global"
+    },
+    {
+      "ticker": "MELI",
+      "qty": 2.0,
+      "cost_avg_mxn": 12164.13,
+      "price_mxn": 29078.84,
+      "market_value_mxn": 58157.69,
+      "pnl_mxn": 33829.43,
+      "day_change_pct": 1.83,
+      "market": "SIC_Global"
+    },
+    {
+      "ticker": "META",
+      "qty": 5.0,
+      "cost_avg_mxn": 7544.1,
+      "price_mxn": 10505.79,
+      "market_value_mxn": 52528.95,
+      "pnl_mxn": 14808.4,
+      "day_change_pct": 0.44,
+      "market": "SIC_Global"
+    },
+    {
+      "ticker": "NVDA",
+      "qty": 41.0,
+      "cost_avg_mxn": 645.3,
+      "price_mxn": 3804.21,
+      "market_value_mxn": 155972.94,
+      "pnl_mxn": 129515.54,
+      "day_change_pct": -1.56,
+      "market": "SIC_Global"
+    },
+    {
+      "ticker": "QQQ",
+      "qty": 3.0,
+      "cost_avg_mxn": 7703.61,
+      "price_mxn": 12382.81,
+      "market_value_mxn": 37148.44,
+      "pnl_mxn": 14037.6,
+      "day_change_pct": 0.4,
+      "market": "SIC_Global"
+    },
+    {
+      "ticker": "SHOP",
+      "qty": 50.0,
+      "cost_avg_mxn": 1771.23,
+      "price_mxn": 1817.27,
+      "market_value_mxn": 90863.81,
+      "pnl_mxn": 2302.2,
+      "day_change_pct": 0.06,
+      "market": "SIC_Global"
+    },
+    {
+      "ticker": "SMH",
+      "qty": 2.0,
+      "cost_avg_mxn": 6908.04,
+      "price_mxn": 9841.64,
+      "market_value_mxn": 19683.28,
+      "pnl_mxn": 5867.2,
+      "day_change_pct": 0.78,
+      "market": "SIC_Global"
+    },
+    {
+      "ticker": "TSLA",
+      "qty": 22.0,
+      "cost_avg_mxn": 1904.33,
+      "price_mxn": 7227.51,
+      "market_value_mxn": 159005.22,
+      "pnl_mxn": 117109.75,
+      "day_change_pct": 0.2,
+      "market": "SIC_Global"
+    },
+    {
+      "ticker": "TSM",
+      "qty": 21.0,
+      "cost_avg_mxn": 2662.4,
+      "price_mxn": 7056.11,
+      "market_value_mxn": 148178.37,
+      "pnl_mxn": 92267.97,
+      "day_change_pct": 1.59,
+      "market": "SIC_Global"
+    },
+    {
+      "ticker": "VOO",
+      "qty": 6.0,
+      "cost_avg_mxn": 8595.5,
+      "price_mxn": 11833.95,
+      "market_value_mxn": 71003.75,
+      "pnl_mxn": 19430.7,
+      "day_change_pct": 0.39,
+      "market": "SIC_Global"
+    },
+    {
+      "ticker": "VTI",
+      "qty": 9.0,
+      "cost_avg_mxn": 4810.12,
+      "price_mxn": 6327.19,
+      "market_value_mxn": 56944.73,
+      "pnl_mxn": 13653.63,
+      "day_change_pct": 0.45,
+      "market": "SIC_Global"
+    }
+  ],
+  "national_positions": [
+    {
+      "ticker": "GBM O",
+      "qty": 130.0,
+      "cost_avg_mxn": 13.14,
+      "price_mxn": 16.7,
+      "market_value_mxn": 2171.0,
+      "pnl_mxn": 461.6,
+      "day_change_pct": 4.37,
+      "market": "Nacional"
+    },
+    {
+      "ticker": "NAFTRAC ISHRS",
+      "qty": 200.0,
+      "cost_avg_mxn": 67.58,
+      "price_mxn": 68.32,
+      "market_value_mxn": 13664.0,
+      "pnl_mxn": 148.0,
+      "day_change_pct": -0.63,
+      "market": "Nacional"
+    }
+  ]
+}

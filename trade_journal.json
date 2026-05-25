@@ -1,0 +1,22 @@
+{
+  "trades": [
+    {
+      "id": "WDC_20260522_153929",
+      "ticker": "WDC",
+      "action": "BUY",
+      "entry_price": 486.46,
+      "quantity": 5,
+      "entry_date": "2026-05-22T15:39:29.238875",
+      "stop_loss": 450.0,
+      "target": 550.0,
+      "grade_at_entry": null,
+      "notes": " | Exit: ",
+      "status": "CLOSED",
+      "exit_price": 500.0,
+      "exit_date": "2026-05-22T15:39:53.662174",
+      "pnl": 67.7000000000001,
+      "pnl_pct": 2.7833737614603504
+    }
+  ],
+  "stats": {}
+}

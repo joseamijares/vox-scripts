@@ -1,0 +1,90 @@
+{
+  "version": "9.0",
+  "last_analysis": "2026-05-24T21:25:30.608517",
+  "last_upgrade": null,
+  "performance_history": [],
+  "signal_weights_history": [
+    {
+      "timestamp": "2026-05-24T21:25:30.608850",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    }
+  ],
+  "improvements": [
+    {
+      "id": "imp_play_win_rate",
+      "description": "Improve Play Win Rate from 0.0% to 60%",
+      "expected_impact": 30.0,
+      "effort": "MEDIUM",
+      "component": "harness",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "imp_high-confidence_accuracy",
+      "description": "Improve High-Confidence Accuracy from 0.0% to 75%",
+      "expected_impact": 37.5,
+      "effort": "MEDIUM",
+      "component": "harness",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "imp_grade_coverage",
+      "description": "Improve Grade Coverage from 14.0% to 100%",
+      "expected_impact": 43.0,
+      "effort": "MEDIUM",
+      "component": "harness",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "imp_expand_grades",
+      "description": "Expand grade coverage to all portfolio positions (currently missing many tickers)",
+      "expected_impact": 15,
+      "effort": "HIGH",
+      "component": "grade_system",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "imp_rag_init",
+      "description": "Initialize RAG vector database for portfolio knowledge retrieval",
+      "expected_impact": 20,
+      "effort": "MEDIUM",
+      "component": "rag",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "imp_options_flow",
+      "description": "Add options flow analysis as new signal source",
+      "expected_impact": 10,
+      "effort": "MEDIUM",
+      "component": "signal_enhancer",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "imp_play_review",
+      "description": "Implement play review feedback loop for continuous learning",
+      "expected_impact": 15,
+      "effort": "LOW",
+      "component": "agent",
+      "status": "PROPOSED"
+    }
+  ],
+  "learning_rate": 0.1
+}

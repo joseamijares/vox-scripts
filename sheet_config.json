@@ -1,0 +1,27 @@
+{
+  "master_dashboard": {
+    "id": "1Ft6dRv7AtO-s5KLFi2pF-JYxrE0Tj9_hII8rT0qk0bw",
+    "url": "https://docs.google.com/spreadsheets/d/1Ft6dRv7AtO-s5KLFi2pF-JYxrE0Tj9_hII8rT0qk0bw",
+    "tabs": [
+      "Portfolio Snapshot",
+      "Active Plays",
+      "Fresh Grades",
+      "LLM Council",
+      "Trump Tracker",
+      "Position Sizer",
+      "Monday Schedule"
+    ]
+  },
+  "weekly_archive": {
+    "id": "1ViLAYMGzHnR60T8TnuoOyiUYx7NDZEHj2op_ZeYqwpA",
+    "url": "https://docs.google.com/spreadsheets/d/1ViLAYMGzHnR60T8TnuoOyiUYx7NDZEHj2op_ZeYqwpA",
+    "tabs": [
+      "Weekly Snapshots",
+      "Broker Breakdown",
+      "Asset Allocation",
+      "P&L History",
+      "Compound Growth",
+      "Trade Journal"
+    ]
+  }
+}

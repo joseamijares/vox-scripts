@@ -1,0 +1,70 @@
+{
+  "broker": "schwab",
+  "broker_name": "Charles Schwab",
+  "account_type": "Individual",
+  "mode": "read-only",
+  "currency": "USD",
+  "last_updated": "2026-05-24",
+  "data_source": "screenshot",
+  "portfolio_summary": {
+    "total_value": 1630.07,
+    "day_change": -29.59,
+    "day_change_pct": -1.78,
+    "unrealized_pnl": 148.61,
+    "unrealized_pnl_pct": 10.35,
+    "equities_allocation_pct": 97.19,
+    "cash_pct": 2.81,
+    "cash_usd": 45.84
+  },
+  "positions": [
+    {
+      "ticker": "IREN",
+      "name": "IREN LTD F",
+      "exchange": "NASDAQ",
+      "shares": 4,
+      "last_price": 56.2318,
+      "day_change": -1.8282,
+      "day_change_pct": -3.15,
+      "market_value": 224.93,
+      "day_change_dollars": -7.31,
+      "unrealized_pnl": 33.78,
+      "unrealized_pnl_pct": 17.67,
+      "cost_basis": 191.15,
+      "currency": "USD",
+      "sector": "Bitcoin Mining / Data Centers"
+    },
+    {
+      "ticker": "POET",
+      "name": "POET TECHNOLOGIES INC F",
+      "exchange": "NASDAQ",
+      "shares": 79,
+      "last_price": 14.4998,
+      "day_change": -0.3202,
+      "day_change_pct": -2.16,
+      "market_value": 1145.48,
+      "day_change_dollars": -25.3,
+      "unrealized_pnl": 709.01,
+      "unrealized_pnl_pct": 162.44,
+      "cost_basis": 436.47,
+      "currency": "USD",
+      "sector": "Semiconductor / Photonics"
+    },
+    {
+      "ticker": "SPRB",
+      "name": "SPRUCE BIOSCIENCES INC",
+      "exchange": "NASDAQ",
+      "shares": 4,
+      "last_price": 51.64,
+      "day_change": -1.06,
+      "day_change_pct": -2.01,
+      "market_value": 206.56,
+      "day_change_dollars": -4.24,
+      "unrealized_pnl": -601.44,
+      "unrealized_pnl_pct": -74.44,
+      "cost_basis": 808.0,
+      "currency": "USD",
+      "sector": "Biotechnology"
+    }
+  ],
+  "cash": 45.84
+}

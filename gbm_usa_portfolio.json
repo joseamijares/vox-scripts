@@ -1,0 +1,88 @@
+{
+  "broker": "gbm",
+  "broker_name": "GBM Plus",
+  "account_type": "USA",
+  "last_updated": "2026-05-22",
+  "data_source": "gbm_app_export",
+  "currency": "USD",
+  "portfolio_summary": {
+    "total_value_usd": 14539.94,
+    "cash_usd": 16.94,
+    "market_value_usd": 14523.0,
+    "total_cost_usd": 11452.7258543567,
+    "unrealized_pnl_usd": 3070.2741456432996,
+    "positions_count": 7
+  },
+  "positions": [
+    {
+      "ticker": "AMD",
+      "qty": 9.23508905,
+      "cost_avg_usd": 154.22,
+      "price_usd": 449.59,
+      "market_value_usd": 4152.0,
+      "pnl_usd": 2727.8,
+      "day_change_pct": 0.45,
+      "currency": "USD"
+    },
+    {
+      "ticker": "APH",
+      "qty": 19.17858482,
+      "cost_avg_usd": 100.68,
+      "price_usd": 124.86,
+      "market_value_usd": 2394.64,
+      "pnl_usd": 463.76,
+      "day_change_pct": 1.47,
+      "currency": "USD"
+    },
+    {
+      "ticker": "META",
+      "qty": 4.99355265,
+      "cost_avg_usd": 713.67,
+      "price_usd": 607.38,
+      "market_value_usd": 3032.98,
+      "pnl_usd": -530.78,
+      "day_change_pct": 0.38,
+      "currency": "USD"
+    },
+    {
+      "ticker": "OKLO",
+      "qty": 10.76447023,
+      "cost_avg_usd": 125.8,
+      "price_usd": 65.09,
+      "market_value_usd": 700.66,
+      "pnl_usd": -653.51,
+      "day_change_pct": 4.01,
+      "currency": "USD"
+    },
+    {
+      "ticker": "OSCR",
+      "qty": 117.49950063,
+      "cost_avg_usd": 15.26,
+      "price_usd": 22.14,
+      "market_value_usd": 2601.44,
+      "pnl_usd": 807.86,
+      "day_change_pct": -5.47,
+      "currency": "USD"
+    },
+    {
+      "ticker": "QQQ",
+      "qty": 2.23988199,
+      "cost_avg_usd": 604.88,
+      "price_usd": 714.51,
+      "market_value_usd": 1600.42,
+      "pnl_usd": 245.55,
+      "day_change_pct": 0.19,
+      "currency": "USD"
+    },
+    {
+      "ticker": "XLE",
+      "qty": 0.69093582,
+      "cost_avg_usd": 45.98,
+      "price_usd": 59.13,
+      "market_value_usd": 40.86,
+      "pnl_usd": 9.09,
+      "day_change_pct": -1.12,
+      "currency": "USD"
+    }
+  ]
+}

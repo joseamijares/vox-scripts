@@ -1,0 +1,691 @@
+{
+  "last_updated": "2026-05-27",
+  "total_aum": 94083.37999999999,
+  "by_broker": {
+    "Binance": {
+      "value_usd": 19722.92,
+      "positions": 8,
+      "pct_of_total": 20.96
+    },
+    "eToro": {
+      "value_usd": 58338.51,
+      "positions": 40,
+      "pct_of_total": 62.01
+    },
+    "GBM": {
+      "value_usd": 14523.0,
+      "positions": 7,
+      "pct_of_total": 15.44
+    },
+    "IBKR": {
+      "value_usd": 1267.35,
+      "positions": 3,
+      "pct_of_total": 1.35
+    },
+    "Schwab": {
+      "value_usd": 231.6,
+      "positions": 1,
+      "pct_of_total": 0.25
+    }
+  },
+  "positions": [
+    {
+      "ticker": "BTC",
+      "name": "BTC",
+      "shares": 0.152969,
+      "price": 76886.1,
+      "value": 11761.19,
+      "pnl": 0,
+      "pnlPct": 0,
+      "broker": "Binance",
+      "grade": 50
+    },
+    {
+      "ticker": "VOO",
+      "name": "Vanguard S&P 500 ETF",
+      "shares": 25.0659,
+      "price": 442.25,
+      "value": 11085.38,
+      "pnl": 6096.4,
+      "pnlPct": 122.2,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "BTC",
+      "name": "Bitcoin",
+      "shares": 0.0631,
+      "price": 96608.08,
+      "value": 6095.97,
+      "pnl": -1304.13,
+      "pnlPct": -17.6,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "ETH",
+      "name": "Ethereum",
+      "shares": 1.4551,
+      "price": 3831.0,
+      "value": 5574.49,
+      "pnl": -2563.41,
+      "pnlPct": -31.5,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "ETH",
+      "name": "ETH",
+      "shares": 2.456924,
+      "price": 2123.8,
+      "value": 5218.02,
+      "pnl": 0,
+      "pnlPct": 0,
+      "broker": "Binance",
+      "grade": 50
+    },
+    {
+      "ticker": "AMD",
+      "name": "AMD",
+      "shares": 9.2351,
+      "price": 449.59,
+      "value": 4152.0,
+      "pnl": 2727.8,
+      "pnlPct": 191.5,
+      "broker": "GBM",
+      "grade": 50
+    },
+    {
+      "ticker": "META",
+      "name": "META",
+      "shares": 4.9936,
+      "price": 607.38,
+      "value": 3032.98,
+      "pnl": -530.78,
+      "pnlPct": -14.9,
+      "broker": "GBM",
+      "grade": 50
+    },
+    {
+      "ticker": "OSCR",
+      "name": "OSCR",
+      "shares": 117.4995,
+      "price": 22.14,
+      "value": 2601.44,
+      "pnl": 807.86,
+      "pnlPct": 45.0,
+      "broker": "GBM",
+      "grade": 50
+    },
+    {
+      "ticker": "APH",
+      "name": "APH",
+      "shares": 19.1786,
+      "price": 124.86,
+      "value": 2394.64,
+      "pnl": 463.76,
+      "pnlPct": 24.0,
+      "broker": "GBM",
+      "grade": 50
+    },
+    {
+      "ticker": "QQQ",
+      "name": "Invesco QQQ",
+      "shares": 5.136,
+      "price": 464.8,
+      "value": 2387.19,
+      "pnl": 1300.79,
+      "pnlPct": 119.7,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "VTI",
+      "name": "Vanguard Total Stock Market ETF",
+      "shares": 7.7314,
+      "price": 248.45,
+      "value": 1920.84,
+      "pnl": 914.18,
+      "pnlPct": 90.8,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "JMIA",
+      "name": "Jumia Technologies AG-ADR",
+      "shares": 84.0707,
+      "price": 22.0,
+      "value": 1849.74,
+      "pnl": -1264.61,
+      "pnlPct": -40.6,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "OKLO",
+      "name": "Oklo Inc",
+      "shares": 13.9679,
+      "price": 126.72,
+      "value": 1770.0,
+      "pnl": -851.61,
+      "pnlPct": -32.5,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "XRP",
+      "name": "XRP",
+      "shares": 834.3348,
+      "price": 2.03,
+      "value": 1692.4,
+      "pnl": -576.73,
+      "pnlPct": -25.4,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "QQQ",
+      "name": "QQQ",
+      "shares": 2.2399,
+      "price": 714.51,
+      "value": 1600.42,
+      "pnl": 245.55,
+      "pnlPct": 18.1,
+      "broker": "GBM",
+      "grade": 50
+    },
+    {
+      "ticker": "DOGE",
+      "name": "Dogecoin",
+      "shares": 6518.2164,
+      "price": 0.24,
+      "value": 1585.05,
+      "pnl": -911.58,
+      "pnlPct": -36.5,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "0700.HK",
+      "name": "Tencent",
+      "shares": 19.0496,
+      "price": 68.24,
+      "value": 1300.0,
+      "pnl": -220.11,
+      "pnlPct": -14.5,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "COST",
+      "name": "Costco Wholesale Corp",
+      "shares": 2.4895,
+      "price": 514.16,
+      "value": 1280.0,
+      "pnl": 1279.19,
+      "pnlPct": 157924.7,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "MSFT",
+      "name": "Microsoft",
+      "shares": 3.2514,
+      "price": 385.65,
+      "value": 1253.91,
+      "pnl": 107.68,
+      "pnlPct": 9.4,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "SHOP",
+      "name": "Shopify Inc.",
+      "shares": 15.6067,
+      "price": 79.85,
+      "value": 1246.21,
+      "pnl": 361.29,
+      "pnlPct": 40.8,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices Inc",
+      "shares": 7.6591,
+      "price": 160.25,
+      "value": 1227.36,
+      "pnl": 2358.37,
+      "pnlPct": -208.5,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "PLTR",
+      "name": "Palantir Technologies Inc.",
+      "shares": 13.1644,
+      "price": 91.15,
+      "value": 1200.0,
+      "pnl": 601.54,
+      "pnlPct": 100.5,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "BIDU",
+      "name": "Baidu, Inc.-ADR",
+      "shares": 13.3639,
+      "price": 89.78,
+      "value": 1199.78,
+      "pnl": 507.59,
+      "pnlPct": 73.3,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "APH",
+      "name": "Amphenol Corporation",
+      "shares": 13.4838,
+      "price": 87.59,
+      "value": 1181.02,
+      "pnl": 602.74,
+      "pnlPct": 104.2,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "COIN",
+      "name": "Coinbase Global Inc",
+      "shares": 4.2914,
+      "price": 274.97,
+      "value": 1180.0,
+      "pnl": -385.96,
+      "pnlPct": -24.6,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "BNB",
+      "name": "BNB",
+      "shares": 1.729779,
+      "price": 658.19,
+      "value": 1138.52,
+      "pnl": 0,
+      "pnlPct": 0,
+      "broker": "Binance",
+      "grade": 50
+    },
+    {
+      "ticker": "TSLA",
+      "name": "Tesla Motors, Inc.",
+      "shares": 4.1289,
+      "price": 269.14,
+      "value": 1111.25,
+      "pnl": 648.04,
+      "pnlPct": 139.9,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "OSCR",
+      "name": "Oscar Health Inc",
+      "shares": 64.2656,
+      "price": 16.9,
+      "value": 1086.37,
+      "pnl": 367.96,
+      "pnlPct": 51.2,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "DDOG",
+      "name": "Datadog Inc",
+      "shares": 10.9428,
+      "price": 91.46,
+      "value": 1000.83,
+      "pnl": 1432.41,
+      "pnlPct": -331.9,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "SNOW",
+      "name": "Snowflake Inc.",
+      "shares": 7.4421,
+      "price": 127.65,
+      "value": 950.0,
+      "pnl": 330.27,
+      "pnlPct": 53.3,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "CRWD",
+      "name": "Crowdstrike Holdings",
+      "shares": 3.7327,
+      "price": 249.17,
+      "value": 930.09,
+      "pnl": 1548.07,
+      "pnlPct": -250.5,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "ADA",
+      "name": "Cardano",
+      "shares": 415.2244,
+      "price": 2.17,
+      "value": 900.0,
+      "pnl": -798.2,
+      "pnlPct": -47.0,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "CRWV",
+      "name": "CoreWeave Inc",
+      "shares": 6.2774,
+      "price": 135.35,
+      "value": 849.67,
+      "pnl": -187.21,
+      "pnlPct": -18.1,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "WMT",
+      "name": "Walmart Inc.",
+      "shares": 15.8201,
+      "price": 48.73,
+      "value": 770.96,
+      "pnl": 1132.83,
+      "pnlPct": -313.0,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "OKLO",
+      "name": "OKLO",
+      "shares": 10.7645,
+      "price": 65.09,
+      "value": 700.66,
+      "pnl": -653.51,
+      "pnlPct": -48.3,
+      "broker": "GBM",
+      "grade": 50
+    },
+    {
+      "ticker": "DASH",
+      "name": "Dash",
+      "shares": 3.0292,
+      "price": 183.55,
+      "value": 556.0,
+      "pnl": -424.44,
+      "pnlPct": -43.3,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "SOL",
+      "name": "SOL",
+      "shares": 6.299589,
+      "price": 86.44,
+      "value": 544.54,
+      "pnl": 0,
+      "pnlPct": 0,
+      "broker": "Binance",
+      "grade": 50
+    },
+    {
+      "ticker": "BNB",
+      "name": "Build and Build",
+      "shares": 0.9801,
+      "price": 550.96,
+      "value": 540.0,
+      "pnl": 98.05,
+      "pnlPct": 22.2,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "CEG",
+      "name": "Constellation Energy Corp",
+      "shares": 1.3839,
+      "price": 382.98,
+      "value": 530.0,
+      "pnl": -122.72,
+      "pnlPct": -18.8,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "shares": 5.1265,
+      "price": 97.53,
+      "value": 500.01,
+      "pnl": 604.35,
+      "pnlPct": -579.2,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "SMH",
+      "name": "VanEck Vectors Semiconductor ETF",
+      "shares": 1.2861,
+      "price": 388.77,
+      "value": 500.0,
+      "pnl": 241.28,
+      "pnlPct": 93.3,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "POET",
+      "name": "POET Technologies Inc",
+      "shares": 41.0172,
+      "price": 12.19,
+      "value": 500.0,
+      "pnl": 98.85,
+      "pnlPct": 24.6,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "CBRS",
+      "name": "Cerebras Systems, Inc",
+      "shares": 1.4518,
+      "price": 315.31,
+      "value": 457.76,
+      "pnl": -85.19,
+      "pnlPct": -15.7,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices",
+      "shares": 1,
+      "price": 454.26,
+      "value": 454.26,
+      "pnl": 4.67,
+      "pnlPct": 0,
+      "broker": "IBKR",
+      "grade": 50
+    },
+    {
+      "ticker": "AAPL",
+      "name": "Apple",
+      "shares": 5.6452,
+      "price": 77.96,
+      "value": 440.08,
+      "pnl": 1306.07,
+      "pnlPct": -150.8,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "DOGE",
+      "name": "DOGE",
+      "shares": 4185.74322,
+      "price": 0.1,
+      "value": 434.98,
+      "pnl": 0,
+      "pnlPct": 0,
+      "broker": "Binance",
+      "grade": 50
+    },
+    {
+      "ticker": "AVGO",
+      "name": "Broadcom Inc",
+      "shares": 1.2333,
+      "price": 340.55,
+      "value": 420.0,
+      "pnl": 91.48,
+      "pnlPct": 27.8,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "XRP",
+      "name": "XRP",
+      "shares": 304.390428,
+      "price": 1.36,
+      "value": 413.97,
+      "pnl": 0,
+      "pnlPct": 0,
+      "broker": "Binance",
+      "grade": 50
+    },
+    {
+      "ticker": "TSM",
+      "name": "Taiwan Semiconductor",
+      "shares": 1,
+      "price": 407.23,
+      "value": 407.23,
+      "pnl": 0.08,
+      "pnlPct": 0,
+      "broker": "IBKR",
+      "grade": 50
+    },
+    {
+      "ticker": "IREN",
+      "name": "Iris Energy",
+      "shares": 7,
+      "price": 57.98,
+      "value": 405.86,
+      "pnl": -0.56,
+      "pnlPct": 0,
+      "broker": "IBKR",
+      "grade": 50
+    },
+    {
+      "ticker": "SPOT",
+      "name": "Spotify Technologies SA",
+      "shares": 2.3185,
+      "price": 146.06,
+      "value": 338.65,
+      "pnl": 864.4,
+      "pnlPct": -164.4,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "TRX",
+      "name": "TRON",
+      "shares": 3540.9082,
+      "price": 0.09,
+      "value": 320.0,
+      "pnl": 964.46,
+      "pnlPct": -149.7,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "A",
+      "name": "VAULTA",
+      "shares": 51.8131,
+      "price": 5.79,
+      "value": 300.0,
+      "pnl": -295.92,
+      "pnlPct": -49.7,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "BIVI",
+      "name": "Biovie Inc",
+      "shares": 7.4703,
+      "price": 33.8,
+      "value": 252.5,
+      "pnl": -241.14,
+      "pnlPct": -48.8,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "IREN",
+      "name": "IREN LTD F",
+      "shares": 4,
+      "price": 57.8998,
+      "value": 231.6,
+      "pnl": 40.45,
+      "pnlPct": 21.2,
+      "broker": "Schwab",
+      "grade": 50
+    },
+    {
+      "ticker": "HBAR",
+      "name": "HBAR",
+      "shares": 1669.02683,
+      "price": 0.09,
+      "value": 151.23,
+      "pnl": 0,
+      "pnlPct": 0,
+      "broker": "Binance",
+      "grade": 50
+    },
+    {
+      "ticker": "AXS",
+      "name": "AXS",
+      "shares": 50.433287,
+      "price": 1.2,
+      "value": 60.47,
+      "pnl": 0,
+      "pnlPct": 0,
+      "broker": "Binance",
+      "grade": 50
+    },
+    {
+      "ticker": "HBAR",
+      "name": "Hedera Hashgraph",
+      "shares": 194.6765,
+      "price": 0.28,
+      "value": 55.0,
+      "pnl": -37.76,
+      "pnlPct": -40.7,
+      "broker": "eToro",
+      "grade": 50
+    },
+    {
+      "ticker": "XLE",
+      "name": "XLE",
+      "shares": 0.6909,
+      "price": 59.13,
+      "value": 40.86,
+      "pnl": 9.09,
+      "pnlPct": 28.6,
+      "broker": "GBM",
+      "grade": 50
+    }
+  ],
+  "cash": {
+    "eToro": 12000,
+    "Schwab": 45,
+    "GBM": 500,
+    "IBKR": 100,
+    "Binance": 100
+  },
+  "total_cash": 12745,
+  "grand_total": 106828.37999999999
+}

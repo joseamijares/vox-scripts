@@ -1,0 +1,246 @@
+{
+  "updated": "2026-05-23T14:29:37.262184",
+  "count": 40,
+  "watchlist": [
+    {
+      "ticker": "AAPL",
+      "price": 308.82,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "MSFT",
+      "price": 418.57,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "GOOGL",
+      "price": 382.97,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "META",
+      "price": 610.26,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "NVDA",
+      "price": 215.33,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "AMD",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "AVGO",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "TSM",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "TSLA",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "PLTR",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "SHOP",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "BYND",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "OSCR",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "RKLB",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "GS",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "MS",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "JPM",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "BAC",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "V",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "MA",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "LLY",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "JNJ",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "PFE",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "UNH",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "XOM",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "OXY",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "CEG",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "VST",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "LRCX",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "AMAT",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "KLAC",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "VRT",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "COIN",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "MSTR",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "SPY",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "QQQ",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "IWM",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "VIX",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "BABA",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    },
+    {
+      "ticker": "TCEHY",
+      "price": 0,
+      "grade": "\u2014",
+      "signal": "\u2014"
+    }
+  ]
+}

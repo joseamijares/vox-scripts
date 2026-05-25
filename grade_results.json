@@ -1,0 +1,6549 @@
+{
+  "grades": [
+    {
+      "ticker": "WDC",
+      "timestamp": "2026-05-22T11:40:45.311974",
+      "price": 486.46,
+      "total_grade": 54.5,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 10,
+          "max": 25,
+          "reasons": [
+            "Insufficient data, neutral score"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (2.6%), good R/R (+2)",
+            "Position would be 38.9% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "NVDA",
+      "timestamp": "2026-05-22T11:40:50.230074",
+      "price": 219.51,
+      "total_grade": 55.5,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 10,
+          "max": 25,
+          "reasons": [
+            "Insufficient data, neutral score"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 8.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tech sector, generally strong trend (+1)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (3.2%), good R/R (+2)",
+            "Position would be 31.2% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "WDC",
+      "timestamp": "2026-05-22T11:41:17.185641",
+      "price": 486.46,
+      "total_grade": 60.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 64.3 getting hot (-1)",
+            "MACD turning down (-1)",
+            "ADR 6.2% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (2.6%), good R/R (+2)",
+            "Position would be 38.9% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "AAPL",
+      "timestamp": "2026-05-22T11:41:23.159869",
+      "price": 304.99,
+      "total_grade": 65.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 16.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 76.1 overbought (-3)",
+            "MACD bullish momentum (+3)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 11.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day highs, strong relative strength (+3)",
+            "Tech sector, generally strong trend (+1)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (1.2%), good R/R (+2)",
+            "Position would be 79.9% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "PLTR",
+      "timestamp": "2026-05-22T14:03:15.948078",
+      "price": 137.415,
+      "total_grade": 55.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 12.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 < EMA50 bearish trend (-4)",
+            "RSI 48.9 neutral zone (+2)",
+            "MACD turning up (+1)",
+            "ADR 3.7% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Position would be 18.3% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "PLTR",
+      "timestamp": "2026-05-22T14:04:36.486079",
+      "price": 137.415,
+      "total_grade": 55.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 12.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 < EMA50 bearish trend (-4)",
+            "RSI 48.9 neutral zone (+2)",
+            "MACD turning up (+1)",
+            "ADR 3.7% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Position would be 18.3% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "GS",
+      "timestamp": "2026-05-22T15:40:06.240278",
+      "price": 988.17,
+      "total_grade": 66.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 18.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 64.7 getting hot (-1)",
+            "MACD bullish momentum (+3)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 10.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day highs, strong relative strength (+3)",
+            "Finance sector, Fed-sensitive"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (0.5%), good R/R (+2)",
+            "Position would be 208.8% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "MS",
+      "timestamp": "2026-05-22T16:22:27.095800",
+      "price": 200.51,
+      "total_grade": 62.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 14.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 67.1 getting hot (-1)",
+            "MACD turning down (-1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 10.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day highs, strong relative strength (+3)",
+            "Finance sector, Fed-sensitive"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (2.2%), good R/R (+2)",
+            "Position would be 46.2% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "LLY",
+      "timestamp": "2026-05-22T16:23:03.908892",
+      "price": 1041.65,
+      "total_grade": 66.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 18.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 64.9 getting hot (-1)",
+            "MACD bullish momentum (+3)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 10.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day highs, strong relative strength (+3)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (0.5%), good R/R (+2)",
+            "Position would be 183.8% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "NVDA",
+      "timestamp": "2026-05-22T16:29:01.998226",
+      "price": 219.51,
+      "total_grade": 64.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 18.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 57.6 neutral zone (+2)",
+            "MACD turning down (-1)",
+            "ADR 3.5% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 8.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tech sector, generally strong trend (+1)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (3.2%), good R/R (+2)",
+            "Position would be 31.2% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "AMD",
+      "timestamp": "2026-05-22T16:29:35.334412",
+      "price": 449.59,
+      "total_grade": 61.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 70.0 getting hot (-1)",
+            "MACD turning down (-1)",
+            "ADR 6.0% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 8.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tech sector, generally strong trend (+1)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (2.7%), good R/R (+2)",
+            "Position would be 37.4% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "BAC",
+      "timestamp": "2026-05-22T16:29:36.387974",
+      "price": 51.49,
+      "total_grade": 58.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 50.5 neutral zone (+2)",
+            "MACD bearish momentum (-3)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Finance sector, Fed-sensitive"
+          ]
+        },
+        "risk_reward": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Position would be 12.0% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "WDC",
+      "timestamp": "2026-05-22T16:29:42.598846",
+      "price": 486.46,
+      "total_grade": 60.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 64.3 getting hot (-1)",
+            "MACD turning down (-1)",
+            "ADR 6.2% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (2.6%), good R/R (+2)",
+            "Position would be 38.9% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "ETH",
+      "timestamp": "2026-05-22T16:54:46.344534",
+      "price": 20.33,
+      "total_grade": 42.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 9.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Micro cap risk (-3)"
+          ]
+        },
+        "technical": {
+          "score": 9.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 short-term bearish (-2)",
+            "RSI 41.7 neutral zone (+2)",
+            "MACD bearish momentum (-3)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (20.9%), poor R/R (-2)"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "BTC",
+      "timestamp": "2026-05-22T16:54:55.459873",
+      "price": 34.34,
+      "total_grade": 44.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 9.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Micro cap risk (-3)"
+          ]
+        },
+        "technical": {
+          "score": 11.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 short-term bearish (-2)",
+            "RSI 50.8 neutral zone (+2)",
+            "MACD turning down (-1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (10.2%), poor R/R (-2)"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "JMIA",
+      "timestamp": "2026-05-22T16:55:02.607127",
+      "price": 7.1,
+      "total_grade": 41.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 9.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Micro cap risk (-3)"
+          ]
+        },
+        "technical": {
+          "score": 8.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 < EMA50 bearish trend (-4)",
+            "RSI 47.6 neutral zone (+2)",
+            "MACD bearish momentum (-3)",
+            "ADR 7.7% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (216.8%), poor R/R (-2)",
+            "Position only 0.5% \u2014 may not be worth the commission"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "OKLO",
+      "timestamp": "2026-05-22T16:55:10.162722",
+      "price": 65.09,
+      "total_grade": 49.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Mid cap (+3)"
+          ]
+        },
+        "technical": {
+          "score": 10.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 short-term bearish (-2)",
+            "RSI 49.5 neutral zone (+2)",
+            "MACD bearish momentum (-3)",
+            "ADR 8.7% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (26.7%), poor R/R (-2)"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "VOO",
+      "timestamp": "2026-05-22T19:08:10.678112",
+      "price": 682.84,
+      "total_grade": 56.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 12.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Micro cap risk (-3)",
+            "ETF diversification (+3)"
+          ]
+        },
+        "technical": {
+          "score": 13.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 67.3 getting hot (-1)",
+            "MACD turning down (-1)",
+            "ADR 0.9% too flat (-1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 10.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day highs, strong relative strength (+3)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (0.3%), good R/R (+2)",
+            "Position would be 397.1% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "AMD",
+      "timestamp": "2026-05-22T19:08:17.386671",
+      "price": 449.59,
+      "total_grade": 61.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 70.0 getting hot (-1)",
+            "MACD turning down (-1)",
+            "ADR 6.0% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 8.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tech sector, generally strong trend (+1)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (2.7%), good R/R (+2)",
+            "Position would be 37.4% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "CRWD",
+      "timestamp": "2026-05-22T19:08:18.538935",
+      "price": 648.23,
+      "total_grade": 65.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 86.3 overbought (-3)",
+            "MACD bullish momentum (+3)",
+            "ADR 4.7% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 10.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day highs, strong relative strength (+3)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (1.4%), good R/R (+2)",
+            "Position would be 69.5% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "PLTR",
+      "timestamp": "2026-05-22T19:08:19.593143",
+      "price": 137.415,
+      "total_grade": 55.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 12.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 < EMA50 bearish trend (-4)",
+            "RSI 48.9 neutral zone (+2)",
+            "MACD turning up (+1)",
+            "ADR 3.7% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Position would be 18.3% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "BTC",
+      "timestamp": "2026-05-22T19:08:26.091857",
+      "price": 34.34,
+      "total_grade": 44.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 9.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Micro cap risk (-3)"
+          ]
+        },
+        "technical": {
+          "score": 11.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 short-term bearish (-2)",
+            "RSI 50.8 neutral zone (+2)",
+            "MACD turning down (-1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (10.2%), poor R/R (-2)"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "UNH",
+      "timestamp": "2026-05-22T19:31:18.885453",
+      "price": 382.48,
+      "total_grade": 59.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 14.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 64.8 getting hot (-1)",
+            "MACD turning down (-1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (1.2%), good R/R (+2)",
+            "Position would be 82.4% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "OXY",
+      "timestamp": "2026-05-22T19:31:26.022013",
+      "price": 58.83,
+      "total_grade": 62.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Mid cap (+3)"
+          ]
+        },
+        "technical": {
+          "score": 21.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 53.0 neutral zone (+2)",
+            "MACD bullish momentum (+3)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Energy sector, commodity-sensitive"
+          ]
+        },
+        "risk_reward": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Position would be 10.3% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "XOM",
+      "timestamp": "2026-05-22T19:31:27.075151",
+      "price": 155.29,
+      "total_grade": 66.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 21.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 52.2 neutral zone (+2)",
+            "MACD bullish momentum (+3)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Energy sector, commodity-sensitive"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (3.3%), good R/R (+2)",
+            "Position would be 30.0% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "TSLA",
+      "timestamp": "2026-05-23T07:43:49.013963",
+      "price": 426.01,
+      "total_grade": 64.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 18.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 58.4 neutral zone (+2)",
+            "MACD turning down (-1)",
+            "ADR 3.9% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 8.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tech sector, generally strong trend (+1)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (1.9%), good R/R (+2)",
+            "Position would be 53.9% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "CRWD",
+      "timestamp": "2026-05-23T07:43:56.870047",
+      "price": 663.46,
+      "total_grade": 65.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 87.4 overbought (-3)",
+            "MACD bullish momentum (+3)",
+            "ADR 4.7% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 10.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day highs, strong relative strength (+3)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (1.4%), good R/R (+2)",
+            "Position would be 70.7% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "NVDA",
+      "timestamp": "2026-05-23T07:43:59.157199",
+      "price": 215.33,
+      "total_grade": 64.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 18.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 53.6 neutral zone (+2)",
+            "MACD turning down (-1)",
+            "ADR 3.5% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 8.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tech sector, generally strong trend (+1)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (3.2%), good R/R (+2)",
+            "Position would be 31.1% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "AMD",
+      "timestamp": "2026-05-23T07:44:01.703135",
+      "price": 467.51,
+      "total_grade": 59.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 13.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 72.6 overbought (-3)",
+            "MACD turning down (-1)",
+            "ADR 5.8% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 8.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tech sector, generally strong trend (+1)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (2.5%), good R/R (+2)",
+            "Position would be 40.1% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "GOOGL",
+      "timestamp": "2026-05-23T07:44:11.027018",
+      "price": 382.97,
+      "total_grade": 63.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 57.5 neutral zone (+2)",
+            "MACD turning down (-1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 8.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tech sector, generally strong trend (+1)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (1.2%), good R/R (+2)",
+            "Position would be 80.9% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "GS",
+      "timestamp": "2026-05-23T07:44:13.445886",
+      "price": 996.73,
+      "total_grade": 66.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 18.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 66.3 getting hot (-1)",
+            "MACD bullish momentum (+3)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 10.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day highs, strong relative strength (+3)",
+            "Finance sector, Fed-sensitive"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (0.5%), good R/R (+2)",
+            "Position would be 220.2% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "LLY",
+      "timestamp": "2026-05-23T07:44:15.962653",
+      "price": 1065,
+      "total_grade": 66.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 18.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 68.2 getting hot (-1)",
+            "MACD bullish momentum (+3)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 10.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day highs, strong relative strength (+3)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (0.5%), good R/R (+2)",
+            "Position would be 188.5% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "AAPL",
+      "timestamp": "2026-05-23T07:44:24.561150",
+      "price": 308.82,
+      "total_grade": 65.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 16.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 78.3 overbought (-3)",
+            "MACD bullish momentum (+3)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 11.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day highs, strong relative strength (+3)",
+            "Tech sector, generally strong trend (+1)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (1.2%), good R/R (+2)",
+            "Position would be 81.8% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "SHOP",
+      "timestamp": "2026-05-23T07:45:09.327076",
+      "price": 103,
+      "total_grade": 49.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 8.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 < EMA50 bearish trend (-4)",
+            "RSI 41.7 neutral zone (+2)",
+            "MACD bearish momentum (-3)",
+            "ADR 5.4% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (10.4%), poor R/R (-2)"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "META",
+      "timestamp": "2026-05-23T07:45:16.364713",
+      "price": 610.26,
+      "total_grade": 53.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 7.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 < EMA50 bearish trend (-4)",
+            "RSI 45.5 neutral zone (+2)",
+            "MACD bearish momentum (-3)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 8.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tech sector, generally strong trend (+1)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (0.7%), good R/R (+2)",
+            "Position would be 144.2% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "MSFT",
+      "timestamp": "2026-05-23T07:45:18.660478",
+      "price": 418.57,
+      "total_grade": 63.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 54.9 neutral zone (+2)",
+            "MACD turning down (-1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 8.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tech sector, generally strong trend (+1)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (1.1%), good R/R (+2)",
+            "Position would be 87.1% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "OSCR",
+      "timestamp": "2026-05-24T08:25:52.166375",
+      "price": 22.64,
+      "total_grade": 52.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 13.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Small cap (+1)"
+          ]
+        },
+        "technical": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 62.7 getting hot (-1)",
+            "MACD turning down (-1)",
+            "ADR 7.2% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (63.9%), poor R/R (-2)"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "POET",
+      "timestamp": "2026-05-24T08:25:59.380719",
+      "price": 14.59,
+      "total_grade": 58.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 13.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Small cap (+1)"
+          ]
+        },
+        "technical": {
+          "score": 21.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 57.5 neutral zone (+2)",
+            "MACD bullish momentum (+3)",
+            "Low volume, weak conviction (-1)",
+            "ADR 18.7% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (256.5%), poor R/R (-2)",
+            "Position only 0.4% \u2014 may not be worth the commission"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "OKLO",
+      "timestamp": "2026-05-24T08:26:48.576782",
+      "price": 65.88,
+      "total_grade": 49.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Mid cap (+3)"
+          ]
+        },
+        "technical": {
+          "score": 10.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 short-term bearish (-2)",
+            "RSI 50.2 neutral zone (+2)",
+            "MACD bearish momentum (-3)",
+            "ADR 8.8% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (26.7%), poor R/R (-2)"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "JMIA",
+      "timestamp": "2026-05-24T08:27:13.454398",
+      "price": 6.97,
+      "total_grade": 41.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 9.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Micro cap risk (-3)"
+          ]
+        },
+        "technical": {
+          "score": 8.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 < EMA50 bearish trend (-4)",
+            "RSI 45.9 neutral zone (+2)",
+            "MACD bearish momentum (-3)",
+            "ADR 7.5% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (216.1%), poor R/R (-2)",
+            "Position only 0.5% \u2014 may not be worth the commission"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "CEG",
+      "timestamp": "2026-05-24T09:49:50.579713",
+      "price": 294.07,
+      "total_grade": 59.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 14.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 short-term bullish (+2)",
+            "RSI 51.9 neutral zone (+2)",
+            "MACD bearish momentum (-3)",
+            "ADR 4.3% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (2.9%), good R/R (+2)",
+            "Position would be 34.3% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "VST",
+      "timestamp": "2026-05-24T09:49:51.620796",
+      "price": 156.27,
+      "total_grade": 59.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Mid cap (+3)"
+          ]
+        },
+        "technical": {
+          "score": 18.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 short-term bullish (+2)",
+            "RSI 54.9 neutral zone (+2)",
+            "MACD turning up (+1)",
+            "ADR 4.2% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Position would be 18.6% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "OKLO",
+      "timestamp": "2026-05-24T09:49:52.643806",
+      "price": 65.88,
+      "total_grade": 49.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Mid cap (+3)"
+          ]
+        },
+        "technical": {
+          "score": 10.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 short-term bearish (-2)",
+            "RSI 50.2 neutral zone (+2)",
+            "MACD bearish momentum (-3)",
+            "ADR 8.8% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (26.7%), poor R/R (-2)"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "SMR",
+      "timestamp": "2026-05-24T09:49:53.701945",
+      "price": 11.4,
+      "total_grade": 45.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 13.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Small cap (+1)"
+          ]
+        },
+        "technical": {
+          "score": 8.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 < EMA50 bearish trend (-4)",
+            "RSI 48.6 neutral zone (+2)",
+            "MACD bearish momentum (-3)",
+            "ADR 8.8% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (155.1%), poor R/R (-2)",
+            "Position only 0.6% \u2014 may not be worth the commission"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "NNE",
+      "timestamp": "2026-05-24T09:49:54.754044",
+      "price": 26.73,
+      "total_grade": 51.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 9.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Micro cap risk (-3)"
+          ]
+        },
+        "technical": {
+          "score": 18.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 55.1 neutral zone (+2)",
+            "MACD turning down (-1)",
+            "ADR 9.5% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (71.2%), poor R/R (-2)"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "VRT",
+      "timestamp": "2026-05-24T09:50:00.540464",
+      "price": 327.46,
+      "total_grade": 57.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 12.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 short-term bearish (-2)",
+            "RSI 49.7 neutral zone (+2)",
+            "MACD turning down (-1)",
+            "ADR 5.5% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (3.3%), good R/R (+2)",
+            "Position would be 29.8% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "JCI",
+      "timestamp": "2026-05-24T09:50:01.579303",
+      "price": 138.36,
+      "total_grade": 53.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Mid cap (+3)"
+          ]
+        },
+        "technical": {
+          "score": 10.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 short-term bearish (-2)",
+            "RSI 46.9 neutral zone (+2)",
+            "MACD bearish momentum (-3)",
+            "ADR 3.1% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (4.4%), good R/R (+2)",
+            "Position would be 22.5% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "AAON",
+      "timestamp": "2026-05-24T09:50:02.632565",
+      "price": 134.6,
+      "total_grade": 58.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Mid cap (+3)"
+          ]
+        },
+        "technical": {
+          "score": 19.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 66.3 getting hot (-1)",
+            "MACD bullish momentum (+3)",
+            "ADR 7.4% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (11.0%), poor R/R (-2)"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "MOD",
+      "timestamp": "2026-05-24T09:50:03.688832",
+      "price": 260.52,
+      "total_grade": 61.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Mid cap (+3)"
+          ]
+        },
+        "technical": {
+          "score": 18.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 51.6 neutral zone (+2)",
+            "MACD turning down (-1)",
+            "ADR 6.3% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (4.9%), good R/R (+2)",
+            "Position would be 20.5% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "NVDA",
+      "timestamp": "2026-05-24T09:50:04.733786",
+      "price": 215.33,
+      "total_grade": 64.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 18.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 53.6 neutral zone (+2)",
+            "MACD turning down (-1)",
+            "ADR 3.5% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 8.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tech sector, generally strong trend (+1)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (3.2%), good R/R (+2)",
+            "Position would be 31.0% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "AMD",
+      "timestamp": "2026-05-24T09:52:20.304084",
+      "price": 467.51,
+      "total_grade": 59.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 13.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 72.6 overbought (-3)",
+            "MACD turning down (-1)",
+            "ADR 5.8% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 8.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tech sector, generally strong trend (+1)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (2.5%), good R/R (+2)",
+            "Position would be 40.0% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "NVDA",
+      "timestamp": "2026-05-24T09:52:27.539069",
+      "price": 215.33,
+      "total_grade": 64.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 18.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 53.6 neutral zone (+2)",
+            "MACD turning down (-1)",
+            "ADR 3.5% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 8.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tech sector, generally strong trend (+1)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (3.2%), good R/R (+2)",
+            "Position would be 31.0% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "CEG",
+      "timestamp": "2026-05-24T09:52:34.563347",
+      "price": 294.07,
+      "total_grade": 59.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 14.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 short-term bullish (+2)",
+            "RSI 51.9 neutral zone (+2)",
+            "MACD bearish momentum (-3)",
+            "ADR 4.3% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (2.9%), good R/R (+2)",
+            "Position would be 34.3% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "VST",
+      "timestamp": "2026-05-24T09:52:41.488805",
+      "price": 156.27,
+      "total_grade": 59.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Mid cap (+3)"
+          ]
+        },
+        "technical": {
+          "score": 18.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 short-term bullish (+2)",
+            "RSI 54.9 neutral zone (+2)",
+            "MACD turning up (+1)",
+            "ADR 4.2% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Position would be 18.6% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "VRT",
+      "timestamp": "2026-05-24T09:52:48.705951",
+      "price": 327.46,
+      "total_grade": 57.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 12.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 short-term bearish (-2)",
+            "RSI 49.7 neutral zone (+2)",
+            "MACD turning down (-1)",
+            "ADR 5.5% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (3.3%), good R/R (+2)",
+            "Position would be 29.8% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "AMAT",
+      "timestamp": "2026-05-24T09:53:02.144373",
+      "price": 432.16,
+      "total_grade": 63.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 18.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 57.6 neutral zone (+2)",
+            "MACD turning down (-1)",
+            "ADR 4.0% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (1.9%), good R/R (+2)",
+            "Position would be 53.4% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "MU",
+      "timestamp": "2026-05-24T09:53:08.959008",
+      "price": 751,
+      "total_grade": 60.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 65.0 getting hot (-1)",
+            "MACD turning down (-1)",
+            "ADR 7.3% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (1.9%), good R/R (+2)",
+            "Position would be 51.1% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "ANET",
+      "timestamp": "2026-05-24T09:53:16.195630",
+      "price": 154.03,
+      "total_grade": 59.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 16.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 53.9 neutral zone (+2)",
+            "MACD bearish momentum (-3)",
+            "ADR 5.1% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Position would be 15.0% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "DELL",
+      "timestamp": "2026-05-24T09:53:23.109470",
+      "price": 295.19,
+      "total_grade": 67.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 19.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 76.5 overbought (-3)",
+            "MACD bullish momentum (+3)",
+            "Volume spike confirms move (+2)",
+            "ADR 6.5% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 10.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day highs, strong relative strength (+3)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (4.4%), good R/R (+2)",
+            "Position would be 22.6% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "SMCI",
+      "timestamp": "2026-05-24T09:53:30.566996",
+      "price": 35.58,
+      "total_grade": 58.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Mid cap (+3)"
+          ]
+        },
+        "technical": {
+          "score": 19.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 64.5 getting hot (-1)",
+            "MACD bullish momentum (+3)",
+            "ADR 7.0% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (39.5%), poor R/R (-2)"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "COHR",
+      "timestamp": "2026-05-24T09:54:28.437663",
+      "price": 377.57,
+      "total_grade": 61.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Mid cap (+3)"
+          ]
+        },
+        "technical": {
+          "score": 18.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 59.6 neutral zone (+2)",
+            "MACD turning down (-1)",
+            "ADR 7.8% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (4.2%), good R/R (+2)",
+            "Position would be 24.0% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "GEV",
+      "timestamp": "2026-05-24T09:55:06.198279",
+      "price": 1038.74,
+      "total_grade": 57.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 12.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 short-term bearish (-2)",
+            "RSI 50.6 neutral zone (+2)",
+            "MACD turning down (-1)",
+            "ADR 4.2% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (0.8%), good R/R (+2)",
+            "Position would be 124.1% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "BE",
+      "timestamp": "2026-05-24T09:55:43.861440",
+      "price": 302.49,
+      "total_grade": 56.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Mid cap (+3)"
+          ]
+        },
+        "technical": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 62.8 getting hot (-1)",
+            "MACD turning down (-1)",
+            "ADR 9.1% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Position would be 16.5% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "NET",
+      "timestamp": "2026-05-24T09:56:21.577607",
+      "price": 216.17,
+      "total_grade": 58.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Mid cap (+3)"
+          ]
+        },
+        "technical": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 54.5 neutral zone (+2)",
+            "MACD turning down (-1)",
+            "Low volume, weak conviction (-1)",
+            "ADR 5.6% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Position would be 19.2% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "PANW",
+      "timestamp": "2026-05-24T09:57:05.732720",
+      "price": 260.58,
+      "total_grade": 65.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 84.0 overbought (-3)",
+            "MACD bullish momentum (+3)",
+            "ADR 5.1% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 10.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day highs, strong relative strength (+3)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (3.9%), good R/R (+2)",
+            "Position would be 25.3% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "RKLB",
+      "timestamp": "2026-05-24T09:57:46.207942",
+      "price": 135.76,
+      "total_grade": 58.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Mid cap (+3)"
+          ]
+        },
+        "technical": {
+          "score": 19.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 68.8 getting hot (-1)",
+            "MACD bullish momentum (+3)",
+            "ADR 10.3% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (15.2%), poor R/R (-2)"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "IONQ",
+      "timestamp": "2026-05-24T09:58:30.771156",
+      "price": 63.64,
+      "total_grade": 60.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Mid cap (+3)"
+          ]
+        },
+        "technical": {
+          "score": 21.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 69.4 getting hot (-1)",
+            "MACD bullish momentum (+3)",
+            "Volume spike confirms move (+2)",
+            "ADR 10.7% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (33.5%), poor R/R (-2)"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "LLY",
+      "timestamp": "2026-05-24T09:59:08.826824",
+      "price": 1065,
+      "total_grade": 66.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 18.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 68.2 getting hot (-1)",
+            "MACD bullish momentum (+3)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 10.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day highs, strong relative strength (+3)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (0.5%), good R/R (+2)",
+            "Position would be 188.5% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "INDA",
+      "timestamp": "2026-05-24T09:59:46.991921",
+      "price": 48.39,
+      "total_grade": 46.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 12.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Micro cap risk (-3)",
+            "ETF diversification (+3)"
+          ]
+        },
+        "technical": {
+          "score": 6.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 < EMA50 bearish trend (-4)",
+            "RSI 47.8 neutral zone (+2)",
+            "MACD bearish momentum (-3)",
+            "ADR 0.9% too flat (-1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (3.7%), good R/R (+2)",
+            "Position would be 27.2% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "SMH",
+      "timestamp": "2026-05-24T10:00:25.580983",
+      "price": 576.32,
+      "total_grade": 58.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 12.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Micro cap risk (-3)",
+            "ETF diversification (+3)"
+          ]
+        },
+        "technical": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 68.5 getting hot (-1)",
+            "MACD turning down (-1)",
+            "ADR 3.1% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 10.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day highs, strong relative strength (+3)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (1.1%), good R/R (+2)",
+            "Position would be 93.7% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "XLK",
+      "timestamp": "2026-05-24T10:01:04.487599",
+      "price": 180.39,
+      "total_grade": 55.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 12.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Micro cap risk (-3)",
+            "ETF diversification (+3)"
+          ]
+        },
+        "technical": {
+          "score": 12.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 73.0 overbought (-3)",
+            "MACD turning down (-1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 10.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day highs, strong relative strength (+3)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (2.4%), good R/R (+2)",
+            "Position would be 42.3% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "XLE",
+      "timestamp": "2026-05-24T10:01:42.778513",
+      "price": 59.49,
+      "total_grade": 59.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 12.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Micro cap risk (-3)",
+            "ETF diversification (+3)"
+          ]
+        },
+        "technical": {
+          "score": 21.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 55.3 neutral zone (+2)",
+            "MACD bullish momentum (+3)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Position would be 15.2% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "BRK.B",
+      "timestamp": "2026-05-24T11:04:04.079896",
+      "price": 486.38,
+      "total_grade": 67.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 19.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 short-term bullish (+2)",
+            "RSI 58.4 neutral zone (+2)",
+            "MACD bullish momentum (+3)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 10.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day highs, strong relative strength (+3)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (0.6%), good R/R (+2)",
+            "Position would be 178.9% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "TSLA",
+      "timestamp": "2026-05-24T11:04:05.126369",
+      "price": 426.01,
+      "total_grade": 64.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 18.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 58.4 neutral zone (+2)",
+            "MACD turning down (-1)",
+            "ADR 3.9% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 8.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tech sector, generally strong trend (+1)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (1.9%), good R/R (+2)",
+            "Position would be 53.9% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "CRWD",
+      "timestamp": "2026-05-24T11:04:06.174085",
+      "price": 663.46,
+      "total_grade": 65.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 87.4 overbought (-3)",
+            "MACD bullish momentum (+3)",
+            "ADR 4.7% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 10.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day highs, strong relative strength (+3)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (1.4%), good R/R (+2)",
+            "Position would be 70.7% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "AMD",
+      "timestamp": "2026-05-24T11:04:07.220469",
+      "price": 467.51,
+      "total_grade": 51.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 9.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Micro cap risk (-3)"
+          ]
+        },
+        "technical": {
+          "score": 13.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 72.6 overbought (-3)",
+            "MACD turning down (-1)",
+            "ADR 5.8% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 8.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tech sector, generally strong trend (+1)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (2.5%), good R/R (+2)",
+            "Position would be 40.1% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "JMIA",
+      "timestamp": "2026-05-24T16:35:53.194591",
+      "price": 6.97,
+      "total_grade": 41.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 9.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Micro cap risk (-3)"
+          ]
+        },
+        "technical": {
+          "score": 8.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 < EMA50 bearish trend (-4)",
+            "RSI 45.9 neutral zone (+2)",
+            "MACD bearish momentum (-3)",
+            "ADR 7.5% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (216.1%), poor R/R (-2)",
+            "Position only 0.5% \u2014 may not be worth the commission"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "BILL",
+      "timestamp": "2026-05-24T16:35:54.218950",
+      "price": 36.14,
+      "total_grade": 42.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 13.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Small cap (+1)"
+          ]
+        },
+        "technical": {
+          "score": 8.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 < EMA50 bearish trend (-4)",
+            "RSI 40.2 neutral zone (+2)",
+            "MACD bearish momentum (-3)",
+            "ADR 5.6% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 4.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day lows, weak relative strength (-3)"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (30.7%), poor R/R (-2)"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "OSCR",
+      "timestamp": "2026-05-24T16:35:55.170741",
+      "price": 22.64,
+      "total_grade": 52.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 13.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Small cap (+1)"
+          ]
+        },
+        "technical": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 62.7 getting hot (-1)",
+            "MACD turning down (-1)",
+            "ADR 7.2% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (63.9%), poor R/R (-2)"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "AI",
+      "timestamp": "2026-05-24T16:35:56.222361",
+      "price": 9.29,
+      "total_grade": 55.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 9.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Micro cap risk (-3)"
+          ]
+        },
+        "technical": {
+          "score": 22.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 53.7 neutral zone (+2)",
+            "MACD bullish momentum (+3)",
+            "ADR 5.4% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (116.9%), poor R/R (-2)",
+            "Position only 0.9% \u2014 may not be worth the commission"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "INDA",
+      "timestamp": "2026-05-24T16:36:05.134226",
+      "price": 48.39,
+      "total_grade": 46.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 12.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Micro cap risk (-3)",
+            "ETF diversification (+3)"
+          ]
+        },
+        "technical": {
+          "score": 6.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 < EMA50 bearish trend (-4)",
+            "RSI 47.8 neutral zone (+2)",
+            "MACD bearish momentum (-3)",
+            "ADR 0.9% too flat (-1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (3.7%), good R/R (+2)",
+            "Position would be 27.2% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "EWZ",
+      "timestamp": "2026-05-24T16:36:06.186028",
+      "price": 36.37,
+      "total_grade": 44.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 12.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Micro cap risk (-3)",
+            "ETF diversification (+3)"
+          ]
+        },
+        "technical": {
+          "score": 9.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 < EMA50 bearish trend (-4)",
+            "RSI 38.4 oversold bounce potential (+4)",
+            "MACD bearish momentum (-3)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 4.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day lows, weak relative strength (-3)"
+          ]
+        },
+        "risk_reward": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Position would be 10.3% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "FXI",
+      "timestamp": "2026-05-24T16:36:07.229422",
+      "price": 35.52,
+      "total_grade": 44.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 12.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Micro cap risk (-3)",
+            "ETF diversification (+3)"
+          ]
+        },
+        "technical": {
+          "score": 9.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 < EMA50 bearish trend (-4)",
+            "RSI 37.9 oversold bounce potential (+4)",
+            "MACD bearish momentum (-3)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 4.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day lows, weak relative strength (-3)"
+          ]
+        },
+        "risk_reward": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Position would be 14.6% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "MNDY",
+      "timestamp": "2026-05-24T16:36:08.279649",
+      "price": 79.055,
+      "total_grade": 59.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 13.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Small cap (+1)"
+          ]
+        },
+        "technical": {
+          "score": 22.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 58.9 neutral zone (+2)",
+            "MACD bullish momentum (+3)",
+            "ADR 7.2% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (18.2%), poor R/R (-2)"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "BTC",
+      "timestamp": "2026-05-24T16:36:17.096648",
+      "price": 33.53,
+      "total_grade": 41.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 9.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Micro cap risk (-3)"
+          ]
+        },
+        "technical": {
+          "score": 11.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 short-term bearish (-2)",
+            "RSI 45.4 neutral zone (+2)",
+            "MACD turning down (-1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 4.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day lows, weak relative strength (-3)"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (10.1%), poor R/R (-2)"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "ETH",
+      "timestamp": "2026-05-24T16:36:18.138658",
+      "price": 19.6,
+      "total_grade": 41.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 9.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Micro cap risk (-3)"
+          ]
+        },
+        "technical": {
+          "score": 11.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 short-term bearish (-2)",
+            "RSI 36.6 oversold bounce potential (+4)",
+            "MACD bearish momentum (-3)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 4.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day lows, weak relative strength (-3)"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (22.6%), poor R/R (-2)"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "RKLB",
+      "timestamp": "2026-05-24T16:36:19.091505",
+      "price": 135.76,
+      "total_grade": 58.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Mid cap (+3)"
+          ]
+        },
+        "technical": {
+          "score": 19.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 68.8 getting hot (-1)",
+            "MACD bullish momentum (+3)",
+            "ADR 10.3% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (15.2%), poor R/R (-2)"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "VST",
+      "timestamp": "2026-05-24T16:36:20.278167",
+      "price": 156.27,
+      "total_grade": 59.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Mid cap (+3)"
+          ]
+        },
+        "technical": {
+          "score": 18.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 short-term bullish (+2)",
+            "RSI 54.9 neutral zone (+2)",
+            "MACD turning up (+1)",
+            "ADR 4.2% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Position would be 18.6% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "NVDA",
+      "timestamp": "2026-05-24T16:36:29.050983",
+      "price": 215.33,
+      "total_grade": 64.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 18.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 53.6 neutral zone (+2)",
+            "MACD turning down (-1)",
+            "ADR 3.5% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 8.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tech sector, generally strong trend (+1)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (3.2%), good R/R (+2)",
+            "Position would be 31.1% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "AMAT",
+      "timestamp": "2026-05-24T16:36:30.103586",
+      "price": 432.16,
+      "total_grade": 63.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 18.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 57.6 neutral zone (+2)",
+            "MACD turning down (-1)",
+            "ADR 4.0% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (1.9%), good R/R (+2)",
+            "Position would be 53.4% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "CEG",
+      "timestamp": "2026-05-24T16:36:31.145857",
+      "price": 294.07,
+      "total_grade": 59.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 14.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 short-term bullish (+2)",
+            "RSI 51.9 neutral zone (+2)",
+            "MACD bearish momentum (-3)",
+            "ADR 4.3% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (2.9%), good R/R (+2)",
+            "Position would be 34.2% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "NET",
+      "timestamp": "2026-05-24T16:36:32.090843",
+      "price": 216.17,
+      "total_grade": 58.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Mid cap (+3)"
+          ]
+        },
+        "technical": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 54.5 neutral zone (+2)",
+            "MACD turning down (-1)",
+            "Low volume, weak conviction (-1)",
+            "ADR 5.6% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Position would be 19.2% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "OKLO",
+      "timestamp": "2026-05-24T16:36:40.581774",
+      "price": 65.88,
+      "total_grade": 49.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Mid cap (+3)"
+          ]
+        },
+        "technical": {
+          "score": 10.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 short-term bearish (-2)",
+            "RSI 50.2 neutral zone (+2)",
+            "MACD bearish momentum (-3)",
+            "ADR 8.8% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (26.7%), poor R/R (-2)"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "DELL",
+      "timestamp": "2026-05-24T16:36:41.628756",
+      "price": 295.19,
+      "total_grade": 67.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 19.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 76.5 overbought (-3)",
+            "MACD bullish momentum (+3)",
+            "Volume spike confirms move (+2)",
+            "ADR 6.5% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 10.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day highs, strong relative strength (+3)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (4.4%), good R/R (+2)",
+            "Position would be 22.6% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "LLY",
+      "timestamp": "2026-05-24T16:36:42.580761",
+      "price": 1065,
+      "total_grade": 66.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 18.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 68.2 getting hot (-1)",
+            "MACD bullish momentum (+3)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 10.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day highs, strong relative strength (+3)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (0.5%), good R/R (+2)",
+            "Position would be 188.5% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "ANET",
+      "timestamp": "2026-05-24T16:36:43.524254",
+      "price": 154.03,
+      "total_grade": 59.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 16.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 53.9 neutral zone (+2)",
+            "MACD bearish momentum (-3)",
+            "ADR 5.1% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Position would be 15.0% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "CRWD",
+      "timestamp": "2026-05-24T19:42:35.443020",
+      "price": 663.46,
+      "total_grade": 65.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 87.4 overbought (-3)",
+            "MACD bullish momentum (+3)",
+            "ADR 4.7% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 10.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day highs, strong relative strength (+3)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (1.4%), good R/R (+2)",
+            "Position would be 70.5% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "TSLA",
+      "timestamp": "2026-05-24T19:42:36.927351",
+      "price": 426.01,
+      "total_grade": 64.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 18.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 58.4 neutral zone (+2)",
+            "MACD turning down (-1)",
+            "ADR 3.9% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 8.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tech sector, generally strong trend (+1)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (1.9%), good R/R (+2)",
+            "Position would be 53.8% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "NVDA",
+      "timestamp": "2026-05-24T19:42:38.487262",
+      "price": 215.33,
+      "total_grade": 64.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 18.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 53.6 neutral zone (+2)",
+            "MACD turning down (-1)",
+            "ADR 3.5% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 8.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tech sector, generally strong trend (+1)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (3.2%), good R/R (+2)",
+            "Position would be 31.0% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "TSM",
+      "timestamp": "2026-05-24T19:42:40.045205",
+      "price": 404.52,
+      "total_grade": 63.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 18.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 55.2 neutral zone (+2)",
+            "MACD turning down (-1)",
+            "ADR 3.4% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (1.7%), good R/R (+2)",
+            "Position would be 59.7% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "GOOGL",
+      "timestamp": "2026-05-24T19:42:41.731014",
+      "price": 382.97,
+      "total_grade": 63.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 57.5 neutral zone (+2)",
+            "MACD turning down (-1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 8.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tech sector, generally strong trend (+1)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (1.2%), good R/R (+2)",
+            "Position would be 81.0% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "SHOP",
+      "timestamp": "2026-05-24T19:42:43.306851",
+      "price": 103,
+      "total_grade": 49.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 8.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 < EMA50 bearish trend (-4)",
+            "RSI 41.7 neutral zone (+2)",
+            "MACD bearish momentum (-3)",
+            "ADR 5.4% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (10.4%), poor R/R (-2)"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "AMD",
+      "timestamp": "2026-05-24T19:42:44.778882",
+      "price": 467.51,
+      "total_grade": 59.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 13.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 72.6 overbought (-3)",
+            "MACD turning down (-1)",
+            "ADR 5.8% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 8.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tech sector, generally strong trend (+1)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (2.5%), good R/R (+2)",
+            "Position would be 40.1% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "VOO",
+      "timestamp": "2026-05-24T19:42:46.347092",
+      "price": 685.55,
+      "total_grade": 56.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 12.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Micro cap risk (-3)",
+            "ETF diversification (+3)"
+          ]
+        },
+        "technical": {
+          "score": 13.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 68.9 getting hot (-1)",
+            "MACD turning down (-1)",
+            "ADR 0.8% too flat (-1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 10.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day highs, strong relative strength (+3)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (0.2%), good R/R (+2)",
+            "Position would be 411.9% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "MELI",
+      "timestamp": "2026-05-24T19:42:47.922658",
+      "price": 1664.42,
+      "total_grade": 51.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Mid cap (+3)"
+          ]
+        },
+        "technical": {
+          "score": 8.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 < EMA50 bearish trend (-4)",
+            "RSI 46.6 neutral zone (+2)",
+            "MACD bearish momentum (-3)",
+            "ADR 3.9% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (0.5%), good R/R (+2)",
+            "Position would be 215.2% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "VTI",
+      "timestamp": "2026-05-24T19:42:49.495430",
+      "price": 366.79,
+      "total_grade": 56.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 12.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Micro cap risk (-3)",
+            "ETF diversification (+3)"
+          ]
+        },
+        "technical": {
+          "score": 13.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 67.7 getting hot (-1)",
+            "MACD turning down (-1)",
+            "ADR 0.8% too flat (-1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 10.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day highs, strong relative strength (+3)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (0.5%), good R/R (+2)",
+            "Position would be 217.0% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "META",
+      "timestamp": "2026-05-24T19:42:51.073241",
+      "price": 610.26,
+      "total_grade": 53.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 7.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 < EMA50 bearish trend (-4)",
+            "RSI 45.5 neutral zone (+2)",
+            "MACD bearish momentum (-3)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 8.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tech sector, generally strong trend (+1)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (0.7%), good R/R (+2)",
+            "Position would be 144.4% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "AMZN",
+      "timestamp": "2026-05-24T19:42:52.656695",
+      "price": 266.32,
+      "total_grade": 62.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 58.3 neutral zone (+2)",
+            "MACD turning down (-1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (1.6%), good R/R (+2)",
+            "Position would be 62.9% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "OSCR",
+      "timestamp": "2026-05-24T19:42:54.208839",
+      "price": 22.64,
+      "total_grade": 52.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 13.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Small cap (+1)"
+          ]
+        },
+        "technical": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 62.7 getting hot (-1)",
+            "MACD turning down (-1)",
+            "ADR 7.2% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (63.9%), poor R/R (-2)"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "APH",
+      "timestamp": "2026-05-24T19:42:55.774836",
+      "price": 132.06,
+      "total_grade": 59.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 16.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 short-term bullish (+2)",
+            "RSI 49.3 neutral zone (+2)",
+            "MACD bearish momentum (-3)",
+            "Volume spike confirms move (+2)",
+            "ADR 4.3% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Position would be 15.4% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "QQQ",
+      "timestamp": "2026-05-24T19:42:57.257788",
+      "price": 717.54,
+      "total_grade": 55.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 12.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Micro cap risk (-3)",
+            "ETF diversification (+3)"
+          ]
+        },
+        "technical": {
+          "score": 12.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 71.5 overbought (-3)",
+            "MACD turning down (-1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 10.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day highs, strong relative strength (+3)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (0.4%), good R/R (+2)",
+            "Position would be 261.0% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "AAPL",
+      "timestamp": "2026-05-24T19:42:58.823018",
+      "price": 308.82,
+      "total_grade": 65.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 16.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 78.3 overbought (-3)",
+            "MACD bullish momentum (+3)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 11.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day highs, strong relative strength (+3)",
+            "Tech sector, generally strong trend (+1)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (1.2%), good R/R (+2)",
+            "Position would be 81.7% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "DDOG",
+      "timestamp": "2026-05-24T19:43:00.402245",
+      "price": 222.32,
+      "total_grade": 63.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Mid cap (+3)"
+          ]
+        },
+        "technical": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 84.4 overbought (-3)",
+            "MACD bullish momentum (+3)",
+            "ADR 5.0% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 10.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day highs, strong relative strength (+3)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (4.5%), good R/R (+2)",
+            "Position would be 22.0% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "POET",
+      "timestamp": "2026-05-24T19:43:01.783263",
+      "price": 14.59,
+      "total_grade": 58.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 13.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Small cap (+1)"
+          ]
+        },
+        "technical": {
+          "score": 21.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 57.5 neutral zone (+2)",
+            "MACD bullish momentum (+3)",
+            "Low volume, weak conviction (-1)",
+            "ADR 18.7% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (256.5%), poor R/R (-2)",
+            "Position only 0.4% \u2014 may not be worth the commission"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "SMH",
+      "timestamp": "2026-05-24T19:43:03.223132",
+      "price": 576.32,
+      "total_grade": 58.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 12.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Micro cap risk (-3)",
+            "ETF diversification (+3)"
+          ]
+        },
+        "technical": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 68.5 getting hot (-1)",
+            "MACD turning down (-1)",
+            "ADR 3.1% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 10.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day highs, strong relative strength (+3)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (1.1%), good R/R (+2)",
+            "Position would be 93.6% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "MSFT",
+      "timestamp": "2026-05-24T19:43:04.696882",
+      "price": 418.57,
+      "total_grade": 63.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 54.9 neutral zone (+2)",
+            "MACD turning down (-1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 8.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tech sector, generally strong trend (+1)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (1.1%), good R/R (+2)",
+            "Position would be 87.3% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "SNOW",
+      "timestamp": "2026-05-24T19:43:06.266212",
+      "price": 172.2,
+      "total_grade": 60.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Mid cap (+3)"
+          ]
+        },
+        "technical": {
+          "score": 19.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 66.8 getting hot (-1)",
+            "MACD bullish momentum (+3)",
+            "ADR 4.7% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Position would be 18.1% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "AVGO",
+      "timestamp": "2026-05-24T19:43:07.941948",
+      "price": 414.14,
+      "total_grade": 63.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 18.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 53.1 neutral zone (+2)",
+            "MACD turning down (-1)",
+            "ADR 3.7% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (1.8%), good R/R (+2)",
+            "Position would be 56.3% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "COST",
+      "timestamp": "2026-05-24T19:43:09.522168",
+      "price": 1028.24,
+      "total_grade": 60.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 short-term bearish (-2)",
+            "RSI 50.3 neutral zone (+2)",
+            "MACD bullish momentum (+3)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (0.4%), good R/R (+2)",
+            "Position would be 251.7% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "PLTR",
+      "timestamp": "2026-05-24T19:43:11.003757",
+      "price": 136.88,
+      "total_grade": 55.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 12.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 < EMA50 bearish trend (-4)",
+            "RSI 48.2 neutral zone (+2)",
+            "MACD turning up (+1)",
+            "ADR 3.8% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Position would be 18.1% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "SPOT",
+      "timestamp": "2026-05-24T19:43:12.667295",
+      "price": 519.86,
+      "total_grade": 62.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 short-term bullish (+2)",
+            "RSI 67.7 getting hot (-1)",
+            "MACD turning up (+1)",
+            "Volume spike confirms move (+2)",
+            "ADR 5.1% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (2.0%), good R/R (+2)",
+            "Position would be 51.0% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "BIDU",
+      "timestamp": "2026-05-24T19:43:14.140448",
+      "price": 127.79,
+      "total_grade": 53.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Mid cap (+3)"
+          ]
+        },
+        "technical": {
+          "score": 12.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 short-term bearish (-2)",
+            "RSI 45.8 neutral zone (+2)",
+            "MACD turning down (-1)",
+            "ADR 4.2% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Position would be 15.3% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "OKLO",
+      "timestamp": "2026-05-24T19:43:15.713481",
+      "price": 65.88,
+      "total_grade": 49.0,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Mid cap (+3)"
+          ]
+        },
+        "technical": {
+          "score": 10.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 short-term bearish (-2)",
+            "RSI 50.2 neutral zone (+2)",
+            "MACD bearish momentum (-3)",
+            "ADR 8.8% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (26.7%), poor R/R (-2)"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "WMT",
+      "timestamp": "2026-05-24T19:43:17.282494",
+      "price": 120.27,
+      "total_grade": 55.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 17.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Large cap stability (+5)"
+          ]
+        },
+        "technical": {
+          "score": 13.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price < EMA21 short-term bearish (-2)",
+            "RSI 33.8 oversold bounce potential (+4)",
+            "MACD bearish momentum (-3)",
+            "Volume spike confirms move (+2)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 4.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Near 20-day lows, weak relative strength (-3)"
+          ]
+        },
+        "risk_reward": {
+          "score": 9.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Tight stop possible (3.7%), good R/R (+2)",
+            "Position would be 26.9% of portfolio \u2014 consider smaller size"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "IREN",
+      "timestamp": "2026-05-24T19:43:18.751086",
+      "price": 56.83,
+      "total_grade": 57.0,
+      "recommendation": "\u26aa NEUTRAL",
+      "action": "No action \u2014 monitor for setup improvement",
+      "breakdown": {
+        "fundamental": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Mid cap (+3)"
+          ]
+        },
+        "technical": {
+          "score": 18.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Price > EMA21 > EMA50 bullish trend (+4)",
+            "RSI 56.6 neutral zone (+2)",
+            "MACD turning down (-1)",
+            "ADR 10.2% good volatility for swings (+1)"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 5.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score",
+            "Wide stop needed (36.0%), poor R/R (-2)"
+          ]
+        }
+      }
+    },
+    {
+      "ticker": "CBRS",
+      "timestamp": "2026-05-24T19:43:20.322259",
+      "price": 256.78,
+      "total_grade": 50.5,
+      "recommendation": "\ud83d\udd34 AVOID",
+      "action": "Skip \u2014 fundamentals/technical not aligned",
+      "breakdown": {
+        "fundamental": {
+          "score": 15.5,
+          "max": 25,
+          "reasons": [
+            "Base neutral score",
+            "Mid cap (+3)"
+          ]
+        },
+        "technical": {
+          "score": 10,
+          "max": 25,
+          "reasons": [
+            "Insufficient data, neutral score"
+          ]
+        },
+        "sentiment": {
+          "score": 10,
+          "max": 20,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "macro": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        },
+        "risk_reward": {
+          "score": 7.5,
+          "max": 15,
+          "reasons": [
+            "Base neutral score"
+          ]
+        }
+      }
+    }
+  ]
+}

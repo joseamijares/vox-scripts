@@ -1,0 +1,184 @@
+{
+  "date": "2026-05-26",
+  "generated": "2026-05-22T16:55:37.927961",
+  "portfolio_value": 84537,
+  "total_pnl": 17135,
+  "cash_available": 0,
+  "hold_all": true,
+  "rationale": "No tax loss harvesting benefit. Grades on losers are poor (42-49) but user wants to hold for potential recovery.",
+  "actions": [
+    {
+      "action": "HOLD",
+      "symbol": "ETH",
+      "value": 3079,
+      "pnl": -2591,
+      "grade": 42,
+      "rationale": "Losing but no tax benefit to sell. Hold for crypto cycle."
+    },
+    {
+      "action": "HOLD",
+      "symbol": "BTC",
+      "value": 4792,
+      "pnl": -1304,
+      "grade": 44,
+      "rationale": "Core crypto position. Hold."
+    },
+    {
+      "action": "HOLD",
+      "symbol": "JMIA",
+      "value": 585,
+      "pnl": -1265,
+      "grade": 41,
+      "rationale": "Small position, already down big. Hold or add if thesis intact."
+    },
+    {
+      "action": "HOLD",
+      "symbol": "OKLO",
+      "value": 918,
+      "pnl": -852,
+      "grade": 49,
+      "rationale": "Nuclear play, speculative. Hold."
+    },
+    {
+      "action": "HOLD",
+      "symbol": "ADA",
+      "value": 106,
+      "pnl": -820,
+      "rationale": "Tiny position, not worth selling."
+    },
+    {
+      "action": "HOLD",
+      "symbol": "XRP",
+      "value": 1116,
+      "pnl": -577,
+      "rationale": "Hold."
+    },
+    {
+      "action": "HOLD",
+      "symbol": "DOGE",
+      "value": 673,
+      "pnl": -912,
+      "rationale": "Meme coin, hold for fun/speculation."
+    },
+    {
+      "action": "HOLD",
+      "symbol": "COIN",
+      "value": 794,
+      "pnl": -386,
+      "rationale": "Crypto exchange, correlated with BTC/ETH."
+    },
+    {
+      "action": "HOLD",
+      "symbol": "DASH",
+      "value": 132,
+      "pnl": -424,
+      "rationale": "Small, hold."
+    }
+  ],
+  "winners_to_hold": [
+    {
+      "symbol": "VOO",
+      "value": 17182,
+      "pnl": 6096
+    },
+    {
+      "symbol": "AMD",
+      "value": 3586,
+      "pnl": 2358
+    },
+    {
+      "symbol": "CRWD",
+      "value": 2478,
+      "pnl": 1548
+    },
+    {
+      "symbol": "DDOG",
+      "value": 2433,
+      "pnl": 1432
+    },
+    {
+      "symbol": "AAPL",
+      "value": 1746,
+      "pnl": 1306
+    },
+    {
+      "symbol": "QQQ",
+      "value": 3688,
+      "pnl": 1301
+    },
+    {
+      "symbol": "COST",
+      "value": 2559,
+      "pnl": 1279
+    },
+    {
+      "symbol": "WMT",
+      "value": 1904,
+      "pnl": 1133
+    },
+    {
+      "symbol": "NVDA",
+      "value": 1104,
+      "pnl": 604
+    },
+    {
+      "symbol": "PLTR",
+      "value": 1802,
+      "pnl": 602
+    }
+  ],
+  "copy_traders": [
+    {
+      "name": "jaynemesis",
+      "allocated": 1000,
+      "closed_pnl": 581,
+      "status": "KEEP"
+    },
+    {
+      "name": "JeppeKirkBonde",
+      "allocated": 700,
+      "closed_pnl": 320,
+      "status": "KEEP"
+    }
+  ],
+  "new_buys": [],
+  "new_buys_rationale": "No cash available ($0). All strong setups graded NEUTRAL (60-66). No new buys Monday.",
+  "monday_schedule": [
+    {
+      "time": "8:00 AM",
+      "action": "Run trump_tracker.py"
+    },
+    {
+      "time": "8:00 AM",
+      "action": "Run vox_alert_system.py"
+    },
+    {
+      "time": "8:30 AM",
+      "action": "Run volume_scanner.py"
+    },
+    {
+      "time": "9:00 AM",
+      "action": "Run politician_tracker_v2.py"
+    },
+    {
+      "time": "9:30 AM",
+      "action": "Market open \u2014 monitor only"
+    },
+    {
+      "time": "10:00 AM",
+      "action": "Run swing_screener.py"
+    },
+    {
+      "time": "12:00 PM",
+      "action": "Midday check"
+    },
+    {
+      "time": "2:00 PM",
+      "action": "Afternoon scan"
+    },
+    {
+      "time": "3:30 PM",
+      "action": "Power hour"
+    }
+  ]
+}

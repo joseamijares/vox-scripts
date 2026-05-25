@@ -1,0 +1,57 @@
+{
+  "broker": "ibkr",
+  "broker_name": "Interactive Brokers",
+  "account_type": "Individual",
+  "mode": "read-only",
+  "currency": "USD",
+  "last_updated": "2026-05-21T21:52:00",
+  "data_source": "manual_screenshot",
+  "portfolio_summary": {
+    "total_value": 1270.0,
+    "daily_change": 4.19,
+    "daily_change_pct": 0.33,
+    "unrealized_pnl": 358.6,
+    "realized_pnl": 0.0,
+    "cash_usd": 5.13,
+    "buying_power": 5.13,
+    "excess_liquidity": 5.13,
+    "market_value": 1270.0,
+    "maintenance_margin": 0.0,
+    "spx_delta": 0.417
+  },
+  "positions": [
+    {
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices",
+      "exchange": "NASDAQ.NMS",
+      "shares": 1,
+      "last_price": 454.26,
+      "daily_change": 4.67,
+      "daily_change_pct": 1.04,
+      "pnl": 4.67,
+      "currency": "USD"
+    },
+    {
+      "ticker": "IREN",
+      "name": "Iris Energy",
+      "exchange": "NASDAQ.NMS",
+      "shares": 7,
+      "last_price": 57.98,
+      "daily_change": -0.08,
+      "daily_change_pct": -0.14,
+      "pnl": -0.56,
+      "currency": "USD"
+    },
+    {
+      "ticker": "TSM",
+      "name": "Taiwan Semiconductor",
+      "exchange": "NYSE",
+      "shares": 1,
+      "last_price": 407.23,
+      "daily_change": 0.08,
+      "daily_change_pct": 0.02,
+      "pnl": 0.08,
+      "currency": "USD"
+    }
+  ]
+}

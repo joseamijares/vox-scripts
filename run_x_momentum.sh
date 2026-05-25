@@ -1,0 +1,4 @@
+#!/bin/bash
+export X_BEARER_TOKEN="AAAAAAAAAAAAAAAAAAAAAPoP9wEAAAAAQs5zVwSKSZjyrA4fKlYGeHCYu2E%3Dmi6CkKomg33cR2xn2gjW3ftDuKTb6D964if5Apw1taQJdWhbdA"
+cd /Users/jos/.hermes/scripts
+python3 x_momentum_tracker.py

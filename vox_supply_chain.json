@@ -1,0 +1,350 @@
+{
+  "created": "2026-05-24",
+  "description": "Supply chain companies across hot industries",
+  "sectors": {
+    "AI_DataCenter": {
+      "description": "AI Infrastructure - the picks and shovels",
+      "layers": {
+        "Power_Nuclear": [
+          "CEG",
+          "VST",
+          "OKLO",
+          "SMR",
+          "NNE",
+          "BWXT"
+        ],
+        "Power_Renewable": [
+          "NEE",
+          "ENPH",
+          "SEDG",
+          "FSLR"
+        ],
+        "Cooling": [
+          "VRT",
+          "JCI",
+          "AAON",
+          "MOD"
+        ],
+        "Chips_GPUs": [
+          "NVDA",
+          "AMD",
+          "AVGO",
+          "MRVL",
+          "MPWR",
+          "ARM"
+        ],
+        "Chips_Memory": [
+          "MU",
+          "WDC",
+          "STX",
+          "SKHYNIX"
+        ],
+        "Chips_Equipment": [
+          "AMAT",
+          "LRCX",
+          "KLAC",
+          "ASML",
+          "TER"
+        ],
+        "Networking": [
+          "ANET",
+          "CSCO",
+          "MRVL",
+          "COHR",
+          "CIEN"
+        ],
+        "Optics_Photonics": [
+          "POET",
+          "COHR",
+          "LITE",
+          "FN",
+          "NPTN"
+        ],
+        "Servers": [
+          "DELL",
+          "HPE",
+          "SMCI",
+          "WDC"
+        ],
+        "Cloud_Hyperscalers": [
+          "MSFT",
+          "GOOGL",
+          "AMZN",
+          "META",
+          "ORCL"
+        ]
+      }
+    },
+    "Quantum_Computing": {
+      "description": "Next-gen computing",
+      "layers": {
+        "Hardware": [
+          "IONQ",
+          "RGTI",
+          "QBTS",
+          "ARQQ"
+        ],
+        "Components": [
+          "FORM",
+          "COHR",
+          "LITE"
+        ],
+        "Software": [
+          "MSFT",
+          "GOOGL",
+          "IBM"
+        ]
+      }
+    },
+    "Space": {
+      "description": "Space economy",
+      "layers": {
+        "Launch": [
+          "RKLB",
+          "ASTS",
+          "SPIR",
+          "VORB"
+        ],
+        "Satellites": [
+          "ASTS",
+          "SATL",
+          "IRDM"
+        ],
+        "Defense": [
+          "LMT",
+          "NOC",
+          "RTX"
+        ]
+      }
+    },
+    "EV_Autonomous": {
+      "description": "Electric + self-driving",
+      "layers": {
+        "OEMs": [
+          "TSLA",
+          "RIVN",
+          "LCID",
+          "NIO",
+          "XPEV"
+        ],
+        "Batteries": [
+          "TSLA",
+          "QS",
+          "SLDP",
+          "ENVX"
+        ],
+        "Lidar": [
+          "LAZR",
+          "AEVA",
+          "INVZ"
+        ],
+        "Charging": [
+          "CHPT",
+          "BLNK",
+          "EVGO"
+        ]
+      }
+    },
+    "Biotech_WeightLoss": {
+      "description": "GLP-1 and healthcare innovation",
+      "layers": {
+        "GLP1_Leaders": [
+          "LLY",
+          "NVO",
+          "PFE"
+        ],
+        "Biosimilars": [
+          "AMGN",
+          "BIIB",
+          "VRTX"
+        ],
+        "Tools": [
+          "DHR",
+          "TMO",
+          "A",
+          "MTD"
+        ]
+      }
+    },
+    "Cybersecurity": {
+      "description": "Digital defense",
+      "layers": {
+        "Endpoint": [
+          "CRWD",
+          "S",
+          "PANW"
+        ],
+        "Identity": [
+          "OKTA",
+          "CYBR",
+          "SAIL"
+        ],
+        "Cloud": [
+          "NET",
+          "ZS",
+          "PANW"
+        ],
+        "Monitoring": [
+          "DDOG",
+          "ESTC",
+          "SPLK"
+        ]
+      }
+    },
+    "Fintech": {
+      "description": "Financial infrastructure",
+      "layers": {
+        "Payments": [
+          "V",
+          "MA",
+          "SQ",
+          "PYPL"
+        ],
+        "Crypto_Exchanges": [
+          "COIN",
+          "HOOD",
+          "IBKR"
+        ],
+        "Banking_Tech": [
+          "SOFI",
+          "ALLY",
+          "COF"
+        ]
+      }
+    },
+    "India_Emerging": {
+      "description": "Demographic megatrend",
+      "layers": {
+        "ETFs": [
+          "INDA",
+          "MINDX",
+          "SMIN"
+        ],
+        "Tech": [
+          "INFY",
+          "WIT",
+          "HCLTECH"
+        ],
+        "Fintech": [
+          "PAYTM",
+          "PHONEPE"
+        ]
+      }
+    }
+  },
+  "watchlist": [
+    "A",
+    "AAON",
+    "AEVA",
+    "ALLY",
+    "AMAT",
+    "AMD",
+    "AMGN",
+    "AMZN",
+    "ANET",
+    "ARM",
+    "ARQQ",
+    "ASML",
+    "ASTS",
+    "AVGO",
+    "BIIB",
+    "BLNK",
+    "BWXT",
+    "CEG",
+    "CHPT",
+    "CIEN",
+    "COF",
+    "COHR",
+    "COIN",
+    "CRWD",
+    "CSCO",
+    "CYBR",
+    "DDOG",
+    "DELL",
+    "DHR",
+    "ENPH",
+    "ENVX",
+    "ESTC",
+    "EVGO",
+    "FN",
+    "FORM",
+    "FSLR",
+    "GOOGL",
+    "HCLTECH",
+    "HOOD",
+    "HPE",
+    "IBKR",
+    "IBM",
+    "INDA",
+    "INFY",
+    "INVZ",
+    "IONQ",
+    "IRDM",
+    "JCI",
+    "KLAC",
+    "LAZR",
+    "LCID",
+    "LITE",
+    "LLY",
+    "LMT",
+    "LRCX",
+    "MA",
+    "META",
+    "MINDX",
+    "MOD",
+    "MPWR",
+    "MRVL",
+    "MSFT",
+    "MTD",
+    "MU",
+    "NEE",
+    "NET",
+    "NIO",
+    "NNE",
+    "NOC",
+    "NPTN",
+    "NVDA",
+    "NVO",
+    "OKLO",
+    "OKTA",
+    "ORCL",
+    "PANW",
+    "PAYTM",
+    "PFE",
+    "PHONEPE",
+    "POET",
+    "PYPL",
+    "QBTS",
+    "QS",
+    "RGTI",
+    "RIVN",
+    "RKLB",
+    "RTX",
+    "S",
+    "SAIL",
+    "SATL",
+    "SEDG",
+    "SKHYNIX",
+    "SLDP",
+    "SMCI",
+    "SMIN",
+    "SMR",
+    "SOFI",
+    "SPIR",
+    "SPLK",
+    "SQ",
+    "STX",
+    "TER",
+    "TMO",
+    "TSLA",
+    "V",
+    "VORB",
+    "VRT",
+    "VRTX",
+    "VST",
+    "WDC",
+    "WIT",
+    "XPEV",
+    "ZS"
+  ]
+}
