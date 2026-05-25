@@ -195,10 +195,14 @@ def test_data_pipeline() -> List[TestResult]:
             with open(grades_file) as f:
                 data = json.load(f)
             
-            grades = data if isinstance(data, list) else list(data.values())
-            if len(grades) > 0:
-                avg_grade = sum(g.get("grade", 0) for g in grades) / len(grades)
-                results.append(TestResult("Data: Grades", True, f"{len(grades)} grades, avg {avg_grade:.0f}"))
+            # Find grades in nested lists
+            total_grades = 0
+            for key, value in data.items():
+                if isinstance(value, list):
+                    total_grades += len(value)
+            
+            if total_grades > 0:
+                results.append(TestResult("Data: Grades", True, f"{total_grades} grades across categories"))
             else:
                 results.append(TestResult("Data: Grades", False, "Empty"))
         except Exception as e:

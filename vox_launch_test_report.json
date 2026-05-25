@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-24T22:39:00.321780",
+  "timestamp": "2026-05-24T22:46:09.160162",
   "version": "9.1",
   "total_tests": 59,
   "passed": 57,
@@ -289,7 +289,7 @@
     {
       "name": "Git: Scripts",
       "passed": false,
-      "message": "Uncommitted changes: 1 files"
+      "message": "Uncommitted changes: 3 files"
     },
     {
       "name": "Vault: Files",

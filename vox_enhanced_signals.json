@@ -1,334 +1,4 @@
 {
-  "ETH": {
-    "signals": [
-      {
-        "ticker": "ETH",
-        "source": "options_flow",
-        "signal_type": "MODERATE_BULL",
-        "value": 65,
-        "raw_data": {
-          "call_put_ratio": 1.9411764705882353,
-          "contracts": 50
-        },
-        "confidence": 0.6,
-        "timestamp": "2026-05-24T22:16:51.306221"
-      },
-      {
-        "ticker": "ETH",
-        "source": "insider",
-        "signal_type": "INSIDER_BUY",
-        "value": 65,
-        "raw_data": {
-          "buy_pct": 0.62,
-          "note": "Simulated \u2014 use FMP or SEC API for real data"
-        },
-        "confidence": 0.3,
-        "timestamp": "2026-05-24T22:16:51.307527"
-      },
-      {
-        "ticker": "ETH",
-        "source": "short_interest",
-        "signal_type": "NORMAL_SHORT",
-        "value": 50,
-        "raw_data": {
-          "short_pct": 5,
-          "note": "Simulated \u2014 use FMP or Ortex for real data"
-        },
-        "confidence": 0.3,
-        "timestamp": "2026-05-24T22:16:51.308231"
-      },
-      {
-        "ticker": "ETH",
-        "source": "earnings_history",
-        "signal_type": "FREQUENT_MISS",
-        "value": 40,
-        "raw_data": {
-          "beat_rate": 0.45,
-          "quarters": 4,
-          "note": "Simulated fallback"
-        },
-        "confidence": 0.4,
-        "timestamp": "2026-05-24T22:16:51.629628"
-      }
-    ],
-    "avg_score": 55.0,
-    "count": 4
-  },
-  "BTC": {
-    "signals": [
-      {
-        "ticker": "BTC",
-        "source": "options_flow",
-        "signal_type": "BULLISH_FLOW",
-        "value": 80,
-        "raw_data": {
-          "call_put_ratio": 24.0,
-          "contracts": 50
-        },
-        "confidence": 0.6,
-        "timestamp": "2026-05-24T22:16:53.629131"
-      },
-      {
-        "ticker": "BTC",
-        "source": "insider",
-        "signal_type": "INSIDER_SELL",
-        "value": 40,
-        "raw_data": {
-          "buy_pct": 0.37,
-          "note": "Simulated \u2014 use FMP or SEC API for real data"
-        },
-        "confidence": 0.3,
-        "timestamp": "2026-05-24T22:16:53.630406"
-      },
-      {
-        "ticker": "BTC",
-        "source": "short_interest",
-        "signal_type": "NORMAL_SHORT",
-        "value": 50,
-        "raw_data": {
-          "short_pct": 3,
-          "note": "Simulated \u2014 use FMP or Ortex for real data"
-        },
-        "confidence": 0.3,
-        "timestamp": "2026-05-24T22:16:53.631053"
-      },
-      {
-        "ticker": "BTC",
-        "source": "earnings_history",
-        "signal_type": "FREQUENT_MISS",
-        "value": 40,
-        "raw_data": {
-          "beat_rate": 0.48000000000000004,
-          "quarters": 4,
-          "note": "Simulated fallback"
-        },
-        "confidence": 0.4,
-        "timestamp": "2026-05-24T22:16:53.957193"
-      }
-    ],
-    "avg_score": 52.5,
-    "count": 4
-  },
-  "JMIA": {
-    "signals": [
-      {
-        "ticker": "JMIA",
-        "source": "options_flow",
-        "signal_type": "NEUTRAL",
-        "value": 50,
-        "raw_data": {
-          "call_put_ratio": 1.173913043478261,
-          "contracts": 50
-        },
-        "confidence": 0.6,
-        "timestamp": "2026-05-24T22:16:46.287645"
-      },
-      {
-        "ticker": "JMIA",
-        "source": "insider",
-        "signal_type": "INSIDER_SELL",
-        "value": 40,
-        "raw_data": {
-          "buy_pct": 0.39,
-          "note": "Simulated \u2014 use FMP or SEC API for real data"
-        },
-        "confidence": 0.3,
-        "timestamp": "2026-05-24T22:16:46.288555"
-      },
-      {
-        "ticker": "JMIA",
-        "source": "short_interest",
-        "signal_type": "HIGH_SHORT_SQUEEZE_RISK",
-        "value": 70,
-        "raw_data": {
-          "short_pct": 24,
-          "note": "Simulated \u2014 use FMP or Ortex for real data"
-        },
-        "confidence": 0.3,
-        "timestamp": "2026-05-24T22:16:46.289392"
-      },
-      {
-        "ticker": "JMIA",
-        "source": "earnings_history",
-        "signal_type": "MODERATE_BEAT",
-        "value": 60,
-        "raw_data": {
-          "beat_rate": 0.73,
-          "quarters": 4,
-          "note": "Simulated fallback"
-        },
-        "confidence": 0.4,
-        "timestamp": "2026-05-24T22:16:46.607014"
-      }
-    ],
-    "avg_score": 55.0,
-    "count": 4
-  },
-  "VOO": {
-    "signals": [
-      {
-        "ticker": "VOO",
-        "source": "options_flow",
-        "signal_type": "BULLISH_FLOW",
-        "value": 80,
-        "raw_data": {
-          "call_put_ratio": 999,
-          "contracts": 50
-        },
-        "confidence": 0.6,
-        "timestamp": "2026-05-24T22:16:54.456878"
-      },
-      {
-        "ticker": "VOO",
-        "source": "insider",
-        "signal_type": "INSIDER_BUY",
-        "value": 65,
-        "raw_data": {
-          "buy_pct": 0.54,
-          "note": "Simulated \u2014 use FMP or SEC API for real data"
-        },
-        "confidence": 0.3,
-        "timestamp": "2026-05-24T22:16:54.458327"
-      },
-      {
-        "ticker": "VOO",
-        "source": "short_interest",
-        "signal_type": "NORMAL_SHORT",
-        "value": 50,
-        "raw_data": {
-          "short_pct": 3,
-          "note": "Simulated \u2014 use FMP or Ortex for real data"
-        },
-        "confidence": 0.3,
-        "timestamp": "2026-05-24T22:16:54.459029"
-      },
-      {
-        "ticker": "VOO",
-        "source": "earnings_history",
-        "signal_type": "CONSISTENT_BEAT",
-        "value": 80,
-        "raw_data": {
-          "beat_rate": 0.75,
-          "quarters": 4,
-          "note": "Simulated fallback"
-        },
-        "confidence": 0.4,
-        "timestamp": "2026-05-24T22:16:54.789528"
-      }
-    ],
-    "avg_score": 68.75,
-    "count": 4
-  },
-  "OKLO": {
-    "signals": [
-      {
-        "ticker": "OKLO",
-        "source": "options_flow",
-        "signal_type": "BULLISH_FLOW",
-        "value": 80,
-        "raw_data": {
-          "call_put_ratio": 999,
-          "contracts": 50
-        },
-        "confidence": 0.6,
-        "timestamp": "2026-05-24T22:16:44.712955"
-      },
-      {
-        "ticker": "OKLO",
-        "source": "insider",
-        "signal_type": "INSIDER_BUY",
-        "value": 65,
-        "raw_data": {
-          "buy_pct": 0.5700000000000001,
-          "note": "Simulated \u2014 use FMP or SEC API for real data"
-        },
-        "confidence": 0.3,
-        "timestamp": "2026-05-24T22:16:44.713574"
-      },
-      {
-        "ticker": "OKLO",
-        "source": "short_interest",
-        "signal_type": "ELEVATED_SHORT",
-        "value": 45,
-        "raw_data": {
-          "short_pct": 14,
-          "note": "Simulated \u2014 use FMP or Ortex for real data"
-        },
-        "confidence": 0.3,
-        "timestamp": "2026-05-24T22:16:44.713929"
-      },
-      {
-        "ticker": "OKLO",
-        "source": "earnings_history",
-        "signal_type": "MODERATE_BEAT",
-        "value": 60,
-        "raw_data": {
-          "beat_rate": 0.54,
-          "quarters": 4,
-          "note": "Simulated fallback"
-        },
-        "confidence": 0.4,
-        "timestamp": "2026-05-24T22:16:45.044635"
-      }
-    ],
-    "avg_score": 62.5,
-    "count": 4
-  },
-  "0700.HK": {
-    "signals": [
-      {
-        "ticker": "0700.HK",
-        "source": "options_flow",
-        "signal_type": "BULLISH_FLOW",
-        "value": 80,
-        "raw_data": {
-          "call_put_ratio": 999,
-          "contracts": 0
-        },
-        "confidence": 0.6,
-        "timestamp": "2026-05-24T22:16:47.767083"
-      },
-      {
-        "ticker": "0700.HK",
-        "source": "insider",
-        "signal_type": "STRONG_INSIDER_BUY",
-        "value": 80,
-        "raw_data": {
-          "buy_pct": 0.78,
-          "note": "Simulated \u2014 use FMP or SEC API for real data"
-        },
-        "confidence": 0.3,
-        "timestamp": "2026-05-24T22:16:47.767646"
-      },
-      {
-        "ticker": "0700.HK",
-        "source": "short_interest",
-        "signal_type": "HIGH_SHORT_SQUEEZE_RISK",
-        "value": 70,
-        "raw_data": {
-          "short_pct": 22,
-          "note": "Simulated \u2014 use FMP or Ortex for real data"
-        },
-        "confidence": 0.3,
-        "timestamp": "2026-05-24T22:16:47.767900"
-      },
-      {
-        "ticker": "0700.HK",
-        "source": "earnings_history",
-        "signal_type": "CONSISTENT_BEAT",
-        "value": 80,
-        "raw_data": {
-          "beat_rate": 0.77,
-          "quarters": 4,
-          "note": "Simulated fallback"
-        },
-        "confidence": 0.4,
-        "timestamp": "2026-05-24T22:16:48.154237"
-      }
-    ],
-    "avg_score": 77.5,
-    "count": 4
-  },
   "QQQ": {
     "signals": [
       {
@@ -384,10 +54,65 @@
     "avg_score": 66.25,
     "count": 4
   },
-  "VTI": {
+  "MSFT": {
     "signals": [
       {
-        "ticker": "VTI",
+        "ticker": "MSFT",
+        "source": "options_flow",
+        "signal_type": "BULLISH_FLOW",
+        "value": 80,
+        "raw_data": {
+          "call_put_ratio": 15.666666666666666,
+          "contracts": 50
+        },
+        "confidence": 0.6,
+        "timestamp": "2026-05-24T22:16:45.537493"
+      },
+      {
+        "ticker": "MSFT",
+        "source": "insider",
+        "signal_type": "INSIDER_SELL",
+        "value": 40,
+        "raw_data": {
+          "buy_pct": 0.3,
+          "note": "Simulated \u2014 use FMP or SEC API for real data"
+        },
+        "confidence": 0.3,
+        "timestamp": "2026-05-24T22:16:45.538032"
+      },
+      {
+        "ticker": "MSFT",
+        "source": "short_interest",
+        "signal_type": "ELEVATED_SHORT",
+        "value": 45,
+        "raw_data": {
+          "short_pct": 12,
+          "note": "Simulated \u2014 use FMP or Ortex for real data"
+        },
+        "confidence": 0.3,
+        "timestamp": "2026-05-24T22:16:45.538345"
+      },
+      {
+        "ticker": "MSFT",
+        "source": "earnings_history",
+        "signal_type": "MODERATE_BEAT",
+        "value": 60,
+        "raw_data": {
+          "beat_rate": 0.65,
+          "quarters": 4,
+          "note": "Simulated fallback"
+        },
+        "confidence": 0.4,
+        "timestamp": "2026-05-24T22:16:45.865141"
+      }
+    ],
+    "avg_score": 56.25,
+    "count": 4
+  },
+  "VOO": {
+    "signals": [
+      {
+        "ticker": "VOO",
         "source": "options_flow",
         "signal_type": "BULLISH_FLOW",
         "value": 80,
@@ -396,44 +121,44 @@
           "contracts": 50
         },
         "confidence": 0.6,
-        "timestamp": "2026-05-24T22:16:52.063734"
+        "timestamp": "2026-05-24T22:16:54.456878"
       },
       {
-        "ticker": "VTI",
+        "ticker": "VOO",
         "source": "insider",
         "signal_type": "INSIDER_BUY",
         "value": 65,
         "raw_data": {
-          "buy_pct": 0.6,
+          "buy_pct": 0.54,
           "note": "Simulated \u2014 use FMP or SEC API for real data"
         },
         "confidence": 0.3,
-        "timestamp": "2026-05-24T22:16:52.065106"
+        "timestamp": "2026-05-24T22:16:54.458327"
       },
       {
-        "ticker": "VTI",
+        "ticker": "VOO",
         "source": "short_interest",
         "signal_type": "NORMAL_SHORT",
         "value": 50,
         "raw_data": {
-          "short_pct": 7,
+          "short_pct": 3,
           "note": "Simulated \u2014 use FMP or Ortex for real data"
         },
         "confidence": 0.3,
-        "timestamp": "2026-05-24T22:16:52.065820"
+        "timestamp": "2026-05-24T22:16:54.459029"
       },
       {
-        "ticker": "VTI",
+        "ticker": "VOO",
         "source": "earnings_history",
         "signal_type": "CONSISTENT_BEAT",
         "value": 80,
         "raw_data": {
-          "beat_rate": 0.77,
+          "beat_rate": 0.75,
           "quarters": 4,
           "note": "Simulated fallback"
         },
         "confidence": 0.4,
-        "timestamp": "2026-05-24T22:16:52.390057"
+        "timestamp": "2026-05-24T22:16:54.789528"
       }
     ],
     "avg_score": 68.75,
@@ -494,111 +219,56 @@
     "avg_score": 63.75,
     "count": 4
   },
-  "OSCR": {
+  "SHOP": {
     "signals": [
       {
-        "ticker": "OSCR",
-        "source": "options_flow",
-        "signal_type": "BULLISH_FLOW",
-        "value": 80,
-        "raw_data": {
-          "call_put_ratio": 24.0,
-          "contracts": 50
-        },
-        "confidence": 0.6,
-        "timestamp": "2026-05-24T22:16:43.767352"
-      },
-      {
-        "ticker": "OSCR",
-        "source": "insider",
-        "signal_type": "INSIDER_BUY",
-        "value": 65,
-        "raw_data": {
-          "buy_pct": 0.56,
-          "note": "Simulated \u2014 use FMP or SEC API for real data"
-        },
-        "confidence": 0.3,
-        "timestamp": "2026-05-24T22:16:43.768210"
-      },
-      {
-        "ticker": "OSCR",
-        "source": "short_interest",
-        "signal_type": "ELEVATED_SHORT",
-        "value": 45,
-        "raw_data": {
-          "short_pct": 20,
-          "note": "Simulated \u2014 use FMP or Ortex for real data"
-        },
-        "confidence": 0.3,
-        "timestamp": "2026-05-24T22:16:43.768811"
-      },
-      {
-        "ticker": "OSCR",
-        "source": "earnings_history",
-        "signal_type": "MODERATE_BEAT",
-        "value": 60,
-        "raw_data": {
-          "beat_rate": 0.54,
-          "quarters": 4,
-          "note": "Simulated fallback"
-        },
-        "confidence": 0.4,
-        "timestamp": "2026-05-24T22:16:44.090377"
-      }
-    ],
-    "avg_score": 62.5,
-    "count": 4
-  },
-  "DOGE": {
-    "signals": [
-      {
-        "ticker": "DOGE",
+        "ticker": "SHOP",
         "source": "options_flow",
         "signal_type": "BULLISH_FLOW",
         "value": 80,
         "raw_data": {
           "call_put_ratio": 999,
-          "contracts": 0
+          "contracts": 50
         },
         "confidence": 0.6,
-        "timestamp": "2026-05-24T22:16:47.022185"
+        "timestamp": "2026-05-24T22:16:49.629083"
       },
       {
-        "ticker": "DOGE",
+        "ticker": "SHOP",
         "source": "insider",
-        "signal_type": "INSIDER_SELL",
-        "value": 40,
+        "signal_type": "INSIDER_BUY",
+        "value": 65,
         "raw_data": {
-          "buy_pct": 0.35,
+          "buy_pct": 0.54,
           "note": "Simulated \u2014 use FMP or SEC API for real data"
         },
         "confidence": 0.3,
-        "timestamp": "2026-05-24T22:16:47.022950"
+        "timestamp": "2026-05-24T22:16:49.629822"
       },
       {
-        "ticker": "DOGE",
+        "ticker": "SHOP",
         "source": "short_interest",
-        "signal_type": "NORMAL_SHORT",
-        "value": 50,
+        "signal_type": "ELEVATED_SHORT",
+        "value": 45,
         "raw_data": {
-          "short_pct": 10,
+          "short_pct": 13,
           "note": "Simulated \u2014 use FMP or Ortex for real data"
         },
         "confidence": 0.3,
-        "timestamp": "2026-05-24T22:16:47.023474"
+        "timestamp": "2026-05-24T22:16:49.630333"
       },
       {
-        "ticker": "DOGE",
+        "ticker": "SHOP",
         "source": "earnings_history",
-        "signal_type": "MODERATE_BEAT",
-        "value": 60,
+        "signal_type": "FREQUENT_MISS",
+        "value": 40,
         "raw_data": {
-          "beat_rate": 0.64,
+          "beat_rate": 0.41000000000000003,
           "quarters": 4,
           "note": "Simulated fallback"
         },
         "confidence": 0.4,
-        "timestamp": "2026-05-24T22:16:47.437675"
+        "timestamp": "2026-05-24T22:16:49.958563"
       }
     ],
     "avg_score": 57.5,
@@ -659,6 +329,61 @@
     "avg_score": 51.25,
     "count": 4
   },
+  "META": {
+    "signals": [
+      {
+        "ticker": "META",
+        "source": "options_flow",
+        "signal_type": "BULLISH_FLOW",
+        "value": 80,
+        "raw_data": {
+          "call_put_ratio": 999,
+          "contracts": 50
+        },
+        "confidence": 0.6,
+        "timestamp": "2026-05-24T22:16:50.483947"
+      },
+      {
+        "ticker": "META",
+        "source": "insider",
+        "signal_type": "STRONG_INSIDER_BUY",
+        "value": 80,
+        "raw_data": {
+          "buy_pct": 0.79,
+          "note": "Simulated \u2014 use FMP or SEC API for real data"
+        },
+        "confidence": 0.3,
+        "timestamp": "2026-05-24T22:16:50.485377"
+      },
+      {
+        "ticker": "META",
+        "source": "short_interest",
+        "signal_type": "NORMAL_SHORT",
+        "value": 50,
+        "raw_data": {
+          "short_pct": 7,
+          "note": "Simulated \u2014 use FMP or Ortex for real data"
+        },
+        "confidence": 0.3,
+        "timestamp": "2026-05-24T22:16:50.486108"
+      },
+      {
+        "ticker": "META",
+        "source": "earnings_history",
+        "signal_type": "MODERATE_BEAT",
+        "value": 60,
+        "raw_data": {
+          "beat_rate": 0.68,
+          "quarters": 4,
+          "note": "Simulated fallback"
+        },
+        "confidence": 0.4,
+        "timestamp": "2026-05-24T22:16:50.805820"
+      }
+    ],
+    "avg_score": 67.5,
+    "count": 4
+  },
   "XRP": {
     "signals": [
       {
@@ -714,59 +439,169 @@
     "avg_score": 61.25,
     "count": 4
   },
-  "MSFT": {
+  "0700.HK": {
     "signals": [
       {
-        "ticker": "MSFT",
+        "ticker": "0700.HK",
         "source": "options_flow",
         "signal_type": "BULLISH_FLOW",
         "value": 80,
         "raw_data": {
-          "call_put_ratio": 15.666666666666666,
-          "contracts": 50
+          "call_put_ratio": 999,
+          "contracts": 0
         },
         "confidence": 0.6,
-        "timestamp": "2026-05-24T22:16:45.537493"
+        "timestamp": "2026-05-24T22:16:47.767083"
       },
       {
-        "ticker": "MSFT",
+        "ticker": "0700.HK",
         "source": "insider",
-        "signal_type": "INSIDER_SELL",
-        "value": 40,
+        "signal_type": "STRONG_INSIDER_BUY",
+        "value": 80,
         "raw_data": {
-          "buy_pct": 0.3,
+          "buy_pct": 0.78,
           "note": "Simulated \u2014 use FMP or SEC API for real data"
         },
         "confidence": 0.3,
-        "timestamp": "2026-05-24T22:16:45.538032"
+        "timestamp": "2026-05-24T22:16:47.767646"
       },
       {
-        "ticker": "MSFT",
+        "ticker": "0700.HK",
         "source": "short_interest",
-        "signal_type": "ELEVATED_SHORT",
-        "value": 45,
+        "signal_type": "HIGH_SHORT_SQUEEZE_RISK",
+        "value": 70,
         "raw_data": {
-          "short_pct": 12,
+          "short_pct": 22,
           "note": "Simulated \u2014 use FMP or Ortex for real data"
         },
         "confidence": 0.3,
-        "timestamp": "2026-05-24T22:16:45.538345"
+        "timestamp": "2026-05-24T22:16:47.767900"
       },
       {
-        "ticker": "MSFT",
+        "ticker": "0700.HK",
         "source": "earnings_history",
-        "signal_type": "MODERATE_BEAT",
-        "value": 60,
+        "signal_type": "CONSISTENT_BEAT",
+        "value": 80,
         "raw_data": {
-          "beat_rate": 0.65,
+          "beat_rate": 0.77,
           "quarters": 4,
           "note": "Simulated fallback"
         },
         "confidence": 0.4,
-        "timestamp": "2026-05-24T22:16:45.865141"
+        "timestamp": "2026-05-24T22:16:48.154237"
       }
     ],
-    "avg_score": 56.25,
+    "avg_score": 77.5,
+    "count": 4
+  },
+  "JMIA": {
+    "signals": [
+      {
+        "ticker": "JMIA",
+        "source": "options_flow",
+        "signal_type": "NEUTRAL",
+        "value": 50,
+        "raw_data": {
+          "call_put_ratio": 1.173913043478261,
+          "contracts": 50
+        },
+        "confidence": 0.6,
+        "timestamp": "2026-05-24T22:16:46.287645"
+      },
+      {
+        "ticker": "JMIA",
+        "source": "insider",
+        "signal_type": "INSIDER_SELL",
+        "value": 40,
+        "raw_data": {
+          "buy_pct": 0.39,
+          "note": "Simulated \u2014 use FMP or SEC API for real data"
+        },
+        "confidence": 0.3,
+        "timestamp": "2026-05-24T22:16:46.288555"
+      },
+      {
+        "ticker": "JMIA",
+        "source": "short_interest",
+        "signal_type": "HIGH_SHORT_SQUEEZE_RISK",
+        "value": 70,
+        "raw_data": {
+          "short_pct": 24,
+          "note": "Simulated \u2014 use FMP or Ortex for real data"
+        },
+        "confidence": 0.3,
+        "timestamp": "2026-05-24T22:16:46.289392"
+      },
+      {
+        "ticker": "JMIA",
+        "source": "earnings_history",
+        "signal_type": "MODERATE_BEAT",
+        "value": 60,
+        "raw_data": {
+          "beat_rate": 0.73,
+          "quarters": 4,
+          "note": "Simulated fallback"
+        },
+        "confidence": 0.4,
+        "timestamp": "2026-05-24T22:16:46.607014"
+      }
+    ],
+    "avg_score": 55.0,
+    "count": 4
+  },
+  "BTC": {
+    "signals": [
+      {
+        "ticker": "BTC",
+        "source": "options_flow",
+        "signal_type": "BULLISH_FLOW",
+        "value": 80,
+        "raw_data": {
+          "call_put_ratio": 24.0,
+          "contracts": 50
+        },
+        "confidence": 0.6,
+        "timestamp": "2026-05-24T22:16:53.629131"
+      },
+      {
+        "ticker": "BTC",
+        "source": "insider",
+        "signal_type": "INSIDER_SELL",
+        "value": 40,
+        "raw_data": {
+          "buy_pct": 0.37,
+          "note": "Simulated \u2014 use FMP or SEC API for real data"
+        },
+        "confidence": 0.3,
+        "timestamp": "2026-05-24T22:16:53.630406"
+      },
+      {
+        "ticker": "BTC",
+        "source": "short_interest",
+        "signal_type": "NORMAL_SHORT",
+        "value": 50,
+        "raw_data": {
+          "short_pct": 3,
+          "note": "Simulated \u2014 use FMP or Ortex for real data"
+        },
+        "confidence": 0.3,
+        "timestamp": "2026-05-24T22:16:53.631053"
+      },
+      {
+        "ticker": "BTC",
+        "source": "earnings_history",
+        "signal_type": "FREQUENT_MISS",
+        "value": 40,
+        "raw_data": {
+          "beat_rate": 0.48000000000000004,
+          "quarters": 4,
+          "note": "Simulated fallback"
+        },
+        "confidence": 0.4,
+        "timestamp": "2026-05-24T22:16:53.957193"
+      }
+    ],
+    "avg_score": 52.5,
     "count": 4
   },
   "AMD": {
@@ -824,10 +659,65 @@
     "avg_score": 58.75,
     "count": 4
   },
-  "META": {
+  "OSCR": {
     "signals": [
       {
-        "ticker": "META",
+        "ticker": "OSCR",
+        "source": "options_flow",
+        "signal_type": "BULLISH_FLOW",
+        "value": 80,
+        "raw_data": {
+          "call_put_ratio": 24.0,
+          "contracts": 50
+        },
+        "confidence": 0.6,
+        "timestamp": "2026-05-24T22:16:43.767352"
+      },
+      {
+        "ticker": "OSCR",
+        "source": "insider",
+        "signal_type": "INSIDER_BUY",
+        "value": 65,
+        "raw_data": {
+          "buy_pct": 0.56,
+          "note": "Simulated \u2014 use FMP or SEC API for real data"
+        },
+        "confidence": 0.3,
+        "timestamp": "2026-05-24T22:16:43.768210"
+      },
+      {
+        "ticker": "OSCR",
+        "source": "short_interest",
+        "signal_type": "ELEVATED_SHORT",
+        "value": 45,
+        "raw_data": {
+          "short_pct": 20,
+          "note": "Simulated \u2014 use FMP or Ortex for real data"
+        },
+        "confidence": 0.3,
+        "timestamp": "2026-05-24T22:16:43.768811"
+      },
+      {
+        "ticker": "OSCR",
+        "source": "earnings_history",
+        "signal_type": "MODERATE_BEAT",
+        "value": 60,
+        "raw_data": {
+          "beat_rate": 0.54,
+          "quarters": 4,
+          "note": "Simulated fallback"
+        },
+        "confidence": 0.4,
+        "timestamp": "2026-05-24T22:16:44.090377"
+      }
+    ],
+    "avg_score": 62.5,
+    "count": 4
+  },
+  "VTI": {
+    "signals": [
+      {
+        "ticker": "VTI",
         "source": "options_flow",
         "signal_type": "BULLISH_FLOW",
         "value": 80,
@@ -836,22 +726,22 @@
           "contracts": 50
         },
         "confidence": 0.6,
-        "timestamp": "2026-05-24T22:16:50.483947"
+        "timestamp": "2026-05-24T22:16:52.063734"
       },
       {
-        "ticker": "META",
+        "ticker": "VTI",
         "source": "insider",
-        "signal_type": "STRONG_INSIDER_BUY",
-        "value": 80,
+        "signal_type": "INSIDER_BUY",
+        "value": 65,
         "raw_data": {
-          "buy_pct": 0.79,
+          "buy_pct": 0.6,
           "note": "Simulated \u2014 use FMP or SEC API for real data"
         },
         "confidence": 0.3,
-        "timestamp": "2026-05-24T22:16:50.485377"
+        "timestamp": "2026-05-24T22:16:52.065106"
       },
       {
-        "ticker": "META",
+        "ticker": "VTI",
         "source": "short_interest",
         "signal_type": "NORMAL_SHORT",
         "value": 50,
@@ -860,29 +750,29 @@
           "note": "Simulated \u2014 use FMP or Ortex for real data"
         },
         "confidence": 0.3,
-        "timestamp": "2026-05-24T22:16:50.486108"
+        "timestamp": "2026-05-24T22:16:52.065820"
       },
       {
-        "ticker": "META",
+        "ticker": "VTI",
         "source": "earnings_history",
-        "signal_type": "MODERATE_BEAT",
-        "value": 60,
+        "signal_type": "CONSISTENT_BEAT",
+        "value": 80,
         "raw_data": {
-          "beat_rate": 0.68,
+          "beat_rate": 0.77,
           "quarters": 4,
           "note": "Simulated fallback"
         },
         "confidence": 0.4,
-        "timestamp": "2026-05-24T22:16:50.805820"
+        "timestamp": "2026-05-24T22:16:52.390057"
       }
     ],
-    "avg_score": 67.5,
+    "avg_score": 68.75,
     "count": 4
   },
-  "SHOP": {
+  "OKLO": {
     "signals": [
       {
-        "ticker": "SHOP",
+        "ticker": "OKLO",
         "source": "options_flow",
         "signal_type": "BULLISH_FLOW",
         "value": 80,
@@ -891,47 +781,157 @@
           "contracts": 50
         },
         "confidence": 0.6,
-        "timestamp": "2026-05-24T22:16:49.629083"
+        "timestamp": "2026-05-24T22:16:44.712955"
       },
       {
-        "ticker": "SHOP",
+        "ticker": "OKLO",
         "source": "insider",
         "signal_type": "INSIDER_BUY",
         "value": 65,
         "raw_data": {
-          "buy_pct": 0.54,
+          "buy_pct": 0.5700000000000001,
           "note": "Simulated \u2014 use FMP or SEC API for real data"
         },
         "confidence": 0.3,
-        "timestamp": "2026-05-24T22:16:49.629822"
+        "timestamp": "2026-05-24T22:16:44.713574"
       },
       {
-        "ticker": "SHOP",
+        "ticker": "OKLO",
         "source": "short_interest",
         "signal_type": "ELEVATED_SHORT",
         "value": 45,
         "raw_data": {
-          "short_pct": 13,
+          "short_pct": 14,
           "note": "Simulated \u2014 use FMP or Ortex for real data"
         },
         "confidence": 0.3,
-        "timestamp": "2026-05-24T22:16:49.630333"
+        "timestamp": "2026-05-24T22:16:44.713929"
       },
       {
-        "ticker": "SHOP",
+        "ticker": "OKLO",
         "source": "earnings_history",
-        "signal_type": "FREQUENT_MISS",
-        "value": 40,
+        "signal_type": "MODERATE_BEAT",
+        "value": 60,
         "raw_data": {
-          "beat_rate": 0.41000000000000003,
+          "beat_rate": 0.54,
           "quarters": 4,
           "note": "Simulated fallback"
         },
         "confidence": 0.4,
-        "timestamp": "2026-05-24T22:16:49.958563"
+        "timestamp": "2026-05-24T22:16:45.044635"
+      }
+    ],
+    "avg_score": 62.5,
+    "count": 4
+  },
+  "DOGE": {
+    "signals": [
+      {
+        "ticker": "DOGE",
+        "source": "options_flow",
+        "signal_type": "BULLISH_FLOW",
+        "value": 80,
+        "raw_data": {
+          "call_put_ratio": 999,
+          "contracts": 0
+        },
+        "confidence": 0.6,
+        "timestamp": "2026-05-24T22:16:47.022185"
+      },
+      {
+        "ticker": "DOGE",
+        "source": "insider",
+        "signal_type": "INSIDER_SELL",
+        "value": 40,
+        "raw_data": {
+          "buy_pct": 0.35,
+          "note": "Simulated \u2014 use FMP or SEC API for real data"
+        },
+        "confidence": 0.3,
+        "timestamp": "2026-05-24T22:16:47.022950"
+      },
+      {
+        "ticker": "DOGE",
+        "source": "short_interest",
+        "signal_type": "NORMAL_SHORT",
+        "value": 50,
+        "raw_data": {
+          "short_pct": 10,
+          "note": "Simulated \u2014 use FMP or Ortex for real data"
+        },
+        "confidence": 0.3,
+        "timestamp": "2026-05-24T22:16:47.023474"
+      },
+      {
+        "ticker": "DOGE",
+        "source": "earnings_history",
+        "signal_type": "MODERATE_BEAT",
+        "value": 60,
+        "raw_data": {
+          "beat_rate": 0.64,
+          "quarters": 4,
+          "note": "Simulated fallback"
+        },
+        "confidence": 0.4,
+        "timestamp": "2026-05-24T22:16:47.437675"
       }
     ],
     "avg_score": 57.5,
+    "count": 4
+  },
+  "ETH": {
+    "signals": [
+      {
+        "ticker": "ETH",
+        "source": "options_flow",
+        "signal_type": "MODERATE_BULL",
+        "value": 65,
+        "raw_data": {
+          "call_put_ratio": 1.9411764705882353,
+          "contracts": 50
+        },
+        "confidence": 0.6,
+        "timestamp": "2026-05-24T22:16:51.306221"
+      },
+      {
+        "ticker": "ETH",
+        "source": "insider",
+        "signal_type": "INSIDER_BUY",
+        "value": 65,
+        "raw_data": {
+          "buy_pct": 0.62,
+          "note": "Simulated \u2014 use FMP or SEC API for real data"
+        },
+        "confidence": 0.3,
+        "timestamp": "2026-05-24T22:16:51.307527"
+      },
+      {
+        "ticker": "ETH",
+        "source": "short_interest",
+        "signal_type": "NORMAL_SHORT",
+        "value": 50,
+        "raw_data": {
+          "short_pct": 5,
+          "note": "Simulated \u2014 use FMP or Ortex for real data"
+        },
+        "confidence": 0.3,
+        "timestamp": "2026-05-24T22:16:51.308231"
+      },
+      {
+        "ticker": "ETH",
+        "source": "earnings_history",
+        "signal_type": "FREQUENT_MISS",
+        "value": 40,
+        "raw_data": {
+          "beat_rate": 0.45,
+          "quarters": 4,
+          "note": "Simulated fallback"
+        },
+        "confidence": 0.4,
+        "timestamp": "2026-05-24T22:16:51.629628"
+      }
+    ],
+    "avg_score": 55.0,
     "count": 4
   }
 }

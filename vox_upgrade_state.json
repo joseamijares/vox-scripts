@@ -1,6 +1,6 @@
 {
   "version": "9.0",
-  "last_analysis": "2026-05-24T22:32:20.564904",
+  "last_analysis": "2026-05-24T22:46:45.445794",
   "last_upgrade": null,
   "performance_history": [],
   "signal_weights_history": [
@@ -98,6 +98,29 @@
     },
     {
       "timestamp": "2026-05-24T22:32:20.565334",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-24T22:46:45.446263",
       "weights": {
         "grade": 0.25,
         "technical": 0.15,
