@@ -1,122 +1,16 @@
 {
-  "timestamp": "2026-05-24",
-  "all_results": [
-    {
-      "ticker": "DELL",
-      "grade": 67,
-      "sector": "AI_DataCenter"
-    },
-    {
-      "ticker": "LLY",
-      "grade": 66,
-      "sector": "Biotech"
-    },
-    {
-      "ticker": "PANW",
-      "grade": 65,
-      "sector": "Cybersecurity"
-    },
-    {
-      "ticker": "NVDA",
-      "grade": 64,
-      "sector": "AI_DataCenter"
-    },
-    {
-      "ticker": "AMAT",
-      "grade": 63,
-      "sector": "AI_DataCenter"
-    },
-    {
-      "ticker": "COHR",
-      "grade": 61,
-      "sector": "AI_DataCenter"
-    },
-    {
-      "ticker": "MU",
-      "grade": 60,
-      "sector": "AI_DataCenter"
-    },
-    {
-      "ticker": "IONQ",
-      "grade": 60,
-      "sector": "Quantum"
-    },
-    {
-      "ticker": "AMD",
-      "grade": 59,
-      "sector": "AI_DataCenter"
-    },
-    {
-      "ticker": "CEG",
-      "grade": 59,
-      "sector": "AI_DataCenter"
-    },
-    {
-      "ticker": "VST",
-      "grade": 59,
-      "sector": "AI_DataCenter"
-    },
-    {
-      "ticker": "ANET",
-      "grade": 59,
-      "sector": "AI_DataCenter"
-    },
-    {
-      "ticker": "XLE",
-      "grade": 59,
-      "sector": "AI_DataCenter"
-    },
-    {
-      "ticker": "SMCI",
-      "grade": 58,
-      "sector": "AI_DataCenter"
-    },
-    {
-      "ticker": "SMH",
-      "grade": 58,
-      "sector": "AI_DataCenter"
-    },
-    {
-      "ticker": "RKLB",
-      "grade": 58,
-      "sector": "Quantum"
-    },
-    {
-      "ticker": "NET",
-      "grade": 58,
-      "sector": "Cybersecurity"
-    },
-    {
-      "ticker": "VRT",
-      "grade": 57,
-      "sector": "AI_DataCenter"
-    },
-    {
-      "ticker": "GEV",
-      "grade": 57,
-      "sector": "AI_DataCenter"
-    },
-    {
-      "ticker": "BE",
-      "grade": 56,
-      "sector": "Energy"
-    },
-    {
-      "ticker": "XLK",
-      "grade": 55,
-      "sector": "AI_DataCenter"
-    },
-    {
-      "ticker": "INDA",
-      "grade": 46,
-      "sector": "India"
-    }
-  ],
+  "timestamp": "2026-05-25T10:02:30.388104",
+  "all_results": [],
+  "a_plus": [],
+  "strong": [],
+  "decent": [],
+  "avoid": [],
   "summary": {
-    "total": 22,
+    "total_scanned": 123,
+    "graded": 0,
     "a_plus": 0,
-    "strong": 3,
-    "decent": 18,
-    "avoid": 1
+    "strong": 0,
+    "decent": 0,
+    "avoid": 0
   }
 }

@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-05-26T00:03:58.632460+00:00",
+  "count": 1,
+  "predictions": [
+    {
+      "ticker": "NVDA",
+      "timestamp": "2026-05-26T00:03:58.628697+00:00",
+      "direction": "NEUTRAL",
+      "confidence": 50,
+      "timeframe": "2026-05-28",
+      "target": "\u00b110-20%",
+      "reasons": [
+        "Earnings on 2026-05-28. Historical surprise rate: ~65%."
+      ],
+      "models_used": [
+        "earnings"
+      ],
+      "model_predictions": [
+        {
+          "type": "earnings",
+          "direction": "VOLATILE",
+          "confidence": 60,
+          "timeframe": "2026-05-28",
+          "reason": "Earnings on 2026-05-28. Historical surprise rate: ~65%.",
+          "target": "\u00b110-20%"
+        }
+      ]
+    }
+  ]
+}

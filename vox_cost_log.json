@@ -1,0 +1,556 @@
+{
+  "entries": [
+    {
+      "date": "2026-05-27",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-05-27",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-05-28",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-05-28",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-05-29",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-05-29",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-05-30",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-05-30",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-05-31",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-05-31",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-06-01",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-06-01",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-06-02",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-06-02",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-06-03",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-06-04",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-06-04",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-06-05",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-06-05",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-06-06",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-06-06",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-06-07",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-06-07",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-06-08",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-06-08",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-06-09",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-06-09",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-06-10",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    },
+    {
+      "date": "2026-06-10",
+      "daily_cost_usd": 0.1323,
+      "agent_breakdown": {
+        "vox_weather_agent": 0.0,
+        "vox_geopolitical_agent": 0.0,
+        "vox_supply_chain_agent": 0.0096,
+        "vox_macro_agent": 0.0018,
+        "vox_sector_agent": 0.0066,
+        "vox_trump_agent": 0.0,
+        "vox_reddit_agent": 0.0,
+        "vox_x_agent": 0.0,
+        "vox_research_orchestrator": 0.06,
+        "vox_smart_alerts": 0.0336,
+        "vox_premarket": 0.0103,
+        "vox_broker_sync": 0.0104
+      },
+      "total_api_calls": 1249
+    }
+  ],
+  "total_all_time": 3.8367
+}

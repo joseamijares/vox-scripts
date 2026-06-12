@@ -132,12 +132,108 @@ def sector_impact(topics):
     return list(affected)
 
 
+def get_portfolio_tickers():
+    """Load portfolio tickers from dashboard_positions.json."""
+    positions_file = Path.home() / ".hermes" / "scripts" / "dashboard_positions.json"
+    tickers = set()
+    if positions_file.exists():
+        try:
+            with open(positions_file) as f:
+                data = json.load(f)
+                # Handle both list and dict formats
+                if isinstance(data, list):
+                    positions = data
+                elif isinstance(data, dict):
+                    positions = data.get("positions", [])
+                else:
+                    positions = []
+                for p in positions:
+                    tickers.add(p.get("ticker", ""))
+        except Exception as e:
+            print(f"Warning: Could not load positions: {e}")
+    return tickers
+
+
+def generate_action_plan(tweet, portfolio_tickers):
+    """Generate actionable plan based on tweet impact and portfolio overlap."""
+    topics = tweet["classification"]["topics"]
+    affected_sectors = tweet["affected_sectors"]
+    impact_score = tweet["classification"]["impact_score"]
+    
+    # Find portfolio positions affected
+    affected_positions = []
+    sector_to_tickers = {
+        "tariffs": ["AAPL", "NVDA", "TSLA", "AMD", "AVGO", "TSM", "WMT", "COST"],
+        "china": ["AAPL", "NVDA", "TSLA", "AMD", "AVGO", "TSM", "BIDU", "0700.HK"],
+        "mexico": ["GM", "F", "WMT", "COST"],
+        "crypto": ["BTC", "ETH", "COIN", "ADA", "HBAR", "SOL", "XRP", "DOGE", "TRX", "BNB"],
+        "fed": ["XLF", "VNQ", "TLT", "BIVI", "VOO", "VTI", "QQQ"],
+        "energy": ["XLE", "CEG", "OKLO"],
+        "defense": ["LMT", "NOC", "RTX", "GD"],
+        "inflation": ["GLD", "BTC", "ETH"],
+        "tech": ["AAPL", "MSFT", "NVDA", "GOOGL", "META", "AMD", "AVGO", "TSM", "PLTR", "CRWD", "SNOW", "DDOG", "SHOP", "DASH", "SPOT", "APH"],
+        "taxes": ["IWM", "XLY", "VOO", "VTI"],
+    }
+    
+    # Map affected sectors to tickers
+    at_risk_tickers = set()
+    for topic in topics:
+        if topic in sector_to_tickers:
+            at_risk_tickers.update(sector_to_tickers[topic])
+    
+    # Check overlap with portfolio
+    portfolio_overlap = at_risk_tickers & portfolio_tickers
+    
+    # Generate action items
+    actions = []
+    
+    if impact_score >= 8:
+        if portfolio_overlap:
+            actions.append(f"🔴 URGENT: Review positions — {', '.join(sorted(portfolio_overlap))}")
+            actions.append("→ Check stops on affected positions")
+            actions.append("→ Consider trimming if thesis compromised")
+        else:
+            actions.append("🟡 MONITOR: No direct portfolio exposure")
+            actions.append("→ Watch for sector contagion")
+            
+        # Add specific plays based on topic
+        if "tariffs" in topics:
+            actions.append("→ Short XLI (industrials) or buy GLD (hedge)")
+        elif "china" in topics:
+            actions.append("→ Trim AAPL/NVDA/TSM if held, watch for supply chain impact")
+        elif "crypto" in topics:
+            actions.append("→ BTC/ETH volatile — tighten stops, consider taking profits")
+        elif "fed" in topics:
+            actions.append("→ Rate sensitive: check REITs, banks, utilities")
+        elif "energy" in topics:
+            actions.append("→ XLE momentum play if policy bullish")
+    elif impact_score >= 5:
+        if portfolio_overlap:
+            actions.append(f"🟡 WATCH: {', '.join(sorted(portfolio_overlap))} may be affected")
+            actions.append("→ Set price alerts on these positions")
+        else:
+            actions.append("🟢 No action needed — no portfolio overlap")
+    else:
+        actions.append("🟢 Low impact — no action required")
+    
+    return {
+        "portfolio_overlap": sorted(portfolio_overlap),
+        "actions": actions,
+        "risk_level": "HIGH" if impact_score >= 8 else "MEDIUM" if impact_score >= 5 else "LOW"
+    }
+
+
 def track_trump_tweets():
     """Main tracker function."""
     print("=" * 70)
     print("🦅 TRUMP / POLICY TWEET TRACKER")
     print("=" * 70)
     print(f"Scan time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print()
+
+    # Load portfolio
+    portfolio_tickers = get_portfolio_tickers()
+    print(f"Portfolio: {len(portfolio_tickers)} tickers tracked")
     print()
 
     # Search for Trump tweets
@@ -176,6 +272,12 @@ def track_trump_tweets():
         # Classify
         classification = classify_tweet(text)
         affected_sectors = sector_impact(classification["topics"])
+        
+        # Generate action plan
+        action_plan = generate_action_plan(
+            {"classification": classification, "affected_sectors": affected_sectors},
+            portfolio_tickers
+        )
 
         # Build result
         result = {
@@ -186,6 +288,7 @@ def track_trump_tweets():
             "metrics": metrics,
             "classification": classification,
             "affected_sectors": affected_sectors,
+            "action_plan": action_plan,
         }
         processed.append(result)
 
@@ -196,19 +299,24 @@ def track_trump_tweets():
         print(f"   Impact: {classification['impact_level']} (score: {classification['impact_score']}/10)")
         if affected_sectors:
             print(f"   Sectors: {', '.join(affected_sectors)}")
+        if action_plan["portfolio_overlap"]:
+            print(f"   🔴 PORTFOLIO OVERLAP: {', '.join(action_plan['portfolio_overlap'])}")
         print(f"   ❤️ {metrics.get('like_count', 0)}  🔁 {metrics.get('retweet_count', 0)}  💬 {metrics.get('reply_count', 0)}")
 
-    # High impact alerts
+    # High impact alerts with action plans
     high_impact = [t for t in processed if t["classification"]["impact_score"] >= 7]
     if high_impact:
         print(f"\n{'='*70}")
-        print("🔴 HIGH IMPACT ALERTS")
+        print("🔴 HIGH IMPACT ALERTS — ACTION REQUIRED")
         print(f"{'='*70}")
         for t in high_impact:
             print(f"\n⚠️ HIGH IMPACT:")
             print(f"   {t['text'][:150]}{'...' if len(t['text']) > 150 else ''}")
             print(f"   Sectors affected: {', '.join(t['affected_sectors'])}")
             print(f"   URL: {t['url']}")
+            print(f"\n   📋 ACTION PLAN:")
+            for action in t['action_plan']['actions']:
+                print(f"      {action}")
 
     # Save results
     output = {

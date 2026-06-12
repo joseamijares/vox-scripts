@@ -1,0 +1,29 @@
+{
+  "type": "weekly_opportunities",
+  "generated_at": "2026-06-07T19:00:00Z",
+  "macro_regime": {"regime": "NEUTRAL", "score": 50},
+  "top_10": [
+    {"ticker": "NVDA", "grade": 82, "source": "watchlist", "sector": "Technology", "current_price": 142.5},
+    {"ticker": "MU", "grade": 78, "source": "sp500", "sector": "Technology", "current_price": 108.2},
+    {"ticker": "MRVL", "grade": 76, "source": "watchlist", "sector": "Technology", "current_price": 88.4},
+    {"ticker": "AVGO", "grade": 75, "source": "sp500", "sector": "Technology", "current_price": 215.3},
+    {"ticker": "VRT", "grade": 74, "source": "sp500", "sector": "Industrials", "current_price": 95.1},
+    {"ticker": "GEV", "grade": 73, "source": "sp500", "sector": "Industrials", "current_price": 42.8},
+    {"ticker": "CEG", "grade": 72, "source": "sector_leader", "sector": "Utilities", "current_price": 310.5},
+    {"ticker": "ANET", "grade": 71, "source": "sp500", "sector": "Technology", "current_price": 118.9},
+    {"ticker": "ETN", "grade": 70, "source": "sp500", "sector": "Industrials", "current_price": 335.2},
+    {"ticker": "RMBS", "grade": 70, "source": "watchlist", "sector": "Technology", "current_price": 58.7}
+  ],
+  "sector_leaders": [
+    {"sector": "Technology", "ticker": "NVDA", "rank": 1, "momentum_score": 92, "change_5d_pct": 4.5},
+    {"sector": "Industrials", "ticker": "VRT", "rank": 1, "momentum_score": 87, "change_5d_pct": 3.2},
+    {"sector": "Utilities", "ticker": "CEG", "rank": 1, "momentum_score": 81, "change_5d_pct": 2.8}
+  ],
+  "watchlist_gems": [
+    {"ticker": "NVDA", "grade": 82, "council": "BUY", "sector": "Technology"},
+    {"ticker": "MRVL", "grade": 76, "council": "BUY", "sector": "Technology"}
+  ],
+  "sp500_top": [
+    {"ticker": "MU", "grade": 78, "action": "BUY", "rsi": 58, "current_price": 108.2}
+  ]
+}

@@ -1,0 +1,3262 @@
+{
+  "positions": [
+    {
+      "ticker": "VOO",
+      "value": 21299.63042394015,
+      "pnl": 7223.274673780665,
+      "shares": 31.066077999999994,
+      "brokers": [
+        "eToro",
+        "GBM Main"
+      ],
+      "price": 686.3045873687875,
+      "pct": 11.53576393755933,
+      "live_price": 688.71,
+      "price_change": 3.0400000000000773,
+      "price_change_pct": 0.44343957406463097,
+      "live_value": 21395.518579379997,
+      "live_pnl": 7223.274673780665,
+      "volume": 2568188.0,
+      "price_updated": "2026-05-26T16:05:25.263364+00:00",
+      "grade": 67
+    },
+    {
+      "ticker": "BTC",
+      "value": 16812.2644281929,
+      "pnl": -1175.47,
+      "shares": 0.21633607,
+      "brokers": [
+        "eToro",
+        "Binance"
+      ],
+      "price": 77739.47,
+      "pct": 9.10543093186602,
+      "live_price": 33.75,
+      "price_change": 0.23499999999999943,
+      "price_change_pct": 0.7008648971070666,
+      "live_value": 7.3013423625,
+      "live_pnl": -1175.47,
+      "volume": 1504123.0,
+      "price_updated": "2026-05-26T16:05:19.070391+00:00",
+      "grade": 52
+    },
+    {
+      "ticker": "CRWD",
+      "value": 12902.471314736415,
+      "pnl": 7788.422026909471,
+      "shares": 19.732684,
+      "brokers": [
+        "eToro",
+        "GBM Main"
+      ],
+      "price": 651.5194571710259,
+      "pct": 6.987908256409861,
+      "live_price": 674.9,
+      "price_change": 12.039899999999989,
+      "price_change_pct": 1.8147137732493275,
+      "live_value": 13317.5884316,
+      "live_pnl": 7788.422026909471,
+      "volume": 981077,
+      "price_updated": "2026-05-26T16:05:24.750441+00:00",
+      "grade": 61
+    },
+    {
+      "ticker": "TSLA",
+      "value": 10980.73594502117,
+      "pnl": 7439.767077654701,
+      "shares": 26.128833999999998,
+      "brokers": [
+        "eToro",
+        "GBM Main"
+      ],
+      "price": 419.15617931914403,
+      "pct": 5.947106837124369,
+      "live_price": 431.467,
+      "price_change": 5.425000000000011,
+      "price_change_pct": 1.273444285345417,
+      "live_value": 11273.729619478,
+      "live_pnl": 7439.767077654701,
+      "volume": 21574696.0,
+      "price_updated": "2026-05-26T16:05:21.812814+00:00",
+      "grade": 70
+    },
+    {
+      "ticker": "NVDA",
+      "value": 10149.940235457869,
+      "pnl": 8115.545267644842,
+      "shares": 46.126541,
+      "brokers": [
+        "eToro",
+        "GBM Main"
+      ],
+      "price": 220.62344139650875,
+      "pct": 5.49715240152593,
+      "live_price": 213.61,
+      "price_change": -1.8100000000000023,
+      "price_change_pct": -0.8405702874657512,
+      "live_value": 9853.09042301,
+      "live_pnl": 8115.545267644842,
+      "volume": 79810468.0,
+      "price_updated": "2026-05-26T16:05:22.846198+00:00",
+      "grade": 71
+    },
+    {
+      "ticker": "TSM",
+      "value": 9000.767667459259,
+      "pnl": 5351.119262309343,
+      "shares": 22.0,
+      "brokers": [
+        "IBKR",
+        "GBM Main"
+      ],
+      "price": 409.2159137041118,
+      "pct": 4.874766791818316,
+      "live_price": 411.46,
+      "price_change": 6.939999999999998,
+      "price_change_pct": 1.715613566696331,
+      "live_value": 9052.119999999999,
+      "live_pnl": 5351.119262309343,
+      "volume": 4421828.0,
+      "price_updated": "2026-05-26T16:05:21.137675+00:00",
+      "grade": 76
+    },
+    {
+      "ticker": "ETH",
+      "value": 8396.01031843741,
+      "pnl": -2504.65,
+      "shares": 3.94517201,
+      "brokers": [
+        "Bitso",
+        "eToro",
+        "Binance"
+      ],
+      "price": 2123.760366525547,
+      "pct": 4.54723350232147,
+      "live_price": 19.8011,
+      "price_change": 0.2049999999999983,
+      "price_change_pct": 1.04591836734693,
+      "live_value": 78.118745487211,
+      "live_pnl": -2504.65,
+      "volume": 1661535.0,
+      "price_updated": "2026-05-26T16:05:22.542390+00:00",
+      "grade": 42
+    },
+    {
+      "ticker": "AMD",
+      "value": 8191.99,
+      "pnl": 5090.84,
+      "shares": 17.89413205,
+      "brokers": [
+        "IBKR",
+        "eToro",
+        "GBM USA"
+      ],
+      "price": 449.59,
+      "pct": 4.436737208014206,
+      "live_price": 488.39,
+      "price_change": 20.6601,
+      "price_change_pct": 4.4191781993968045,
+      "live_value": 8739.3151518995,
+      "live_pnl": 5090.84,
+      "volume": 16582014.0,
+      "price_updated": "2026-05-26T16:05:20.749935+00:00",
+      "grade": 64
+    },
+    {
+      "ticker": "GOOGL",
+      "value": 7777.440120628661,
+      "pnl": 4608.711361132054,
+      "shares": 20.0,
+      "brokers": [
+        "GBM Main"
+      ],
+      "price": 388.87200603143305,
+      "pct": 4.212219249083028,
+      "live_price": 386.84,
+      "price_change": 4,
+      "price_change_pct": 1.0444682351097996,
+      "live_value": 7736.799999999999,
+      "live_pnl": 4608.711361132054,
+      "volume": 10040165.0,
+      "price_updated": "2026-05-26T16:05:22.333071+00:00",
+      "grade": 70
+    },
+    {
+      "ticker": "QQQ",
+      "value": 7442.807005741461,
+      "pnl": 2360.4442741982252,
+      "shares": 10.37591699,
+      "brokers": [
+        "eToro",
+        "GBM Main",
+        "GBM USA"
+      ],
+      "price": 718.1354752653251,
+      "pct": 4.030983774936486,
+      "live_price": 727.02,
+      "price_change": 9.32000000000005,
+      "price_change_pct": 1.2988822922763958,
+      "live_value": 7543.4991700698,
+      "live_pnl": 2360.4442741982252,
+      "volume": 17346155.0,
+      "price_updated": "2026-05-26T16:05:21.594851+00:00",
+      "grade": 67
+    },
+    {
+      "ticker": "SHOP",
+      "value": 6877.095637070115,
+      "pnl": 494.805049585339,
+      "shares": 65.606691,
+      "brokers": [
+        "eToro",
+        "GBM Main"
+      ],
+      "price": 105.39175317520154,
+      "pct": 3.724597575932239,
+      "live_price": 104.595,
+      "price_change": 1.5600000000000023,
+      "price_change_pct": 1.5145631067961187,
+      "live_value": 6862.131845145,
+      "live_pnl": 494.805049585339,
+      "volume": 2968336.0,
+      "price_updated": "2026-05-26T16:05:23.750387+00:00",
+      "grade": 43
+    },
+    {
+      "ticker": "VTI",
+      "value": 6137.503906512788,
+      "pnl": 1706.0161074059038,
+      "shares": 16.731377000000002,
+      "brokers": [
+        "eToro",
+        "GBM Main"
+      ],
+      "price": 366.94252740242416,
+      "pct": 3.324038719085085,
+      "live_price": 368.7618,
+      "price_change": 1.9099999999999682,
+      "price_change_pct": 0.5207339349491448,
+      "live_value": 6169.8926989986,
+      "live_pnl": 1706.0161074059038,
+      "volume": 1901543.0,
+      "price_updated": "2026-05-26T16:05:22.711452+00:00",
+      "grade": 67
+    },
+    {
+      "ticker": "META",
+      "value": 6079.372739082526,
+      "pnl": 328.02647219161406,
+      "shares": 9.99355265,
+      "brokers": [
+        "GBM Main",
+        "GBM USA"
+      ],
+      "price": 609.2785478165054,
+      "pct": 3.292555195120439,
+      "live_price": 608.135,
+      "price_change": -2.259999999999991,
+      "price_change_pct": -0.37033395601874464,
+      "live_value": 6077.42914080775,
+      "live_pnl": 328.02647219161406,
+      "volume": 5586447.0,
+      "price_updated": "2026-05-26T16:05:20.765991+00:00",
+      "grade": 45
+    },
+    {
+      "ticker": "APH",
+      "value": 4178.4,
+      "pnl": 1066.5,
+      "shares": 32.66231882,
+      "brokers": [
+        "eToro",
+        "GBM USA"
+      ],
+      "price": 124.86,
+      "pct": 2.2629987036076162,
+      "live_price": 143.08,
+      "price_change": 11.234999999999985,
+      "price_change_pct": 8.507496592457962,
+      "live_value": 4673.324576765601,
+      "live_pnl": 1066.5,
+      "volume": 7831033.0,
+      "price_updated": "2026-05-26T16:05:22.679686+00:00",
+      "grade": 65
+    },
+    {
+      "ticker": "OSCR",
+      "value": 4055.7700000000004,
+      "pnl": 1175.82,
+      "shares": 181.76509363,
+      "brokers": [
+        "eToro",
+        "GBM USA"
+      ],
+      "price": 22.14,
+      "pct": 2.196582962887867,
+      "live_price": 21.97,
+      "price_change": -0.6649999999999991,
+      "price_change_pct": -2.9372791519434593,
+      "live_value": 3993.3791070510997,
+      "live_pnl": 1175.82,
+      "volume": 2646128.0,
+      "price_updated": "2026-05-26T16:05:20.598155+00:00",
+      "grade": 64
+    },
+    {
+      "ticker": "AAPL",
+      "value": 3891.9234982311664,
+      "pnl": 2374.721626747086,
+      "shares": 12.645164000000001,
+      "brokers": [
+        "eToro",
+        "GBM Main"
+      ],
+      "price": 306.5371455083222,
+      "pct": 2.1078445890860493,
+      "live_price": 310.45,
+      "price_change": 1.4800000000000182,
+      "price_change_pct": 0.4792435723074989,
+      "live_value": 3925.6911638,
+      "live_pnl": 2374.721626747086,
+      "volume": 14455843.0,
+      "price_updated": "2026-05-26T16:05:25.487445+00:00",
+      "grade": 71
+    },
+    {
+      "ticker": "MELI",
+      "value": 3372.828974076437,
+      "pnl": 1961.9225192831875,
+      "shares": 2.0,
+      "brokers": [
+        "GBM Main"
+      ],
+      "price": 1686.414197065476,
+      "pct": 1.826705819410584,
+      "live_price": 1641.035,
+      "price_change": -23.38499999999999,
+      "price_change_pct": -1.4049939318200928,
+      "live_value": 3282.07,
+      "live_pnl": 1961.9225192831875,
+      "volume": 237055,
+      "price_updated": "2026-05-26T16:05:19.079290+00:00",
+      "grade": 43
+    },
+    {
+      "ticker": "AMZN",
+      "value": 4168.045003769646,
+      "pnl": 2223.631618627849,
+      "shares": 15.55,
+      "brokers": [
+        "GBM Main",
+        "eToro"
+      ],
+      "price": 269.82195673606685,
+      "pct": 1.6074770236884386,
+      "live_price": 263.52,
+      "price_change": -2.855000000000018,
+      "price_change_pct": -1.0720186242114818,
+      "live_value": 4097.736,
+      "live_pnl": 2223.631618627849,
+      "volume": 15190046.0,
+      "price_updated": "2026-05-26T16:05:20.561016+00:00",
+      "grade": 73
+    },
+    {
+      "ticker": "COST",
+      "value": 2559.19,
+      "pnl": 1279.19,
+      "shares": 2.489538,
+      "brokers": [
+        "eToro"
+      ],
+      "price": 1027.98,
+      "pct": 1.386043378394978,
+      "live_price": 1002.3,
+      "price_change": -26.24000000000001,
+      "price_change_pct": -2.5519334007624686,
+      "live_value": 2495.2639374,
+      "live_pnl": 1279.19,
+      "volume": 1116527.0,
+      "price_updated": "2026-05-26T16:05:21.121921+00:00",
+      "grade": 44
+    },
+    {
+      "ticker": "DDOG",
+      "value": 2433.2400000000002,
+      "pnl": 1432.41,
+      "shares": 10.942793000000002,
+      "brokers": [
+        "eToro"
+      ],
+      "price": 222.36,
+      "pct": 1.3178295437407135,
+      "live_price": 224.79,
+      "price_change": 2.480000000000018,
+      "price_change_pct": 1.1155091759625848,
+      "live_value": 2459.8304384700004,
+      "live_pnl": 1432.41,
+      "volume": 1546203.0,
+      "price_updated": "2026-05-26T16:05:23.221553+00:00",
+      "grade": 64
+    },
+    {
+      "ticker": "WMT",
+      "value": 1903.79,
+      "pnl": 1132.83,
+      "shares": 15.820106,
+      "brokers": [
+        "eToro"
+      ],
+      "price": 120.34,
+      "pct": 1.031082304695851,
+      "live_price": 118.735,
+      "price_change": -1.5499999999999972,
+      "price_change_pct": -1.2887669410493034,
+      "live_value": 1878.4002859099999,
+      "live_pnl": 1132.83,
+      "volume": 10293045.0,
+      "price_updated": "2026-05-26T16:05:22.329793+00:00",
+      "grade": 39
+    },
+    {
+      "ticker": "SMH",
+      "value": 1882.8029368439368,
+      "pnl": 581.545615032187,
+      "shares": 3.286074,
+      "brokers": [
+        "eToro",
+        "GBM Main"
+      ],
+      "price": 570.7614684219684,
+      "pct": 1.019715825489767,
+      "live_price": 594.495,
+      "price_change": 18.089999999999918,
+      "price_change_pct": 3.1388811771238054,
+      "live_value": 1953.5545626300002,
+      "live_pnl": 581.545615032187,
+      "volume": 5464711.0,
+      "price_updated": "2026-05-26T16:05:25.997349+00:00",
+      "grade": 65
+    },
+    {
+      "ticker": "BNB",
+      "value": 1819.4073580220997,
+      "pnl": 117.66,
+      "shares": 2.71002661,
+      "brokers": [
+        "eToro",
+        "Binance"
+      ],
+      "price": 671.61,
+      "pct": 0.98538112496127,
+      "grade": 0
+    },
+    {
+      "ticker": "PLTR",
+      "value": 1801.54,
+      "pnl": 601.54,
+      "shares": 13.164325000000002,
+      "brokers": [
+        "eToro"
+      ],
+      "price": 136.85,
+      "pct": 0.9757042610801421,
+      "live_price": 137.98,
+      "price_change": 1.0999999999999943,
+      "price_change_pct": 0.803623611922848,
+      "live_value": 1816.4135635,
+      "live_pnl": 601.54,
+      "volume": 18272866.0,
+      "price_updated": "2026-05-26T16:05:24.238985+00:00",
+      "grade": 45
+    },
+    {
+      "ticker": "POET",
+      "value": 1744.33,
+      "pnl": 807.86,
+      "shares": 120.01722699999999,
+      "brokers": [
+        "eToro",
+        "Schwab"
+      ],
+      "price": 14.4998,
+      "pct": 0.9447196363832743,
+      "live_price": 13.295,
+      "price_change": -1.295,
+      "price_change_pct": -8.875942426319398,
+      "live_value": 1595.6290329649999,
+      "live_pnl": 807.86,
+      "volume": 28379823.0,
+      "price_updated": "2026-05-26T16:05:25.808983+00:00",
+      "grade": 64
+    },
+    {
+      "ticker": "BIDU",
+      "value": 1707.3700000000001,
+      "pnl": 507.59,
+      "shares": 13.363852999999999,
+      "brokers": [
+        "eToro"
+      ],
+      "price": 127.76,
+      "pct": 0.9247023014978308,
+      "live_price": 126.7,
+      "price_change": -1.0900000000000034,
+      "price_change_pct": -0.8529618906017712,
+      "live_value": 1693.2001750999998,
+      "live_pnl": 507.59,
+      "volume": 1305764.0,
+      "price_updated": "2026-05-26T16:05:21.303357+00:00",
+      "grade": 40
+    },
+    {
+      "ticker": "OKLO",
+      "value": 1619.04,
+      "pnl": -1505.12,
+      "shares": 24.73230023,
+      "brokers": [
+        "eToro",
+        "GBM USA"
+      ],
+      "price": 65.09,
+      "pct": 0.8768632541376784,
+      "live_price": 69.41,
+      "price_change": 3.5,
+      "price_change_pct": 5.312689738919247,
+      "live_value": 1716.6689589643,
+      "live_pnl": -1505.12,
+      "volume": 11178630.0,
+      "price_updated": "2026-05-26T16:05:19.527732+00:00",
+      "grade": 73
+    },
+    {
+      "ticker": "TRX",
+      "value": 1617.5699999999995,
+      "pnl": 1194.8500000000001,
+      "shares": 4341.25018,
+      "brokers": [
+        "eToro"
+      ],
+      "price": 0.3726,
+      "pct": 0.8760671101365525,
+      "live_price": 1.115,
+      "price_change": 0.02499999999999991,
+      "price_change_pct": 2.293577981651368,
+      "live_value": 4840.4939507,
+      "live_pnl": 1194.8500000000001,
+      "volume": 1282399.0,
+      "price_updated": "2026-05-26T16:05:22.157770+00:00",
+      "grade": 39
+    },
+    {
+      "ticker": "XRP",
+      "value": 1549.5184456169618,
+      "pnl": -557.38,
+      "shares": 1138.72512886,
+      "brokers": [
+        "eToro",
+        "Binance"
+      ],
+      "price": 1.3617,
+      "pct": 0.8392107585791867,
+      "live_price": 15.0301,
+      "price_change": 0.06999999999999851,
+      "price_change_pct": 0.4679144385026638,
+      "live_value": 17115.152559278686,
+      "live_pnl": -557.38,
+      "volume": 336435,
+      "price_updated": "2026-05-26T16:05:20.243317+00:00",
+      "grade": 42
+    },
+    {
+      "ticker": "MSFT",
+      "value": 1361.5900000000001,
+      "pnl": 107.68,
+      "shares": 3.251413,
+      "brokers": [
+        "eToro"
+      ],
+      "price": 418.77,
+      "pct": 0.7374297350289812,
+      "live_price": 415.665,
+      "price_change": -3.069999999999993,
+      "price_change_pct": -0.7334496022170708,
+      "live_value": 1351.498584645,
+      "live_pnl": 107.68,
+      "volume": 13938976.0,
+      "price_updated": "2026-05-26T16:05:20.777794+00:00",
+      "grade": 75
+    },
+    {
+      "ticker": "AVGO",
+      "value": 2124.827445340138,
+      "pnl": 208.8035515861509,
+      "shares": 5.073252,
+      "brokers": [
+        "eToro",
+        "GBM Main"
+      ],
+      "price": 416.67343269732646,
+      "pct": 0.7283512266371519,
+      "live_price": 422.803139,
+      "price_change": 8.680000000000007,
+      "price_change_pct": 2.0959095957888656,
+      "live_value": 2144.986870538028,
+      "live_pnl": 208.8035515861509,
+      "volume": 7867305.0,
+      "price_updated": "2026-05-26T16:05:20.079501+00:00",
+      "grade": 76
+    },
+    {
+      "ticker": "SNOW",
+      "value": 1280.27,
+      "pnl": 330.27,
+      "shares": 7.442155,
+      "brokers": [
+        "eToro"
+      ],
+      "price": 172.03,
+      "pct": 0.6933872655245364,
+      "live_price": 178.53,
+      "price_change": 6.3700000000000045,
+      "price_change_pct": 3.699186991869922,
+      "live_value": 1328.6479321499999,
+      "live_pnl": 330.27,
+      "volume": 5886441.0,
+      "price_updated": "2026-05-26T16:05:20.240770+00:00",
+      "grade": 63
+    },
+    {
+      "ticker": "SPOT",
+      "value": 1203.05,
+      "pnl": 864.4,
+      "shares": 2.318557,
+      "brokers": [
+        "eToro"
+      ],
+      "price": 518.88,
+      "pct": 0.6515653337103061,
+      "live_price": 528.365,
+      "price_change": 8.495000000000005,
+      "price_change_pct": 1.634093794483131,
+      "live_value": 1225.0443693050001,
+      "live_pnl": 864.4,
+      "volume": 1096664.0,
+      "price_updated": "2026-05-26T16:05:20.574257+00:00",
+      "grade": 66
+    },
+    {
+      "ticker": "DOGE",
+      "value": 1104.4361300493185,
+      "pnl": -912.75,
+      "shares": 10703.959586160001,
+      "brokers": [
+        "eToro",
+        "Binance"
+      ],
+      "price": 0.10324,
+      "pct": 0.5981565983436293,
+      "grade": 0
+    },
+    {
+      "ticker": "0700.HK",
+      "value": 1074.3,
+      "pnl": -219.99,
+      "shares": 19.049672,
+      "brokers": [
+        "eToro"
+      ],
+      "price": 441.8,
+      "pct": 0.5818350342919927,
+      "grade": 0
+    },
+    {
+      "ticker": "COIN",
+      "value": 794.0400000000001,
+      "pnl": -385.96000000000004,
+      "shares": 4.291449,
+      "brokers": [
+        "eToro"
+      ],
+      "price": 185.03,
+      "pct": 0.430047743301884,
+      "live_price": 185.02,
+      "price_change": 0.16499999999999204,
+      "price_change_pct": 0.08919401048704904,
+      "live_value": 794.00389398,
+      "live_pnl": -385.96000000000004,
+      "volume": 2842092.0,
+      "price_updated": "2026-05-26T16:05:19.717229+00:00",
+      "grade": 39
+    },
+    {
+      "ticker": "NAFTRAC ISHRS",
+      "value": 792.4375108739779,
+      "pnl": 8.583193179841096,
+      "shares": 200.0,
+      "brokers": [
+        "GBM Main"
+      ],
+      "price": 3.9621875543698892,
+      "pct": 0.4291798439110326,
+      "grade": 0
+    },
+    {
+      "ticker": "CRWV",
+      "value": 662.46,
+      "pnl": -187.21,
+      "shares": 6.277428,
+      "brokers": [
+        "eToro"
+      ],
+      "price": 105.53,
+      "pct": 0.3587847312827641,
+      "live_price": 107.96,
+      "price_change": 2.490000000000009,
+      "price_change_pct": 2.3604133093184276,
+      "live_value": 677.7111268799999,
+      "live_pnl": -187.21,
+      "volume": 11647625.0,
+      "price_updated": "2026-05-26T16:05:25.500363+00:00",
+      "grade": 47
+    },
+    {
+      "ticker": "IREN",
+      "value": 630.79,
+      "pnl": 33.22,
+      "shares": 11,
+      "brokers": [
+        "IBKR",
+        "Schwab"
+      ],
+      "price": 56.2318,
+      "pct": 0.3416324316122555,
+      "live_price": 60.3,
+      "price_change": 3.480800000000002,
+      "price_change_pct": 6.124934013725149,
+      "live_value": 663.3,
+      "live_pnl": 33.22,
+      "volume": 22157966.0,
+      "price_updated": "2026-05-26T16:05:23.222649+00:00",
+      "grade": 67
+    },
+    {
+      "ticker": "JMIA",
+      "value": 585.13,
+      "pnl": -1264.6100000000001,
+      "shares": 84.070735,
+      "brokers": [
+        "eToro"
+      ],
+      "price": 6.96,
+      "pct": 0.316903224067089,
+      "live_price": 7.175,
+      "price_change": 0.20500000000000007,
+      "price_change_pct": 2.9411764705882364,
+      "live_value": 603.207523625,
+      "live_pnl": -1264.6100000000001,
+      "volume": 1554843.0,
+      "price_updated": "2026-05-26T16:05:24.426214+00:00",
+      "grade": 44
+    },
+    {
+      "ticker": "SOL",
+      "value": 544.2457960944,
+      "pnl": 0,
+      "shares": 6.30132912,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 86.37,
+      "pct": 0.29476056169957937,
+      "grade": 0
+    },
+    {
+      "ticker": "CEG",
+      "value": 407.28,
+      "pnl": -122.72,
+      "shares": 1.383918,
+      "brokers": [
+        "eToro"
+      ],
+      "price": 294.3,
+      "pct": 0.22058063182206344,
+      "live_price": 304.57,
+      "price_change": 10.525000000000034,
+      "price_change_pct": 3.5790798109293824,
+      "live_value": 421.49990526,
+      "live_pnl": -122.72,
+      "volume": 1630540.0,
+      "price_updated": "2026-05-26T16:05:21.275386+00:00",
+      "grade": 65
+    },
+    {
+      "ticker": "CBRS",
+      "value": 372.57,
+      "pnl": -85.19,
+      "shares": 1.451777,
+      "brokers": [
+        "eToro"
+      ],
+      "price": 256.63,
+      "pct": 0.20178188469344477,
+      "live_price": 255.35,
+      "price_change": -1.8699999999999761,
+      "price_change_pct": -0.7282498636965403,
+      "live_value": 370.71125695,
+      "live_pnl": -85.19,
+      "volume": 5409626.0,
+      "price_updated": "2026-05-26T16:05:24.235523+00:00",
+      "grade": 0
+    },
+    {
+      "ticker": "SPRB",
+      "value": 206.56,
+      "pnl": -601.44,
+      "shares": 4,
+      "brokers": [
+        "Schwab"
+      ],
+      "price": 51.64,
+      "pct": 0.11187177202211117,
+      "live_price": 52.73,
+      "price_change": 1.654999999999994,
+      "price_change_pct": 3.240332843857061,
+      "live_value": 210.92,
+      "live_pnl": -601.44,
+      "volume": 22644,
+      "price_updated": "2026-05-26T16:05:23.897202+00:00",
+      "grade": 36
+    },
+    {
+      "ticker": "HBAR",
+      "value": 166.7712110032765,
+      "pnl": -37.59,
+      "shares": 1863.70331285,
+      "brokers": [
+        "eToro",
+        "Binance"
+      ],
+      "price": 0.08949,
+      "pct": 0.09032238040864614,
+      "grade": 0
+    },
+    {
+      "ticker": "DASH",
+      "value": 139.16,
+      "pnl": -416.83000000000004,
+      "shares": 3.0291539999999997,
+      "brokers": [
+        "eToro"
+      ],
+      "price": 45.94,
+      "pct": 0.07536829877322322,
+      "live_price": 155.355,
+      "price_change": -4.884999999999991,
+      "price_change_pct": -3.0483619344773736,
+      "live_value": 470.5942196699999,
+      "live_pnl": -416.83000000000004,
+      "volume": 1375905.0,
+      "price_updated": "2026-05-26T16:05:20.067465+00:00",
+      "grade": 38
+    },
+    {
+      "ticker": "GBM O",
+      "value": 125.90616482050689,
+      "pnl": 26.770283593342228,
+      "shares": 130.0,
+      "brokers": [
+        "GBM Main"
+      ],
+      "price": 0.9685089601577452,
+      "pct": 0.06819009375957638,
+      "grade": 0
+    },
+    {
+      "ticker": "ADA",
+      "value": 106.98000000000002,
+      "pnl": -819.91,
+      "shares": 434.829194,
+      "brokers": [
+        "eToro"
+      ],
+      "price": 0.246,
+      "pct": 0.057939785877834306,
+      "grade": 0
+    },
+    {
+      "ticker": "AXS",
+      "value": 58.81584891732,
+      "pnl": 0,
+      "shares": 50.44240902,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 1.166,
+      "pct": 0.03185434373240393,
+      "live_price": 99.3827,
+      "price_change": -0.5572999999999979,
+      "price_change_pct": -0.557634580748447,
+      "live_value": 5013.102802911954,
+      "live_pnl": 0,
+      "volume": 68814,
+      "price_updated": "2026-05-26T16:05:23.230201+00:00",
+      "grade": 42
+    },
+    {
+      "ticker": "XLE",
+      "value": 40.86,
+      "pnl": 9.09,
+      "shares": 0.69093582,
+      "brokers": [
+        "GBM USA"
+      ],
+      "price": 59.13,
+      "pct": 0.022129553663940076,
+      "live_price": 58.75,
+      "price_change": -0.7250000000000014,
+      "price_change_pct": -1.2186922171793604,
+      "live_value": 40.592479425,
+      "live_pnl": 9.09,
+      "volume": 15708166.0,
+      "price_updated": "2026-05-26T16:05:24.815453+00:00",
+      "grade": 74
+    },
+    {
+      "ticker": "BYND",
+      "value": 26.152061706199618,
+      "pnl": -2079.7309052949026,
+      "shares": 33.0,
+      "brokers": [
+        "GBM Main"
+      ],
+      "price": 0.7922055326799282,
+      "pct": 0.014163814315957333,
+      "live_price": 0.7625,
+      "price_change": -0.0039000000000000146,
+      "price_change_pct": -0.5092048570309459,
+      "live_value": 25.162499999999998,
+      "live_pnl": -2079.7309052949026,
+      "volume": 19475476.0,
+      "price_updated": "2026-05-26T16:05:23.920090+00:00",
+      "grade": 50
+    },
+    {
+      "ticker": "BIVI",
+      "value": 11.35,
+      "pnl": -241.14,
+      "shares": 7.470294,
+      "brokers": [
+        "eToro"
+      ],
+      "price": 1.52,
+      "pct": 0.006147098239983354,
+      "live_price": 1.4,
+      "price_change": -0.1200000000000001,
+      "price_change_pct": -7.89473684210527,
+      "live_value": 10.4584116,
+      "live_pnl": -241.14,
+      "volume": 164665,
+      "price_updated": "2026-05-26T16:05:23.770319+00:00",
+      "grade": 70
+    },
+    {
+      "ticker": "BONK",
+      "value": 5.175780415599999,
+      "pnl": 0,
+      "shares": 844336.12,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 6.13e-06,
+      "pct": 0.002803174509539654,
+      "grade": 0
+    },
+    {
+      "ticker": "A",
+      "value": 4.12,
+      "pnl": -295.88,
+      "shares": 51.813114,
+      "brokers": [
+        "eToro"
+      ],
+      "price": 0.0796,
+      "pct": 0.0022313695813860283,
+      "live_price": 114.41,
+      "price_change": -0.6099999999999994,
+      "price_change_pct": -0.5306193458594289,
+      "live_value": 5927.93837274,
+      "live_pnl": -295.88,
+      "volume": 621808,
+      "price_updated": "2026-05-26T16:05:25.793537+00:00",
+      "grade": 70
+    },
+    {
+      "ticker": "PENGU",
+      "value": 3.10952305950276,
+      "pnl": 0,
+      "shares": 342.30769039,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.009084,
+      "pct": 0.001684100768833222,
+      "grade": 0
+    },
+    {
+      "ticker": "KITE",
+      "value": 2.510641261746,
+      "pnl": 0,
+      "shares": 12.44740338,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.2017,
+      "pct": 0.0013597496459302578,
+      "grade": 0
+    },
+    {
+      "ticker": "MORPHO",
+      "value": 1.5536517348,
+      "pnl": 0,
+      "shares": 0.6631036,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 2.343,
+      "pct": 0.0008414493255097942,
+      "grade": 0
+    },
+    {
+      "ticker": "FF",
+      "value": 1.3572041685007998,
+      "pnl": 0,
+      "shares": 15.57498472,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.08714,
+      "pct": 0.0007350543925541268,
+      "live_price": 4.08,
+      "price_change": -0.040000000000000036,
+      "price_change_pct": -0.9708737864077678,
+      "live_value": 63.5459376576,
+      "live_pnl": 0,
+      "volume": 65842,
+      "price_updated": "2026-05-26T16:05:26.004162+00:00",
+      "grade": 48
+    },
+    {
+      "ticker": "SCCO",
+      "value": 1.32,
+      "pnl": 1.32,
+      "shares": 0.007379,
+      "brokers": [
+        "eToro"
+      ],
+      "price": 179.55,
+      "pct": 0.0007149048173372713,
+      "live_price": 185.93,
+      "price_change": 6.02000000000001,
+      "price_change_pct": 3.3505871876217572,
+      "live_value": 1.37197747,
+      "live_pnl": 1.32,
+      "volume": 311122,
+      "price_updated": "2026-05-26T16:05:22.673285+00:00",
+      "grade": 66
+    },
+    {
+      "ticker": "KAITO",
+      "value": 1.279896848032,
+      "pnl": 0,
+      "shares": 2.33047496,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.5492,
+      "pct": 0.000693185168449141,
+      "grade": 0
+    },
+    {
+      "ticker": "NXPC",
+      "value": 1.239576567362,
+      "pnl": 0,
+      "shares": 3.41387102,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.3631,
+      "pct": 0.0006713479238374941,
+      "grade": 0
+    },
+    {
+      "ticker": "NIGHT",
+      "value": 0.9203970319872,
+      "pnl": 0,
+      "shares": 28.19843848,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.03264,
+      "pct": 0.0004984820242655877,
+      "grade": 0
+    },
+    {
+      "ticker": "AIGENSYN",
+      "value": 0.7656270601824999,
+      "pnl": 0,
+      "shares": 23.66698795,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.03235,
+      "pct": 0.00041465944970321363,
+      "grade": 0
+    },
+    {
+      "ticker": "2Z",
+      "value": 0.7549397016939,
+      "pnl": 0,
+      "shares": 7.36454689,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.10251,
+      "pct": 0.00040887123450009967,
+      "grade": 0
+    },
+    {
+      "ticker": "VANA",
+      "value": 0.6825267338800001,
+      "pnl": 0,
+      "shares": 0.45441194,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 1.502,
+      "pct": 0.00036965276516082255,
+      "grade": 0
+    },
+    {
+      "ticker": "XPL",
+      "value": 0.6573596747129999,
+      "pnl": 0,
+      "shares": 7.79786091,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.0843,
+      "pct": 0.0003560224228602918,
+      "live_price": 0.8282,
+      "price_change": 0.0022000000000000908,
+      "price_change_pct": 0.26634382566587056,
+      "live_value": 6.458188405662,
+      "live_pnl": 0,
+      "volume": 18277,
+      "price_updated": "2026-05-26T16:05:21.075833+00:00",
+      "grade": 43
+    },
+    {
+      "ticker": "SPK",
+      "value": 0.64175513059252,
+      "pnl": 0,
+      "shares": 22.98879247,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.027916,
+      "pct": 0.0003475710866753804,
+      "grade": 0
+    },
+    {
+      "ticker": "HUMA",
+      "value": 0.5710929794752,
+      "pnl": 0,
+      "shares": 22.16975852,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.02576,
+      "pct": 0.0003093008501320574,
+      "live_price": 1.06,
+      "price_change": 0.008999999999999897,
+      "price_change_pct": 0.8571428571428473,
+      "live_value": 23.4999440312,
+      "live_pnl": 0,
+      "volume": 3466621.0,
+      "price_updated": "2026-05-26T16:05:20.776766+00:00",
+      "grade": 59
+    },
+    {
+      "ticker": "HOME",
+      "value": 0.5469781551035,
+      "pnl": 0,
+      "shares": 22.83833633,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.02395,
+      "pct": 0.00029624039247101914,
+      "grade": 0
+    },
+    {
+      "ticker": "ANIME",
+      "value": 0.5362158757837999,
+      "pnl": 0,
+      "shares": 122.14484642,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.00439,
+      "pct": 0.0002904116005534564,
+      "grade": 0
+    },
+    {
+      "ticker": "AT",
+      "value": 0.524964866878,
+      "pnl": 0,
+      "shares": 4.28193203,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.1226,
+      "pct": 0.0002843181153514405,
+      "grade": 0
+    },
+    {
+      "ticker": "SOMI",
+      "value": 0.524173052856,
+      "pnl": 0,
+      "shares": 3.05997112,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.1713,
+      "pct": 0.000283889273185711,
+      "grade": 0
+    },
+    {
+      "ticker": "SAHARA",
+      "value": 0.5124712304558,
+      "pnl": 0,
+      "shares": 14.38313866,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.03563,
+      "pct": 0.0002775516298481896,
+      "grade": 0
+    },
+    {
+      "ticker": "FDUSD",
+      "value": 0.49461827,
+      "pnl": 0,
+      "shares": 0.49461827,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 1.0,
+      "pct": 0.0002678825636106266,
+      "grade": 0
+    },
+    {
+      "ticker": "LAYER",
+      "value": 0.47726522518,
+      "pnl": 0,
+      "shares": 5.36253062,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.089,
+      "pct": 0.00025848424896116626,
+      "grade": 0
+    },
+    {
+      "ticker": "PROVE",
+      "value": 0.47124758120800003,
+      "pnl": 0,
+      "shares": 1.72491794,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.2732,
+      "pct": 0.00025522512573040616,
+      "grade": 0
+    },
+    {
+      "ticker": "RED",
+      "value": 0.46954996776999997,
+      "pnl": 0,
+      "shares": 3.34914385,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.1402,
+      "pct": 0.000254305707529798,
+      "grade": 0
+    },
+    {
+      "ticker": "BERA",
+      "value": 0.45431505477000006,
+      "pnl": 0,
+      "shares": 1.17394071,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.387,
+      "pct": 0.0002460545615484237,
+      "grade": 0
+    },
+    {
+      "ticker": "USUAL",
+      "value": 0.45323090555990003,
+      "pnl": 0,
+      "shares": 32.58309889,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.01391,
+      "pct": 0.0002454673922355351,
+      "grade": 0
+    },
+    {
+      "ticker": "MOVE",
+      "value": 0.44890859546899997,
+      "pnl": 0,
+      "shares": 27.54040463,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.0163,
+      "pct": 0.00024312645260977,
+      "live_price": 23.75,
+      "price_change": 0.8599999999999994,
+      "price_change_pct": 3.7570991699432037,
+      "live_value": 654.0846099625,
+      "live_pnl": 0,
+      "volume": 15750,
+      "price_updated": "2026-05-26T16:05:19.525586+00:00",
+      "grade": 59
+    },
+    {
+      "ticker": "GUN",
+      "value": 0.4043141881245,
+      "pnl": 0,
+      "shares": 34.11934077,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.01185,
+      "pct": 0.00021897436424849452,
+      "grade": 0
+    },
+    {
+      "ticker": "AVNT",
+      "value": 0.33333748076499997,
+      "pnl": 0,
+      "shares": 2.14641005,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.1553,
+      "pct": 0.0001805337657560367,
+      "live_price": 34.745,
+      "price_change": 0.43499999999999517,
+      "price_change_pct": 1.26785193821042,
+      "live_value": 74.57701718725,
+      "live_pnl": 0,
+      "volume": 231623,
+      "price_updated": "2026-05-26T16:05:24.754711+00:00",
+      "grade": 45
+    },
+    {
+      "ticker": "ERA",
+      "value": 0.332629663284,
+      "pnl": 0,
+      "shares": 2.29875372,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.1447,
+      "pct": 0.00018015041565985307,
+      "grade": 0
+    },
+    {
+      "ticker": "SXT",
+      "value": 0.32829891308099995,
+      "pnl": 0,
+      "shares": 27.40391595,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.01198,
+      "pct": 0.0001778049049153007,
+      "live_price": 116.06,
+      "price_change": 1.6200000000000045,
+      "price_change_pct": 1.4155889549108742,
+      "live_value": 3180.498485157,
+      "live_pnl": 0,
+      "volume": 104756,
+      "price_updated": "2026-05-26T16:05:25.993439+00:00",
+      "grade": 73
+    },
+    {
+      "ticker": "BIO",
+      "value": 0.3241995295,
+      "pnl": 0,
+      "shares": 9.2628437,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.035,
+      "pct": 0.00017558470107426272,
+      "live_price": 289.805,
+      "price_change": 2.0649999999999977,
+      "price_change_pct": 0.7176617779940215,
+      "live_value": 2684.4184184785,
+      "live_pnl": 0,
+      "volume": 59537,
+      "price_updated": "2026-05-26T16:05:24.103545+00:00",
+      "grade": 65
+    },
+    {
+      "ticker": "0G",
+      "value": 0.32020532479999997,
+      "pnl": 0,
+      "shares": 0.6643264,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.482,
+      "pct": 0.0001734214615428527,
+      "grade": 0
+    },
+    {
+      "ticker": "THE",
+      "value": 0.31224637215199996,
+      "pnl": 0,
+      "shares": 3.46555352,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.0901,
+      "pct": 0.00016911093609662964,
+      "grade": 0
+    },
+    {
+      "ticker": "SIGN",
+      "value": 0.305816976444,
+      "pnl": 0,
+      "shares": 23.70674236,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.0129,
+      "pct": 0.00016562881036616243,
+      "grade": 0
+    },
+    {
+      "ticker": "OPN",
+      "value": 0.289166397596,
+      "pnl": 0,
+      "shares": 1.67729929,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.1724,
+      "pct": 0.00015661094746473114,
+      "grade": 0
+    },
+    {
+      "ticker": "ALLO",
+      "value": 0.28186725777599997,
+      "pnl": 0,
+      "shares": 3.2176627599999996,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.0876,
+      "pct": 0.00015265777305584,
+      "live_price": 2.075,
+      "price_change": 0.07500000000000018,
+      "price_change_pct": 3.750000000000009,
+      "live_value": 6.676650227,
+      "live_pnl": 0,
+      "volume": 1336623.0,
+      "price_updated": "2026-05-26T16:05:19.602119+00:00",
+      "grade": 41
+    },
+    {
+      "ticker": "ACE",
+      "value": 0.27227395413399996,
+      "pnl": 0,
+      "shares": 2.3015549799999997,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.1183,
+      "pct": 0.00014746209200444226,
+      "grade": 0
+    },
+    {
+      "ticker": "LINEA",
+      "value": 0.24708164086858,
+      "pnl": 0,
+      "shares": 76.09536214,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.003247,
+      "pct": 0.0001338180722216253,
+      "grade": 0
+    },
+    {
+      "ticker": "NIL",
+      "value": 0.2423563138322,
+      "pnl": 0,
+      "shares": 2.98689073,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.08114,
+      "pct": 0.00013125886081116915,
+      "grade": 0
+    },
+    {
+      "ticker": "HOLO",
+      "value": 0.240774069564,
+      "pnl": 0,
+      "shares": 3.18484219,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.0756,
+      "pct": 0.00013040192592515365,
+      "live_price": 2.0301,
+      "price_change": 0.1401000000000001,
+      "price_change_pct": 7.412698412698419,
+      "live_value": 6.465548129919,
+      "live_pnl": 0,
+      "volume": 673652,
+      "price_updated": "2026-05-26T16:05:24.946538+00:00",
+      "grade": 68
+    },
+    {
+      "ticker": "HYPER",
+      "value": 0.238322723205,
+      "pnl": 0,
+      "shares": 2.31606145,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.1029,
+      "pct": 0.00012907429007590272,
+      "grade": 0
+    },
+    {
+      "ticker": "GPS",
+      "value": 0.23558929099599998,
+      "pnl": 0,
+      "shares": 34.64548397,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.0068,
+      "pct": 0.0001275938780652368,
+      "grade": 0
+    },
+    {
+      "ticker": "WCT",
+      "value": 0.23233146471520003,
+      "pnl": 0,
+      "shares": 3.70131376,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.06277,
+      "pct": 0.00012582945707872783,
+      "live_price": 1.69,
+      "price_change": 0.049900000000000055,
+      "price_change_pct": 3.0424974086945955,
+      "live_value": 6.2552202544,
+      "live_pnl": 0,
+      "volume": 9132,
+      "price_updated": "2026-05-26T16:05:24.774749+00:00",
+      "grade": 25
+    },
+    {
+      "ticker": "ROBO",
+      "value": 0.23100258907319998,
+      "pnl": 0,
+      "shares": 11.30149653,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.02044,
+      "pct": 0.00012510974526197936,
+      "live_price": 89.61,
+      "price_change": 2.2900000000000063,
+      "price_change_pct": 2.6231386025200534,
+      "live_value": 1012.7271040533,
+      "live_pnl": 0,
+      "volume": 265786,
+      "price_updated": "2026-05-26T16:05:21.815924+00:00",
+      "grade": 72
+    },
+    {
+      "ticker": "PLUME",
+      "value": 0.23091100556480001,
+      "pnl": 0,
+      "shares": 15.35312537,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.01504,
+      "pct": 0.00012506014413217345,
+      "grade": 0
+    },
+    {
+      "ticker": "INIT",
+      "value": 0.22804057801799998,
+      "pnl": 0,
+      "shares": 2.72449914,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.0837,
+      "pct": 0.00012350553619200303,
+      "grade": 0
+    },
+    {
+      "ticker": "BARD",
+      "value": 0.22709758136400002,
+      "pnl": 0,
+      "shares": 1.03839772,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.2187,
+      "pct": 0.0001229948143354292,
+      "grade": 0
+    },
+    {
+      "ticker": "ZBT",
+      "value": 0.22365622142,
+      "pnl": 0,
+      "shares": 1.5684167,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.1426,
+      "pct": 0.00012113099251561315,
+      "grade": 0
+    },
+    {
+      "ticker": "WAL",
+      "value": 0.220118744976,
+      "pnl": 0,
+      "shares": 3.31504134,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.0664,
+      "pct": 0.00011921511452240655,
+      "live_price": 79.29,
+      "price_change": 0.7000000000000028,
+      "price_change_pct": 0.8906985621580389,
+      "live_value": 262.84962784860005,
+      "live_pnl": 0,
+      "volume": 195361,
+      "price_updated": "2026-05-26T16:05:21.798938+00:00",
+      "grade": 70
+    },
+    {
+      "ticker": "C",
+      "value": 0.21444243139,
+      "pnl": 0,
+      "shares": 2.29350194,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.0935,
+      "pct": 0.00011614085397138503,
+      "live_price": 126.01,
+      "price_change": 0.8499999999999943,
+      "price_change_pct": 0.6795107522583694,
+      "live_value": 289.0041794594,
+      "live_pnl": 0,
+      "volume": 2209958.0,
+      "price_updated": "2026-05-26T16:05:23.220260+00:00",
+      "grade": 74
+    },
+    {
+      "ticker": "LA",
+      "value": 0.206593478616,
+      "pnl": 0,
+      "shares": 1.73026364,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.1194,
+      "pct": 0.00011188990385836585,
+      "grade": 0
+    },
+    {
+      "ticker": "OPEN",
+      "value": 0.19395644728800002,
+      "pnl": 0,
+      "shares": 1.02949282,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.1884,
+      "pct": 0.00010504575645440433,
+      "live_price": 4.665,
+      "price_change": 0.1349999999999998,
+      "price_change_pct": 2.980132450331121,
+      "live_value": 4.8025840053,
+      "live_pnl": 0,
+      "volume": 17240740.0,
+      "price_updated": "2026-05-26T16:05:20.032371+00:00",
+      "grade": 44
+    },
+    {
+      "ticker": "SHELL",
+      "value": 0.186066196064,
+      "pnl": 0,
+      "shares": 5.67274988,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.0328,
+      "pct": 0.00010077243932558695,
+      "grade": 0
+    },
+    {
+      "ticker": "BREV",
+      "value": 0.18278633766900002,
+      "pnl": 0,
+      "shares": 1.61614799,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.1131,
+      "pct": 9.899608586591305e-05,
+      "grade": 0
+    },
+    {
+      "ticker": "SAPIEN",
+      "value": 0.180432022041,
+      "pnl": 0,
+      "shares": 1.57858287,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.1143,
+      "pct": 9.772100133258757e-05,
+      "grade": 0
+    },
+    {
+      "ticker": "PARTI",
+      "value": 0.179970646668,
+      "pnl": 0,
+      "shares": 3.48780323,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.0516,
+      "pct": 9.747112294110387e-05,
+      "grade": 0
+    },
+    {
+      "ticker": "MIRA",
+      "value": 0.168140973902,
+      "pnl": 0,
+      "shares": 2.06561393,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.0814,
+      "pct": 9.106423654115166e-05,
+      "live_price": 0.98,
+      "price_change": -0.01200000000000001,
+      "price_change_pct": -1.2096774193548396,
+      "live_value": 2.0243016514,
+      "live_pnl": 0,
+      "volume": 34786,
+      "price_updated": "2026-05-26T16:05:24.456716+00:00",
+      "grade": 36
+    },
+    {
+      "ticker": "CHIP",
+      "value": 0.1439394915475,
+      "pnl": 0,
+      "shares": 2.93574325,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.04903,
+      "pct": 7.795684538817058e-05,
+      "grade": 0
+    },
+    {
+      "ticker": "ENSO",
+      "value": 0.14380254945,
+      "pnl": 0,
+      "shares": 0.18088371,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.795,
+      "pct": 7.788267829332285e-05,
+      "grade": 0
+    },
+    {
+      "ticker": "USDT",
+      "value": 0.1421374,
+      "pnl": 0,
+      "shares": 0.1421374,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 1.0,
+      "pct": 7.698084241196564e-05,
+      "grade": 0
+    },
+    {
+      "ticker": "BABY",
+      "value": 0.14146174933879999,
+      "pnl": 0,
+      "shares": 8.72143954,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.01622,
+      "pct": 7.661491369035276e-05,
+      "grade": 0
+    },
+    {
+      "ticker": "SOPH",
+      "value": 0.1388458985718,
+      "pnl": 0,
+      "shares": 17.39923541,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.00798,
+      "pct": 7.519818314886511e-05,
+      "live_price": 5,
+      "price_change": 0.1200000000000001,
+      "price_change_pct": 2.4590163934426252,
+      "live_value": 86.99617705,
+      "live_pnl": 0,
+      "volume": 18643,
+      "price_updated": "2026-05-26T16:05:24.448285+00:00",
+      "grade": 63
+    },
+    {
+      "ticker": "EDEN",
+      "value": 0.131544662802,
+      "pnl": 0,
+      "shares": 1.54033563,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.0854,
+      "pct": 7.124387358496723e-05,
+      "live_price": 112.75,
+      "price_change": 0.25849999999999795,
+      "price_change_pct": 0.22979514007724847,
+      "live_value": 173.6728422825,
+      "live_pnl": 0,
+      "volume": 3682,
+      "price_updated": "2026-05-26T16:05:22.712132+00:00",
+      "grade": 81
+    },
+    {
+      "ticker": "YB",
+      "value": 0.12953516659199998,
+      "pnl": 0,
+      "shares": 1.03794204,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.1248,
+      "pct": 7.015554137212632e-05,
+      "live_price": 12.44,
+      "price_change": -0.2599999999999998,
+      "price_change_pct": -2.0472440944881876,
+      "live_value": 12.911998977599998,
+      "live_pnl": 0,
+      "volume": 27059,
+      "price_updated": "2026-05-26T16:05:25.490744+00:00",
+      "grade": 0
+    },
+    {
+      "ticker": "TOWNS",
+      "value": 0.12448312612779999,
+      "pnl": 0,
+      "shares": 36.50531558,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.00341,
+      "pct": 6.741938374694495e-05,
+      "grade": 0
+    },
+    {
+      "ticker": "STO",
+      "value": 0.119939490515,
+      "pnl": 0,
+      "shares": 1.74077635,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.0689,
+      "pct": 6.4958575422842e-05,
+      "grade": 0
+    },
+    {
+      "ticker": "NEWT",
+      "value": 0.10979501482600001,
+      "pnl": 0,
+      "shares": 1.43899102,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.0763,
+      "pct": 5.9464382589942825e-05,
+      "live_price": 13.57,
+      "price_change": 0.1899999999999995,
+      "price_change_pct": 1.4200298953662145,
+      "live_value": 19.5271081414,
+      "live_pnl": 0,
+      "volume": 58733,
+      "price_updated": "2026-05-26T16:05:24.274224+00:00",
+      "grade": 0
+    },
+    {
+      "ticker": "ZKC",
+      "value": 0.105823935504,
+      "pnl": 0,
+      "shares": 1.54713356,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.0684,
+      "pct": 5.7313667637422945e-05,
+      "grade": 0
+    },
+    {
+      "ticker": "MMT",
+      "value": 0.10284760720000001,
+      "pnl": 0,
+      "shares": 0.79113544,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.13,
+      "pct": 5.570170442340259e-05,
+      "live_price": 4.515,
+      "price_change": 0.024999999999999467,
+      "price_change_pct": 0.556792873051213,
+      "live_value": 3.5719765116,
+      "live_pnl": 0,
+      "volume": 52123,
+      "price_updated": "2026-05-26T16:05:20.591020+00:00",
+      "grade": 44
+    },
+    {
+      "ticker": "HAEDAL",
+      "value": 0.1009222113504,
+      "pnl": 0,
+      "shares": 3.47528276,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.02904,
+      "pct": 5.4658920508129686e-05,
+      "grade": 0
+    },
+    {
+      "ticker": "TREE",
+      "value": 0.09883910235999999,
+      "pnl": 0,
+      "shares": 1.4930378,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.0662,
+      "pct": 5.3530720013981546e-05,
+      "live_price": 36.87,
+      "price_change": 0.44999999999999574,
+      "price_change_pct": 1.2355848434925747,
+      "live_value": 55.048303686,
+      "live_pnl": 0,
+      "volume": 39809,
+      "price_updated": "2026-05-26T16:05:22.704283+00:00",
+      "grade": 41
+    },
+    {
+      "ticker": "SOLV",
+      "value": 0.0806538100734,
+      "pnl": 0,
+      "shares": 19.06709458,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.00423,
+      "pct": 4.3681664665211356e-05,
+      "live_price": 75.68,
+      "price_change": -1.1499999999999915,
+      "price_change_pct": -1.4968111414811813,
+      "live_value": 1442.9977178144002,
+      "live_pnl": 0,
+      "volume": 294771,
+      "price_updated": "2026-05-26T16:05:19.014895+00:00",
+      "grade": 73
+    },
+    {
+      "ticker": "HEMI",
+      "value": 0.07519751704340001,
+      "pnl": 0,
+      "shares": 10.34353742,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.00727,
+      "pct": 4.072656605009714e-05,
+      "live_price": 0,
+      "price_change": 0,
+      "price_change_pct": 0,
+      "live_value": 0.0,
+      "live_pnl": 0,
+      "volume": 0,
+      "price_updated": "2026-05-26T16:05:21.111855+00:00",
+      "grade": 72
+    },
+    {
+      "ticker": "EUL",
+      "value": 0.07031197184,
+      "pnl": 0,
+      "shares": 0.05562656,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 1.264,
+      "pct": 3.8080581352195877e-05,
+      "grade": 0
+    },
+    {
+      "ticker": "KERNEL",
+      "value": 0.067775960304,
+      "pnl": 0,
+      "shares": 1.08615321,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.0624,
+      "pct": 3.670709130377975e-05,
+      "grade": 0
+    },
+    {
+      "ticker": "RESOLV",
+      "value": 0.061180272702,
+      "pnl": 0,
+      "shares": 2.27435958,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.0269,
+      "pct": 3.3134902788384656e-05,
+      "grade": 0
+    },
+    {
+      "ticker": "MITO",
+      "value": 0.06062698645799999,
+      "pnl": 0,
+      "shares": 1.5333077,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.03954,
+      "pct": 3.2835245969292196e-05,
+      "grade": 0
+    },
+    {
+      "ticker": "BMT",
+      "value": 0.05696802063,
+      "pnl": 0,
+      "shares": 3.6848655,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.01546,
+      "pct": 3.085356998678488e-05,
+      "grade": 0
+    },
+    {
+      "ticker": "DOLO",
+      "value": 0.0485791642842,
+      "pnl": 0,
+      "shares": 1.57163262,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.03091,
+      "pct": 2.6310211037116124e-05,
+      "grade": 0
+    },
+    {
+      "ticker": "MANA",
+      "value": 0.048396518844,
+      "pnl": 0,
+      "shares": 0.55184172,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.0877,
+      "pct": 2.621129126055274e-05,
+      "live_price": 0.7503,
+      "price_change": 0,
+      "price_change_pct": 0,
+      "live_value": 0.414046842516,
+      "live_pnl": 0,
+      "volume": 6611,
+      "price_updated": "2026-05-26T16:05:24.429737+00:00",
+      "grade": 62
+    },
+    {
+      "ticker": "TURTLE",
+      "value": 0.047321942151,
+      "pnl": 0,
+      "shares": 1.04926701,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.0451,
+      "pct": 2.562930637083755e-05,
+      "grade": 0
+    },
+    {
+      "ticker": "MEME",
+      "value": 0.040890613563030004,
+      "pnl": 0,
+      "shares": 78.78730937,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.000519,
+      "pct": 2.214613380309614e-05,
+      "live_price": 11.33,
+      "price_change": 0.4499999999999993,
+      "price_change_pct": 4.1360294117646985,
+      "live_value": 892.6602151621,
+      "live_pnl": 0,
+      "volume": 312302,
+      "price_updated": "2026-05-26T16:05:20.122555+00:00",
+      "grade": 64
+    },
+    {
+      "ticker": "AMB",
+      "value": 0.0091894765472,
+      "pnl": 0,
+      "shares": 28.71711421,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0.00032,
+      "pct": 4.976970494243298e-06,
+      "grade": 0
+    },
+    {
+      "ticker": "DOT",
+      "value": 0.007271907979999999,
+      "pnl": 0,
+      "shares": 0.00568562,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 1.279,
+      "pct": 3.9384257925267755e-06,
+      "grade": 0
+    },
+    {
+      "ticker": "BETH",
+      "value": 2.12895e-05,
+      "pnl": 0,
+      "shares": 1e-08,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 2128.95,
+      "pct": 1.1530277355077148e-08,
+      "live_price": 42.395,
+      "price_change": 0.5003000000000029,
+      "price_change_pct": 1.1941844672476538,
+      "live_value": 4.2395000000000003e-07,
+      "live_pnl": 0,
+      "volume": 268,
+      "price_updated": "2026-05-26T16:05:19.078508+00:00",
+      "grade": 50
+    },
+    {
+      "ticker": "ETHW",
+      "value": 0.0,
+      "pnl": 0,
+      "shares": 0.33048657,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0,
+      "pct": 0.0,
+      "live_price": 14.92,
+      "price_change": 0.16000000000000014,
+      "price_change_pct": 1.084010840108402,
+      "live_value": 4.9308596244,
+      "live_pnl": 0,
+      "volume": 360266,
+      "price_updated": "2026-05-26T16:05:23.399742+00:00",
+      "grade": 42
+    },
+    {
+      "ticker": "1000CAT",
+      "value": 0.0,
+      "pnl": 0,
+      "shares": 299.85607715000003,
+      "brokers": [
+        "Binance"
+      ],
+      "price": 0,
+      "pct": 0.0,
+      "grade": 0
+    }
+  ],
+  "prices": {
+    "SOLV": {
+      "ticker": "SOLV",
+      "price": 75.68,
+      "open": 75.59,
+      "high": 76.28,
+      "low": 74.69,
+      "volume": 294771,
+      "vwap": 75.5922,
+      "change": -1.1499999999999915,
+      "change_pct": -1.4968111414811813,
+      "prev_close": 76.83,
+      "timestamp": "2026-05-26T16:05:19.014895+00:00",
+      "source": "polygon"
+    },
+    "BTC": {
+      "ticker": "BTC",
+      "price": 33.75,
+      "open": 33.92,
+      "high": 34.52,
+      "low": 33.71,
+      "volume": 1504123.0,
+      "vwap": 34.0943,
+      "change": 0.23499999999999943,
+      "change_pct": 0.7008648971070666,
+      "prev_close": 33.53,
+      "timestamp": "2026-05-26T16:05:19.070391+00:00",
+      "source": "polygon"
+    },
+    "BETH": {
+      "ticker": "BETH",
+      "price": 42.395,
+      "open": 42.395,
+      "high": 42.395,
+      "low": 42.395,
+      "volume": 268,
+      "vwap": 42.5183,
+      "change": 0.5003000000000029,
+      "change_pct": 1.1941844672476538,
+      "prev_close": 41.8947,
+      "timestamp": "2026-05-26T16:05:19.078508+00:00",
+      "source": "polygon"
+    },
+    "MELI": {
+      "ticker": "MELI",
+      "price": 1641.035,
+      "open": 1657.99,
+      "high": 1659.65,
+      "low": 1616.47,
+      "volume": 237055,
+      "vwap": 1634.779,
+      "change": -23.38499999999999,
+      "change_pct": -1.4049939318200928,
+      "prev_close": 1664.42,
+      "timestamp": "2026-05-26T16:05:19.079290+00:00",
+      "source": "polygon"
+    },
+    "MOVE": {
+      "ticker": "MOVE",
+      "price": 23.75,
+      "open": 22,
+      "high": 23.75,
+      "low": 21.62,
+      "volume": 15750,
+      "vwap": 22.8029,
+      "change": 0.8599999999999994,
+      "change_pct": 3.7570991699432037,
+      "prev_close": 22.89,
+      "timestamp": "2026-05-26T16:05:19.525586+00:00",
+      "source": "polygon"
+    },
+    "OKLO": {
+      "ticker": "OKLO",
+      "price": 69.41,
+      "open": 71.87,
+      "high": 73.29,
+      "low": 69.17,
+      "volume": 11178630.0,
+      "vwap": 71.0095,
+      "change": 3.5,
+      "change_pct": 5.312689738919247,
+      "prev_close": 65.88,
+      "timestamp": "2026-05-26T16:05:19.527732+00:00",
+      "source": "polygon"
+    },
+    "ALLO": {
+      "ticker": "ALLO",
+      "price": 2.075,
+      "open": 2.03,
+      "high": 2.105,
+      "low": 2.02,
+      "volume": 1336623.0,
+      "vwap": 2.0652,
+      "change": 0.07500000000000018,
+      "change_pct": 3.750000000000009,
+      "prev_close": 2,
+      "timestamp": "2026-05-26T16:05:19.602119+00:00",
+      "source": "polygon"
+    },
+    "COIN": {
+      "ticker": "COIN",
+      "price": 185.02,
+      "open": 186.07,
+      "high": 187.8,
+      "low": 183.82,
+      "volume": 2842092.0,
+      "vwap": 185.8522,
+      "change": 0.16499999999999204,
+      "change_pct": 0.08919401048704904,
+      "prev_close": 184.99,
+      "timestamp": "2026-05-26T16:05:19.717229+00:00",
+      "source": "polygon"
+    },
+    "OPEN": {
+      "ticker": "OPEN",
+      "price": 4.665,
+      "open": 4.59,
+      "high": 4.77,
+      "low": 4.51,
+      "volume": 17240740.0,
+      "vwap": 4.6572,
+      "change": 0.1349999999999998,
+      "change_pct": 2.980132450331121,
+      "prev_close": 4.53,
+      "timestamp": "2026-05-26T16:05:20.032371+00:00",
+      "source": "polygon"
+    },
+    "DASH": {
+      "ticker": "DASH",
+      "price": 155.355,
+      "open": 160.71,
+      "high": 161.04,
+      "low": 153.485,
+      "volume": 1375905.0,
+      "vwap": 156.6938,
+      "change": -4.884999999999991,
+      "change_pct": -3.0483619344773736,
+      "prev_close": 160.25,
+      "timestamp": "2026-05-26T16:05:20.067465+00:00",
+      "source": "polygon"
+    },
+    "AVGO": {
+      "ticker": "AVGO",
+      "price": 422.803139,
+      "open": 418.5,
+      "high": 435.31,
+      "low": 417,
+      "volume": 7867305.0,
+      "vwap": 426.8674,
+      "change": 8.680000000000007,
+      "change_pct": 2.0959095957888656,
+      "prev_close": 414.14,
+      "timestamp": "2026-05-26T16:05:20.079501+00:00",
+      "source": "polygon"
+    },
+    "MEME": {
+      "ticker": "MEME",
+      "price": 11.33,
+      "open": 11.33,
+      "high": 11.5,
+      "low": 11.22,
+      "volume": 312302,
+      "vwap": 11.3729,
+      "change": 0.4499999999999993,
+      "change_pct": 4.1360294117646985,
+      "prev_close": 10.88,
+      "timestamp": "2026-05-26T16:05:20.122555+00:00",
+      "source": "polygon"
+    },
+    "SNOW": {
+      "ticker": "SNOW",
+      "price": 178.53,
+      "open": 176.885,
+      "high": 181.27,
+      "low": 174.55,
+      "volume": 5886441.0,
+      "vwap": 177.8543,
+      "change": 6.3700000000000045,
+      "change_pct": 3.699186991869922,
+      "prev_close": 172.2,
+      "timestamp": "2026-05-26T16:05:20.240770+00:00",
+      "source": "polygon"
+    },
+    "XRP": {
+      "ticker": "XRP",
+      "price": 15.0301,
+      "open": 15.1,
+      "high": 15.26,
+      "low": 15.015,
+      "volume": 336435,
+      "vwap": 15.1157,
+      "change": 0.06999999999999851,
+      "change_pct": 0.4679144385026638,
+      "prev_close": 14.96,
+      "timestamp": "2026-05-26T16:05:20.243317+00:00",
+      "source": "polygon"
+    },
+    "AMZN": {
+      "ticker": "AMZN",
+      "price": 263.52,
+      "open": 267.94,
+      "high": 269.3,
+      "low": 263.3,
+      "volume": 15190046.0,
+      "vwap": 265.9433,
+      "change": -2.855000000000018,
+      "change_pct": -1.0720186242114818,
+      "prev_close": 266.32,
+      "timestamp": "2026-05-26T16:05:20.561016+00:00",
+      "source": "polygon"
+    },
+    "SPOT": {
+      "ticker": "SPOT",
+      "price": 528.365,
+      "open": 519.86,
+      "high": 534,
+      "low": 519.58,
+      "volume": 1096664.0,
+      "vwap": 526.6826,
+      "change": 8.495000000000005,
+      "change_pct": 1.634093794483131,
+      "prev_close": 519.86,
+      "timestamp": "2026-05-26T16:05:20.574257+00:00",
+      "source": "polygon"
+    },
+    "MMT": {
+      "ticker": "MMT",
+      "price": 4.515,
+      "open": 4.47,
+      "high": 4.53,
+      "low": 4.465,
+      "volume": 52123,
+      "vwap": 4.4976,
+      "change": 0.024999999999999467,
+      "change_pct": 0.556792873051213,
+      "prev_close": 4.49,
+      "timestamp": "2026-05-26T16:05:20.591020+00:00",
+      "source": "polygon"
+    },
+    "OSCR": {
+      "ticker": "OSCR",
+      "price": 21.97,
+      "open": 22.75,
+      "high": 22.75,
+      "low": 21.52,
+      "volume": 2646128.0,
+      "vwap": 21.8465,
+      "change": -0.6649999999999991,
+      "change_pct": -2.9372791519434593,
+      "prev_close": 22.64,
+      "timestamp": "2026-05-26T16:05:20.598155+00:00",
+      "source": "polygon"
+    },
+    "AMD": {
+      "ticker": "AMD",
+      "price": 488.39,
+      "open": 484.74,
+      "high": 496.89,
+      "low": 480.23,
+      "volume": 16582014.0,
+      "vwap": 489.1975,
+      "change": 20.6601,
+      "change_pct": 4.4191781993968045,
+      "prev_close": 467.51,
+      "timestamp": "2026-05-26T16:05:20.749935+00:00",
+      "source": "polygon"
+    },
+    "META": {
+      "ticker": "META",
+      "price": 608.135,
+      "open": 608.89,
+      "high": 614.47,
+      "low": 605.3001,
+      "volume": 5586447.0,
+      "vwap": 608.9,
+      "change": -2.259999999999991,
+      "change_pct": -0.37033395601874464,
+      "prev_close": 610.26,
+      "timestamp": "2026-05-26T16:05:20.765991+00:00",
+      "source": "polygon"
+    },
+    "HUMA": {
+      "ticker": "HUMA",
+      "price": 1.06,
+      "open": 1.025,
+      "high": 1.115,
+      "low": 1.02,
+      "volume": 3466621.0,
+      "vwap": 1.071,
+      "change": 0.008999999999999897,
+      "change_pct": 0.8571428571428473,
+      "prev_close": 1.05,
+      "timestamp": "2026-05-26T16:05:20.776766+00:00",
+      "source": "polygon"
+    },
+    "MSFT": {
+      "ticker": "MSFT",
+      "price": 415.665,
+      "open": 416.43,
+      "high": 419.77,
+      "low": 413.12,
+      "volume": 13938976.0,
+      "vwap": 416.574,
+      "change": -3.069999999999993,
+      "change_pct": -0.7334496022170708,
+      "prev_close": 418.57,
+      "timestamp": "2026-05-26T16:05:20.777794+00:00",
+      "source": "polygon"
+    },
+    "XPL": {
+      "ticker": "XPL",
+      "price": 0.8282,
+      "open": 0.827,
+      "high": 0.84,
+      "low": 0.826,
+      "volume": 18277,
+      "vwap": 0.8323,
+      "change": 0.0022000000000000908,
+      "change_pct": 0.26634382566587056,
+      "prev_close": 0.826,
+      "timestamp": "2026-05-26T16:05:21.075833+00:00",
+      "source": "polygon"
+    },
+    "HEMI": {
+      "ticker": "HEMI",
+      "price": 0,
+      "open": 0,
+      "high": 0,
+      "low": 0,
+      "volume": 0,
+      "vwap": 0,
+      "change": 0,
+      "change_pct": 0,
+      "prev_close": 0,
+      "timestamp": "2026-05-26T16:05:21.111855+00:00",
+      "source": "polygon"
+    },
+    "COST": {
+      "ticker": "COST",
+      "price": 1002.3,
+      "open": 1026.13,
+      "high": 1027.5,
+      "low": 996.34,
+      "volume": 1116527.0,
+      "vwap": 1002.8165,
+      "change": -26.24000000000001,
+      "change_pct": -2.5519334007624686,
+      "prev_close": 1028.24,
+      "timestamp": "2026-05-26T16:05:21.121921+00:00",
+      "source": "polygon"
+    },
+    "TSM": {
+      "ticker": "TSM",
+      "price": 411.46,
+      "open": 413.12,
+      "high": 416.49,
+      "low": 410.35,
+      "volume": 4421828.0,
+      "vwap": 412.97,
+      "change": 6.939999999999998,
+      "change_pct": 1.715613566696331,
+      "prev_close": 404.52,
+      "timestamp": "2026-05-26T16:05:21.137675+00:00",
+      "source": "polygon"
+    },
+    "CEG": {
+      "ticker": "CEG",
+      "price": 304.57,
+      "open": 300.01,
+      "high": 310.45,
+      "low": 299.0801,
+      "volume": 1630540.0,
+      "vwap": 306.107,
+      "change": 10.525000000000034,
+      "change_pct": 3.5790798109293824,
+      "prev_close": 294.07,
+      "timestamp": "2026-05-26T16:05:21.275386+00:00",
+      "source": "polygon"
+    },
+    "BIDU": {
+      "ticker": "BIDU",
+      "price": 126.7,
+      "open": 128.527,
+      "high": 129.55,
+      "low": 124.85,
+      "volume": 1305764.0,
+      "vwap": 126.5236,
+      "change": -1.0900000000000034,
+      "change_pct": -0.8529618906017712,
+      "prev_close": 127.79,
+      "timestamp": "2026-05-26T16:05:21.303357+00:00",
+      "source": "polygon"
+    },
+    "QQQ": {
+      "ticker": "QQQ",
+      "price": 727.02,
+      "open": 725.96,
+      "high": 731.17,
+      "low": 724.16,
+      "volume": 17346155.0,
+      "vwap": 727.6595,
+      "change": 9.32000000000005,
+      "change_pct": 1.2988822922763958,
+      "prev_close": 717.54,
+      "timestamp": "2026-05-26T16:05:21.594851+00:00",
+      "source": "polygon"
+    },
+    "WAL": {
+      "ticker": "WAL",
+      "price": 79.29,
+      "open": 79.32,
+      "high": 80.2,
+      "low": 79.01,
+      "volume": 195361,
+      "vwap": 79.4962,
+      "change": 0.7000000000000028,
+      "change_pct": 0.8906985621580389,
+      "prev_close": 78.59,
+      "timestamp": "2026-05-26T16:05:21.798938+00:00",
+      "source": "polygon"
+    },
+    "TSLA": {
+      "ticker": "TSLA",
+      "price": 431.467,
+      "open": 430.26,
+      "high": 434.56,
+      "low": 426.12,
+      "volume": 21574696.0,
+      "vwap": 430.6123,
+      "change": 5.425000000000011,
+      "change_pct": 1.273444285345417,
+      "prev_close": 426.01,
+      "timestamp": "2026-05-26T16:05:21.812814+00:00",
+      "source": "polygon"
+    },
+    "ROBO": {
+      "ticker": "ROBO",
+      "price": 89.61,
+      "open": 89.14,
+      "high": 90.1,
+      "low": 89.14,
+      "volume": 265786,
+      "vwap": 89.8013,
+      "change": 2.2900000000000063,
+      "change_pct": 2.6231386025200534,
+      "prev_close": 87.3,
+      "timestamp": "2026-05-26T16:05:21.815924+00:00",
+      "source": "polygon"
+    },
+    "TRX": {
+      "ticker": "TRX",
+      "price": 1.115,
+      "open": 1.07,
+      "high": 1.14,
+      "low": 1.07,
+      "volume": 1282399.0,
+      "vwap": 1.1084,
+      "change": 0.02499999999999991,
+      "change_pct": 2.293577981651368,
+      "prev_close": 1.09,
+      "timestamp": "2026-05-26T16:05:22.157770+00:00",
+      "source": "polygon"
+    },
+    "WMT": {
+      "ticker": "WMT",
+      "price": 118.735,
+      "open": 120.685,
+      "high": 121.05,
+      "low": 118.45,
+      "volume": 10293045.0,
+      "vwap": 119.1668,
+      "change": -1.5499999999999972,
+      "change_pct": -1.2887669410493034,
+      "prev_close": 120.27,
+      "timestamp": "2026-05-26T16:05:22.329793+00:00",
+      "source": "polygon"
+    },
+    "GOOGL": {
+      "ticker": "GOOGL",
+      "price": 386.84,
+      "open": 384.51,
+      "high": 389.2599,
+      "low": 382.6,
+      "volume": 10040165.0,
+      "vwap": 385.9603,
+      "change": 4,
+      "change_pct": 1.0444682351097996,
+      "prev_close": 382.97,
+      "timestamp": "2026-05-26T16:05:22.333071+00:00",
+      "source": "polygon"
+    },
+    "ETH": {
+      "ticker": "ETH",
+      "price": 19.8011,
+      "open": 20.07,
+      "high": 20.31,
+      "low": 19.8,
+      "volume": 1661535.0,
+      "vwap": 20.0448,
+      "change": 0.2049999999999983,
+      "change_pct": 1.04591836734693,
+      "prev_close": 19.6,
+      "timestamp": "2026-05-26T16:05:22.542390+00:00",
+      "source": "polygon"
+    },
+    "SCCO": {
+      "ticker": "SCCO",
+      "price": 185.93,
+      "open": 184.49,
+      "high": 189.39,
+      "low": 184.01,
+      "volume": 311122,
+      "vwap": 187.288,
+      "change": 6.02000000000001,
+      "change_pct": 3.3505871876217572,
+      "prev_close": 179.67,
+      "timestamp": "2026-05-26T16:05:22.673285+00:00",
+      "source": "polygon"
+    },
+    "APH": {
+      "ticker": "APH",
+      "price": 143.08,
+      "open": 136.88,
+      "high": 143.43,
+      "low": 136.2,
+      "volume": 7831033.0,
+      "vwap": 139.9148,
+      "change": 11.234999999999985,
+      "change_pct": 8.507496592457962,
+      "prev_close": 132.06,
+      "timestamp": "2026-05-26T16:05:22.679686+00:00",
+      "source": "polygon"
+    },
+    "TREE": {
+      "ticker": "TREE",
+      "price": 36.87,
+      "open": 36.7,
+      "high": 37.48,
+      "low": 36.24,
+      "volume": 39809,
+      "vwap": 36.8767,
+      "change": 0.44999999999999574,
+      "change_pct": 1.2355848434925747,
+      "prev_close": 36.42,
+      "timestamp": "2026-05-26T16:05:22.704283+00:00",
+      "source": "polygon"
+    },
+    "VTI": {
+      "ticker": "VTI",
+      "price": 368.7618,
+      "open": 368.98,
+      "high": 370.24,
+      "low": 368.68,
+      "volume": 1901543.0,
+      "vwap": 369.5476,
+      "change": 1.9099999999999682,
+      "change_pct": 0.5207339349491448,
+      "prev_close": 366.79,
+      "timestamp": "2026-05-26T16:05:22.711452+00:00",
+      "source": "polygon"
+    },
+    "EDEN": {
+      "ticker": "EDEN",
+      "price": 112.75,
+      "open": 112.31,
+      "high": 112.75,
+      "low": 112.23,
+      "volume": 3682,
+      "vwap": 112.2952,
+      "change": 0.25849999999999795,
+      "change_pct": 0.22979514007724847,
+      "prev_close": 112.4915,
+      "timestamp": "2026-05-26T16:05:22.712132+00:00",
+      "source": "polygon"
+    },
+    "NVDA": {
+      "ticker": "NVDA",
+      "price": 213.61,
+      "open": 216.54,
+      "high": 218.18,
+      "low": 213.32,
+      "volume": 79810468.0,
+      "vwap": 215.8441,
+      "change": -1.8100000000000023,
+      "change_pct": -0.8405702874657512,
+      "prev_close": 215.33,
+      "timestamp": "2026-05-26T16:05:22.846198+00:00",
+      "source": "polygon"
+    },
+    "C": {
+      "ticker": "C",
+      "price": 126.01,
+      "open": 126.25,
+      "high": 127.43,
+      "low": 125.76,
+      "volume": 2209958.0,
+      "vwap": 126.5901,
+      "change": 0.8499999999999943,
+      "change_pct": 0.6795107522583694,
+      "prev_close": 125.09,
+      "timestamp": "2026-05-26T16:05:23.220260+00:00",
+      "source": "polygon"
+    },
+    "DDOG": {
+      "ticker": "DDOG",
+      "price": 224.79,
+      "open": 222.495,
+      "high": 225.9,
+      "low": 218.33,
+      "volume": 1546203.0,
+      "vwap": 222.6357,
+      "change": 2.480000000000018,
+      "change_pct": 1.1155091759625848,
+      "prev_close": 222.32,
+      "timestamp": "2026-05-26T16:05:23.221553+00:00",
+      "source": "polygon"
+    },
+    "IREN": {
+      "ticker": "IREN",
+      "price": 60.3,
+      "open": 59.68,
+      "high": 61.49,
+      "low": 58.61,
+      "volume": 22157966.0,
+      "vwap": 59.9682,
+      "change": 3.480800000000002,
+      "change_pct": 6.124934013725149,
+      "prev_close": 56.83,
+      "timestamp": "2026-05-26T16:05:23.222649+00:00",
+      "source": "polygon"
+    },
+    "AXS": {
+      "ticker": "AXS",
+      "price": 99.3827,
+      "open": 99.31,
+      "high": 101.09,
+      "low": 99.19,
+      "volume": 68814,
+      "vwap": 99.7361,
+      "change": -0.5572999999999979,
+      "change_pct": -0.557634580748447,
+      "prev_close": 99.94,
+      "timestamp": "2026-05-26T16:05:23.230201+00:00",
+      "source": "polygon"
+    },
+    "ETHW": {
+      "ticker": "ETHW",
+      "price": 14.92,
+      "open": 15.12,
+      "high": 15.3,
+      "low": 14.915,
+      "volume": 360266,
+      "vwap": 15.1022,
+      "change": 0.16000000000000014,
+      "change_pct": 1.084010840108402,
+      "prev_close": 14.76,
+      "timestamp": "2026-05-26T16:05:23.399742+00:00",
+      "source": "polygon"
+    },
+    "SHOP": {
+      "ticker": "SHOP",
+      "price": 104.595,
+      "open": 103.23,
+      "high": 105.1,
+      "low": 102.32,
+      "volume": 2968336.0,
+      "vwap": 104.0553,
+      "change": 1.5600000000000023,
+      "change_pct": 1.5145631067961187,
+      "prev_close": 103,
+      "timestamp": "2026-05-26T16:05:23.750387+00:00",
+      "source": "polygon"
+    },
+    "BIVI": {
+      "ticker": "BIVI",
+      "price": 1.4,
+      "open": 1.58,
+      "high": 1.58,
+      "low": 1.3901,
+      "volume": 164665,
+      "vwap": 1.5201,
+      "change": -0.1200000000000001,
+      "change_pct": -7.89473684210527,
+      "prev_close": 1.52,
+      "timestamp": "2026-05-26T16:05:23.770319+00:00",
+      "source": "polygon"
+    },
+    "SPRB": {
+      "ticker": "SPRB",
+      "price": 52.73,
+      "open": 52.42,
+      "high": 54.055,
+      "low": 52,
+      "volume": 22644,
+      "vwap": 52.987,
+      "change": 1.654999999999994,
+      "change_pct": 3.240332843857061,
+      "prev_close": 51.075,
+      "timestamp": "2026-05-26T16:05:23.897202+00:00",
+      "source": "polygon"
+    },
+    "BYND": {
+      "ticker": "BYND",
+      "price": 0.7625,
+      "open": 0.781,
+      "high": 0.7919,
+      "low": 0.76,
+      "volume": 19475476.0,
+      "vwap": 0.7752,
+      "change": -0.0039000000000000146,
+      "change_pct": -0.5092048570309459,
+      "prev_close": 0.7659,
+      "timestamp": "2026-05-26T16:05:23.920090+00:00",
+      "source": "polygon"
+    },
+    "BIO": {
+      "ticker": "BIO",
+      "price": 289.805,
+      "open": 287.26,
+      "high": 291.99,
+      "low": 284.27,
+      "volume": 59537,
+      "vwap": 288.985,
+      "change": 2.0649999999999977,
+      "change_pct": 0.7176617779940215,
+      "prev_close": 287.74,
+      "timestamp": "2026-05-26T16:05:24.103545+00:00",
+      "source": "polygon"
+    },
+    "CBRS": {
+      "ticker": "CBRS",
+      "price": 255.35,
+      "open": 260,
+      "high": 262.29,
+      "low": 236.1,
+      "volume": 5409626.0,
+      "vwap": 245.4916,
+      "change": -1.8699999999999761,
+      "change_pct": -0.7282498636965403,
+      "prev_close": 256.78,
+      "timestamp": "2026-05-26T16:05:24.235523+00:00",
+      "source": "polygon"
+    },
+    "PLTR": {
+      "ticker": "PLTR",
+      "price": 137.98,
+      "open": 136.16,
+      "high": 138.68,
+      "low": 133.3,
+      "volume": 18272866.0,
+      "vwap": 135.7269,
+      "change": 1.0999999999999943,
+      "change_pct": 0.803623611922848,
+      "prev_close": 136.88,
+      "timestamp": "2026-05-26T16:05:24.238985+00:00",
+      "source": "polygon"
+    },
+    "NEWT": {
+      "ticker": "NEWT",
+      "price": 13.57,
+      "open": 13.55,
+      "high": 13.77,
+      "low": 13.49,
+      "volume": 58733,
+      "vwap": 13.5957,
+      "change": 0.1899999999999995,
+      "change_pct": 1.4200298953662145,
+      "prev_close": 13.38,
+      "timestamp": "2026-05-26T16:05:24.274224+00:00",
+      "source": "polygon"
+    },
+    "JMIA": {
+      "ticker": "JMIA",
+      "price": 7.175,
+      "open": 7.1,
+      "high": 7.225,
+      "low": 6.96,
+      "volume": 1554843.0,
+      "vwap": 7.0789,
+      "change": 0.20500000000000007,
+      "change_pct": 2.9411764705882364,
+      "prev_close": 6.97,
+      "timestamp": "2026-05-26T16:05:24.426214+00:00",
+      "source": "polygon"
+    },
+    "MANA": {
+      "ticker": "MANA",
+      "price": 0.7503,
+      "open": 0.98,
+      "high": 0.98,
+      "low": 0.7503,
+      "volume": 6611,
+      "vwap": 0.916,
+      "change": 0,
+      "change_pct": 0,
+      "prev_close": 0,
+      "timestamp": "2026-05-26T16:05:24.429737+00:00",
+      "source": "polygon"
+    },
+    "SOPH": {
+      "ticker": "SOPH",
+      "price": 5,
+      "open": 4.97,
+      "high": 5.085,
+      "low": 4.86,
+      "volume": 18643,
+      "vwap": 4.969,
+      "change": 0.1200000000000001,
+      "change_pct": 2.4590163934426252,
+      "prev_close": 4.88,
+      "timestamp": "2026-05-26T16:05:24.448285+00:00",
+      "source": "polygon"
+    },
+    "MIRA": {
+      "ticker": "MIRA",
+      "price": 0.98,
+      "open": 0.979,
+      "high": 0.991,
+      "low": 0.97,
+      "volume": 34786,
+      "vwap": 0.9821,
+      "change": -0.01200000000000001,
+      "change_pct": -1.2096774193548396,
+      "prev_close": 0.992,
+      "timestamp": "2026-05-26T16:05:24.456716+00:00",
+      "source": "polygon"
+    },
+    "CRWD": {
+      "ticker": "CRWD",
+      "price": 674.9,
+      "open": 665,
+      "high": 677.4999,
+      "low": 648,
+      "volume": 981077,
+      "vwap": 665.8652,
+      "change": 12.039899999999989,
+      "change_pct": 1.8147137732493275,
+      "prev_close": 663.46,
+      "timestamp": "2026-05-26T16:05:24.750441+00:00",
+      "source": "polygon"
+    },
+    "AVNT": {
+      "ticker": "AVNT",
+      "price": 34.745,
+      "open": 34.62,
+      "high": 35.325,
+      "low": 34.495,
+      "volume": 231623,
+      "vwap": 34.9678,
+      "change": 0.43499999999999517,
+      "change_pct": 1.26785193821042,
+      "prev_close": 34.31,
+      "timestamp": "2026-05-26T16:05:24.754711+00:00",
+      "source": "polygon"
+    },
+    "WCT": {
+      "ticker": "WCT",
+      "price": 1.69,
+      "open": 1.64,
+      "high": 1.69,
+      "low": 1.38,
+      "volume": 9132,
+      "vwap": 1.663,
+      "change": 0.049900000000000055,
+      "change_pct": 3.0424974086945955,
+      "prev_close": 1.6401,
+      "timestamp": "2026-05-26T16:05:24.774749+00:00",
+      "source": "polygon"
+    },
+    "XLE": {
+      "ticker": "XLE",
+      "price": 58.75,
+      "open": 58.87,
+      "high": 59.57,
+      "low": 58.51,
+      "volume": 15708166.0,
+      "vwap": 58.9325,
+      "change": -0.7250000000000014,
+      "change_pct": -1.2186922171793604,
+      "prev_close": 59.49,
+      "timestamp": "2026-05-26T16:05:24.815453+00:00",
+      "source": "polygon"
+    },
+    "HOLO": {
+      "ticker": "HOLO",
+      "price": 2.0301,
+      "open": 1.91,
+      "high": 2.16,
+      "low": 1.9,
+      "volume": 673652,
+      "vwap": 2.0438,
+      "change": 0.1401000000000001,
+      "change_pct": 7.412698412698419,
+      "prev_close": 1.89,
+      "timestamp": "2026-05-26T16:05:24.946538+00:00",
+      "source": "polygon"
+    },
+    "VOO": {
+      "ticker": "VOO",
+      "price": 688.71,
+      "open": 689.65,
+      "high": 691.5105,
+      "low": 688.62,
+      "volume": 2568188.0,
+      "vwap": 690.0208,
+      "change": 3.0400000000000773,
+      "change_pct": 0.44343957406463097,
+      "prev_close": 685.55,
+      "timestamp": "2026-05-26T16:05:25.263364+00:00",
+      "source": "polygon"
+    },
+    "AAPL": {
+      "ticker": "AAPL",
+      "price": 310.45,
+      "open": 309.56,
+      "high": 311.82,
+      "low": 309.35,
+      "volume": 14455843.0,
+      "vwap": 310.8213,
+      "change": 1.4800000000000182,
+      "change_pct": 0.4792435723074989,
+      "prev_close": 308.82,
+      "timestamp": "2026-05-26T16:05:25.487445+00:00",
+      "source": "polygon"
+    },
+    "YB": {
+      "ticker": "YB",
+      "price": 12.44,
+      "open": 12.7,
+      "high": 13.055,
+      "low": 12.24,
+      "volume": 27059,
+      "vwap": 12.5078,
+      "change": -0.2599999999999998,
+      "change_pct": -2.0472440944881876,
+      "prev_close": 12.7,
+      "timestamp": "2026-05-26T16:05:25.490744+00:00",
+      "source": "polygon"
+    },
+    "CRWV": {
+      "ticker": "CRWV",
+      "price": 107.96,
+      "open": 108.24,
+      "high": 109.2,
+      "low": 106.02,
+      "volume": 11647625.0,
+      "vwap": 107.553,
+      "change": 2.490000000000009,
+      "change_pct": 2.3604133093184276,
+      "prev_close": 105.49,
+      "timestamp": "2026-05-26T16:05:25.500363+00:00",
+      "source": "polygon"
+    },
+    "A": {
+      "ticker": "A",
+      "price": 114.41,
+      "open": 114.98,
+      "high": 115.61,
+      "low": 113.34,
+      "volume": 621808,
+      "vwap": 114.8884,
+      "change": -0.6099999999999994,
+      "change_pct": -0.5306193458594289,
+      "prev_close": 114.96,
+      "timestamp": "2026-05-26T16:05:25.793537+00:00",
+      "source": "polygon"
+    },
+    "POET": {
+      "ticker": "POET",
+      "price": 13.295,
+      "open": 15.07,
+      "high": 15.075,
+      "low": 13.11,
+      "volume": 28379823.0,
+      "vwap": 13.811,
+      "change": -1.295,
+      "change_pct": -8.875942426319398,
+      "prev_close": 14.59,
+      "timestamp": "2026-05-26T16:05:25.808983+00:00",
+      "source": "polygon"
+    },
+    "SXT": {
+      "ticker": "SXT",
+      "price": 116.06,
+      "open": 115.35,
+      "high": 117.13,
+      "low": 114.79,
+      "volume": 104756,
+      "vwap": 115.6504,
+      "change": 1.6200000000000045,
+      "change_pct": 1.4155889549108742,
+      "prev_close": 114.44,
+      "timestamp": "2026-05-26T16:05:25.993439+00:00",
+      "source": "polygon"
+    },
+    "SMH": {
+      "ticker": "SMH",
+      "price": 594.495,
+      "open": 591.58,
+      "high": 603.735,
+      "low": 589.1,
+      "volume": 5464711.0,
+      "vwap": 597.4788,
+      "change": 18.089999999999918,
+      "change_pct": 3.1388811771238054,
+      "prev_close": 576.32,
+      "timestamp": "2026-05-26T16:05:25.997349+00:00",
+      "source": "polygon"
+    },
+    "FF": {
+      "ticker": "FF",
+      "price": 4.08,
+      "open": 4.08,
+      "high": 4.18,
+      "low": 4.065,
+      "volume": 65842,
+      "vwap": 4.1151,
+      "change": -0.040000000000000036,
+      "change_pct": -0.9708737864077678,
+      "prev_close": 4.12,
+      "timestamp": "2026-05-26T16:05:26.004162+00:00",
+      "source": "polygon"
+    }
+  },
+  "updated_at": "2026-05-26T16:05:26.007935+00:00",
+  "source": "polygon",
+  "count": 141
+}

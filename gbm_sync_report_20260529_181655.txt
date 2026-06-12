@@ -1,0 +1,27 @@
+============================================================
+GBM SYNC REPORT
+============================================================
+Timestamp: 2026-05-29T18:16:55.400890
+
+✅ Valid positions: 18
+❌ Rejected positions: 0
+💰 Total value synced: $71,177.28
+
+--- SYNCED TO SUPABASE ---
+  Inserted: 1
+  Updated: 17
+  Failed: 0
+
+--- TOP 10 SYNCED POSITIONS ---
+  CRWD       | $ 10,098.11 |    16.00 shares
+  TSLA       | $  8,932.88 |    22.00 shares
+  TSM        | $  8,324.63 |    21.00 shares
+  NVDA       | $  7,907.63 |    37.00 shares
+  GOOGL      | $  7,534.07 |    20.00 shares
+  SHOP       | $  5,104.71 |    50.00 shares
+  VOO        | $  3,988.97 |     6.00 shares
+  MELI       | $  3,267.29 |     2.00 shares
+  VTI        | $  3,199.14 |     9.00 shares
+  META       | $  2,951.06 |     5.00 shares
+
+============================================================

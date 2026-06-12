@@ -1,0 +1,1 @@
+{"timestamp": "2026-05-25T10:46:34.227474", "signal": {"ticker": "MELI", "source": "insider", "signal_type": "STRONG_INSIDER_BUY", "value": 80, "raw_data": {"buy_pct": 0.79, "note": "Simulated \u2014 use FMP or SEC API for real data"}, "confidence": 0.3, "timestamp": "2026-05-25T10:46:34.227389"}}

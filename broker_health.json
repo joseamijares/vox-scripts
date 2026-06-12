@@ -1,0 +1,55 @@
+{
+  "overall": "healthy",
+  "healthy_count": 8,
+  "total_count": 8,
+  "checks": {
+    "etoro": {
+      "status": "healthy",
+      "duration_ms": 2139.87,
+      "result": true,
+      "timestamp": "2026-05-26T23:07:49.027841+00:00"
+    },
+    "binance": {
+      "status": "healthy",
+      "duration_ms": 0.81,
+      "result": true,
+      "timestamp": "2026-05-26T23:07:49.028662+00:00"
+    },
+    "gbm_main": {
+      "status": "healthy",
+      "duration_ms": 581.89,
+      "result": true,
+      "timestamp": "2026-05-26T23:07:49.610576+00:00"
+    },
+    "gbm_usa": {
+      "status": "healthy",
+      "duration_ms": 0.99,
+      "result": true,
+      "timestamp": "2026-05-26T23:07:49.611612+00:00"
+    },
+    "schwab": {
+      "status": "healthy",
+      "duration_ms": 0.55,
+      "result": true,
+      "timestamp": "2026-05-26T23:07:49.612183+00:00"
+    },
+    "ibkr": {
+      "status": "healthy",
+      "duration_ms": 0.36,
+      "result": true,
+      "timestamp": "2026-05-26T23:07:49.612562+00:00"
+    },
+    "revolut": {
+      "status": "healthy",
+      "duration_ms": 0.85,
+      "result": true,
+      "timestamp": "2026-05-26T23:07:49.613430+00:00"
+    },
+    "bitso": {
+      "status": "healthy",
+      "duration_ms": 0.47,
+      "result": true,
+      "timestamp": "2026-05-26T23:07:49.613915+00:00"
+    }
+  }
+}

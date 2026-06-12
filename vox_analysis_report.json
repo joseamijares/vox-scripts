@@ -1,0 +1,167 @@
+{
+  "timestamp": "2026-05-26T00:04:36.989741+00:00",
+  "portfolio_summary": {
+    "total_value": 197818.36,
+    "total_positions": 141,
+    "total_pnl": 55141.60907556691
+  },
+  "protected_positions": [
+    "SHOP"
+  ],
+  "actions": {
+    "must_do": [
+      {
+        "action": "TRIM_CRYPTO",
+        "priority": "HIGH",
+        "description": "Crypto at 16.2% (limit 10%). Trim $12,169.",
+        "tickers": [
+          "BTC",
+          "ETH",
+          "BNB",
+          "TRX",
+          "XRP",
+          "DOGE",
+          "SOL",
+          "ADA"
+        ],
+        "details": "Sell ~$12,169 worth of crypto. Consider trimming BTC ($16,812) and ETH ($8,396)."
+      },
+      {
+        "action": "REVIEW",
+        "priority": "HIGH",
+        "ticker": "BTC",
+        "description": "BTC losing $1,175. Review stop loss.",
+        "value": 16812.2644281929,
+        "pnl": -1175.47
+      },
+      {
+        "action": "REVIEW",
+        "priority": "HIGH",
+        "ticker": "ETH",
+        "description": "ETH losing $2,505. Review stop loss.",
+        "value": 8396.01031843741,
+        "pnl": -2504.65
+      },
+      {
+        "action": "REVIEW",
+        "priority": "HIGH",
+        "ticker": "OKLO",
+        "description": "OKLO losing $1,505. Review stop loss.",
+        "value": 1619.04,
+        "pnl": -1505.12
+      },
+      {
+        "action": "REVIEW",
+        "priority": "HIGH",
+        "ticker": "XRP",
+        "description": "XRP losing $557. Review stop loss.",
+        "value": 1549.5184456169618,
+        "pnl": -557.38
+      },
+      {
+        "action": "REVIEW",
+        "priority": "HIGH",
+        "ticker": "DOGE",
+        "description": "DOGE losing $913. Review stop loss.",
+        "value": 1104.4361300493185,
+        "pnl": -912.75
+      }
+    ],
+    "should_do": [
+      {
+        "action": "EARNINGS_WATCH",
+        "priority": "MEDIUM",
+        "ticker": "NVDA",
+        "description": "NVDA earnings May 28. Position: $10,150. Consider hedging or trimming before earnings.",
+        "date": "2026-05-28"
+      },
+      {
+        "action": "PROFIT_PROTECT",
+        "priority": "MEDIUM",
+        "ticker": "NVDA",
+        "description": "NVDA up $8,116. Consider trailing stop to protect gains.",
+        "pnl": 8115.545267644842
+      },
+      {
+        "action": "PROFIT_PROTECT",
+        "priority": "MEDIUM",
+        "ticker": "CRWD",
+        "description": "CRWD up $7,788. Consider trailing stop to protect gains.",
+        "pnl": 7788.422026909471
+      },
+      {
+        "action": "PROFIT_PROTECT",
+        "priority": "MEDIUM",
+        "ticker": "TSLA",
+        "description": "TSLA up $7,440. Consider trailing stop to protect gains.",
+        "pnl": 7439.767077654701
+      },
+      {
+        "action": "PROFIT_PROTECT",
+        "priority": "MEDIUM",
+        "ticker": "VOO",
+        "description": "VOO up $7,223. Consider trailing stop to protect gains.",
+        "pnl": 7223.274673780665
+      },
+      {
+        "action": "PROFIT_PROTECT",
+        "priority": "MEDIUM",
+        "ticker": "TSM",
+        "description": "TSM up $5,351. Consider trailing stop to protect gains.",
+        "pnl": 5351.119262309343
+      }
+    ],
+    "watch": [
+      {
+        "action": "HOLD",
+        "priority": "LOW",
+        "ticker": "SHOP",
+        "description": "\ud83d\uded2 SHOPIFY PROTECTED. Value: $6,877. User override: Do not sell. High potential, expected bounce back.",
+        "value": 6877.095637070115,
+        "pnl": 494.805049585339,
+        "protected": true
+      },
+      {
+        "action": "MARKET_REGIME",
+        "priority": "LOW",
+        "description": "Market: RANGE. Grade threshold: 74. Position size: 1.0x. Be selective with new entries."
+      }
+    ]
+  },
+  "insights": [
+    {
+      "timestamp": "2026-05-26T00:03:58.694564+00:00",
+      "type": "insight",
+      "title": "\u26a0\ufe0f Crypto at 16.2% (limit 10%)",
+      "body": "Portfolio overweight in crypto. Consider trimming BTC/ETH.",
+      "action": "Check crypto allocation",
+      "urgency": "medium"
+    }
+  ],
+  "predictions": [
+    {
+      "ticker": "NVDA",
+      "timestamp": "2026-05-26T00:03:58.628697+00:00",
+      "direction": "NEUTRAL",
+      "confidence": 50,
+      "timeframe": "2026-05-28",
+      "target": "\u00b110-20%",
+      "reasons": [
+        "Earnings on 2026-05-28. Historical surprise rate: ~65%."
+      ],
+      "models_used": [
+        "earnings"
+      ],
+      "model_predictions": [
+        {
+          "type": "earnings",
+          "direction": "VOLATILE",
+          "confidence": 60,
+          "timeframe": "2026-05-28",
+          "reason": "Earnings on 2026-05-28. Historical surprise rate: ~65%.",
+          "target": "\u00b110-20%"
+        }
+      ]
+    }
+  ]
+}

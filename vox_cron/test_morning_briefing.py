@@ -1,0 +1,109 @@
+#!/usr/bin/env python3
+import os, sys
+sys.path.insert(0, os.path.expanduser('~/.hermes/vox-agent/scripts'))
+from sync_sp500_to_db import get_db_connection
+
+from datetime import datetime
+
+def fetch_macro_summary(cur):
+    cur.execute("SELECT signal_name, signal_value, signal_direction FROM macro_signals WHERE computed_at > NOW() - INTERVAL '1 day' ORDER BY signal_name")
+    signals = cur.fetchall()
+    cur.execute("SELECT regime, confidence FROM market_regime ORDER BY created_at DESC LIMIT 1")
+    regime = cur.fetchone()
+    return signals, regime
+
+def fetch_portfolio_summary(cur):
+    cur.execute("""
+        SELECT 
+            COUNT(*) AS total_positions,
+            SUM(live_value) AS total_aum,
+            SUM(live_value) FILTER (WHERE grade > 0) AS stock_aum,
+            SUM(live_value) FILTER (WHERE grade = 0) AS crypto_aum,
+            COUNT(*) FILTER (WHERE grade >= 70) AS strong,
+            COUNT(*) FILTER (WHERE grade BETWEEN 55 AND 69) AS moderate,
+            COUNT(*) FILTER (WHERE grade > 0 AND grade < 55) AS weak,
+            COUNT(*) FILTER (WHERE avg_cost IS NULL) AS missing_cost_basis
+        FROM positions
+    """)
+    return cur.fetchone()
+
+def fetch_alerts(cur):
+    cur.execute("""
+        SELECT ticker, live_value, grade, council, live_price
+        FROM positions
+        WHERE grade > 0
+        ORDER BY live_value DESC
+    """)
+    positions = cur.fetchall()
+    total_aum = sum(p[1] or 0 for p in positions)
+    alerts = []
+    for p in positions:
+        ticker, value, grade, council, price = p
+        concentration = (value / total_aum) if total_aum else 0
+        if concentration > 0.15:
+            alerts.append({'ticker': ticker, 'severity': 'CRITICAL', 'type': 'CONCENTRATION', 'message': f'{concentration:.1%} of portfolio'})
+        if grade < 45:
+            alerts.append({'ticker': ticker, 'severity': 'ACTION', 'type': 'SELL', 'message': f'Grade {grade} below threshold'})
+        if council == 'SELL':
+            alerts.append({'ticker': ticker, 'severity': 'ACTION', 'type': 'COUNCIL_SELL', 'message': 'Council consensus SELL'})
+    return alerts
+
+def fetch_watchlist(cur):
+    cur.execute("""
+        SELECT w.ticker, w.grade, w.council
+        FROM watchlist w
+        LEFT JOIN positions p ON w.ticker = p.ticker
+        WHERE w.grade >= 70 AND p.ticker IS NULL
+        ORDER BY w.grade DESC
+        LIMIT 5
+    """)
+    return cur.fetchall()
+
+conn = get_db_connection()
+cur = conn.cursor()
+
+signals, regime = fetch_macro_summary(cur)
+portfolio = fetch_portfolio_summary(cur)
+alerts = fetch_alerts(cur)
+watchlist = fetch_watchlist(cur)
+
+conn.close()
+
+total_positions, total_aum, stock_aum, crypto_aum, strong, moderate, weak, missing_cb = portfolio
+
+critical = [a for a in alerts if a['severity'] == 'CRITICAL']
+action = [a for a in alerts if a['severity'] == 'ACTION']
+
+print('# 🌅 VOX Morning Briefing —', datetime.utcnow().strftime('%Y-%m-%d'))
+print()
+print(f"**TL;DR:** Market regime: {regime[0] if regime else 'UNKNOWN'}. Portfolio: {total_positions} positions, ${total_aum:,.0f} AUM. {len(critical)} critical alerts, {len(action)} action items.")
+print()
+print('## Market Snapshot')
+print(f"- Regime: **{regime[0] if regime else 'UNKNOWN'}** (confidence: {regime[1] if regime else 0})")
+for s in signals:
+    print(f"- `{s[0]}`: {s[1]} ({s[2]})")
+print()
+print('## Portfolio State')
+print(f"- AUM: **${total_aum:,.0f}** ({total_positions} positions)")
+print(f"- Stock AUM: ${stock_aum or 0:,.0f} | Crypto AUM: ${crypto_aum or 0:,.0f}")
+print(f"- Grades: 🟢 {strong} | 🟡 {moderate} | 🔴 {weak}")
+print(f"- Council: HOLD {30} | SELL {40}")
+print(f"- Missing cost basis: {missing_cb} positions")
+print()
+print('## Alerts')
+if critical:
+    print('🔴 **CRITICAL**')
+    for a in critical:
+        print(f"- `{a['ticker']}`: {a['message']}")
+if action:
+    print('🟡 **ACTION**')
+    for a in action[:5]:
+        print(f"- `{a['ticker']}` ({a['type']}): {a['message']}")
+if not critical and not action:
+    print('✅ No critical or action alerts')
+print()
+print('## Top Watchlist')
+for w in watchlist:
+    print(f"- `{w[0]}` — grade {w[1]}, council {w[2]}")
+print()
+print('_Generated at', datetime.utcnow().isoformat() + '_')

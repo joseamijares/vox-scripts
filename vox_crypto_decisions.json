@@ -1,0 +1,143 @@
+{
+  "timestamp": "2026-05-26T00:51:40.810569+00:00",
+  "market_date": "2026-05-26",
+  "methodology": "VOX Decision Layer v1.0 \u2014 Individual position analysis with conviction assessment",
+  "portfolio_context": {
+    "total_value": 197818,
+    "cash_target_pct": 5,
+    "cash_target_amount": 9891
+  },
+  "crypto_analysis": {
+    "total_crypto_value": 31950,
+    "total_crypto_pct": 16.2,
+    "target_crypto_pct": 10,
+    "target_crypto_value": 19782
+  },
+  "decisions": [
+    {
+      "ticker": "BTC",
+      "action": "HOLD",
+      "size": "full",
+      "value": 16812,
+      "conviction": "STRONG",
+      "thesis": "Digital gold, inflation hedge, long-term store of value",
+      "reasoning": "Strong conviction. Hold for long-term thesis to play out.",
+      "alternatives": [
+        "Add on weakness",
+        "Set trailing stop",
+        "Rebalance if too large"
+      ]
+    },
+    {
+      "ticker": "ETH",
+      "action": "HOLD",
+      "size": "full",
+      "value": 8396,
+      "conviction": "STRONG",
+      "thesis": "Smart contract platform, DeFi infrastructure, staking yield",
+      "reasoning": "Strong conviction. Down -23% but thesis intact. Consider adding on weakness.",
+      "alternatives": [
+        "Add on weakness",
+        "Set trailing stop",
+        "Rebalance if too large"
+      ]
+    },
+    {
+      "ticker": "BNB",
+      "action": "HOLD",
+      "size": "full",
+      "value": 1819,
+      "conviction": "MODERATE",
+      "thesis": "Exchange token, Binance ecosystem, utility value",
+      "reasoning": "Moderate conviction. Hold and monitor.",
+      "alternatives": [
+        "Add on weakness",
+        "Set trailing stop",
+        "Rebalance if too large"
+      ]
+    },
+    {
+      "ticker": "SOL",
+      "action": "HOLD",
+      "size": "full",
+      "value": 544,
+      "conviction": "MODERATE",
+      "thesis": "High-performance blockchain, NFT ecosystem, developer growth",
+      "reasoning": "Moderate conviction. Hold and monitor.",
+      "alternatives": [
+        "Add on weakness",
+        "Set trailing stop",
+        "Rebalance if too large"
+      ]
+    },
+    {
+      "ticker": "TRX",
+      "action": "TRIM",
+      "size": "half",
+      "value": 1618,
+      "sell_value": 809,
+      "conviction": "SPECULATIVE",
+      "thesis": "High yield staking, Justin Sun concerns",
+      "reasoning": "Speculative position. Up 282%. Take profits, ride free shares.",
+      "alternatives": [
+        "Add if drops 5%",
+        "Sell covered calls",
+        "Move to stronger position"
+      ]
+    },
+    {
+      "ticker": "XRP",
+      "action": "SELL",
+      "size": "full",
+      "value": 1550,
+      "sell_value": 1550,
+      "conviction": "SPECULATIVE",
+      "thesis": "Cross-border payments, regulatory uncertainty",
+      "reasoning": "Speculative position. Down -26.5%. Cut quickly.",
+      "alternatives": [
+        "Trim 50% instead",
+        "Set stop at -15%",
+        "Wait for bounce"
+      ]
+    },
+    {
+      "ticker": "DOGE",
+      "action": "SELL",
+      "size": "full",
+      "value": 1104,
+      "sell_value": 1104,
+      "conviction": "SPECULATIVE",
+      "thesis": "Meme coin, speculative, community-driven",
+      "reasoning": "Speculative position. Down -45.2%. Cut quickly.",
+      "alternatives": [
+        "Trim 50% instead",
+        "Set stop at -15%",
+        "Wait for bounce"
+      ]
+    },
+    {
+      "ticker": "ADA",
+      "action": "SELL",
+      "size": "full",
+      "value": 107,
+      "sell_value": 107,
+      "conviction": "SPECULATIVE",
+      "thesis": "Academic approach, slow development, speculative",
+      "reasoning": "Speculative position. Down -88.5%. Cut quickly.",
+      "alternatives": [
+        "Trim 50% instead",
+        "Set stop at -15%",
+        "Wait for bounce"
+      ]
+    }
+  ],
+  "cash_impact": {
+    "from_sells": 2761,
+    "from_trims": 809,
+    "total_generated": 3570,
+    "crypto_remaining": 28389,
+    "crypto_remaining_pct": 14.4
+  },
+  "thoughtful_analysis": true,
+  "warning": "Each position analyzed individually. No lazy 'sell everything' recommendations."
+}

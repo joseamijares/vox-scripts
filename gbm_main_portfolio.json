@@ -95,10 +95,10 @@
     },
     {
       "ticker": "NVDA",
-      "qty": 41.0,
+      "qty": 37.0,
       "cost_avg_mxn": 645.3,
       "price_mxn": 3804.21,
-      "market_value_mxn": 155972.94,
+      "market_value_mxn": 140755.77,
       "pnl_mxn": 129515.54,
       "day_change_pct": -1.56,
       "market": "SIC_Global"

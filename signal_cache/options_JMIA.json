@@ -1,1 +1,1 @@
-{"timestamp": "2026-05-24T22:16:46.288129", "signal": {"ticker": "JMIA", "source": "options_flow", "signal_type": "NEUTRAL", "value": 50, "raw_data": {"call_put_ratio": 1.173913043478261, "contracts": 50}, "confidence": 0.6, "timestamp": "2026-05-24T22:16:46.287645"}}
+{"timestamp": "2026-05-25T10:32:14.628723", "signal": {"ticker": "JMIA", "source": "options_flow", "signal_type": "NEUTRAL", "value": 50, "raw_data": {"call_put_ratio": 1.173913043478261, "contracts": 50}, "confidence": 0.6, "timestamp": "2026-05-25T10:32:14.626836"}}

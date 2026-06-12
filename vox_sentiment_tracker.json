@@ -1,0 +1,707 @@
+{
+  "timestamp": "2026-05-26T12:01:23.710745",
+  "alerts": [],
+  "sentiment": {
+    "SCCO": {
+      "social": 0,
+      "news": 0,
+      "combined": 3.2,
+      "grade": 66,
+      "price": 188.25,
+      "rsi": 57.71128597275934,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "ALLO": {
+      "social": 0,
+      "news": 0,
+      "combined": -1.8,
+      "grade": 41,
+      "price": 2.065,
+      "rsi": 45.541557243935074,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "WMT": {
+      "social": 0,
+      "news": 0,
+      "combined": -2.2,
+      "grade": 39,
+      "price": 118.14,
+      "rsi": 32.31786944619799,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "COIN": {
+      "social": 0,
+      "news": 0,
+      "combined": -2.2,
+      "grade": 39,
+      "price": 182.27,
+      "rsi": 45.613942659647286,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "OSCR": {
+      "social": 0,
+      "news": 0,
+      "combined": 2.8000000000000003,
+      "grade": 64,
+      "price": 21.95,
+      "rsi": 56.895069038869096,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "AAPL": {
+      "social": 0,
+      "news": 0,
+      "combined": 4.2,
+      "grade": 71,
+      "price": 309.115,
+      "rsi": 79.70482058785083,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "NVDA": {
+      "social": 0,
+      "news": 0,
+      "combined": 4.2,
+      "grade": 71,
+      "price": 213.425,
+      "rsi": 54.355899651739804,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "BIO": {
+      "social": 0,
+      "news": 0,
+      "combined": 3.0,
+      "grade": 65,
+      "price": 293.285,
+      "rsi": 61.61766836794542,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "A": {
+      "social": 0,
+      "news": 0,
+      "combined": 4.0,
+      "grade": 70,
+      "price": 115.36,
+      "rsi": 50.587217624220685,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "AMD": {
+      "social": 0,
+      "news": 0,
+      "combined": 2.8000000000000003,
+      "grade": 64,
+      "price": 496.73,
+      "rsi": 75.647170687231,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "CRWD": {
+      "social": 0,
+      "news": 0,
+      "combined": 2.2,
+      "grade": 61,
+      "price": 673.09,
+      "rsi": 87.06841465527926,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "SPRB": {
+      "social": 0,
+      "news": 0,
+      "combined": -2.8000000000000003,
+      "grade": 36,
+      "price": 52.63,
+      "rsi": 44.2415245246408,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "OPEN": {
+      "social": 0,
+      "news": 0,
+      "combined": -1.2000000000000002,
+      "grade": 44,
+      "price": 4.615,
+      "rsi": 47.36247259072479,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "XPL": {
+      "social": 0,
+      "news": 0,
+      "combined": -1.4000000000000001,
+      "grade": 43,
+      "price": 0.8284,
+      "rsi": 45.823636463859245,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "XLE": {
+      "social": 0,
+      "news": 0,
+      "combined": 4.800000000000001,
+      "grade": 74,
+      "price": 58.3255,
+      "rsi": 52.42495921137877,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "XRP": {
+      "social": 0,
+      "news": 0,
+      "combined": -1.6,
+      "grade": 42,
+      "price": 14.89,
+      "rsi": 45.15204974674237,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "AMZN": {
+      "social": 0,
+      "news": 0,
+      "combined": 4.6000000000000005,
+      "grade": 73,
+      "price": 262.4199,
+      "rsi": 58.823676860766106,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "HEMI": {
+      "social": 0,
+      "news": 0,
+      "combined": 4.4,
+      "grade": 72,
+      "price": 0.00727,
+      "rsi": 61.199396541595455,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "MMT": {
+      "social": 0,
+      "news": 0,
+      "combined": -1.2000000000000002,
+      "grade": 44,
+      "price": 4.512,
+      "rsi": 45.31002923953998,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "TREE": {
+      "social": 0,
+      "news": 0,
+      "combined": -1.8,
+      "grade": 41,
+      "price": 36.4201,
+      "rsi": 39.990007804702216,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "SOPH": {
+      "social": 0,
+      "news": 0,
+      "combined": 2.6,
+      "grade": 63,
+      "price": 4.99,
+      "rsi": 52.31400360495418,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "SOLV": {
+      "social": 0,
+      "news": 0,
+      "combined": 4.6000000000000005,
+      "grade": 73,
+      "price": 75.99,
+      "rsi": 64.12393688807369,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "BIVI": {
+      "social": 0,
+      "news": 0,
+      "combined": 4.0,
+      "grade": 70,
+      "price": 1.43,
+      "rsi": 51.36208902859939,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "IREN": {
+      "social": 0,
+      "news": 0,
+      "combined": 3.4000000000000004,
+      "grade": 67,
+      "price": 59.6899,
+      "rsi": 59.43247922081014,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "COST": {
+      "social": 0,
+      "news": 0,
+      "combined": -1.2000000000000002,
+      "grade": 44,
+      "price": 999.71,
+      "rsi": 42.86723708012216,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "EDEN": {
+      "social": 0,
+      "news": 0,
+      "combined": 6.2,
+      "grade": 81,
+      "price": 112.3,
+      "rsi": 55.182127530749824,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "VTI": {
+      "social": 0,
+      "news": 0,
+      "combined": 3.4000000000000004,
+      "grade": 67,
+      "price": 368.78,
+      "rsi": 70.95614391527388,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "CEG": {
+      "social": 0,
+      "news": 0,
+      "combined": 3.0,
+      "grade": 65,
+      "price": 303.45,
+      "rsi": 58.24058006990752,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "SNOW": {
+      "social": 0,
+      "news": 0,
+      "combined": 2.6,
+      "grade": 63,
+      "price": 178.81,
+      "rsi": 69.09655819051616,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "TRX": {
+      "social": 0,
+      "news": 0,
+      "combined": -2.2,
+      "grade": 39,
+      "price": 1.1167,
+      "rsi": 41.63963022818052,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "BIDU": {
+      "social": 0,
+      "news": 0,
+      "combined": -2.0,
+      "grade": 40,
+      "price": 126.19,
+      "rsi": 44.69205591448329,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "APH": {
+      "social": 0,
+      "news": 0,
+      "combined": 3.0,
+      "grade": 65,
+      "price": 141.945,
+      "rsi": 57.338996308170216,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "SMH": {
+      "social": 0,
+      "news": 0,
+      "combined": 3.0,
+      "grade": 65,
+      "price": 598.25,
+      "rsi": 73.15944615471335,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "GOOGL": {
+      "social": 0,
+      "news": 0,
+      "combined": 4.0,
+      "grade": 70,
+      "price": 386.4801,
+      "rsi": 60.22134174394533,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "FF": {
+      "social": 0,
+      "news": 0,
+      "combined": -0.4,
+      "grade": 48,
+      "price": 4.08,
+      "rsi": 45.37843319646939,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "SHOP": {
+      "social": 0,
+      "news": 0,
+      "combined": -1.4000000000000001,
+      "grade": 43,
+      "price": 103.92,
+      "rsi": 43.667233898482664,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "CRWV": {
+      "social": 0,
+      "news": 0,
+      "combined": -0.6000000000000001,
+      "grade": 47,
+      "price": 107.06,
+      "rsi": 48.42177651577952,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "DASH": {
+      "social": 0,
+      "news": 0,
+      "combined": -2.4000000000000004,
+      "grade": 38,
+      "price": 155.275,
+      "rsi": 44.81597872304131,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "AXS": {
+      "social": 0,
+      "news": 0,
+      "combined": -1.6,
+      "grade": 42,
+      "price": 99.375,
+      "rsi": 48.913629815683386,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "ETH": {
+      "social": 0,
+      "news": 0,
+      "combined": -1.6,
+      "grade": 42,
+      "price": 19.59,
+      "rsi": 42.85686599675158,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "SXT": {
+      "social": 0,
+      "news": 0,
+      "combined": 4.6000000000000005,
+      "grade": 73,
+      "price": 116.2475,
+      "rsi": 58.272152667877755,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "QQQ": {
+      "social": 0,
+      "news": 0,
+      "combined": 3.4000000000000004,
+      "grade": 67,
+      "price": 727.98,
+      "rsi": 75.05296238247226,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "WCT": {
+      "social": 0,
+      "news": 0,
+      "combined": -5.0,
+      "grade": 25,
+      "price": 1.7291,
+      "rsi": 31.438106990296333,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "POET": {
+      "social": 0,
+      "news": 0,
+      "combined": 2.8000000000000003,
+      "grade": 64,
+      "price": 13.49,
+      "rsi": 54.2735043144486,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "WAL": {
+      "social": 0,
+      "news": 0,
+      "combined": 4.0,
+      "grade": 70,
+      "price": 79.22,
+      "rsi": 54.63132488186105,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "VOO": {
+      "social": 0,
+      "news": 0,
+      "combined": 3.4000000000000004,
+      "grade": 67,
+      "price": 688.51,
+      "rsi": 71.91194257135072,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "ETHW": {
+      "social": 0,
+      "news": 0,
+      "combined": -1.6,
+      "grade": 42,
+      "price": 14.76,
+      "rsi": 42.83443580761327,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "C": {
+      "social": 0,
+      "news": 0,
+      "combined": 4.800000000000001,
+      "grade": 74,
+      "price": 125.65,
+      "rsi": 54.40268533443876,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "MELI": {
+      "social": 0,
+      "news": 0,
+      "combined": -1.4000000000000001,
+      "grade": 43,
+      "price": 1648.965,
+      "rsi": 43.80122596102296,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "MIRA": {
+      "social": 0,
+      "news": 0,
+      "combined": -2.8000000000000003,
+      "grade": 36,
+      "price": 0.9763,
+      "rsi": 46.212986086394395,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "MEME": {
+      "social": 0,
+      "news": 0,
+      "combined": 2.8000000000000003,
+      "grade": 64,
+      "price": 11.4,
+      "rsi": 70.37149089919731,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "HOLO": {
+      "social": 0,
+      "news": 0,
+      "combined": 3.6,
+      "grade": 68,
+      "price": 2.0306,
+      "rsi": 64.2188241657788,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "JMIA": {
+      "social": 0,
+      "news": 0,
+      "combined": -1.2000000000000002,
+      "grade": 44,
+      "price": 7.14,
+      "rsi": 47.03297011388097,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "OKLO": {
+      "social": 0,
+      "news": 0,
+      "combined": 4.6000000000000005,
+      "grade": 73,
+      "price": 70.3629,
+      "rsi": 54.698264505510934,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "MSFT": {
+      "social": 0,
+      "news": 0,
+      "combined": 5.0,
+      "grade": 75,
+      "price": 413.4,
+      "rsi": 53.9713763252025,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "MANA": {
+      "social": 0,
+      "news": 0,
+      "combined": 2.4000000000000004,
+      "grade": 62,
+      "price": 0.98,
+      "rsi": 63.02104707606062,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "AVNT": {
+      "social": 0,
+      "news": 0,
+      "combined": -1.0,
+      "grade": 45,
+      "price": 34.825,
+      "rsi": 47.62852466275496,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "MOVE": {
+      "social": 0,
+      "news": 0,
+      "combined": 1.8,
+      "grade": 59,
+      "price": 23.236,
+      "rsi": 64.89875273282772,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "SPOT": {
+      "social": 0,
+      "news": 0,
+      "combined": 3.2,
+      "grade": 66,
+      "price": 529.81,
+      "rsi": 69.20501435823398,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "ROBO": {
+      "social": 0,
+      "news": 0,
+      "combined": 4.4,
+      "grade": 72,
+      "price": 89.778,
+      "rsi": 69.44905824607063,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "DDOG": {
+      "social": 0,
+      "news": 0,
+      "combined": 2.8000000000000003,
+      "grade": 64,
+      "price": 224.94,
+      "rsi": 83.73148726306775,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "PLTR": {
+      "social": 0,
+      "news": 0,
+      "combined": -1.0,
+      "grade": 45,
+      "price": 137.43,
+      "rsi": 45.30383785000396,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "BYND": {
+      "social": 0,
+      "news": 0,
+      "combined": 0.0,
+      "grade": 50,
+      "price": 0.7635,
+      "rsi": 46.15060474223889,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "TSM": {
+      "social": 0,
+      "news": 0,
+      "combined": 5.2,
+      "grade": 76,
+      "price": 411.6192,
+      "rsi": 59.055449235605515,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "BETH": {
+      "social": 0,
+      "news": 0,
+      "combined": 0.0,
+      "grade": 50,
+      "price": 42.395,
+      "rsi": 42.65691801574021,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "META": {
+      "social": 0,
+      "news": 0,
+      "combined": -1.0,
+      "grade": 45,
+      "price": 609.38,
+      "rsi": 45.4477896459453,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "HUMA": {
+      "social": 0,
+      "news": 0,
+      "combined": 1.8,
+      "grade": 59,
+      "price": 1.085,
+      "rsi": 60.70289314852093,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "BTC": {
+      "social": 0,
+      "news": 0,
+      "combined": 0.4,
+      "grade": 52,
+      "price": 33.57,
+      "rsi": 50.210033996133255,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "AVGO": {
+      "social": 0,
+      "news": 0,
+      "combined": 5.2,
+      "grade": 76,
+      "price": 422.176175,
+      "rsi": 59.819177615391084,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    },
+    "TSLA": {
+      "social": 0,
+      "news": 0,
+      "combined": 4.0,
+      "grade": 70,
+      "price": 431.22,
+      "rsi": 59.46982292967864,
+      "signal": "\ud83d\udfe1 NEUTRAL",
+      "updated": "2026-05-26"
+    }
+  },
+  "opportunities": []
+}

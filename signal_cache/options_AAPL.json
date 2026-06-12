@@ -1,0 +1,1 @@
+{"timestamp": "2026-05-25T14:46:52.662110", "signal": {"ticker": "AAPL", "source": "options_flow", "signal_type": "BULLISH_FLOW", "value": 80, "raw_data": {"call_put_ratio": 5.25, "contracts": 50}, "confidence": 0.6, "timestamp": "2026-05-25T14:46:52.660401"}}

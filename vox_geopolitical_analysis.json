@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-06-10T17:53:22.807569+00:00",
+  "headlines_checked": 20,
+  "alerts": [
+    {
+      "headline": "Ukraine says missiles hit military plant deep inside Russia",
+      "score": 100,
+      "keywords": [
+        "russia",
+        "ukraine"
+      ],
+      "affected_tickers": [
+        "XOM",
+        "COP",
+        "OXY",
+        "CVX"
+      ],
+      "published": "Wed, 10 Jun 2026 11:43:40 GMT",
+      "priority": "CRITICAL"
+    },
+    {
+      "headline": "Oil Prices Rise. Trump Says More Attacks on Iran Are Coming.",
+      "score": 80,
+      "keywords": [
+        "iran"
+      ],
+      "affected_tickers": [
+        "XOM",
+        "COP",
+        "OXY",
+        "CVX"
+      ],
+      "published": "Wed, 10 Jun 2026 17:02:00 +0000",
+      "priority": "CRITICAL"
+    },
+    {
+      "headline": "Gold Extends Pullback as Trump Threatens More Strikes on Iran",
+      "score": 80,
+      "keywords": [
+        "iran"
+      ],
+      "affected_tickers": [
+        "XOM",
+        "COP",
+        "OXY",
+        "CVX"
+      ],
+      "published": "Wed, 10 Jun 2026 16:41:25 +0000",
+      "priority": "CRITICAL"
+    },
+    {
+      "headline": "3 Reasons Tesla Stock Is So Volatile This Week",
+      "score": 30,
+      "keywords": [
+        "iran",
+        "tension"
+      ],
+      "affected_tickers": [],
+      "published": "Wed, 10 Jun 2026 17:00:00 +0000",
+      "priority": "MEDIUM"
+    }
+  ],
+  "critical_count": 3,
+  "high_count": 0
+}

@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-05-25T17:20:25.767677+00:00",
+  "total_value": 197818.36,
+  "total_positions": 141,
+  "discrepancies": [
+    "Bitso: API=$0 vs Confirmed=$241"
+  ],
+  "stale_brokers": [
+    "GBM Main",
+    "GBM USA",
+    "IBKR"
+  ]
+}

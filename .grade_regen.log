@@ -1,0 +1,212 @@
+======================================================================
+📊 VOX BATCH PORTFOLIO GRADE v2.0
+======================================================================
+Scanning 141 unique tickers...
+Scoring: Trend(30) + Momentum(25) + Volatility(20) + Volume(15) + S/R(10)
+
+[1/141] Grading 0700.HK... ❌ No data
+[2/141] Grading 0G... ❌ No data
+[3/141] Grading 1000CAT... ❌ No data
+[4/141] Grading 2Z... ❌ No data
+[5/141] Grading A... ✅ Grade:  70 | T:23 M:22 V:15 Vol: 5 SR: 5
+[6/141] Grading AAPL... ✅ Grade:  71 | T:30 M:11 V:18 Vol: 5 SR: 7
+[7/141] Grading ACE... ❌ No data
+[8/141] Grading ADA... ❌ No data
+[9/141] Grading AIGENSYN... ❌ No data
+[10/141] Grading ALLO... ✅ Grade:  41 | T: 8 M:15 V: 8 Vol: 5 SR: 5
+[11/141] Grading AMB... ❌ No data
+[12/141] Grading AMD... ✅ Grade:  64 | T:30 M:11 V:11 Vol: 5 SR: 7
+[13/141] Grading AMZN... ✅ Grade:  73 | T:29 M:22 V:12 Vol: 5 SR: 5
+[14/141] Grading ANIME... ❌ No data
+[15/141] Grading APH... ✅ Grade:  65 | T:25 M:22 V: 8 Vol: 5 SR: 5
+[16/141] Grading AT... ❌ No data
+[17/141] Grading AVGO... ✅ Grade:  76 | T:30 M:22 V:12 Vol: 5 SR: 7
+[18/141] Grading AVNT... ✅ Grade:  45 | T: 8 M:15 V:12 Vol: 5 SR: 5
+[19/141] Grading AXS... ✅ Grade:  42 | T: 5 M:15 V:12 Vol: 5 SR: 5
+[20/141] Grading BABY... ❌ No data
+[21/141] Grading BARD... ❌ No data
+[22/141] Grading BERA... ❌ No data
+[23/141] Grading BETH... ✅ Grade:  50 | T:10 M:20 V:12 Vol: 5 SR: 3
+[24/141] Grading BIDU... ✅ Grade:  40 | T: 7 M:15 V: 8 Vol: 5 SR: 5
+[25/141] Grading BIO... ✅ Grade:  65 | T:23 M:18 V:12 Vol: 5 SR: 7
+[26/141] Grading BIVI... ✅ Grade:  70 | T:30 M:20 V: 5 Vol:10 SR: 5
+[27/141] Grading BMT... ❌ No data
+[28/141] Grading BNB... ❌ No data
+[29/141] Grading BONK... ❌ No data
+[30/141] Grading BREV... ❌ No data
+[31/141] Grading BTC... ✅ Grade:  52 | T:10 M:20 V:12 Vol: 5 SR: 5
+[32/141] Grading BYND... ✅ Grade:  50 | T:11 M:20 V: 8 Vol: 5 SR: 6
+[33/141] Grading C... ✅ Grade:  74 | T:30 M:22 V:12 Vol: 5 SR: 5
+[34/141] Grading CBRS... ❌ No data
+[35/141] Grading CEG... ✅ Grade:  65 | T:25 M:22 V: 8 Vol: 5 SR: 5
+[36/141] Grading CHIP... ❌ No data
+[37/141] Grading COIN... ✅ Grade:  39 | T: 9 M:15 V: 5 Vol: 5 SR: 5
+[38/141] Grading COST... ✅ Grade:  44 | T: 7 M:20 V: 9 Vol: 5 SR: 3
+[39/141] Grading CRWD... ✅ Grade:  61 | T:30 M:11 V: 8 Vol: 5 SR: 7
+[40/141] Grading CRWV... ✅ Grade:  47 | T:13 M:15 V: 8 Vol: 5 SR: 6
+[41/141] Grading DASH... ✅ Grade:  38 | T: 5 M:15 V: 8 Vol: 5 SR: 5
+[42/141] Grading DDOG... ✅ Grade:  64 | T:30 M:11 V:11 Vol: 5 SR: 7
+[43/141] Grading DOGE... ❌ No data
+[44/141] Grading DOLO... ❌ No data
+[45/141] Grading DOT... ❌ No data
+[46/141] Grading EDEN... ✅ Grade:  81 | T:28 M:23 V:18 Vol: 5 SR: 7
+[47/141] Grading ENSO... ❌ No data
+[48/141] Grading ERA... ❌ No data
+[49/141] Grading ETH... ✅ Grade:  42 | T: 5 M:15 V:12 Vol: 5 SR: 5
+[50/141] Grading ETHW... ✅ Grade:  42 | T: 5 M:15 V:12 Vol: 5 SR: 5
+[51/141] Grading EUL... ❌ No data
+[52/141] Grading FDUSD... ❌ No data
+[53/141] Grading FF... ✅ Grade:  48 | T:10 M:20 V: 8 Vol: 5 SR: 5
+[54/141] Grading GBM O... ❌ No data
+[55/141] Grading GOOGL... ✅ Grade:  70 | T:28 M:17 V:15 Vol: 5 SR: 5
+[56/141] Grading GPS... ❌ No data
+[57/141] Grading GUN... ❌ No data
+[58/141] Grading HAEDAL... ❌ No data
+[59/141] Grading HBAR... ❌ No data
+[60/141] Grading HEMI... ✅ Grade:  72 | T:28 M:17 V:15 Vol: 5 SR: 7
+[61/141] Grading HOLO... ✅ Grade:  68 | T:27 M:18 V: 8 Vol: 8 SR: 7
+[62/141] Grading HOME... ❌ No data
+[63/141] Grading HUMA... ✅ Grade:  59 | T:30 M:17 V: 2 Vol: 5 SR: 5
+[64/141] Grading HYPER... ❌ No data
+[65/141] Grading INIT... ❌ No data
+[66/141] Grading IREN... ✅ Grade:  67 | T:30 M:22 V: 5 Vol: 5 SR: 5
+[67/141] Grading JMIA... ✅ Grade:  44 | T: 6 M:20 V: 8 Vol: 5 SR: 5
+[68/141] Grading KAITO... ❌ No data
+[69/141] Grading KERNEL... ❌ No data
+[70/141] Grading KITE... ❌ No data
+[71/141] Grading LA... ❌ No data
+[72/141] Grading LAYER... ❌ No data
+[73/141] Grading LINEA... ❌ No data
+[74/141] Grading MANA... ✅ Grade:  62 | T:30 M:18 V: 2 Vol: 5 SR: 7
+[75/141] Grading MELI... ✅ Grade:  43 | T: 6 M:15 V:11 Vol: 6 SR: 5
+[76/141] Grading MEME... ✅ Grade:  64 | T:30 M:11 V: 8 Vol: 8 SR: 7
+[77/141] Grading META... ✅ Grade:  45 | T: 5 M:15 V:15 Vol: 5 SR: 5
+[78/141] Grading MIRA... ✅ Grade:  36 | T: 6 M:15 V: 5 Vol: 5 SR: 5
+[79/141] Grading MITO... ❌ No data
+[80/141] Grading MMT... ✅ Grade:  44 | T: 6 M:15 V:15 Vol: 5 SR: 3
+[81/141] Grading MORPHO... ❌ No data
+[82/141] Grading MOVE... ✅ Grade:  59 | T:30 M:17 V: 2 Vol: 5 SR: 5
+[83/141] Grading MSFT... ✅ Grade:  75 | T:28 M:22 V:15 Vol: 5 SR: 5
+[84/141] Grading NAFTRAC ISHRS... ❌ No data
+[85/141] Grading NEWT... ❌ No data
+[86/141] Grading NIGHT... ❌ No data
+[87/141] Grading NIL... ❌ No data
+[88/141] Grading NVDA... ✅ Grade:  71 | T:27 M:22 V:12 Vol: 5 SR: 5
+[89/141] Grading NXPC... ❌ No data
+[90/141] Grading OKLO... ✅ Grade:  73 | T:30 M:22 V: 8 Vol: 8 SR: 5
+[91/141] Grading OPEN... ✅ Grade:  44 | T: 8 M:15 V:11 Vol: 5 SR: 5
+[92/141] Grading OPN... ❌ No data
+[93/141] Grading OSCR... ✅ Grade:  64 | T:27 M:22 V: 5 Vol: 5 SR: 5
+[94/141] Grading PARTI... ❌ No data
+[95/141] Grading PENGU... ❌ No data
+[96/141] Grading PLTR... ✅ Grade:  45 | T: 5 M:15 V:15 Vol: 5 SR: 5
+[97/141] Grading PLUME... ❌ No data
+[98/141] Grading POET... ✅ Grade:  64 | T:30 M:20 V: 2 Vol: 6 SR: 6
+[99/141] Grading PROVE... ❌ No data
+[100/141] Grading QQQ... ✅ Grade:  67 | T:29 M:11 V:15 Vol: 5 SR: 7
+[101/141] Grading RED... ❌ No data
+[102/141] Grading RESOLV... ❌ No data
+[103/141] Grading ROBO... ✅ Grade:  72 | T:30 M:18 V:12 Vol: 5 SR: 7
+[104/141] Grading SAHARA... ❌ No data
+[105/141] Grading SAPIEN... ❌ No data
+[106/141] Grading SCCO... ✅ Grade:  66 | T:25 M:23 V: 8 Vol: 5 SR: 5
+[107/141] Grading SHELL... ❌ No data
+[108/141] Grading SHOP... ✅ Grade:  43 | T: 6 M:15 V:11 Vol: 6 SR: 5
+[109/141] Grading SIGN... ❌ No data
+[110/141] Grading SMH... ✅ Grade:  65 | T:30 M:11 V:12 Vol: 5 SR: 7
+[111/141] Grading SNOW... ✅ Grade:  63 | T:25 M:18 V: 8 Vol: 5 SR: 7
+[112/141] Grading SOL... ❌ No data
+[113/141] Grading SOLV... ✅ Grade:  73 | T:28 M:18 V:15 Vol: 5 SR: 7
+[114/141] Grading SOMI... ❌ No data
+[115/141] Grading SOPH... ✅ Grade:  63 | T:25 M:20 V: 8 Vol: 5 SR: 5
+[116/141] Grading SPK... ❌ No data
+[117/141] Grading SPOT... ✅ Grade:  66 | T:27 M:18 V: 8 Vol: 6 SR: 7
+[118/141] Grading SPRB... ✅ Grade:  36 | T: 6 M:15 V: 5 Vol: 5 SR: 5
+[119/141] Grading STO... ❌ No data
+[120/141] Grading SXT... ✅ Grade:  73 | T:28 M:20 V:15 Vol: 5 SR: 5
+[121/141] Grading THE... ❌ No data
+[122/141] Grading TOWNS... ❌ No data
+[123/141] Grading TREE... ✅ Grade:  41 | T: 4 M:15 V:11 Vol: 6 SR: 5
+[124/141] Grading TRX... ✅ Grade:  39 | T: 6 M:15 V: 8 Vol: 5 SR: 5
+[125/141] Grading TSLA... ✅ Grade:  70 | T:30 M:22 V: 8 Vol: 5 SR: 5
+[126/141] Grading TSM... ✅ Grade:  76 | T:30 M:22 V:12 Vol: 5 SR: 7
+[127/141] Grading TURTLE... ❌ No data
+[128/141] Grading USDT... ❌ No data
+[129/141] Grading USUAL... ❌ No data
+[130/141] Grading VANA... ❌ No data
+[131/141] Grading VOO... ✅ Grade:  67 | T:29 M:11 V:15 Vol: 5 SR: 7
+[132/141] Grading VTI... ✅ Grade:  67 | T:29 M:11 V:15 Vol: 5 SR: 7
+[133/141] Grading WAL... ✅ Grade:  70 | T:23 M:22 V:15 Vol: 5 SR: 5
+[134/141] Grading WCT... ✅ Grade:  25 | T: 0 M:10 V: 2 Vol: 8 SR: 5
+[135/141] Grading WMT... ✅ Grade:  39 | T: 7 M:15 V: 9 Vol: 5 SR: 3
+[136/141] Grading XLE... ✅ Grade:  74 | T:27 M:22 V:15 Vol: 5 SR: 5
+[137/141] Grading XPL... ✅ Grade:  43 | T:10 M:15 V: 8 Vol: 5 SR: 5
+[138/141] Grading XRP... ✅ Grade:  42 | T: 5 M:20 V: 9 Vol: 5 SR: 3
+[139/141] Grading YB... ❌ No data
+[140/141] Grading ZBT... ❌ No data
+[141/141] Grading ZKC... ❌ No data
+
+======================================================================
+📊 FULL PORTFOLIO GRADES
+======================================================================
+
+🟢 STRONG — Grade 70+ (19):
+   EDEN     |  81 | $  112.25 | RSI  55.2
+   AVGO     |  76 | $  431.10 | RSI  59.8
+   TSM      |  76 | $  413.00 | RSI  59.1
+   MSFT     |  75 | $  418.24 | RSI  54.0
+   C        |  74 | $  126.54 | RSI  54.4
+   XLE      |  74 | $   58.91 | RSI  52.4
+   AMZN     |  73 | $  267.29 | RSI  58.8
+   OKLO     |  73 | $   70.98 | RSI  54.7
+   SOLV     |  73 | $   75.91 | RSI  64.1
+   SXT      |  73 | $  115.07 | RSI  58.3
+   HEMI     |  72 | $   41.93 | RSI  61.2
+   ROBO     |  72 | $   89.98 | RSI  69.4
+   AAPL     |  71 | $  311.24 | RSI  79.7
+   NVDA     |  71 | $  216.12 | RSI  54.4
+   A        |  70 | $  114.92 | RSI  50.6
+
+🟡 MODERATE — Grade 50-69 (25):
+   HOLO     |  68 | $    2.13 | RSI  64.2
+   IREN     |  67 | $   59.72 | RSI  59.4
+   QQQ      |  67 | $  729.43 | RSI  75.1
+   VOO      |  67 | $  691.17 | RSI  71.9
+   VTI      |  67 | $  370.09 | RSI  71.0
+   SCCO     |  66 | $  189.03 | RSI  57.7
+   SPOT     |  66 | $  530.30 | RSI  69.2
+   APH      |  65 | $  140.91 | RSI  57.3
+   BIO      |  65 | $  288.26 | RSI  61.6
+   CEG      |  65 | $  309.75 | RSI  58.2
+   SMH      |  65 | $  599.32 | RSI  73.2
+   AMD      |  64 | $  491.32 | RSI  75.6
+   DDOG     |  64 | $  222.18 | RSI  83.7
+   MEME     |  64 | $   11.47 | RSI  70.4
+   OSCR     |  64 | $   21.73 | RSI  56.9
+   POET     |  64 | $   13.51 | RSI  54.3
+   SNOW     |  63 | $  177.34 | RSI  69.1
+   SOPH     |  63 | $    5.00 | RSI  52.3
+   MANA     |  62 | $    0.98 | RSI  63.0
+   CRWD     |  61 | $  667.43 | RSI  87.1
+
+🔴 WEAK — Grade <50 (26):
+   FF       |  48 | $    4.13 | RSI  45.4
+   CRWV     |  47 | $  106.99 | RSI  48.4
+   AVNT     |  45 | $   35.02 | RSI  47.6
+   META     |  45 | $  610.49 | RSI  45.4
+   PLTR     |  45 | $  135.43 | RSI  45.3
+   COST     |  44 | $  998.34 | RSI  42.9
+   JMIA     |  44 | $    7.06 | RSI  47.0
+   MMT      |  44 | $    4.49 | RSI  45.3
+   OPEN     |  44 | $    4.71 | RSI  47.4
+   MELI     |  43 | $ 1633.61 | RSI  43.8
+   SHOP     |  43 | $  104.72 | RSI  43.7
+   XPL      |  43 | $    0.83 | RSI  45.8
+   AXS      |  42 | $   99.58 | RSI  48.9
+   ETH      |  42 | $   20.28 | RSI  42.9
+   ETHW     |  42 | $   15.28 | RSI  42.8
+
+⚠️ Errors (71): 0700.HK, 0G, 1000CAT, 2Z, ACE, ADA, AIGENSYN, AMB, ANIME, AT, BABY, BARD, BERA, BMT, BNB, BONK, BREV, CBRS, CHIP, DOGE
+
+💾 Saved to portfolio_grades.json
+💾 Copied to dashboard public/

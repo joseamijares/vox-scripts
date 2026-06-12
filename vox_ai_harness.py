@@ -79,13 +79,13 @@ class VoxHarness:
     
     # Signal weights (sum to 1.0)
     DEFAULT_WEIGHTS = {
-        "grade": 0.25,
+        "grade": 0.40,        # Increased from 0.25 — grade is most reliable
         "technical": 0.15,
         "fundamental": 0.15,
         "sentiment": 0.10,
         "earnings": 0.10,
-        "macro": 0.10,
-        "llm_council": 0.10,
+        "macro": 0.05,        # Decreased — too generic
+        "llm_council": 0.00,  # Not implemented yet
         "trump": 0.05,
     }
     
@@ -121,13 +121,22 @@ class VoxHarness:
         if os.path.exists(grades_file):
             with open(grades_file) as f:
                 grades_data = json.load(f)
-            # Handle both dict and list formats
+            # Handle nested format (strong_buy/moderate_buy/avoid)
             if isinstance(grades_data, dict):
-                data["grades"] = grades_data
+                if any(k in grades_data for k in ['strong_buy', 'moderate_buy', 'avoid']):
+                    # Flatten nested format
+                    flat_grades = {}
+                    for cat in ['strong_buy', 'moderate_buy', 'avoid']:
+                        for item in grades_data.get(cat, []):
+                            if 'ticker' in item:
+                                flat_grades[item['ticker']] = item
+                    data["grades"] = flat_grades
+                else:
+                    data["grades"] = grades_data
             elif isinstance(grades_data, list):
                 data["grades"] = {g.get("ticker", "UNKNOWN"): g for g in grades_data}
         
-        # Load macro
+        print(f"Harness loaded: {len(data['positions'])} positions, {len(data['grades'])} grades")
         macro_file = f"{self.scripts_dir}/vox_macro_data.json"
         if os.path.exists(macro_file):
             with open(macro_file) as f:
@@ -177,8 +186,9 @@ class VoxHarness:
         pnl_pcts = [p.get("unrealized_pnl_pct", 0) for p in positions]
         avg_pnl = sum(pnl_pcts) / len(pnl_pcts)
         
-        # Normalize -50% to +100% → 0-100
-        normalized = max(0, min(100, (avg_pnl + 50) * 0.67))
+        # Normalize -50% to +100% → 0-100, but center at 50 for neutral
+        # A stock that's flat (0% P&L) should score 50, not 33
+        normalized = max(0, min(100, 50 + avg_pnl * 0.5))
         
         return Signal(
             name="technical",
@@ -273,9 +283,9 @@ class VoxHarness:
         grade = grade_data.get("grade")
         
         # Determine action
-        if overall >= 70:
+        if overall >= 75:
             action = "STRONG_BUY"
-        elif overall >= 60:
+        elif overall >= 65:
             action = "BUY"
         elif overall >= 50:
             action = "HOLD"
@@ -342,10 +352,10 @@ class VoxHarness:
             elif score.overall >= 60 and score.action == "BUY":
                 play_type = "BUY"
                 conviction = "SPEC"
-            elif score.overall < 45 and score.action in ["SELL", "WEAK_HOLD"]:
+            elif score.overall < 35 and score.action in ["SELL", "WEAK_HOLD"]:
                 play_type = "SELL"
                 conviction = "SPEC"
-            elif score.overall < 55 and score.grade and score.grade < 50:
+            elif score.overall < 45 and score.grade and score.grade < 40:
                 play_type = "TRIM"
                 conviction = "SPEC"
             else:
@@ -353,7 +363,7 @@ class VoxHarness:
                 conviction = "SPEC"
             
             # Only generate plays for actionable items
-            if play_type in ["BUY", "SELL", "TRIM"]:
+            if play_type in ["BUY", "SELL", "TRIM"] and score.confidence >= 0.5:
                 # Get position data for price targets
                 positions = [p for p in self.data["positions"] if p["ticker"] == score.ticker]
                 avg_price = sum(p.get("price", 0) for p in positions) / len(positions) if positions else 0

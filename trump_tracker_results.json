@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-05-22T19:32:33.622766",
+  "scan_time": "2026-05-26T09:00:52.721873",
   "tweets_found": 12,
   "tweets": [
     {
@@ -8,12 +8,12 @@
       "created_at": "2026-05-22T23:34:07.000Z",
       "url": "https://x.com/i/web/status/2057968277062582378",
       "metrics": {
-        "retweet_count": 21063,
-        "reply_count": 14570,
-        "like_count": 201814,
-        "quote_count": 4828,
-        "bookmark_count": 16446,
-        "impression_count": 12830138
+        "retweet_count": 96475,
+        "reply_count": 57698,
+        "like_count": 901429,
+        "quote_count": 14839,
+        "bookmark_count": 64926,
+        "impression_count": 94347048
       },
       "classification": {
         "topics": [
@@ -22,7 +22,14 @@
         "impact_score": 0,
         "impact_level": "\ud83d\udfe2 LOW"
       },
-      "affected_sectors": []
+      "affected_sectors": [],
+      "action_plan": {
+        "portfolio_overlap": [],
+        "actions": [
+          "\ud83d\udfe2 Low impact \u2014 no action required"
+        ],
+        "risk_level": "LOW"
+      }
     },
     {
       "id": "2056827052851105947",
@@ -30,12 +37,12 @@
       "created_at": "2026-05-19T19:59:18.000Z",
       "url": "https://x.com/i/web/status/2056827052851105947",
       "metrics": {
-        "retweet_count": 39333,
-        "reply_count": 52697,
-        "like_count": 276950,
-        "quote_count": 4854,
-        "bookmark_count": 13083,
-        "impression_count": 61655269
+        "retweet_count": 39661,
+        "reply_count": 53872,
+        "like_count": 280587,
+        "quote_count": 4901,
+        "bookmark_count": 13114,
+        "impression_count": 63501514
       },
       "classification": {
         "topics": [
@@ -44,20 +51,56 @@
         "impact_score": 0,
         "impact_level": "\ud83d\udfe2 LOW"
       },
-      "affected_sectors": []
+      "affected_sectors": [],
+      "action_plan": {
+        "portfolio_overlap": [],
+        "actions": [
+          "\ud83d\udfe2 Low impact \u2014 no action required"
+        ],
+        "risk_level": "LOW"
+      }
     },
     {
-      "id": "2057909802966106178",
-      "text": "RT @WhiteHouse: President Trump Delivers Remarks, May 22, 2026 https://t.co/noa5OZOlzN",
-      "created_at": "2026-05-22T19:41:45.000Z",
-      "url": "https://x.com/i/web/status/2057909802966106178",
+      "id": "2059283050685448406",
+      "text": "RT @WhiteHouse: MORE JOBS.  \nMORE INVESTMENTS.  \nMORE FACTORIES.  \n\n\"We're doing everything we can to bring New York back bigger better and\u2026",
+      "created_at": "2026-05-26T14:38:33.000Z",
+      "url": "https://x.com/i/web/status/2059283050685448406",
       "metrics": {
-        "retweet_count": 872,
+        "retweet_count": 371,
         "reply_count": 0,
         "like_count": 0,
         "quote_count": 0,
         "bookmark_count": 0,
-        "impression_count": 17
+        "impression_count": 18
+      },
+      "classification": {
+        "topics": [
+          "general"
+        ],
+        "impact_score": 1,
+        "impact_level": "\ud83d\udfe2 LOW"
+      },
+      "affected_sectors": [],
+      "action_plan": {
+        "portfolio_overlap": [],
+        "actions": [
+          "\ud83d\udfe2 Low impact \u2014 no action required"
+        ],
+        "risk_level": "LOW"
+      }
+    },
+    {
+      "id": "2059058500404203536",
+      "text": "RT @WhiteHouse: Memorial Day 2026 | Arlington National Cemetery \ud83c\uddfa\ud83c\uddf8 https://t.co/xReraDCXkI",
+      "created_at": "2026-05-25T23:46:16.000Z",
+      "url": "https://x.com/i/web/status/2059058500404203536",
+      "metrics": {
+        "retweet_count": 1166,
+        "reply_count": 0,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 35
       },
       "classification": {
         "topics": [
@@ -66,127 +109,79 @@
         "impact_score": 0,
         "impact_level": "\ud83d\udfe2 LOW"
       },
-      "affected_sectors": []
+      "affected_sectors": [],
+      "action_plan": {
+        "portfolio_overlap": [],
+        "actions": [
+          "\ud83d\udfe2 Low impact \u2014 no action required"
+        ],
+        "risk_level": "LOW"
+      }
     },
     {
-      "id": "2057909792639738366",
-      "text": "RT @WhiteHouse: Kevin Warsh has been officially sworn in as Chairman of the Federal Reserve by Justice Clarence Thomas at the White House.\u2026",
-      "created_at": "2026-05-22T19:41:43.000Z",
-      "url": "https://x.com/i/web/status/2057909792639738366",
+      "id": "2059058444737376661",
+      "text": "RT @WhiteHouse: We remember the fallen.\nWe honor their sacrifice.\nWe cherish the freedom they paid for with their lives.  \n\nMemorial Day 20\u2026",
+      "created_at": "2026-05-25T23:46:03.000Z",
+      "url": "https://x.com/i/web/status/2059058444737376661",
       "metrics": {
-        "retweet_count": 1470,
+        "retweet_count": 6017,
         "reply_count": 0,
         "like_count": 0,
         "quote_count": 0,
         "bookmark_count": 0,
-        "impression_count": 20
+        "impression_count": 45
       },
       "classification": {
         "topics": [
-          "fed",
-          "tech",
-          "defense"
+          "tech"
         ],
-        "impact_score": 3,
+        "impact_score": 0,
         "impact_level": "\ud83d\udfe2 LOW"
       },
       "affected_sectors": [
-        "NOC",
-        "REITs",
-        "LMT",
-        "NVDA",
-        "QQQ",
-        "XLF",
-        "Banks",
-        "VNQ",
-        "TLT",
-        "XLK",
-        "MSFT",
         "GOOGL",
-        "RTX",
-        "GD"
-      ]
-    },
-    {
-      "id": "2057868252185821436",
-      "text": "RT @WhiteHouse: \"I expect he will go down as one of the truly great Chairman of the Federal Reserves that we've ever had.\" - President Dona\u2026",
-      "created_at": "2026-05-22T16:56:39.000Z",
-      "url": "https://x.com/i/web/status/2057868252185821436",
-      "metrics": {
-        "retweet_count": 1901,
-        "reply_count": 0,
-        "like_count": 0,
-        "quote_count": 0,
-        "bookmark_count": 0,
-        "impression_count": 36
-      },
-      "classification": {
-        "topics": [
-          "fed",
-          "tech"
-        ],
-        "impact_score": 0,
-        "impact_level": "\ud83d\udfe2 LOW"
-      },
-      "affected_sectors": [
-        "REITs",
-        "NVDA",
-        "QQQ",
-        "XLF",
-        "Banks",
-        "VNQ",
-        "TLT",
         "XLK",
         "MSFT",
-        "GOOGL"
-      ]
-    },
-    {
-      "id": "2057850514851672324",
-      "text": "RT @WhiteHouse: President Trump Participates in a Swearing-In Ceremony for the Chairman of the Federal Reserve https://t.co/0pjfDtJHVW",
-      "created_at": "2026-05-22T15:46:10.000Z",
-      "url": "https://x.com/i/web/status/2057850514851672324",
-      "metrics": {
-        "retweet_count": 1412,
-        "reply_count": 0,
-        "like_count": 0,
-        "quote_count": 0,
-        "bookmark_count": 0,
-        "impression_count": 22
-      },
-      "classification": {
-        "topics": [
-          "fed",
-          "tech"
-        ],
-        "impact_score": 0,
-        "impact_level": "\ud83d\udfe2 LOW"
-      },
-      "affected_sectors": [
-        "REITs",
         "NVDA",
-        "QQQ",
-        "XLF",
-        "Banks",
-        "VNQ",
-        "TLT",
-        "XLK",
-        "MSFT",
-        "GOOGL"
-      ]
+        "QQQ"
+      ],
+      "action_plan": {
+        "portfolio_overlap": [
+          "AAPL",
+          "AMD",
+          "APH",
+          "AVGO",
+          "CRWD",
+          "DASH",
+          "DDOG",
+          "GOOGL",
+          "META",
+          "MSFT",
+          "NVDA",
+          "PLTR",
+          "SHOP",
+          "SNOW",
+          "SPOT",
+          "TSM"
+        ],
+        "actions": [
+          "\ud83d\udfe2 Low impact \u2014 no action required"
+        ],
+        "risk_level": "LOW"
+      }
     },
     {
-      "id": "2057837053631435190",
-      "text": "RT @WhiteHouse: DOW-UAP-PR086 | \"UAP FROM DEC 2019 (EAST COAST)\" https://t.co/PaxcDiy3QE",
-      "created_at": "2026-05-22T14:52:41.000Z",
-      "url": "https://x.com/i/web/status/2057837053631435190",
+      "id": "2059047293857214809",
+      "text": "RT @WhiteHouse: Home of the free because of the brave. \ud83c\uddfa\ud83c\uddf8 https://t.co/etiBrNnXut",
+      "created_at": "2026-05-25T23:01:44.000Z",
+      "url": "https://x.com/i/web/status/2059047293857214809",
       "metrics": {
-        "retweet_count": 1757,
+        "retweet_count": 4548,
         "reply_count": 0,
         "like_count": 0,
         "quote_count": 0,
         "bookmark_count": 0,
-        "impression_count": 484
+        "impression_count": 53
       },
       "classification": {
         "topics": [
@@ -195,20 +190,27 @@
         "impact_score": 0,
         "impact_level": "\ud83d\udfe2 LOW"
       },
-      "affected_sectors": []
+      "affected_sectors": [],
+      "action_plan": {
+        "portfolio_overlap": [],
+        "actions": [
+          "\ud83d\udfe2 Low impact \u2014 no action required"
+        ],
+        "risk_level": "LOW"
+      }
     },
     {
-      "id": "2057814088734978448",
-      "text": "RT @WhiteHouse: SECOND RELEASE OF UNIDENTIFIED ANOMALOUS PHENOMENA FILES \ud83d\udef8\u2b07\ufe0f\n\nhttps://t.co/kWE5tvdY9H https://t.co/L959jf0G37",
-      "created_at": "2026-05-22T13:21:25.000Z",
-      "url": "https://x.com/i/web/status/2057814088734978448",
+      "id": "2059047264325132745",
+      "text": "RT @WhiteHouse: \u201cThose who died so our nation could live. And we do intend with all our strength and heart to hold high the torch our heroe\u2026",
+      "created_at": "2026-05-25T23:01:37.000Z",
+      "url": "https://x.com/i/web/status/2059047264325132745",
       "metrics": {
-        "retweet_count": 5542,
+        "retweet_count": 2556,
         "reply_count": 0,
         "like_count": 0,
         "quote_count": 0,
         "bookmark_count": 0,
-        "impression_count": 77
+        "impression_count": 53
       },
       "classification": {
         "topics": [
@@ -217,105 +219,168 @@
         "impact_score": 0,
         "impact_level": "\ud83d\udfe2 LOW"
       },
-      "affected_sectors": []
+      "affected_sectors": [],
+      "action_plan": {
+        "portfolio_overlap": [],
+        "actions": [
+          "\ud83d\udfe2 Low impact \u2014 no action required"
+        ],
+        "risk_level": "LOW"
+      }
     },
     {
-      "id": "2057622146344460540",
-      "text": "RT @WhiteHouse: \"One of the most prestigious military academies anywhere in the world... God bless the Coast Guard Academy, the class of 20\u2026",
-      "created_at": "2026-05-22T00:38:43.000Z",
-      "url": "https://x.com/i/web/status/2057622146344460540",
+      "id": "2058957038948933837",
+      "text": "RT @WhiteHouse: Around the world we unite in solemn observance. \n\nGod bless our fallen heroes. \ud83c\uddfa\ud83c\uddf8",
+      "created_at": "2026-05-25T17:03:06.000Z",
+      "url": "https://x.com/i/web/status/2058957038948933837",
       "metrics": {
-        "retweet_count": 2438,
+        "retweet_count": 1214,
         "reply_count": 0,
         "like_count": 0,
         "quote_count": 0,
         "bookmark_count": 0,
-        "impression_count": 61
+        "impression_count": 53
       },
       "classification": {
         "topics": [
-          "defense"
+          "general"
         ],
         "impact_score": 0,
+        "impact_level": "\ud83d\udfe2 LOW"
+      },
+      "affected_sectors": [],
+      "action_plan": {
+        "portfolio_overlap": [],
+        "actions": [
+          "\ud83d\udfe2 Low impact \u2014 no action required"
+        ],
+        "risk_level": "LOW"
+      }
+    },
+    {
+      "id": "2058944259005301099",
+      "text": "RT @WhiteHouse: President Trump Participates in a Wreath Laying Ceremony and Delivers Remarks https://t.co/sfdXLY643p",
+      "created_at": "2026-05-25T16:12:19.000Z",
+      "url": "https://x.com/i/web/status/2058944259005301099",
+      "metrics": {
+        "retweet_count": 1876,
+        "reply_count": 0,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 42
+      },
+      "classification": {
+        "topics": [
+          "general"
+        ],
+        "impact_score": 0,
+        "impact_level": "\ud83d\udfe2 LOW"
+      },
+      "affected_sectors": [],
+      "action_plan": {
+        "portfolio_overlap": [],
+        "actions": [
+          "\ud83d\udfe2 Low impact \u2014 no action required"
+        ],
+        "risk_level": "LOW"
+      }
+    },
+    {
+      "id": "2058910430584553696",
+      "text": "RT @WhiteHouse: Memorial Day is a solemn reminder that freedom is never free. Today, we honor the brave American heroes who made the ultima\u2026",
+      "created_at": "2026-05-25T13:57:54.000Z",
+      "url": "https://x.com/i/web/status/2058910430584553696",
+      "metrics": {
+        "retweet_count": 6612,
+        "reply_count": 0,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 49
+      },
+      "classification": {
+        "topics": [
+          "general"
+        ],
+        "impact_score": 0,
+        "impact_level": "\ud83d\udfe2 LOW"
+      },
+      "affected_sectors": [],
+      "action_plan": {
+        "portfolio_overlap": [],
+        "actions": [
+          "\ud83d\udfe2 Low impact \u2014 no action required"
+        ],
+        "risk_level": "LOW"
+      }
+    },
+    {
+      "id": "2058287395720614000",
+      "text": "RT @WhiteHouse: \ud83d\udea8 \"An Agreement has been largely negotiated, subject to finalization between the United States of America, the Islamic Repu\u2026",
+      "created_at": "2026-05-23T20:42:10.000Z",
+      "url": "https://x.com/i/web/status/2058287395720614000",
+      "metrics": {
+        "retweet_count": 13494,
+        "reply_count": 0,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 96
+      },
+      "classification": {
+        "topics": [
+          "general"
+        ],
+        "impact_score": 0,
+        "impact_level": "\ud83d\udfe2 LOW"
+      },
+      "affected_sectors": [],
+      "action_plan": {
+        "portfolio_overlap": [],
+        "actions": [
+          "\ud83d\udfe2 Low impact \u2014 no action required"
+        ],
+        "risk_level": "LOW"
+      }
+    },
+    {
+      "id": "2058278277223973371",
+      "text": "RT @WhiteHouse: A FULL year of ZERO releases at the border. \n\nPROMISES MADE, PROMISES KEPT. \u2705 https://t.co/9bHj2f3v5M",
+      "created_at": "2026-05-23T20:05:56.000Z",
+      "url": "https://x.com/i/web/status/2058278277223973371",
+      "metrics": {
+        "retweet_count": 2572,
+        "reply_count": 0,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 27
+      },
+      "classification": {
+        "topics": [
+          "mexico"
+        ],
+        "impact_score": 1,
         "impact_level": "\ud83d\udfe2 LOW"
       },
       "affected_sectors": [
-        "RTX",
-        "NOC",
-        "GD",
-        "LMT"
-      ]
-    },
-    {
-      "id": "2057567005348086028",
-      "text": "RT @WhiteHouse: And in this house, Christopher Columbus is a hero. https://t.co/9vCzUlThxg",
-      "created_at": "2026-05-21T20:59:36.000Z",
-      "url": "https://x.com/i/web/status/2057567005348086028",
-      "metrics": {
-        "retweet_count": 5318,
-        "reply_count": 0,
-        "like_count": 0,
-        "quote_count": 0,
-        "bookmark_count": 0,
-        "impression_count": 72
-      },
-      "classification": {
-        "topics": [
-          "general"
+        "F",
+        "GM",
+        "Auto",
+        "USMCA",
+        "Agriculture"
+      ],
+      "action_plan": {
+        "portfolio_overlap": [
+          "COST",
+          "WMT"
         ],
-        "impact_score": 0,
-        "impact_level": "\ud83d\udfe2 LOW"
-      },
-      "affected_sectors": []
-    },
-    {
-      "id": "2057566981302145378",
-      "text": "RT @WhiteHouse: American Pasta. \ud83c\uddfa\ud83c\uddf8\ud83c\udf5d https://t.co/HDgrshSfqo",
-      "created_at": "2026-05-21T20:59:30.000Z",
-      "url": "https://x.com/i/web/status/2057566981302145378",
-      "metrics": {
-        "retweet_count": 2147,
-        "reply_count": 0,
-        "like_count": 0,
-        "quote_count": 0,
-        "bookmark_count": 0,
-        "impression_count": 145
-      },
-      "classification": {
-        "topics": [
-          "general"
+        "actions": [
+          "\ud83d\udfe2 Low impact \u2014 no action required"
         ],
-        "impact_score": 0,
-        "impact_level": "\ud83d\udfe2 LOW"
-      },
-      "affected_sectors": []
-    },
-    {
-      "id": "2057544928348049780",
-      "text": "RT @WhiteHouse: \ud83d\udea8 WAR ON FRAUD\n\nBIG WIN: 15 individuals were just indicted in Minnesota for an alleged $90+ million health care fraud schem\u2026",
-      "created_at": "2026-05-21T19:31:52.000Z",
-      "url": "https://x.com/i/web/status/2057544928348049780",
-      "metrics": {
-        "retweet_count": 2821,
-        "reply_count": 0,
-        "like_count": 0,
-        "quote_count": 0,
-        "bookmark_count": 0,
-        "impression_count": 40
-      },
-      "classification": {
-        "topics": [
-          "defense"
-        ],
-        "impact_score": 3,
-        "impact_level": "\ud83d\udfe2 LOW"
-      },
-      "affected_sectors": [
-        "RTX",
-        "NOC",
-        "GD",
-        "LMT"
-      ]
+        "risk_level": "LOW"
+      }
     }
   ],
   "high_impact_count": 0

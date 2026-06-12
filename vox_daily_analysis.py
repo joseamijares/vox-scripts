@@ -115,7 +115,9 @@ def main():
             'synthesis': research_data['synthesis']
         })
         
-        print(f"Grade: {grade_data['grade']:.1f if grade_data['grade'] else 'N/A'} | {grade_data['recommendation']}")
+        grade_val = grade_data.get('grade')
+        grade_str = f"{grade_val:.1f}" if grade_val is not None else 'N/A'
+        print(f"Grade: {grade_str} | {grade_data.get('recommendation', 'N/A')}")
         print(f"Council: {council_data['consensus']}")
     
     # Output Telegram-formatted summary

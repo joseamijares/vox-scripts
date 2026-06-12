@@ -1,0 +1,1 @@
+{"timestamp": "2026-05-25T11:01:59.503340", "signal": {"ticker": "DDOG", "source": "earnings_history", "signal_type": "MODERATE_BEAT", "value": 60, "raw_data": {"beat_rate": 0.5800000000000001, "quarters": 4, "note": "Simulated fallback"}, "confidence": 0.4, "timestamp": "2026-05-25T11:01:59.502810"}}

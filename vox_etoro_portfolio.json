@@ -1,0 +1,59 @@
+{
+  "timestamp": "2026-05-27T12:01:27.684842",
+  "broker": "eToro",
+  "cash": 2.42,
+  "positions": {
+    "MIRA": {
+      "shares": 400.0,
+      "price": 1.12,
+      "net_value": 448.0,
+      "pl": -8.0
+    },
+    "MS": {
+      "shares": 2.48,
+      "price": 201.31,
+      "net_value": 500.02,
+      "pl": 0.02
+    },
+    "CORZ": {
+      "shares": 14.61,
+      "price": 27.36,
+      "net_value": 399.85,
+      "pl": -0.15
+    },
+    "ARKX": {
+      "shares": 9.08,
+      "price": 36.27,
+      "net_value": 329.45,
+      "pl": -0.55
+    },
+    "TE": {
+      "shares": 44.92,
+      "price": 10.93,
+      "net_value": 491.02,
+      "pl": -8.98
+    },
+    "SIDU": {
+      "shares": 76.43,
+      "price": 6.28,
+      "net_value": 480.0,
+      "pl": 0.0
+    }
+  },
+  "total_value": 2648.34,
+  "risk_profile": "AGGRESSIVE",
+  "speculative_pct": 50.1,
+  "missing_defensive": [
+    "FTXG",
+    "JNJ",
+    "V"
+  ],
+  "alerts": {
+    "MIRA_stop": 0.9,
+    "CORZ_stop": 18.85,
+    "SIDU_stop": 2.78,
+    "MS_stop": 179.35,
+    "TE_stop": 9.41,
+    "ARKX_stop": 30.57
+  }
+}

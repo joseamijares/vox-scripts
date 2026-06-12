@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-06-05T15:00:27.468276+00:00",
+  "regime": "RISK_ON",
+  "risk_score": 80,
+  "vix": {
+    "level": 0,
+    "change_pct": 0
+  },
+  "yield_10y": {
+    "yield": 0
+  },
+  "dxy": {
+    "level": 0,
+    "change_pct": 0
+  },
+  "implications": "Favor growth, tech, crypto, international"
+}

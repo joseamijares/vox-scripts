@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-06-10T18:43:58.444538+00:00",
+  "regions_checked": 10,
+  "regions_at_risk": 6,
+  "risks": [
+    {
+      "region": "US Corn Belt (IA)",
+      "risks": [
+        {
+          "type": "FLOOD_RISK",
+          "severity": 144.5,
+          "impact": "Field flooding, planting delays, crop loss"
+        }
+      ]
+    },
+    {
+      "region": "US Wheat Belt (KS)",
+      "risks": [
+        {
+          "type": "FLOOD_RISK",
+          "severity": 56.800000000000004,
+          "impact": "Field flooding, planting delays, crop loss"
+        }
+      ]
+    },
+    {
+      "region": "Brazil Soy (Mato Grosso)",
+      "risks": [
+        {
+          "type": "DROUGHT",
+          "severity": 4.0,
+          "impact": "Low soil moisture, yield reduction risk"
+        }
+      ]
+    },
+    {
+      "region": "Argentina Soy (Buenos Aires)",
+      "risks": [
+        {
+          "type": "DROUGHT",
+          "severity": 1.0,
+          "impact": "Low soil moisture, yield reduction risk"
+        }
+      ]
+    },
+    {
+      "region": "India Rice (Punjab)",
+      "risks": [
+        {
+          "type": "EXTREME_HEAT",
+          "severity": 40.7,
+          "days": 4,
+          "impact": "Crop stress, lower yields, higher irrigation demand"
+        }
+      ]
+    },
+    {
+      "region": "Gulf Coast (Houston)",
+      "risks": [
+        {
+          "type": "EXTREME_HEAT",
+          "severity": 35.8,
+          "days": 1,
+          "impact": "Crop stress, lower yields, higher irrigation demand"
+        },
+        {
+          "type": "DROUGHT",
+          "severity": 0.5,
+          "impact": "Low soil moisture, yield reduction risk"
+        }
+      ]
+    }
+  ],
+  "affected_tickers": [
+    "DE",
+    "ADM",
+    "MOS",
+    "NTR",
+    "CF",
+    "BG",
+    "CTVA",
+    "AGCO",
+    "XOM",
+    "CVX",
+    "NG",
+    "UNG",
+    "D",
+    "NEE"
+  ]
+}

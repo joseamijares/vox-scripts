@@ -1,1 +1,1 @@
-{"timestamp": "2026-05-24T22:16:42.923051", "signal": {"ticker": "XRP", "source": "options_flow", "signal_type": "NEUTRAL", "value": 50, "raw_data": {"call_put_ratio": 1.380952380952381, "contracts": 50}, "confidence": 0.6, "timestamp": "2026-05-24T22:16:42.922406"}}
+{"timestamp": "2026-05-25T10:32:17.441505", "signal": {"ticker": "XRP", "source": "options_flow", "signal_type": "NEUTRAL", "value": 50, "raw_data": {"call_put_ratio": 1.380952380952381, "contracts": 50}, "confidence": 0.6, "timestamp": "2026-05-25T10:32:17.440758"}}

@@ -1,0 +1,103 @@
+{
+  "timestamp": "2026-05-25T22:56:23.015537+00:00",
+  "results": [
+    {
+      "ticker": "TSLA",
+      "activity": [
+        {
+          "date": "2026-05-20",
+          "insider": "Elon Musk",
+          "type": "SELL",
+          "shares": 10000,
+          "price": 240
+        }
+      ],
+      "total_buys": 0,
+      "total_sells": 10000,
+      "net": -10000,
+      "signal": "SELL"
+    },
+    {
+      "ticker": "AAPL",
+      "activity": [
+        {
+          "date": "2026-05-10",
+          "insider": "Tim Cook",
+          "type": "SELL",
+          "shares": 20000,
+          "price": 190
+        }
+      ],
+      "total_buys": 0,
+      "total_sells": 20000,
+      "net": -20000,
+      "signal": "STRONG_SELL"
+    },
+    {
+      "ticker": "NVDA",
+      "activity": [
+        {
+          "date": "2026-05-15",
+          "insider": "Jensen Huang",
+          "type": "BUY",
+          "shares": 5000,
+          "price": 210
+        }
+      ],
+      "total_buys": 5000,
+      "total_sells": 0,
+      "net": 5000,
+      "signal": "BUY"
+    }
+  ],
+  "signals": [
+    {
+      "ticker": "TSLA",
+      "activity": [
+        {
+          "date": "2026-05-20",
+          "insider": "Elon Musk",
+          "type": "SELL",
+          "shares": 10000,
+          "price": 240
+        }
+      ],
+      "total_buys": 0,
+      "total_sells": 10000,
+      "net": -10000,
+      "signal": "SELL"
+    },
+    {
+      "ticker": "AAPL",
+      "activity": [
+        {
+          "date": "2026-05-10",
+          "insider": "Tim Cook",
+          "type": "SELL",
+          "shares": 20000,
+          "price": 190
+        }
+      ],
+      "total_buys": 0,
+      "total_sells": 20000,
+      "net": -20000,
+      "signal": "STRONG_SELL"
+    },
+    {
+      "ticker": "NVDA",
+      "activity": [
+        {
+          "date": "2026-05-15",
+          "insider": "Jensen Huang",
+          "type": "BUY",
+          "shares": 5000,
+          "price": 210
+        }
+      ],
+      "total_buys": 5000,
+      "total_sells": 0,
+      "net": 5000,
+      "signal": "BUY"
+    }
+  ]
+}

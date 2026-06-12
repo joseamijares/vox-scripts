@@ -1,0 +1,318 @@
+{
+  "timestamp": "2026-05-27T04:02:41.790488+00:00",
+  "subreddits_scanned": 6,
+  "total_mentions": 217,
+  "top_mentions": [
+    {
+      "ticker": "AMD",
+      "mentions": 6,
+      "upvotes": 12553,
+      "subreddits": [
+        "wallstreetbets",
+        "stocks"
+      ],
+      "score": 100,
+      "sample_titles": [
+        "AMD +$11M",
+        "Micron tops $1T market cap. $MU +19% after UBS raises price target from $535 to $1,625 on AI demand",
+        "Can someone explain the investment thesis behind space stocks?"
+      ]
+    },
+    {
+      "ticker": "US",
+      "mentions": 11,
+      "upvotes": 1971,
+      "subreddits": [
+        "wallstreetbets",
+        "investing",
+        "pennystocks",
+        "stocks"
+      ],
+      "score": 100,
+      "sample_titles": [
+        "US Space Force awards SpaceX $2.29 billion contract for military space data network",
+        "Micron tops $1T market cap. $MU +19% after UBS raises price target from $535 to $1,625 on AI demand",
+        "Everyone writes off solar as speculative. First Solar has a 30% net margin and trades at 16x earning"
+      ]
+    },
+    {
+      "ticker": "MU",
+      "mentions": 10,
+      "upvotes": 8116,
+      "subreddits": [
+        "wallstreetbets",
+        "investing",
+        "stocks"
+      ],
+      "score": 100,
+      "sample_titles": [
+        "MU made me a millionaire",
+        "Wait, You Only Like It When MU\u2019s Expensive?",
+        "Micron tops $1T market cap. $MU +19% after UBS raises price target from $535 to $1,625 on AI demand"
+      ]
+    },
+    {
+      "ticker": "NVDA",
+      "mentions": 3,
+      "upvotes": 7531,
+      "subreddits": [
+        "wallstreetbets",
+        "stocks"
+      ],
+      "score": 100,
+      "sample_titles": [
+        "Micron tops $1T market cap. $MU +19% after UBS raises price target from $535 to $1,625 on AI demand",
+        "Tried explaining covered calls to a date and now I\u2019m banned from Applebee\u2019s.",
+        "Reddit ETF progress from Jan 2021 to Jan 2026"
+      ]
+    },
+    {
+      "ticker": "AI",
+      "mentions": 24,
+      "upvotes": 3740,
+      "subreddits": [
+        "wallstreetbets",
+        "stocks",
+        "pennystocks",
+        "investing",
+        "cryptocurrency"
+      ],
+      "score": 100,
+      "sample_titles": [
+        "Micron tops $1T market cap. $MU +19% after UBS raises price target from $535 to $1,625 on AI demand",
+        "Are these AI and semiconductor type of stocks truly once a generation opportunities",
+        "Corsair (CRSR) just announced a move into AI / Datacenter - $20k yolo"
+      ]
+    },
+    {
+      "ticker": "SPY",
+      "mentions": 3,
+      "upvotes": 7340,
+      "subreddits": [
+        "wallstreetbets",
+        "investing",
+        "stocks"
+      ],
+      "score": 100,
+      "sample_titles": [
+        "Tried explaining covered calls to a date and now I\u2019m banned from Applebee\u2019s.",
+        "Reddit ETF progress from Jan 2021 to Jan 2026",
+        "House Rep Gil Cisneros disclosed 3 $VLTO buys. Why this is the next AI Data Center play."
+      ]
+    },
+    {
+      "ticker": "IPO",
+      "mentions": 7,
+      "upvotes": 199,
+      "subreddits": [
+        "wallstreetbetsOGs",
+        "investing",
+        "stocks"
+      ],
+      "score": 100,
+      "sample_titles": [
+        "Can someone explain the investment thesis behind space stocks?",
+        "SpaceX IPO Valuation?",
+        "Polymarket secondary on Crowdcube"
+      ]
+    },
+    {
+      "ticker": "CEO",
+      "mentions": 8,
+      "upvotes": 175,
+      "subreddits": [
+        "pennystocks",
+        "wallstreetbetsOGs",
+        "cryptocurrency",
+        "stocks"
+      ],
+      "score": 100,
+      "sample_titles": [
+        "Oklo Selected by DOE for Advanced Negotiations Under Surplus Plutonium Utilization Program",
+        "PHCG, overlooked penny in Richard Hawkins stock portfolio",
+        "$HOLO Looks Like a Textbook Reverse Split + Convertible Note Dilution Case \u2014 Recent Filing Red Flags"
+      ]
+    },
+    {
+      "ticker": "BTC",
+      "mentions": 8,
+      "upvotes": 947,
+      "subreddits": [
+        "wallstreetbetsOGs",
+        "cryptocurrency"
+      ],
+      "score": 100,
+      "sample_titles": [
+        "MicroStrategy spends 60% of cash reserves to pay back $1.5B of convertible debt. Now only has $0.87B",
+        "Vitalik just published Ethereum's quantum resistance roadmap and it might be the most important post",
+        "The Crypto Opportunity Died Years Ago &amp; Nobody Wants to Admit It!"
+      ]
+    },
+    {
+      "ticker": "ETH",
+      "mentions": 6,
+      "upvotes": 391,
+      "subreddits": [
+        "wallstreetbetsOGs",
+        "cryptocurrency"
+      ],
+      "score": 97.8,
+      "sample_titles": [
+        "Vitalik just published Ethereum's quantum resistance roadmap and it might be the most important post",
+        "The Crypto Opportunity Died Years Ago &amp; Nobody Wants to Admit It!",
+        "Investigating a Russian Crypto Laundering Operation"
+      ]
+    },
+    {
+      "ticker": "ETF",
+      "mentions": 6,
+      "upvotes": 288,
+      "subreddits": [
+        "investing",
+        "cryptocurrency",
+        "stocks"
+      ],
+      "score": 95.8,
+      "sample_titles": [
+        "Reddit ETF progress from Jan 2021 to Jan 2026",
+        "ETF vs Mutual Fund DCA True Costs",
+        "Does my approach make sense?"
+      ]
+    },
+    {
+      "ticker": "UBS",
+      "mentions": 3,
+      "upvotes": 1805,
+      "subreddits": [
+        "wallstreetbets",
+        "stocks"
+      ],
+      "score": 81.1,
+      "sample_titles": [
+        "Micron tops $1T market cap. $MU +19% after UBS raises price target from $535 to $1,625 on AI demand",
+        "Micron hits $1 trillion market cap for the first time",
+        "Okay Micron has gone crazy"
+      ]
+    },
+    {
+      "ticker": "ON",
+      "mentions": 3,
+      "upvotes": 1346,
+      "subreddits": [
+        "wallstreetbets",
+        "cryptocurrency",
+        "stocks"
+      ],
+      "score": 71.9,
+      "sample_titles": [
+        "Micron tops $1T market cap. $MU +19% after UBS raises price target from $535 to $1,625 on AI demand",
+        "The S&amp;P 500 is trading at 31.8x earnings. What exactly is the bull case from here?",
+        "The Crypto Opportunity Died Years Ago &amp; Nobody Wants to Admit It!"
+      ]
+    },
+    {
+      "ticker": "PLTR",
+      "mentions": 3,
+      "upvotes": 1341,
+      "subreddits": [
+        "stocks"
+      ],
+      "score": 71.8,
+      "sample_titles": [
+        "Palantir $PLTR is a dying horse.",
+        "Reddit ETF progress from Jan 2021 to Jan 2026",
+        "The S&amp;P 500 is trading at 31.8x earnings. What exactly is the bull case from here?"
+      ]
+    },
+    {
+      "ticker": "TSLA",
+      "mentions": 3,
+      "upvotes": 1263,
+      "subreddits": [
+        "wallstreetbets",
+        "stocks"
+      ],
+      "score": 70.3,
+      "sample_titles": [
+        "Micron tops $1T market cap. $MU +19% after UBS raises price target from $535 to $1,625 on AI demand",
+        "Reddit ETF progress from Jan 2021 to Jan 2026",
+        "The S&amp;P 500 is trading at 31.8x earnings. What exactly is the bull case from here?"
+      ]
+    },
+    {
+      "ticker": "DRAM",
+      "mentions": 4,
+      "upvotes": 473,
+      "subreddits": [
+        "wallstreetbets",
+        "stocks"
+      ],
+      "score": 69.5,
+      "sample_titles": [
+        "Micron tops $1T market cap. $MU +19% after UBS raises price target from $535 to $1,625 on AI demand",
+        "Can someone explain the investment thesis behind space stocks?",
+        "Thoughts on my AMD and DRAM positions"
+      ]
+    },
+    {
+      "ticker": "HBM",
+      "mentions": 4,
+      "upvotes": 291,
+      "subreddits": [
+        "investing",
+        "stocks"
+      ],
+      "score": 65.8,
+      "sample_titles": [
+        "Micron $MU is a trillion-dollar company now.",
+        "Micron Joins the $1 Trillion Market-Cap Club.",
+        "SK hynix unveils 'iHBM' thermal architecture that cuts thermal resistance by 30%, targets HBM5 accel"
+      ]
+    },
+    {
+      "ticker": "DD",
+      "mentions": 4,
+      "upvotes": 128,
+      "subreddits": [
+        "wallstreetbets",
+        "pennystocks"
+      ],
+      "score": 62.6,
+      "sample_titles": [
+        "Ultimate DD on why this is the TOP - Technical Analysis (Cumming Formation)",
+        "$CTM Castellum Inc - The Penny Stock version of Palantir",
+        "NCI.V \u2013 Solid Business with Strong Financials Unfairly Crushed (Analyst Targets $2.19+)"
+      ]
+    },
+    {
+      "ticker": "IRA",
+      "mentions": 4,
+      "upvotes": 74,
+      "subreddits": [
+        "investing",
+        "stocks"
+      ],
+      "score": 61.5,
+      "sample_titles": [
+        "Everyone writes off solar as speculative. First Solar has a 30% net margin and trades at 16x earning",
+        "Do you keep growth stocks in retirement accounts and dividends in taxable?",
+        "Built my first Roth IRA portfolio in my 20's - here's my 6 ETF allocation and the reasoning behind e"
+      ]
+    },
+    {
+      "ticker": "UK",
+      "mentions": 4,
+      "upvotes": 32,
+      "subreddits": [
+        "cryptocurrency",
+        "pennystocks"
+      ],
+      "score": 60.6,
+      "sample_titles": [
+        "MDAI at $2.40: The FDA Clearance Nobody Is Talking About Properly",
+        "Herbal Dispatch Obtains Export Development Canada (EDC) Insurance to Support Accelerating Internatio",
+        "UK Issues Sanctions Against Justin Sun's HTX, Other Crypto Firms Over Alleged Russia Ties"
+      ]
+    }
+  ]
+}

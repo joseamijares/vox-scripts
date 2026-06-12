@@ -1,0 +1,1 @@
+{"timestamp": "2026-05-25T10:46:36.775212", "signal": {"ticker": "BNB", "source": "short_interest", "signal_type": "HIGH_SHORT_SQUEEZE_RISK", "value": 70, "raw_data": {"short_pct": 25, "note": "Simulated \u2014 use FMP or Ortex for real data"}, "confidence": 0.3, "timestamp": "2026-05-25T10:46:36.774879"}}

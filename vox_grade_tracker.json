@@ -1,0 +1,34 @@
+{
+  "snapshots": [
+    {
+      "timestamp": "2026-05-25T21:08:37.584188+00:00",
+      "file": "/Users/jos/.hermes/scripts/grade_history/snapshot_20260525_1508.json",
+      "count": 0
+    },
+    {
+      "timestamp": "2026-05-25T21:11:25.628721+00:00",
+      "file": "/Users/jos/.hermes/scripts/grade_history/snapshot_20260525_1511.json",
+      "count": 20
+    }
+  ],
+  "accuracy": {
+    "grade_70_plus": {
+      "correct": 0,
+      "total": 0
+    },
+    "grade_60_69": {
+      "correct": 0,
+      "total": 0
+    },
+    "grade_50_59": {
+      "correct": 0,
+      "total": 0
+    },
+    "grade_below_50": {
+      "correct": 0,
+      "total": 0
+    }
+  },
+  "signal_accuracy": {},
+  "last_updated": "2026-05-25T21:11:35.269065+00:00"
+}

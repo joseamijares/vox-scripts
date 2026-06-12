@@ -1,0 +1,195 @@
+{
+  "timestamp": "2026-05-26T02:07:05.050051+00:00",
+  "sectors": {
+    "AI": {
+      "name": "AI",
+      "description": "Artificial Intelligence chips, software, infrastructure",
+      "thesis": "AI is the new electricity. Every company will be an AI company.",
+      "momentum": "STRONG",
+      "key_companies": [
+        "NVDA",
+        "AMD",
+        "GOOGL",
+        "MSFT",
+        "AMZN",
+        "META",
+        "TSLA",
+        "PLTR",
+        "SNOW",
+        "NET"
+      ],
+      "etfs": [
+        "BOTZ",
+        "ROBT",
+        "IRBO"
+      ],
+      "portfolio_overlap": [
+        "NVDA",
+        "AMD",
+        "GOOGL",
+        "MSFT",
+        "AMZN",
+        "META",
+        "TSLA",
+        "PLTR",
+        "SNOW"
+      ],
+      "watchlist_candidates": [
+        "NET"
+      ],
+      "alerts": []
+    },
+    "ENERGY": {
+      "name": "ENERGY",
+      "description": "Next-gen energy: nuclear, renewables, storage",
+      "thesis": "US energy demand surging. Nuclear + renewables + storage needed.",
+      "momentum": "BUILDING",
+      "key_companies": [
+        "OKLO",
+        "SMR",
+        "NRG",
+        "CEG",
+        "NEE",
+        "ENPH",
+        "SEDG",
+        "FSLR",
+        "ARRY",
+        "RUN"
+      ],
+      "etfs": [
+        "ICLN",
+        "QCLN",
+        "PBW"
+      ],
+      "portfolio_overlap": [
+        "OKLO",
+        "CEG"
+      ],
+      "watchlist_candidates": [
+        "SMR",
+        "NRG",
+        "NEE",
+        "ENPH",
+        "SEDG"
+      ],
+      "alerts": [
+        {
+          "level": "MEDIUM",
+          "message": "ENERGY momentum BUILDING. Research opportunities.",
+          "action": "RESEARCH"
+        }
+      ]
+    },
+    "FOOD": {
+      "name": "FOOD",
+      "description": "Agtech, plant-based, food delivery, vertical farming",
+      "thesis": "Climate change + population growth = food innovation needed.",
+      "momentum": "MIXED",
+      "key_companies": [
+        "BYND",
+        "TTCF",
+        "APP",
+        "GRWG",
+        "AGCO",
+        "DE",
+        "ADM",
+        "TSN",
+        "HRL"
+      ],
+      "etfs": [
+        "MOO",
+        "FTXG"
+      ],
+      "portfolio_overlap": [
+        "BYND"
+      ],
+      "watchlist_candidates": [
+        "TTCF",
+        "APP",
+        "GRWG",
+        "AGCO",
+        "DE"
+      ],
+      "alerts": []
+    },
+    "MEDICAL": {
+      "name": "MEDICAL",
+      "description": "Biotech, healthtech, medical devices, telehealth",
+      "thesis": "Aging population + AI diagnostics + personalized medicine.",
+      "momentum": "MIXED",
+      "key_companies": [
+        "LLY",
+        "NVO",
+        "UNH",
+        "JNJ",
+        "ABBV",
+        "MRK",
+        "PFE",
+        "ISRG",
+        "DXCM",
+        "VEEV"
+      ],
+      "etfs": [
+        "XBI",
+        "IBB",
+        "ARKG"
+      ],
+      "portfolio_overlap": [],
+      "watchlist_candidates": [
+        "LLY",
+        "NVO",
+        "UNH",
+        "JNJ",
+        "ABBV"
+      ],
+      "alerts": []
+    },
+    "SPACE": {
+      "name": "SPACE",
+      "description": "Launch, satellites, space infrastructure",
+      "thesis": "Space economy growing. Starlink, government contracts, tourism.",
+      "momentum": "BUILDING",
+      "key_companies": [
+        "RKLB",
+        "ASTS",
+        "SPCE",
+        "LUNR",
+        "MNTS",
+        "SATL",
+        "SIDU",
+        "VORB"
+      ],
+      "etfs": [
+        "UFO",
+        "ARKX"
+      ],
+      "portfolio_overlap": [],
+      "watchlist_candidates": [
+        "RKLB",
+        "ASTS",
+        "SPCE",
+        "LUNR",
+        "MNTS"
+      ],
+      "alerts": [
+        {
+          "level": "MEDIUM",
+          "message": "SPACE momentum BUILDING. Research opportunities.",
+          "action": "RESEARCH"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "total_sectors": 5,
+    "strong_momentum": 1,
+    "building_momentum": 2,
+    "portfolio_coverage": {
+      "AI": 9,
+      "ENERGY": 2,
+      "FOOD": 1,
+      "MEDICAL": 0,
+      "SPACE": 0
+    }
+  }
+}

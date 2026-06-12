@@ -1,256 +1,269 @@
 #!/usr/bin/env python3
 """
-VOX Live Price Feed v1.0
-Real-time stock and crypto prices via Polygon.io API
-
-Features:
-- Fetch live prices for all portfolio tickers
-- Calculate real-time P&L
-- Update dashboard_positions.json with current prices
-- Generate price alerts for significant moves
-
-Usage:
-    python3 vox_live_prices.py --update
-    python3 vox_live_prices.py --ticker AAPL
-    python3 vox_live_prices.py --alert-threshold 5
+VOX Live Price Fetcher
+Fetches real-time prices for all portfolio positions via Polygon.io
+Updates dashboard_positions_live.json with fresh data.
 """
 
-import os
-import sys
 import json
-import argparse
+import os
 import urllib.request
-from datetime import datetime
-from typing import Dict, List, Optional
+from pathlib import Path
+from datetime import datetime, timezone
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
-# Load API key from .env
-def load_polygon_key() -> str:
-    env_path = os.path.expanduser("~/.hermes/.env")
-    if os.path.exists(env_path):
+# ─── CONFIG ──────────────────────────────────────────────────────────
+SCRIPT_DIR = Path.home() / ".hermes" / "scripts"
+POSITIONS_FILE = SCRIPT_DIR / "dashboard_positions.json"
+LIVE_PRICES_FILE = SCRIPT_DIR / "dashboard_positions_live.json"
+
+POLYGON_API_KEY = os.environ.get("POLYGON_API_KEY", "")
+if not POLYGON_API_KEY:
+    env_path = Path.home() / ".hermes" / ".env"
+    if env_path.exists():
         with open(env_path) as f:
             for line in f:
+                line = line.strip()
                 if line.startswith("POLYGON_API_KEY="):
-                    return line.strip().split("=", 1)[1]
-    return ""
+                    POLYGON_API_KEY = line.split("=", 1)[1]
+                    break
 
-POLYGON_KEY = load_polygon_key()
-SCRIPTS_DIR = os.path.expanduser("~/.hermes/scripts")
+BASE_URL = "https://api.polygon.io"
 
+# Crypto tickers that Polygon.io doesn't have (or has wrong stocks with same ticker)
+CRYPTO_TICKERS = {'BTC', 'ETH', 'XRP', 'SOL', 'DOGE', 'BNB', 'HBAR', 'ADA', 'TRX', 'DASH'}
 
-def polygon_request(endpoint: str) -> Dict:
-    """Make Polygon API request"""
-    if not POLYGON_KEY:
-        return {}
-    
-    url = f"https://api.polygon.io/{endpoint}"
-    if "?" in url:
-        url += f"&apiKey={POLYGON_KEY}"
-    else:
-        url += f"?apiKey={POLYGON_KEY}"
-    
-    req = urllib.request.Request(url, headers={
-        "User-Agent": "VOX-LivePrices/1.0"
-    })
-    
+# ─── DATA LOADING ────────────────────────────────────────────────────
+def load_json(path, default=None):
+    if not path.exists():
+        return default if default is not None else {}
     try:
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            return json.loads(resp.read())
-    except Exception as e:
-        print(f"API error: {e}")
-        return {}
+        with open(path) as f:
+            return json.load(f)
+    except:
+        return default if default is not None else {}
 
 
-def get_stock_price(ticker: str) -> Optional[Dict]:
-    """Get previous close price for a stock"""
-    data = polygon_request(f"v2/aggs/ticker/{ticker}/prev")
-    
-    if not data or "results" not in data or not data["results"]:
-        return None
-    
-    result = data["results"][0]
-    return {
-        "ticker": ticker,
-        "price": result.get("c", 0),
-        "open": result.get("o", 0),
-        "high": result.get("h", 0),
-        "low": result.get("l", 0),
-        "volume": result.get("v", 0),
-        "vwap": result.get("vw", 0),
-        "timestamp": result.get("t", 0),
-        "change_pct": ((result.get("c", 0) - result.get("o", 0)) / result.get("o", 0) * 100) if result.get("o", 0) > 0 else 0,
-    }
-
-
-def get_crypto_price(ticker: str) -> Optional[Dict]:
-    """Get crypto price (uses X:BTCUSD format)"""
-    # Polygon uses X:BTCUSD format for crypto
-    crypto_map = {
-        "BTC": "X:BTCUSD",
-        "ETH": "X:ETHUSD",
-        "BNB": "X:BNBUSD",
-        "ADA": "X:ADAUSD",
-    }
-    
-    polygon_ticker = crypto_map.get(ticker, f"X:{ticker}USD")
-    data = polygon_request(f"v2/aggs/ticker/{polygon_ticker}/prev")
-    
-    if not data or "results" not in data or not data["results"]:
-        return None
-    
-    result = data["results"][0]
-    return {
-        "ticker": ticker,
-        "price": result.get("c", 0),
-        "open": result.get("o", 0),
-        "high": result.get("h", 0),
-        "low": result.get("l", 0),
-        "volume": result.get("v", 0),
-        "change_pct": ((result.get("c", 0) - result.get("o", 0)) / result.get("o", 0) * 100) if result.get("o", 0) > 0 else 0,
-    }
-
-
-def load_portfolio() -> List[Dict]:
-    """Load portfolio positions"""
-    filepath = os.path.join(SCRIPTS_DIR, "dashboard_positions.json")
-    if not os.path.exists(filepath):
-        return []
-    
-    with open(filepath) as f:
-        data = json.load(f)
+def load_portfolio_tickers():
+    """Extract unique tickers from portfolio."""
+    data = load_json(POSITIONS_FILE, {})
+    tickers = set()
+    positions = []
     
     if isinstance(data, dict):
-        return data.get("positions", [])
-    return data
+        positions = data.get("positions", [])
+    elif isinstance(data, list):
+        positions = data
+    
+    for pos in positions:
+        ticker = pos.get("ticker", "")
+        if ticker and ticker not in {"CASH", "USD", "MXN", "CASH_USD", "CASH_MXN"}:
+            tickers.add(ticker)
+    
+    return tickers, positions
 
 
-def update_portfolio_prices():
-    """Update all portfolio positions with live prices"""
-    positions = load_portfolio()
-    if not positions:
-        print("No portfolio positions found")
-        return
+# ─── PRICE FETCHING ──────────────────────────────────────────────────
+def fetch_polygon_quote(ticker):
+    """Fetch snapshot quote from Polygon."""
+    if not POLYGON_API_KEY:
+        return None
     
-    # Get unique tickers
-    tickers = list(set(p.get("ticker", "") for p in positions if p.get("ticker")))
-    print(f"Updating prices for {len(tickers)} tickers...")
+    url = f"{BASE_URL}/v2/snapshot/locale/us/markets/stocks/tickers/{ticker}"
+    req = urllib.request.Request(url, headers={"Authorization": f"Bearer {POLYGON_API_KEY}"})
     
-    price_cache = {}
-    updated_count = 0
+    try:
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            data = json.load(resp)
+            if data.get("status") == "OK" and "ticker" in data:
+                t = data["ticker"]
+                day = t.get("day", {})
+                prev = t.get("prevDay", {})
+                tod = t.get("todaysChange", 0)
+                tod_pct = t.get("todaysChangePerc", 0)
+                
+                return {
+                    "ticker": ticker,
+                    "price": t.get("lastTrade", {}).get("p") or day.get("c") or prev.get("c", 0),
+                    "open": day.get("o", 0),
+                    "high": day.get("h", 0),
+                    "low": day.get("l", 0),
+                    "volume": day.get("v", 0),
+                    "vwap": day.get("vw", 0),
+                    "change": tod,
+                    "change_pct": tod_pct,
+                    "prev_close": prev.get("c", 0),
+                    "timestamp": datetime.now(timezone.utc).isoformat(),
+                    "source": "polygon"
+                }
+    except Exception as e:
+        print(f"  ⚠️ {ticker}: {e}")
     
-    for ticker in tickers:
-        # Determine if crypto
-        is_crypto = ticker in {"BTC", "ETH", "BNB", "ADA"}
+    return None
+
+
+def fetch_all_prices(tickers, max_workers=10):
+    """Fetch prices for all tickers in parallel."""
+    results = {}
+    
+    # Separate crypto from stocks
+    stock_tickers = [t for t in tickers if t not in CRYPTO_TICKERS]
+    crypto_tickers = [t for t in tickers if t in CRYPTO_TICKERS]
+    
+    # Fetch stock prices from Polygon
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = {executor.submit(fetch_polygon_quote, t): t for t in stock_tickers}
+        for future in as_completed(futures):
+            ticker = futures[future]
+            try:
+                result = future.result()
+                if result:
+                    results[ticker] = result
+                    print(f"  ✓ {ticker}: ${result['price']:.2f} ({result['change_pct']:+.2f}%)")
+                else:
+                    print(f"  ✗ {ticker}: no data")
+            except Exception as e:
+                print(f"  ✗ {ticker}: {e}")
+    
+    # For crypto, load from binance_portfolio.json or keep original
+    if crypto_tickers:
+        print(f"\n   Loading {len(crypto_tickers)} crypto prices from Binance...")
+        binance_data = load_json(SCRIPT_DIR / "binance_portfolio.json", {})
+        binance_prices = {}
+        for bal in binance_data.get("balances", []):
+            asset = bal.get("asset", "")
+            if asset in crypto_tickers:
+                binance_prices[asset] = bal.get("price_usd", 0)
         
-        if is_crypto:
-            price_data = get_crypto_price(ticker)
-        else:
-            price_data = get_stock_price(ticker)
+        for ticker in crypto_tickers:
+            if ticker in binance_prices and binance_prices[ticker] > 0:
+                results[ticker] = {
+                    "ticker": ticker,
+                    "price": binance_prices[ticker],
+                    "open": 0, "high": 0, "low": 0,
+                    "volume": 0, "vwap": 0,
+                    "change": 0, "change_pct": 0,
+                    "prev_close": binance_prices[ticker],
+                    "timestamp": datetime.now(timezone.utc).isoformat(),
+                    "source": "binance"
+                }
+                print(f"  ✓ {ticker}: ${binance_prices[ticker]:,.4f} (from Binance)")
+            else:
+                print(f"  ⚠️ {ticker}: no Binance price, keeping original")
+    
+    return results
+
+
+# ─── MAIN ────────────────────────────────────────────────────────────
+def update_live_prices():
+    print("🔵 VOX Live Price Fetcher")
+    print(f"   API Key: {'✓' if POLYGON_API_KEY else '✗ MISSING'}")
+    
+    tickers, positions = load_portfolio_tickers()
+    print(f"   Portfolio: {len(positions)} positions, {len(tickers)} unique tickers")
+    
+    if not tickers:
+        print("   No tickers to fetch.")
+        return {}
+    
+    if not POLYGON_API_KEY:
+        print("   ERROR: POLYGON_API_KEY not found in .env")
+        return {}
+    
+    print(f"\n   Fetching {len(tickers)} prices from Polygon...")
+    prices = fetch_all_prices(tickers)
+    
+    # Load grades
+    grades_file = SCRIPT_DIR / "portfolio_grades.json"
+    grades = {}
+    if grades_file.exists():
+        try:
+            with open(grades_file) as f:
+                gdata = json.load(f)
+            # New format: grades are in strong_buy, moderate_buy, avoid lists
+            for cat in ["strong_buy", "moderate_buy", "avoid"]:
+                for item in gdata.get(cat, []):
+                    if isinstance(item, dict) and "ticker" in item:
+                        grades[item["ticker"]] = item.get("grade", 0)
+            # Also check old flat format
+            if not grades and "results" in gdata:
+                results = gdata["results"]
+                if isinstance(results, list):
+                    for item in results:
+                        if isinstance(item, dict) and "ticker" in item:
+                            grades[item["ticker"]] = item.get("grade", 0)
+                elif isinstance(results, dict):
+                    for k, v in results.items():
+                        if isinstance(v, dict):
+                            grades[k] = v.get("grade", 0)
+                        else:
+                            grades[k] = v
+        except Exception as e:
+            print(f"   ⚠️ Could not load grades: {e}")
+    
+    print(f"   Grades loaded: {len(grades)} tickers")
+    
+    # Build live positions array
+    live_positions = []
+    for pos in positions:
+        ticker = pos.get("ticker", "")
+        price_data = prices.get(ticker, {})
         
+        live_pos = dict(pos)
         if price_data:
-            price_cache[ticker] = price_data
-            print(f"  {ticker}: ${price_data['price']:.2f} ({price_data['change_pct']:+.2f}%)")
-        else:
-            print(f"  {ticker}: Failed to fetch")
-    
-    # Update positions
-    for position in positions:
-        ticker = position.get("ticker", "")
-        if ticker in price_cache:
-            price_data = price_cache[ticker]
-            old_price = position.get("price", 0)
-            shares = position.get("shares", 0)
+            live_price = price_data["price"]
+            shares = pos.get("shares", 0) or pos.get("quantity", 0)
+            cost_basis = pos.get("cost_basis", 0) or pos.get("avg_cost", 0)
             
-            position["price"] = price_data["price"]
-            position["value"] = price_data["price"] * shares
-            position["unrealized_pnl"] = (price_data["price"] - position.get("cost_basis", old_price)) * shares
-            position["price_change_pct"] = price_data["change_pct"]
-            position["last_updated"] = datetime.now().isoformat()
-            updated_count += 1
-    
-    # Save updated positions
-    output_file = os.path.join(SCRIPTS_DIR, "dashboard_positions_live.json")
-    with open(output_file, 'w') as f:
-        json.dump({"positions": positions, "updated_at": datetime.now().isoformat()}, f, indent=2)
-    
-    print(f"\nUpdated {updated_count} positions")
-    print(f"Saved to {output_file}")
-    
-    # Generate summary
-    total_value = sum(p.get("value", 0) for p in positions)
-    total_pnl = sum(p.get("unrealized_pnl", 0) for p in positions)
-    
-    print(f"\nPortfolio Summary:")
-    print(f"  Total Value: ${total_value:,.2f}")
-    print(f"  Total P&L: ${total_pnl:,.2f}")
-    print(f"  Positions: {len(positions)}")
-
-
-def check_price_alerts(threshold_pct: float = 5.0):
-    """Check for significant price moves"""
-    positions = load_portfolio()
-    alerts = []
-    
-    for position in positions:
-        ticker = position.get("ticker", "")
-        change_pct = position.get("price_change_pct", 0)
+            live_pos["live_price"] = live_price
+            live_pos["price_change"] = price_data.get("change", 0)
+            live_pos["price_change_pct"] = price_data.get("change_pct", 0)
+            live_pos["live_value"] = live_price * shares if shares else pos.get("value", 0)
+            live_pos["live_pnl"] = (live_price - cost_basis) * shares if (shares and cost_basis) else pos.get("pnl", 0)
+            live_pos["volume"] = price_data.get("volume", 0)
+            live_pos["price_updated"] = price_data.get("timestamp", datetime.now(timezone.utc).isoformat())
+        elif ticker in CRYPTO_TICKERS:
+            # For crypto without price data, keep original values
+            print(f"   ⚠️ {ticker}: crypto ticker, keeping original price ${pos.get('price', 0)}")
+            live_pos["live_price"] = pos.get("price", 0)
+            live_pos["live_value"] = pos.get("value", 0)
+            live_pos["live_pnl"] = pos.get("pnl", 0)
+            live_pos["price_change"] = 0
+            live_pos["price_change_pct"] = 0
+            live_pos["volume"] = 0
+            live_pos["price_updated"] = datetime.now(timezone.utc).isoformat()
         
-        if abs(change_pct) >= threshold_pct:
-            alerts.append({
-                "ticker": ticker,
-                "change_pct": change_pct,
-                "price": position.get("price", 0),
-                "direction": "UP" if change_pct > 0 else "DOWN",
-            })
-    
-    if alerts:
-        print(f"\n🚨 PRICE ALERTS (>{threshold_pct}%):")
-        for alert in sorted(alerts, key=lambda x: abs(x["change_pct"]), reverse=True):
-            emoji = "🟢" if alert["direction"] == "UP" else "🔴"
-            print(f"  {emoji} {alert['ticker']}: {alert['change_pct']:+.2f}% @ ${alert['price']:.2f}")
-    else:
-        print(f"\n✅ No significant moves (>{threshold_pct}%)")
-    
-    return alerts
-
-
-def main():
-    parser = argparse.ArgumentParser(description="VOX Live Price Feed")
-    parser.add_argument("--update", action="store_true", help="Update all portfolio prices")
-    parser.add_argument("--ticker", help="Get price for specific ticker")
-    parser.add_argument("--alert-threshold", type=float, default=5.0, help="Alert threshold %")
-    parser.add_argument("--check-alerts", action="store_true", help="Check for price alerts")
-    
-    args = parser.parse_args()
-    
-    if args.ticker:
-        # Determine if crypto
-        is_crypto = args.ticker.upper() in {"BTC", "ETH", "BNB", "ADA"}
+        # Merge grade
+        live_pos["grade"] = grades.get(ticker, 0)
         
-        if is_crypto:
-            price_data = get_crypto_price(args.ticker.upper())
-        else:
-            price_data = get_stock_price(args.ticker.upper())
-        
-        if price_data:
-            print(f"\n{price_data['ticker']}: ${price_data['price']:.2f}")
-            print(f"  Change: {price_data['change_pct']:+.2f}%")
-            print(f"  Open: ${price_data['open']:.2f}")
-            print(f"  High: ${price_data['high']:.2f}")
-            print(f"  Low: ${price_data['low']:.2f}")
-            print(f"  Volume: {price_data['volume']:,.0f}")
-        else:
-            print(f"Failed to fetch {args.ticker}")
+        live_positions.append(live_pos)
     
-    elif args.update:
-        update_portfolio_prices()
-        check_price_alerts(args.alert_threshold)
+    # Save to JSON (legacy)
+    output = {
+        "timestamp": datetime.now().isoformat(),
+        "updated_at": datetime.now(timezone.utc).isoformat(),
+        "source": "polygon",
+        "count": len(live_positions),
+        "positions": live_positions,
+        "prices": prices
+    }
     
-    elif args.check_alerts:
-        check_price_alerts(args.alert_threshold)
+    with open(LIVE_PRICES_FILE, 'w') as f:
+        json.dump(output, f, indent=2)
     
-    else:
-        parser.print_help()
+    # Sync to Supabase
+    try:
+        from vox_supabase_sync import sync_positions
+        synced = sync_positions(live_positions)
+        print(f"   ✅ Synced {synced} positions to Supabase")
+    except Exception as e:
+        print(f"   ⚠️ Supabase sync failed: {e}")
+    
+    print(f"\n✅ Saved {len(live_positions)} positions to {LIVE_PRICES_FILE.name}")
+    print(f"   Updated at: {output['updated_at']}")
+    
+    return prices
 
 
 if __name__ == "__main__":
-    main()
+    update_live_prices()

@@ -1,0 +1,46 @@
+{
+  "type": "morning_briefing",
+  "generated_at": "2026-06-07T08:00:00Z",
+  "tldr": "Market regime: NEUTRAL. Portfolio: 70 positions, $185,301 AUM. 0 critical alerts, 3 action items.",
+  "market": {
+    "regime": "NEUTRAL",
+    "regime_score": 50,
+    "signals": {
+      "fed_rate": {"value": 4.33, "signal": "NEUTRAL"},
+      "yield_10y": {"value": 4.42, "signal": "BEARISH"},
+      "yield_2y": {"value": 4.02, "signal": "NEUTRAL"},
+      "dxy": {"value": 99.1, "signal": "BULLISH"},
+      "vix": {"value": 14.2, "signal": "BULLISH"},
+      "oil_wti": {"value": 72.5, "signal": "NEUTRAL"},
+      "gold": {"value": 2350.0, "signal": "BULLISH"},
+      "copper": {"value": 4.5, "signal": "NEUTRAL"}
+    }
+  },
+  "portfolio": {
+    "total_positions": 70,
+    "total_aum": 185301.35,
+    "stock_aum": 165000.0,
+    "crypto_aum": 20301.35,
+    "grade_distribution": {"strong": 25, "moderate": 35, "weak": 10},
+    "missing_cost_basis": 37
+  },
+  "alerts": {
+    "critical": [],
+    "action": [
+      {"ticker": "BYND", "severity": "ACTION", "type": "SELL", "message": "Grade 32 — review thesis"},
+      {"ticker": "OKLO", "severity": "ACTION", "type": "THESIS_DISCONNECT", "message": "Grade 72 but down 22% — verify thesis"}
+    ],
+    "watch": []
+  },
+  "watchlist": [
+    {"ticker": "NVDA", "grade": 82, "council": "BUY"},
+    {"ticker": "MU", "grade": 78, "council": "BUY"},
+    {"ticker": "MRVL", "grade": 76, "council": "BUY"}
+  ],
+  "checklist": [
+    "Review critical alerts",
+    "Check earnings calendar for portfolio holdings",
+    "Verify stops on high-beta positions",
+    "Confirm cash reserve target (10-20%)"
+  ]
+}

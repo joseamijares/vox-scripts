@@ -139,23 +139,76 @@ date: {datetime.now().strftime("%Y-%m-%d")}
         return md
     
     def save(self):
-        """Save to vault"""
+        """Save to vault AND JSON"""
         md = self.generate_markdown()
         with open(SENTIMENT_FILE, "w") as f:
             f.write(md)
         print(f"✅ Sentiment Tracker updated: {SENTIMENT_FILE}")
+        
+        # Also save as JSON for alert system
+        json_data = {
+            "timestamp": datetime.now().isoformat(),
+            "alerts": self.alerts,
+            "sentiment": self.sentiment_data,
+            "opportunities": self.get_contrarian_opportunities()
+        }
+        json_path = os.path.expanduser("~/.hermes/scripts/vox_sentiment_tracker.json")
+        with open(json_path, "w") as f:
+            json.dump(json_data, f, indent=2)
+        print(f"💾 JSON export: {json_path}")
 
 if __name__ == "__main__":
     tracker = SentimentTracker()
     
-    # Example data
-    tracker.update_sentiment("NVDA", 65, 45, 70, 256, 53.6)
-    tracker.update_sentiment("AMAT", 60, 50, 70, 415, 57.6)
-    tracker.update_sentiment("CEG", 30, 40, 60, 294, 48.2)
-    tracker.update_sentiment("JMIA", -80, -70, 40, 2.40, 35.0)
+    # Load real data from other sources
+    scripts_dir = os.path.expanduser("~/.hermes/scripts")
     
-    tracker.add_alert("NVDA", "PRICE", "Buy — RSI <40", 215, 70)
-    tracker.add_alert("OKLO", "PRICE", "Sell — Target", 80, 55)
+    # Load grades
+    grades = {}
+    try:
+        with open(f"{scripts_dir}/portfolio_grades.json") as f:
+            grade_data = json.load(f)
+        for cat in ['strong_buy', 'moderate_buy', 'avoid']:
+            for item in grade_data.get(cat, []):
+                grades[item['ticker']] = item
+    except:
+        pass
+    
+    # Load X momentum for social sentiment
+    x_momentum = {}
+    try:
+        with open(f"{scripts_dir}/snapshots/x_momentum_latest.json") as f:
+            x_data = json.load(f)
+        for item in x_data.get('results', []):
+            # Convert score to -100 to +100 range
+            score = item.get('score', 50)
+            x_momentum[item['ticker']] = (score - 50) * 2  # Center at 0
+    except:
+        pass
+    
+    # Load positions for prices
+    positions = {}
+    try:
+        with open(f"{scripts_dir}/dashboard_positions_live.json") as f:
+            pos_data = json.load(f)
+        for p in pos_data.get('positions', []):
+            positions[p['ticker']] = p
+    except:
+        pass
+    
+    # Update sentiment for all tickers with data
+    all_tickers = set(grades.keys()) | set(x_momentum.keys())
+    for ticker in all_tickers:
+        grade = grades.get(ticker, {}).get('grade', 50)
+        social = x_momentum.get(ticker, 0)
+        pos = positions.get(ticker, {})
+        price = pos.get('live_price') or pos.get('price', 0)
+        rsi = grades.get(ticker, {}).get('rsi', 50)
+        
+        # News score placeholder (would come from news digest)
+        news = 0
+        
+        tracker.update_sentiment(ticker, social, news, grade, price, rsi)
     
     tracker.save()
     

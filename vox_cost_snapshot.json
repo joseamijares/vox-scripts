@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-06-10T15:00:56.568292+00:00",
+  "daily_cost_usd": 0.1323,
+  "monthly_estimate_usd": 3.97,
+  "yearly_estimate_usd": 48.29,
+  "total_all_time_usd": 3.8367,
+  "agent_breakdown": {
+    "vox_weather_agent": 0.0,
+    "vox_geopolitical_agent": 0.0,
+    "vox_supply_chain_agent": 0.0096,
+    "vox_macro_agent": 0.0018,
+    "vox_sector_agent": 0.0066,
+    "vox_trump_agent": 0.0,
+    "vox_reddit_agent": 0.0,
+    "vox_x_agent": 0.0,
+    "vox_research_orchestrator": 0.06,
+    "vox_smart_alerts": 0.0336,
+    "vox_premarket": 0.0103,
+    "vox_broker_sync": 0.0104
+  },
+  "free_sources": [
+    "Open-Meteo",
+    "TradingEconomics",
+    "RSS Feeds",
+    "Finnhub (free tier)"
+  ],
+  "paid_sources": [
+    "Polygon.io"
+  ],
+  "recommendations": []
+}

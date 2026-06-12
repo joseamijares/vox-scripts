@@ -1,0 +1,30 @@
+{
+  "patterns": [
+    {
+      "id": "6d337713",
+      "timestamp": "2026-05-25T21:12:44.915788+00:00",
+      "ticker": "BTC",
+      "type": "breakout",
+      "trigger": "Broke 5K on May 10",
+      "outcome": "Dumped 12% in 3 days",
+      "pnl_pct": -12.0,
+      "timeframe_days": 3,
+      "notes": "High volume, then reversal"
+    },
+    {
+      "id": "bec59bc0",
+      "timestamp": "2026-05-25T21:12:51.109144+00:00",
+      "ticker": "TSLA",
+      "type": "grade_breakout",
+      "trigger": "Grade 70 + volume spike",
+      "outcome": "+15% in 2 weeks",
+      "pnl_pct": 15.0,
+      "timeframe_days": 14,
+      "notes": "Council voted 3-1 BUY"
+    }
+  ],
+  "theses": [],
+  "outcomes": [],
+  "regimes": [],
+  "queries": []
+}

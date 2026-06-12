@@ -1,0 +1,330 @@
+#!/usr/bin/env python3
+"""
+VOX Alert System v3 — Smart, Silent, Actionable
+Only alerts when something CHANGED or REQUIRES ACTION.
+No more "all clear" spam.
+"""
+
+import os
+import sys
+import json
+import hashlib
+import urllib.request
+from pathlib import Path
+from datetime import datetime, timedelta
+
+# ─── Config ──────────────────────────────────────────────────────────
+ALERT_STATE_FILE = Path.home() / ".hermes" / "scripts" / ".vox_alert_state.json"
+GRADE_RESULTS = Path.home() / ".hermes" / "scripts" / "grade_results.json"
+TRUMP_RESULTS = Path.home() / ".hermes" / "scripts" / "trump_tracker_results.json"
+
+# Only alert on these conditions
+MIN_GRADE_FOR_BUY_ALERT = 85      # Grade >= 85 and BUY signal
+MAX_GRADE_FOR_SELL_ALERT = 45     # Grade <= 45 and you HOLD it
+MIN_TRUMP_IMPACT = 8              # Only Trump tweets with impact >= 8
+PRICE_MOVE_PCT = 5.0              # Only alert on 5%+ price moves
+
+# ─── Helpers ─────────────────────────────────────────────────────────
+def load_env():
+    env_path = Path.home() / ".hermes" / ".env"
+    keys = {}
+    if env_path.exists():
+        with open(env_path) as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith("#") and "=" in line:
+                    k, v = line.split("=", 1)
+                    keys[k] = v
+    return keys
+
+
+def send_telegram(message: str) -> bool:
+    env = load_env()
+    token = env.get("TELEGRAM_BOT_TOKEN", "")
+    chat_id = env.get("TELEGRAM_CHAT_ID", "")
+    if not token or not chat_id:
+        print(f"[TELEGRAM NOT CONFIGURED]\n{message}")
+        return False
+    url = f"https://api.telegram.org/bot{token}/sendMessage"
+    data = json.dumps({
+        "chat_id": chat_id,
+        "text": message,
+        "parse_mode": "Markdown",
+        "disable_web_page_preview": True
+    }).encode()
+    req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            return json.loads(resp.read()).get("ok", False)
+    except Exception as e:
+        print(f"Telegram error: {e}")
+        return False
+
+
+def load_state():
+    if ALERT_STATE_FILE.exists():
+        with open(ALERT_STATE_FILE) as f:
+            return json.load(f)
+    return {"sent_alerts": {}, "last_digest": "", "last_grade_hash": ""}
+
+
+def save_state(state):
+    with open(ALERT_STATE_FILE, "w") as f:
+        json.dump(state, f, indent=2)
+
+
+def alert_hash(alert_type, ticker, details=""):
+    """Create a unique hash for this alert so we don't repeat it."""
+    content = f"{alert_type}:{ticker}:{details}:{datetime.now().strftime('%Y-%m-%d')}"
+    return hashlib.md5(content.encode()).hexdigest()[:16]
+
+
+def already_sent(state, alert_id):
+    return alert_id in state.get("sent_alerts", {})
+
+
+def mark_sent(state, alert_id, ttl_hours=24):
+    """Mark alert as sent with TTL."""
+    state.setdefault("sent_alerts", {})[alert_id] = {
+        "sent_at": datetime.now().isoformat(),
+        "expires_at": (datetime.now() + timedelta(hours=ttl_hours)).isoformat()
+    }
+
+
+def clean_expired(state):
+    """Remove expired alert entries."""
+    now = datetime.now()
+    sent = state.get("sent_alerts", {})
+    expired = [k for k, v in sent.items() if datetime.fromisoformat(v["expires_at"]) < now]
+    for k in expired:
+        del sent[k]
+
+# ─── Alert Generators ────────────────────────────────────────────────
+def check_grade_alerts(state, portfolio_tickers):
+    """Check for significant grade changes on portfolio positions."""
+    alerts = []
+    if not GRADE_RESULTS.exists():
+        return alerts
+
+    try:
+        with open(GRADE_RESULTS) as f:
+            data = json.load(f)
+    except:
+        return alerts
+
+    # Track already-alerted tickers to avoid duplicates
+    alerted_tickers = set()
+
+    for grade in data.get("grades", []):
+        ticker = grade.get("ticker", "")
+        score = grade.get("total_grade", 0)
+        rec = grade.get("recommendation", "")
+        price = grade.get("price", 0)
+
+        # Only alert on portfolio positions
+        if ticker not in portfolio_tickers:
+            continue
+
+        # Skip duplicates
+        if ticker in alerted_tickers:
+            continue
+
+        # SELL: Grade dropped below 45 — thesis broken
+        if score <= MAX_GRADE_FOR_SELL_ALERT and "AVOID" in rec:
+            alert_id = alert_hash("SELL", ticker, f"grade_{score}")
+            if not already_sent(state, alert_id):
+                alerts.append({
+                    "id": alert_id,
+                    "type": "SELL",
+                    "ticker": ticker,
+                    "score": score,
+                    "price": price,
+                    "message": f"""🔴 *VOX ALERT: SELL {ticker}*
+
+Grade crashed to *{score}/100* — thesis broken.
+Current price: ${price:.2f}
+
+*Action:* Exit position. Do not hold a failing thesis.
+"""
+                })
+                alerted_tickers.add(ticker)
+
+        # BUY ADD: Grade >= 85 and strong signal
+        elif score >= MIN_GRADE_FOR_BUY_ALERT and "BUY" in rec:
+            alert_id = alert_hash("BUY", ticker, f"grade_{score}")
+            if not already_sent(state, alert_id):
+                alerts.append({
+                    "id": alert_id,
+                    "type": "BUY",
+                    "ticker": ticker,
+                    "score": score,
+                    "price": price,
+                    "message": f"""🟢 *VOX ALERT: ADD {ticker}*
+
+Grade surged to *{score}/100* — strong setup.
+Current price: ${price:.2f}
+
+*Action:* Consider adding to position.
+"""
+                })
+                alerted_tickers.add(ticker)
+
+    return alerts
+
+
+def check_trump_alerts(state):
+    """Only alert on HIGH impact Trump tweets (>= 8) with ACTIONABLE plan."""
+    alerts = []
+    if not TRUMP_RESULTS.exists():
+        return alerts
+
+    try:
+        with open(TRUMP_RESULTS) as f:
+            data = json.load(f)
+    except:
+        return alerts
+
+    for tweet in data.get("tweets", []):
+        impact = tweet.get("classification", {}).get("impact_score", 0)
+        if impact >= MIN_TRUMP_IMPACT:
+            text = tweet.get("text", "")[:100]
+            alert_id = alert_hash("TRUMP", text[:30], f"impact_{impact}")
+            if already_sent(state, alert_id):
+                continue
+
+            # Get action plan from trump_tracker.py output
+            action_plan = tweet.get("action_plan", {})
+            actions = action_plan.get("actions", [])
+            overlap = action_plan.get("portfolio_overlap", [])
+            risk = action_plan.get("risk_level", "MEDIUM")
+
+            # Skip if no actionable items
+            if not actions or all("No action" in a or "Low impact" in a for a in actions):
+                continue
+
+            # Build actionable message
+            lines = [
+                f"🔴 *TRUMP ALERT — Impact {impact}/10*",
+                "",
+                f"📝 *Tweet:*",
+                f"{text}...",
+                "",
+            ]
+
+            if overlap:
+                lines.extend([
+                    f"🔴 *YOUR POSITIONS AT RISK:*",
+                    f"{', '.join(overlap)}",
+                    "",
+                ])
+
+            lines.extend([
+                "📋 *ACTION PLAN:*",
+            ])
+            for action in actions:
+                lines.append(action)
+
+            lines.extend([
+                "",
+                f"*Risk Level:* {risk}",
+            ])
+
+            alerts.append({
+                "id": alert_id,
+                "type": "TRUMP",
+                "message": "\n".join(lines)
+            })
+
+    return alerts
+
+
+def check_market_regime_change(state):
+    """Alert if market regime changed (would need regime file)."""
+    # Placeholder — can be wired to regime detector
+    return []
+
+# ─── Main ────────────────────────────────────────────────────────────
+def run():
+    state = load_state()
+    clean_expired(state)
+
+    # Load portfolio tickers from positions file
+    portfolio_tickers = set()
+    positions_file = Path.home() / ".hermes" / "scripts" / "dashboard_positions.json"
+    if positions_file.exists():
+        try:
+            with open(positions_file) as f:
+                data = json.load(f)
+                if isinstance(data, list):
+                    positions = data
+                elif isinstance(data, dict):
+                    positions = data.get("positions", [])
+                else:
+                    positions = []
+                for p in positions:
+                    portfolio_tickers.add(p.get("ticker", ""))
+        except:
+            pass
+
+    # Also load from unified portfolio if available
+    unified_file = Path.home() / ".hermes" / "scripts" / "unified_portfolio.json"
+    if unified_file.exists():
+        try:
+            with open(unified_file) as f:
+                data = json.load(f)
+                for p in data.get("positions", []):
+                    portfolio_tickers.add(p.get("ticker", ""))
+        except:
+            pass
+
+    all_alerts = []
+
+    # 1. Grade alerts (portfolio only)
+    grade_alerts = check_grade_alerts(state, portfolio_tickers)
+    all_alerts.extend(grade_alerts)
+
+    # 2. Trump alerts (high impact only)
+    trump_alerts = check_trump_alerts(state)
+    all_alerts.extend(trump_alerts)
+
+    # 3. Market regime (placeholder)
+    regime_alerts = check_market_regime_change(state)
+    all_alerts.extend(regime_alerts)
+
+    # ─── Output ──────────────────────────────────────────────────────
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"{'='*60}")
+    print(f"VOX Alert System v3 — {now}")
+    print(f"{'='*60}")
+    print(f"Portfolio positions tracked: {len(portfolio_tickers)}")
+    print(f"Alerts generated: {len(all_alerts)}")
+
+    if not all_alerts:
+        print("\n✓ No actionable alerts. All quiet.")
+        print("(No Telegram message sent — staying silent)")
+        save_state(state)
+        return
+
+    # Build combined message
+    lines = [f"*🚨 VOX ALERTS — {len(all_alerts)} Action Required*\n"]
+    for alert in all_alerts:
+        lines.append(alert["message"])
+        lines.append("─" * 30)
+        mark_sent(state, alert["id"])
+
+    combined = "\n".join(lines)
+
+    # Print locally
+    print(f"\n{'='*60}")
+    print(combined)
+    print(f"{'='*60}")
+
+    # Send to Telegram
+    sent = send_telegram(combined)
+    print(f"\nTelegram sent: {'✓' if sent else '✗'}")
+
+    save_state(state)
+
+
+if __name__ == "__main__":
+    run()

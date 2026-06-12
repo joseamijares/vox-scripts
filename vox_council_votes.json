@@ -1,0 +1,2936 @@
+{
+  "timestamp": "2026-05-28T14:53:39.119842+00:00",
+  "total_votes": 195,
+  "strong_buy": 53,
+  "buy": 74,
+  "hold": 32,
+  "trim": 29,
+  "sell": 7,
+  "results": [
+    {
+      "ticker": "FTXG",
+      "consensus": "STRONG_BUY",
+      "score": 89,
+      "technical_score": 89,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 21.84,
+        "stop_loss": 21.37,
+        "target_1": 23.17,
+        "target_2": 25.96
+      },
+      "timestamp": "2026-05-28T14:53:39.119239+00:00"
+    },
+    {
+      "ticker": "ROBT",
+      "consensus": "STRONG_BUY",
+      "score": 88,
+      "technical_score": 88,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 52.65,
+        "stop_loss": 48.64,
+        "target_1": 58.31,
+        "target_2": 80.04
+      },
+      "timestamp": "2026-05-28T14:53:39.119341+00:00"
+    },
+    {
+      "ticker": "VOO",
+      "consensus": "STRONG_BUY",
+      "score": 88,
+      "technical_score": 88,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 659.54,
+        "stop_loss": 631.72,
+        "target_1": 705.34,
+        "target_2": 864.67
+      },
+      "timestamp": "2026-05-28T14:53:39.119385+00:00"
+    },
+    {
+      "ticker": "ROBO",
+      "consensus": "STRONG_BUY",
+      "score": 87,
+      "technical_score": 87,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 82.46,
+        "stop_loss": 75.85,
+        "target_1": 91.9,
+        "target_2": 127.08
+      },
+      "timestamp": "2026-05-28T14:53:39.119340+00:00"
+    },
+    {
+      "ticker": "QQQ",
+      "consensus": "STRONG_BUY",
+      "score": 86,
+      "technical_score": 86,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 683.27,
+        "stop_loss": 636.89,
+        "target_1": 747.99,
+        "target_2": 1007.12
+      },
+      "timestamp": "2026-05-28T14:53:39.119334+00:00"
+    },
+    {
+      "ticker": "SPY",
+      "consensus": "STRONG_BUY",
+      "score": 86,
+      "technical_score": 86,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 717.43,
+        "stop_loss": 687.12,
+        "target_1": 767.17,
+        "target_2": 940.48
+      },
+      "timestamp": "2026-05-28T14:53:39.119364+00:00"
+    },
+    {
+      "ticker": "STT",
+      "consensus": "STRONG_BUY",
+      "score": 86,
+      "technical_score": 86,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 148.48,
+        "stop_loss": 142.98,
+        "target_1": 162.49,
+        "target_2": 202.75
+      },
+      "timestamp": "2026-05-28T14:53:39.119365+00:00"
+    },
+    {
+      "ticker": "VTI",
+      "consensus": "STRONG_BUY",
+      "score": 86,
+      "technical_score": 86,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 352.96,
+        "stop_loss": 338.21,
+        "target_1": 377.64,
+        "target_2": 462.81
+      },
+      "timestamp": "2026-05-28T14:53:39.119390+00:00"
+    },
+    {
+      "ticker": "XLV",
+      "consensus": "STRONG_BUY",
+      "score": 86,
+      "technical_score": 86,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 143.89,
+        "stop_loss": 137.71,
+        "target_1": 153.33,
+        "target_2": 182.03
+      },
+      "timestamp": "2026-05-28T14:53:39.119403+00:00"
+    },
+    {
+      "ticker": "LILM",
+      "consensus": "STRONG_BUY",
+      "score": 86,
+      "technical_score": 86,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 0.04939999999999999,
+        "stop_loss": 0.044199999999999996,
+        "target_1": 0.05979999999999999,
+        "target_2": 0.0676
+      },
+      "timestamp": "2026-05-28T14:53:39.119411+00:00"
+    },
+    {
+      "ticker": "UFO",
+      "consensus": "STRONG_BUY",
+      "score": 85,
+      "technical_score": 85,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 56.18,
+        "stop_loss": 47.39,
+        "target_1": 68.58,
+        "target_2": 124.42
+      },
+      "timestamp": "2026-05-28T14:53:39.119378+00:00"
+    },
+    {
+      "ticker": "ARKX",
+      "consensus": "STRONG_BUY",
+      "score": 84,
+      "technical_score": 84,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 33.54,
+        "stop_loss": 30.57,
+        "target_1": 37.54,
+        "target_2": 53.86
+      },
+      "timestamp": "2026-05-28T14:53:39.119174+00:00"
+    },
+    {
+      "ticker": "EDEN",
+      "consensus": "STRONG_BUY",
+      "score": 84,
+      "technical_score": 84,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 109.05,
+        "stop_loss": 104.24,
+        "target_1": 115.71,
+        "target_2": 135.87
+      },
+      "timestamp": "2026-05-28T14:53:39.119227+00:00"
+    },
+    {
+      "ticker": "GRRR",
+      "consensus": "STRONG_BUY",
+      "score": 84,
+      "technical_score": 84,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 13.86,
+        "stop_loss": 12.05,
+        "target_1": 16.96,
+        "target_2": 29.18
+      },
+      "timestamp": "2026-05-28T14:53:39.119247+00:00"
+    },
+    {
+      "ticker": "MS",
+      "consensus": "STRONG_BUY",
+      "score": 84,
+      "technical_score": 84,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 189.48,
+        "stop_loss": 179.35,
+        "target_1": 208.0,
+        "target_2": 268.38
+      },
+      "timestamp": "2026-05-28T14:53:39.119298+00:00"
+    },
+    {
+      "ticker": "HEMI",
+      "consensus": "STRONG_BUY",
+      "score": 83,
+      "technical_score": 83,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 40.69,
+        "stop_loss": 39.41,
+        "target_1": 43.12,
+        "target_2": 50.63
+      },
+      "timestamp": "2026-05-28T14:53:39.119251+00:00"
+    },
+    {
+      "ticker": "JNJ",
+      "consensus": "STRONG_BUY",
+      "score": 83,
+      "technical_score": 83,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 225.3,
+        "stop_loss": 213.76,
+        "target_1": 240.2,
+        "target_2": 283.88
+      },
+      "timestamp": "2026-05-28T14:53:39.119268+00:00"
+    },
+    {
+      "ticker": "MIRA",
+      "consensus": "STRONG_BUY",
+      "score": 83,
+      "technical_score": 83,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 0.99,
+        "stop_loss": 0.9,
+        "target_1": 1.22,
+        "target_2": 1.93
+      },
+      "timestamp": "2026-05-28T14:53:39.119290+00:00"
+    },
+    {
+      "ticker": "GS",
+      "consensus": "STRONG_BUY",
+      "score": 82,
+      "technical_score": 82,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 934.1,
+        "stop_loss": 872.03,
+        "target_1": 1036.87,
+        "target_2": 1369.79
+      },
+      "timestamp": "2026-05-28T14:53:39.119249+00:00"
+    },
+    {
+      "ticker": "AAPL",
+      "consensus": "STRONG_BUY",
+      "score": 81,
+      "technical_score": 81,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 287.82,
+        "stop_loss": 259.03,
+        "target_1": 319.53,
+        "target_2": 466.31
+      },
+      "timestamp": "2026-05-28T14:53:39.119153+00:00"
+    },
+    {
+      "ticker": "BK",
+      "consensus": "STRONG_BUY",
+      "score": 81,
+      "technical_score": 81,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 130.72,
+        "stop_loss": 126.26,
+        "target_1": 141.4,
+        "target_2": 169.87
+      },
+      "timestamp": "2026-05-28T14:53:39.119195+00:00"
+    },
+    {
+      "ticker": "IWM",
+      "consensus": "STRONG_BUY",
+      "score": 81,
+      "technical_score": 81,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 274.51,
+        "stop_loss": 262.25,
+        "target_1": 297.55,
+        "target_2": 374.73
+      },
+      "timestamp": "2026-05-28T14:53:39.119264+00:00"
+    },
+    {
+      "ticker": "META",
+      "consensus": "STRONG_BUY",
+      "score": 81,
+      "technical_score": 81,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 604.14,
+        "stop_loss": 574.82,
+        "target_1": 687.74,
+        "target_2": 816.55
+      },
+      "timestamp": "2026-05-28T14:53:39.119289+00:00"
+    },
+    {
+      "ticker": "ASTS",
+      "consensus": "STRONG_BUY",
+      "score": 79,
+      "technical_score": 79,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 89.49,
+        "stop_loss": 61.53,
+        "target_1": 133.82,
+        "target_2": 333.82
+      },
+      "timestamp": "2026-05-28T14:53:39.119178+00:00"
+    },
+    {
+      "ticker": "ICLN",
+      "consensus": "STRONG_BUY",
+      "score": 79,
+      "technical_score": 79,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 21.02,
+        "stop_loss": 19.42,
+        "target_1": 23.78,
+        "target_2": 34.33
+      },
+      "timestamp": "2026-05-28T14:53:39.119261+00:00"
+    },
+    {
+      "ticker": "QCLN",
+      "consensus": "STRONG_BUY",
+      "score": 79,
+      "technical_score": 79,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 59.01,
+        "stop_loss": 54.15,
+        "target_1": 68.36,
+        "target_2": 102.6
+      },
+      "timestamp": "2026-05-28T14:53:39.119331+00:00"
+    },
+    {
+      "ticker": "RDW",
+      "consensus": "STRONG_BUY",
+      "score": 79,
+      "technical_score": 79,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 14.03,
+        "stop_loss": 8.05,
+        "target_1": 25.42,
+        "target_2": 71.85
+      },
+      "timestamp": "2026-05-28T14:53:39.119336+00:00"
+    },
+    {
+      "ticker": "SMH",
+      "consensus": "STRONG_BUY",
+      "score": 79,
+      "technical_score": 79,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 535.17,
+        "stop_loss": 477.57,
+        "target_1": 624.55,
+        "target_2": 949.29
+      },
+      "timestamp": "2026-05-28T14:53:39.119352+00:00"
+    },
+    {
+      "ticker": "SOLV",
+      "consensus": "STRONG_BUY",
+      "score": 79,
+      "technical_score": 79,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 71.88,
+        "stop_loss": 63.48,
+        "target_1": 79.38,
+        "target_2": 113.13
+      },
+      "timestamp": "2026-05-28T14:53:39.119356+00:00"
+    },
+    {
+      "ticker": "SPIR",
+      "consensus": "STRONG_BUY",
+      "score": 79,
+      "technical_score": 79,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 19.31,
+        "stop_loss": 14.7,
+        "target_1": 26.45,
+        "target_2": 57.83
+      },
+      "timestamp": "2026-05-28T14:53:39.119360+00:00"
+    },
+    {
+      "ticker": "TSLA",
+      "consensus": "STRONG_BUY",
+      "score": 79,
+      "technical_score": 79,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 405.81,
+        "stop_loss": 357.12,
+        "target_1": 462.47,
+        "target_2": 690.07
+      },
+      "timestamp": "2026-05-28T14:53:39.119376+00:00"
+    },
+    {
+      "ticker": "PBW",
+      "consensus": "STRONG_BUY",
+      "score": 78,
+      "technical_score": 78,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 39.5,
+        "stop_loss": 34.8,
+        "target_1": 46.57,
+        "target_2": 75.67
+      },
+      "timestamp": "2026-05-28T14:53:39.119322+00:00"
+    },
+    {
+      "ticker": "RIOT",
+      "consensus": "STRONG_BUY",
+      "score": 78,
+      "technical_score": 78,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 22.34,
+        "stop_loss": 14.85,
+        "target_1": 27.94,
+        "target_2": 63.21
+      },
+      "timestamp": "2026-05-28T14:53:39.119337+00:00"
+    },
+    {
+      "ticker": "SNOW",
+      "consensus": "STRONG_BUY",
+      "score": 78,
+      "technical_score": 78,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 155.96,
+        "stop_loss": 129.03,
+        "target_1": 184.9,
+        "target_2": 313.95
+      },
+      "timestamp": "2026-05-28T14:53:39.119355+00:00"
+    },
+    {
+      "ticker": "V",
+      "consensus": "STRONG_BUY",
+      "score": 78,
+      "technical_score": 78,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 317.69,
+        "stop_loss": 306.68,
+        "target_1": 348.82,
+        "target_2": 390.41
+      },
+      "timestamp": "2026-05-28T14:53:39.119382+00:00"
+    },
+    {
+      "ticker": "ARKG",
+      "consensus": "STRONG_BUY",
+      "score": 77,
+      "technical_score": 77,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 29.24,
+        "stop_loss": 26.68,
+        "target_1": 32.88,
+        "target_2": 48.19
+      },
+      "timestamp": "2026-05-28T14:53:39.119173+00:00"
+    },
+    {
+      "ticker": "BIO",
+      "consensus": "STRONG_BUY",
+      "score": 77,
+      "technical_score": 77,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 270.69,
+        "stop_loss": 229.63,
+        "target_1": 311.93,
+        "target_2": 532.28
+      },
+      "timestamp": "2026-05-28T14:53:39.119193+00:00"
+    },
+    {
+      "ticker": "HON",
+      "consensus": "STRONG_BUY",
+      "score": 77,
+      "technical_score": 77,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 217.13,
+        "stop_loss": 202.05,
+        "target_1": 240.63,
+        "target_2": 320.06
+      },
+      "timestamp": "2026-05-28T14:53:39.119254+00:00"
+    },
+    {
+      "ticker": "OKTA",
+      "consensus": "STRONG_BUY",
+      "score": 77,
+      "technical_score": 77,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 82.13,
+        "stop_loss": 70.8,
+        "target_1": 98.32,
+        "target_2": 145.6
+      },
+      "timestamp": "2026-05-28T14:53:39.119315+00:00"
+    },
+    {
+      "ticker": "TSM",
+      "consensus": "STRONG_BUY",
+      "score": 77,
+      "technical_score": 77,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 392.22,
+        "stop_loss": 373.51,
+        "target_1": 439.16,
+        "target_2": 570.4
+      },
+      "timestamp": "2026-05-28T14:53:39.119377+00:00"
+    },
+    {
+      "ticker": "XLK",
+      "consensus": "STRONG_BUY",
+      "score": 77,
+      "technical_score": 77,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 168.71,
+        "stop_loss": 152.17,
+        "target_1": 189.99,
+        "target_2": 281.2
+      },
+      "timestamp": "2026-05-28T14:53:39.119402+00:00"
+    },
+    {
+      "ticker": "ABBV",
+      "consensus": "STRONG_BUY",
+      "score": 76,
+      "technical_score": 76,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 206.03,
+        "stop_loss": 185.03,
+        "target_1": 224.41,
+        "target_2": 306.52
+      },
+      "timestamp": "2026-05-28T14:53:39.119156+00:00"
+    },
+    {
+      "ticker": "APP",
+      "consensus": "STRONG_BUY",
+      "score": 76,
+      "technical_score": 76,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 473.78,
+        "stop_loss": 417.34,
+        "target_1": 592.62,
+        "target_2": 1019.29
+      },
+      "timestamp": "2026-05-28T14:53:39.119171+00:00"
+    },
+    {
+      "ticker": "ARQQ",
+      "consensus": "STRONG_BUY",
+      "score": 76,
+      "technical_score": 76,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 14.46,
+        "stop_loss": 11.56,
+        "target_1": 19.38,
+        "target_2": 29.73
+      },
+      "timestamp": "2026-05-28T14:53:39.119176+00:00"
+    },
+    {
+      "ticker": "BOTZ",
+      "consensus": "STRONG_BUY",
+      "score": 76,
+      "technical_score": 76,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 38.61,
+        "stop_loss": 36.01,
+        "target_1": 42.54,
+        "target_2": 52.26
+      },
+      "timestamp": "2026-05-28T14:53:39.119199+00:00"
+    },
+    {
+      "ticker": "CIFR",
+      "consensus": "STRONG_BUY",
+      "score": 76,
+      "technical_score": 76,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 20.01,
+        "stop_loss": 16.11,
+        "target_1": 26.07,
+        "target_2": 52.32
+      },
+      "timestamp": "2026-05-28T14:53:39.119208+00:00"
+    },
+    {
+      "ticker": "FLY",
+      "consensus": "STRONG_BUY",
+      "score": 76,
+      "technical_score": 76,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 42.32,
+        "stop_loss": 30.3,
+        "target_1": 63.41,
+        "target_2": 138.22
+      },
+      "timestamp": "2026-05-28T14:53:39.119235+00:00"
+    },
+    {
+      "ticker": "UNH",
+      "consensus": "STRONG_BUY",
+      "score": 76,
+      "technical_score": 76,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 366.53,
+        "stop_loss": 347.5,
+        "target_1": 412.23,
+        "target_2": 493.53
+      },
+      "timestamp": "2026-05-28T14:53:39.119379+00:00"
+    },
+    {
+      "ticker": "XPEV",
+      "consensus": "STRONG_BUY",
+      "score": 76,
+      "technical_score": 76,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 15.73,
+        "stop_loss": 14.28,
+        "target_1": 17.21,
+        "target_2": 22.96
+      },
+      "timestamp": "2026-05-28T14:53:39.119405+00:00"
+    },
+    {
+      "ticker": "CPSH",
+      "consensus": "STRONG_BUY",
+      "score": 75,
+      "technical_score": 75,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 5.74,
+        "stop_loss": 3.11,
+        "target_1": 14.68,
+        "target_2": 37.02
+      },
+      "timestamp": "2026-05-28T14:53:39.119218+00:00"
+    },
+    {
+      "ticker": "MNTS",
+      "consensus": "STRONG_BUY",
+      "score": 75,
+      "technical_score": 75,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 7.62,
+        "stop_loss": 3.97,
+        "target_1": 22.64,
+        "target_2": 66.09
+      },
+      "timestamp": "2026-05-28T14:53:39.119294+00:00"
+    },
+    {
+      "ticker": "SIDU",
+      "consensus": "STRONG_BUY",
+      "score": 75,
+      "technical_score": 75,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 4.1,
+        "stop_loss": 2.78,
+        "target_1": 6.93,
+        "target_2": 15.99
+      },
+      "timestamp": "2026-05-28T14:53:39.119351+00:00"
+    },
+    {
+      "ticker": "TE",
+      "consensus": "STRONG_BUY",
+      "score": 75,
+      "technical_score": 75,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 6.95,
+        "stop_loss": 4.46,
+        "target_1": 11.5,
+        "target_2": 30.47
+      },
+      "timestamp": "2026-05-28T14:53:39.119369+00:00"
+    },
+    {
+      "ticker": "APLD",
+      "consensus": "BUY",
+      "score": 74,
+      "technical_score": 74,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 40.17,
+        "stop_loss": 29.93,
+        "target_1": 50.34,
+        "target_2": 106.12
+      },
+      "timestamp": "2026-05-28T14:53:39.119169+00:00"
+    },
+    {
+      "ticker": "BTDR",
+      "consensus": "BUY",
+      "score": 74,
+      "technical_score": 74,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 13.19,
+        "stop_loss": 10.44,
+        "target_1": 16.25,
+        "target_2": 30.83
+      },
+      "timestamp": "2026-05-28T14:53:39.119202+00:00"
+    },
+    {
+      "ticker": "CORZ",
+      "consensus": "BUY",
+      "score": 74,
+      "technical_score": 74,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 22.84,
+        "stop_loss": 18.85,
+        "target_1": 28.25,
+        "target_2": 52.26
+      },
+      "timestamp": "2026-05-28T14:53:39.119215+00:00"
+    },
+    {
+      "ticker": "GEN",
+      "consensus": "BUY",
+      "score": 74,
+      "technical_score": 74,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 22.29,
+        "stop_loss": 18.19,
+        "target_1": 25.75,
+        "target_2": 43.84
+      },
+      "timestamp": "2026-05-28T14:53:39.119243+00:00"
+    },
+    {
+      "ticker": "IBM",
+      "consensus": "BUY",
+      "score": 74,
+      "technical_score": 74,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 231.07,
+        "stop_loss": 205.97,
+        "target_1": 269.67,
+        "target_2": 402.89
+      },
+      "timestamp": "2026-05-28T14:53:39.119260+00:00"
+    },
+    {
+      "ticker": "IREN",
+      "consensus": "BUY",
+      "score": 74,
+      "technical_score": 74,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 53.04,
+        "stop_loss": 40.94,
+        "target_1": 69.49,
+        "target_2": 148.53
+      },
+      "timestamp": "2026-05-28T14:53:39.119263+00:00"
+    },
+    {
+      "ticker": "LLY",
+      "consensus": "BUY",
+      "score": 74,
+      "technical_score": 74,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 982.59,
+        "stop_loss": 824.99,
+        "target_1": 1114.86,
+        "target_2": 1856.7
+      },
+      "timestamp": "2026-05-28T14:53:39.119277+00:00"
+    },
+    {
+      "ticker": "MEME",
+      "consensus": "BUY",
+      "score": 74,
+      "technical_score": 74,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 9.56,
+        "stop_loss": 7.52,
+        "target_1": 11.82,
+        "target_2": 23.61
+      },
+      "timestamp": "2026-05-28T14:53:39.119288+00:00"
+    },
+    {
+      "ticker": "NEWT",
+      "consensus": "BUY",
+      "score": 74,
+      "technical_score": 74,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 12.88,
+        "stop_loss": 11.98,
+        "target_1": 14.61,
+        "target_2": 19.38
+      },
+      "timestamp": "2026-05-28T14:53:39.119306+00:00"
+    },
+    {
+      "ticker": "SPCE",
+      "consensus": "BUY",
+      "score": 74,
+      "technical_score": 74,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 2.84,
+        "stop_loss": 2.2,
+        "target_1": 3.97,
+        "target_2": 8.55
+      },
+      "timestamp": "2026-05-28T14:53:39.119359+00:00"
+    },
+    {
+      "ticker": "HOLO",
+      "consensus": "BUY",
+      "score": 73,
+      "technical_score": 73,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 1.78,
+        "stop_loss": 1.49,
+        "target_1": 2.2,
+        "target_2": 3.49
+      },
+      "timestamp": "2026-05-28T14:53:39.119253+00:00"
+    },
+    {
+      "ticker": "MU",
+      "consensus": "BUY",
+      "score": 73,
+      "technical_score": 73,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 692.5,
+        "stop_loss": 487.5,
+        "target_1": 975.28,
+        "target_2": 2251.15
+      },
+      "timestamp": "2026-05-28T14:53:39.119302+00:00"
+    },
+    {
+      "ticker": "PNC",
+      "consensus": "BUY",
+      "score": 73,
+      "technical_score": 73,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 213.23,
+        "stop_loss": 203.41,
+        "target_1": 230.53,
+        "target_2": 272.97
+      },
+      "timestamp": "2026-05-28T14:53:39.119327+00:00"
+    },
+    {
+      "ticker": "AMD",
+      "consensus": "BUY",
+      "score": 72,
+      "technical_score": 72,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 407.88,
+        "stop_loss": 309.29,
+        "target_1": 520.41,
+        "target_2": 1054.28
+      },
+      "timestamp": "2026-05-28T14:53:39.119164+00:00"
+    },
+    {
+      "ticker": "BA",
+      "consensus": "BUY",
+      "score": 72,
+      "technical_score": 72,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 219.33,
+        "stop_loss": 207.58,
+        "target_1": 248.95,
+        "target_2": 274.46
+      },
+      "timestamp": "2026-05-28T14:53:39.119185+00:00"
+    },
+    {
+      "ticker": "LUNR",
+      "consensus": "BUY",
+      "score": 72,
+      "technical_score": 72,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 31.43,
+        "stop_loss": 22.07,
+        "target_1": 46.43,
+        "target_2": 95.16
+      },
+      "timestamp": "2026-05-28T14:53:39.119281+00:00"
+    },
+    {
+      "ticker": "QLYS",
+      "consensus": "BUY",
+      "score": 72,
+      "technical_score": 72,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 92.5,
+        "stop_loss": 81.44,
+        "target_1": 106.61,
+        "target_2": 148.97
+      },
+      "timestamp": "2026-05-28T14:53:39.119332+00:00"
+    },
+    {
+      "ticker": "S",
+      "consensus": "BUY",
+      "score": 72,
+      "technical_score": 72,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 16.32,
+        "stop_loss": 13.47,
+        "target_1": 19.19,
+        "target_2": 31.39
+      },
+      "timestamp": "2026-05-28T14:53:39.119345+00:00"
+    },
+    {
+      "ticker": "TENB",
+      "consensus": "BUY",
+      "score": 72,
+      "technical_score": 72,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 22.18,
+        "stop_loss": 19.4,
+        "target_1": 26.75,
+        "target_2": 39.6
+      },
+      "timestamp": "2026-05-28T14:53:39.119370+00:00"
+    },
+    {
+      "ticker": "VRNS",
+      "consensus": "BUY",
+      "score": 72,
+      "technical_score": 72,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 27.78,
+        "stop_loss": 25.37,
+        "target_1": 32.11,
+        "target_2": 44.86
+      },
+      "timestamp": "2026-05-28T14:53:39.119386+00:00"
+    },
+    {
+      "ticker": "A",
+      "consensus": "BUY",
+      "score": 71,
+      "technical_score": 71,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 112.2,
+        "stop_loss": 105.1,
+        "target_1": 122.69,
+        "target_2": 148.06
+      },
+      "timestamp": "2026-05-28T14:53:39.118467+00:00"
+    },
+    {
+      "ticker": "DDD",
+      "consensus": "BUY",
+      "score": 71,
+      "technical_score": 71,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 2.77,
+        "stop_loss": 2.04,
+        "target_1": 3.81,
+        "target_2": 8.05
+      },
+      "timestamp": "2026-05-28T14:53:39.119223+00:00"
+    },
+    {
+      "ticker": "HIVE",
+      "consensus": "BUY",
+      "score": 71,
+      "technical_score": 71,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 3.2,
+        "stop_loss": 2.13,
+        "target_1": 4.58,
+        "target_2": 11.46
+      },
+      "timestamp": "2026-05-28T14:53:39.119252+00:00"
+    },
+    {
+      "ticker": "PFE",
+      "consensus": "BUY",
+      "score": 71,
+      "technical_score": 71,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 25.61,
+        "stop_loss": 24.43,
+        "target_1": 27.45,
+        "target_2": 31.54
+      },
+      "timestamp": "2026-05-28T14:53:39.119324+00:00"
+    },
+    {
+      "ticker": "QBTS",
+      "consensus": "BUY",
+      "score": 71,
+      "technical_score": 71,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 21.99,
+        "stop_loss": 16.6,
+        "target_1": 32.18,
+        "target_2": 60.13
+      },
+      "timestamp": "2026-05-28T14:53:39.119330+00:00"
+    },
+    {
+      "ticker": "WULF",
+      "consensus": "BUY",
+      "score": 71,
+      "technical_score": 71,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 22.14,
+        "stop_loss": 18.98,
+        "target_1": 27.39,
+        "target_2": 50.01
+      },
+      "timestamp": "2026-05-28T14:53:39.119396+00:00"
+    },
+    {
+      "ticker": "APH",
+      "consensus": "BUY",
+      "score": 70,
+      "technical_score": 70,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 129.68,
+        "stop_loss": 114.47,
+        "target_1": 158.02,
+        "target_2": 217.55
+      },
+      "timestamp": "2026-05-28T14:53:39.119167+00:00"
+    },
+    {
+      "ticker": "ASML",
+      "consensus": "BUY",
+      "score": 70,
+      "technical_score": 70,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 1498.27,
+        "stop_loss": 1325.79,
+        "target_1": 1686.6,
+        "target_2": 2414.12
+      },
+      "timestamp": "2026-05-28T14:53:39.119177+00:00"
+    },
+    {
+      "ticker": "CRWD",
+      "consensus": "BUY",
+      "score": 70,
+      "technical_score": 70,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 558.17,
+        "stop_loss": 419.57,
+        "target_1": 691.05,
+        "target_2": 1322.72
+      },
+      "timestamp": "2026-05-28T14:53:39.119219+00:00"
+    },
+    {
+      "ticker": "FTNT",
+      "consensus": "BUY",
+      "score": 70,
+      "technical_score": 70,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 112.63,
+        "stop_loss": 79.96,
+        "target_1": 137.61,
+        "target_2": 271.83
+      },
+      "timestamp": "2026-05-28T14:53:39.119237+00:00"
+    },
+    {
+      "ticker": "KLAC",
+      "consensus": "BUY",
+      "score": 70,
+      "technical_score": 70,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 1791.19,
+        "stop_loss": 1596.62,
+        "target_1": 2101.28,
+        "target_2": 3038.9
+      },
+      "timestamp": "2026-05-28T14:53:39.119272+00:00"
+    },
+    {
+      "ticker": "LRCX",
+      "consensus": "BUY",
+      "score": 70,
+      "technical_score": 70,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 282.07,
+        "stop_loss": 234.35,
+        "target_1": 340.0,
+        "target_2": 572.66
+      },
+      "timestamp": "2026-05-28T14:53:39.119279+00:00"
+    },
+    {
+      "ticker": "PANW",
+      "consensus": "BUY",
+      "score": 70,
+      "technical_score": 70,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 219.46,
+        "stop_loss": 167.92,
+        "target_1": 266.64,
+        "target_2": 490.13
+      },
+      "timestamp": "2026-05-28T14:53:39.119320+00:00"
+    },
+    {
+      "ticker": "VST",
+      "consensus": "BUY",
+      "score": 70,
+      "technical_score": 70,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 148.49,
+        "stop_loss": 128.68,
+        "target_1": 171.76,
+        "target_2": 254.56
+      },
+      "timestamp": "2026-05-28T14:53:39.119389+00:00"
+    },
+    {
+      "ticker": "AMZN",
+      "consensus": "BUY",
+      "score": 69,
+      "technical_score": 69,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 257.65,
+        "stop_loss": 247.53,
+        "target_1": 284.13,
+        "target_2": 344.8
+      },
+      "timestamp": "2026-05-28T14:53:39.119166+00:00"
+    },
+    {
+      "ticker": "AVGO",
+      "consensus": "BUY",
+      "score": 69,
+      "technical_score": 69,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 404.75,
+        "stop_loss": 384.88,
+        "target_1": 451.21,
+        "target_2": 532.81
+      },
+      "timestamp": "2026-05-28T14:53:39.119179+00:00"
+    },
+    {
+      "ticker": "AVNT",
+      "consensus": "BUY",
+      "score": 69,
+      "technical_score": 69,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 34.59,
+        "stop_loss": 31.26,
+        "target_1": 40.3,
+        "target_2": 51.13
+      },
+      "timestamp": "2026-05-28T14:53:39.119181+00:00"
+    },
+    {
+      "ticker": "CLSK",
+      "consensus": "BUY",
+      "score": 69,
+      "technical_score": 69,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 14.02,
+        "stop_loss": 10.8,
+        "target_1": 18.63,
+        "target_2": 39.77
+      },
+      "timestamp": "2026-05-28T14:53:39.119210+00:00"
+    },
+    {
+      "ticker": "MANA",
+      "consensus": "BUY",
+      "score": 69,
+      "technical_score": 69,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 0.81,
+        "stop_loss": 0.67,
+        "target_1": 1.02,
+        "target_2": 1.52
+      },
+      "timestamp": "2026-05-28T14:53:39.119284+00:00"
+    },
+    {
+      "ticker": "RKLB",
+      "consensus": "BUY",
+      "score": 69,
+      "technical_score": 69,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 113.75,
+        "stop_loss": 71.77,
+        "target_1": 154.02,
+        "target_2": 385.61
+      },
+      "timestamp": "2026-05-28T14:53:39.119339+00:00"
+    },
+    {
+      "ticker": "XBI",
+      "consensus": "BUY",
+      "score": 69,
+      "technical_score": 69,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 129.84,
+        "stop_loss": 121.32,
+        "target_1": 140.86,
+        "target_2": 173.85
+      },
+      "timestamp": "2026-05-28T14:53:39.119398+00:00"
+    },
+    {
+      "ticker": "GD",
+      "consensus": "BUY",
+      "score": 68,
+      "technical_score": 68,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 334.65,
+        "stop_loss": 323.29,
+        "target_1": 360.64,
+        "target_2": 400.89
+      },
+      "timestamp": "2026-05-28T14:53:39.119241+00:00"
+    },
+    {
+      "ticker": "IBB",
+      "consensus": "BUY",
+      "score": 68,
+      "technical_score": 68,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 165.89,
+        "stop_loss": 157.22,
+        "target_1": 177.74,
+        "target_2": 207.87
+      },
+      "timestamp": "2026-05-28T14:53:39.119258+00:00"
+    },
+    {
+      "ticker": "MARA",
+      "consensus": "BUY",
+      "score": 68,
+      "technical_score": 68,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 12.44,
+        "stop_loss": 9.96,
+        "target_1": 15.17,
+        "target_2": 27.43
+      },
+      "timestamp": "2026-05-28T14:53:39.119285+00:00"
+    },
+    {
+      "ticker": "SEDG",
+      "consensus": "BUY",
+      "score": 68,
+      "technical_score": 68,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 52.81,
+        "stop_loss": 36.42,
+        "target_1": 77.24,
+        "target_2": 183.65
+      },
+      "timestamp": "2026-05-28T14:53:39.119349+00:00"
+    },
+    {
+      "ticker": "AMAT",
+      "consensus": "BUY",
+      "score": 67,
+      "technical_score": 67,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 413.71,
+        "stop_loss": 365.76,
+        "target_1": 471.65,
+        "target_2": 695.73
+      },
+      "timestamp": "2026-05-28T14:53:39.119162+00:00"
+    },
+    {
+      "ticker": "BKSY",
+      "consensus": "BUY",
+      "score": 67,
+      "technical_score": 67,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 41.11,
+        "stop_loss": 28.93,
+        "target_1": 53.14,
+        "target_2": 117.22
+      },
+      "timestamp": "2026-05-28T14:53:39.119197+00:00"
+    },
+    {
+      "ticker": "BLK",
+      "consensus": "BUY",
+      "score": 67,
+      "technical_score": 67,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 1041.73,
+        "stop_loss": 999.28,
+        "target_1": 1133.31,
+        "target_2": 1283.51
+      },
+      "timestamp": "2026-05-28T14:53:39.119198+00:00"
+    },
+    {
+      "ticker": "COF",
+      "consensus": "BUY",
+      "score": 67,
+      "technical_score": 67,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 184.32,
+        "stop_loss": 174.6,
+        "target_1": 199.92,
+        "target_2": 231.4
+      },
+      "timestamp": "2026-05-28T14:53:39.119211+00:00"
+    },
+    {
+      "ticker": "DDOG",
+      "consensus": "BUY",
+      "score": 67,
+      "technical_score": 67,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 187.09,
+        "stop_loss": 124.16,
+        "target_1": 231.01,
+        "target_2": 514.76
+      },
+      "timestamp": "2026-05-28T14:53:39.119224+00:00"
+    },
+    {
+      "ticker": "SCCO",
+      "consensus": "BUY",
+      "score": 67,
+      "technical_score": 67,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 176.71,
+        "stop_loss": 159.32,
+        "target_1": 198.82,
+        "target_2": 273.04
+      },
+      "timestamp": "2026-05-28T14:53:39.119346+00:00"
+    },
+    {
+      "ticker": "SPOT",
+      "consensus": "BUY",
+      "score": 67,
+      "technical_score": 67,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 459.53,
+        "stop_loss": 398.9,
+        "target_1": 544.68,
+        "target_2": 854.61
+      },
+      "timestamp": "2026-05-28T14:53:39.119361+00:00"
+    },
+    {
+      "ticker": "USB",
+      "consensus": "BUY",
+      "score": 67,
+      "technical_score": 67,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 53.54,
+        "stop_loss": 50.76,
+        "target_1": 58.19,
+        "target_2": 66.48
+      },
+      "timestamp": "2026-05-28T14:53:39.119381+00:00"
+    },
+    {
+      "ticker": "ALLO",
+      "consensus": "BUY",
+      "score": 66,
+      "technical_score": 66,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 2.12,
+        "stop_loss": 1.78,
+        "target_1": 2.44,
+        "target_2": 3.65
+      },
+      "timestamp": "2026-05-28T14:53:39.119160+00:00"
+    },
+    {
+      "ticker": "CIEN",
+      "consensus": "BUY",
+      "score": 66,
+      "technical_score": 66,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 541.52,
+        "stop_loss": 454.26,
+        "target_1": 617.72,
+        "target_2": 965.54
+      },
+      "timestamp": "2026-05-28T14:53:39.119207+00:00"
+    },
+    {
+      "ticker": "ENPH",
+      "consensus": "BUY",
+      "score": 66,
+      "technical_score": 66,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 48.05,
+        "stop_loss": 29.0,
+        "target_1": 74.15,
+        "target_2": 194.11
+      },
+      "timestamp": "2026-05-28T14:53:39.119230+00:00"
+    },
+    {
+      "ticker": "GOOGL",
+      "consensus": "BUY",
+      "score": 66,
+      "technical_score": 66,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 372.57,
+        "stop_loss": 333.88,
+        "target_1": 416.78,
+        "target_2": 553.67
+      },
+      "timestamp": "2026-05-28T14:53:39.119245+00:00"
+    },
+    {
+      "ticker": "HUT",
+      "consensus": "BUY",
+      "score": 66,
+      "technical_score": 66,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 94.86,
+        "stop_loss": 67.22,
+        "target_1": 122.0,
+        "target_2": 268.9
+      },
+      "timestamp": "2026-05-28T14:53:39.119257+00:00"
+    },
+    {
+      "ticker": "NVO",
+      "consensus": "BUY",
+      "score": 66,
+      "technical_score": 66,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 43.09,
+        "stop_loss": 38.51,
+        "target_1": 48.75,
+        "target_2": 62.67
+      },
+      "timestamp": "2026-05-28T14:53:39.119313+00:00"
+    },
+    {
+      "ticker": "SXT",
+      "consensus": "BUY",
+      "score": 66,
+      "technical_score": 66,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 110.78,
+        "stop_loss": 105.74,
+        "target_1": 125.47,
+        "target_2": 153.94
+      },
+      "timestamp": "2026-05-28T14:53:39.119366+00:00"
+    },
+    {
+      "ticker": "TFC",
+      "consensus": "BUY",
+      "score": 66,
+      "technical_score": 66,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 47.45,
+        "stop_loss": 44.85,
+        "target_1": 52.61,
+        "target_2": 59.28
+      },
+      "timestamp": "2026-05-28T14:53:39.119372+00:00"
+    },
+    {
+      "ticker": "WAL",
+      "consensus": "BUY",
+      "score": 66,
+      "technical_score": 66,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 76.39,
+        "stop_loss": 71.71,
+        "target_1": 86.19,
+        "target_2": 98.54
+      },
+      "timestamp": "2026-05-28T14:53:39.119391+00:00"
+    },
+    {
+      "ticker": "LMT",
+      "consensus": "BUY",
+      "score": 65,
+      "technical_score": 65,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 505.31,
+        "stop_loss": 485.3,
+        "target_1": 546.74,
+        "target_2": 668.66
+      },
+      "timestamp": "2026-05-28T14:53:39.119278+00:00"
+    },
+    {
+      "ticker": "C",
+      "consensus": "BUY",
+      "score": 64,
+      "technical_score": 64,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 122.58,
+        "stop_loss": 116.17,
+        "target_1": 134.59,
+        "target_2": 153.06
+      },
+      "timestamp": "2026-05-28T14:53:39.119205+00:00"
+    },
+    {
+      "ticker": "QUBT",
+      "consensus": "BUY",
+      "score": 64,
+      "technical_score": 64,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 10.08,
+        "stop_loss": 7.74,
+        "target_1": 14.74,
+        "target_2": 22.46
+      },
+      "timestamp": "2026-05-28T14:53:39.119335+00:00"
+    },
+    {
+      "ticker": "COHR",
+      "consensus": "BUY",
+      "score": 63,
+      "technical_score": 63,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 350.15,
+        "stop_loss": 289.15,
+        "target_1": 421.26,
+        "target_2": 653.28
+      },
+      "timestamp": "2026-05-28T14:53:39.119212+00:00"
+    },
+    {
+      "ticker": "GRWG",
+      "consensus": "BUY",
+      "score": 63,
+      "technical_score": 63,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 1.5,
+        "stop_loss": 1.22,
+        "target_1": 1.88,
+        "target_2": 3.45
+      },
+      "timestamp": "2026-05-28T14:53:39.119248+00:00"
+    },
+    {
+      "ticker": "OSCR",
+      "consensus": "BUY",
+      "score": 63,
+      "technical_score": 63,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 20.75,
+        "stop_loss": 16.95,
+        "target_1": 26.09,
+        "target_2": 37.12
+      },
+      "timestamp": "2026-05-28T14:53:39.119318+00:00"
+    },
+    {
+      "ticker": "RPD",
+      "consensus": "BUY",
+      "score": 63,
+      "technical_score": 63,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 6.51,
+        "stop_loss": 5.56,
+        "target_1": 7.63,
+        "target_2": 11.47
+      },
+      "timestamp": "2026-05-28T14:53:39.119342+00:00"
+    },
+    {
+      "ticker": "SOPH",
+      "consensus": "BUY",
+      "score": 63,
+      "technical_score": 63,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 4.83,
+        "stop_loss": 4.31,
+        "target_1": 5.78,
+        "target_2": 7.39
+      },
+      "timestamp": "2026-05-28T14:53:39.119358+00:00"
+    },
+    {
+      "ticker": "HUMA",
+      "consensus": "BUY",
+      "score": 62,
+      "technical_score": 62,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 0.93,
+        "stop_loss": 0.77,
+        "target_1": 1.24,
+        "target_2": 2.29
+      },
+      "timestamp": "2026-05-28T14:53:39.119256+00:00"
+    },
+    {
+      "ticker": "MOVE",
+      "consensus": "BUY",
+      "score": 62,
+      "technical_score": 62,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 18.57,
+        "stop_loss": 12.01,
+        "target_1": 26.42,
+        "target_2": 50.93
+      },
+      "timestamp": "2026-05-28T14:53:39.119297+00:00"
+    },
+    {
+      "ticker": "BIVI",
+      "consensus": "BUY",
+      "score": 61,
+      "technical_score": 61,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 1.42,
+        "stop_loss": 1.22,
+        "target_1": 1.82,
+        "target_2": 2.26
+      },
+      "timestamp": "2026-05-28T14:53:39.119194+00:00"
+    },
+    {
+      "ticker": "OPEN",
+      "consensus": "BUY",
+      "score": 61,
+      "technical_score": 61,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 4.61,
+        "stop_loss": 4.03,
+        "target_1": 5.79,
+        "target_2": 6.92
+      },
+      "timestamp": "2026-05-28T14:53:39.119317+00:00"
+    },
+    {
+      "ticker": "POET",
+      "consensus": "HOLD",
+      "score": 59,
+      "technical_score": 59,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 12.3,
+        "stop_loss": 6.18,
+        "target_1": 21.23,
+        "target_2": 34.58
+      },
+      "timestamp": "2026-05-28T14:53:39.119328+00:00"
+    },
+    {
+      "ticker": "GLXY",
+      "consensus": "HOLD",
+      "score": 58,
+      "technical_score": 58,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 27.83,
+        "stop_loss": 23.79,
+        "target_1": 33.66,
+        "target_2": 48.5
+      },
+      "timestamp": "2026-05-28T14:53:39.119244+00:00"
+    },
+    {
+      "ticker": "JMIA",
+      "consensus": "HOLD",
+      "score": 58,
+      "technical_score": 58,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 7.08,
+        "stop_loss": 6.18,
+        "target_1": 9.81,
+        "target_2": 11.18
+      },
+      "timestamp": "2026-05-28T14:53:39.119267+00:00"
+    },
+    {
+      "ticker": "SMR",
+      "consensus": "HOLD",
+      "score": 58,
+      "technical_score": 58,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 11.35,
+        "stop_loss": 9.38,
+        "target_1": 13.94,
+        "target_2": 20.15
+      },
+      "timestamp": "2026-05-28T14:53:39.119354+00:00"
+    },
+    {
+      "ticker": "MELI",
+      "consensus": "HOLD",
+      "score": 57,
+      "technical_score": 57,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 1647.34,
+        "stop_loss": 1450.15,
+        "target_1": 1927.8,
+        "target_2": 2434.23
+      },
+      "timestamp": "2026-05-28T14:53:39.119286+00:00"
+    },
+    {
+      "ticker": "NVDA",
+      "consensus": "HOLD",
+      "score": 56,
+      "technical_score": 56,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 196.69,
+        "stop_loss": 188.9,
+        "target_1": 241.27,
+        "target_2": 283.71
+      },
+      "timestamp": "2026-05-28T14:53:39.119311+00:00"
+    },
+    {
+      "ticker": "OXY",
+      "consensus": "HOLD",
+      "score": 56,
+      "technical_score": 56,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 53.51,
+        "stop_loss": 51.4,
+        "target_1": 62.46,
+        "target_2": 73.37
+      },
+      "timestamp": "2026-05-28T14:53:39.119319+00:00"
+    },
+    {
+      "ticker": "NIO",
+      "consensus": "HOLD",
+      "score": 55,
+      "technical_score": 55,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 5.17,
+        "stop_loss": 4.97,
+        "target_1": 6.81,
+        "target_2": 8.1
+      },
+      "timestamp": "2026-05-28T14:53:39.119307+00:00"
+    },
+    {
+      "ticker": "RTX",
+      "consensus": "HOLD",
+      "score": 54,
+      "technical_score": 54,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 172.49,
+        "stop_loss": 165.66,
+        "target_1": 183.53,
+        "target_2": 209.39
+      },
+      "timestamp": "2026-05-28T14:53:39.119344+00:00"
+    },
+    {
+      "ticker": "FORM",
+      "consensus": "HOLD",
+      "score": 53,
+      "technical_score": 53,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 128.17,
+        "stop_loss": 108.94,
+        "target_1": 160.78,
+        "target_2": 205.31
+      },
+      "timestamp": "2026-05-28T14:53:39.119236+00:00"
+    },
+    {
+      "ticker": "MA",
+      "consensus": "HOLD",
+      "score": 53,
+      "technical_score": 53,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 492.89,
+        "stop_loss": 473.37,
+        "target_1": 544.89,
+        "target_2": 560.05
+      },
+      "timestamp": "2026-05-28T14:53:39.119282+00:00"
+    },
+    {
+      "ticker": "NET",
+      "consensus": "HOLD",
+      "score": 53,
+      "technical_score": 53,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 204.93,
+        "stop_loss": 180.18,
+        "target_1": 264.06,
+        "target_2": 296.35
+      },
+      "timestamp": "2026-05-28T14:53:39.119305+00:00"
+    },
+    {
+      "ticker": "OKLO",
+      "consensus": "HOLD",
+      "score": 53,
+      "technical_score": 53,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 64.4,
+        "stop_loss": 52.34,
+        "target_1": 81.68,
+        "target_2": 114.27
+      },
+      "timestamp": "2026-05-28T14:53:39.119314+00:00"
+    },
+    {
+      "ticker": "XLF",
+      "consensus": "HOLD",
+      "score": 53,
+      "technical_score": 53,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 51.29,
+        "stop_loss": 49.26,
+        "target_1": 53.66,
+        "target_2": 57.91
+      },
+      "timestamp": "2026-05-28T14:53:39.119400+00:00"
+    },
+    {
+      "ticker": "COST",
+      "consensus": "HOLD",
+      "score": 52,
+      "technical_score": 52,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 994.97,
+        "stop_loss": 955.57,
+        "target_1": 1118.43,
+        "target_2": 1148.06
+      },
+      "timestamp": "2026-05-28T14:53:39.119216+00:00"
+    },
+    {
+      "ticker": "LHX",
+      "consensus": "HOLD",
+      "score": 51,
+      "technical_score": 51,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 299.64,
+        "stop_loss": 287.77,
+        "target_1": 333.3,
+        "target_2": 372.89
+      },
+      "timestamp": "2026-05-28T14:53:39.119273+00:00"
+    },
+    {
+      "ticker": "XLE",
+      "consensus": "HOLD",
+      "score": 51,
+      "technical_score": 51,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 55.68,
+        "stop_loss": 53.48,
+        "target_1": 62.93,
+        "target_2": 67.53
+      },
+      "timestamp": "2026-05-28T14:53:39.119399+00:00"
+    },
+    {
+      "ticker": "MMT",
+      "consensus": "HOLD",
+      "score": 50,
+      "technical_score": 50,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 4.43,
+        "stop_loss": 4.26,
+        "target_1": 4.75,
+        "target_2": 5.19
+      },
+      "timestamp": "2026-05-28T14:53:39.119292+00:00"
+    },
+    {
+      "ticker": "NOC",
+      "consensus": "HOLD",
+      "score": 50,
+      "technical_score": 50,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 544.39,
+        "stop_loss": 522.83,
+        "target_1": 593.77,
+        "target_2": 636.87
+      },
+      "timestamp": "2026-05-28T14:53:39.119309+00:00"
+    },
+    {
+      "ticker": "SCHW",
+      "consensus": "HOLD",
+      "score": 50,
+      "technical_score": 50,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 85.57,
+        "stop_loss": 80.82,
+        "target_1": 95.3,
+        "target_2": 99.99
+      },
+      "timestamp": "2026-05-28T14:53:39.119347+00:00"
+    },
+    {
+      "ticker": "MSFT",
+      "consensus": "HOLD",
+      "score": 49,
+      "technical_score": 49,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 401.99,
+        "stop_loss": 386.07,
+        "target_1": 441.35,
+        "target_2": 492.47
+      },
+      "timestamp": "2026-05-28T14:53:39.119299+00:00"
+    },
+    {
+      "ticker": "PLTR",
+      "consensus": "HOLD",
+      "score": 49,
+      "technical_score": 49,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 130.04,
+        "stop_loss": 122.63,
+        "target_1": 152.63,
+        "target_2": 162.14
+      },
+      "timestamp": "2026-05-28T14:53:39.119325+00:00"
+    },
+    {
+      "ticker": "SHOP",
+      "consensus": "HOLD",
+      "score": 49,
+      "technical_score": 49,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 94.94,
+        "stop_loss": 91.18,
+        "target_1": 131.98,
+        "target_2": 152.86
+      },
+      "timestamp": "2026-05-28T14:53:39.119350+00:00"
+    },
+    {
+      "ticker": "XOM",
+      "consensus": "HOLD",
+      "score": 49,
+      "technical_score": 49,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 145.36,
+        "stop_loss": 139.47,
+        "target_1": 166.95,
+        "target_2": 173.2
+      },
+      "timestamp": "2026-05-28T14:53:39.119404+00:00"
+    },
+    {
+      "ticker": "AXP",
+      "consensus": "HOLD",
+      "score": 48,
+      "technical_score": 48,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 306.07,
+        "stop_loss": 293.95,
+        "target_1": 331.5,
+        "target_2": 368.31
+      },
+      "timestamp": "2026-05-28T14:53:39.119182+00:00"
+    },
+    {
+      "ticker": "VIPS",
+      "consensus": "HOLD",
+      "score": 48,
+      "technical_score": 48,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 13.76,
+        "stop_loss": 13.21,
+        "target_1": 15.53,
+        "target_2": 18.13
+      },
+      "timestamp": "2026-05-28T14:53:39.119383+00:00"
+    },
+    {
+      "ticker": "BIDU",
+      "consensus": "HOLD",
+      "score": 47,
+      "technical_score": 47,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 120.19,
+        "stop_loss": 115.43,
+        "target_1": 155.42,
+        "target_2": 173.35
+      },
+      "timestamp": "2026-05-28T14:53:39.119191+00:00"
+    },
+    {
+      "ticker": "WCT",
+      "consensus": "HOLD",
+      "score": 47,
+      "technical_score": 47,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 1.39,
+        "stop_loss": 1.32,
+        "target_1": 2.65,
+        "target_2": 3.61
+      },
+      "timestamp": "2026-05-28T14:53:39.119392+00:00"
+    },
+    {
+      "ticker": "BAC",
+      "consensus": "HOLD",
+      "score": 46,
+      "technical_score": 46,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 49.79,
+        "stop_loss": 47.82,
+        "target_1": 55.28,
+        "target_2": 60.94
+      },
+      "timestamp": "2026-05-28T14:53:39.119187+00:00"
+    },
+    {
+      "ticker": "BETH",
+      "consensus": "HOLD",
+      "score": 45,
+      "technical_score": 45,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 41.74,
+        "stop_loss": 39.76,
+        "target_1": 46.84,
+        "target_2": 46.47
+      },
+      "timestamp": "2026-05-28T14:53:39.119190+00:00"
+    },
+    {
+      "ticker": "LITE",
+      "consensus": "HOLD",
+      "score": 45,
+      "technical_score": 45,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 822.33,
+        "stop_loss": 731.56,
+        "target_1": 1107.39,
+        "target_2": 1414.55
+      },
+      "timestamp": "2026-05-28T14:53:39.119276+00:00"
+    },
+    {
+      "ticker": "MNSO",
+      "consensus": "HOLD",
+      "score": 45,
+      "technical_score": 45,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 12.43,
+        "stop_loss": 11.62,
+        "target_1": 15.22,
+        "target_2": 15.02
+      },
+      "timestamp": "2026-05-28T14:53:39.119293+00:00"
+    },
+    {
+      "ticker": "DASH",
+      "consensus": "TRIM",
+      "score": 44,
+      "technical_score": 44,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 148.28,
+        "stop_loss": 140.64,
+        "target_1": 187.17,
+        "target_2": 208.4
+      },
+      "timestamp": "2026-05-28T14:53:39.119222+00:00"
+    },
+    {
+      "ticker": "JD",
+      "consensus": "TRIM",
+      "score": 44,
+      "technical_score": 44,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 29.74,
+        "stop_loss": 27.84,
+        "target_1": 34.99,
+        "target_2": 35.84
+      },
+      "timestamp": "2026-05-28T14:53:39.119265+00:00"
+    },
+    {
+      "ticker": "JPM",
+      "consensus": "TRIM",
+      "score": 44,
+      "technical_score": 44,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 296.61,
+        "stop_loss": 284.86,
+        "target_1": 322.63,
+        "target_2": 342.54
+      },
+      "timestamp": "2026-05-28T14:53:39.119269+00:00"
+    },
+    {
+      "ticker": "TREE",
+      "consensus": "TRIM",
+      "score": 44,
+      "technical_score": 44,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 34.84,
+        "stop_loss": 33.46,
+        "target_1": 51.31,
+        "target_2": 51.21
+      },
+      "timestamp": "2026-05-28T14:53:39.119373+00:00"
+    },
+    {
+      "ticker": "WFC",
+      "consensus": "TRIM",
+      "score": 44,
+      "technical_score": 44,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 73.5,
+        "stop_loss": 70.59,
+        "target_1": 84.31,
+        "target_2": 92.66
+      },
+      "timestamp": "2026-05-28T14:53:39.119394+00:00"
+    },
+    {
+      "ticker": "XPL",
+      "consensus": "TRIM",
+      "score": 44,
+      "technical_score": 44,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 0.8,
+        "stop_loss": 0.76,
+        "target_1": 0.96,
+        "target_2": 1.04
+      },
+      "timestamp": "2026-05-28T14:53:39.119407+00:00"
+    },
+    {
+      "ticker": "XRP",
+      "consensus": "TRIM",
+      "score": 44,
+      "technical_score": 44,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 14.87,
+        "stop_loss": 13.68,
+        "target_1": 17.7,
+        "target_2": 18.41
+      },
+      "timestamp": "2026-05-28T14:53:39.119408+00:00"
+    },
+    {
+      "ticker": "AGCO",
+      "consensus": "TRIM",
+      "score": 43,
+      "technical_score": 43,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 109.33,
+        "stop_loss": 105.0,
+        "target_1": 125.06,
+        "target_2": 142.11
+      },
+      "timestamp": "2026-05-28T14:53:39.119158+00:00"
+    },
+    {
+      "ticker": "PDD",
+      "consensus": "TRIM",
+      "score": 43,
+      "technical_score": 43,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 84.45,
+        "stop_loss": 79.19,
+        "target_1": 104.93,
+        "target_2": 108.86
+      },
+      "timestamp": "2026-05-28T14:53:39.119323+00:00"
+    },
+    {
+      "ticker": "ZS",
+      "consensus": "TRIM",
+      "score": 43,
+      "technical_score": 43,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 126.92,
+        "stop_loss": 99.89,
+        "target_1": 195.08,
+        "target_2": 205.98
+      },
+      "timestamp": "2026-05-28T14:53:39.119409+00:00"
+    },
+    {
+      "ticker": "AXS",
+      "consensus": "TRIM",
+      "score": 42,
+      "technical_score": 42,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 96.49,
+        "stop_loss": 90.98,
+        "target_1": 104.71,
+        "target_2": 109.51
+      },
+      "timestamp": "2026-05-28T14:53:39.119183+00:00"
+    },
+    {
+      "ticker": "CEG",
+      "consensus": "TRIM",
+      "score": 42,
+      "technical_score": 42,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 258.66,
+        "stop_loss": 248.42,
+        "target_1": 335.38,
+        "target_2": 409.47
+      },
+      "timestamp": "2026-05-28T14:53:39.119206+00:00"
+    },
+    {
+      "ticker": "LI",
+      "consensus": "TRIM",
+      "score": 42,
+      "technical_score": 42,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 15.44,
+        "stop_loss": 14.18,
+        "target_1": 20.49,
+        "target_2": 20.58
+      },
+      "timestamp": "2026-05-28T14:53:39.119274+00:00"
+    },
+    {
+      "ticker": "NRG",
+      "consensus": "TRIM",
+      "score": 42,
+      "technical_score": 42,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 122.43,
+        "stop_loss": 117.58,
+        "target_1": 162.44,
+        "target_2": 199.25
+      },
+      "timestamp": "2026-05-28T14:53:39.119310+00:00"
+    },
+    {
+      "ticker": "BEKE",
+      "consensus": "TRIM",
+      "score": 39,
+      "technical_score": 39,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 15.96,
+        "stop_loss": 14.98,
+        "target_1": 20.16,
+        "target_2": 21.54
+      },
+      "timestamp": "2026-05-28T14:53:39.119189+00:00"
+    },
+    {
+      "ticker": "DE",
+      "consensus": "TRIM",
+      "score": 39,
+      "technical_score": 39,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 520.3,
+        "stop_loss": 499.48,
+        "target_1": 606.3,
+        "target_2": 619.12
+      },
+      "timestamp": "2026-05-28T14:53:39.119226+00:00"
+    },
+    {
+      "ticker": "TCEHY",
+      "consensus": "TRIM",
+      "score": 39,
+      "technical_score": 39,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 55.49,
+        "stop_loss": 52.43,
+        "target_1": 63.23,
+        "target_2": 65.0
+      },
+      "timestamp": "2026-05-28T14:53:39.119368+00:00"
+    },
+    {
+      "ticker": "MOO",
+      "consensus": "TRIM",
+      "score": 38,
+      "technical_score": 38,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 80.48,
+        "stop_loss": 77.29,
+        "target_1": 86.63,
+        "target_2": 89.93
+      },
+      "timestamp": "2026-05-28T14:53:39.119295+00:00"
+    },
+    {
+      "ticker": "VRT",
+      "consensus": "TRIM",
+      "score": 38,
+      "technical_score": 38,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 302.8,
+        "stop_loss": 279.49,
+        "target_1": 387.53,
+        "target_2": 440.65
+      },
+      "timestamp": "2026-05-28T14:53:39.119387+00:00"
+    },
+    {
+      "ticker": "BTC",
+      "consensus": "TRIM",
+      "score": 37,
+      "technical_score": 37,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 33.29,
+        "stop_loss": 31.44,
+        "target_1": 37.07,
+        "target_2": 38.21
+      },
+      "timestamp": "2026-05-28T14:53:39.119200+00:00"
+    },
+    {
+      "ticker": "ETH",
+      "consensus": "TRIM",
+      "score": 37,
+      "technical_score": 37,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 19.56,
+        "stop_loss": 18.23,
+        "target_1": 23.24,
+        "target_2": 23.32
+      },
+      "timestamp": "2026-05-28T14:53:39.119231+00:00"
+    },
+    {
+      "ticker": "ETHW",
+      "consensus": "TRIM",
+      "score": 37,
+      "technical_score": 37,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 14.75,
+        "stop_loss": 13.75,
+        "target_1": 17.52,
+        "target_2": 17.55
+      },
+      "timestamp": "2026-05-28T14:53:39.119232+00:00"
+    },
+    {
+      "ticker": "FF",
+      "consensus": "TRIM",
+      "score": 37,
+      "technical_score": 37,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 3.95,
+        "stop_loss": 3.63,
+        "target_1": 5.22,
+        "target_2": 5.4
+      },
+      "timestamp": "2026-05-28T14:53:39.119234+00:00"
+    },
+    {
+      "ticker": "NEE",
+      "consensus": "TRIM",
+      "score": 37,
+      "technical_score": 37,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 87.5,
+        "stop_loss": 82.79,
+        "target_1": 100.73,
+        "target_2": 102.24
+      },
+      "timestamp": "2026-05-28T14:53:39.119304+00:00"
+    },
+    {
+      "ticker": "WMT",
+      "consensus": "TRIM",
+      "score": 37,
+      "technical_score": 37,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 119.1,
+        "stop_loss": 111.82,
+        "target_1": 137.86,
+        "target_2": 138.71
+      },
+      "timestamp": "2026-05-28T14:53:39.119395+00:00"
+    },
+    {
+      "ticker": "EDU",
+      "consensus": "TRIM",
+      "score": 36,
+      "technical_score": 36,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 46.36,
+        "stop_loss": 44.02,
+        "target_1": 57.7,
+        "target_2": 55.98
+      },
+      "timestamp": "2026-05-28T14:53:39.119228+00:00"
+    },
+    {
+      "ticker": "KC",
+      "consensus": "TRIM",
+      "score": 36,
+      "technical_score": 36,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 13.14,
+        "stop_loss": 10.86,
+        "target_1": 18.89,
+        "target_2": 19.9
+      },
+      "timestamp": "2026-05-28T14:53:39.119270+00:00"
+    },
+    {
+      "ticker": "YB",
+      "consensus": "TRIM",
+      "score": 36,
+      "technical_score": 36,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 12.13,
+        "stop_loss": 10.79,
+        "target_1": 17.32,
+        "target_2": 17.11
+      },
+      "timestamp": "2026-05-28T14:53:39.119412+00:00"
+    },
+    {
+      "ticker": "BABA",
+      "consensus": "TRIM",
+      "score": 35,
+      "technical_score": 35,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 127.51,
+        "stop_loss": 117.41,
+        "target_1": 149.81,
+        "target_2": 158.82
+      },
+      "timestamp": "2026-05-28T14:53:39.119186+00:00"
+    },
+    {
+      "ticker": "COIN",
+      "consensus": "SELL",
+      "score": 34,
+      "technical_score": 34,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 175.45,
+        "stop_loss": 146.78,
+        "target_1": 226.8,
+        "target_2": 254.77
+      },
+      "timestamp": "2026-05-28T14:53:39.119214+00:00"
+    },
+    {
+      "ticker": "FUTU",
+      "consensus": "SELL",
+      "score": 34,
+      "technical_score": 34,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 81.31,
+        "stop_loss": 78.08,
+        "target_1": 172.02,
+        "target_2": 206.62
+      },
+      "timestamp": "2026-05-28T14:53:39.119240+00:00"
+    },
+    {
+      "ticker": "MSTR",
+      "consensus": "SELL",
+      "score": 34,
+      "technical_score": 34,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 155.36,
+        "stop_loss": 133.15,
+        "target_1": 200.94,
+        "target_2": 217.36
+      },
+      "timestamp": "2026-05-28T14:53:39.119301+00:00"
+    },
+    {
+      "ticker": "CRWV",
+      "consensus": "SELL",
+      "score": 33,
+      "technical_score": 33,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 95.77,
+        "stop_loss": 87.15,
+        "target_1": 141.02,
+        "target_2": 155.63
+      },
+      "timestamp": "2026-05-28T14:53:39.119221+00:00"
+    },
+    {
+      "ticker": "SPRB",
+      "consensus": "SELL",
+      "score": 33,
+      "technical_score": 33,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 48.73,
+        "stop_loss": 42.69,
+        "target_1": 61.48,
+        "target_2": 70.02
+      },
+      "timestamp": "2026-05-28T14:53:39.119363+00:00"
+    },
+    {
+      "ticker": "BYND",
+      "consensus": "SELL",
+      "score": 30,
+      "technical_score": 30,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 0.73,
+        "stop_loss": 0.67,
+        "target_1": 1.12,
+        "target_2": 1.15
+      },
+      "timestamp": "2026-05-28T14:53:39.119203+00:00"
+    },
+    {
+      "ticker": "TRX",
+      "consensus": "SELL",
+      "score": 26,
+      "technical_score": 26,
+      "x_sentiment": "NEUTRAL",
+      "volume_signal": "NEUTRAL",
+      "levels": {
+        "buy_zone": 1.06,
+        "stop_loss": 0.93,
+        "target_1": 1.37,
+        "target_2": 1.49
+      },
+      "timestamp": "2026-05-28T14:53:39.119374+00:00"
+    }
+  ]
+}

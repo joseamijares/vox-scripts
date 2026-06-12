@@ -20,7 +20,7 @@ python3 vox_watchlist.py 2>/dev/null || echo "  ⚠️ Watchlist failed"
 
 # 3. Check for alerts
 echo "🚨 Alert check..."
-python3 vox_alert_system.py 2>/dev/null || echo "  ⚠️ Alert system failed"
+python3 vox_smart_alerts_v8.py 2>/dev/null || echo "  ⚠️ Alert system failed"
 
 # 4. Update monitored plays
 echo "🔍 Monitored plays..."

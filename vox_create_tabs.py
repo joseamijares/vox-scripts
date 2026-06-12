@@ -315,7 +315,7 @@ def get_dashboard_data():
             [""],
             ["Time (ET)", "Action", "Tool/Script"],
             ["8:00 AM", "Trump tracker scan", "trump_tracker.py"],
-            ["8:00 AM", "Alert system scan", "vox_alert_system.py"],
+            ["8:00 AM", "Alert system scan", "vox_smart_alerts_v8.py"],
             ["8:30 AM", "Volume scanner", "volume_scanner.py"],
             ["9:00 AM", "Politician tracker", "politician_tracker_v2.py"],
             ["9:30 AM", "Market open — monitor only", "—"],

@@ -1,0 +1,3544 @@
+{
+  "generated_at": "2026-06-06T04:55:54.525708+00:00",
+  "layers": {
+    "layer0": {
+      "status": "ok",
+      "total_positions": 70,
+      "total_watchlist": 277,
+      "aum": 185301.35,
+      "graded_positions": 70,
+      "ungraded_positions": 0,
+      "stale_positions": 0,
+      "notes": [
+        "AUM: $185,301.35",
+        "Graded: 70/70",
+        "Watchlist: 277 tickers"
+      ]
+    },
+    "layer1": {
+      "aum": 185301.35,
+      "sector_allocation": {
+        "Unclassified": 38.3,
+        "Technology": 31.54,
+        "Consumer Cyclical": 9.58,
+        "Real Estate": 4.19,
+        "Communication Services": 8.06,
+        "Healthcare": 2.56,
+        "Consumer Defensive": 2.33,
+        "Utilities": 1.07,
+        "Basic Materials": 0.78,
+        "Financial Services": 0.83,
+        "Industrials": 0.49,
+        "Crypto": 0.28
+      },
+      "top_holdings": [
+        {
+          "ticker": "VOO",
+          "value": 21518.157142857144,
+          "grade": 52,
+          "council": "HOLD"
+        },
+        {
+          "ticker": "BTC",
+          "value": 15483.163121831698,
+          "grade": 50,
+          "council": "HOLD"
+        },
+        {
+          "ticker": "CRWD",
+          "value": 12937.332857142857,
+          "grade": 55,
+          "council": "HOLD"
+        },
+        {
+          "ticker": "TSLA",
+          "value": 10819.342571428571,
+          "grade": 52,
+          "council": "HOLD"
+        },
+        {
+          "ticker": "NVDA",
+          "value": 9170.106857142857,
+          "grade": 58,
+          "council": "HOLD"
+        },
+        {
+          "ticker": "O",
+          "value": 7763.6,
+          "grade": 54,
+          "council": "HOLD"
+        },
+        {
+          "ticker": "AMD",
+          "value": 7676.389999999999,
+          "grade": 55,
+          "council": "HOLD"
+        },
+        {
+          "ticker": "ETH",
+          "value": 7671.0207261778005,
+          "grade": 49,
+          "council": "SELL"
+        },
+        {
+          "ticker": "GOOGL",
+          "value": 7663.222857142857,
+          "grade": 60,
+          "council": "HOLD"
+        },
+        {
+          "ticker": "QQQ",
+          "value": 7536.848,
+          "grade": 52,
+          "council": "HOLD"
+        }
+      ],
+      "weak_positions": [],
+      "sell_council": [
+        "ETH",
+        "BIDU",
+        "OKLO",
+        "DOGE-USD",
+        "ADA-USD",
+        "JMIA",
+        "SOL-USD",
+        "XRP",
+        "HBAR-USD",
+        "BYND"
+      ],
+      "sector_gaps": [
+        "Real Estate",
+        "Healthcare",
+        "Consumer Defensive",
+        "Utilities",
+        "Basic Materials",
+        "Financial Services",
+        "Industrials",
+        "Crypto"
+      ]
+    },
+    "layer2": {
+      "total_famous_trader_tickers": 80,
+      "owned_by_user": 2,
+      "missing_from_portfolio": 78,
+      "top_missing": [
+        {
+          "ticker": "SNDK",
+          "grade": 66,
+          "entry": null,
+          "target": null
+        },
+        {
+          "ticker": "ADBE",
+          "grade": 66,
+          "entry": null,
+          "target": null
+        },
+        {
+          "ticker": "TER",
+          "grade": 66,
+          "entry": null,
+          "target": null
+        },
+        {
+          "ticker": "CPAY",
+          "grade": 65,
+          "entry": null,
+          "target": null
+        },
+        {
+          "ticker": "SE",
+          "grade": 64,
+          "entry": null,
+          "target": null
+        },
+        {
+          "ticker": "MCO",
+          "grade": 63,
+          "entry": null,
+          "target": null
+        },
+        {
+          "ticker": "DB",
+          "grade": 63,
+          "entry": null,
+          "target": null
+        },
+        {
+          "ticker": "SPGI",
+          "grade": 62,
+          "entry": null,
+          "target": null
+        },
+        {
+          "ticker": "STX",
+          "grade": 62,
+          "entry": null,
+          "target": null
+        },
+        {
+          "ticker": "NBIS",
+          "grade": 62,
+          "entry": null,
+          "target": null
+        },
+        {
+          "ticker": "VEEV",
+          "grade": 62,
+          "entry": null,
+          "target": null
+        },
+        {
+          "ticker": "CRSP",
+          "grade": 61,
+          "entry": null,
+          "target": null
+        },
+        {
+          "ticker": "ILMN",
+          "grade": 60,
+          "entry": null,
+          "target": null
+        },
+        {
+          "ticker": "CNI",
+          "grade": 60,
+          "entry": null,
+          "target": null
+        },
+        {
+          "ticker": "ARM",
+          "grade": 60,
+          "entry": null,
+          "target": null
+        }
+      ]
+    },
+    "layer3": {
+      "AI Infrastructure": {
+        "count": 12,
+        "top_tickers": [
+          {
+            "ticker": "MOD",
+            "grade": 59,
+            "target": null
+          },
+          {
+            "ticker": "SBGSY",
+            "grade": 58,
+            "target": null
+          },
+          {
+            "ticker": "CIEN",
+            "grade": 58,
+            "target": null
+          }
+        ]
+      },
+      "Quantum": {
+        "count": 13,
+        "top_tickers": [
+          {
+            "ticker": "MU",
+            "grade": 65,
+            "target": null
+          },
+          {
+            "ticker": "MSFT",
+            "grade": 64,
+            "target": null
+          },
+          {
+            "ticker": "IONQ",
+            "grade": 62,
+            "target": null
+          }
+        ]
+      },
+      "Space": {
+        "count": 5,
+        "top_tickers": [
+          {
+            "ticker": "DDD",
+            "grade": 62,
+            "target": null
+          },
+          {
+            "ticker": "SIDU",
+            "grade": 60,
+            "target": null
+          },
+          {
+            "ticker": "MNTS",
+            "grade": 59,
+            "target": null
+          }
+        ]
+      },
+      "Cybersecurity": {
+        "count": 3,
+        "top_tickers": [
+          {
+            "ticker": "PANW",
+            "grade": 60,
+            "target": null
+          },
+          {
+            "ticker": "CRWD",
+            "grade": 55,
+            "target": null
+          },
+          {
+            "ticker": "NET",
+            "grade": 54,
+            "target": null
+          }
+        ]
+      },
+      "Security": {
+        "count": 23,
+        "top_tickers": [
+          {
+            "ticker": "ESTC",
+            "grade": 65,
+            "target": null
+          },
+          {
+            "ticker": "QLYS",
+            "grade": 64,
+            "target": null
+          },
+          {
+            "ticker": "DT",
+            "grade": 61,
+            "target": null
+          }
+        ]
+      },
+      "Nuclear": {
+        "count": 1,
+        "top_tickers": [
+          {
+            "ticker": "NNE",
+            "grade": 57,
+            "target": null
+          }
+        ]
+      }
+    },
+    "layer4": {
+      "active_risks": 0,
+      "risks": [],
+      "themes": []
+    },
+    "layer5": {
+      "regime": null,
+      "confidence": 0,
+      "vix_level": 0,
+      "spy_trend": "UNKNOWN",
+      "notes": ""
+    },
+    "layer6": [
+      {
+        "ticker": "XRP",
+        "grade": 46,
+        "sector": null,
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "WMT",
+        "grade": 52,
+        "sector": null,
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "TRX",
+        "grade": 49,
+        "sector": null,
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SOL-USD",
+        "grade": 49,
+        "sector": null,
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SHOP",
+        "grade": 61,
+        "sector": null,
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "POET",
+        "grade": 50,
+        "sector": null,
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "NAFTRAC.MX",
+        "grade": 49,
+        "sector": null,
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "MELI",
+        "grade": 60,
+        "sector": null,
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "JMIA",
+        "grade": 51,
+        "sector": null,
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "HBAR-USD",
+        "grade": 49,
+        "sector": null,
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ETH",
+        "grade": 47,
+        "sector": null,
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "DOGE-USD",
+        "grade": 49,
+        "sector": null,
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "DASH",
+        "grade": 53,
+        "sector": null,
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CEG",
+        "grade": 56,
+        "sector": null,
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CBRS",
+        "grade": 58,
+        "sector": null,
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "BYND",
+        "grade": 48,
+        "sector": null,
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "BTC",
+        "grade": 49,
+        "sector": null,
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "BNB-USD",
+        "grade": 49,
+        "sector": null,
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "BIDU",
+        "grade": 45,
+        "sector": null,
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "AXS",
+        "grade": 53,
+        "sector": null,
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ADA-USD",
+        "grade": 49,
+        "sector": null,
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "0700.HK",
+        "grade": 55,
+        "sector": null,
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "FSLY",
+        "grade": 44,
+        "sector": "Security",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CRSP",
+        "grade": 61,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ILMN",
+        "grade": 60,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "FFIV",
+        "grade": 60,
+        "sector": "Security",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "BEAM",
+        "grade": 59,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SLM",
+        "grade": 59,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "JNPR",
+        "grade": 49,
+        "sector": "Security",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "QLYS",
+        "grade": 64,
+        "sector": "Security",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "DT",
+        "grade": 61,
+        "sector": "Security",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "KTOS",
+        "grade": 58,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "FIG",
+        "grade": 58,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "IREN",
+        "grade": 58,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "FISV",
+        "grade": 57,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "BTDR",
+        "grade": 57,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "BITF",
+        "grade": 56,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "UBER",
+        "grade": 56,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "GOOG",
+        "grade": 56,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ROKU",
+        "grade": 56,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "BE",
+        "grade": 56,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "RDWR",
+        "grade": 57,
+        "sector": "Security",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "AKAM",
+        "grade": 56,
+        "sector": "Security",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "NTCT",
+        "grade": 59,
+        "sector": "Security",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "RBRK",
+        "grade": 58,
+        "sector": "Security",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "MITK",
+        "grade": 58,
+        "sector": "Security",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CSCO",
+        "grade": 59,
+        "sector": "Security",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CHKP",
+        "grade": 59,
+        "sector": "Security",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ATEN",
+        "grade": 59,
+        "sector": "Security",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "TEM",
+        "grade": 55,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "RBLX",
+        "grade": 53,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "QSR",
+        "grade": 52,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "GLW",
+        "grade": 52,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "PYPL",
+        "grade": 52,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "WGS",
+        "grade": 52,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "TXG",
+        "grade": 52,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "BLSH",
+        "grade": 51,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CLSK",
+        "grade": 51,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "HHH",
+        "grade": 50,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SPLK",
+        "grade": 49,
+        "sector": "Security",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "JD",
+        "grade": 49,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "MIME",
+        "grade": 49,
+        "sector": "Security",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "PFPT",
+        "grade": 49,
+        "sector": "Security",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ZS",
+        "grade": 48,
+        "sector": "Security",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "NRG",
+        "grade": 48,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "BN",
+        "grade": 47,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SE",
+        "grade": 64,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "MCO",
+        "grade": 63,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "IONQ",
+        "grade": 62,
+        "sector": "Quantum",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SPGI",
+        "grade": 62,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "STX",
+        "grade": 62,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CNI",
+        "grade": 60,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ARM",
+        "grade": 60,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "RGTI",
+        "grade": 60,
+        "sector": "Quantum",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "LIVN",
+        "grade": 60,
+        "sector": "Pre-Commercial",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CRH",
+        "grade": 59,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "STM",
+        "grade": 59,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "AA",
+        "grade": 59,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CP",
+        "grade": 59,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "TMO",
+        "grade": 59,
+        "sector": "Pre-Commercial",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SBGSY",
+        "grade": 58,
+        "sector": "AI Infrastructure",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "NTRA",
+        "grade": 58,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "YPF",
+        "grade": 57,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "TEVA",
+        "grade": 57,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "OPCH",
+        "grade": 57,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "NNE",
+        "grade": 57,
+        "sector": "Nuclear",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ARGT",
+        "grade": 56,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "JBL",
+        "grade": 56,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "GEV",
+        "grade": 56,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ABSI",
+        "grade": 55,
+        "sector": "Pre-Commercial",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CRBU",
+        "grade": 55,
+        "sector": "Pre-Commercial",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "NAUT",
+        "grade": 55,
+        "sector": "Pre-Commercial",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "TBBB",
+        "grade": 55,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "TT",
+        "grade": 54,
+        "sector": "AI Infrastructure",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "BFLY",
+        "grade": 54,
+        "sector": "Pre-Commercial",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "INSP",
+        "grade": 54,
+        "sector": "Pre-Commercial",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "FIGR",
+        "grade": 54,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "HUM",
+        "grade": 54,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "WTRG",
+        "grade": 53,
+        "sector": "AI Infrastructure",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "PNR",
+        "grade": 53,
+        "sector": "AI Infrastructure",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "WWD",
+        "grade": 52,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "RVMD",
+        "grade": 52,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "FER",
+        "grade": 52,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ERII",
+        "grade": 51,
+        "sector": "AI Infrastructure",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "XYL",
+        "grade": 51,
+        "sector": "AI Infrastructure",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "EQPT",
+        "grade": 49,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "TWLO",
+        "grade": 49,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "INSM",
+        "grade": 48,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "EWZ",
+        "grade": 48,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CRCL",
+        "grade": 47,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CRWV",
+        "grade": 47,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "GME",
+        "grade": 47,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "DE",
+        "grade": 46,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "INTC",
+        "grade": 46,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "NAMS",
+        "grade": 45,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "MOH",
+        "grade": 45,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "HTZ",
+        "grade": 44,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SNDK",
+        "grade": 66,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ADBE",
+        "grade": 66,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ESTC",
+        "grade": 65,
+        "sector": "Security",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CPAY",
+        "grade": 65,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "NBIS",
+        "grade": 62,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CAI",
+        "grade": 60,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "QCOM",
+        "grade": 60,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "MOD",
+        "grade": 59,
+        "sector": "AI Infrastructure",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "TWST",
+        "grade": 58,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "EWY",
+        "grade": 58,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CIEN",
+        "grade": 58,
+        "sector": "AI Infrastructure",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ACHR",
+        "grade": 57,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SANA",
+        "grade": 56,
+        "sector": "Pre-Commercial",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "JOBY",
+        "grade": 56,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ADSK",
+        "grade": 55,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SOLS",
+        "grade": 54,
+        "sector": "AI Infrastructure",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "RXRX",
+        "grade": 53,
+        "sector": "Pre-Commercial",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "DNA",
+        "grade": 53,
+        "sector": "Pre-Commercial",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "BWAY",
+        "grade": 53,
+        "sector": "Pre-Commercial",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "BRKR",
+        "grade": 53,
+        "sector": "Pre-Commercial",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "QSI",
+        "grade": 53,
+        "sector": "Pre-Commercial",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "BRKRP",
+        "grade": 52,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "NTLA",
+        "grade": 52,
+        "sector": "Pre-Commercial",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "EDIT",
+        "grade": 52,
+        "sector": "Pre-Commercial",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SEI",
+        "grade": 51,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "HYPR",
+        "grade": 50,
+        "sector": "Pre-Commercial",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "AAOI",
+        "grade": 49,
+        "sector": "AI Infrastructure",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "WHR",
+        "grade": 48,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CPNG",
+        "grade": 46,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "S",
+        "grade": 49,
+        "sector": "Security",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SAIL",
+        "grade": 55,
+        "sector": "Security",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "VRNS",
+        "grade": 54,
+        "sector": "Security",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "TENB",
+        "grade": 52,
+        "sector": "Security",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CYBR",
+        "grade": 49,
+        "sector": "Security",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "TER",
+        "grade": 66,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "DB",
+        "grade": 63,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "VEEV",
+        "grade": 62,
+        "sector": "Famous Traders",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "LITE",
+        "grade": 53,
+        "sector": "Quantum",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "MU",
+        "grade": 65,
+        "sector": "Quantum",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "QUBT",
+        "grade": 60,
+        "sector": "Quantum",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "QBTS",
+        "grade": 55,
+        "sector": "Quantum",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "APLD",
+        "grade": 57,
+        "sector": "AI Infrastructure",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "TE",
+        "grade": 56,
+        "sector": "AI Infrastructure",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "DDD",
+        "grade": 62,
+        "sector": "Space",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SIDU",
+        "grade": 60,
+        "sector": "Space",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "MNTS",
+        "grade": 59,
+        "sector": "Space",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "LUNR",
+        "grade": 57,
+        "sector": "Space",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CPSH",
+        "grade": 75,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "XPEV",
+        "grade": 52,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "UNH",
+        "grade": 48,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "FLY",
+        "grade": 60,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CIFR",
+        "grade": 51,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "BOTZ",
+        "grade": 55,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ARQQ",
+        "grade": 61,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "APP",
+        "grade": 63,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ABBV",
+        "grade": 57,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "XLK",
+        "grade": 56,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "TSM",
+        "grade": 67,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "OKTA",
+        "grade": 58,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "HON",
+        "grade": 56,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "BIO",
+        "grade": 53,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ARKG",
+        "grade": 56,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "V",
+        "grade": 62,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SNOW",
+        "grade": 56,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "RIOT",
+        "grade": 54,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "PBW",
+        "grade": 57,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "TSLA",
+        "grade": 59,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SPIR",
+        "grade": 63,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SOLV",
+        "grade": 59,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SMH",
+        "grade": 56,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "RDW",
+        "grade": 58,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "QCLN",
+        "grade": 58,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ICLN",
+        "grade": 56,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ASTS",
+        "grade": 59,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "META",
+        "grade": 66,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "IWM",
+        "grade": 59,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "BK",
+        "grade": 62,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "AAPL",
+        "grade": 64,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "GS",
+        "grade": 60,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "MIRA",
+        "grade": 55,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "JNJ",
+        "grade": 56,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "HEMI",
+        "grade": 54,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "MS",
+        "grade": 62,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "GRRR",
+        "grade": 53,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "EDEN",
+        "grade": 57,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ARKX",
+        "grade": 57,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "UFO",
+        "grade": 57,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "LILM",
+        "grade": 49,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "XLV",
+        "grade": 57,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "VTI",
+        "grade": 57,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "STT",
+        "grade": 58,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SPY",
+        "grade": 54,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "QQQ",
+        "grade": 57,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ROBO",
+        "grade": 59,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "VOO",
+        "grade": 55,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ROBT",
+        "grade": 58,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "FTXG",
+        "grade": 49,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CORZ",
+        "grade": 60,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "LLY",
+        "grade": 64,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "GEN",
+        "grade": 61,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "APH",
+        "grade": 62,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "VST",
+        "grade": 61,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "MSFT",
+        "grade": 64,
+        "sector": "Quantum",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SPOT",
+        "grade": 60,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SXT",
+        "grade": 50,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "AVNT",
+        "grade": 56,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "GOOGL",
+        "grade": 56,
+        "sector": "Quantum",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "NEWT",
+        "grade": 63,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "HOLO",
+        "grade": 57,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "KLAC",
+        "grade": 62,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "AMAT",
+        "grade": 63,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "LRCX",
+        "grade": 63,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "NVDA",
+        "grade": 58,
+        "sector": "Quantum",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "MEME",
+        "grade": 59,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "AMZN",
+        "grade": 62,
+        "sector": "Quantum",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "JPM",
+        "grade": 56,
+        "sector": "Banks",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "OKLO",
+        "grade": 47,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "OSCR",
+        "grade": 56,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "MANA",
+        "grade": 47,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "C",
+        "grade": 62,
+        "sector": "Banks",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "BAC",
+        "grade": 65,
+        "sector": "Banks",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "RKLB",
+        "grade": 56,
+        "sector": "Space",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "AVGO",
+        "grade": 62,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "AMD",
+        "grade": 62,
+        "sector": "Quantum",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "WCT",
+        "grade": 43,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "DDOG",
+        "grade": 58,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CRWD",
+        "grade": 55,
+        "sector": "Cybersecurity",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "A",
+        "grade": 62,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SCCO",
+        "grade": 66,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "PDD",
+        "grade": 54,
+        "sector": "Emerging Markets",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "BABA",
+        "grade": 50,
+        "sector": "Emerging Markets",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "AMT",
+        "grade": 61,
+        "sector": "Real Estate",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "DLR",
+        "grade": 52,
+        "sector": "Real Estate",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "URNM",
+        "grade": 49,
+        "sector": "Materials",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ALB",
+        "grade": 50,
+        "sector": "Materials",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "FCX",
+        "grade": 63,
+        "sector": "Materials",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "NUE",
+        "grade": 62,
+        "sector": "Materials",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "RTX",
+        "grade": 59,
+        "sector": "Aeronautics",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "GE",
+        "grade": 61,
+        "sector": "Aeronautics",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "LULU",
+        "grade": 61,
+        "sector": "Consumer Discretionary",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "COST",
+        "grade": 51,
+        "sector": "Consumer Staples",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "MDB",
+        "grade": 58,
+        "sector": "Technology",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "NET",
+        "grade": 54,
+        "sector": "Cybersecurity",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "PANW",
+        "grade": 60,
+        "sector": "Cybersecurity",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "RIVN",
+        "grade": 52,
+        "sector": "Consumer Discretionary",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "MSTR",
+        "grade": 47,
+        "sector": "Technology",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "COIN",
+        "grade": 47,
+        "sector": "Financials",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "NU",
+        "grade": 59,
+        "sector": "Emerging Markets",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "HOOD",
+        "grade": 62,
+        "sector": "Banks",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SOFI",
+        "grade": 61,
+        "sector": "Banks",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "EXAS",
+        "grade": 49,
+        "sector": "Healthcare",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "NVO",
+        "grade": 63,
+        "sector": "Healthcare",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "VKTX",
+        "grade": 53,
+        "sector": "Healthcare",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "PLTR",
+        "grade": 62,
+        "sector": "Technology",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SMR",
+        "grade": 56,
+        "sector": "Energy",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "BWXT",
+        "grade": 49,
+        "sector": "Energy",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "COHR",
+        "grade": 51,
+        "sector": "Quantum",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "MRVL",
+        "grade": 64,
+        "sector": "Technology",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "NOK",
+        "grade": 54,
+        "sector": "Quantum",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "P",
+        "grade": 49,
+        "sector": "Energy",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "VOO",
+        "grade": 52,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "BTC",
+        "grade": 50,
+        "sector": null,
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CRWD",
+        "grade": 55,
+        "sector": "Technology",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "TSLA",
+        "grade": 52,
+        "sector": "Consumer Cyclical",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "NVDA",
+        "grade": 58,
+        "sector": "Technology",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "O",
+        "grade": 54,
+        "sector": "Real Estate",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "AMD",
+        "grade": 55,
+        "sector": "Technology",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ETH",
+        "grade": 49,
+        "sector": null,
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "GOOGL",
+        "grade": 60,
+        "sector": "Communication Services",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "QQQ",
+        "grade": 52,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SHOP",
+        "grade": 59,
+        "sector": "Technology",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "VTI",
+        "grade": 52,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "APH",
+        "grade": 60,
+        "sector": "Technology",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "OSCR",
+        "grade": 56,
+        "sector": "Healthcare",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "AAPL",
+        "grade": 61,
+        "sector": "Technology",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "MELI",
+        "grade": 55,
+        "sector": "Consumer Cyclical",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "META",
+        "grade": 61,
+        "sector": "Communication Services",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "AMZN",
+        "grade": 56,
+        "sector": "Consumer Cyclical",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "DDOG",
+        "grade": 57,
+        "sector": "Technology",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "COST",
+        "grade": 52,
+        "sector": "Consumer Defensive",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "AVGO",
+        "grade": 57,
+        "sector": "Technology",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SMH",
+        "grade": 51,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "WMT",
+        "grade": 53,
+        "sector": "Consumer Defensive",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SNOW",
+        "grade": 56,
+        "sector": "Technology",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "POET",
+        "grade": 52,
+        "sector": "Technology",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "BIDU",
+        "grade": 49,
+        "sector": "Communication Services",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "BNB-USD",
+        "grade": 50,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "BNB",
+        "grade": 51,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "OKLO",
+        "grade": 49,
+        "sector": "Utilities",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "TRX",
+        "grade": 51,
+        "sector": "Basic Materials",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "MSFT",
+        "grade": 59,
+        "sector": "Technology",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "0700.HK",
+        "grade": 64,
+        "sector": "Communication Services",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SPOT",
+        "grade": 62,
+        "sector": "Communication Services",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "DOGE-USD",
+        "grade": 49,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "DOGE",
+        "grade": 51,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ADA-USD",
+        "grade": 49,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ESTC",
+        "grade": 63,
+        "sector": "Technology",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "NAFTRAC",
+        "grade": 51,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "NAFTRAC.MX",
+        "grade": 53,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "NAFTRAC ISHRS",
+        "grade": 51,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CRWV",
+        "grade": 50,
+        "sector": "Technology",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "COIN",
+        "grade": 50,
+        "sector": "Financial Services",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "PLTR",
+        "grade": 59,
+        "sector": "Technology",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "JMIA",
+        "grade": 49,
+        "sector": "Consumer Cyclical",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "MS",
+        "grade": 61,
+        "sector": "Financial Services",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "TE",
+        "grade": 54,
+        "sector": "Industrials",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SOL-USD",
+        "grade": 49,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SOL",
+        "grade": 51,
+        "sector": "Crypto",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CORZ",
+        "grade": 57,
+        "sector": "Technology",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "TSM",
+        "grade": 64,
+        "sector": "Technology",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "MIRA",
+        "grade": 50,
+        "sector": "Healthcare",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "XRP",
+        "grade": 49,
+        "sector": null,
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SIDU",
+        "grade": 52,
+        "sector": "Industrials",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CEG",
+        "grade": 56,
+        "sector": "Utilities",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ARKX",
+        "grade": 51,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CBRS",
+        "grade": 59,
+        "sector": "Technology",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "QLYS",
+        "grade": 63,
+        "sector": "Technology",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "IREN",
+        "grade": 50,
+        "sector": "Financial Services",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SPRB",
+        "grade": 50,
+        "sector": "Healthcare",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "HBAR-USD",
+        "grade": 49,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "HBAR",
+        "grade": 51,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "GBM O",
+        "grade": 51,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "DASH",
+        "grade": 55,
+        "sector": "Consumer Cyclical",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ADA",
+        "grade": 51,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "AXS",
+        "grade": 59,
+        "sector": "Financial Services",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "XLE",
+        "grade": 52,
+        "sector": "",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "BYND",
+        "grade": 49,
+        "sector": "Consumer Defensive",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "BIVI",
+        "grade": 54,
+        "sector": "Healthcare",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "A",
+        "grade": 59,
+        "sector": "Healthcare",
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SCCO",
+        "grade": 57,
+        "sector": "Basic Materials",
+        "entry": null,
+        "target": null,
+        "stop": null
+      }
+    ]
+  },
+  "synthesis": [
+    {
+      "ticker": "SNDK",
+      "grade": 66,
+      "sector": "Famous Traders",
+      "layers_hit": 2,
+      "composite": 86,
+      "hit_reasons": [
+        "strong grade",
+        "famous trader"
+      ],
+      "entry": null,
+      "target": null,
+      "stop": null
+    },
+    {
+      "ticker": "ADBE",
+      "grade": 66,
+      "sector": "Famous Traders",
+      "layers_hit": 2,
+      "composite": 86,
+      "hit_reasons": [
+        "strong grade",
+        "famous trader"
+      ],
+      "entry": null,
+      "target": null,
+      "stop": null
+    },
+    {
+      "ticker": "TER",
+      "grade": 66,
+      "sector": "Famous Traders",
+      "layers_hit": 2,
+      "composite": 86,
+      "hit_reasons": [
+        "strong grade",
+        "famous trader"
+      ],
+      "entry": null,
+      "target": null,
+      "stop": null
+    },
+    {
+      "ticker": "ESTC",
+      "grade": 65,
+      "sector": "Security",
+      "layers_hit": 2,
+      "composite": 85,
+      "hit_reasons": [
+        "strong grade",
+        "supply chain leader"
+      ],
+      "entry": null,
+      "target": null,
+      "stop": null
+    },
+    {
+      "ticker": "CPAY",
+      "grade": 65,
+      "sector": "Famous Traders",
+      "layers_hit": 2,
+      "composite": 85,
+      "hit_reasons": [
+        "strong grade",
+        "famous trader"
+      ],
+      "entry": null,
+      "target": null,
+      "stop": null
+    },
+    {
+      "ticker": "MU",
+      "grade": 65,
+      "sector": "Quantum",
+      "layers_hit": 2,
+      "composite": 85,
+      "hit_reasons": [
+        "strong grade",
+        "supply chain leader"
+      ],
+      "entry": null,
+      "target": null,
+      "stop": null
+    },
+    {
+      "ticker": "CPSH",
+      "grade": 75,
+      "sector": "",
+      "layers_hit": 1,
+      "composite": 85,
+      "hit_reasons": [
+        "strong grade"
+      ],
+      "entry": null,
+      "target": null,
+      "stop": null
+    },
+    {
+      "ticker": "QLYS",
+      "grade": 64,
+      "sector": "Security",
+      "layers_hit": 2,
+      "composite": 84,
+      "hit_reasons": [
+        "strong grade",
+        "supply chain leader"
+      ],
+      "entry": null,
+      "target": null,
+      "stop": null
+    },
+    {
+      "ticker": "SE",
+      "grade": 64,
+      "sector": "Famous Traders",
+      "layers_hit": 2,
+      "composite": 84,
+      "hit_reasons": [
+        "strong grade",
+        "famous trader"
+      ],
+      "entry": null,
+      "target": null,
+      "stop": null
+    },
+    {
+      "ticker": "MSFT",
+      "grade": 64,
+      "sector": "Quantum",
+      "layers_hit": 2,
+      "composite": 84,
+      "hit_reasons": [
+        "strong grade",
+        "supply chain leader"
+      ],
+      "entry": null,
+      "target": null,
+      "stop": null
+    },
+    {
+      "ticker": "MCO",
+      "grade": 63,
+      "sector": "Famous Traders",
+      "layers_hit": 2,
+      "composite": 83,
+      "hit_reasons": [
+        "strong grade",
+        "famous trader"
+      ],
+      "entry": null,
+      "target": null,
+      "stop": null
+    },
+    {
+      "ticker": "DB",
+      "grade": 63,
+      "sector": "Famous Traders",
+      "layers_hit": 2,
+      "composite": 83,
+      "hit_reasons": [
+        "strong grade",
+        "famous trader"
+      ],
+      "entry": null,
+      "target": null,
+      "stop": null
+    },
+    {
+      "ticker": "ESTC",
+      "grade": 63,
+      "sector": "Technology",
+      "layers_hit": 2,
+      "composite": 83,
+      "hit_reasons": [
+        "strong grade",
+        "supply chain leader"
+      ],
+      "entry": null,
+      "target": null,
+      "stop": null
+    },
+    {
+      "ticker": "QLYS",
+      "grade": 63,
+      "sector": "Technology",
+      "layers_hit": 2,
+      "composite": 83,
+      "hit_reasons": [
+        "strong grade",
+        "supply chain leader"
+      ],
+      "entry": null,
+      "target": null,
+      "stop": null
+    },
+    {
+      "ticker": "IONQ",
+      "grade": 62,
+      "sector": "Quantum",
+      "layers_hit": 2,
+      "composite": 82,
+      "hit_reasons": [
+        "strong grade",
+        "supply chain leader"
+      ],
+      "entry": null,
+      "target": null,
+      "stop": null
+    },
+    {
+      "ticker": "SPGI",
+      "grade": 62,
+      "sector": "Famous Traders",
+      "layers_hit": 2,
+      "composite": 82,
+      "hit_reasons": [
+        "strong grade",
+        "famous trader"
+      ],
+      "entry": null,
+      "target": null,
+      "stop": null
+    },
+    {
+      "ticker": "STX",
+      "grade": 62,
+      "sector": "Famous Traders",
+      "layers_hit": 2,
+      "composite": 82,
+      "hit_reasons": [
+        "strong grade",
+        "famous trader"
+      ],
+      "entry": null,
+      "target": null,
+      "stop": null
+    },
+    {
+      "ticker": "NBIS",
+      "grade": 62,
+      "sector": "Famous Traders",
+      "layers_hit": 2,
+      "composite": 82,
+      "hit_reasons": [
+        "strong grade",
+        "famous trader"
+      ],
+      "entry": null,
+      "target": null,
+      "stop": null
+    },
+    {
+      "ticker": "VEEV",
+      "grade": 62,
+      "sector": "Famous Traders",
+      "layers_hit": 2,
+      "composite": 82,
+      "hit_reasons": [
+        "strong grade",
+        "famous trader"
+      ],
+      "entry": null,
+      "target": null,
+      "stop": null
+    },
+    {
+      "ticker": "DDD",
+      "grade": 62,
+      "sector": "Space",
+      "layers_hit": 2,
+      "composite": 82,
+      "hit_reasons": [
+        "strong grade",
+        "supply chain leader"
+      ],
+      "entry": null,
+      "target": null,
+      "stop": null
+    }
+  ],
+  "action_plan": {
+    "buy": [
+      {
+        "ticker": "SNDK",
+        "grade": 66,
+        "sector": "Famous Traders",
+        "layers_hit": 2,
+        "composite": 86,
+        "hit_reasons": [
+          "strong grade",
+          "famous trader"
+        ],
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "ADBE",
+        "grade": 66,
+        "sector": "Famous Traders",
+        "layers_hit": 2,
+        "composite": 86,
+        "hit_reasons": [
+          "strong grade",
+          "famous trader"
+        ],
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "TER",
+        "grade": 66,
+        "sector": "Famous Traders",
+        "layers_hit": 2,
+        "composite": 86,
+        "hit_reasons": [
+          "strong grade",
+          "famous trader"
+        ],
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CPAY",
+        "grade": 65,
+        "sector": "Famous Traders",
+        "layers_hit": 2,
+        "composite": 85,
+        "hit_reasons": [
+          "strong grade",
+          "famous trader"
+        ],
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "MU",
+        "grade": 65,
+        "sector": "Quantum",
+        "layers_hit": 2,
+        "composite": 85,
+        "hit_reasons": [
+          "strong grade",
+          "supply chain leader"
+        ],
+        "entry": null,
+        "target": null,
+        "stop": null
+      }
+    ],
+    "sell": [],
+    "trim": [],
+    "watch": [
+      {
+        "ticker": "MOD",
+        "grade": 59,
+        "sector": "AI Infrastructure",
+        "layers_hit": 1,
+        "composite": 69,
+        "hit_reasons": [
+          "supply chain leader"
+        ],
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "MNTS",
+        "grade": 59,
+        "sector": "Space",
+        "layers_hit": 1,
+        "composite": 69,
+        "hit_reasons": [
+          "supply chain leader"
+        ],
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "MSFT",
+        "grade": 59,
+        "sector": "Technology",
+        "layers_hit": 1,
+        "composite": 69,
+        "hit_reasons": [
+          "supply chain leader"
+        ],
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "SBGSY",
+        "grade": 58,
+        "sector": "AI Infrastructure",
+        "layers_hit": 1,
+        "composite": 68,
+        "hit_reasons": [
+          "supply chain leader"
+        ],
+        "entry": null,
+        "target": null,
+        "stop": null
+      },
+      {
+        "ticker": "CIEN",
+        "grade": 58,
+        "sector": "AI Infrastructure",
+        "layers_hit": 1,
+        "composite": 68,
+        "hit_reasons": [
+          "supply chain leader"
+        ],
+        "entry": null,
+        "target": null,
+        "stop": null
+      }
+    ]
+  }
+}

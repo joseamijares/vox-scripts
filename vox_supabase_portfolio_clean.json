@@ -1,0 +1,1624 @@
+{
+  "timestamp": "2026-05-27T13:28:39.012634",
+  "total_aum": 203482.3950885886,
+  "total_positions": 141,
+  "broker_breakdown": {
+    "eToro": {
+      "positions": 42,
+      "value": 158888.08877582935
+    },
+    "GBM Main": {
+      "positions": 18,
+      "value": 115435.4874052959
+    },
+    "Binance": {
+      "positions": 95,
+      "value": 36830.58894422735
+    },
+    "IBKR": {
+      "positions": 3,
+      "value": 18546.654293827996
+    },
+    "Bitso": {
+      "positions": 1,
+      "value": 77.77906617715
+    },
+    "GBM USA": {
+      "positions": 7,
+      "value": 32905.659538604916
+    },
+    "Schwab": {
+      "positions": 3,
+      "value": 2451.9299149327
+    }
+  },
+  "average_grade": 28.56737588652482,
+  "grade_distribution": {
+    "strong_buy": 4,
+    "buy": 35,
+    "hold": 10,
+    "weak": 20,
+    "avoid": 72
+  },
+  "positions": [
+    {
+      "ticker": "VOO",
+      "value": 21389.92668534,
+      "shares": 31.066078,
+      "price": 688.53,
+      "grade": 67,
+      "council": "",
+      "brokers": [
+        "eToro",
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "XRP",
+      "value": 17058.1024303228,
+      "shares": 1138.72512886,
+      "price": 14.98,
+      "grade": 42,
+      "council": "",
+      "brokers": [
+        "eToro",
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "CRWD",
+      "value": 13313.6418948,
+      "shares": 19.732684,
+      "price": 674.7,
+      "grade": 61,
+      "council": "",
+      "brokers": [
+        "eToro",
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "TSLA",
+      "value": 11182.35708698,
+      "shares": 26.128834,
+      "price": 427.97,
+      "grade": 70,
+      "council": "",
+      "brokers": [
+        "eToro",
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "NVDA",
+      "value": 9799.12237004,
+      "shares": 46.126541,
+      "price": 212.44,
+      "grade": 71,
+      "council": "",
+      "brokers": [
+        "eToro",
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "TSM",
+      "value": 9051.24,
+      "shares": 22,
+      "price": 411.42,
+      "grade": 76,
+      "council": "",
+      "brokers": [
+        "IBKR",
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "AMD",
+      "value": 8842.564293828,
+      "shares": 17.89413205,
+      "price": 494.16,
+      "grade": 64,
+      "council": "",
+      "brokers": [
+        "IBKR",
+        "eToro",
+        "GBM USA"
+      ]
+    },
+    {
+      "ticker": "GOOGL",
+      "value": 7732,
+      "shares": 20,
+      "price": 386.6,
+      "grade": 70,
+      "council": "",
+      "brokers": [
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "QQQ",
+      "value": 7541.6315050116,
+      "shares": 10.37591699,
+      "price": 726.84,
+      "grade": 67,
+      "council": "",
+      "brokers": [
+        "eToro",
+        "GBM Main",
+        "GBM USA"
+      ]
+    },
+    {
+      "ticker": "SHOP",
+      "value": 6827.03226546,
+      "shares": 65.606691,
+      "price": 104.06,
+      "grade": 43,
+      "council": "",
+      "brokers": [
+        "eToro",
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "VTI",
+      "value": 6169.8609093823,
+      "shares": 16.731377,
+      "price": 368.7599,
+      "grade": 67,
+      "council": "",
+      "brokers": [
+        "eToro",
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "META",
+      "value": 6083.5751756875,
+      "shares": 9.99355265,
+      "price": 608.75,
+      "grade": 45,
+      "council": "",
+      "brokers": [
+        "GBM Main",
+        "GBM USA"
+      ]
+    },
+    {
+      "ticker": "A",
+      "value": 5937.26473326,
+      "shares": 51.813114,
+      "price": 114.59,
+      "grade": 70,
+      "council": "",
+      "brokers": [
+        "eToro"
+      ]
+    },
+    {
+      "ticker": "AXS",
+      "value": 5025.5772106626,
+      "shares": 50.44240902,
+      "price": 99.63,
+      "grade": 42,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "TRX",
+      "value": 4818.7876998,
+      "shares": 4341.25018,
+      "price": 1.11,
+      "grade": 39,
+      "council": "",
+      "brokers": [
+        "eToro"
+      ]
+    },
+    {
+      "ticker": "APH",
+      "value": 4674.9576927066,
+      "shares": 32.66231882,
+      "price": 143.13,
+      "grade": 65,
+      "council": "",
+      "brokers": [
+        "eToro",
+        "GBM USA"
+      ]
+    },
+    {
+      "ticker": "AMZN",
+      "value": 4094.937,
+      "shares": 15.55,
+      "price": 263.34,
+      "grade": 73,
+      "council": "",
+      "brokers": [
+        "GBM Main",
+        "eToro"
+      ]
+    },
+    {
+      "ticker": "OSCR",
+      "value": 4002.4673617326,
+      "shares": 181.76509363,
+      "price": 22.02,
+      "grade": 64,
+      "council": "",
+      "brokers": [
+        "eToro",
+        "GBM USA"
+      ]
+    },
+    {
+      "ticker": "AAPL",
+      "value": 3918.79954942,
+      "shares": 12.645164,
+      "price": 309.905,
+      "grade": 71,
+      "council": "",
+      "brokers": [
+        "eToro",
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "MELI",
+      "value": 3282.3654,
+      "shares": 2,
+      "price": 1641.1827,
+      "grade": 43,
+      "council": "",
+      "brokers": [
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "SXT",
+      "value": 3180.2244459975,
+      "shares": 27.40391595,
+      "price": 116.05,
+      "grade": 73,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "BIO",
+      "value": 2699.748424802,
+      "shares": 9.2628437,
+      "price": 291.46,
+      "grade": 65,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "COST",
+      "value": 2489.538,
+      "shares": 2.489538,
+      "price": 1000,
+      "grade": 44,
+      "council": "",
+      "brokers": [
+        "eToro"
+      ]
+    },
+    {
+      "ticker": "DDOG",
+      "value": 2459.17387089,
+      "shares": 10.942793,
+      "price": 224.73,
+      "grade": 64,
+      "council": "",
+      "brokers": [
+        "eToro"
+      ]
+    },
+    {
+      "ticker": "AVGO",
+      "value": 2147.7612342,
+      "shares": 5.073252,
+      "price": 423.35,
+      "grade": 76,
+      "council": "",
+      "brokers": [
+        "eToro",
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "SMH",
+      "value": 1957.58000328,
+      "shares": 3.286074,
+      "price": 595.72,
+      "grade": 65,
+      "council": "",
+      "brokers": [
+        "eToro",
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "WMT",
+      "value": 1875.07806365,
+      "shares": 15.820106,
+      "price": 118.525,
+      "grade": 39,
+      "council": "",
+      "brokers": [
+        "eToro"
+      ]
+    },
+    {
+      "ticker": "BNB",
+      "value": 1819.4073580221,
+      "shares": 2.71002661,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "eToro",
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "PLTR",
+      "value": 1800.7361688575,
+      "shares": 13.164325,
+      "price": 136.7891,
+      "grade": 45,
+      "council": "",
+      "brokers": [
+        "eToro"
+      ]
+    },
+    {
+      "ticker": "OKLO",
+      "value": 1719.8841579942,
+      "shares": 24.73230023,
+      "price": 69.54,
+      "grade": 73,
+      "council": "",
+      "brokers": [
+        "eToro",
+        "GBM USA"
+      ]
+    },
+    {
+      "ticker": "BIDU",
+      "value": 1689.792392585,
+      "shares": 13.363853,
+      "price": 126.445,
+      "grade": 40,
+      "council": "",
+      "brokers": [
+        "eToro"
+      ]
+    },
+    {
+      "ticker": "POET",
+      "value": 1587.8399149327,
+      "shares": 120.017227,
+      "price": 13.2301,
+      "grade": 64,
+      "council": "",
+      "brokers": [
+        "eToro",
+        "Schwab"
+      ]
+    },
+    {
+      "ticker": "SOLV",
+      "value": 1443.379059706,
+      "shares": 19.06709458,
+      "price": 75.7,
+      "grade": 73,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "MSFT",
+      "value": 1348.19840045,
+      "shares": 3.251413,
+      "price": 414.65,
+      "grade": 75,
+      "council": "",
+      "brokers": [
+        "eToro"
+      ]
+    },
+    {
+      "ticker": "SNOW",
+      "value": 1330.7607599545,
+      "shares": 7.442155,
+      "price": 178.8139,
+      "grade": 63,
+      "council": "",
+      "brokers": [
+        "eToro"
+      ]
+    },
+    {
+      "ticker": "SPOT",
+      "value": 1225.461709565,
+      "shares": 2.318557,
+      "price": 528.545,
+      "grade": 66,
+      "council": "",
+      "brokers": [
+        "eToro"
+      ]
+    },
+    {
+      "ticker": "DOGE",
+      "value": 1104.43613004932,
+      "shares": 10703.95958616,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "eToro",
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "0700.HK",
+      "value": 1074.3,
+      "shares": 19.049672,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "eToro"
+      ]
+    },
+    {
+      "ticker": "ROBO",
+      "value": 1012.7271040533,
+      "shares": 11.30149653,
+      "price": 89.61,
+      "grade": 72,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "MEME",
+      "value": 894.228082618563,
+      "shares": 78.78730937,
+      "price": 11.3499,
+      "grade": 64,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "NAFTRAC ISHRS",
+      "value": 792.437510873978,
+      "shares": 200,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "COIN",
+      "value": 790.14158988,
+      "shares": 4.291449,
+      "price": 184.12,
+      "grade": 39,
+      "council": "",
+      "brokers": [
+        "eToro"
+      ]
+    },
+    {
+      "ticker": "CRWV",
+      "value": 669.29937336,
+      "shares": 6.277428,
+      "price": 106.62,
+      "grade": 47,
+      "council": "",
+      "brokers": [
+        "eToro"
+      ]
+    },
+    {
+      "ticker": "MOVE",
+      "value": 662.6221353978,
+      "shares": 27.54040463,
+      "price": 24.06,
+      "grade": 59,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "IREN",
+      "value": 652.85,
+      "shares": 11,
+      "price": 59.35,
+      "grade": 67,
+      "council": "",
+      "brokers": [
+        "IBKR",
+        "Schwab"
+      ]
+    },
+    {
+      "ticker": "JMIA",
+      "value": 598.5836332,
+      "shares": 84.070735,
+      "price": 7.12,
+      "grade": 44,
+      "council": "",
+      "brokers": [
+        "eToro"
+      ]
+    },
+    {
+      "ticker": "SOL",
+      "value": 544.2457960944,
+      "shares": 6.30132912,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "DASH",
+      "value": 469.10993421,
+      "shares": 3.029154,
+      "price": 154.865,
+      "grade": 38,
+      "council": "",
+      "brokers": [
+        "eToro"
+      ]
+    },
+    {
+      "ticker": "CEG",
+      "value": 421.58294034,
+      "shares": 1.383918,
+      "price": 304.63,
+      "grade": 65,
+      "council": "",
+      "brokers": [
+        "eToro"
+      ]
+    },
+    {
+      "ticker": "CBRS",
+      "value": 367.161662185,
+      "shares": 1.451777,
+      "price": 252.905,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "eToro"
+      ]
+    },
+    {
+      "ticker": "C",
+      "value": 289.5087498862,
+      "shares": 2.29350194,
+      "price": 126.23,
+      "grade": 74,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "WAL",
+      "value": 262.9159286754,
+      "shares": 3.31504134,
+      "price": 79.31,
+      "grade": 70,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "SPRB",
+      "value": 211.24,
+      "shares": 4,
+      "price": 52.81,
+      "grade": 36,
+      "council": "",
+      "brokers": [
+        "Schwab"
+      ]
+    },
+    {
+      "ticker": "EDEN",
+      "value": 172.979691249,
+      "shares": 1.54033563,
+      "price": 112.3,
+      "grade": 81,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "HBAR",
+      "value": 166.771211003277,
+      "shares": 1863.70331285,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "eToro",
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "GBM O",
+      "value": 125.906164820507,
+      "shares": 130,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "ADA",
+      "value": 106.98,
+      "shares": 434.829194,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "eToro"
+      ]
+    },
+    {
+      "ticker": "SOPH",
+      "value": 86.99617705,
+      "shares": 17.39923541,
+      "price": 5,
+      "grade": 63,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "ETH",
+      "value": 77.77906617715,
+      "shares": 3.94517201,
+      "price": 19.715,
+      "grade": 42,
+      "council": "",
+      "brokers": [
+        "Bitso",
+        "eToro",
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "AVNT",
+      "value": 74.6306774385,
+      "shares": 2.14641005,
+      "price": 34.77,
+      "grade": 45,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "FF",
+      "value": 63.468062734,
+      "shares": 15.57498472,
+      "price": 4.075,
+      "grade": 48,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "TREE",
+      "value": 54.59307646078,
+      "shares": 1.4930378,
+      "price": 36.5651,
+      "grade": 41,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "XLE",
+      "value": 40.57935164442,
+      "shares": 0.69093582,
+      "price": 58.731,
+      "grade": 74,
+      "council": "",
+      "brokers": [
+        "GBM USA"
+      ]
+    },
+    {
+      "ticker": "BYND",
+      "value": 25.31265,
+      "shares": 33,
+      "price": 0.76705,
+      "grade": 50,
+      "council": "",
+      "brokers": [
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "HUMA",
+      "value": 24.0541879942,
+      "shares": 22.16975852,
+      "price": 1.085,
+      "grade": 59,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "NEWT",
+      "value": 19.5846677822,
+      "shares": 1.43899102,
+      "price": 13.61,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "YB",
+      "value": 12.8289636144,
+      "shares": 1.03794204,
+      "price": 12.36,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "BIVI",
+      "value": 10.60781748,
+      "shares": 7.470294,
+      "price": 1.42,
+      "grade": 70,
+      "council": "",
+      "brokers": [
+        "eToro"
+      ]
+    },
+    {
+      "ticker": "BTC",
+      "value": 7.2926889197,
+      "shares": 0.21633607,
+      "price": 33.71,
+      "grade": 52,
+      "council": "",
+      "brokers": [
+        "eToro",
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "ALLO",
+      "value": 6.7249151684,
+      "shares": 3.21766276,
+      "price": 2.09,
+      "grade": 41,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "HOLO",
+      "value": 6.49389322541,
+      "shares": 3.18484219,
+      "price": 2.039,
+      "grade": 68,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "XPL",
+      "value": 6.458968191753,
+      "shares": 7.79786091,
+      "price": 0.8283,
+      "grade": 43,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "WCT",
+      "value": 6.4032728048,
+      "shares": 3.70131376,
+      "price": 1.73,
+      "grade": 25,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "BONK",
+      "value": 5.1757804156,
+      "shares": 844336.12,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "ETHW",
+      "value": 4.9077255645,
+      "shares": 0.33048657,
+      "price": 14.85,
+      "grade": 42,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "OPEN",
+      "value": 4.7768466848,
+      "shares": 1.02949282,
+      "price": 4.64,
+      "grade": 44,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "MMT",
+      "value": 3.568099947944,
+      "shares": 0.79113544,
+      "price": 4.5101,
+      "grade": 44,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "PENGU",
+      "value": 3.10952305950276,
+      "shares": 342.30769039,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "KITE",
+      "value": 2.510641261746,
+      "shares": 12.44740338,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "MIRA",
+      "value": 2.016452318466,
+      "shares": 2.06561393,
+      "price": 0.9762,
+      "grade": 36,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "MORPHO",
+      "value": 1.5536517348,
+      "shares": 0.6631036,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "SCCO",
+      "value": 1.37721656,
+      "shares": 0.007379,
+      "price": 186.64,
+      "grade": 66,
+      "council": "",
+      "brokers": [
+        "eToro"
+      ]
+    },
+    {
+      "ticker": "KAITO",
+      "value": 1.279896848032,
+      "shares": 2.33047496,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "NXPC",
+      "value": 1.239576567362,
+      "shares": 3.41387102,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "NIGHT",
+      "value": 0.9203970319872,
+      "shares": 28.19843848,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "AIGENSYN",
+      "value": 0.7656270601825,
+      "shares": 23.66698795,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "2Z",
+      "value": 0.7549397016939,
+      "shares": 7.36454689,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "VANA",
+      "value": 0.68252673388,
+      "shares": 0.45441194,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "SPK",
+      "value": 0.64175513059252,
+      "shares": 22.98879247,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "HOME",
+      "value": 0.5469781551035,
+      "shares": 22.83833633,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "MANA",
+      "value": 0.5408048856,
+      "shares": 0.55184172,
+      "price": 0.98,
+      "grade": 62,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "ANIME",
+      "value": 0.5362158757838,
+      "shares": 122.14484642,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "AT",
+      "value": 0.524964866878,
+      "shares": 4.28193203,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "SOMI",
+      "value": 0.524173052856,
+      "shares": 3.05997112,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "SAHARA",
+      "value": 0.5124712304558,
+      "shares": 14.38313866,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "FDUSD",
+      "value": 0.49461827,
+      "shares": 0.49461827,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "LAYER",
+      "value": 0.47726522518,
+      "shares": 5.36253062,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "PROVE",
+      "value": 0.471247581208,
+      "shares": 1.72491794,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "RED",
+      "value": 0.46954996777,
+      "shares": 3.34914385,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "BERA",
+      "value": 0.45431505477,
+      "shares": 1.17394071,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "USUAL",
+      "value": 0.4532309055599,
+      "shares": 32.58309889,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "GUN",
+      "value": 0.4043141881245,
+      "shares": 34.11934077,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "ERA",
+      "value": 0.332629663284,
+      "shares": 2.29875372,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "0G",
+      "value": 0.3202053248,
+      "shares": 0.6643264,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "THE",
+      "value": 0.312246372152,
+      "shares": 3.46555352,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "SIGN",
+      "value": 0.305816976444,
+      "shares": 23.70674236,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "OPN",
+      "value": 0.289166397596,
+      "shares": 1.67729929,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "ACE",
+      "value": 0.272273954134,
+      "shares": 2.30155498,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "LINEA",
+      "value": 0.24708164086858,
+      "shares": 76.09536214,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "NIL",
+      "value": 0.2423563138322,
+      "shares": 2.98689073,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "HYPER",
+      "value": 0.238322723205,
+      "shares": 2.31606145,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "GPS",
+      "value": 0.235589290996,
+      "shares": 34.64548397,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "PLUME",
+      "value": 0.2309110055648,
+      "shares": 15.35312537,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "INIT",
+      "value": 0.228040578018,
+      "shares": 2.72449914,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "BARD",
+      "value": 0.227097581364,
+      "shares": 1.03839772,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "ZBT",
+      "value": 0.22365622142,
+      "shares": 1.5684167,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "LA",
+      "value": 0.206593478616,
+      "shares": 1.73026364,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "SHELL",
+      "value": 0.186066196064,
+      "shares": 5.67274988,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "BREV",
+      "value": 0.182786337669,
+      "shares": 1.61614799,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "SAPIEN",
+      "value": 0.180432022041,
+      "shares": 1.57858287,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "PARTI",
+      "value": 0.179970646668,
+      "shares": 3.48780323,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "CHIP",
+      "value": 0.1439394915475,
+      "shares": 2.93574325,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "ENSO",
+      "value": 0.14380254945,
+      "shares": 0.18088371,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "USDT",
+      "value": 0.1421374,
+      "shares": 0.1421374,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "BABY",
+      "value": 0.1414617493388,
+      "shares": 8.72143954,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "TOWNS",
+      "value": 0.1244831261278,
+      "shares": 36.50531558,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "STO",
+      "value": 0.119939490515,
+      "shares": 1.74077635,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "ZKC",
+      "value": 0.105823935504,
+      "shares": 1.54713356,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "HAEDAL",
+      "value": 0.1009222113504,
+      "shares": 3.47528276,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "EUL",
+      "value": 0.07031197184,
+      "shares": 0.05562656,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "KERNEL",
+      "value": 0.067775960304,
+      "shares": 1.08615321,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "RESOLV",
+      "value": 0.061180272702,
+      "shares": 2.27435958,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "MITO",
+      "value": 0.060626986458,
+      "shares": 1.5333077,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "BMT",
+      "value": 0.05696802063,
+      "shares": 3.6848655,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "DOLO",
+      "value": 0.0485791642842,
+      "shares": 1.57163262,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "TURTLE",
+      "value": 0.047321942151,
+      "shares": 1.04926701,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "AMB",
+      "value": 0.0091894765472,
+      "shares": 28.71711421,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "DOT",
+      "value": 0.00727190798,
+      "shares": 0.00568562,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "BETH",
+      "value": 4.2395e-07,
+      "shares": 1e-08,
+      "price": 42.395,
+      "grade": 50,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "HEMI",
+      "value": 0,
+      "shares": 10.34353742,
+      "price": 0,
+      "grade": 72,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    },
+    {
+      "ticker": "1000CAT",
+      "value": 0,
+      "shares": 299.85607715,
+      "price": 0,
+      "grade": 0,
+      "council": "",
+      "brokers": [
+        "Binance"
+      ]
+    }
+  ]
+}

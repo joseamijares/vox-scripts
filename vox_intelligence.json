@@ -1,0 +1,116 @@
+{
+  "timestamp": "2026-05-26T01:42:55.558258+00:00",
+  "portfolio_value": 197818.36,
+  "regime": "RANGE",
+  "sentiment": "SLIGHTLY_BULLISH",
+  "macro_regime": "HOSTILE",
+  "total_items": 7,
+  "high_priority": 6,
+  "medium_priority": 1,
+  "low_priority": 0,
+  "items": [
+    {
+      "category": "MACRO",
+      "priority": "HIGH",
+      "title": "Macro regime: HOSTILE",
+      "body": "Fed restrictive at 5.25%, yield curve inverted. Defensive positioning recommended.",
+      "tickers": [],
+      "action": "Reduce Risk",
+      "source": "macro",
+      "timestamp": "2026-05-26T01:42:55.558258+00:00"
+    },
+    {
+      "category": "MACRO",
+      "priority": "HIGH",
+      "title": "Fed maintaining restrictive policy. Pressure on valuations.",
+      "body": "Fed maintaining restrictive policy. Pressure on valuations.",
+      "tickers": [],
+      "action": "Review Exposure",
+      "source": "macro",
+      "timestamp": "2026-05-26T01:42:55.558258+00:00"
+    },
+    {
+      "category": "MACRO",
+      "priority": "HIGH",
+      "title": "Yield curve inverted (-0.43%). Recession risk.",
+      "body": "Yield curve inverted (-0.43%). Recession risk.",
+      "tickers": [],
+      "action": "Review Exposure",
+      "source": "macro",
+      "timestamp": "2026-05-26T01:42:55.558258+00:00"
+    },
+    {
+      "category": "PORTFOLIO",
+      "priority": "HIGH",
+      "title": "9 positions losing >$500",
+      "body": "Total unrealized loss: $11,421. Review stops and thesis.",
+      "tickers": [
+        "BTC",
+        "ETH",
+        "OKLO",
+        "XRP",
+        "DOGE",
+        "JMIA",
+        "SPRB",
+        "ADA",
+        "BYND"
+      ],
+      "action": "Review Portfolio",
+      "source": "portfolio",
+      "timestamp": "2026-05-26T01:42:55.558258+00:00"
+    },
+    {
+      "category": "CRYPTO",
+      "priority": "HIGH",
+      "title": "Crypto overweight: 16.2%",
+      "body": "Crypto allocation is 16.2% (limit 10%). Value: $31,950. Trim speculative positions.",
+      "tickers": [
+        "BTC",
+        "ETH",
+        "BNB",
+        "TRX",
+        "XRP",
+        "DOGE",
+        "SOL",
+        "ADA"
+      ],
+      "action": "Rebalance Crypto",
+      "source": "portfolio",
+      "timestamp": "2026-05-26T01:42:55.558258+00:00"
+    },
+    {
+      "category": "EARNINGS",
+      "priority": "HIGH",
+      "title": "NVDA earnings in 3 days",
+      "body": "Earnings on 2026-05-28. Estimate: $N/A. Consider position size before event.",
+      "tickers": [
+        "NVDA"
+      ],
+      "action": "Review Position",
+      "source": "earnings",
+      "timestamp": "2026-05-26T01:42:55.558258+00:00"
+    },
+    {
+      "category": "PORTFOLIO",
+      "priority": "MEDIUM",
+      "title": "6 positions up >$5,000",
+      "body": "Total unrealized gain: $41,009. Consider trailing stops.",
+      "tickers": [
+        "VOO",
+        "CRWD",
+        "TSLA",
+        "NVDA",
+        "TSM",
+        "AMD"
+      ],
+      "action": "Set Trailing Stops",
+      "source": "portfolio",
+      "timestamp": "2026-05-26T01:42:55.558258+00:00"
+    }
+  ],
+  "sources": [
+    "earnings",
+    "portfolio",
+    "macro"
+  ]
+}

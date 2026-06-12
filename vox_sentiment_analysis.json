@@ -1,0 +1,243 @@
+{
+  "timestamp": "2026-05-25T22:41:30.367100+00:00",
+  "results": [
+    {
+      "ticker": "SPRB",
+      "timestamp": "2026-05-25T22:41:30.366174+00:00",
+      "sentiment": "NEUTRAL",
+      "score": -18,
+      "signals": [
+        "social_concern"
+      ],
+      "sources": [
+        "technical_proxy",
+        "mock_social"
+      ]
+    },
+    {
+      "ticker": "RESOLV",
+      "timestamp": "2026-05-25T22:41:30.366382+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 10,
+      "signals": [],
+      "sources": [
+        "technical_proxy",
+        "mock_social"
+      ]
+    },
+    {
+      "ticker": "LAYER",
+      "timestamp": "2026-05-25T22:41:30.366411+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 7,
+      "signals": [],
+      "sources": [
+        "technical_proxy",
+        "mock_social"
+      ]
+    },
+    {
+      "ticker": "1000CAT",
+      "timestamp": "2026-05-25T22:41:30.366437+00:00",
+      "sentiment": "NEUTRAL",
+      "score": -6,
+      "signals": [],
+      "sources": [
+        "technical_proxy",
+        "mock_social"
+      ]
+    },
+    {
+      "ticker": "BNB",
+      "timestamp": "2026-05-25T22:41:30.366461+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 7,
+      "signals": [],
+      "sources": [
+        "technical_proxy",
+        "mock_social"
+      ]
+    },
+    {
+      "ticker": "LA",
+      "timestamp": "2026-05-25T22:41:30.366485+00:00",
+      "sentiment": "NEUTRAL",
+      "score": -2,
+      "signals": [],
+      "sources": [
+        "technical_proxy",
+        "mock_social"
+      ]
+    },
+    {
+      "ticker": "ALLO",
+      "timestamp": "2026-05-25T22:41:30.366510+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 10,
+      "signals": [],
+      "sources": [
+        "technical_proxy",
+        "mock_social"
+      ]
+    },
+    {
+      "ticker": "MELI",
+      "timestamp": "2026-05-25T22:41:30.366535+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 14,
+      "signals": [
+        "social_buzz"
+      ],
+      "sources": [
+        "technical_proxy",
+        "mock_social"
+      ]
+    },
+    {
+      "ticker": "QQQ",
+      "timestamp": "2026-05-25T22:41:30.366558+00:00",
+      "sentiment": "NEUTRAL",
+      "score": -9,
+      "signals": [],
+      "sources": [
+        "technical_proxy",
+        "mock_social"
+      ]
+    },
+    {
+      "ticker": "STO",
+      "timestamp": "2026-05-25T22:41:30.366582+00:00",
+      "sentiment": "NEUTRAL",
+      "score": -15,
+      "signals": [
+        "social_concern"
+      ],
+      "sources": [
+        "technical_proxy",
+        "mock_social"
+      ]
+    },
+    {
+      "ticker": "SAPIEN",
+      "timestamp": "2026-05-25T22:41:30.366605+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 12,
+      "signals": [
+        "social_buzz"
+      ],
+      "sources": [
+        "technical_proxy",
+        "mock_social"
+      ]
+    },
+    {
+      "ticker": "HYPER",
+      "timestamp": "2026-05-25T22:41:30.366628+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 15,
+      "signals": [
+        "social_buzz"
+      ],
+      "sources": [
+        "technical_proxy",
+        "mock_social"
+      ]
+    },
+    {
+      "ticker": "ZKC",
+      "timestamp": "2026-05-25T22:41:30.366651+00:00",
+      "sentiment": "NEUTRAL",
+      "score": -6,
+      "signals": [],
+      "sources": [
+        "technical_proxy",
+        "mock_social"
+      ]
+    },
+    {
+      "ticker": "KERNEL",
+      "timestamp": "2026-05-25T22:41:30.366674+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 10,
+      "signals": [],
+      "sources": [
+        "technical_proxy",
+        "mock_social"
+      ]
+    },
+    {
+      "ticker": "HBAR",
+      "timestamp": "2026-05-25T22:41:30.366697+00:00",
+      "sentiment": "NEUTRAL",
+      "score": -15,
+      "signals": [
+        "social_concern"
+      ],
+      "sources": [
+        "technical_proxy",
+        "mock_social"
+      ]
+    },
+    {
+      "ticker": "GUN",
+      "timestamp": "2026-05-25T22:41:30.366720+00:00",
+      "sentiment": "NEUTRAL",
+      "score": 11,
+      "signals": [
+        "social_buzz"
+      ],
+      "sources": [
+        "technical_proxy",
+        "mock_social"
+      ]
+    },
+    {
+      "ticker": "AMB",
+      "timestamp": "2026-05-25T22:41:30.366742+00:00",
+      "sentiment": "NEUTRAL",
+      "score": -9,
+      "signals": [],
+      "sources": [
+        "technical_proxy",
+        "mock_social"
+      ]
+    },
+    {
+      "ticker": "XPL",
+      "timestamp": "2026-05-25T22:41:30.366765+00:00",
+      "sentiment": "NEUTRAL",
+      "score": -2,
+      "signals": [],
+      "sources": [
+        "technical_proxy",
+        "mock_social"
+      ]
+    },
+    {
+      "ticker": "MANA",
+      "timestamp": "2026-05-25T22:41:30.366788+00:00",
+      "sentiment": "NEUTRAL",
+      "score": -19,
+      "signals": [
+        "social_concern"
+      ],
+      "sources": [
+        "technical_proxy",
+        "mock_social"
+      ]
+    },
+    {
+      "ticker": "TREE",
+      "timestamp": "2026-05-25T22:41:30.366811+00:00",
+      "sentiment": "NEUTRAL",
+      "score": -12,
+      "signals": [
+        "social_concern"
+      ],
+      "sources": [
+        "technical_proxy",
+        "mock_social"
+      ]
+    }
+  ]
+}

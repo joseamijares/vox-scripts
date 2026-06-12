@@ -13,6 +13,6 @@ python3 vox_monitored_plays.py 2>/dev/null || echo "  ⚠️ Monitored plays fai
 
 # Alert check
 echo "🚨 Alert check..."
-python3 vox_alert_system.py 2>/dev/null || echo "  ⚠️ Alert system failed"
+python3 vox_smart_alerts_v8.py 2>/dev/null || echo "  ⚠️ Alert system failed"
 
 echo "✅ Intraday done — $(date)"

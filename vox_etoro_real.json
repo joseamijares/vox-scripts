@@ -1,0 +1,352 @@
+{
+  "timestamp": "2026-05-27T14:12:17.720757",
+  "broker": "eToro",
+  "total_value": 53173.039999999986,
+  "total_pnl": 10806.919999999998,
+  "positions": [
+    {
+      "ticker": "VOO",
+      "units": 25.066077999999994,
+      "value": 11085.380000000001,
+      "invested": 11085.380000000001,
+      "pnl": 6189.42,
+      "trades": 37
+    },
+    {
+      "ticker": "BTC",
+      "units": 0.063367,
+      "value": 6095.969999999999,
+      "invested": 6095.969999999999,
+      "pnl": -1362.58,
+      "trades": 19
+    },
+    {
+      "ticker": "ETH",
+      "units": 1.4882,
+      "value": 5669.820000000001,
+      "invested": 5669.820000000001,
+      "pnl": -2623.14,
+      "trades": 38
+    },
+    {
+      "ticker": "QQQ",
+      "units": 5.136035000000001,
+      "value": 2387.19,
+      "invested": 2387.19,
+      "pnl": 1349.43,
+      "trades": 10
+    },
+    {
+      "ticker": "VTI",
+      "units": 7.731377,
+      "value": 1920.8400000000001,
+      "invested": 1920.8400000000001,
+      "pnl": 932.11,
+      "trades": 6
+    },
+    {
+      "ticker": "JMIA",
+      "units": 84.070735,
+      "value": 1849.74,
+      "invested": 2440.0,
+      "pnl": -1229.3000000000002,
+      "trades": 5
+    },
+    {
+      "ticker": "OKLO",
+      "units": 13.96783,
+      "value": 1770.0,
+      "invested": 1770.0,
+      "pnl": -832.47,
+      "trades": 3
+    },
+    {
+      "ticker": "DOGE",
+      "units": 6518.216366000001,
+      "value": 1585.0500000000002,
+      "invested": 1585.0500000000002,
+      "pnl": -926.77,
+      "trades": 4
+    },
+    {
+      "ticker": "0700.HK",
+      "units": 19.049672,
+      "value": 1300.0,
+      "invested": 1300.0,
+      "pnl": -238.0,
+      "trades": 4
+    },
+    {
+      "ticker": "COST",
+      "units": 2.489538,
+      "value": 1280.0,
+      "invested": 1280.0,
+      "pnl": 1227.1,
+      "trades": 8
+    },
+    {
+      "ticker": "MSFT",
+      "units": 3.251413,
+      "value": 1253.9099999999999,
+      "invested": 2250.0,
+      "pnl": 84.41,
+      "trades": 2
+    },
+    {
+      "ticker": "SHOP",
+      "units": 15.606691,
+      "value": 1246.21,
+      "invested": 1300.0,
+      "pnl": 423.55,
+      "trades": 2
+    },
+    {
+      "ticker": "AVGO",
+      "units": 3.074481,
+      "value": 1200.0,
+      "invested": 1200.0,
+      "pnl": 93.86,
+      "trades": 3
+    },
+    {
+      "ticker": "BIDU",
+      "units": 13.363852999999999,
+      "value": 1199.78,
+      "invested": 1199.78,
+      "pnl": 541.13,
+      "trades": 5
+    },
+    {
+      "ticker": "APH",
+      "units": 13.483734,
+      "value": 1181.02,
+      "invested": 1300.0,
+      "pnl": 713.98,
+      "trades": 2
+    },
+    {
+      "ticker": "COIN",
+      "units": 4.291449,
+      "value": 1180.0,
+      "invested": 1180.0,
+      "pnl": -429.59,
+      "trades": 5
+    },
+    {
+      "ticker": "TSLA",
+      "units": 4.1288339999999994,
+      "value": 1111.25,
+      "invested": 1330.0,
+      "pnl": 710.09,
+      "trades": 2
+    },
+    {
+      "ticker": "OSCR",
+      "units": 64.265593,
+      "value": 1086.37,
+      "invested": 1299.37,
+      "pnl": 333.26,
+      "trades": 2
+    },
+    {
+      "ticker": "AMD",
+      "units": 6.629134,
+      "value": 1062.3899999999999,
+      "invested": 1490.0,
+      "pnl": 2214.52,
+      "trades": 2
+    },
+    {
+      "ticker": "DDOG",
+      "units": 10.942793000000002,
+      "value": 1000.8299999999999,
+      "invested": 1525.0,
+      "pnl": 1404.4,
+      "trades": 2
+    },
+    {
+      "ticker": "SNOW",
+      "units": 7.442155,
+      "value": 950.0,
+      "invested": 950.0,
+      "pnl": 347.69,
+      "trades": 2
+    },
+    {
+      "ticker": "CRWD",
+      "units": 3.7326840000000003,
+      "value": 930.09,
+      "invested": 1060.0,
+      "pnl": 1491.3000000000002,
+      "trades": 2
+    },
+    {
+      "ticker": "ADA",
+      "units": 434.829194,
+      "value": 927.03,
+      "invested": 927.03,
+      "pnl": -823.53,
+      "trades": 22
+    },
+    {
+      "ticker": "WMT",
+      "units": 15.820106,
+      "value": 770.96,
+      "invested": 770.96,
+      "pnl": 1107.52,
+      "trades": 5
+    },
+    {
+      "ticker": "DASH",
+      "units": 3.0291539999999997,
+      "value": 556.0,
+      "invested": 556.0,
+      "pnl": -425.54,
+      "trades": 3
+    },
+    {
+      "ticker": "BNB",
+      "units": 0.980232,
+      "value": 540.0,
+      "invested": 540.0,
+      "pnl": 96.88,
+      "trades": 3
+    },
+    {
+      "ticker": "CEG",
+      "units": 1.383918,
+      "value": 530.0,
+      "invested": 530.0,
+      "pnl": -130.54,
+      "trades": 3
+    },
+    {
+      "ticker": "SIDU",
+      "units": 80.0,
+      "value": 503.2,
+      "invested": 503.2,
+      "pnl": -20.0,
+      "trades": 1
+    },
+    {
+      "ticker": "NVDA",
+      "units": 5.1265410000000005,
+      "value": 500.01,
+      "invested": 600.0,
+      "pnl": 588.1,
+      "trades": 2
+    },
+    {
+      "ticker": "MS",
+      "units": 2.483854,
+      "value": 500.0,
+      "invested": 500.0,
+      "pnl": -0.37,
+      "trades": 1
+    },
+    {
+      "ticker": "SMH",
+      "units": 1.286074,
+      "value": 500.0,
+      "invested": 500.0,
+      "pnl": 260.64,
+      "trades": 1
+    },
+    {
+      "ticker": "TE",
+      "units": 44.923629,
+      "value": 500.0,
+      "invested": 500.0,
+      "pnl": -14.38,
+      "trades": 1
+    },
+    {
+      "ticker": "POET",
+      "units": 41.017227,
+      "value": 500.0,
+      "invested": 500.0,
+      "pnl": 42.25,
+      "trades": 1
+    },
+    {
+      "ticker": "CBRS",
+      "units": 1.451777,
+      "value": 457.76,
+      "invested": 457.76,
+      "pnl": -79.43,
+      "trades": 1
+    },
+    {
+      "ticker": "MIRA",
+      "units": 400.0,
+      "value": 456.0,
+      "invested": 456.0,
+      "pnl": -4.0,
+      "trades": 1
+    },
+    {
+      "ticker": "AAPL",
+      "units": 5.645164,
+      "value": 440.08,
+      "invested": 500.0,
+      "pnl": 1314.65,
+      "trades": 1
+    },
+    {
+      "ticker": "TRX",
+      "units": 4341.25018,
+      "value": 422.6100000000002,
+      "invested": 422.6100000000002,
+      "pnl": 1182.0300000000007,
+      "trades": 56
+    },
+    {
+      "ticker": "PLTR",
+      "units": 4.678909,
+      "value": 400.0,
+      "invested": 400.0,
+      "pnl": 221.13,
+      "trades": 1
+    },
+    {
+      "ticker": "CORZ",
+      "units": 14.614541,
+      "value": 400.0,
+      "invested": 400.0,
+      "pnl": -2.05,
+      "trades": 1
+    },
+    {
+      "ticker": "SPOT",
+      "units": 2.318557,
+      "value": 338.65,
+      "invested": 500.0,
+      "pnl": 856.15,
+      "trades": 2
+    },
+    {
+      "ticker": "ARKX",
+      "units": 9.083402,
+      "value": 330.0,
+      "invested": 330.0,
+      "pnl": -1.0,
+      "trades": 1
+    },
+    {
+      "ticker": "A",
+      "units": 51.813114,
+      "value": 300.0,
+      "invested": 300.0,
+      "pnl": -296.05,
+      "trades": 3
+    },
+    {
+      "ticker": "BIVI",
+      "units": 7.470294,
+      "value": 252.5,
+      "invested": 252.5,
+      "pnl": -241.66,
+      "trades": 1
+    }
+  ]
+}

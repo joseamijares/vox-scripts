@@ -1,0 +1,44 @@
+{
+  "score": 49,
+  "signal": "HOLD",
+  "conviction": "Wait for better entry",
+  "technical": {
+    "score": 49,
+    "trend": "NEUTRAL",
+    "rsi": 72.4,
+    "ema_20": 60.01,
+    "ema_50": 65.2,
+    "atr_pct": 2.55,
+    "volume_ratio": 1.21,
+    "support": 54.04,
+    "resistance": 65.31,
+    "details": "RSI 72.4, EMA20 $60.01, Vol 1.2x"
+  },
+  "fundamental": {
+    "score": 50,
+    "details": "No data"
+  },
+  "sentiment": {
+    "score": 50,
+    "sentiment": "NEUTRAL",
+    "headlines": [],
+    "details": "Basic tracking"
+  },
+  "levels": {
+    "buy_zone": 54.04,
+    "stop_loss": 51.34,
+    "target_1": 62.04,
+    "target_2": 71.84
+  },
+  "thesis": {
+    "bull_case": [],
+    "bear_case": [
+      "Technical trend is neutral with RSI at 72.4"
+    ],
+    "catalysts": [],
+    "risks": [
+      "ATR at 2.5% indicates volatility"
+    ]
+  },
+  "timestamp": "2026-05-27T04:02:15.427945+00:00"
+}

@@ -1,0 +1,1 @@
+{"timestamp": "2026-05-25T10:46:34.537108", "signal": {"ticker": "MELI", "source": "earnings_history", "signal_type": "MODERATE_BEAT", "value": 60, "raw_data": {"beat_rate": 0.67, "quarters": 4, "note": "Simulated fallback"}, "confidence": 0.4, "timestamp": "2026-05-25T10:46:34.536935"}}

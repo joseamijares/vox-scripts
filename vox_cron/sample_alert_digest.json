@@ -1,0 +1,20 @@
+{
+  "type": "alert_digest",
+  "generated_at": "2026-06-07T15:00:00Z",
+  "portfolio_summary": {
+    "total_positions": 70,
+    "total_aum": 185301.35
+  },
+  "alerts": {
+    "critical": [
+      {"ticker": "TSLA", "severity": "CRITICAL", "type": "CONCENTRATION", "message": "18.5% of portfolio — reduce immediately"}
+    ],
+    "action": [
+      {"ticker": "BYND", "severity": "ACTION", "type": "SELL", "message": "Grade 32 — cut loss"},
+      {"ticker": "PLTR", "severity": "ACTION", "type": "SELL", "message": "Grade 41 — review thesis"},
+      {"ticker": "OKLO", "severity": "ACTION", "type": "THESIS_DISCONNECT", "message": "Grade 72 but down 22% — verify thesis"}
+    ],
+    "watch": []
+  },
+  "alert_count": 4
+}

@@ -1,0 +1,334 @@
+{
+  "timestamp": "2026-05-26T00:55:12.227642+00:00",
+  "decisions": [
+    {
+      "timestamp": "2026-05-26T00:55:12.227002+00:00",
+      "ticker": "BTC",
+      "proposed_action": "SELL",
+      "votes": [
+        {
+          "agent": "data_analyst",
+          "role": "Data Quality & Facts",
+          "vote": "CONDITIONAL",
+          "confidence": 60,
+          "reasoning": "Position: $16,812, P&L: -6.5%. Data quality: concerns",
+          "concerns": [
+            "Data is stale - prices may have changed"
+          ],
+          "conditions": [
+            "Verify current price before execution"
+          ]
+        },
+        {
+          "agent": "risk_manager",
+          "role": "Risk & Downside Analysis",
+          "vote": "CONDITIONAL",
+          "confidence": 55,
+          "reasoning": "Risk assessment: concerns found. Regime: RANGE",
+          "concerns": [
+            "Realizing $1,175 loss",
+            "Concentration risk: 8.5% of portfolio",
+            "Selling core crypto assets - may miss long-term upside"
+          ],
+          "conditions": [
+            "Ensure this is rebalancing, not panic selling"
+          ]
+        },
+        {
+          "agent": "contrarian",
+          "role": "Devil's Advocate",
+          "vote": "CONDITIONAL",
+          "confidence": 65,
+          "reasoning": "Contrarian view: some concerns",
+          "concerns": [
+            "Selling at loss - could bounce back",
+            "Institutional adoption increasing - selling now may be premature"
+          ],
+          "conditions": [
+            "Wait 48h for potential bounce"
+          ]
+        },
+        {
+          "agent": "portfolio_context",
+          "role": "Portfolio Strategy & User Preferences",
+          "vote": "CONDITIONAL",
+          "confidence": 70,
+          "reasoning": "Portfolio fit: acceptable. No major conflicts with strategy.",
+          "concerns": [
+            "Crypto correlation with tech stocks - may not provide diversification"
+          ],
+          "conditions": []
+        },
+        {
+          "agent": "chairman",
+          "role": "Final Authority",
+          "vote": "CONDITIONAL",
+          "confidence": 50,
+          "reasoning": "Multiple conditions required. Proceed only if all conditions met. Large position - requires human confirmation.",
+          "concerns": [
+            "Data is stale - prices may have changed",
+            "Realizing $1,175 loss",
+            "Concentration risk: 8.5% of portfolio",
+            "Selling core crypto assets - may miss long-term upside",
+            "Selling at loss - could bounce back"
+          ],
+          "conditions": [
+            "Verify current price before execution",
+            "Ensure this is rebalancing, not panic selling",
+            "Wait 48h for potential bounce",
+            "Get explicit user approval for positions >$15K"
+          ]
+        }
+      ],
+      "consensus": "CONDITIONAL",
+      "consensus_confidence": 100,
+      "final_recommendation": "CONDITIONAL: SELL BTC only if conditions met.",
+      "execution_conditions": [
+        "Get explicit user approval for positions >$15K",
+        "Wait 48h for potential bounce",
+        "Verify current price before execution",
+        "Ensure this is rebalancing, not panic selling"
+      ],
+      "dissent_notes": [
+        "risk_manager: Risk assessment: concerns found. Regime: RANGE",
+        "chairman: Multiple conditions required. Proceed only if all conditions met. Large position - requires human confirmation."
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "timestamp": "2026-05-26T00:55:12.227567+00:00",
+      "ticker": "ETH",
+      "proposed_action": "SELL",
+      "votes": [
+        {
+          "agent": "data_analyst",
+          "role": "Data Quality & Facts",
+          "vote": "CONDITIONAL",
+          "confidence": 60,
+          "reasoning": "Position: $8,396, P&L: -23.0%. Data quality: concerns",
+          "concerns": [
+            "Data is stale - prices may have changed"
+          ],
+          "conditions": [
+            "Verify current price before execution"
+          ]
+        },
+        {
+          "agent": "risk_manager",
+          "role": "Risk & Downside Analysis",
+          "vote": "CONDITIONAL",
+          "confidence": 55,
+          "reasoning": "Risk assessment: concerns found. Regime: RANGE",
+          "concerns": [
+            "Realizing $2,505 loss",
+            "Selling core crypto assets - may miss long-term upside"
+          ],
+          "conditions": [
+            "Ensure this is rebalancing, not panic selling"
+          ]
+        },
+        {
+          "agent": "contrarian",
+          "role": "Devil's Advocate",
+          "vote": "CONDITIONAL",
+          "confidence": 65,
+          "reasoning": "Contrarian view: some concerns",
+          "concerns": [
+            "Selling at loss - could bounce back",
+            "Institutional adoption increasing - selling now may be premature"
+          ],
+          "conditions": [
+            "Wait 48h for potential bounce"
+          ]
+        },
+        {
+          "agent": "portfolio_context",
+          "role": "Portfolio Strategy & User Preferences",
+          "vote": "CONDITIONAL",
+          "confidence": 70,
+          "reasoning": "Portfolio fit: acceptable. No major conflicts with strategy.",
+          "concerns": [
+            "Crypto correlation with tech stocks - may not provide diversification"
+          ],
+          "conditions": []
+        },
+        {
+          "agent": "chairman",
+          "role": "Final Authority",
+          "vote": "CONDITIONAL",
+          "confidence": 65,
+          "reasoning": "Multiple conditions required. Proceed only if all conditions met.",
+          "concerns": [
+            "Data is stale - prices may have changed",
+            "Realizing $2,505 loss",
+            "Selling core crypto assets - may miss long-term upside",
+            "Selling at loss - could bounce back",
+            "Institutional adoption increasing - selling now may be premature"
+          ],
+          "conditions": [
+            "Verify current price before execution",
+            "Ensure this is rebalancing, not panic selling",
+            "Wait 48h for potential bounce"
+          ]
+        }
+      ],
+      "consensus": "CONDITIONAL",
+      "consensus_confidence": 100,
+      "final_recommendation": "CONDITIONAL: SELL ETH only if conditions met.",
+      "execution_conditions": [
+        "Wait 48h for potential bounce",
+        "Verify current price before execution",
+        "Ensure this is rebalancing, not panic selling"
+      ],
+      "dissent_notes": [
+        "risk_manager: Risk assessment: concerns found. Regime: RANGE"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "timestamp": "2026-05-26T00:55:12.227598+00:00",
+      "ticker": "SHOP",
+      "proposed_action": "SELL",
+      "votes": [
+        {
+          "agent": "data_analyst",
+          "role": "Data Quality & Facts",
+          "vote": "CONDITIONAL",
+          "confidence": 60,
+          "reasoning": "Position: $6,877, P&L: +7.8%. Data quality: concerns",
+          "concerns": [
+            "Data is stale - prices may have changed"
+          ],
+          "conditions": [
+            "Verify current price before execution"
+          ]
+        },
+        {
+          "agent": "risk_manager",
+          "role": "Risk & Downside Analysis",
+          "vote": "APPROVE",
+          "confidence": 75,
+          "reasoning": "Risk assessment: acceptable. Regime: RANGE",
+          "concerns": [],
+          "conditions": []
+        },
+        {
+          "agent": "contrarian",
+          "role": "Devil's Advocate",
+          "vote": "APPROVE",
+          "confidence": 70,
+          "reasoning": "Contrarian view: no major objections",
+          "concerns": [],
+          "conditions": []
+        },
+        {
+          "agent": "portfolio_context",
+          "role": "Portfolio Strategy & User Preferences",
+          "vote": "REJECT",
+          "confidence": 95,
+          "reasoning": "User explicitly protected SHOP - do not sell without approval",
+          "concerns": [
+            "User has explicitly protected this position"
+          ],
+          "conditions": [
+            "Get explicit user approval before any action on SHOP"
+          ]
+        },
+        {
+          "agent": "chairman",
+          "role": "Final Authority",
+          "vote": "CONDITIONAL",
+          "confidence": 60,
+          "reasoning": "Mixed signals. Require additional analysis before execution.",
+          "concerns": [
+            "Data is stale - prices may have changed",
+            "User has explicitly protected this position"
+          ],
+          "conditions": [
+            "Verify current price before execution",
+            "Get explicit user approval before any action on SHOP"
+          ]
+        }
+      ],
+      "consensus": "CONDITIONAL",
+      "consensus_confidence": 40,
+      "final_recommendation": "CONDITIONAL: SELL SHOP only if conditions met.",
+      "execution_conditions": [
+        "Verify current price before execution",
+        "Get explicit user approval before any action on SHOP"
+      ],
+      "dissent_notes": [
+        "portfolio_context: User explicitly protected SHOP - do not sell without approval"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "timestamp": "2026-05-26T00:55:12.227625+00:00",
+      "ticker": "NVDA",
+      "proposed_action": "TRIM",
+      "votes": [
+        {
+          "agent": "data_analyst",
+          "role": "Data Quality & Facts",
+          "vote": "CONDITIONAL",
+          "confidence": 60,
+          "reasoning": "Position: $10,150, P&L: +398.9%. Data quality: concerns",
+          "concerns": [
+            "Data is stale - prices may have changed"
+          ],
+          "conditions": [
+            "Verify current price before execution"
+          ]
+        },
+        {
+          "agent": "risk_manager",
+          "role": "Risk & Downside Analysis",
+          "vote": "APPROVE",
+          "confidence": 75,
+          "reasoning": "Risk assessment: acceptable. Regime: RANGE",
+          "concerns": [],
+          "conditions": []
+        },
+        {
+          "agent": "contrarian",
+          "role": "Devil's Advocate",
+          "vote": "APPROVE",
+          "confidence": 70,
+          "reasoning": "Contrarian view: no major objections",
+          "concerns": [],
+          "conditions": []
+        },
+        {
+          "agent": "portfolio_context",
+          "role": "Portfolio Strategy & User Preferences",
+          "vote": "APPROVE",
+          "confidence": 80,
+          "reasoning": "Portfolio fit: acceptable. No major conflicts with strategy.",
+          "concerns": [],
+          "conditions": []
+        },
+        {
+          "agent": "chairman",
+          "role": "Final Authority",
+          "vote": "APPROVE",
+          "confidence": 80,
+          "reasoning": "Strong consensus for approval. Proceed with standard precautions.",
+          "concerns": [
+            "Data is stale - prices may have changed"
+          ],
+          "conditions": [
+            "Verify current price before execution"
+          ]
+        }
+      ],
+      "consensus": "APPROVE",
+      "consensus_confidence": 80,
+      "final_recommendation": "APPROVED: TRIM NVDA with confidence 80%",
+      "execution_conditions": [
+        "Verify current price before execution"
+      ],
+      "dissent_notes": [],
+      "requires_human_approval": true
+    }
+  ]
+}

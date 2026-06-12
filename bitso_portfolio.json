@@ -2,22 +2,22 @@
   "balances": [
     {
       "currency": "eth",
-      "available": 4.667e-05,
+      "available": 4.668e-05,
       "locked": 0.0,
-      "total": 4.667e-05,
-      "price_mxn": 36977.0,
-      "price_usd": 2136.5343502628994,
-      "value_mxn": 1.72571659,
-      "value_usd": 0.0997120581267695
+      "total": 4.668e-05,
+      "price_mxn": 36620.0,
+      "price_usd": 2123.760366525547,
+      "value_mxn": 1.7094216,
+      "value_usd": 0.09913713390941253
     },
     {
       "currency": "usd",
       "available": 0.00767844,
       "locked": 0.0,
       "total": 0.00767844,
-      "price_mxn": 17.307,
+      "price_mxn": 17.243,
       "price_usd": 1.0,
-      "value_mxn": 0.13289076107999998,
+      "value_mxn": 0.13239934092,
       "value_usd": 0.00767844
     },
     {
@@ -25,30 +25,30 @@
       "available": 0.00648968,
       "locked": 0.0,
       "total": 0.00648968,
-      "price_mxn": 17.352,
-      "price_usd": 1.0026001040041603,
-      "value_mxn": 0.11260892736000001,
-      "value_usd": 0.00650655384295372
+      "price_mxn": 17.286,
+      "price_usd": 1.002493765586035,
+      "value_mxn": 0.11218060848000001,
+      "value_usd": 0.00650586374064838
     },
     {
       "currency": "usdt",
       "available": 0.003936,
       "locked": 0.0,
       "total": 0.003936,
-      "price_mxn": 17.298,
-      "price_usd": 0.999479979199168,
-      "value_mxn": 0.068084928,
-      "value_usd": 0.003933953198127925
+      "price_mxn": 17.233,
+      "price_usd": 0.9994200545148757,
+      "value_mxn": 0.06782908800000001,
+      "value_usd": 0.003933717334570551
     },
     {
       "currency": "tusd",
       "available": 0.0033447,
       "locked": 0.0,
       "total": 0.0033447,
-      "price_mxn": 16.949,
-      "price_usd": 0.9793147281446816,
-      "value_mxn": 0.056689320300000005,
-      "value_usd": 0.0032755139712255165
+      "price_mxn": 17.385,
+      "price_usd": 1.0082352258887666,
+      "value_mxn": 0.0581476095,
+      "value_usd": 0.0033722443600301575
     },
     {
       "currency": "mxn",
@@ -56,19 +56,19 @@
       "locked": 0.0,
       "total": 0.00055663,
       "price_mxn": 1.0,
-      "price_usd": 0.05778008898133703,
+      "price_usd": 0.057994548512439834,
       "value_mxn": 0.00055663,
-      "value_usd": 3.2162130929681635e-05
+      "value_usd": 3.228150553847938e-05
     },
     {
       "currency": "xrp",
       "available": 5.1e-07,
       "locked": 0.0,
       "total": 5.1e-07,
-      "price_mxn": 23.7413,
-      "price_usd": 1.3717744265326168,
-      "value_mxn": 1.2108062999999999e-05,
-      "value_usd": 6.996049575316345e-07
+      "price_mxn": 23.4409,
+      "price_usd": 1.359444412225251,
+      "value_mxn": 1.1954859e-05,
+      "value_usd": 6.933166502348779e-07
     },
     {
       "currency": "doge",
@@ -81,7 +81,7 @@
       "value_usd": 0.0
     }
   ],
-  "total_mxn": 2.096559264803,
-  "total_usd": 0.12113938087496387,
-  "usd_mxn_rate": 17.307
+  "total_mxn": 2.080546831759,
+  "total_usd": 0.12066037416685033,
+  "usd_mxn_rate": 17.243
 }

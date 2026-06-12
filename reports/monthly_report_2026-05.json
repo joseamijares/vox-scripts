@@ -1,0 +1,57 @@
+{
+  "year": 2026,
+  "month": 5,
+  "generated": "2026-05-26T16:12:00.321408+00:00",
+  "summary": {
+    "total_plays": 2,
+    "closed_plays": 0,
+    "open_plays": 2,
+    "wins": 0,
+    "losses": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "total_buys": 1976.97,
+    "total_sells": 0,
+    "weekly_pnls": []
+  },
+  "best_play": null,
+  "worst_play": null,
+  "all_plays": [
+    {
+      "timestamp": "2026-05-26T16:09:02.345300+00:00",
+      "ticker": "AMZN",
+      "action": "ADD",
+      "shares": 4.55,
+      "price": 263.52,
+      "notional": 1199.02,
+      "broker": "eToro",
+      "reason": "Council BUY signal, grade 73, consumer/AI exposure",
+      "grade_at_entry": 73,
+      "council_at_entry": "BUY",
+      "notes": "Added ,200 to existing GBM position. Total now ~,098",
+      "closed": false,
+      "exit_price": null,
+      "exit_date": null,
+      "pnl": null,
+      "pnl_pct": null
+    },
+    {
+      "timestamp": "2026-05-26T16:09:02.345943+00:00",
+      "ticker": "AVGO",
+      "action": "ADD",
+      "shares": 1.84,
+      "price": 422.8,
+      "notional": 777.95,
+      "broker": "eToro",
+      "reason": "Highest grade AI supply chain name (76), under-owned",
+      "grade_at_entry": 76,
+      "council_at_entry": "HOLD",
+      "notes": "Added 80 to existing position. Total now ~,145",
+      "closed": false,
+      "exit_price": null,
+      "exit_date": null,
+      "pnl": null,
+      "pnl_pct": null
+    }
+  ]
+}

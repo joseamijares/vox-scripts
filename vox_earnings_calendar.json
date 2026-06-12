@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-05-25T22:55:37.499606+00:00",
+  "upcoming": [
+    {
+      "ticker": "NVDA",
+      "date": "2026-05-28",
+      "days_until": 3,
+      "urgency": "HIGH"
+    }
+  ]
+}

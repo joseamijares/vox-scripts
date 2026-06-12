@@ -1,215 +1,110 @@
 #!/usr/bin/env python3
 """
-VOX Daily Briefing Generator
-Auto-compiles all signals into morning brief
-Run at 8:00 AM before market open
+VOX Daily RAG Briefing Generator
+Reads portfolio data, generates actionable intelligence, writes to dashboard
 """
 
 import json
 import os
-from datetime import datetime, timedelta
-from pathlib import Path
+from datetime import datetime, timezone
 
-VAULT_PATH = "/Users/jos/Documents/Obsidian Vault/Portfolio-Finance"
-DAILY_DIR = f"{VAULT_PATH}/06-Tracking/Daily"
+# Read from PUBLIC folder (has grades merged)
+DASHBOARD_DIR = "/Users/jos/dev/vox-dashboard/public"
 
-class DailyBriefing:
-    def __init__(self):
-        self.date = datetime.now().strftime("%Y-%m-%d")
-        self.brief = {}
-        
-    def gather_macro(self):
-        """Gather macro signals"""
-        return {
-            "fed_funds": 5.25,
-            "cpi": 3.2,
-            "yield_curve": -0.35,
-            "vix": 14.2,
-            "market_bias": "CAUTIOUSLY_BULLISH",
-            "key_event": "Fed speakers today",
-            "sector_rotation": "XLF leading, XLK consolidating"
-        }
+def load_json(filename):
+    path = os.path.join(DASHBOARD_DIR, filename)
+    if os.path.exists(path):
+        with open(path) as f:
+            return json.load(f)
+    return {}
+
+def generate_daily_briefing():
+    # Load data from PUBLIC (grades merged)
+    data = load_json("dashboard_positions.json")
+    positions = data.get("positions", [])
     
-    def gather_alerts(self):
-        """Gather active alerts"""
-        return [
-            {"ticker": "NVDA", "type": "BUY", "trigger": "$215", "reason": "RSI <40, Grade 70"},
-            {"ticker": "AMAT", "type": "BUY", "trigger": "$415", "reason": "EMA21 bounce"},
-            {"ticker": "OKLO", "type": "SELL", "trigger": "$80", "reason": "Target hit"},
-            {"ticker": "CEG", "type": "BUY", "trigger": "$280", "reason": "Any dip"},
-        ]
+    if not positions:
+        print("❌ No positions found")
+        return
     
-    def gather_positions_needing_attention(self):
-        """Positions requiring review"""
-        return [
-            {"ticker": "JMIA", "grade": 40, "action": "SELL TODAY", "urgency": "HIGH"},
-            {"ticker": "BILL", "grade": 50, "action": "Evaluate exit", "urgency": "MEDIUM"},
-            {"ticker": "AI", "grade": 45, "action": "Cut if grade drops", "urgency": "MEDIUM"},
-        ]
+    # Calculate metrics
+    total_value = data.get("total_value", sum(p.get("value", 0) for p in positions))
+    total_pnl = data.get("total_pnl", sum(p.get("pnl", 0) for p in positions))
     
-    def gather_screener_signals(self):
-        """Top screener signals"""
-        return [
-            {"ticker": "NVDA", "screener": "Grade 70+ Pullback", "confidence": "HIGH"},
-            {"ticker": "AMAT", "screener": "RSI <40 + Grade >65", "confidence": "HIGH"},
-            {"ticker": "CEG", "screener": "Sector Rotation", "confidence": "MEDIUM"},
-        ]
+    # Grade distribution
+    strong = [p for p in positions if p.get("grade", 0) >= 70]
+    moderate = [p for p in positions if 60 <= p.get("grade", 0) < 70]
+    weak = [p for p in positions if 0 < p.get("grade", 0) < 55]
     
-    def gather_sentiment(self):
-        """Contrarian opportunities"""
-        return [
-            {"ticker": "NVDA", "sentiment": "Bearish", "grade": 70, "signal": "CONTRARIAN_BUY"},
-            {"ticker": "CEG", "sentiment": "Mixed", "grade": 60, "signal": "FAVORABLE"},
-        ]
+    # Top movers
+    gainers = sorted([p for p in positions if p.get("pnl", 0) > 0], key=lambda x: x["pnl"], reverse=True)[:5]
+    losers = sorted([p for p in positions if p.get("pnl", 0) < 0], key=lambda x: x["pnl"])[:5]
     
-    def generate_brief(self):
-        """Generate the full briefing"""
-        macro = self.gather_macro()
-        alerts = self.gather_alerts()
-        attention = self.gather_positions_needing_attention()
-        screener = self.gather_screener_signals()
-        sentiment = self.gather_sentiment()
-        
-        brief = f"""---
-tags: [daily-brief, morning, pre-market]
-date: {self.date}
----
-
-# 📰 VOX Daily Briefing — {self.date}
-
-> Generated: {datetime.now().strftime("%H:%M")} | Market opens in ~1 hour
-
----
-
-## 🌍 Macro Snapshot
-
-| Indicator | Value | Signal |
-|-----------|-------|--------|
-| Fed Funds | {macro['fed_funds']}% | Neutral |
-| CPI | {macro['cpi']}% | Cooling |
-| Yield Curve | {macro['yield_curve']}% | Inverted (recession watch) |
-| VIX | {macro['vix']} | Low — buy dips |
-| Market Bias | {macro['market_bias']} | — |
-
-**Key Event:** {macro['key_event']}
-**Sector Flow:** {macro['sector_rotation']}
-
----
-
-## 🚨 Positions Needing Attention
-
-| Ticker | Grade | Action | Urgency |
-|--------|-------|--------|---------|
-"""
-        for pos in attention:
-            emoji = "🔴" if pos['urgency'] == "HIGH" else "🟡"
-            brief += f"| {pos['ticker']} | {pos['grade']} | {pos['action']} | {emoji} {pos['urgency']} |\n"
-        
-        brief += """
----
-
-## 🔔 Active Alerts (May Trigger Today)
-
-| Ticker | Action | Trigger | Reason |
-|--------|--------|---------|--------|
-"""
-        for alert in alerts:
-            brief += f"| {alert['ticker']} | {alert['type']} | {alert['trigger']} | {alert['reason']} |\n"
-        
-        brief += """
----
-
-## 🎯 Screener Signals
-
-| Ticker | Screener | Confidence |
-|--------|----------|------------|
-"""
-        for sig in screener:
-            stars = "⭐⭐⭐" if sig['confidence'] == "HIGH" else "⭐⭐"
-            brief += f"| {sig['ticker']} | {sig['screener']} | {stars} {sig['confidence']} |\n"
-        
-        brief += """
----
-
-## 🧠 Contrarian Opportunities
-
-| Ticker | Sentiment | Grade | Signal |
-|--------|-----------|-------|--------|
-"""
-        for opp in sentiment:
-            brief += f"| {opp['ticker']} | {opp['sentiment']} | {opp['grade']} | {opp['signal']} |\n"
-        
-        brief += f"""
----
-
-## 📋 Today's Action Checklist
-
-### Must Do (Before Market Open)
-- [ ] Review [[Mistake Journal]] — any patterns repeating?
-- [ ] Check [[Trade Execution Log]] — log yesterday's trades
-- [ ] Set alerts for: NVDA $215, AMAT $415, OKLO $80
-
-### If Alerts Trigger
-- [ ] NVDA @ $215 → Buy 27 shares (Schwab)
-- [ ] AMAT @ $415 → Buy 9 shares (Schwab)
-- [ ] OKLO @ $80 → Sell position (Schwab)
-
-### Watch List
-- [ ] JMIA — SELL if any bounce
-- [ ] BILL — Evaluate exit if grade <45
-- [ ] BTC — Monitor for trim execution
-
----
-
-## 💡 Key Insight
-
-**{datetime.now().strftime("%A")} Focus:** 
-"""
-        
-        # Day-specific insight
-        day = datetime.now().strftime("%A")
-        if day == "Monday":
-            brief += "Weekly sector rotation check. Rebalance if tech >30%."
-        elif day == "Tuesday":
-            brief += "Execute planned trades. No new positions without grade >65."
-        elif day == "Wednesday":
-            brief += "Mid-week review. Cut any position that dropped grade <45."
-        elif day == "Thursday":
-            brief += "Pre-Friday positioning. Reduce risk if VIX >20."
-        elif day == "Friday":
-            brief += "Weekend hold review. No new speculative positions."
-        else:
-            brief += "Weekend analysis. Review screener results, update thesis."
-        
-        brief += """
-
----
-
-## 🔗 Related
-- [[Daily Checklist]] — Full pre-market routine
-- [[Macro Dashboard]] — Detailed macro analysis
-- [[Sentiment Tracker]] — Live sentiment data
-- [[Trade Execution Log]] — Log today's trades
-
----
-
-*Generated by VOX Daily Briefing System*
-"""
-        
-        return brief
+    # SELL candidates
+    sell_now = [p for p in positions if p.get("grade", 0) > 0 and p.get("grade", 0) < 50]
+    sell_now.sort(key=lambda x: x["value"], reverse=True)
     
-    def save(self):
-        """Save briefing to vault"""
-        os.makedirs(DAILY_DIR, exist_ok=True)
-        filepath = f"{DAILY_DIR}/Briefing — {self.date}.md"
-        
-        brief = self.generate_brief()
-        with open(filepath, "w") as f:
-            f.write(brief)
-        
-        print(f"✅ Daily briefing saved: {filepath}")
-        return filepath
+    # TRIM candidates
+    trim = [p for p in positions if 50 <= p.get("grade", 0) < 55]
+    
+    # Crypto check
+    crypto_tickers = ["BTC", "ETH", "BNB", "SOL", "DOGE", "XRP", "ADA", "TRX", "SUI"]
+    crypto_value = sum(p["value"] for p in positions if p["ticker"] in crypto_tickers)
+    crypto_pct = (crypto_value / total_value * 100) if total_value > 0 else 0
+    
+    # USD/MXN
+    usd_mxn = data.get("usd_mxn_rate", 17.31)
+    
+    briefing = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "portfolio": {
+            "total_value": round(total_value, 2),
+            "total_pnl": round(total_pnl, 2),
+            "positions_count": len(positions),
+            "avg_grade": round(sum(p.get("grade", 0) for p in positions) / len([p for p in positions if p.get("grade", 0) > 0]), 1) if any(p.get("grade", 0) > 0 for p in positions) else 0,
+            "usd_mxn": usd_mxn,
+        },
+        "grades": {
+            "strong": len(strong),
+            "moderate": len(moderate),
+            "weak": len(weak),
+            "ungraded": len([p for p in positions if p.get("grade", 0) == 0]),
+        },
+        "actions": {
+            "sell_now": [{"ticker": p["ticker"], "value": p["value"], "grade": p["grade"], "brokers": p.get("brokers", [])} for p in sell_now[:10]],
+            "sell_total_value": round(sum(p["value"] for p in sell_now), 2),
+            "trim": [{"ticker": p["ticker"], "value": p["value"], "grade": p["grade"]} for p in trim[:5]],
+        },
+        "movers": {
+            "gainers": [{"ticker": p["ticker"], "pnl": round(p["pnl"], 2)} for p in gainers],
+            "losers": [{"ticker": p["ticker"], "pnl": round(p["pnl"], 2)} for p in losers],
+        },
+        "crypto": {
+            "value": round(crypto_value, 2),
+            "pct": round(crypto_pct, 1),
+            "over_limit": crypto_pct > 10,
+        },
+        "checklist": [
+            f"🔴 Review {len(sell_now)} SELL candidates (grade < 50) — ${sum(p['value'] for p in sell_now):,.0f}",
+            f"🟡 Check {len(trim)} TRIM candidates (grade 50-54)" if trim else "✅ No trim candidates",
+            f"🟢 {len(strong)} core holdings (grade 70+) — consider adding" if strong else "⚠️ No strong buys",
+            f"💰 Crypto at {crypto_pct:.1f}% — {'TRIM if > 10%' if crypto_pct > 10 else 'allocation OK'}",
+            f"💱 USD/MXN at {usd_mxn:.2f}",
+            "📰 Review overnight news on top 5 holdings",
+        ],
+    }
+    
+    # Write to dashboard
+    output_path = os.path.join(DASHBOARD_DIR, "vox_daily_brief.json")
+    with open(output_path, "w") as f:
+        json.dump(briefing, f, indent=2)
+    
+    print(f"✅ Daily briefing generated")
+    print(f"   Portfolio: ${total_value:,.0f} | P&L: ${total_pnl:,.0f}")
+    print(f"   SELL: {len(sell_now)} | TRIM: {len(trim)} | Strong: {len(strong)}")
+    print(f"   Crypto: {crypto_pct:.1f}% | USD/MXN: {usd_mxn:.2f}")
+    
+    return briefing
 
 if __name__ == "__main__":
-    briefing = DailyBriefing()
-    briefing.save()
+    generate_daily_briefing()

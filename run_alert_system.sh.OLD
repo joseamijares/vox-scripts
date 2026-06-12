@@ -10,4 +10,4 @@ if [ -f /Users/jos/.hermes/.env ]; then
     set +a
 fi
 
-python3 vox_alert_system.py
+python3 vox_alert_system_v2.py

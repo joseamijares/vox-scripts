@@ -1,0 +1,966 @@
+{
+  "timestamp": "2026-05-28T14:53:39.122266+00:00",
+  "count": 60,
+  "watchlist": [
+    {
+      "ticker": "FTXG",
+      "signal": "STRONG_BUY",
+      "score": 89,
+      "grade": 89,
+      "buy_zone": 21.84,
+      "stop_loss": 21.37,
+      "target_1": 23.17,
+      "target_2": 25.96,
+      "sources": [
+        "Grade: 89",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.121953+00:00"
+    },
+    {
+      "ticker": "ROBT",
+      "signal": "STRONG_BUY",
+      "score": 88,
+      "grade": 88,
+      "buy_zone": 52.65,
+      "stop_loss": 48.64,
+      "target_1": 58.31,
+      "target_2": 80.04,
+      "sources": [
+        "Grade: 88",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.121964+00:00"
+    },
+    {
+      "ticker": "VOO",
+      "signal": "STRONG_BUY",
+      "score": 88,
+      "grade": 88,
+      "buy_zone": 659.54,
+      "stop_loss": 631.72,
+      "target_1": 705.34,
+      "target_2": 864.67,
+      "sources": [
+        "Grade: 88",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.121965+00:00"
+    },
+    {
+      "ticker": "ROBO",
+      "signal": "STRONG_BUY",
+      "score": 87,
+      "grade": 87,
+      "buy_zone": 82.46,
+      "stop_loss": 75.85,
+      "target_1": 91.9,
+      "target_2": 127.08,
+      "sources": [
+        "Grade: 87",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.121967+00:00"
+    },
+    {
+      "ticker": "QQQ",
+      "signal": "STRONG_BUY",
+      "score": 86,
+      "grade": 86,
+      "buy_zone": 683.27,
+      "stop_loss": 636.89,
+      "target_1": 747.99,
+      "target_2": 1007.12,
+      "sources": [
+        "Grade: 86",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.121969+00:00"
+    },
+    {
+      "ticker": "SPY",
+      "signal": "STRONG_BUY",
+      "score": 86,
+      "grade": 86,
+      "buy_zone": 717.43,
+      "stop_loss": 687.12,
+      "target_1": 767.17,
+      "target_2": 940.48,
+      "sources": [
+        "Grade: 86",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.121970+00:00"
+    },
+    {
+      "ticker": "STT",
+      "signal": "STRONG_BUY",
+      "score": 86,
+      "grade": 86,
+      "buy_zone": 148.48,
+      "stop_loss": 142.98,
+      "target_1": 162.49,
+      "target_2": 202.75,
+      "sources": [
+        "Grade: 86",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.121972+00:00"
+    },
+    {
+      "ticker": "VTI",
+      "signal": "STRONG_BUY",
+      "score": 86,
+      "grade": 86,
+      "buy_zone": 352.96,
+      "stop_loss": 338.21,
+      "target_1": 377.64,
+      "target_2": 462.81,
+      "sources": [
+        "Grade: 86",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.121973+00:00"
+    },
+    {
+      "ticker": "XLV",
+      "signal": "STRONG_BUY",
+      "score": 86,
+      "grade": 86,
+      "buy_zone": 143.89,
+      "stop_loss": 137.71,
+      "target_1": 153.33,
+      "target_2": 182.03,
+      "sources": [
+        "Grade: 86",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.121975+00:00"
+    },
+    {
+      "ticker": "LILM",
+      "signal": "STRONG_BUY",
+      "score": 86,
+      "grade": 86,
+      "buy_zone": 0.04939999999999999,
+      "stop_loss": 0.044199999999999996,
+      "target_1": 0.05979999999999999,
+      "target_2": 0.0676,
+      "sources": [
+        "Grade: 86",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.121976+00:00"
+    },
+    {
+      "ticker": "UFO",
+      "signal": "STRONG_BUY",
+      "score": 85,
+      "grade": 85,
+      "buy_zone": 56.18,
+      "stop_loss": 47.39,
+      "target_1": 68.58,
+      "target_2": 124.42,
+      "sources": [
+        "Grade: 85",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.121978+00:00"
+    },
+    {
+      "ticker": "ARKX",
+      "signal": "STRONG_BUY",
+      "score": 84,
+      "grade": 84,
+      "buy_zone": 33.54,
+      "stop_loss": 30.57,
+      "target_1": 37.54,
+      "target_2": 53.86,
+      "sources": [
+        "Grade: 84",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.121979+00:00"
+    },
+    {
+      "ticker": "EDEN",
+      "signal": "STRONG_BUY",
+      "score": 84,
+      "grade": 84,
+      "buy_zone": 109.05,
+      "stop_loss": 104.24,
+      "target_1": 115.71,
+      "target_2": 135.87,
+      "sources": [
+        "Grade: 84",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.121980+00:00"
+    },
+    {
+      "ticker": "GRRR",
+      "signal": "STRONG_BUY",
+      "score": 84,
+      "grade": 84,
+      "buy_zone": 13.86,
+      "stop_loss": 12.05,
+      "target_1": 16.96,
+      "target_2": 29.18,
+      "sources": [
+        "Grade: 84",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.121982+00:00"
+    },
+    {
+      "ticker": "MS",
+      "signal": "STRONG_BUY",
+      "score": 84,
+      "grade": 84,
+      "buy_zone": 189.48,
+      "stop_loss": 179.35,
+      "target_1": 208.0,
+      "target_2": 268.38,
+      "sources": [
+        "Grade: 84",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.121983+00:00"
+    },
+    {
+      "ticker": "HEMI",
+      "signal": "STRONG_BUY",
+      "score": 83,
+      "grade": 83,
+      "buy_zone": 40.69,
+      "stop_loss": 39.41,
+      "target_1": 43.12,
+      "target_2": 50.63,
+      "sources": [
+        "Grade: 83",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.121985+00:00"
+    },
+    {
+      "ticker": "JNJ",
+      "signal": "STRONG_BUY",
+      "score": 83,
+      "grade": 83,
+      "buy_zone": 225.3,
+      "stop_loss": 213.76,
+      "target_1": 240.2,
+      "target_2": 283.88,
+      "sources": [
+        "Grade: 83",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.121986+00:00"
+    },
+    {
+      "ticker": "MIRA",
+      "signal": "STRONG_BUY",
+      "score": 83,
+      "grade": 83,
+      "buy_zone": 0.99,
+      "stop_loss": 0.9,
+      "target_1": 1.22,
+      "target_2": 1.93,
+      "sources": [
+        "Grade: 83",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.121987+00:00"
+    },
+    {
+      "ticker": "GS",
+      "signal": "STRONG_BUY",
+      "score": 82,
+      "grade": 82,
+      "buy_zone": 934.1,
+      "stop_loss": 872.03,
+      "target_1": 1036.87,
+      "target_2": 1369.79,
+      "sources": [
+        "Grade: 82",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.121989+00:00"
+    },
+    {
+      "ticker": "AAPL",
+      "signal": "STRONG_BUY",
+      "score": 81,
+      "grade": 81,
+      "buy_zone": 287.82,
+      "stop_loss": 259.03,
+      "target_1": 319.53,
+      "target_2": 466.31,
+      "sources": [
+        "Grade: 81",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.121990+00:00"
+    },
+    {
+      "ticker": "BK",
+      "signal": "STRONG_BUY",
+      "score": 81,
+      "grade": 81,
+      "buy_zone": 130.72,
+      "stop_loss": 126.26,
+      "target_1": 141.4,
+      "target_2": 169.87,
+      "sources": [
+        "Grade: 81",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.121992+00:00"
+    },
+    {
+      "ticker": "IWM",
+      "signal": "STRONG_BUY",
+      "score": 81,
+      "grade": 81,
+      "buy_zone": 274.51,
+      "stop_loss": 262.25,
+      "target_1": 297.55,
+      "target_2": 374.73,
+      "sources": [
+        "Grade: 81",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.121993+00:00"
+    },
+    {
+      "ticker": "META",
+      "signal": "STRONG_BUY",
+      "score": 81,
+      "grade": 81,
+      "buy_zone": 604.14,
+      "stop_loss": 574.82,
+      "target_1": 687.74,
+      "target_2": 816.55,
+      "sources": [
+        "Grade: 81",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.121995+00:00"
+    },
+    {
+      "ticker": "ASTS",
+      "signal": "STRONG_BUY",
+      "score": 79,
+      "grade": 79,
+      "buy_zone": 89.49,
+      "stop_loss": 61.53,
+      "target_1": 133.82,
+      "target_2": 333.82,
+      "sources": [
+        "Grade: 79",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.121996+00:00"
+    },
+    {
+      "ticker": "ICLN",
+      "signal": "STRONG_BUY",
+      "score": 79,
+      "grade": 79,
+      "buy_zone": 21.02,
+      "stop_loss": 19.42,
+      "target_1": 23.78,
+      "target_2": 34.33,
+      "sources": [
+        "Grade: 79",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.121997+00:00"
+    },
+    {
+      "ticker": "QCLN",
+      "signal": "STRONG_BUY",
+      "score": 79,
+      "grade": 79,
+      "buy_zone": 59.01,
+      "stop_loss": 54.15,
+      "target_1": 68.36,
+      "target_2": 102.6,
+      "sources": [
+        "Grade: 79",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.121999+00:00"
+    },
+    {
+      "ticker": "RDW",
+      "signal": "STRONG_BUY",
+      "score": 79,
+      "grade": 79,
+      "buy_zone": 14.03,
+      "stop_loss": 8.05,
+      "target_1": 25.42,
+      "target_2": 71.85,
+      "sources": [
+        "Grade: 79",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.122000+00:00"
+    },
+    {
+      "ticker": "SMH",
+      "signal": "STRONG_BUY",
+      "score": 79,
+      "grade": 79,
+      "buy_zone": 535.17,
+      "stop_loss": 477.57,
+      "target_1": 624.55,
+      "target_2": 949.29,
+      "sources": [
+        "Grade: 79",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.122002+00:00"
+    },
+    {
+      "ticker": "SOLV",
+      "signal": "STRONG_BUY",
+      "score": 79,
+      "grade": 79,
+      "buy_zone": 71.88,
+      "stop_loss": 63.48,
+      "target_1": 79.38,
+      "target_2": 113.13,
+      "sources": [
+        "Grade: 79",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.122003+00:00"
+    },
+    {
+      "ticker": "SPIR",
+      "signal": "STRONG_BUY",
+      "score": 79,
+      "grade": 79,
+      "buy_zone": 19.31,
+      "stop_loss": 14.7,
+      "target_1": 26.45,
+      "target_2": 57.83,
+      "sources": [
+        "Grade: 79",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.122005+00:00"
+    },
+    {
+      "ticker": "TSLA",
+      "signal": "STRONG_BUY",
+      "score": 79,
+      "grade": 79,
+      "buy_zone": 405.81,
+      "stop_loss": 357.12,
+      "target_1": 462.47,
+      "target_2": 690.07,
+      "sources": [
+        "Grade: 79",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.122006+00:00"
+    },
+    {
+      "ticker": "PBW",
+      "signal": "STRONG_BUY",
+      "score": 78,
+      "grade": 78,
+      "buy_zone": 39.5,
+      "stop_loss": 34.8,
+      "target_1": 46.57,
+      "target_2": 75.67,
+      "sources": [
+        "Grade: 78",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.122007+00:00"
+    },
+    {
+      "ticker": "RIOT",
+      "signal": "STRONG_BUY",
+      "score": 78,
+      "grade": 78,
+      "buy_zone": 22.34,
+      "stop_loss": 14.85,
+      "target_1": 27.94,
+      "target_2": 63.21,
+      "sources": [
+        "Grade: 78",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.122009+00:00"
+    },
+    {
+      "ticker": "SNOW",
+      "signal": "STRONG_BUY",
+      "score": 78,
+      "grade": 78,
+      "buy_zone": 155.96,
+      "stop_loss": 129.03,
+      "target_1": 184.9,
+      "target_2": 313.95,
+      "sources": [
+        "Grade: 78",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.122010+00:00"
+    },
+    {
+      "ticker": "V",
+      "signal": "STRONG_BUY",
+      "score": 78,
+      "grade": 78,
+      "buy_zone": 317.69,
+      "stop_loss": 306.68,
+      "target_1": 348.82,
+      "target_2": 390.41,
+      "sources": [
+        "Grade: 78",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.122012+00:00"
+    },
+    {
+      "ticker": "ARKG",
+      "signal": "STRONG_BUY",
+      "score": 77,
+      "grade": 77,
+      "buy_zone": 29.24,
+      "stop_loss": 26.68,
+      "target_1": 32.88,
+      "target_2": 48.19,
+      "sources": [
+        "Grade: 77",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.122013+00:00"
+    },
+    {
+      "ticker": "BIO",
+      "signal": "STRONG_BUY",
+      "score": 77,
+      "grade": 77,
+      "buy_zone": 270.69,
+      "stop_loss": 229.63,
+      "target_1": 311.93,
+      "target_2": 532.28,
+      "sources": [
+        "Grade: 77",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.122014+00:00"
+    },
+    {
+      "ticker": "HON",
+      "signal": "STRONG_BUY",
+      "score": 77,
+      "grade": 77,
+      "buy_zone": 217.13,
+      "stop_loss": 202.05,
+      "target_1": 240.63,
+      "target_2": 320.06,
+      "sources": [
+        "Grade: 77",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.122016+00:00"
+    },
+    {
+      "ticker": "OKTA",
+      "signal": "STRONG_BUY",
+      "score": 77,
+      "grade": 77,
+      "buy_zone": 82.13,
+      "stop_loss": 70.8,
+      "target_1": 98.32,
+      "target_2": 145.6,
+      "sources": [
+        "Grade: 77",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.122017+00:00"
+    },
+    {
+      "ticker": "TSM",
+      "signal": "STRONG_BUY",
+      "score": 77,
+      "grade": 77,
+      "buy_zone": 392.22,
+      "stop_loss": 373.51,
+      "target_1": 439.16,
+      "target_2": 570.4,
+      "sources": [
+        "Grade: 77",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.122019+00:00"
+    },
+    {
+      "ticker": "XLK",
+      "signal": "STRONG_BUY",
+      "score": 77,
+      "grade": 77,
+      "buy_zone": 168.71,
+      "stop_loss": 152.17,
+      "target_1": 189.99,
+      "target_2": 281.2,
+      "sources": [
+        "Grade: 77",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.122020+00:00"
+    },
+    {
+      "ticker": "ABBV",
+      "signal": "STRONG_BUY",
+      "score": 76,
+      "grade": 76,
+      "buy_zone": 206.03,
+      "stop_loss": 185.03,
+      "target_1": 224.41,
+      "target_2": 306.52,
+      "sources": [
+        "Grade: 76",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.122022+00:00"
+    },
+    {
+      "ticker": "APP",
+      "signal": "STRONG_BUY",
+      "score": 76,
+      "grade": 76,
+      "buy_zone": 473.78,
+      "stop_loss": 417.34,
+      "target_1": 592.62,
+      "target_2": 1019.29,
+      "sources": [
+        "Grade: 76",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.122023+00:00"
+    },
+    {
+      "ticker": "ARQQ",
+      "signal": "STRONG_BUY",
+      "score": 76,
+      "grade": 76,
+      "buy_zone": 14.46,
+      "stop_loss": 11.56,
+      "target_1": 19.38,
+      "target_2": 29.73,
+      "sources": [
+        "Grade: 76",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.122024+00:00"
+    },
+    {
+      "ticker": "BOTZ",
+      "signal": "STRONG_BUY",
+      "score": 76,
+      "grade": 76,
+      "buy_zone": 38.61,
+      "stop_loss": 36.01,
+      "target_1": 42.54,
+      "target_2": 52.26,
+      "sources": [
+        "Grade: 76",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.122026+00:00"
+    },
+    {
+      "ticker": "CIFR",
+      "signal": "STRONG_BUY",
+      "score": 76,
+      "grade": 76,
+      "buy_zone": 20.01,
+      "stop_loss": 16.11,
+      "target_1": 26.07,
+      "target_2": 52.32,
+      "sources": [
+        "Grade: 76",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.122027+00:00"
+    },
+    {
+      "ticker": "FLY",
+      "signal": "STRONG_BUY",
+      "score": 76,
+      "grade": 76,
+      "buy_zone": 42.32,
+      "stop_loss": 30.3,
+      "target_1": 63.41,
+      "target_2": 138.22,
+      "sources": [
+        "Grade: 76",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.122029+00:00"
+    },
+    {
+      "ticker": "UNH",
+      "signal": "STRONG_BUY",
+      "score": 76,
+      "grade": 76,
+      "buy_zone": 366.53,
+      "stop_loss": 347.5,
+      "target_1": 412.23,
+      "target_2": 493.53,
+      "sources": [
+        "Grade: 76",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.122030+00:00"
+    },
+    {
+      "ticker": "XPEV",
+      "signal": "STRONG_BUY",
+      "score": 76,
+      "grade": 76,
+      "buy_zone": 15.73,
+      "stop_loss": 14.28,
+      "target_1": 17.21,
+      "target_2": 22.96,
+      "sources": [
+        "Grade: 76",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.122031+00:00"
+    },
+    {
+      "ticker": "CPSH",
+      "signal": "STRONG_BUY",
+      "score": 75,
+      "grade": 75,
+      "buy_zone": 5.74,
+      "stop_loss": 3.11,
+      "target_1": 14.68,
+      "target_2": 37.02,
+      "sources": [
+        "Grade: 75",
+        "X: NEUTRAL",
+        "Vol: NEUTRAL"
+      ],
+      "added_at": "2026-05-28T14:53:39.122033+00:00"
+    },
+    {
+      "ticker": "LUNR",
+      "signal": "BUY",
+      "score": 73,
+      "grade": 73,
+      "buy_zone": 33.117,
+      "stop_loss": 29.631,
+      "target_1": 40.089,
+      "target_2": 45.318,
+      "sources": [
+        "Space sector momentum: -17.4%",
+        "Catalyst: SpaceX IPO ($SPCX) expected"
+      ],
+      "sector": "Space",
+      "added_at": "2026-05-28T14:53:39.122041+00:00"
+    },
+    {
+      "ticker": "MNTS",
+      "signal": "BUY",
+      "score": 74,
+      "grade": 74,
+      "buy_zone": 14.706,
+      "stop_loss": 13.158,
+      "target_1": 17.802,
+      "target_2": 20.124000000000002,
+      "sources": [
+        "Space sector momentum: +19.4%",
+        "Catalyst: SpaceX IPO ($SPCX) expected"
+      ],
+      "sector": "Space",
+      "added_at": "2026-05-28T14:53:39.122043+00:00"
+    },
+    {
+      "ticker": "SIDU",
+      "signal": "BUY",
+      "score": 72,
+      "grade": 72,
+      "buy_zone": 5.89,
+      "stop_loss": 5.27,
+      "target_1": 7.13,
+      "target_2": 8.06,
+      "sources": [
+        "Space sector momentum: +15.5%",
+        "Catalyst: SpaceX IPO ($SPCX) expected"
+      ],
+      "sector": "Space",
+      "added_at": "2026-05-28T14:53:39.122045+00:00"
+    },
+    {
+      "ticker": "DDD",
+      "signal": "BUY",
+      "score": 69,
+      "grade": 69,
+      "buy_zone": 3.3155,
+      "stop_loss": 2.9665,
+      "target_1": 4.0135,
+      "target_2": 4.537000000000001,
+      "sources": [
+        "Space sector momentum: +9.1%",
+        "Catalyst: SpaceX IPO ($SPCX) expected"
+      ],
+      "sector": "Space",
+      "added_at": "2026-05-28T14:53:39.122048+00:00"
+    },
+    {
+      "ticker": "TE",
+      "signal": "BUY",
+      "score": 76,
+      "grade": 76,
+      "buy_zone": 9.927499999999998,
+      "stop_loss": 8.882499999999999,
+      "target_1": 12.017499999999998,
+      "target_2": 13.584999999999999,
+      "sources": [
+        "AI infra momentum: +22.7%",
+        "Catalyst: Leopold Aschenbrenner 13F \u2014 ex-miners turned AI compute"
+      ],
+      "sector": "AI Infrastructure",
+      "added_at": "2026-05-28T14:53:39.122052+00:00"
+    },
+    {
+      "ticker": "APLD",
+      "signal": "BUY",
+      "score": 68,
+      "grade": 68,
+      "buy_zone": 42.882999999999996,
+      "stop_loss": 38.369,
+      "target_1": 51.910999999999994,
+      "target_2": 58.682,
+      "sources": [
+        "AI infra momentum: -6.7%",
+        "Catalyst: Leopold Aschenbrenner 13F \u2014 ex-miners turned AI compute"
+      ],
+      "sector": "AI Infrastructure",
+      "added_at": "2026-05-28T14:53:39.122054+00:00"
+    },
+    {
+      "ticker": "QBTS",
+      "signal": "BUY",
+      "score": 67,
+      "grade": 67,
+      "buy_zone": 26.429,
+      "stop_loss": 23.647,
+      "target_1": 31.993,
+      "target_2": 36.166000000000004,
+      "sources": [
+        "Quantum momentum: -5.2%",
+        "Catalyst: Quantum computing sector \u2014 IONQ demo, Quantinuum IPO"
+      ],
+      "sector": "Quantum",
+      "added_at": "2026-05-28T14:53:39.122058+00:00"
+    },
+    {
+      "ticker": "QUBT",
+      "signal": "BUY",
+      "score": 68,
+      "grade": 68,
+      "buy_zone": 11.096,
+      "stop_loss": 9.927999999999999,
+      "target_1": 13.431999999999999,
+      "target_2": 15.184,
+      "sources": [
+        "Quantum momentum: -6.4%",
+        "Catalyst: Quantum computing sector \u2014 IONQ demo, Quantinuum IPO"
+      ],
+      "sector": "Quantum",
+      "added_at": "2026-05-28T14:53:39.122060+00:00"
+    },
+    {
+      "ticker": "MU",
+      "signal": "BUY",
+      "score": 69,
+      "grade": 69,
+      "buy_zone": 851.086,
+      "stop_loss": 761.4979999999999,
+      "target_1": 1030.262,
+      "target_2": 1164.644,
+      "sources": [
+        "Quantum momentum: +9.2%",
+        "Catalyst: Quantum computing sector \u2014 IONQ demo, Quantinuum IPO"
+      ],
+      "sector": "Quantum",
+      "added_at": "2026-05-28T14:53:39.122062+00:00"
+    },
+    {
+      "ticker": "LITE",
+      "signal": "BUY",
+      "score": 67,
+      "grade": 67,
+      "buy_zone": 865.2694999999999,
+      "stop_loss": 774.1885,
+      "target_1": 1047.4315,
+      "target_2": 1184.0529999999999,
+      "sources": [
+        "Quantum momentum: -5.4%",
+        "Catalyst: Quantum computing sector \u2014 IONQ demo, Quantinuum IPO"
+      ],
+      "sector": "Quantum",
+      "added_at": "2026-05-28T14:53:39.122064+00:00"
+    }
+  ]
+}

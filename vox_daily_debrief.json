@@ -1,0 +1,13 @@
+{
+  "date": "2026-05-25",
+  "timestamp": "2026-05-25T23:00:27.867185+00:00",
+  "regime": "RANGE",
+  "portfolio_value": 197818.36,
+  "portfolio_pnl": 0,
+  "trades_today": 2,
+  "lessons": [],
+  "actions": [
+    "Review 141 positions with grade < 45",
+    "Trim crypto: 13.9% (limit 10%)"
+  ]
+}

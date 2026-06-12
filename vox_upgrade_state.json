@@ -1,6 +1,6 @@
 {
   "version": "9.0",
-  "last_analysis": "2026-05-24T22:46:45.445794",
+  "last_analysis": "2026-05-25T16:31:30.617547",
   "last_upgrade": null,
   "performance_history": [],
   "signal_weights_history": [
@@ -121,6 +121,1616 @@
     },
     {
       "timestamp": "2026-05-24T22:46:45.446263",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-24T23:02:07.917088",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-24T23:16:29.497396",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-24T23:31:47.643900",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-24T23:47:05.141132",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T00:01:23.144594",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T00:16:40.806789",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T00:31:59.218972",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T00:46:16.352801",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T01:01:33.849920",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T01:16:52.455737",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T01:32:10.243288",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T01:46:27.677216",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T02:01:45.100804",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T02:17:21.022313",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T02:31:39.774002",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T02:46:57.640654",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T03:02:15.809233",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T03:16:34.885578",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T03:31:52.058234",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T03:47:10.150133",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T04:01:27.807800",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T04:16:45.922665",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T04:32:05.503296",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T04:46:23.521827",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T05:01:46.460123",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T05:17:05.340923",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T05:31:24.314082",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T05:46:42.144060",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T06:02:06.225762",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T06:16:24.107731",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T06:31:52.574903",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T06:47:16.523289",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T07:01:33.929922",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T07:16:51.764684",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T07:32:04.285233",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T07:46:22.013068",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T08:01:45.789492",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T08:16:44.712080",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T08:32:06.413944",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T08:46:31.482943",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T09:01:45.702656",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T09:16:58.873046",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T09:31:21.870579",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T09:46:46.015387",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T10:02:05.488008",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T10:16:55.228255",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T10:32:18.037043",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T10:46:41.031061",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T11:01:59.685658",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T11:16:17.958339",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T11:31:38.445848",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T11:46:54.802313",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T12:02:14.899684",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T12:16:36.930317",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T12:31:55.169702",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T12:47:12.684618",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T13:16:36.447982",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T13:31:47.609991",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T13:47:09.836151",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T14:01:32.346627",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T14:16:56.493037",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T14:32:24.555705",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T14:46:54.128320",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T15:02:15.844783",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T15:16:32.065306",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T15:31:53.229045",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T15:47:20.275219",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T16:01:49.182228",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T16:17:09.827733",
+      "weights": {
+        "grade": 0.25,
+        "technical": 0.15,
+        "fundamental": 0.15,
+        "sentiment": 0.1,
+        "earnings": 0.1,
+        "macro": 0.1,
+        "llm_council": 0.1,
+        "trump": 0.05
+      },
+      "accuracy": {
+        "grade": 0.5,
+        "technical": 0.5,
+        "fundamental": 0.5,
+        "sentiment": 0.5,
+        "earnings": 0.5,
+        "macro": 0.5,
+        "llm_council": 0.5,
+        "trump": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-05-25T16:31:30.619873",
       "weights": {
         "grade": 0.25,
         "technical": 0.15,

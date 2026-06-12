@@ -1,0 +1,23 @@
+{
+  "symbol": "DOT",
+  "coin_id": "polkadot",
+  "score": 80,
+  "signal": "STRONG_BUY",
+  "price": 1.25,
+  "ath": 54.98,
+  "atl": 1.15,
+  "ath_distance": -97.7,
+  "change_24h": 0.88,
+  "change_7d": 2.43,
+  "change_30d": -1.36,
+  "market_cap": 2110144363,
+  "volume_24h": 180959797,
+  "volume_ratio": 8.58,
+  "sentiment": 73.33,
+  "levels": {
+    "buy_zone": 1.26,
+    "stop_loss": 1.14,
+    "target": 49.48
+  },
+  "timestamp": "2026-05-27T04:02:32.581087+00:00"
+}

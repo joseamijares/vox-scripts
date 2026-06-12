@@ -1,0 +1,1 @@
+{"timestamp": "2026-05-25T10:46:39.883845", "signal": {"ticker": "GOOGL", "source": "short_interest", "signal_type": "ELEVATED_SHORT", "value": 45, "raw_data": {"short_pct": 17, "note": "Simulated \u2014 use FMP or Ortex for real data"}, "confidence": 0.3, "timestamp": "2026-05-25T10:46:39.883760"}}

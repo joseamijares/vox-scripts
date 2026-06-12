@@ -1,0 +1,328 @@
+{
+  "timestamp": "2026-05-27T13:03:25.971859",
+  "total_aum": 21090.95064409,
+  "total_positions": 30,
+  "broker_breakdown": {
+    "eToro": 2648.34,
+    "Schwab": 1576.97,
+    "IBKR": 0.0,
+    "GBM Main": 0.0,
+    "GBM USA": 14523.0,
+    "Bitso": 2342.64064409
+  },
+  "average_grade": 66.46666666666667,
+  "grade_distribution": {
+    "strong_buy": 14,
+    "buy": 7,
+    "hold": 6,
+    "weak": 1,
+    "avoid": 2
+  },
+  "positions": [
+    {
+      "ticker": "AMD",
+      "value": 4152.0,
+      "grade": 72,
+      "signal": "STRONG_BUY",
+      "consensus": "BUY",
+      "brokers": [
+        "IBKR",
+        "GBM USA"
+      ]
+    },
+    {
+      "ticker": "META",
+      "value": 3032.98,
+      "grade": 50,
+      "signal": "HOLD",
+      "consensus": "HOLD",
+      "brokers": [
+        "GBM Main",
+        "GBM USA"
+      ]
+    },
+    {
+      "ticker": "OSCR",
+      "value": 2601.44,
+      "grade": 68,
+      "signal": "BUY",
+      "consensus": "BUY",
+      "brokers": [
+        "GBM USA"
+      ]
+    },
+    {
+      "ticker": "APH",
+      "value": 2394.64,
+      "grade": 67,
+      "signal": "BUY",
+      "consensus": "BUY",
+      "brokers": [
+        "GBM USA"
+      ]
+    },
+    {
+      "ticker": "QQQ",
+      "value": 1600.42,
+      "grade": 83,
+      "signal": "STRONG_BUY",
+      "consensus": "STRONG_BUY",
+      "brokers": [
+        "GBM Main",
+        "GBM USA"
+      ]
+    },
+    {
+      "ticker": "POET",
+      "value": 1145.48,
+      "grade": 59,
+      "signal": "HOLD",
+      "consensus": "HOLD",
+      "brokers": [
+        "Schwab"
+      ]
+    },
+    {
+      "ticker": "OKLO",
+      "value": 700.66,
+      "grade": 53,
+      "signal": "HOLD",
+      "consensus": "HOLD",
+      "brokers": [
+        "GBM USA"
+      ]
+    },
+    {
+      "ticker": "MS",
+      "value": 500.02,
+      "grade": 79,
+      "signal": "STRONG_BUY",
+      "consensus": "STRONG_BUY",
+      "brokers": [
+        "eToro"
+      ]
+    },
+    {
+      "ticker": "TE",
+      "value": 491.02,
+      "grade": 70,
+      "signal": "STRONG_BUY",
+      "consensus": "BUY",
+      "brokers": [
+        "eToro"
+      ]
+    },
+    {
+      "ticker": "SIDU",
+      "value": 480.0,
+      "grade": 70,
+      "signal": "STRONG_BUY",
+      "consensus": "STRONG_BUY",
+      "brokers": [
+        "eToro"
+      ]
+    },
+    {
+      "ticker": "MIRA",
+      "value": 448.0,
+      "grade": 83,
+      "signal": "STRONG_BUY",
+      "consensus": "STRONG_BUY",
+      "brokers": [
+        "eToro"
+      ]
+    },
+    {
+      "ticker": "CORZ",
+      "value": 399.85,
+      "grade": 75,
+      "signal": "STRONG_BUY",
+      "consensus": "STRONG_BUY",
+      "brokers": [
+        "eToro"
+      ]
+    },
+    {
+      "ticker": "ARKX",
+      "value": 329.45,
+      "grade": 82,
+      "signal": "STRONG_BUY",
+      "consensus": "STRONG_BUY",
+      "brokers": [
+        "eToro"
+      ]
+    },
+    {
+      "ticker": "IREN",
+      "value": 224.93,
+      "grade": 69,
+      "signal": "BUY",
+      "consensus": "BUY",
+      "brokers": [
+        "Schwab",
+        "IBKR"
+      ]
+    },
+    {
+      "ticker": "SPRB",
+      "value": 206.56,
+      "grade": 33,
+      "signal": "AVOID",
+      "consensus": "TRIM",
+      "brokers": [
+        "Schwab"
+      ]
+    },
+    {
+      "ticker": "XLE",
+      "value": 40.86,
+      "grade": 54,
+      "signal": "HOLD",
+      "consensus": "HOLD",
+      "brokers": [
+        "GBM USA"
+      ]
+    },
+    {
+      "ticker": "TSM",
+      "value": 0,
+      "grade": 74,
+      "signal": "STRONG_BUY",
+      "consensus": "BUY",
+      "brokers": [
+        "IBKR",
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "AAPL",
+      "value": 0,
+      "grade": 78,
+      "signal": "STRONG_BUY",
+      "consensus": "STRONG_BUY",
+      "brokers": [
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "AMZN",
+      "value": 0,
+      "grade": 66,
+      "signal": "BUY",
+      "consensus": "BUY",
+      "brokers": [
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "AVGO",
+      "value": 0,
+      "grade": 66,
+      "signal": "BUY",
+      "consensus": "BUY",
+      "brokers": [
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "BYND",
+      "value": 0,
+      "grade": 30,
+      "signal": "AVOID",
+      "consensus": "SELL",
+      "brokers": [
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "CRWD",
+      "value": 0,
+      "grade": 67,
+      "signal": "BUY",
+      "consensus": "BUY",
+      "brokers": [
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "GOOGL",
+      "value": 0,
+      "grade": 66,
+      "signal": "BUY",
+      "consensus": "BUY",
+      "brokers": [
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "MELI",
+      "value": 0,
+      "grade": 57,
+      "signal": "HOLD",
+      "consensus": "HOLD",
+      "brokers": [
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "NVDA",
+      "value": 0,
+      "grade": 53,
+      "signal": "HOLD",
+      "consensus": "HOLD",
+      "brokers": [
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "SHOP",
+      "value": 0,
+      "grade": 49,
+      "signal": "WEAK",
+      "consensus": "HOLD",
+      "brokers": [
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "SMH",
+      "value": 0,
+      "grade": 79,
+      "signal": "STRONG_BUY",
+      "consensus": "STRONG_BUY",
+      "brokers": [
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "TSLA",
+      "value": 0,
+      "grade": 76,
+      "signal": "STRONG_BUY",
+      "consensus": "STRONG_BUY",
+      "brokers": [
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "VOO",
+      "value": 0,
+      "grade": 83,
+      "signal": "STRONG_BUY",
+      "consensus": "STRONG_BUY",
+      "brokers": [
+        "GBM Main"
+      ]
+    },
+    {
+      "ticker": "VTI",
+      "value": 0,
+      "grade": 83,
+      "signal": "STRONG_BUY",
+      "consensus": "STRONG_BUY",
+      "brokers": [
+        "GBM Main"
+      ]
+    }
+  ]
+}
