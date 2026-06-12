@@ -54,7 +54,7 @@ def fetch_macro(cur):
 def fetch_portfolio(cur):
     cur.execute("""
         SELECT COUNT(*), 
-               SUM(CASE WHEN currency = 'MXN' THEN live_value / 17.5 ELSE live_value END),
+               SUM(live_value),
                COUNT(*) FILTER (WHERE grade >= 70),
                COUNT(*) FILTER (WHERE grade BETWEEN 60 AND 69),
                COUNT(*) FILTER (WHERE grade BETWEEN 50 AND 59),

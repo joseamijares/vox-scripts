@@ -47,7 +47,7 @@ def get_db():
 def fetch_portfolio(cur):
     cur.execute("""
         SELECT COUNT(*), 
-               SUM(CASE WHEN currency = 'MXN' THEN live_value / 17.5 ELSE live_value END),
+               SUM(live_value),
                COUNT(*) FILTER (WHERE grade >= 70),
                COUNT(*) FILTER (WHERE grade BETWEEN 60 AND 69),
                COUNT(*) FILTER (WHERE grade BETWEEN 50 AND 59),
@@ -149,15 +149,11 @@ def build_digest():
     lines.append(f"🌆 **VOX EVENING — {datetime.utcnow().strftime('%a %b %d')}**")
 
     # P&L + Regime in one line
-    # Convert MXN to USD for P&L calculation
+    # live_value and avg_cost are already in account base currency
     total_pnl = 0
     for p in positions:
         live_val = float(p.get("live_value") or 0)
         cost_basis = float(p.get("avg_cost") or 0) * float(p.get("shares") or 0)
-        currency = p.get("currency") or "USD"
-        if currency == "MXN":
-            live_val = live_val / 17.5
-            cost_basis = cost_basis / 17.5
         total_pnl += (live_val - cost_basis)
     pnl_emoji = "🟢" if total_pnl >= 0 else "🔴"
     r_vix = regime[2] if regime else 0
