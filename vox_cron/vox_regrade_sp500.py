@@ -24,7 +24,6 @@ def timeout_handler(signum, frame):
 
 def grade_with_timeout(ticker, timeout_secs=8):
     """Grade a single ticker with a hard timeout."""
-    # Use alarm for Unix-based timeout (macOS/Linux)
     old_handler = signal.signal(signal.SIGALRM, timeout_handler)
     signal.alarm(timeout_secs)
     try:
@@ -52,11 +51,10 @@ print()
 
 results = []
 errors = []
-BATCH_SIZE = 15  # Max 15 tickers per run to stay under 120s cron timeout
-SLEEP_SECS = 3   # Slow down API calls
+BATCH_SIZE = 10  # Reduced from 15 to stay well under 120s
+SLEEP_SECS = 2   # Reduced from 3
 
 # Rotate through the full list using day-of-year offset
-# This ensures all 503 tickers get regraded over ~34 days
 import datetime as dt
 day_of_year = dt.datetime.now().timetuple().tm_yday
 num_batches = max(1, len(tickers) // BATCH_SIZE)
@@ -68,10 +66,10 @@ print()
 
 for i, ticker in enumerate(batch_tickers):
     try:
-        result = grade_with_timeout(ticker, timeout_secs=8)
+        result = grade_with_timeout(ticker, timeout_secs=6)  # Reduced from 8
         if result is None:
-            errors.append((ticker, "TIMEOUT (8s)"))
-            print(f'  {ticker}: TIMEOUT (8s)', flush=True)
+            errors.append((ticker, "TIMEOUT (6s)"))
+            print(f'  {ticker}: TIMEOUT (6s)', flush=True)
             continue
         results.append({
             'ticker': ticker,
@@ -88,7 +86,6 @@ for i, ticker in enumerate(batch_tickers):
         errors.append((ticker, str(e)[:80]))
         print(f'  {ticker}: ERROR - {str(e)[:80]}', flush=True)
     
-    # Rate limit between tickers
     time.sleep(SLEEP_SECS)
 
 print()
