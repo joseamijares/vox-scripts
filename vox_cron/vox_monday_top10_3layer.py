@@ -4,6 +4,7 @@ VOX Monday Top 10 — 3-layer review: system signals → Sonnet 5 → DeepSeek v
 """
 import os
 import sys
+import time
 from pathlib import Path
 sys.path.insert(0, str(Path.home() / ".hermes" / "scripts"))
 import hermes_secrets_bootstrap
@@ -46,6 +47,48 @@ def fetch_data():
         "earnings": q("SELECT ticker, report_date, eps_estimate, revenue_estimate FROM earnings_calendar WHERE report_date BETWEEN CURRENT_DATE AND CURRENT_DATE + INTERVAL '7 days' ORDER BY report_date LIMIT 15"),
     }
 
+def grade_mentioned_tickers():
+    """Pre-grade any ticker mentioned by downstream systems that lacks a fresh grade."""
+    sys.path.insert(0, str(Path.home() / ".hermes" / "scripts" / "vox_cron"))
+    from vox_live_grader import grade_ticker
+
+    rows = q("""
+        SELECT DISTINCT ticker FROM (
+            SELECT ticker FROM council_deliberations
+            UNION SELECT ticker FROM top_opportunities
+            UNION SELECT ticker FROM pattern_alerts
+            UNION SELECT ticker FROM insider_trades
+            UNION SELECT ticker FROM trader_calls
+            UNION SELECT ticker FROM theme_alignment
+            UNION SELECT ticker FROM discovery_queue
+            UNION SELECT ticker FROM earnings_calendar
+            UNION SELECT ticker FROM watchlist
+            UNION SELECT ticker FROM positions
+        ) m
+        WHERE NOT EXISTS (
+            SELECT 1 FROM vox_grades v WHERE v.ticker = m.ticker
+            AND v.generated_at > NOW() - INTERVAL '1 day'
+        )
+        AND m.ticker ~ '^[A-Z]+$'
+        ORDER BY ticker
+    """)
+    tickers = [r['ticker'] for r in rows]
+    if not tickers:
+        print("All mentioned tickers already graded within 24h.")
+        return
+
+    print(f"Pre-grading {len(tickers)} mentioned tickers without fresh grade...")
+    graded, failed = 0, 0
+    for ticker in tickers[:20]:
+        res = grade_ticker(ticker, timeout_secs=15)
+        if res and not res.get('timeout') and res.get('grade') is not None:
+            graded += 1
+        else:
+            failed += 1
+        time.sleep(2)
+    print(f"Pre-graded {graded} new, {failed} failed/timeout.")
+
+
 def build_layer1_summary(data):
     lines = ["# VOX Layer 1 System Signals"]
     lines.append(f"Market Regime: {data['market_regime'][0] if data['market_regime'] else 'N/A'}")
@@ -85,6 +128,8 @@ def build_layer1_summary(data):
     return "\n".join(lines)
 
 def main():
+    print("Pre-grading any mentioned tickers without fresh grade...")
+    grade_mentioned_tickers()
     print("Collecting Layer 1 system signals...")
     data = fetch_data()
     layer1 = build_layer1_summary(data)
