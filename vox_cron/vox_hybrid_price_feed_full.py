@@ -33,4 +33,7 @@ conn.close()
 
 print(f"Full feed: {len(grade_tickers)} stale vox_grades tickers to update")
 if grade_tickers:
-    pf.update_prices(grade_tickers, table='vox_grades', use_yahoo_fallback=False)
+    # Cap per run to fit inside 120s cron window; prioritize oldest (lowest current_price / oldest)
+    sorted_tickers = dict(sorted(grade_tickers.items(), key=lambda x: (x[1] if x[1] else 0, x[0]))[:200])
+    print(f"  Processing first 200 capped: {list(sorted_tickers.keys())[:5]}...")
+    pf.update_prices(sorted_tickers, table='vox_grades', use_yahoo_fallback=True)

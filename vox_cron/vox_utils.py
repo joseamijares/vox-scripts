@@ -11,6 +11,7 @@ import os
 import subprocess
 import json
 import random
+import re
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
@@ -77,12 +78,116 @@ def get_secret(item: str, field: str, env_var: Optional[str] = None, vault: str 
     return None
 
 
+VALID_TICKER_RE = re.compile(r"^[A-Z]{1,5}$")
+
+
+# ---------------------------------------------------------------------------
+# LLM cost tracking
+# ---------------------------------------------------------------------------
+# Per-token pricing in USD. Override by setting OPENROUTER_PRICING_JSON in env.
+_DEFAULT_PRICING = {
+    "anthropic/claude-sonnet-5": {"input": 3.00, "output": 15.00},  # per 1M tokens
+    "anthropic/claude-sonnet-4": {"input": 3.00, "output": 15.00},
+    "anthropic/claude-3-5-sonnet": {"input": 3.00, "output": 15.00},
+    "deepseek/deepseek-v4-pro": {"input": 0.80, "output": 1.20},
+    "deepseek/deepseek-chat": {"input": 0.10, "output": 0.25},
+    "openai/gpt-4o": {"input": 2.50, "output": 10.00},
+    "openai/gpt-4o-mini": {"input": 0.15, "output": 0.60},
+}
+
+
+def _get_openrouter_pricing() -> Dict[str, Dict[str, float]]:
+    """Load pricing from env JSON or use defaults."""
+    env = os.environ.get("OPENROUTER_PRICING_JSON", "")
+    if env:
+        try:
+            return json.loads(env)
+        except Exception:
+            pass
+    return _DEFAULT_PRICING
+
+
+def _db_password() -> str:
+    pw = get_secret("Railway DB", "password", "DB_PASSWORD")
+    if not pw:
+        load_env()
+        pw = os.environ.get("DB_PASSWORD", os.environ.get("PGPASSWORD", ""))
+    return pw
+
+
+def _ensure_llm_cost_table():
+    """Create the vox_llm_costs table if it doesn't exist."""
+    pw = _db_password()
+    if not pw:
+        return
+    env = os.environ.copy()
+    env["PGPASSWORD"] = pw
+    subprocess.run([
+        "psql", "-h", "acela.proxy.rlwy.net", "-p", "35577",
+        "-U", "postgres", "-d", "railway", "-c", """
+            CREATE TABLE IF NOT EXISTS vox_llm_costs (
+                id SERIAL PRIMARY KEY,
+                run_at TIMESTAMP NOT NULL DEFAULT NOW(),
+                script_name TEXT,
+                model TEXT NOT NULL,
+                prompt_tokens INT NOT NULL DEFAULT 0,
+                completion_tokens INT NOT NULL DEFAULT 0,
+                total_tokens INT NOT NULL DEFAULT 0,
+                input_cost NUMERIC(12,8),
+                output_cost NUMERIC(12,8),
+                total_cost NUMERIC(12,8),
+                request_id TEXT,
+                notes TEXT
+            )
+        """
+    ], capture_output=True, text=True, env=env)
+
+
+def log_llm_cost(
+    model: str,
+    prompt_tokens: int,
+    completion_tokens: int,
+    script_name: str = "",
+    request_id: str = "",
+    notes: str = "",
+) -> Dict[str, float]:
+    """Compute and record OpenRouter cost for a completion. Returns cost breakdown."""
+    _ensure_llm_cost_table()
+    pricing = _get_openrouter_pricing()
+    p = pricing.get(model, pricing.get("anthropic/claude-sonnet-5", {"input": 3.00, "output": 15.00}))
+    input_cost = (prompt_tokens / 1_000_000) * p["input"]
+    output_cost = (completion_tokens / 1_000_000) * p["output"]
+    total_cost = input_cost + output_cost
+
+    pw = _db_password()
+    if pw:
+        env = os.environ.copy()
+        env["PGPASSWORD"] = pw
+        subprocess.run([
+            "psql", "-h", "acela.proxy.rlwy.net", "-p", "35577",
+            "-U", "postgres", "-d", "railway", "-c",
+            f"""
+            INSERT INTO vox_llm_costs
+                (run_at, script_name, model, prompt_tokens, completion_tokens, total_tokens,
+                 input_cost, output_cost, total_cost, request_id, notes)
+            VALUES
+                (NOW(), '{script_name.replace("'", "''")}', '{model.replace("'", "''")}',
+                 {int(prompt_tokens)}, {int(completion_tokens)}, {int(prompt_tokens + completion_tokens)},
+                 {input_cost:.8f}, {output_cost:.8f}, {total_cost:.8f},
+                 '{request_id.replace("'", "''")}', '{notes.replace("'", "''")}')
+            """
+        ], capture_output=True, text=True, env=env)
+
+    return {
+        "input_cost": round(input_cost, 8),
+        "output_cost": round(output_cost, 8),
+        "total_cost": round(total_cost, 8),
+    }
+
+
 def query_db(sql: str) -> List[Tuple]:
     """Execute SQL via psql and return tuples."""
-    password = get_secret("Railway DB", "password", "DB_PASSWORD")
-    if not password:
-        # fallback to the known password
-        password = ""
+    password = _db_password()
 
     env = os.environ.copy()
     env["PGPASSWORD"] = password
@@ -103,11 +208,9 @@ def query_db(sql: str) -> List[Tuple]:
     return [tuple(l.split("|")) for l in lines]
 
 
-import re
-
-VALID_TICKER_RE = re.compile(r"^[A-Z]{1,5}$")
-
-
+# ---------------------------------------------------------------------------
+# Grades / technical analysis
+# ---------------------------------------------------------------------------
 def get_unified_grades(limit: int = 100) -> Dict[str, Dict]:
     """Fetch latest unified grades from DB, filtering to valid US equity tickers."""
     result = query_db(f"""
@@ -287,8 +390,17 @@ def compute_fresh_technical(ticker: str) -> Optional[Dict]:
         return {"error": str(e)}
 
 
-def call_openrouter(system_prompt: str, user_prompt: str, model: str = "anthropic/claude-sonnet-5", max_tokens: int = 2500, temperature: float = 0.5) -> Dict:
-    """Call OpenRouter and return structured result with cost."""
+def call_openrouter(
+    system_prompt: str,
+    user_prompt: str,
+    model: str = "anthropic/claude-sonnet-5",
+    max_tokens: int = 2500,
+    temperature: float = 0.5,
+    script_name: str = "",
+    request_id: str = "",
+    notes: str = "",
+) -> Dict:
+    """Call OpenRouter, compute cost, log to DB, and return structured result."""
     api_key = get_secret("OpenRouter", "api_key", "OPENROUTER_API_KEY")
     if not api_key:
         raise RuntimeError("OPENROUTER_API_KEY not found (checked 1Password and .env)")
@@ -316,17 +428,23 @@ def call_openrouter(system_prompt: str, user_prompt: str, model: str = "anthropi
     usage = data.get("usage", {})
     prompt_tokens = usage.get("prompt_tokens", 0)
     completion_tokens = usage.get("completion_tokens", 0)
+    total_tokens = usage.get("total_tokens", prompt_tokens + completion_tokens)
 
-    # OpenRouter pricing for anthropic/claude-sonnet-4: prompt $2/M, completion $10/M
-    prompt_cost = prompt_tokens * 0.000002
-    completion_cost = completion_tokens * 0.00001
-    total_cost = prompt_cost + completion_cost
+    cost_breakdown = log_llm_cost(
+        model=model,
+        prompt_tokens=prompt_tokens,
+        completion_tokens=completion_tokens,
+        script_name=script_name or Path(sys.argv[0]).name,
+        request_id=request_id or data.get("id", ""),
+        notes=notes,
+    )
 
     return {
         "model": data.get("model", model),
         "prompt_tokens": prompt_tokens,
         "completion_tokens": completion_tokens,
-        "cost_usd": round(total_cost, 6),
+        "total_tokens": total_tokens,
+        "cost_usd": cost_breakdown["total_cost"],
         "content": data["choices"][0]["message"]["content"],
     }
 

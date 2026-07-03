@@ -85,43 +85,75 @@ def get_portfolio_and_watchlist():
     conn.close()
     return sorted(tickers)
 
-def fetch_earnings_dates(tickers):
-    """Fetch earnings dates for tickers (mock implementation - would use API in production)."""
-    print(f"\n[1/3] Fetching earnings for {len(tickers)} tickers...")
-    
-    # Known upcoming earnings (Q2 2026)
-    known_earnings = {
-        'NVO': {'date': '2026-08-06', 'time': 'BMO', 'eps_est': 2.85, 'rev_est': 75000},
-        'APP': {'date': '2026-08-07', 'time': 'AMC', 'eps_est': 0.45, 'rev_est': 1200},
-        'CRDO': {'date': '2026-09-03', 'time': 'AMC', 'eps_est': 0.12, 'rev_est': 180},
-        'IONQ': {'date': '2026-08-13', 'time': 'AMC', 'eps_est': -0.18, 'rev_est': 15},
-        'DUOL': {'date': '2026-08-06', 'time': 'AMC', 'eps_est': 0.52, 'rev_est': 210},
-        'SE': {'date': '2026-08-12', 'time': 'AMC', 'eps_est': 0.38, 'rev_est': 4800},
-        'OKLO': {'date': '2026-08-14', 'time': 'AMC', 'eps_est': -0.15, 'rev_est': 8},
-        'TSM': {'date': '2026-07-16', 'time': 'BMO', 'eps_est': 1.85, 'rev_est': 22000},
-        'AMD': {'date': '2026-07-29', 'time': 'AMC', 'eps_est': 0.72, 'rev_est': 6800},
-        'META': {'date': '2026-07-30', 'time': 'AMC', 'eps_est': 5.85, 'rev_est': 42000},
-        'GOOGL': {'date': '2026-07-22', 'time': 'AMC', 'eps_est': 1.95, 'rev_est': 88000},
-        'AAPL': {'date': '2026-07-30', 'time': 'AMC', 'eps_est': 1.35, 'rev_est': 95000},
-        'MSFT': {'date': '2026-07-29', 'time': 'AMC', 'eps_est': 3.15, 'rev_est': 68000},
-        'AMZN': {'date': '2026-07-31', 'time': 'AMC', 'eps_est': 1.25, 'rev_est': 155000},
-        'NVDA': {'date': '2026-08-27', 'time': 'AMC', 'eps_est': 0.68, 'rev_est': 30000},
-    }
-    
+def fetch_earnings_dates(tickers, days_ahead=45):
+    """Fetch earnings dates from Yahoo Finance via yfinance."""
+    print(f"\n[1/3] Fetching earnings for {len(tickers)} tickers from Yahoo Finance...")
+    import yfinance as yf
+    import time
+
+    cutoff = datetime.now() + timedelta(days=days_ahead)
     results = []
+    skipped = 0
     for ticker in tickers:
-        if ticker in known_earnings:
-            e = known_earnings[ticker]
-            results.append({
-                'ticker': ticker,
-                'report_date': e['date'],
-                'report_time': e['time'],
-                'eps_estimate': e['eps_est'],
-                'revenue_estimate': e['rev_est'],
-                'importance': 'high' if e['rev_est'] > 10000 else 'medium'
-            })
-    
-    print(f"  Found {len(results)} upcoming earnings")
+        if not ticker or not isinstance(ticker, str):
+            skipped += 1
+            continue
+        t = ticker.strip().upper()
+        if ' ' in t or '-' in t or '/' in t or len(t) > 8:
+            skipped += 1
+            continue
+        try:
+            tk = yf.Ticker(t)
+            cal = tk.calendar
+            if cal is None or (hasattr(cal, 'empty') and cal.empty) or (hasattr(cal, '__len__') and len(cal) == 0):
+                continue
+            # Normalize to a dict-like row
+            if hasattr(cal, 'iloc'):
+                row = cal.iloc[0]
+                get = lambda k: row.get(k) if hasattr(row, 'get') else getattr(row, k, None)
+            else:
+                get = lambda k: cal.get(k)
+            raw_date = get('Earnings Date') or get('Earnings Date Low') or get('earningsDate')
+            if raw_date is None or raw_date == '' or (not isinstance(raw_date, (datetime, str)) and str(raw_date).lower() in ('nan', 'none', 'nat')):
+                continue
+            if isinstance(raw_date, str):
+                try:
+                    raw_date = datetime.fromisoformat(raw_date.replace('Z', '+00:00'))
+                except Exception:
+                    continue
+            eps_est = get('EPS Estimate')
+            rev_est = get('Revenue Estimate')
+            if isinstance(eps_est, str):
+                eps_est = eps_est.replace(',', '').replace('$', '')
+            if isinstance(rev_est, str):
+                rev_est = rev_est.replace(',', '').replace('$', '')
+            try:
+                eps_est = float(eps_est) if eps_est is not None and str(eps_est).lower() not in ('nan', 'none', 'nat') else None
+            except Exception:
+                eps_est = None
+            try:
+                rev_est = float(rev_est) if rev_est is not None and str(rev_est).lower() not in ('nan', 'none', 'nat') else None
+            except Exception:
+                rev_est = None
+            try:
+                d = raw_date.date()
+            except Exception:
+                continue
+            if d <= cutoff.date() and d >= datetime.now().date():
+                results.append({
+                    'ticker': t,
+                    'report_date': d.strftime('%Y-%m-%d'),
+                    'report_time': 'TNS',
+                    'eps_estimate': eps_est,
+                    'revenue_estimate': rev_est,
+                    'importance': 'medium',
+                    'data_source': 'yfinance'
+                })
+            time.sleep(0.15)
+        except Exception as e:
+            skipped += 1
+            continue
+    print(f"  Found {len(results)} upcoming earnings ({skipped} skipped)")
     return results
 
 def store_earnings(earnings):

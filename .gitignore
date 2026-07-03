@@ -1,0 +1,19 @@
+# VOX generated artifacts
+vox_cron/cron_monitor_*.json
+vox_cron/cron_monitor_*.txt
+vox_cron/vox_master_data_*.json
+vox_cron/checklist_result_*.json
+vox_cron/portfolio_dashboard.json
+.vox_alert_state_v8.json
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+
+# Local output/cache
+.cache/
+output/
+
+# Secrets
+.env
+secrets/

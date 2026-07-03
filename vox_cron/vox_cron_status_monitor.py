@@ -34,6 +34,11 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
+try:
+    from croniter import croniter
+except Exception:
+    croniter = None
+
 # Load env
 ENV_PATH = os.path.expanduser("~/.hermes/.env")
 if os.path.exists(ENV_PATH):
@@ -168,21 +173,73 @@ class VoxCronStatusMonitor:
             status['issues'].append(f"Unknown status: {last_status}")
             self.stats['warning'] += 1
         
-        # Check if stale (> 48 hours since last run)
-        if last_run and last_run not in ('null', None, ''):
+        # Check staleness based on cron schedule, not fixed 48h
+        schedule = job.get('schedule', '')
+        if isinstance(schedule, dict):
+            schedule = schedule.get('expr') or schedule.get('display') or ''
+        if croniter and schedule:
             try:
-                last_run_dt = datetime.fromisoformat(last_run.replace('Z', '+00:00'))
-                if datetime.now().astimezone() - last_run_dt > timedelta(hours=48):
-                    status['issues'].append(f"Stale: Last run {last_run}")
-                    if status['state'] == 'OK':
-                        status['state'] = 'STALE'
-                        self.stats['stale'] += 1
-                    elif status['state'] == 'PENDING':
-                        status['state'] = 'STALE'
-                        self.stats['stale'] += 1
-                        self.stats['ok'] -= 1
-            except:
-                pass
+                now = datetime.now().astimezone()
+                # Parse croniter from schedule using local time
+                itr = croniter(schedule, now - timedelta(days=1))
+                # Get last expected run before now
+                expected_last = itr.get_prev(datetime)
+                next_expected = itr.get_next(datetime)
+                # Previous get_next advances; get previous scheduled time before now
+                itr2 = croniter(schedule, now)
+                expected_last = itr2.get_prev(datetime)
+
+                if last_run and last_run not in ('null', None, ''):
+                    try:
+                        last_run_dt = datetime.fromisoformat(last_run.replace('Z', '+00:00'))
+                        # If last run is before the last scheduled occurrence, it's stale
+                        if last_run_dt < expected_last:
+                            status['issues'].append(f"Stale: last run {last_run}, expected after {expected_last.isoformat()}")
+                            if status['state'] in ('OK', 'PENDING'):
+                                if status['state'] == 'PENDING':
+                                    self.stats['ok'] -= 1
+                                status['state'] = 'STALE'
+                                self.stats['stale'] += 1
+                    except Exception:
+                        pass
+                else:
+                    # Never ran; stale only if the next scheduled run is already in the past
+                    next_expected = croniter(schedule, expected_last).get_next(datetime)
+                    if now > next_expected + timedelta(minutes=30):
+                        status['issues'].append(f"Stale: never ran, expected by {next_expected.isoformat()}")
+                        if status['state'] in ('OK', 'PENDING'):
+                            if status['state'] == 'PENDING':
+                                self.stats['ok'] -= 1
+                            status['state'] = 'STALE'
+                            self.stats['stale'] += 1
+            except Exception:
+                # Fallback: fixed 48h window if cron schedule is invalid
+                if last_run and last_run not in ('null', None, ''):
+                    try:
+                        last_run_dt = datetime.fromisoformat(last_run.replace('Z', '+00:00'))
+                        if datetime.now().astimezone() - last_run_dt > timedelta(hours=48):
+                            status['issues'].append(f"Stale: Last run {last_run}")
+                            if status['state'] in ('OK', 'PENDING'):
+                                if status['state'] == 'PENDING':
+                                    self.stats['ok'] -= 1
+                                status['state'] = 'STALE'
+                                self.stats['stale'] += 1
+                    except Exception:
+                        pass
+        else:
+            # No croniter or no schedule: keep 48h fallback for now
+            if last_run and last_run not in ('null', None, ''):
+                try:
+                    last_run_dt = datetime.fromisoformat(last_run.replace('Z', '+00:00'))
+                    if datetime.now().astimezone() - last_run_dt > timedelta(hours=48):
+                        status['issues'].append(f"Stale: Last run {last_run}")
+                        if status['state'] in ('OK', 'PENDING'):
+                            if status['state'] == 'PENDING':
+                                self.stats['ok'] -= 1
+                            status['state'] = 'STALE'
+                            self.stats['stale'] += 1
+                except Exception:
+                    pass
         
         return status
     
