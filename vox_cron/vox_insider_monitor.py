@@ -23,17 +23,16 @@ from datetime import datetime, timedelta
 import urllib.request
 import xml.etree.ElementTree as ET
 
+sys.path.insert(0, str(Path.home() / ".hermes" / "scripts" / "vox_cron"))
+from deepseek_review import deepseek_review
+
 DB_HOST = 'acela.proxy.rlwy.net'
 DB_PORT = 35577
 DB_NAME = 'railway'
 DB_USER = 'postgres'
 
 def get_db_password():
-    with open(os.path.expanduser('~/.hermes/.env')) as f:
-        for line in f:
-            if line.startswith('DB_PASSWORD='):
-                return line.strip().split('=', 1)[1]
-    return os.environ.get('PGPASSWORD', '')
+    return os.environ.get('DB_PASSWORD', os.environ.get('PGPASSWORD', ''))
 
 def connect_db():
     return psycopg2.connect(
@@ -244,6 +243,9 @@ def generate_insider_report():
                 'type': t_type,
                 'value': value
             })
+    
+    # DeepSeek second-layer review
+    alerts = deepseek_review(alerts, "Insider monitor high-importance alerts (CEO/CFO/Chairman purchases, >$1M, cluster buying)")
     
     print(f"{'='*70}")
     

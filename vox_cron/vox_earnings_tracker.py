@@ -15,17 +15,16 @@ import psycopg2
 from datetime import datetime, timedelta
 import json
 
+sys.path.insert(0, str(Path.home() / ".hermes" / "scripts" / "vox_cron"))
+from deepseek_review import deepseek_review
+
 DB_HOST = 'acela.proxy.rlwy.net'
 DB_PORT = 35577
 DB_NAME = 'railway'
 DB_USER = 'postgres'
 
 def get_db_password():
-    with open(os.path.expanduser('~/.hermes/.env')) as f:
-        for line in f:
-            if line.startswith('DB_PASSWORD='):
-                return line.strip().split('=', 1)[1]
-    return os.environ.get('PGPASSWORD', '')
+    return os.environ.get('DB_PASSWORD', os.environ.get('PGPASSWORD', ''))
 
 def connect_db():
     return psycopg2.connect(
@@ -182,8 +181,15 @@ def generate_earnings_report():
     print(f"{'='*60}")
     print(f"Total: {len(upcoming)} earnings events")
     
+    # DeepSeek second-layer review: flag high-impact events near report date
+    candidates = [{'ticker': row[0], 'report_date': str(row[1]), 'time': row[2], 'eps': float(row[3] or 0), 'revenue': float(row[4] or 0), 'importance': row[5]} for row in upcoming if row[5] == 'high']
+    approved = deepseek_review(candidates, "Earnings tracker high-importance upcoming events (next 30 days)")
+    approved_tickers = {a['ticker'] for a in approved}
+    if approved:
+        print(f"\n🔴 DeepSeek-approved high-impact earnings: {', '.join(sorted(approved_tickers)[:10])}")
+    
     conn.close()
-    return upcoming
+    return [u for u in upcoming if u[0] in approved_tickers]
 
 def run_earnings_tracker():
     """Main entry point."""

@@ -15,6 +15,8 @@ import json
 from pathlib import Path
 
 SCRIPT_DIR = Path.home() / ".hermes" / "scripts"
+sys.path.insert(0, str(SCRIPT_DIR / "vox_cron"))
+from deepseek_review import deepseek_review
 
 def load_unified_grades():
     """Load unified grades from single source of truth"""
@@ -84,11 +86,16 @@ def main():
                     'broker': broker,
                     'value': value
                 })
-                
-                cur.execute("""
-                    INSERT INTO pattern_alerts (ticker, pattern_type, conviction, direction)
-                    VALUES (%s, %s, %s, %s)
-                """, (ticker, pattern, conviction, direction))
+    
+    # DeepSeek second-layer review
+    reviewed = deepseek_review(high_conviction_patterns, "Pattern scanner momentum breakouts (grade >= 65, technical >= 85, conviction >= 80)")
+    approved_tickers = {p['ticker'] for p in reviewed}
+    
+    for p in reviewed:
+        cur.execute("""
+            INSERT INTO pattern_alerts (ticker, pattern_type, conviction, direction)
+            VALUES (%s, %s, %s, %s)
+        """, (p['ticker'], p['pattern'], p['conviction'], p['direction']))
     
     # Scan for sector rotation
     cur.execute("""
@@ -105,14 +112,14 @@ def main():
     conn.close()
     
     # Only output if high conviction patterns found
-    if high_conviction_patterns:
-        print("🚨 PATTERN ALERTS - High Conviction (80+):")
-        for p in high_conviction_patterns:
+    if reviewed:
+        print("🚨 PATTERN ALERTS - High Conviction (80+), DeepSeek approved:")
+        for p in reviewed:
             print(f"  {p['ticker']} ({p['broker']}): {p['pattern']} | {p['direction']} | Conviction: {p['conviction']}")
     else:
         print("✅ No high-conviction patterns detected.")
     
-    return 0
+    return 1 if reviewed else 0
 
 if __name__ == '__main__':
     exit(main())
