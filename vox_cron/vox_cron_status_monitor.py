@@ -102,55 +102,26 @@ class VoxCronStatusMonitor:
         }
         
     def load_cron_jobs(self):
-        """Load all cron jobs from Hermes state.db."""
-        print("🔍 Loading cron jobs from state.db...")
+        """Load all cron jobs from Hermes live cron jobs.json."""
+        print("🔍 Loading cron jobs from Hermes cron jobs.json...")
         
-        state_db = HERMES_DIR / "state.db"
-        if not state_db.exists():
-            # Try to find state.db
-            result = subprocess.run(
-                ['find', str(HERMES_DIR), '-name', 'state.db', '-type', 'f'],
-                capture_output=True, text=True
-            )
-            if result.stdout.strip():
-                state_db = Path(result.stdout.strip().split('\n')[0])
-            else:
-                print("  ❌ No state.db found")
-                return []
+        jobs_file = HERMES_DIR / "cron" / "jobs.json"
+        if jobs_file.exists():
+            try:
+                with open(jobs_file) as f:
+                    data = json.load(f)
+                self.jobs = [j for j in data.get('jobs', []) if j.get('enabled', True)]
+                print(f"  ✅ Loaded {len(self.jobs)} enabled jobs from {jobs_file}")
+                return self.jobs
+            except Exception as e:
+                print(f"  ❌ Error loading {jobs_file}: {e}")
         
-        try:
-            conn = sqlite3.connect(str(state_db))
-            cur = conn.cursor()
-            
-            # Check if there's a cron jobs table
-            cur.execute("SELECT name FROM sqlite_master WHERE type='table'")
-            tables = [r[0] for r in cur.fetchall()]
-            
-            # Hermes stores cron jobs in JSON files, not SQLite
-            # Let's check the skills backup for cron jobs
-            conn.close()
-            
-            # Load from cron-jobs.json backup
-            backup_dir = HERMES_DIR / "skills" / ".curator_backups"
-            if backup_dir.exists():
-                backups = sorted(backup_dir.glob("*/cron-jobs.json"), reverse=True)
-                if backups:
-                    with open(backups[0]) as f:
-                        data = json.load(f)
-                        self.jobs = data.get('jobs', [])
-                        print(f"  ✅ Loaded {len(self.jobs)} jobs from backup")
-                        return self.jobs
-            
-            # Fallback: scan scripts directory
-            print("  ⚠️ No backup found, scanning scripts directory...")
-            scripts = list(SCRIPT_DIR.glob("vox_*.py"))
-            self.jobs = [{'name': s.stem, 'script': s.name, 'enabled': True} for s in scripts]
-            print(f"  ✅ Found {len(self.jobs)} scripts")
-            return self.jobs
-            
-        except Exception as e:
-            print(f"  ❌ Error loading jobs: {e}")
-            return []
+        # Fallback: scan scripts directory
+        print("  ⚠️ No live cron jobs file found, scanning scripts directory...")
+        scripts = list(SCRIPT_DIR.glob("vox_*.py"))
+        self.jobs = [{'name': s.stem, 'script': s.name, 'enabled': True} for s in scripts]
+        print(f"  ✅ Found {len(self.jobs)} scripts")
+        return self.jobs
     
     def check_job_status(self, job):
         """Check status of a single cron job."""
@@ -170,9 +141,11 @@ class VoxCronStatusMonitor:
             'issues': []
         }
         
-        # Check if script exists
+        # Check if script exists (handle both root and vox_cron/ paths)
         if script:
             script_path = SCRIPT_DIR / script
+            if not script_path.exists():
+                script_path = Path.home() / ".hermes" / "scripts" / script
             if not script_path.exists():
                 status['state'] = 'MISSING'
                 status['issues'].append(f"Script not found: {script}")
@@ -184,7 +157,11 @@ class VoxCronStatusMonitor:
             status['state'] = 'ERROR'
             status['issues'].append(f"Last run failed: {last_error[:100] if last_error else 'Unknown error'}")
             self.stats['error'] += 1
-        elif last_status == 'ok':
+        elif last_status in ('ok', 'success'):
+            self.stats['ok'] += 1
+        elif last_status is None or last_status == 'null':
+            # Cron has not run yet (e.g., weekly jobs scheduled for future date)
+            status['state'] = 'PENDING'
             self.stats['ok'] += 1
         else:
             status['state'] = 'WARNING'
@@ -192,7 +169,7 @@ class VoxCronStatusMonitor:
             self.stats['warning'] += 1
         
         # Check if stale (> 48 hours since last run)
-        if last_run:
+        if last_run and last_run not in ('null', None, ''):
             try:
                 last_run_dt = datetime.fromisoformat(last_run.replace('Z', '+00:00'))
                 if datetime.now().astimezone() - last_run_dt > timedelta(hours=48):
@@ -200,6 +177,10 @@ class VoxCronStatusMonitor:
                     if status['state'] == 'OK':
                         status['state'] = 'STALE'
                         self.stats['stale'] += 1
+                    elif status['state'] == 'PENDING':
+                        status['state'] = 'STALE'
+                        self.stats['stale'] += 1
+                        self.stats['ok'] -= 1
             except:
                 pass
         
