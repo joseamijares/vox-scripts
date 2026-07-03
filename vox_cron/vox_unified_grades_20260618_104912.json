@@ -1,0 +1,647 @@
+{
+  "IONQ": {
+    "ticker": "IONQ",
+    "sources": {
+      "vox_grades": {
+        "grade": 56,
+        "technical": 55,
+        "fundamental": 73,
+        "macro": 51,
+        "sector": 34,
+        "weather": 67,
+        "sentiment": 53,
+        "action": "HOLD",
+        "timestamp": "2026-06-18 15:43:04.322949",
+        "source": "vox_grades"
+      },
+      "watchlist": {
+        "grade": 90,
+        "technical": 92,
+        "fundamental": 85,
+        "macro": 72,
+        "sector": 75,
+        "weather": 70,
+        "sentiment": 78,
+        "timestamp": "2026-06-18 12:02:26.842085",
+        "source": "watchlist"
+      },
+      "trade_signals": {
+        "signal": "BUY",
+        "composite": 53,
+        "grade": 63,
+        "timestamp": "2026-06-15 21:00:12.702759+00",
+        "source": "trade_signals"
+      }
+    },
+    "discrepancies": [
+      {
+        "type": "GRADE_DISCREPANCY",
+        "severity": "HIGH",
+        "max_diff": 34,
+        "grades": {
+          "vox_grades": 56,
+          "watchlist": 90,
+          "trade_signals": 63
+        }
+      }
+    ],
+    "warnings": [
+      {
+        "type": "WATCHLIST_INFLATION",
+        "message": "Watchlist grade (90) is 34 points higher than vox_grades (56)",
+        "recommendation": "Use vox_grades as authoritative source"
+      }
+    ],
+    "grade": 56,
+    "council": "HOLD",
+    "source": "vox_grades",
+    "timestamp": "2026-06-18 15:43:04.322949"
+  },
+  "SE": {
+    "ticker": "SE",
+    "sources": {
+      "vox_grades": {
+        "grade": 59,
+        "technical": 63,
+        "fundamental": 58,
+        "macro": 72,
+        "sector": 31,
+        "weather": 76,
+        "sentiment": 62,
+        "action": "HOLD",
+        "timestamp": "2026-06-18 15:43:02.370589",
+        "source": "vox_grades"
+      },
+      "watchlist": {
+        "grade": 86,
+        "technical": 97,
+        "fundamental": 74,
+        "macro": 72,
+        "sector": 75,
+        "weather": 70,
+        "sentiment": 89,
+        "timestamp": "2026-06-18 12:02:26.842085",
+        "source": "watchlist"
+      }
+    },
+    "discrepancies": [
+      {
+        "type": "GRADE_DISCREPANCY",
+        "severity": "HIGH",
+        "max_diff": 27,
+        "grades": {
+          "vox_grades": 59,
+          "watchlist": 86
+        }
+      }
+    ],
+    "warnings": [
+      {
+        "type": "WATCHLIST_INFLATION",
+        "message": "Watchlist grade (86) is 27 points higher than vox_grades (59)",
+        "recommendation": "Use vox_grades as authoritative source"
+      }
+    ],
+    "grade": 59,
+    "council": "HOLD",
+    "source": "vox_grades",
+    "timestamp": "2026-06-18 15:43:02.370589"
+  },
+  "NVO": {
+    "ticker": "NVO",
+    "sources": {
+      "vox_grades": {
+        "grade": 55,
+        "technical": 47,
+        "fundamental": 69,
+        "macro": 69,
+        "sector": 27,
+        "weather": 84,
+        "sentiment": 38,
+        "action": "HOLD",
+        "timestamp": "2026-06-18 15:43:04.761421",
+        "source": "vox_grades"
+      },
+      "watchlist": {
+        "grade": 83,
+        "technical": 84,
+        "fundamental": 93,
+        "macro": 72,
+        "sector": 75,
+        "weather": 70,
+        "sentiment": 78,
+        "timestamp": "2026-06-18 12:02:26.842085",
+        "source": "watchlist"
+      },
+      "trade_signals": {
+        "signal": "BUY",
+        "composite": 56,
+        "grade": 72,
+        "timestamp": "2026-06-17 18:59:36.519041+00",
+        "source": "trade_signals"
+      }
+    },
+    "discrepancies": [
+      {
+        "type": "GRADE_DISCREPANCY",
+        "severity": "HIGH",
+        "max_diff": 28,
+        "grades": {
+          "vox_grades": 55,
+          "watchlist": 83,
+          "trade_signals": 72
+        }
+      }
+    ],
+    "warnings": [
+      {
+        "type": "WATCHLIST_INFLATION",
+        "message": "Watchlist grade (83) is 28 points higher than vox_grades (55)",
+        "recommendation": "Use vox_grades as authoritative source"
+      }
+    ],
+    "grade": 55,
+    "council": "HOLD",
+    "source": "vox_grades",
+    "timestamp": "2026-06-18 15:43:04.761421"
+  },
+  "BAC": {
+    "ticker": "BAC",
+    "sources": {
+      "vox_grades": {
+        "grade": 54,
+        "technical": 68,
+        "fundamental": 59,
+        "macro": 51,
+        "sector": 15,
+        "weather": 62,
+        "sentiment": 68,
+        "action": "SELL",
+        "timestamp": "2026-06-18 15:43:05.496612",
+        "source": "vox_grades"
+      },
+      "watchlist": {
+        "grade": 83,
+        "technical": 82,
+        "fundamental": 87,
+        "macro": 72,
+        "sector": 75,
+        "weather": 70,
+        "sentiment": 89,
+        "timestamp": "2026-06-18 12:02:26.842085",
+        "source": "watchlist"
+      },
+      "sp500": {
+        "grade": 62,
+        "technical": 62,
+        "fundamental": 74,
+        "macro": 55,
+        "sector": 57,
+        "weather": 71,
+        "sentiment": 70,
+        "timestamp": "2026-06-17 18:54:55.412788+00",
+        "source": "sp500"
+      },
+      "trade_signals": {
+        "signal": "BUY",
+        "composite": 53,
+        "grade": 62,
+        "timestamp": "2026-06-17 18:59:36.728756+00",
+        "source": "trade_signals"
+      }
+    },
+    "discrepancies": [
+      {
+        "type": "GRADE_DISCREPANCY",
+        "severity": "HIGH",
+        "max_diff": 29,
+        "grades": {
+          "vox_grades": 54,
+          "watchlist": 83,
+          "sp500": 62,
+          "trade_signals": 62
+        }
+      }
+    ],
+    "warnings": [
+      {
+        "type": "WATCHLIST_INFLATION",
+        "message": "Watchlist grade (83) is 29 points higher than vox_grades (54)",
+        "recommendation": "Use vox_grades as authoritative source"
+      }
+    ],
+    "grade": 54,
+    "council": "SELL",
+    "source": "vox_grades",
+    "timestamp": "2026-06-18 15:43:05.496612"
+  },
+  "VRT": {
+    "ticker": "VRT",
+    "sources": {
+      "vox_grades": {
+        "grade": 55,
+        "technical": 61,
+        "fundamental": 70,
+        "macro": 61,
+        "sector": 13,
+        "weather": 46,
+        "sentiment": 73,
+        "action": "HOLD",
+        "timestamp": "2026-06-18 15:43:05.19696",
+        "source": "vox_grades"
+      },
+      "sp500": {
+        "grade": 72,
+        "technical": 46,
+        "fundamental": 74,
+        "macro": 64,
+        "sector": 23,
+        "weather": 68,
+        "sentiment": 50,
+        "timestamp": "2026-06-17 18:54:55.412788+00",
+        "source": "sp500"
+      }
+    },
+    "discrepancies": [
+      {
+        "type": "GRADE_DISCREPANCY",
+        "severity": "MEDIUM",
+        "max_diff": 17,
+        "grades": {
+          "vox_grades": 55,
+          "sp500": 72
+        }
+      }
+    ],
+    "warnings": [],
+    "grade": 55,
+    "council": "HOLD",
+    "source": "vox_grades",
+    "timestamp": "2026-06-18 15:43:05.19696"
+  },
+  "ESTC": {
+    "ticker": "ESTC",
+    "sources": {
+      "positions": {
+        "grade": 52,
+        "council": "SELL",
+        "timestamp": "2026-06-18 15:40:19.671157+00",
+        "source": "positions"
+      },
+      "vox_grades": {
+        "grade": 52,
+        "technical": 47,
+        "fundamental": 50,
+        "macro": 72,
+        "sector": 45,
+        "weather": 70,
+        "sentiment": 35,
+        "action": "SELL",
+        "timestamp": "2026-06-18 15:42:59.373801",
+        "source": "vox_grades"
+      },
+      "trade_signals": {
+        "signal": "SELL",
+        "composite": 30,
+        "grade": 0,
+        "timestamp": "2026-06-17 18:59:36.840634+00",
+        "source": "trade_signals"
+      }
+    },
+    "discrepancies": [
+      {
+        "type": "GRADE_DISCREPANCY",
+        "severity": "HIGH",
+        "max_diff": 52,
+        "grades": {
+          "positions": 52,
+          "vox_grades": 52,
+          "trade_signals": 0
+        }
+      }
+    ],
+    "warnings": [],
+    "grade": 52,
+    "council": "SELL",
+    "source": "positions",
+    "timestamp": "2026-06-18 15:40:19.671157+00"
+  },
+  "NOW": {
+    "ticker": "NOW",
+    "sources": {
+      "vox_grades": {
+        "grade": 54,
+        "technical": 43,
+        "fundamental": 63,
+        "macro": 69,
+        "sector": 34,
+        "weather": 91,
+        "sentiment": 38,
+        "action": "SELL",
+        "timestamp": "2026-06-18 15:43:05.892814",
+        "source": "vox_grades"
+      },
+      "sp500": {
+        "grade": 50,
+        "technical": 45,
+        "fundamental": 69,
+        "macro": 59,
+        "sector": 29,
+        "weather": 75,
+        "sentiment": 38,
+        "timestamp": "2026-06-17 18:54:55.412788+00",
+        "source": "sp500"
+      }
+    },
+    "discrepancies": [],
+    "warnings": [],
+    "grade": 54,
+    "council": "SELL",
+    "source": "vox_grades",
+    "timestamp": "2026-06-18 15:43:05.892814"
+  },
+  "CEG": {
+    "ticker": "CEG",
+    "sources": {
+      "positions": {
+        "grade": 53,
+        "council": "SELL",
+        "timestamp": "2026-06-18 15:40:19.414201+00",
+        "source": "positions"
+      },
+      "vox_grades": {
+        "grade": 53,
+        "technical": 49,
+        "fundamental": 50,
+        "macro": 65,
+        "sector": 45,
+        "weather": 70,
+        "sentiment": 55,
+        "action": "SELL",
+        "timestamp": "2026-06-18 15:43:00.017498",
+        "source": "vox_grades"
+      },
+      "sp500": {
+        "grade": 63,
+        "technical": 35,
+        "fundamental": 78,
+        "macro": 58,
+        "sector": 38,
+        "weather": 58,
+        "sentiment": 37,
+        "timestamp": "2026-06-17 18:54:55.412788+00",
+        "source": "sp500"
+      },
+      "trade_signals": {
+        "signal": "BUY",
+        "composite": 53,
+        "grade": 63,
+        "timestamp": "2026-06-17 18:59:36.693519+00",
+        "source": "trade_signals"
+      }
+    },
+    "discrepancies": [],
+    "warnings": [],
+    "grade": 53,
+    "council": "SELL",
+    "source": "positions",
+    "timestamp": "2026-06-18 15:40:19.414201+00"
+  },
+  "TSM": {
+    "ticker": "TSM",
+    "sources": {
+      "positions": {
+        "grade": 60,
+        "council": "HOLD",
+        "timestamp": "2026-06-18 15:40:20.605315+00",
+        "source": "positions"
+      },
+      "vox_grades": {
+        "grade": 60,
+        "technical": 66,
+        "fundamental": 50,
+        "macro": 72,
+        "sector": 45,
+        "weather": 70,
+        "sentiment": 71,
+        "action": "HOLD",
+        "timestamp": "2026-06-18 15:42:59.87268",
+        "source": "vox_grades"
+      },
+      "trade_signals": {
+        "signal": "BUY",
+        "composite": 55,
+        "grade": 70,
+        "timestamp": "2026-06-17 18:59:36.573771+00",
+        "source": "trade_signals"
+      }
+    },
+    "discrepancies": [],
+    "warnings": [],
+    "grade": 60,
+    "council": "HOLD",
+    "source": "positions",
+    "timestamp": "2026-06-18 15:40:20.605315+00"
+  },
+  "QQQ": {
+    "ticker": "QQQ",
+    "sources": {
+      "positions": {
+        "grade": 60,
+        "council": "HOLD",
+        "timestamp": "2026-06-18 15:40:20.501348+00",
+        "source": "positions"
+      },
+      "vox_grades": {
+        "grade": 60,
+        "technical": 68,
+        "fundamental": 50,
+        "macro": 72,
+        "sector": 45,
+        "weather": 70,
+        "sentiment": 63,
+        "action": "HOLD",
+        "timestamp": "2026-06-18 15:42:58.15633",
+        "source": "vox_grades"
+      },
+      "trade_signals": {
+        "signal": "BUY",
+        "composite": 55,
+        "grade": 70,
+        "timestamp": "2026-06-17 18:59:36.606196+00",
+        "source": "trade_signals"
+      }
+    },
+    "discrepancies": [],
+    "warnings": [],
+    "grade": 60,
+    "council": "HOLD",
+    "source": "positions",
+    "timestamp": "2026-06-18 15:40:20.501348+00"
+  },
+  "AMD": {
+    "ticker": "AMD",
+    "sources": {
+      "positions": {
+        "grade": 57,
+        "council": "HOLD",
+        "timestamp": "2026-06-18 15:40:20.571885+00",
+        "source": "positions"
+      },
+      "vox_grades": {
+        "grade": 57,
+        "technical": 61,
+        "fundamental": 50,
+        "macro": 63,
+        "sector": 45,
+        "weather": 70,
+        "sentiment": 66,
+        "action": "HOLD",
+        "timestamp": "2026-06-18 15:42:58.049891",
+        "source": "vox_grades"
+      },
+      "sp500": {
+        "grade": 69,
+        "technical": 63,
+        "fundamental": 69,
+        "macro": 58,
+        "sector": 29,
+        "weather": 77,
+        "sentiment": 70,
+        "timestamp": "2026-06-17 18:54:55.412788+00",
+        "source": "sp500"
+      },
+      "trade_signals": {
+        "signal": "BUY",
+        "composite": 55,
+        "grade": 69,
+        "timestamp": "2026-06-17 18:59:36.621814+00",
+        "source": "trade_signals"
+      }
+    },
+    "discrepancies": [
+      {
+        "type": "GRADE_DISCREPANCY",
+        "severity": "MEDIUM",
+        "max_diff": 12,
+        "grades": {
+          "positions": 57,
+          "vox_grades": 57,
+          "sp500": 69,
+          "trade_signals": 69
+        }
+      }
+    ],
+    "warnings": [],
+    "grade": 57,
+    "council": "HOLD",
+    "source": "positions",
+    "timestamp": "2026-06-18 15:40:20.571885+00"
+  },
+  "CRSP": {
+    "ticker": "CRSP",
+    "sources": {
+      "positions": {
+        "grade": 54,
+        "council": "SELL",
+        "timestamp": "2026-06-17 23:19:14.053929+00",
+        "source": "positions"
+      },
+      "vox_grades": {
+        "grade": 54,
+        "technical": 61,
+        "fundamental": 50,
+        "macro": 47,
+        "sector": 45,
+        "weather": 70,
+        "sentiment": 58,
+        "action": "SELL",
+        "timestamp": "2026-06-18 15:42:59.797088",
+        "source": "vox_grades"
+      },
+      "trade_signals": {
+        "signal": "SELL",
+        "composite": 30,
+        "grade": 0,
+        "timestamp": "2026-06-17 18:59:36.843163+00",
+        "source": "trade_signals"
+      }
+    },
+    "discrepancies": [
+      {
+        "type": "GRADE_DISCREPANCY",
+        "severity": "HIGH",
+        "max_diff": 54,
+        "grades": {
+          "positions": 54,
+          "vox_grades": 54,
+          "trade_signals": 0
+        }
+      }
+    ],
+    "warnings": [],
+    "grade": 54,
+    "council": "SELL",
+    "source": "positions",
+    "timestamp": "2026-06-17 23:19:14.053929+00"
+  },
+  "META": {
+    "ticker": "META",
+    "sources": {
+      "positions": {
+        "grade": 47,
+        "council": "SELL",
+        "timestamp": "2026-06-18 15:40:20.38485+00",
+        "source": "positions"
+      },
+      "vox_grades": {
+        "grade": 47,
+        "technical": 37,
+        "fundamental": 50,
+        "macro": 61,
+        "sector": 45,
+        "weather": 70,
+        "sentiment": 28,
+        "action": "SELL",
+        "timestamp": "2026-06-18 15:42:58.399",
+        "source": "vox_grades"
+      },
+      "sp500": {
+        "grade": 35,
+        "technical": 40,
+        "fundamental": 86,
+        "macro": 67,
+        "sector": 95,
+        "weather": 80,
+        "sentiment": 40,
+        "timestamp": "2026-06-17 18:54:55.412788+00",
+        "source": "sp500"
+      },
+      "trade_signals": {
+        "signal": "SELL",
+        "composite": 38,
+        "grade": 35,
+        "timestamp": "2026-06-17 18:59:36.793333+00",
+        "source": "trade_signals"
+      }
+    },
+    "discrepancies": [
+      {
+        "type": "GRADE_DISCREPANCY",
+        "severity": "MEDIUM",
+        "max_diff": 12,
+        "grades": {
+          "positions": 47,
+          "vox_grades": 47,
+          "sp500": 35,
+          "trade_signals": 35
+        }
+      }
+    ],
+    "warnings": [],
+    "grade": 47,
+    "council": "SELL",
+    "source": "positions",
+    "timestamp": "2026-06-18 15:40:20.38485+00"
+  }
+}

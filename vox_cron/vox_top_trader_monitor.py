@@ -25,6 +25,11 @@ Elite traders tracked:
 Run: python3 vox_top_trader_monitor.py
 """
 
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path.home() / ".hermes" / "scripts"))
+import hermes_secrets_bootstrap
+
 import os
 import sys
 import psycopg2
@@ -32,7 +37,7 @@ from datetime import datetime, timedelta
 
 DB_PASSWORD = os.environ.get('DB_PASSWORD', '')
 if not DB_PASSWORD or len(DB_PASSWORD) < 10:
-    DB_PASSWORD = 'hEJeasaJlhzFSVCIAgQqLDzqKCsUmqAS'
+    DB_PASSWORD = ''
 
 def connect():
     return psycopg2.connect(

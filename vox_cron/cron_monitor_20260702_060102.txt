@@ -1,0 +1,9 @@
+🔧 **VOX Cron Monitor — Thu Jul 02 06:01**
+
+🔴 **Jobs**: 54 total | 52 OK | 2 error | 0 warning | 0 missing | 0 stale
+
+🔴 **Failed Jobs**
+  • `vox-compounding-tracker`: Last run failed: Script exited with code 1
+  • `vox-hybrid-price-feed-full`: Last run failed: Script timed out after 120s: /Users/jos/.hermes/scripts/vox_cron/vox_hybrid_price_feed.py
+
+📊 **Health Score**: 96%

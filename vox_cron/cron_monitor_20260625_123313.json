@@ -1,0 +1,571 @@
+{
+  "jobs": [
+    {
+      "name": "vox-alert-system",
+      "schedule": "0 9,12,15 * * 1-5",
+      "next_run_at": "2026-06-25T15:00:00-06:00",
+      "script": "vox_alert_system_v3.py",
+      "last_run_at": "2026-06-25T12:00:13.932977-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-25T12:00:13.932977-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "vox-sector-scan-weekly",
+      "schedule": "0 10 * * 1",
+      "next_run_at": "2026-06-29T10:00:00-06:00",
+      "script": "vox_sector_scanner_v2.py",
+      "last_run_at": "2026-06-22T10:00:52.936937-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-22T10:00:52.936937-06:00",
+      "state": "STALE",
+      "issues": [
+        "Stale: Last run 2026-06-22T10:00:52.936937-06:00"
+      ]
+    },
+    {
+      "name": "vox-market-regime",
+      "schedule": "0 6 * * 1-5",
+      "next_run_at": "2026-06-26T06:00:00-06:00",
+      "script": "vox_market_regime_v2.py",
+      "last_run_at": "2026-06-25T06:00:24.332118-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-25T06:00:24.332118-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "vox-position-review",
+      "schedule": "0 7 * * 1-5",
+      "next_run_at": "2026-06-26T07:00:00-06:00",
+      "script": "vox_position_review_v2.py",
+      "last_run_at": "2026-06-25T07:00:32.247341-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-25T07:00:32.247341-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "sp500-daily-sector-screen",
+      "schedule": "0 9 * * 1-5",
+      "next_run_at": "2026-06-26T09:00:00-06:00",
+      "last_run_at": "2026-06-25T09:15:42.297086-06:00",
+      "last_status": "error",
+      "last_error": "RuntimeError: ## S&P 500 Sector Leaders Screener \u2014 Run Report",
+      "script": "",
+      "last_run": "2026-06-25T09:15:42.297086-06:00",
+      "state": "ERROR",
+      "issues": [
+        "Last run failed: RuntimeError: ## S&P 500 Sector Leaders Screener \u2014 Run Report"
+      ]
+    },
+    {
+      "name": "vox-macro-snapshot",
+      "schedule": "0 6 * * 1-5",
+      "next_run_at": "2026-06-26T06:00:00-06:00",
+      "script": "vox_cron/vox_macro_snapshot.py",
+      "last_run_at": "2026-06-25T06:01:18.377807-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-25T06:01:18.377807-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "vox-morning-digest",
+      "schedule": "30 7 * * 1-5",
+      "next_run_at": "2026-06-26T07:30:00-06:00",
+      "script": "vox_cron/vox_morning_digest.py",
+      "last_run_at": "2026-06-25T07:30:38.346828-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-25T07:30:38.346828-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "vox-evening-digest",
+      "schedule": "30 16 * * 1-5",
+      "next_run_at": "2026-06-25T16:30:00-06:00",
+      "script": "vox_cron/vox_evening_digest.py",
+      "last_run_at": "2026-06-24T16:30:31.282956-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-24T16:30:31.282956-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "vox-council-daily-doc",
+      "schedule": "0 8 * * 1-5",
+      "next_run_at": "2026-06-26T08:00:00-06:00",
+      "script": "vox_cron/vox_council_doc.py",
+      "last_run_at": "2026-06-25T08:00:51.219763-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-25T08:00:51.219763-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "vox-massive-opportunity",
+      "schedule": "0 10,16 * * 1-5",
+      "next_run_at": "2026-06-25T16:00:00-06:00",
+      "script": "vox_cron/vox_massive_opportunity.py",
+      "last_run_at": "2026-06-25T10:01:01.042964-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-25T10:01:01.042964-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "weekly-portfolio-sync",
+      "schedule": "0 9 * * 1",
+      "next_run_at": "2026-06-29T09:00:00-06:00",
+      "script": "vox_cron/weekly_portfolio_sync.py",
+      "last_run_at": "2026-06-24T10:08:13.625883-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-24T10:08:13.625883-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "portfolio-dashboard-update",
+      "schedule": "0 */6 * * *",
+      "next_run_at": "2026-06-25T18:00:00-06:00",
+      "script": "vox_cron/generate_dashboard.py",
+      "last_run_at": "2026-06-25T12:00:14.654817-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-25T12:00:14.654817-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "vox-watchlist-grader",
+      "schedule": "0 6 * * 1-5",
+      "next_run_at": "2026-06-26T06:00:00-06:00",
+      "script": "vox_cron/vox_watchlist_grader.py",
+      "last_run_at": "2026-06-25T06:01:31.111993-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-25T06:01:31.111993-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "vox-pattern-scanner",
+      "schedule": "0 7,13 * * 1-5",
+      "next_run_at": "2026-06-25T13:00:00-06:00",
+      "script": "vox_cron/vox_pattern_scanner.py",
+      "last_run_at": "2026-06-25T07:00:34.522668-06:00",
+      "last_status": "error",
+      "last_error": "Script exited with code 1",
+      "last_run": "2026-06-25T07:00:34.522668-06:00",
+      "state": "ERROR",
+      "issues": [
+        "Last run failed: Script exited with code 1"
+      ]
+    },
+    {
+      "name": "vox-daily-health-check",
+      "schedule": "0 5 * * *",
+      "next_run_at": "2026-06-26T05:00:00-06:00",
+      "script": "vox_cron/vox_health_check.py",
+      "last_run_at": "2026-06-25T05:00:18.076407-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-25T05:00:18.076407-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "vox-weekly-verification",
+      "schedule": "0 9 * * 1",
+      "next_run_at": "2026-06-29T09:00:00-06:00",
+      "last_run_at": "2026-06-24T13:38:56.242331-06:00",
+      "last_status": "error",
+      "last_error": "RuntimeError: ## VOX Weekly Verification Report",
+      "script": "",
+      "last_run": "2026-06-24T13:38:56.242331-06:00",
+      "state": "ERROR",
+      "issues": [
+        "Last run failed: RuntimeError: ## VOX Weekly Verification Report"
+      ]
+    },
+    {
+      "name": "vox-master-data-pipeline",
+      "schedule": "every 60m",
+      "next_run_at": "2026-06-25T12:37:28.662902-06:00",
+      "script": "vox_cron/vox_master_collector.py",
+      "last_run_at": "2026-06-25T11:37:28.662902-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-25T11:37:28.662902-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "vox-unified-research",
+      "schedule": "0 7,15 * * *",
+      "next_run_at": "2026-06-25T15:00:00-06:00",
+      "script": "vox_unified_engine.py",
+      "last_run_at": "2026-06-25T07:00:40.715094-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-25T07:00:40.715094-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "vox-checklist-validator",
+      "schedule": "0 6,14 * * *",
+      "next_run_at": "2026-06-25T14:00:00-06:00",
+      "script": "vox_cron/vox_mandatory_checklist.py",
+      "last_run_at": "2026-06-25T06:00:52.812849-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-25T06:00:52.812849-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "vox-unified-grading",
+      "schedule": "0 6 * * *",
+      "next_run_at": "2026-06-26T06:00:00-06:00",
+      "script": "vox_cron/vox_unified_grading_system.py",
+      "last_run_at": "2026-06-25T06:00:45.414500-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-25T06:00:45.414500-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "vox-unified-recommendations",
+      "schedule": "0 7,15 * * *",
+      "next_run_at": "2026-06-25T15:00:00-06:00",
+      "script": "vox_cron/vox_unified_recommendation_engine.py",
+      "last_run_at": "2026-06-25T07:00:37.362003-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-25T07:00:37.362003-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "vox-complete-system-sync",
+      "schedule": "0 5 * * *",
+      "next_run_at": "2026-06-26T05:00:00-06:00",
+      "script": "vox_cron/vox_unified_grading_system.py",
+      "last_run_at": "2026-06-25T05:00:37.633269-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-25T05:00:37.633269-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "vox-top-opportunities-scanner",
+      "schedule": "0 6,14 * * 1-5",
+      "next_run_at": "2026-06-25T14:00:00-06:00",
+      "script": "vox_cron/vox_top_opportunities_scanner.py",
+      "last_run_at": "2026-06-25T06:02:05.674759-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-25T06:02:05.674759-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "vox-liquid-universe-builder",
+      "schedule": "0 18 * * 0",
+      "next_run_at": "2026-06-28T18:00:00-06:00",
+      "script": "vox_cron/build_universe.py",
+      "last_run_at": "2026-06-21T18:02:12.958017-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-21T18:02:12.958017-06:00",
+      "state": "STALE",
+      "issues": [
+        "Stale: Last run 2026-06-21T18:02:12.958017-06:00"
+      ]
+    },
+    {
+      "name": "vox-weekly-stock-adder",
+      "schedule": "0 19 * * 0",
+      "next_run_at": "2026-06-28T19:00:00-06:00",
+      "script": "vox_cron/vox_weekly_stock_adder.py",
+      "last_run_at": "2026-06-21T19:00:42.342249-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-21T19:00:42.342249-06:00",
+      "state": "STALE",
+      "issues": [
+        "Stale: Last run 2026-06-21T19:00:42.342249-06:00"
+      ]
+    },
+    {
+      "name": "vox-compounding-snapshot",
+      "schedule": "0 7 * * *",
+      "next_run_at": "2026-06-26T07:00:00-06:00",
+      "script": "vox_cron/vox_compounding_system.py",
+      "last_run_at": "2026-06-25T07:00:33.168155-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-25T07:00:33.168155-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "vox-weekly-progress",
+      "schedule": "0 8 * * 1",
+      "next_run_at": "2026-06-29T08:00:00-06:00",
+      "script": "vox_cron/vox_compounding_system.py",
+      "last_run_at": "2026-06-22T08:00:30.738141-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-22T08:00:30.738141-06:00",
+      "state": "STALE",
+      "issues": [
+        "Stale: Last run 2026-06-22T08:00:30.738141-06:00"
+      ]
+    },
+    {
+      "name": "vox-discovery-weekly",
+      "schedule": "0 18 * * 0",
+      "next_run_at": "2026-06-28T18:00:00-06:00",
+      "script": "vox_cron/vox_discovery_engine.py",
+      "last_run_at": "2026-06-21T18:00:41.398098-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-21T18:00:41.398098-06:00",
+      "state": "STALE",
+      "issues": [
+        "Stale: Last run 2026-06-21T18:00:41.398098-06:00"
+      ]
+    },
+    {
+      "name": "vox-broker-reminder-friday",
+      "schedule": "0 9 * * 5",
+      "next_run_at": "2026-06-26T09:00:00-06:00",
+      "script": "",
+      "last_status": "unknown",
+      "last_error": "",
+      "last_run": "",
+      "state": "WARNING",
+      "issues": [
+        "Unknown status: unknown"
+      ]
+    },
+    {
+      "name": "vox-batch-grader-daily",
+      "schedule": "0 6 * * *",
+      "next_run_at": "2026-06-26T06:00:00-06:00",
+      "script": "vox_cron/vox_batch_grader.py",
+      "last_run_at": "2026-06-25T06:01:23.970213-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-25T06:01:23.970213-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "vox-universe-expander-weekly",
+      "schedule": "0 17 * * 0",
+      "next_run_at": "2026-06-28T17:00:00-06:00",
+      "script": "vox_cron/vox_universe_expander.py",
+      "last_run_at": "2026-06-21T17:00:32.331037-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-21T17:00:32.331037-06:00",
+      "state": "STALE",
+      "issues": [
+        "Stale: Last run 2026-06-21T17:00:32.331037-06:00"
+      ]
+    },
+    {
+      "name": "vox-discovery-alert-monday",
+      "schedule": "0 7 * * 1",
+      "next_run_at": "2026-06-29T07:00:00-06:00",
+      "script": "vox_cron/vox_discovery_alert.py",
+      "last_run_at": "2026-06-22T07:00:21.472229-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-22T07:00:21.472229-06:00",
+      "state": "STALE",
+      "issues": [
+        "Stale: Last run 2026-06-22T07:00:21.472229-06:00"
+      ]
+    },
+    {
+      "name": "vox-trader-digest-weekly",
+      "schedule": "0 7 * * 2",
+      "next_run_at": "2026-06-30T07:00:00-06:00",
+      "script": "vox_cron/vox_trader_tracker.py",
+      "last_run_at": "2026-06-23T07:00:45.902206-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-23T07:00:45.902206-06:00",
+      "state": "STALE",
+      "issues": [
+        "Stale: Last run 2026-06-23T07:00:45.902206-06:00"
+      ]
+    },
+    {
+      "name": "vox-trader-expander-weekly",
+      "schedule": "0 6 * * 3",
+      "next_run_at": "2026-07-01T06:00:00-06:00",
+      "script": "vox_cron/vox_trader_expander.py",
+      "last_run_at": "2026-06-24T06:01:08.008550-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-24T06:01:08.008550-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "vox-trader-morning-digest",
+      "schedule": "30 6 * * 1-5",
+      "next_run_at": "2026-06-26T06:30:00-06:00",
+      "script": "vox_cron/vox_trader_tracker.py",
+      "last_run_at": "2026-06-25T06:30:30.208072-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-25T06:30:30.208072-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "vox-trader-midday-update",
+      "schedule": "0 12 * * 1-5",
+      "next_run_at": "2026-06-26T12:00:00-06:00",
+      "script": "vox_cron/vox_trader_tracker.py",
+      "last_run_at": "2026-06-25T12:00:16.328778-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-25T12:00:16.328778-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "vox-trader-evening-wrap",
+      "schedule": "30 16 * * 1-5",
+      "next_run_at": "2026-06-25T16:30:00-06:00",
+      "script": "vox_cron/vox_trader_tracker.py",
+      "last_run_at": "2026-06-24T16:30:31.857691-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-24T16:30:31.857691-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "vox-unified-rebuilder",
+      "schedule": "0 8 * * *",
+      "next_run_at": "2026-06-26T08:00:00-06:00",
+      "script": "vox_unified_rebuilder.py",
+      "last_run_at": "2026-06-25T08:00:41.998501-06:00",
+      "last_status": "error",
+      "last_error": "Script exited with code 1",
+      "last_run": "2026-06-25T08:00:41.998501-06:00",
+      "state": "ERROR",
+      "issues": [
+        "Last run failed: Script exited with code 1"
+      ]
+    },
+    {
+      "name": "vox-grade-improvement-alert",
+      "schedule": "0 14 * * *",
+      "next_run_at": "2026-06-25T14:00:00-06:00",
+      "script": "vox_grade_improvement_alert.py",
+      "last_run_at": "2026-06-24T14:00:13.991738-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-24T14:00:13.991738-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "vox-market-monitor",
+      "schedule": "0 9 * * *",
+      "next_run_at": "2026-06-26T09:00:00-06:00",
+      "script": "vox_market_monitor.py",
+      "last_run_at": "2026-06-25T09:00:57.238233-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-25T09:00:57.238233-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "vox-regrade-sp500-weekly",
+      "schedule": "0 4 * * 0",
+      "next_run_at": "2026-06-28T04:00:00-06:00",
+      "script": "vox_cron/vox_regrade_sp500.py",
+      "last_status": "unknown",
+      "last_error": "",
+      "last_run": "",
+      "state": "WARNING",
+      "issues": [
+        "Unknown status: unknown"
+      ]
+    },
+    {
+      "name": "vox-etoro-price-sync-v3",
+      "schedule": "every 120m",
+      "next_run_at": "2026-06-25T14:32:18.046805-06:00",
+      "script": "vox_etoro_price_updater_v3.py",
+      "last_run_at": "2026-06-25T10:31:54.967310-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-25T10:31:54.967310-06:00",
+      "state": "OK",
+      "issues": []
+    },
+    {
+      "name": "vox-weekly-verification",
+      "schedule": "0 9 * * 1",
+      "next_run_at": "2026-06-29T09:00:00-06:00",
+      "script": "vox_weekly_verification.py",
+      "last_status": "unknown",
+      "last_error": "",
+      "last_run": "",
+      "state": "WARNING",
+      "issues": [
+        "Unknown status: unknown"
+      ]
+    },
+    {
+      "name": "vox-cron-monitor",
+      "schedule": "0 */6 * * *",
+      "next_run_at": "2026-06-25T18:00:00-06:00",
+      "script": "vox_cron_status_monitor.py",
+      "last_run_at": "2026-06-25T12:00:22.358535-06:00",
+      "last_status": "ok",
+      "last_error": "",
+      "last_run": "2026-06-25T12:00:22.358535-06:00",
+      "state": "OK",
+      "issues": []
+    }
+  ],
+  "issues": [],
+  "warnings": [],
+  "auto_fixed": [],
+  "stats": {
+    "total_jobs": 44,
+    "ok": 37,
+    "warning": 3,
+    "error": 4,
+    "missing_script": 0,
+    "stale": 8
+  },
+  "timestamp": "2026-06-25T12:33:13.057736"
+}

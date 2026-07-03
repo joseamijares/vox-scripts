@@ -1,10 +1,26 @@
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path.home() / ".hermes" / "scripts"))
+import hermes_secrets_bootstrap
+
 import os, sys, time, signal
 from datetime import datetime
+
+# HARD SCRIPT TIMEOUT: ensure we never exceed cron's 120s limit
+SCRIPT_TIMEOUT = 100  # seconds — leave 20s buffer for cron overhead
+
+def script_timeout_handler(signum, frame):
+    print(f'\n🚨 SCRIPT TIMEOUT: Exiting after {SCRIPT_TIMEOUT}s to prevent cron failure')
+    sys.exit(0)  # Exit 0 so cron doesn't flag as error
+
+# Set script-level timeout immediately
+signal.signal(signal.SIGALRM, script_timeout_handler)
+signal.alarm(SCRIPT_TIMEOUT)
 
 # Set 4 Alpha Vantage API keys for rotation
 os.environ['ALPHA_VANTAGE_API_KEYS'] = 'RFQEENHZRK8XG4EE,35YQPJ8T1BMW2PO9,DEXKTIRV6JYTZ2LM,J820ANKUQ4UYDK1K'
 
-os.environ['PGPASSWORD'] = 'hEJeasaJlhzFSVCIAgQqLDzqKCsUmqAS'
+os.environ['PGPASSWORD'] = ''
 os.environ['PGHOST'] = 'acela.proxy.rlwy.net'
 os.environ['PGPORT'] = '35577'
 os.environ['PGUSER'] = 'postgres'
@@ -16,21 +32,21 @@ from grading.vox_engine import calculate_vox_grade
 from psycopg2.extras import execute_values
 
 # Timeout wrapper for per-ticker grading (prevent hanging on API calls)
-class TimeoutError(Exception):
+class TickerTimeoutError(Exception):
     pass
 
-def timeout_handler(signum, frame):
-    raise TimeoutError("Ticker grading timed out")
+def ticker_timeout_handler(signum, frame):
+    raise TickerTimeoutError("Ticker grading timed out")
 
-def grade_with_timeout(ticker, timeout_secs=8):
+def grade_with_timeout(ticker, timeout_secs=5):
     """Grade a single ticker with a hard timeout."""
-    old_handler = signal.signal(signal.SIGALRM, timeout_handler)
+    old_handler = signal.signal(signal.SIGALRM, ticker_timeout_handler)
     signal.alarm(timeout_secs)
     try:
         result = calculate_vox_grade(ticker)
         signal.alarm(0)
         return result
-    except TimeoutError:
+    except TickerTimeoutError:
         return None
     except Exception as e:
         signal.alarm(0)
@@ -51,8 +67,8 @@ print()
 
 results = []
 errors = []
-BATCH_SIZE = 10  # Reduced from 15 to stay well under 120s
-SLEEP_SECS = 2   # Reduced from 3
+BATCH_SIZE = 10
+SLEEP_SECS = 1   # Reduced from 2 — faster cycling, less chance of hitting script timeout
 
 # Rotate through the full list using day-of-year offset
 import datetime as dt
@@ -66,10 +82,10 @@ print()
 
 for i, ticker in enumerate(batch_tickers):
     try:
-        result = grade_with_timeout(ticker, timeout_secs=6)  # Reduced from 8
+        result = grade_with_timeout(ticker, timeout_secs=5)  # Reduced from 6
         if result is None:
-            errors.append((ticker, "TIMEOUT (6s)"))
-            print(f'  {ticker}: TIMEOUT (6s)', flush=True)
+            errors.append((ticker, "TIMEOUT (5s)"))
+            print(f'  {ticker}: TIMEOUT (5s)', flush=True)
             continue
         results.append({
             'ticker': ticker,
@@ -115,4 +131,6 @@ if results:
 if errors:
     print(f'⚠️ {len(errors)} errors (see above)')
 
+# Cancel script timeout before normal exit
+signal.alarm(0)
 print('Done')

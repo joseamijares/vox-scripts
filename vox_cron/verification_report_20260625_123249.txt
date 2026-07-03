@@ -1,0 +1,23 @@
+🔍 **VOX Weekly Verification — Thu Jun 25**
+
+🟢 **Status**: 0 issues, 6 warnings, 0 auto-fixed
+
+| Check | Result |
+|-------|--------|
+| accuracy_issues | ✅ 0 |
+| contradictions | ✅ 0 |
+| inflation_bugs | ✅ 0 |
+| stale_grades | ✅ 0 |
+| outliers | ⚠️ 20 |
+| coverage_gaps | ✅ 0 |
+| sync_issues | ⚠️ 20 |
+
+⚠️ **Warnings**
+  • BTC: Grade jumped 0 points (0 -> 0)
+  • BTC: Grade jumped 0 points (0 -> 0)
+  • BTC: Grade jumped 0 points (0 -> 0)
+  • MS: Grade jumped 0 points (0 -> 0)
+  • CRWV: Grade jumped 0 points (0 -> 0)
+  • 20 broker positions not in positions table
+
+🟡 **Systems operational with warnings. Review before trading.**

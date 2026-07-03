@@ -1,0 +1,28 @@
+{
+  "issues": [
+    "BTC: VOX BUY(0) vs Unified SELL(0)",
+    "BTC: VOX BUY(0) vs Unified SELL(0)",
+    "BTC: VOX BUY(0) vs Unified SELL(0)",
+    "BTC: VOX BUY(0) vs Unified SELL(0)",
+    "RBLX: VOX BUY(0) vs Unified SELL(0)"
+  ],
+  "warnings": [
+    "BTC: Grade jumped 0 points (0 -> 0)",
+    "BTC: Grade jumped 0 points (0 -> 0)",
+    "BTC: Grade jumped 0 points (0 -> 0)",
+    "MS: Grade jumped 0 points (0 -> 0)",
+    "CRWV: Grade jumped 0 points (0 -> 0)",
+    "20 broker positions not in positions table"
+  ],
+  "auto_fixed": [],
+  "stats": {
+    "accuracy_issues": 0,
+    "contradictions": 14,
+    "inflation_bugs": 0,
+    "stale_grades": 0,
+    "outliers": 20,
+    "coverage_gaps": 0,
+    "sync_issues": 20
+  },
+  "timestamp": "2026-06-25T12:31:31.785639"
+}

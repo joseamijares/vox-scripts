@@ -1,0 +1,110 @@
+======================================================================
+VOX ALPHA RESEARCH ENGINE v1.0
+Target: 20% Yearly Profit
+Generated: 2026-06-19T07:00:03.000254
+======================================================================
+
+🌍 MACRO REGIME
+----------------------------------------------------------------------
+  Regime: RISK_ON (75% confidence)
+  VIX: 18.44
+  Key Signals:
+    • fed_rate: NEUTRAL (0% conf)
+    • yield_10y: NEUTRAL (0% conf)
+    • yield_2y: NEUTRAL (0% conf)
+    • dxy: NEUTRAL (0% conf)
+    • vix: NEUTRAL (0% conf)
+
+📈 SECTOR MOMENTUM
+----------------------------------------------------------------------
+  Bitcoin Mining / Data Centers  | Momentum:  67 | Avg Grade: 62.0
+  Space                          | Momentum:  60 | Avg Grade: 60.0
+  Quantum                        | Momentum:  60 | Avg Grade: 60.4
+  AI Infrastructure              | Momentum:  56 | Avg Grade: 56.0
+  Cybersecurity                  | Momentum:  55 | Avg Grade: 55.0
+
+🎯 TOP 20 OPPORTUNITIES (All 6 Layers)
+----------------------------------------------------------------------
+Rank  Ticker   Grade  Opp Score  Action   Trade    Layers
+----------------------------------------------------------------------
+1     MOG-A    75     81         BUY      BUY      M,C
+2     TKR      72     78         BUY      BUY      M,C
+3     MITK     64     70         HOLD     BUY      M,C
+4     TESTWATCH 70     70         HOLD     N/A      M
+5     MU       63     69         HOLD     BUY      M,C
+6     V        62     68         HOLD     BUY      M,C
+7     ASML     64     67         HOLD     N/A      M,C
+8     ILMN     61     67         HOLD     BUY      M,C
+9     IWM      61     67         HOLD     BUY      M,C
+10    MEDP     64     67         HOLD     N/A      M,C
+11    JBL      63     66         HOLD     BUY      M
+12    DLO      65     65         HOLD     N/A      M
+13    FORM     62     65         HOLD     N/A      M,C
+14    VRTX     65     65         HOLD     N/A      M
+15    AMAT     61     64         HOLD     BUY      M
+16    ARM      61     64         HOLD     BUY      M
+17    ATEN     61     64         HOLD     BUY      M
+18    LRCX     61     64         HOLD     BUY      M
+19    ONDS     61     64         HOLD     N/A      M,C
+20    TGT      61     64         HOLD     N/A      M,C
+
+💼 PORTFOLIO STATUS
+----------------------------------------------------------------------
+  HOLD positions: 0 (avg grade: 0.0)
+  SELL positions: 0 (avg grade: 0.0)
+  Total value: $0.00
+
+⭐ SP500 LEADERS NOT IN PORTFOLIO
+----------------------------------------------------------------------
+  HON      | Grade:  75 | Fund:  59 | Tech:  59 | Macro:  63
+  DE       | Grade:  74 | Fund:  52 | Tech:  59 | Macro:  59
+  PG       | Grade:  73 | Fund:  72 | Tech:  68 | Macro:  63
+  DDOG     | Grade:  73 | Fund:  62 | Tech:  64 | Macro:  57
+  ANET     | Grade:  72 | Fund:  79 | Tech:  67 | Macro:  67
+  STLD     | Grade:  72 | Fund:  70 | Tech:  69 | Macro:  58
+  ABBV     | Grade:  72 | Fund:  57 | Tech:  67 | Macro:  63
+  JNJ      | Grade:  72 | Fund:  72 | Tech:  67 | Macro:  61
+  ETN      | Grade:  72 | Fund:  71 | Tech:  59 | Macro:  54
+  LLY      | Grade:  72 | Fund:  74 | Tech:  68 | Macro:  65
+
+📊 TECHNICAL SIGNALS
+----------------------------------------------------------------------
+  Oversold bounce candidates: 0
+  Breakout candidates: 0
+  Alpha Zoo top: MOG-A (score: 72)
+
+💭 SENTIMENT ANALYSIS
+----------------------------------------------------------------------
+  Contrarian opportunities (negative sentiment, high score): 15
+  Bullish consensus: 0
+  Bearish consensus: 0
+
+🎯 FINAL RECOMMENDATIONS
+----------------------------------------------------------------------
+  #1: MOG-A (Score: 81, Grade: 75)
+      Action: BUY
+      Trade Signal: BUY (Grade: 78)
+      Layer Alignment: macro_aligned, contrarian
+
+  #2: TKR (Score: 78, Grade: 72)
+      Action: BUY
+      Trade Signal: BUY (Grade: 75)
+      Layer Alignment: macro_aligned, contrarian
+
+  #3: MITK (Score: 70, Grade: 64)
+      Action: HOLD
+      Trade Signal: BUY (Grade: 63)
+      Layer Alignment: macro_aligned, contrarian
+
+  #4: TESTWATCH (Score: 70, Grade: 70)
+      Action: HOLD
+      Layer Alignment: macro_aligned
+
+  #5: MU (Score: 69, Grade: 63)
+      Action: HOLD
+      Trade Signal: BUY (Grade: 65)
+      Layer Alignment: macro_aligned, contrarian
+
+======================================================================
+END OF REPORT
+======================================================================

@@ -5,6 +5,11 @@ Syncs ALL positions with units > 0 from eToro API (including settled).
 Uses urllib instead of requests to avoid header issues.
 """
 
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path.home() / ".hermes" / "scripts"))
+import hermes_secrets_bootstrap
+
 import os
 import urllib.request
 import urllib.error
@@ -38,7 +43,7 @@ DB_HOST = 'acela.proxy.rlwy.net'
 DB_PORT = 35577
 DB_NAME = 'railway'
 DB_USER = 'postgres'
-DB_PASS = os.environ.get('PGPASSWORD', 'hEJeasaJlhzFSVCIAgQqLDzqKCsUmqAS')
+DB_PASS = os.environ.get('PGPASSWORD', '')
 
 def etoro_request(endpoint: str) -> dict:
     """Make authenticated request to eToro public API using urllib."""

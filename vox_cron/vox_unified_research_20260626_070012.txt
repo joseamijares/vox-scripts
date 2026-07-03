@@ -1,0 +1,98 @@
+🧠 **VOX Unified Research — Fri Jun 26**
+
+🟢 Regime: RISK_ON | VIX 🟢 18.6
+
+🎯 **Top Opportunities**
+  🟠 `TER` g0 | STRONG_BUY | T:0 F:0 M:0
+  🟠 `MU` g0 | STRONG_BUY | T:0 F:0 M:0
+  🟠 `SNDK` g0 | STRONG_BUY | T:0 F:0 M:0
+  🟠 `CARE` g0 | STRONG_BUY | T:0 F:0 M:0
+  🟠 `TGTX` g0 | STRONG_BUY | T:0 F:0 M:0
+
+⚠️ **Contradictions**
+  `CGNX`: VOX SELL(0) vs Unified BUY(0)
+  `TXN`: VOX SELL(0) vs Unified BUY(0)
+  `COHR`: VOX SELL(0) vs Unified BUY(0)
+  `GFS`: VOX SELL(0) vs Unified BUY(0)
+  `ETN`: VOX SELL(0) vs Unified BUY(0)
+
+🚨 **Portfolio Alerts**
+  🔴 `VOO` — Grade 0 + Council SELL
+  🔴 `BTC` — Grade 0 + Council SELL
+  🔴 `CRWD` — Grade 0 + Council SELL
+  🔴 `TSLA` — Grade 0 + Council SELL
+  🔴 `ETH` — Grade 0 + Council SELL
+  🔴 `GOOGL` — Grade 0 + Council SELL
+  🔴 `VTI` — Grade 0 + Council SELL
+  🔴 `OSCR` — Grade 0 + Council SELL
+  🔴 `AAPL` — Grade 0 + Council SELL
+  🔴 `AMZN` — Grade 0 + Council SELL
+  🔴 `SMH` — Grade 0 + Council SELL
+  🔴 `DDOG` — Grade 0 + Council SELL
+  🔴 `POET` — Grade 0 + Council SELL
+  🔴 `BNB` — Grade 0 + Council SELL
+  🔴 `OKLO` — Grade 0 + Council SELL
+  🔴 `BNB-USD` — Grade 0 + Council SELL
+  🔴 `SNOW` — Grade 0 + Council SELL
+  🔴 `TECK` — Grade 0 + Council SELL
+  🔴 `DOGE` — Grade 0 + Council SELL
+  🔴 `DOGE-USD` — Grade 0 + Council SELL
+  🔴 `CPSH` — Grade 0 + Council SELL
+  🔴 `NAFTRAC` — Grade 0 + Council SELL
+  🔴 `NAFTRAC ISHRS` — Grade 0 + Council SELL
+  🔴 `COST` — Grade 0 + Council SELL
+  🔴 `SPOT` — Grade 0 + Council SELL
+  🔴 `SOL` — Grade 0 + Council SELL
+  🔴 `CRSP` — Grade 0 + Council SELL
+  🔴 `SOL-USD` — Grade 0 + Council SELL
+  🔴 `XRP` — Grade 0 + Council SELL
+  🔴 `ARKX` — Grade 0 + Council SELL
+  🔴 `CRWV` — Grade 0 + Council SELL
+  🔴 `TE` — Grade 0 + Council SELL
+  🔴 `WMT` — Grade 0 + Council SELL
+  🔴 `IREN` — Grade 0 + Council SELL
+  🔴 `BIDU` — Grade 0 + Council SELL
+  🔴 `SPRB` — Grade 0 + Council SELL
+  🔴 `MSFT` — Grade 0 + Council SELL
+  🔴 `SIDU` — Grade 0 + Council SELL
+  🔴 `HBAR` — Grade 0 + Council SELL
+  🔴 `HBAR-USD` — Grade 0 + Council SELL
+  🔴 `CEG` — Grade 0 + Council SELL
+  🔴 `JMIA` — Grade 0 + Council SELL
+  🔴 `GBM O` — Grade 0 + Council SELL
+  🔴 `ADA-USD` — Grade 0 + Council SELL
+  🔴 `XLE` — Grade 0 + Council SELL
+  🔴 `COIN` — Grade 0 + Council SELL
+  🔴 `BYND` — Grade 0 + Council SELL
+  🔴 `DASH` — Grade 0 + Council SELL
+  🔴 `BIVI` — Grade 0 + Council SELL
+  🔴 `TRX` — Grade 0 + Council SELL
+  🔴 `A` — Grade 0 + Council SELL
+  🔴 `ADA` — Grade 0 + Council SELL
+  🟡 `NVDA` — Grade 0
+  🟡 `AMD` — Grade 0
+  🟡 `QQQ` — Grade 0
+  🟡 `SHOP` — Grade 0
+  🟡 `APH` — Grade 0
+  🟡 `MELI` — Grade 0
+  🟡 `META` — Grade 0
+  🟡 `AVGO` — Grade 0
+  🟡 `SPCX` — Grade 0
+  🟡 `IBM` — Grade 0
+  🟡 `MNST` — Grade 0
+  🟡 `MU` — Grade 0
+  🟡 `ESTC` — Grade 0
+  🟡 `MS` — Grade 0
+  🟡 `PLTR` — Grade 0
+  🟡 `SE` — Grade 0
+  🟡 `APP` — Grade 0
+  🟡 `TSM` — Grade 0
+  🟡 `CORZ` — Grade 0
+  🟡 `IONQ` — Grade 0
+  🟡 `QLYS` — Grade 0
+  🟡 `CBRS` — Grade 0
+  🟡 `NBIS` — Grade 0
+  🟡 `NUTX` — Grade 0
+  🟡 `DUOL` — Grade 0
+  🟡 `AXS` — Grade 0
+  🟡 `SCCO` — Grade 0

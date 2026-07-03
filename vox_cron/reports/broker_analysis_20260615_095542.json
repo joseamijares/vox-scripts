@@ -1,0 +1,932 @@
+{
+  "timestamp": "2026-06-15T09:55:42.783622",
+  "total_value": "138184.23",
+  "total_positions": 71,
+  "brokers": [
+    {
+      "broker": "eToro",
+      "positions": 49,
+      "total_value_usd": 102726.36,
+      "avg_grade": 55.6,
+      "weighted_grade": 54.0,
+      "risk_adjusted_grade": 50.3,
+      "grade_std": 6.3,
+      "grade_distribution": {
+        "strong_buy": 1,
+        "buy": 9,
+        "hold": 30,
+        "sell": 9,
+        "strong_sell": 0
+      },
+      "sector_concentration": {
+        "top_sector": "Technology",
+        "top_sector_pct": 36.8,
+        "num_sectors": 11
+      },
+      "recommendations": [
+        {
+          "ticker": "BTC",
+          "grade": 46.0,
+          "value_usd": 15483.16,
+          "value_pct": 15.072236571022282,
+          "rec": "TRIM",
+          "action": "Reduce BTC (grade 46, 15.1% allocation)",
+          "sector": "Unknown",
+          "council": "SELL",
+          "upside": -46.3
+        },
+        {
+          "ticker": "CRWD",
+          "grade": 57.0,
+          "value_usd": 10721.29,
+          "value_pct": 10.436746712333626,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Technology",
+          "council": "HOLD",
+          "upside": 179.1
+        },
+        {
+          "ticker": "TSLA",
+          "grade": 47.0,
+          "value_usd": 8852.61,
+          "value_pct": 8.617661523293538,
+          "rec": "WATCH",
+          "action": "Monitor TSLA (grade 47) \u2014 small position, keep watching",
+          "sector": "Consumer Cyclical",
+          "council": "SELL",
+          "upside": 22.2
+        },
+        {
+          "ticker": "NVDA",
+          "grade": 57.0,
+          "value_usd": 7698.07,
+          "value_pct": 7.493763041930039,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Technology",
+          "council": "HOLD",
+          "upside": 133.1
+        },
+        {
+          "ticker": "ETH",
+          "grade": 49.0,
+          "value_usd": 7671.02,
+          "value_pct": 7.467430949563485,
+          "rec": "WATCH",
+          "action": "Monitor ETH (grade 49) \u2014 small position, keep watching",
+          "sector": "Unknown",
+          "council": "SELL",
+          "upside": -14.5
+        },
+        {
+          "ticker": "SHOP",
+          "grade": 60.0,
+          "value_usd": 4594.24,
+          "value_pct": 4.4723087628141425,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Technology",
+          "council": "HOLD",
+          "upside": 156.0
+        },
+        {
+          "ticker": "VOO",
+          "grade": 58.0,
+          "value_usd": 4085.61,
+          "value_pct": 3.977177814925012,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Unknown",
+          "council": "HOLD",
+          "upside": 73.7
+        },
+        {
+          "ticker": "VTI",
+          "grade": 58.0,
+          "value_usd": 3265.84,
+          "value_pct": 3.1791645299220197,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Unknown",
+          "council": "HOLD",
+          "upside": 78.3
+        },
+        {
+          "ticker": "OSCR",
+          "grade": 57.0,
+          "value_usd": 3093.76,
+          "value_pct": 3.011651537151712,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Healthcare",
+          "council": "HOLD",
+          "upside": -16.9
+        },
+        {
+          "ticker": "APH",
+          "grade": 63.0,
+          "value_usd": 2747.52,
+          "value_pct": 2.6746007548598056,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Technology",
+          "council": "HOLD",
+          "upside": 76.6
+        },
+        {
+          "ticker": "DDOG",
+          "grade": 59.0,
+          "value_usd": 2691.06,
+          "value_pct": 2.6196392045819605,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Technology",
+          "council": "HOLD",
+          "upside": 1.0
+        },
+        {
+          "ticker": "COST",
+          "grade": 60.0,
+          "value_usd": 2420.75,
+          "value_pct": 2.356503238311959,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Consumer Defensive",
+          "council": "HOLD",
+          "upside": 50.1
+        },
+        {
+          "ticker": "AAPL",
+          "grade": 57.0,
+          "value_usd": 2179.24,
+          "value_pct": 2.121402919367532,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Technology",
+          "council": "HOLD",
+          "upside": 251.3
+        },
+        {
+          "ticker": "WMT",
+          "grade": 59.0,
+          "value_usd": 1864.72,
+          "value_pct": 1.8152302875328212,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Consumer Defensive",
+          "council": "HOLD",
+          "upside": 166.5
+        },
+        {
+          "ticker": "SNOW",
+          "grade": 49.0,
+          "value_usd": 1842.23,
+          "value_pct": 1.793337172659482,
+          "rec": "WATCH",
+          "action": "Monitor SNOW (grade 49) \u2014 small position, keep watching",
+          "sector": "Technology",
+          "council": "SELL",
+          "upside": 98.0
+        },
+        {
+          "ticker": "BIDU",
+          "grade": 59.0,
+          "value_usd": 1789.42,
+          "value_pct": 1.7419287512961628,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Communication Services",
+          "council": "HOLD",
+          "upside": 42.5
+        },
+        {
+          "ticker": "BNB",
+          "grade": 51.0,
+          "value_usd": 1720.78,
+          "value_pct": 1.6751104585035437,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Unknown",
+          "council": "SELL",
+          "upside": -6.1
+        },
+        {
+          "ticker": "QQQ",
+          "grade": 59.0,
+          "value_usd": 1616.84,
+          "value_pct": 1.573929028537564,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Unknown",
+          "council": "HOLD",
+          "upside": 47.5
+        },
+        {
+          "ticker": "BNB-USD",
+          "grade": 52.0,
+          "value_usd": 1593.26,
+          "value_pct": 1.5509748422897498,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Crypto",
+          "council": "SELL",
+          "upside": 6.7
+        },
+        {
+          "ticker": "TRX",
+          "grade": 55.0,
+          "value_usd": 1438.85,
+          "value_pct": 1.4006628873056541,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Basic Materials",
+          "council": "HOLD",
+          "upside": 15.9
+        },
+        {
+          "ticker": "MSFT",
+          "grade": 56.0,
+          "value_usd": 1390.76,
+          "value_pct": 1.3538491970318043,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Technology",
+          "council": "HOLD",
+          "upside": -2.4
+        },
+        {
+          "ticker": "SMH",
+          "grade": 59.0,
+          "value_usd": 1196.44,
+          "value_pct": 1.1646864543823032,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Unknown",
+          "council": "HOLD",
+          "upside": 62.4
+        },
+        {
+          "ticker": "SPOT",
+          "grade": 65.0,
+          "value_usd": 1143.49,
+          "value_pct": 1.1131417486222626,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Communication Services",
+          "council": "HOLD",
+          "upside": 243.1
+        },
+        {
+          "ticker": "0700.HK",
+          "grade": 69.0,
+          "value_usd": 1111.37,
+          "value_pct": 1.0818742141744342,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Communication Services",
+          "council": "HOLD",
+          "upside": 655.3
+        },
+        {
+          "ticker": "DOGE",
+          "grade": 51.0,
+          "value_usd": 1006.64,
+          "value_pct": 0.9799237508269547,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Unknown",
+          "council": "SELL",
+          "upside": -62.6
+        },
+        {
+          "ticker": "DOGE-USD",
+          "grade": 47.0,
+          "value_usd": 896.46,
+          "value_pct": 0.8726679306071007,
+          "rec": "WATCH",
+          "action": "Monitor DOGE-USD (grade 47) \u2014 small position, keep watching",
+          "sector": "Crypto",
+          "council": "SELL",
+          "upside": -65.6
+        },
+        {
+          "ticker": "AVGO",
+          "grade": 56.0,
+          "value_usd": 794.37,
+          "value_pct": 0.7732874015977986,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Technology",
+          "council": "HOLD",
+          "upside": 26.1
+        },
+        {
+          "ticker": "ESTC",
+          "grade": 63.0,
+          "value_usd": 792.58,
+          "value_pct": 0.771544908239716,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Technology",
+          "council": "HOLD",
+          "upside": -0.9
+        },
+        {
+          "ticker": "CRWV",
+          "grade": 53.0,
+          "value_usd": 727.93,
+          "value_pct": 0.7086107207536607,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Technology",
+          "council": "SELL",
+          "upside": -11.4
+        },
+        {
+          "ticker": "COIN",
+          "grade": 47.0,
+          "value_usd": 704.74,
+          "value_pct": 0.6860361838967138,
+          "rec": "WATCH",
+          "action": "Monitor COIN (grade 47) \u2014 small position, keep watching",
+          "sector": "Financial Services",
+          "council": "SELL",
+          "upside": -36.3
+        },
+        {
+          "ticker": "PLTR",
+          "grade": 53.0,
+          "value_usd": 660.19,
+          "value_pct": 0.6426685419399659,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Technology",
+          "council": "SELL",
+          "upside": 65.0
+        },
+        {
+          "ticker": "OKLO",
+          "grade": 47.0,
+          "value_usd": 644.04,
+          "value_pct": 0.6269471633181593,
+          "rec": "WATCH",
+          "action": "Monitor OKLO (grade 47) \u2014 small position, keep watching",
+          "sector": "Utilities",
+          "council": "SELL",
+          "upside": -47.3
+        },
+        {
+          "ticker": "JMIA",
+          "grade": 51.0,
+          "value_usd": 585.13,
+          "value_pct": 0.5696006360976873,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Consumer Cyclical",
+          "council": "SELL",
+          "upside": -85.1
+        },
+        {
+          "ticker": "MS",
+          "grade": 68.0,
+          "value_usd": 541.65,
+          "value_pct": 0.5272745963158825,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Financial Services",
+          "council": "HOLD",
+          "upside": 8.3
+        },
+        {
+          "ticker": "TE",
+          "grade": 50.0,
+          "value_usd": 529.65,
+          "value_pct": 0.5155930765968931,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Industrials",
+          "council": "SELL",
+          "upside": 5.9
+        },
+        {
+          "ticker": "CORZ",
+          "grade": 60.0,
+          "value_usd": 413.3,
+          "value_pct": 0.40233100832152546,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Technology",
+          "council": "HOLD",
+          "upside": 3.3
+        },
+        {
+          "ticker": "SIDU",
+          "grade": 51.0,
+          "value_usd": 372.0,
+          "value_pct": 0.36212711128867037,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Industrials",
+          "council": "SELL",
+          "upside": -26.1
+        },
+        {
+          "ticker": "CEG",
+          "grade": 52.0,
+          "value_usd": 365.18,
+          "value_pct": 0.35548811424837806,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Utilities",
+          "council": "SELL",
+          "upside": -31.1
+        },
+        {
+          "ticker": "ARKX",
+          "grade": 53.0,
+          "value_usd": 331.64,
+          "value_pct": 0.3228382666338028,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Unknown",
+          "council": "SELL",
+          "upside": 0.5
+        },
+        {
+          "ticker": "CBRS",
+          "grade": 58.0,
+          "value_usd": 315.37,
+          "value_pct": 0.3070000728148064,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Technology",
+          "council": "HOLD",
+          "upside": -31.1
+        },
+        {
+          "ticker": "QLYS",
+          "grade": 62.0,
+          "value_usd": 246.72,
+          "value_pct": 0.24017204542242138,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Technology",
+          "council": "HOLD",
+          "upside": -1.3
+        },
+        {
+          "ticker": "HBAR",
+          "grade": 52.0,
+          "value_usd": 159.89,
+          "value_pct": 0.15564651565576748,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Unknown",
+          "council": "SELL",
+          "upside": -69.9
+        },
+        {
+          "ticker": "HBAR-USD",
+          "grade": 46.0,
+          "value_usd": 150.42,
+          "value_pct": 0.1464278496775317,
+          "rec": "WATCH",
+          "action": "Monitor HBAR-USD (grade 46) \u2014 small position, keep watching",
+          "sector": "Crypto",
+          "council": "SELL",
+          "upside": -71.4
+        },
+        {
+          "ticker": "DASH",
+          "grade": 55.0,
+          "value_usd": 106.9,
+          "value_pct": 0.1040628714966636,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Consumer Cyclical",
+          "council": "SELL",
+          "upside": -85.0
+        },
+        {
+          "ticker": "ADA",
+          "grade": 51.0,
+          "value_usd": 81.78,
+          "value_pct": 0.07960955688491254,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Unknown",
+          "council": "SELL",
+          "upside": -84.1
+        },
+        {
+          "ticker": "ADA-USD",
+          "grade": 47.0,
+          "value_usd": 70.11,
+          "value_pct": 0.06824927895819538,
+          "rec": "WATCH",
+          "action": "Monitor ADA-USD (grade 47) \u2014 small position, keep watching",
+          "sector": "Crypto",
+          "council": "SELL",
+          "upside": -92.4
+        },
+        {
+          "ticker": "BIVI",
+          "grade": 54.0,
+          "value_usd": 12.4,
+          "value_pct": 0.012070903709622346,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Healthcare",
+          "council": "SELL",
+          "upside": -95.1
+        },
+        {
+          "ticker": "A",
+          "grade": 59.0,
+          "value_usd": 3.52,
+          "value_pct": 0.003426579117570214,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Healthcare",
+          "council": "HOLD",
+          "upside": -99.0
+        },
+        {
+          "ticker": "SCCO",
+          "grade": 75.0,
+          "value_usd": 1.42,
+          "value_pct": 0.001382313166747075,
+          "rec": "ADD",
+          "action": "Consider adding to SCCO (grade 75, only 0.0% of portfolio)",
+          "sector": "Basic Materials",
+          "council": "BUY",
+          "upside": 11.1
+        }
+      ],
+      "health_score": 78.4
+    },
+    {
+      "broker": "GBM Main",
+      "positions": 8,
+      "total_value_usd": 17272.96,
+      "avg_grade": 56.6,
+      "weighted_grade": 61.6,
+      "risk_adjusted_grade": 55.7,
+      "grade_std": 6.1,
+      "grade_distribution": {
+        "strong_buy": 0,
+        "buy": 2,
+        "hold": 6,
+        "sell": 0,
+        "strong_sell": 0
+      },
+      "sector_concentration": {
+        "top_sector": "Communication Services",
+        "top_sector_pct": 59.0,
+        "num_sectors": 5
+      },
+      "recommendations": [
+        {
+          "ticker": "GOOGL",
+          "grade": 67.0,
+          "value_usd": 7233.94,
+          "value_pct": 41.880140983363596,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Communication Services",
+          "council": "HOLD",
+          "upside": 145.4
+        },
+        {
+          "ticker": "MELI",
+          "grade": 54.0,
+          "value_usd": 3225.97,
+          "value_pct": 18.67641678091074,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Consumer Cyclical",
+          "council": "SELL",
+          "upside": 139.1
+        },
+        {
+          "ticker": "META",
+          "grade": 67.0,
+          "value_usd": 2952.64,
+          "value_pct": 17.0940012597725,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Communication Services",
+          "council": "HOLD",
+          "upside": -14.9
+        },
+        {
+          "ticker": "AMZN",
+          "grade": 54.0,
+          "value_usd": 2699.71,
+          "value_pct": 15.629689410500575,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Consumer Cyclical",
+          "council": "HOLD",
+          "upside": 298.7
+        },
+        {
+          "ticker": "IBM",
+          "grade": 53.0,
+          "value_usd": 1136.0,
+          "value_pct": 6.5767534921634745,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Technology",
+          "council": "SELL",
+          "upside": -9.5
+        },
+        {
+          "ticker": "BYND",
+          "grade": 55.0,
+          "value_usd": 24.7,
+          "value_pct": 0.1429980732891178,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Consumer Defensive",
+          "council": "HOLD",
+          "upside": -98.8
+        },
+        {
+          "ticker": "GBM O",
+          "grade": 52.0,
+          "value_usd": 0.0,
+          "value_pct": 0.0,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Unknown",
+          "council": "SELL",
+          "upside": 27.1
+        },
+        {
+          "ticker": "NAFTRAC ISHRS",
+          "grade": 51.0,
+          "value_usd": 0.0,
+          "value_pct": 0.0,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Unknown",
+          "council": "SELL",
+          "upside": 1.1
+        }
+      ],
+      "health_score": 70.2
+    },
+    {
+      "broker": "IBKR",
+      "positions": 5,
+      "total_value_usd": 13773.15,
+      "avg_grade": 64.6,
+      "weighted_grade": 63.3,
+      "risk_adjusted_grade": 53.5,
+      "grade_std": 4.2,
+      "grade_distribution": {
+        "strong_buy": 1,
+        "buy": 4,
+        "hold": 0,
+        "sell": 0,
+        "strong_sell": 0
+      },
+      "sector_concentration": {
+        "top_sector": "Technology",
+        "top_sector_pct": 98.4,
+        "num_sectors": 4
+      },
+      "recommendations": [
+        {
+          "ticker": "TSM",
+          "grade": 65.0,
+          "value_usd": 9014.16,
+          "value_pct": 65.4473377549798,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Technology",
+          "council": "HOLD",
+          "upside": 11.1
+        },
+        {
+          "ticker": "AMD",
+          "grade": 60.0,
+          "value_usd": 4534.06,
+          "value_pct": 32.91955725451331,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Technology",
+          "council": "HOLD",
+          "upside": -35.3
+        },
+        {
+          "ticker": "IREN",
+          "grade": 61.0,
+          "value_usd": 224.93,
+          "value_pct": 1.633104990506892,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Financial Services",
+          "council": "HOLD",
+          "upside": 17.7
+        },
+        {
+          "ticker": "APP",
+          "grade": 65.0,
+          "value_usd": 0.0,
+          "value_pct": 0.0,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Communication Services",
+          "council": "HOLD",
+          "upside": 0.0
+        },
+        {
+          "ticker": "MNST",
+          "grade": 72.0,
+          "value_usd": 0.0,
+          "value_pct": 0.0,
+          "rec": "ADD",
+          "action": "Consider adding to MNST (grade 72, only 0.0% of portfolio)",
+          "sector": "Consumer Defensive",
+          "council": "HOLD",
+          "upside": 0.0
+        }
+      ],
+      "health_score": 67.0
+    },
+    {
+      "broker": "Schwab",
+      "positions": 2,
+      "total_value_usd": 1997.65,
+      "avg_grade": 48.5,
+      "weighted_grade": 48.1,
+      "risk_adjusted_grade": 39.1,
+      "grade_std": 0.5,
+      "grade_distribution": {
+        "strong_buy": 0,
+        "buy": 0,
+        "hold": 0,
+        "sell": 2,
+        "strong_sell": 0
+      },
+      "sector_concentration": {
+        "top_sector": "Technology",
+        "top_sector_pct": 89.7,
+        "num_sectors": 2
+      },
+      "recommendations": [
+        {
+          "ticker": "POET",
+          "grade": 48.0,
+          "value_usd": 1791.09,
+          "value_pct": 89.65985032413086,
+          "rec": "TRIM",
+          "action": "Reduce POET (grade 48, 89.7% allocation)",
+          "sector": "Technology",
+          "council": "SELL",
+          "upside": 29.1
+        },
+        {
+          "ticker": "SPRB",
+          "grade": 49.0,
+          "value_usd": 206.56,
+          "value_pct": 10.340149675869146,
+          "rec": "TRIM",
+          "action": "Reduce SPRB (grade 49, 10.3% allocation)",
+          "sector": "Healthcare",
+          "council": "SELL",
+          "upside": -74.4
+        }
+      ],
+      "health_score": 56.3
+    },
+    {
+      "broker": "Binance",
+      "positions": 4,
+      "total_value_usd": 1391.92,
+      "avg_grade": 53.2,
+      "weighted_grade": 50.5,
+      "risk_adjusted_grade": 43.8,
+      "grade_std": 6.6,
+      "grade_distribution": {
+        "strong_buy": 0,
+        "buy": 1,
+        "hold": 2,
+        "sell": 1,
+        "strong_sell": 0
+      },
+      "sector_concentration": {
+        "top_sector": "Crypto",
+        "top_sector_pct": 66.8,
+        "num_sectors": 3
+      },
+      "recommendations": [
+        {
+          "ticker": "SOL",
+          "grade": 52.0,
+          "value_usd": 525.17,
+          "value_pct": 37.72989827001551,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Crypto",
+          "council": "SELL",
+          "upside": 17.6
+        },
+        {
+          "ticker": "SOL-USD",
+          "grade": 51.0,
+          "value_usd": 405.29,
+          "value_pct": 29.11733432955917,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Crypto",
+          "council": "SELL",
+          "upside": -15.5
+        },
+        {
+          "ticker": "XRP",
+          "grade": 46.0,
+          "value_usd": 403.04,
+          "value_pct": 28.95568710845451,
+          "rec": "TRIM",
+          "action": "Reduce XRP (grade 46, 29.0% allocation)",
+          "sector": "Unknown",
+          "council": "SELL",
+          "upside": 17.6
+        },
+        {
+          "ticker": "AXS",
+          "grade": 64.0,
+          "value_usd": 58.42,
+          "value_pct": 4.197080291970803,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Financial Services",
+          "council": "HOLD",
+          "upside": 17.6
+        }
+      ],
+      "health_score": 58.9
+    },
+    {
+      "broker": "GBM USA",
+      "positions": 3,
+      "total_value_usd": 1022.19,
+      "avg_grade": 56.3,
+      "weighted_grade": 59.0,
+      "risk_adjusted_grade": 53.9,
+      "grade_std": 5.6,
+      "grade_distribution": {
+        "strong_buy": 0,
+        "buy": 1,
+        "hold": 2,
+        "sell": 0,
+        "strong_sell": 0
+      },
+      "sector_concentration": {
+        "top_sector": "Technology",
+        "top_sector_pct": 51.5,
+        "num_sectors": 3
+      },
+      "recommendations": [
+        {
+          "ticker": "CPSH",
+          "grade": 64.0,
+          "value_usd": 526.52,
+          "value_pct": 51.50901495808019,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Technology",
+          "council": "BUY",
+          "upside": -34.6
+        },
+        {
+          "ticker": "CRSP",
+          "grade": 54.0,
+          "value_usd": 455.2,
+          "value_pct": 44.531838503605,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Healthcare",
+          "council": "SELL",
+          "upside": -5.7
+        },
+        {
+          "ticker": "XLE",
+          "grade": 51.0,
+          "value_usd": 40.47,
+          "value_pct": 3.959146538314794,
+          "rec": "HOLD",
+          "action": "",
+          "sector": "Unknown",
+          "council": "SELL",
+          "upside": 28.6
+        }
+      ],
+      "health_score": 63.8
+    }
+  ]
+}

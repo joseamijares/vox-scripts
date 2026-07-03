@@ -12,6 +12,11 @@ Replaces random grading with actual market data:
 Stores in vox_grades with data_hash to detect if market changed.
 """
 
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path.home() / ".hermes" / "scripts"))
+import hermes_secrets_bootstrap
+
 import os
 import sys
 import psycopg2
@@ -35,11 +40,7 @@ def ticker_timeout_handler(signum, frame):
     raise TickerTimeoutError(f"yfinance call timed out")
 
 def get_db_password():
-    with open(os.path.expanduser('~/.hermes/.env')) as f:
-        for line in f:
-            if line.startswith('DB_PASSWORD='):
-                return line.strip().split('=', 1)[1]
-    return os.environ.get('PGPASSWORD', '')
+    return os.environ.get('DB_PASSWORD', os.environ.get('PGPASSWORD', ''))
 
 def connect_db():
     return psycopg2.connect(

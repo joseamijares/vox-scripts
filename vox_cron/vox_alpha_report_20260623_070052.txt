@@ -1,0 +1,110 @@
+======================================================================
+VOX ALPHA RESEARCH ENGINE v1.0
+Target: 20% Yearly Profit
+Generated: 2026-06-23T07:00:43.560074
+======================================================================
+
+🌍 MACRO REGIME
+----------------------------------------------------------------------
+  Regime: RISK_ON (75% confidence)
+  VIX: 16.78
+  Key Signals:
+    • copper: BEARISH (0% conf)
+    • yield_2y: NEUTRAL (0% conf)
+    • dxy: NEUTRAL (0% conf)
+    • vix: NEUTRAL (0% conf)
+    • oil_wti: BULLISH (0% conf)
+
+📈 SECTOR MOMENTUM
+----------------------------------------------------------------------
+  Bitcoin Mining / Data Centers  | Momentum:  67 | Avg Grade: 62.0
+  Quantum                        | Momentum:  60 | Avg Grade: 60.4
+  Space                          | Momentum:  60 | Avg Grade: 60.0
+  AI Infrastructure              | Momentum:  56 | Avg Grade: 56.0
+  Cybersecurity                  | Momentum:  55 | Avg Grade: 55.0
+
+🎯 TOP 20 OPPORTUNITIES (All 6 Layers)
+----------------------------------------------------------------------
+Rank  Ticker   Grade  Opp Score  Action   Trade    Layers
+----------------------------------------------------------------------
+1     QLYS     82     87         STRONG_BUY ADD      M
+2     DUOL     86     86         STRONG_BUY N/A      M
+3     ESTC     80     83         STRONG_BUY BUY      M
+4     MS       78     81         BUY      BUY      M
+5     TSM      77     80         BUY      BUY      M
+6     DDD      75     78         BUY      BUY      M
+7     NVDA     74     77         BUY      HOLD     M,C
+8     APH      73     76         BUY      BUY      M
+9     CORZ     73     76         BUY      BUY      M
+10    DASH     71     76         BUY      ADD      M
+11    AMD      70     75         BUY      ADD      M
+12    CRWD     70     73         BUY      BUY      M
+13    CRWV     68     73         BUY      ADD      M
+14    BIVI     67     72         BUY      ADD      M
+15    SCCO     69     72         BUY      BUY      M
+16    MNST     71     71         BUY      HOLD     M
+17    OSCR     71     71         BUY      HOLD     M
+18    RIOT     68     71         BUY      BUY      M
+19    TE       68     71         BUY      BUY      M
+20    ABBV     67     70         BUY      BUY      M
+
+💼 PORTFOLIO STATUS
+----------------------------------------------------------------------
+  HOLD positions: 0 (avg grade: 0.0)
+  SELL positions: 0 (avg grade: 0.0)
+  Total value: $0.00
+
+⭐ SP500 LEADERS NOT IN PORTFOLIO
+----------------------------------------------------------------------
+  HON      | Grade:  75 | Fund:  59 | Tech:  59 | Macro:  63
+  DE       | Grade:  74 | Fund:  52 | Tech:  59 | Macro:  59
+  PG       | Grade:  73 | Fund:  72 | Tech:  68 | Macro:  63
+  DDOG     | Grade:  73 | Fund:  62 | Tech:  64 | Macro:  57
+  VRT      | Grade:  72 | Fund:  74 | Tech:  46 | Macro:  64
+  JNJ      | Grade:  72 | Fund:  72 | Tech:  67 | Macro:  61
+  ABBV     | Grade:  72 | Fund:  57 | Tech:  67 | Macro:  63
+  ETN      | Grade:  72 | Fund:  71 | Tech:  59 | Macro:  54
+  ANET     | Grade:  72 | Fund:  79 | Tech:  67 | Macro:  67
+  STLD     | Grade:  72 | Fund:  70 | Tech:  69 | Macro:  58
+
+📊 TECHNICAL SIGNALS
+----------------------------------------------------------------------
+  Oversold bounce candidates: 0
+  Breakout candidates: 0
+  Alpha Zoo top: MOG-A (score: 72)
+
+💭 SENTIMENT ANALYSIS
+----------------------------------------------------------------------
+  Contrarian opportunities (negative sentiment, high score): 15
+  Bullish consensus: 0
+  Bearish consensus: 0
+
+🎯 FINAL RECOMMENDATIONS
+----------------------------------------------------------------------
+  #1: QLYS (Score: 87, Grade: 82)
+      Action: STRONG_BUY
+      Trade Signal: ADD (Grade: 73)
+      Layer Alignment: macro_aligned
+
+  #2: DUOL (Score: 86, Grade: 86)
+      Action: STRONG_BUY
+      Layer Alignment: macro_aligned
+
+  #3: ESTC (Score: 83, Grade: 80)
+      Action: STRONG_BUY
+      Trade Signal: BUY (Grade: 65)
+      Layer Alignment: macro_aligned
+
+  #4: MS (Score: 81, Grade: 78)
+      Action: BUY
+      Trade Signal: BUY (Grade: 63)
+      Layer Alignment: macro_aligned
+
+  #5: TSM (Score: 80, Grade: 77)
+      Action: BUY
+      Trade Signal: BUY (Grade: 70)
+      Layer Alignment: macro_aligned
+
+======================================================================
+END OF REPORT
+======================================================================

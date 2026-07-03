@@ -1,0 +1,108 @@
+======================================================================
+VOX ALPHA RESEARCH ENGINE v1.0
+Target: 20% Yearly Profit
+Generated: 2026-06-20T15:00:57.673833
+======================================================================
+
+🌍 MACRO REGIME
+----------------------------------------------------------------------
+  Regime: RISK_ON (75% confidence)
+  VIX: 18.44
+  Key Signals:
+    • AI_DEMAND_NUCLEAR: BULLISH (0% conf)
+    • AI_DEMAND_ENERGY: BULLISH (0% conf)
+    • DOLLAR_STRENGTHENING: BEARISH (0% conf)
+    • YIELD_CURVE_NORMAL: BULLISH (0% conf)
+    • vix: NEUTRAL (0% conf)
+
+📈 SECTOR MOMENTUM
+----------------------------------------------------------------------
+  Bitcoin Mining / Data Centers  | Momentum:  67 | Avg Grade: 62.0
+  Space                          | Momentum:  60 | Avg Grade: 60.0
+  Quantum                        | Momentum:  60 | Avg Grade: 60.4
+  AI Infrastructure              | Momentum:  56 | Avg Grade: 56.0
+  Cybersecurity                  | Momentum:  55 | Avg Grade: 55.0
+
+🎯 TOP 20 OPPORTUNITIES (All 6 Layers)
+----------------------------------------------------------------------
+Rank  Ticker   Grade  Opp Score  Action   Trade    Layers
+----------------------------------------------------------------------
+1     MOG-A    75     81         BUY      BUY      M,C
+2     TKR      72     78         BUY      BUY      M,C
+3     BEDU     75     75         BUY      N/A      M
+4     GDLNF    75     75         BUY      N/A      M
+5     TSCO     75     75         BUY      N/A      M
+6     UCTT     75     75         BUY      N/A      M
+7     ACB      74     74         BUY      N/A      M
+8     AMKR     74     74         BUY      N/A      M
+9     CCMP     74     74         BUY      N/A      M
+10    NAK      74     74         BUY      N/A      M
+11    OROCF    74     74         BUY      N/A      M
+12    RCK      74     74         BUY      N/A      M
+13    TSM      71     74         HOLD     BUY      M
+14    MKSI     73     73         BUY      N/A      M
+15    MTL      73     73         BUY      N/A      M
+16    VISL     73     73         BUY      N/A      M
+17    BAC      69     72         BUY      BUY      M
+18    HOOD     69     72         BUY      BUY      M
+19    COHU     71     71         BUY      N/A      M
+20    LGND     71     71         BUY      N/A      M
+
+💼 PORTFOLIO STATUS
+----------------------------------------------------------------------
+  HOLD positions: 0 (avg grade: 0.0)
+  SELL positions: 0 (avg grade: 0.0)
+  Total value: $0.00
+
+⭐ SP500 LEADERS NOT IN PORTFOLIO
+----------------------------------------------------------------------
+  HON      | Grade:  75 | Fund:  59 | Tech:  59 | Macro:  63
+  DE       | Grade:  74 | Fund:  52 | Tech:  59 | Macro:  59
+  PG       | Grade:  73 | Fund:  72 | Tech:  68 | Macro:  63
+  DDOG     | Grade:  73 | Fund:  62 | Tech:  64 | Macro:  57
+  ANET     | Grade:  72 | Fund:  79 | Tech:  67 | Macro:  67
+  STLD     | Grade:  72 | Fund:  70 | Tech:  69 | Macro:  58
+  ABBV     | Grade:  72 | Fund:  57 | Tech:  67 | Macro:  63
+  JNJ      | Grade:  72 | Fund:  72 | Tech:  67 | Macro:  61
+  ETN      | Grade:  72 | Fund:  71 | Tech:  59 | Macro:  54
+  LLY      | Grade:  72 | Fund:  74 | Tech:  68 | Macro:  65
+
+📊 TECHNICAL SIGNALS
+----------------------------------------------------------------------
+  Oversold bounce candidates: 0
+  Breakout candidates: 0
+  Alpha Zoo top: MOG-A (score: 72)
+
+💭 SENTIMENT ANALYSIS
+----------------------------------------------------------------------
+  Contrarian opportunities (negative sentiment, high score): 15
+  Bullish consensus: 0
+  Bearish consensus: 0
+
+🎯 FINAL RECOMMENDATIONS
+----------------------------------------------------------------------
+  #1: MOG-A (Score: 81, Grade: 75)
+      Action: BUY
+      Trade Signal: BUY (Grade: 78)
+      Layer Alignment: macro_aligned, contrarian
+
+  #2: TKR (Score: 78, Grade: 72)
+      Action: BUY
+      Trade Signal: BUY (Grade: 75)
+      Layer Alignment: macro_aligned, contrarian
+
+  #3: BEDU (Score: 75, Grade: 75)
+      Action: BUY
+      Layer Alignment: macro_aligned
+
+  #4: GDLNF (Score: 75, Grade: 75)
+      Action: BUY
+      Layer Alignment: macro_aligned
+
+  #5: TSCO (Score: 75, Grade: 75)
+      Action: BUY
+      Layer Alignment: macro_aligned
+
+======================================================================
+END OF REPORT
+======================================================================

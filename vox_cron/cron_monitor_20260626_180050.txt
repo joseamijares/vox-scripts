@@ -1,0 +1,12 @@
+🔧 **VOX Cron Monitor — Fri Jun 26 18:00**
+
+🟢 **Jobs**: 51 total | 49 OK | 0 error | 2 warning | 0 missing | 10 stale
+
+🟡 **Stale Jobs**
+  • `vox-sector-scan-weekly`: Last run 2026-06-22T10:00:52.936937-06:00
+  • `weekly-portfolio-sync`: Last run 2026-06-24T10:08:13.625883-06:00
+  • `vox-liquid-universe-builder`: Last run 2026-06-21T18:02:12.958017-06:00
+  • `vox-weekly-stock-adder`: Last run 2026-06-21T19:00:42.342249-06:00
+  • `vox-weekly-progress`: Last run 2026-06-22T08:00:30.738141-06:00
+
+📊 **Health Score**: 96%

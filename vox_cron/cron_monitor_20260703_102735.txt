@@ -1,0 +1,11 @@
+🔧 **VOX Cron Monitor — Fri Jul 03 10:27**
+
+🔴 **Jobs**: 42 total | 37 OK | 4 error | 1 warning | 0 missing | 0 stale
+
+🔴 **Failed Jobs**
+  • `vox-cron-monitor`: Last run failed: Script exited with code 1
+  • `vox-compounding-tracker`: Last run failed: Script exited with code 1
+  • `vox-ai-council`: Last run failed: Script not found: /Users/jos/.hermes/scripts/vox_cron/vox_council_research.py --run
+  • `vox-daily-research-brief`: Last run failed: Script not found: /Users/jos/.hermes/scripts/vox_cron/vox_daily_research_brief.py --run --model deep
+
+📊 **Health Score**: 88%

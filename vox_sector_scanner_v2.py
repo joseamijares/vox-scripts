@@ -5,10 +5,34 @@ Grades portfolio positions by sector, identifies sector rotation opportunities.
 Fetches live data from Railway Postgres.
 """
 
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path.home() / ".hermes" / "scripts"))
+import hermes_secrets_bootstrap
+
 import json
 import urllib.request
 from datetime import datetime
 from collections import defaultdict
+import json
+from pathlib import Path
+
+SCRIPT_DIR = Path.home() / ".hermes" / "scripts"
+
+def load_unified_grades():
+    """Load unified grades from single source of truth"""
+    unified_path = SCRIPT_DIR / "vox_unified_grades.json"
+    if not unified_path.exists():
+        return {}
+    with open(unified_path) as f:
+        return json.load(f)
+
+def get_unified_grade(ticker, unified_grades):
+    """Get grade from unified source"""
+    if ticker in unified_grades.get("grades", {}):
+        return unified_grades["grades"][ticker].get("grade", 0)
+    return 0
+
 
 DASHBOARD_API = "https://web-production-9e321.up.railway.app/api"
 

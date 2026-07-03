@@ -1,0 +1,177 @@
+{
+  "checklist": {
+    "db_connection": false,
+    "all_tables_queried": false,
+    "cross_validated": true,
+    "external_research": "MANUAL_REQUIRED",
+    "social_research": "MANUAL_REQUIRED"
+  },
+  "data": {
+    "market_regime": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "sector_momentum": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "sp500_sector_leaders": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "technical_signals": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "sentiment_scores": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "vox_grades": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "watchlist": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "positions": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "pattern_alerts": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "trade_signals": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "macro_signals": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "sp500_grades": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "sp500_alerts": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "sp500_universe": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "commodity_prices": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "council_deliberations": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "cron_runs": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "geopolitical_events": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "supply_chain_events": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "weather_patterns": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "weather_risks": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "alerts": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "journal": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "system_logs": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "watchlist_grades": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "watchlist_old": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "plays": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "broker_accounts": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "broker_holdings": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "broker_positions": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "broker_status": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    },
+    "unified_grades": {
+      "status": "ERROR",
+      "error": "Password for user postgres: \npsql: error: connection to server at \"acela.proxy.rlwy.net\" (66.33.22.226), port 35577 failed: fe_sendauth: no password supplied\n"
+    }
+  },
+  "errors": [
+    "Database connection failed",
+    "Table market_regime query failed",
+    "Table sector_momentum query failed",
+    "Table sp500_sector_leaders query failed",
+    "Table technical_signals query failed",
+    "Table sentiment_scores query failed",
+    "Table vox_grades query failed",
+    "Table watchlist query failed",
+    "Table positions query failed",
+    "Table pattern_alerts query failed",
+    "Table trade_signals query failed",
+    "Table macro_signals query failed",
+    "Table sp500_grades query failed",
+    "Table sp500_alerts query failed",
+    "Table sp500_universe query failed",
+    "Table commodity_prices query failed",
+    "Table council_deliberations query failed",
+    "Table cron_runs query failed",
+    "Table geopolitical_events query failed",
+    "Table supply_chain_events query failed",
+    "Table weather_patterns query failed",
+    "Table weather_risks query failed",
+    "Table alerts query failed",
+    "Table journal query failed",
+    "Table system_logs query failed",
+    "Table watchlist_grades query failed",
+    "Table watchlist_old query failed",
+    "Table plays query failed",
+    "Table broker_accounts query failed",
+    "Table broker_holdings query failed",
+    "Table broker_positions query failed",
+    "Table broker_status query failed",
+    "Table unified_grades query failed"
+  ],
+  "warnings": [],
+  "can_recommend": false,
+  "timestamp": "2026-07-03T06:00:43.615480"
+}

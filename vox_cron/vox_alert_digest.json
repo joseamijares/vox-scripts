@@ -1,25 +1,25 @@
 {
   "type": "alert_digest",
-  "generated_at": "2026-06-10T15:13:13.648374",
+  "generated_at": "2026-06-17T18:59:20.614799",
   "portfolio_summary": {
-    "total_positions": 71,
-    "total_aum": 196197.66554610743,
+    "total_positions": 72,
+    "total_aum": 196978.46554610744,
     "top_holdings": [
       {
         "rank": 1,
         "ticker": "VOO",
         "value": 21518.157142857144,
-        "pct_aum": 0.10967590813561577,
-        "grade": 54,
-        "council": "SELL",
+        "pct_aum": 0.10924116544008874,
+        "grade": 69,
+        "council": "HOLD",
         "sector": ""
       },
       {
         "rank": 2,
         "ticker": "IBM",
         "value": 19880.0,
-        "pct_aum": 0.10132638400495189,
-        "grade": 56,
+        "pct_aum": 0.10092473786352356,
+        "grade": 47,
         "council": "HOLD",
         "sector": "Technology"
       },
@@ -27,8 +27,8 @@
         "rank": 3,
         "ticker": "BTC",
         "value": 15483.163121831698,
-        "pct_aum": 0.07891614346549439,
-        "grade": 49,
+        "pct_aum": 0.07860332894210459,
+        "grade": 36,
         "council": "SELL",
         "sector": null
       },
@@ -36,8 +36,8 @@
         "rank": 4,
         "ticker": "CRWD",
         "value": 12937.332857142857,
-        "pct_aum": 0.06594029965204923,
-        "grade": 51,
+        "pct_aum": 0.0656789198823085,
+        "grade": 70,
         "council": "SELL",
         "sector": "Technology"
       },
@@ -45,8 +45,8 @@
         "rank": 5,
         "ticker": "TSLA",
         "value": 10819.342571428571,
-        "pct_aum": 0.05514511368579955,
-        "grade": 49,
+        "pct_aum": 0.054926524792610135,
+        "grade": 42,
         "council": "SELL",
         "sector": "Consumer Cyclical"
       },
@@ -54,8 +54,8 @@
         "rank": 6,
         "ticker": "NVDA",
         "value": 9170.106857142857,
-        "pct_aum": 0.04673912317773137,
-        "grade": 57,
+        "pct_aum": 0.046553854664871365,
+        "grade": 45,
         "council": "HOLD",
         "sector": "Technology"
       },
@@ -63,8 +63,8 @@
         "rank": 7,
         "ticker": "AMD",
         "value": 7676.389999999999,
-        "pct_aum": 0.03912579682654792,
-        "grade": 55,
+        "pct_aum": 0.03897070666439505,
+        "grade": 69,
         "council": "HOLD",
         "sector": "Technology"
       },
@@ -72,8 +72,8 @@
         "rank": 8,
         "ticker": "ETH",
         "value": 7671.0207261778005,
-        "pct_aum": 0.039098430171561206,
-        "grade": 49,
+        "pct_aum": 0.038943448487683635,
+        "grade": 31,
         "council": "SELL",
         "sector": null
       },
@@ -81,36 +81,37 @@
         "rank": 9,
         "ticker": "GOOGL",
         "value": 7663.222857142857,
-        "pct_aum": 0.03905868520816809,
-        "grade": 63,
-        "council": "HOLD",
+        "pct_aum": 0.03890386106875779,
+        "grade": 43,
+        "council": "SELL",
         "sector": "Communication Services"
       },
       {
         "rank": 10,
         "ticker": "QQQ",
         "value": 7536.848,
-        "pct_aum": 0.03841456512248258,
-        "grade": 54,
-        "council": "SELL",
+        "pct_aum": 0.03826229420106749,
+        "grade": 70,
+        "council": "HOLD",
         "sector": ""
-      }
-    ],
-    "systemic_issues": [
-      {
-        "name": "Council Threshold Drift",
-        "detail": "27 position(s) with council=SELL but grade \u226550. Council logic is misaligned with grade scale (50-59 = HOLD). Review but do NOT auto-liquidate."
       }
     ]
   },
   "alerts": {
-    "critical": [],
+    "critical": [
+      {
+        "ticker": "ETH",
+        "severity": "CRITICAL",
+        "type": "SELL",
+        "message": "Grade 31 \u2014 cut loss"
+      }
+    ],
     "action": [
       {
-        "ticker": "VOO",
+        "ticker": "BTC",
         "severity": "ACTION",
-        "type": "COUNCIL_SELL",
-        "message": "Council consensus SELL"
+        "type": "SELL",
+        "message": "Grade 36 \u2014 review thesis"
       },
       {
         "ticker": "BTC",
@@ -127,6 +128,12 @@
       {
         "ticker": "TSLA",
         "severity": "ACTION",
+        "type": "SELL",
+        "message": "Grade 42 \u2014 review thesis"
+      },
+      {
+        "ticker": "TSLA",
+        "severity": "ACTION",
         "type": "COUNCIL_SELL",
         "message": "Council consensus SELL"
       },
@@ -137,13 +144,19 @@
         "message": "Council consensus SELL"
       },
       {
-        "ticker": "QQQ",
+        "ticker": "GOOGL",
+        "severity": "ACTION",
+        "type": "SELL",
+        "message": "Grade 43 \u2014 review thesis"
+      },
+      {
+        "ticker": "GOOGL",
         "severity": "ACTION",
         "type": "COUNCIL_SELL",
         "message": "Council consensus SELL"
       },
       {
-        "ticker": "VTI",
+        "ticker": "AAPL",
         "severity": "ACTION",
         "type": "COUNCIL_SELL",
         "message": "Council consensus SELL"
@@ -155,10 +168,46 @@
         "message": "Council consensus SELL"
       },
       {
+        "ticker": "META",
+        "severity": "ACTION",
+        "type": "SELL",
+        "message": "Grade 35 \u2014 review thesis"
+      },
+      {
+        "ticker": "AMZN",
+        "severity": "ACTION",
+        "type": "SELL",
+        "message": "Grade 43 \u2014 review thesis"
+      },
+      {
+        "ticker": "AMZN",
+        "severity": "ACTION",
+        "type": "COUNCIL_SELL",
+        "message": "Council consensus SELL"
+      },
+      {
         "ticker": "DDOG",
         "severity": "ACTION",
         "type": "COUNCIL_SELL",
         "message": "Council consensus SELL"
+      },
+      {
+        "ticker": "COST",
+        "severity": "ACTION",
+        "type": "SELL",
+        "message": "Grade 43 \u2014 review thesis"
+      },
+      {
+        "ticker": "COST",
+        "severity": "ACTION",
+        "type": "COUNCIL_SELL",
+        "message": "Council consensus SELL"
+      },
+      {
+        "ticker": "AVGO",
+        "severity": "ACTION",
+        "type": "SELL",
+        "message": "Grade 43 \u2014 review thesis"
       },
       {
         "ticker": "SMH",
@@ -167,7 +216,13 @@
         "message": "Council consensus SELL"
       },
       {
-        "ticker": "SNOW",
+        "ticker": "WMT",
+        "severity": "ACTION",
+        "type": "SELL",
+        "message": "Grade 43 \u2014 review thesis"
+      },
+      {
+        "ticker": "WMT",
         "severity": "ACTION",
         "type": "COUNCIL_SELL",
         "message": "Council consensus SELL"
@@ -177,6 +232,12 @@
         "severity": "ACTION",
         "type": "COUNCIL_SELL",
         "message": "Council consensus SELL"
+      },
+      {
+        "ticker": "BIDU",
+        "severity": "ACTION",
+        "type": "SELL",
+        "message": "Grade 35 \u2014 review thesis"
       },
       {
         "ticker": "BIDU",
@@ -194,7 +255,7 @@
         "ticker": "OKLO",
         "severity": "ACTION",
         "type": "SELL",
-        "message": "Grade 42 \u2014 review thesis"
+        "message": "Grade 43 \u2014 review thesis"
       },
       {
         "ticker": "OKLO",
@@ -210,6 +271,36 @@
       },
       {
         "ticker": "TRX",
+        "severity": "ACTION",
+        "type": "SELL",
+        "message": "Grade 41 \u2014 review thesis"
+      },
+      {
+        "ticker": "TRX",
+        "severity": "ACTION",
+        "type": "COUNCIL_SELL",
+        "message": "Council consensus SELL"
+      },
+      {
+        "ticker": "MSFT",
+        "severity": "ACTION",
+        "type": "SELL",
+        "message": "Grade 41 \u2014 review thesis"
+      },
+      {
+        "ticker": "MSFT",
+        "severity": "ACTION",
+        "type": "COUNCIL_SELL",
+        "message": "Council consensus SELL"
+      },
+      {
+        "ticker": "SPOT",
+        "severity": "ACTION",
+        "type": "COUNCIL_SELL",
+        "message": "Council consensus SELL"
+      },
+      {
+        "ticker": "0700.HK",
         "severity": "ACTION",
         "type": "COUNCIL_SELL",
         "message": "Council consensus SELL"
@@ -233,6 +324,12 @@
         "message": "Council consensus SELL"
       },
       {
+        "ticker": "NAFTRAC",
+        "severity": "ACTION",
+        "type": "COUNCIL_SELL",
+        "message": "Council consensus SELL"
+      },
+      {
         "ticker": "CRWV",
         "severity": "ACTION",
         "type": "COUNCIL_SELL",
@@ -242,13 +339,19 @@
         "ticker": "COIN",
         "severity": "ACTION",
         "type": "SELL",
-        "message": "Grade 41 \u2014 review thesis"
+        "message": "Grade 43 \u2014 review thesis"
       },
       {
         "ticker": "COIN",
         "severity": "ACTION",
         "type": "COUNCIL_SELL",
         "message": "Council consensus SELL"
+      },
+      {
+        "ticker": "PLTR",
+        "severity": "ACTION",
+        "type": "SELL",
+        "message": "Grade 44 \u2014 review thesis"
       },
       {
         "ticker": "PLTR",
@@ -263,7 +366,19 @@
         "message": "Council consensus SELL"
       },
       {
+        "ticker": "MS",
+        "severity": "ACTION",
+        "type": "COUNCIL_SELL",
+        "message": "Council consensus SELL"
+      },
+      {
         "ticker": "TE",
+        "severity": "ACTION",
+        "type": "COUNCIL_SELL",
+        "message": "Council consensus SELL"
+      },
+      {
+        "ticker": "CPSH",
         "severity": "ACTION",
         "type": "COUNCIL_SELL",
         "message": "Council consensus SELL"
@@ -275,7 +390,19 @@
         "message": "Council consensus SELL"
       },
       {
+        "ticker": "APP",
+        "severity": "ACTION",
+        "type": "COUNCIL_SELL",
+        "message": "Council consensus SELL"
+      },
+      {
         "ticker": "CRSP",
+        "severity": "ACTION",
+        "type": "COUNCIL_SELL",
+        "message": "Council consensus SELL"
+      },
+      {
+        "ticker": "CORZ",
         "severity": "ACTION",
         "type": "COUNCIL_SELL",
         "message": "Council consensus SELL"
@@ -285,6 +412,12 @@
         "severity": "ACTION",
         "type": "COUNCIL_SELL",
         "message": "Council consensus SELL"
+      },
+      {
+        "ticker": "XRP",
+        "severity": "ACTION",
+        "type": "SELL",
+        "message": "Grade 38 \u2014 review thesis"
       },
       {
         "ticker": "XRP",
@@ -319,12 +452,6 @@
       {
         "ticker": "SPRB",
         "severity": "ACTION",
-        "type": "SELL",
-        "message": "Grade 44 \u2014 review thesis"
-      },
-      {
-        "ticker": "SPRB",
-        "severity": "ACTION",
         "type": "COUNCIL_SELL",
         "message": "Council consensus SELL"
       },
@@ -353,6 +480,12 @@
         "message": "Council consensus SELL"
       },
       {
+        "ticker": "DASH",
+        "severity": "ACTION",
+        "type": "THESIS_DISCONNECT",
+        "message": "Grade 70 but down >20% \u2014 verify thesis"
+      },
+      {
         "ticker": "ADA",
         "severity": "ACTION",
         "type": "COUNCIL_SELL",
@@ -365,16 +498,22 @@
         "message": "Council consensus SELL"
       },
       {
-        "ticker": "AXS",
+        "ticker": "XLE",
         "severity": "ACTION",
-        "type": "COUNCIL_SELL",
-        "message": "Council consensus SELL"
+        "type": "SELL",
+        "message": "Grade 37 \u2014 review thesis"
       },
       {
         "ticker": "XLE",
         "severity": "ACTION",
         "type": "COUNCIL_SELL",
         "message": "Council consensus SELL"
+      },
+      {
+        "ticker": "BYND",
+        "severity": "ACTION",
+        "type": "SELL",
+        "message": "Grade 43 \u2014 review thesis"
       },
       {
         "ticker": "BYND",
@@ -387,9 +526,21 @@
         "severity": "ACTION",
         "type": "COUNCIL_SELL",
         "message": "Council consensus SELL"
+      },
+      {
+        "ticker": "BIVI",
+        "severity": "ACTION",
+        "type": "THESIS_DISCONNECT",
+        "message": "Grade 73 but down >20% \u2014 verify thesis"
+      },
+      {
+        "ticker": "A",
+        "severity": "ACTION",
+        "type": "COUNCIL_SELL",
+        "message": "Council consensus SELL"
       }
     ],
     "watch": []
   },
-  "alert_count": 47
+  "alert_count": 73
 }

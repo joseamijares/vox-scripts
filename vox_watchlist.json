@@ -1,6 +1,6 @@
 {
-  "updated": "2026-05-27T14:56:42.179804+00:00",
-  "count": 80,
+  "updated": "2026-06-17T16:21:29.223703Z",
+  "count": 238,
   "watchlist": [
     {
       "ticker": "A",
@@ -49,7 +49,7 @@
       "ticker": "AMAT",
       "grade": 78,
       "signal": "STRONG_BUY",
-      "sector": "Technology",
+      "sector": "Semi Equipment",
       "price": 454.89,
       "buy_zone": 411.15,
       "stop_loss": 365.76,
@@ -63,7 +63,7 @@
       "ticker": "AMD",
       "grade": 69,
       "signal": "BUY",
-      "sector": "Quantum",
+      "sector": "Semiconductors",
       "price": 503.89,
       "buy_zone": 400.1,
       "stop_loss": 300.7,
@@ -105,7 +105,7 @@
       "ticker": "APLD",
       "grade": 78,
       "signal": "STRONG_BUY",
-      "sector": "AI Infrastructure",
+      "sector": "Data Centers",
       "price": 45.02715,
       "buy_zone": 42.882999999999996,
       "stop_loss": 38.369,
@@ -146,7 +146,7 @@
     },
     {
       "ticker": "ASML",
-      "sector": "Quantum",
+      "sector": "Semi Equipment",
       "added_at": "2026-05-27T00:00:00Z"
     },
     {
@@ -167,7 +167,7 @@
       "ticker": "AVGO",
       "grade": 69,
       "signal": "BUY",
-      "sector": "Technology",
+      "sector": "Networking",
       "price": 422.01,
       "buy_zone": 403.88,
       "stop_loss": 382.81,
@@ -275,7 +275,7 @@
     },
     {
       "ticker": "BKSY",
-      "sector": "Quantum",
+      "sector": "Space",
       "added_at": "2026-05-27T00:00:00Z"
     },
     {
@@ -330,7 +330,7 @@
       "ticker": "CEG",
       "grade": 65,
       "signal": "BUY",
-      "sector": "Utilities",
+      "sector": "Power",
       "price": 301.57,
       "buy_zone": 283.45,
       "stop_loss": 248.42,
@@ -347,7 +347,7 @@
     },
     {
       "ticker": "CIFR",
-      "sector": "AI Infrastructure",
+      "sector": "Data Centers",
       "added_at": "2026-05-27T00:00:00Z"
     },
     {
@@ -362,7 +362,7 @@
     },
     {
       "ticker": "COHR",
-      "sector": "Quantum",
+      "sector": "Photonics",
       "added_at": "2026-05-27T00:00:00Z"
     },
     {
@@ -381,7 +381,7 @@
     },
     {
       "ticker": "CORZ",
-      "sector": "AI Infrastructure",
+      "sector": "Data Centers",
       "added_at": "2026-05-27T00:00:00Z"
     },
     {
@@ -611,7 +611,7 @@
     },
     {
       "ticker": "HIVE",
-      "sector": "AI Infrastructure",
+      "sector": "Data Centers",
       "added_at": "2026-05-27T00:00:00Z"
     },
     {
@@ -660,7 +660,7 @@
     },
     {
       "ticker": "IREN",
-      "sector": "Technology",
+      "sector": "Data Centers",
       "added_at": "2026-05-27T00:00:00Z"
     },
     {
@@ -724,7 +724,7 @@
       "ticker": "KLAC",
       "grade": 78,
       "signal": "STRONG_BUY",
-      "sector": "Technology",
+      "sector": "Semi Equipment",
       "price": 2011.39,
       "buy_zone": 1778.51,
       "stop_loss": 1596.62,
@@ -748,7 +748,7 @@
       "ticker": "LITE",
       "grade": 77,
       "signal": "STRONG_BUY",
-      "sector": "Quantum",
+      "sector": "Photonics",
       "price": 908.532975,
       "buy_zone": 865.2694999999999,
       "stop_loss": 774.1885,
@@ -774,14 +774,14 @@
     },
     {
       "ticker": "LMT",
-      "sector": "Space",
+      "sector": "Defense",
       "added_at": "2026-05-27T00:00:00Z"
     },
     {
       "ticker": "LRCX",
       "grade": 78,
       "signal": "STRONG_BUY",
-      "sector": "Technology",
+      "sector": "Semi Equipment",
       "price": 322.68,
       "buy_zone": 279.02,
       "stop_loss": 234.35,
@@ -919,7 +919,7 @@
       "ticker": "MSFT",
       "grade": 72,
       "signal": "BUY",
-      "sector": "Quantum",
+      "sector": "Software",
       "price": 416.03,
       "buy_zone": 404.89,
       "stop_loss": 386.07,
@@ -947,7 +947,7 @@
       "ticker": "MU",
       "grade": 79,
       "signal": "STRONG_BUY",
-      "sector": "Quantum",
+      "sector": "Memory",
       "price": 893.6403,
       "buy_zone": 851.086,
       "stop_loss": 761.4979999999999,
@@ -1000,7 +1000,7 @@
       "ticker": "NVDA",
       "grade": 79,
       "signal": "STRONG_BUY",
-      "sector": "Quantum",
+      "sector": "Semiconductors",
       "price": 214.86,
       "buy_zone": 209.2,
       "stop_loss": 188.9,
@@ -1019,7 +1019,7 @@
       "ticker": "OKLO",
       "grade": 68,
       "signal": "BUY",
-      "sector": "Energy",
+      "sector": "Nuclear",
       "price": 67.3995,
       "buy_zone": 64.19,
       "stop_loss": 52.34,
@@ -1100,7 +1100,7 @@
       "ticker": "PLTR",
       "grade": 53,
       "signal": "HOLD",
-      "sector": "Technology",
+      "sector": "Defense",
       "price": 136.6,
       "buy_zone": 130.04,
       "stop_loss": 124.89,
@@ -1243,7 +1243,7 @@
       "ticker": "SCCO",
       "grade": 72,
       "signal": "BUY",
-      "sector": "Materials",
+      "sector": "Copper",
       "price": 184.779,
       "buy_zone": 175.98,
       "stop_loss": 159.32,
@@ -1314,7 +1314,7 @@
       "ticker": "SNOW",
       "grade": 75,
       "signal": "STRONG_BUY",
-      "sector": "Technology",
+      "sector": "Software",
       "price": 162.099,
       "buy_zone": 154.38,
       "stop_loss": 129.03,
@@ -1466,7 +1466,7 @@
       "ticker": "TSLA",
       "grade": 75,
       "signal": "STRONG_BUY",
-      "sector": "Space",
+      "sector": "Robotics",
       "price": 433.59,
       "buy_zone": 403.23,
       "stop_loss": 357.12,
@@ -1480,7 +1480,7 @@
       "ticker": "TSM",
       "grade": 71,
       "signal": "STRONG_BUY",
-      "sector": "Quantum",
+      "sector": "Semiconductors",
       "price": 412.32,
       "buy_zone": 390.01,
       "stop_loss": 373.16,
@@ -1556,7 +1556,7 @@
       "ticker": "VRT",
       "grade": 43,
       "signal": "WEAK",
-      "sector": "Industrials",
+      "sector": "Infrastructure",
       "price": 323.91,
       "buy_zone": 296.82,
       "stop_loss": 283.23,
@@ -1570,7 +1570,7 @@
       "ticker": "VST",
       "grade": 72,
       "signal": "BUY",
-      "sector": "Utilities",
+      "sector": "Power",
       "price": 164.56,
       "buy_zone": 147.64,
       "stop_loss": 128.68,
@@ -1686,6 +1686,231 @@
       "ticker": "ZS",
       "sector": "Cybersecurity",
       "added_at": "2026-05-27T00:00:00Z"
+    },
+    {
+      "ticker": "ARM",
+      "sector": "Semiconductors",
+      "added_at": "2026-06-17T15:15:54.138411Z"
+    },
+    {
+      "ticker": "INTC",
+      "sector": "Semiconductors",
+      "added_at": "2026-06-17T15:15:54.138696Z"
+    },
+    {
+      "ticker": "SNDK",
+      "sector": "Memory",
+      "added_at": "2026-06-17T15:15:54.138699Z"
+    },
+    {
+      "ticker": "WDC",
+      "sector": "Memory",
+      "added_at": "2026-06-17T15:15:54.138701Z"
+    },
+    {
+      "ticker": "MRVL",
+      "sector": "Networking",
+      "added_at": "2026-06-17T15:15:54.138703Z"
+    },
+    {
+      "ticker": "CRDO",
+      "sector": "Networking",
+      "added_at": "2026-06-17T15:15:54.138704Z"
+    },
+    {
+      "ticker": "ANET",
+      "sector": "Networking",
+      "added_at": "2026-06-17T15:15:54.138706Z"
+    },
+    {
+      "ticker": "AAOI",
+      "sector": "Photonics",
+      "added_at": "2026-06-17T15:15:54.138708Z"
+    },
+    {
+      "ticker": "NVTS",
+      "sector": "Photonics",
+      "added_at": "2026-06-17T15:15:54.138710Z"
+    },
+    {
+      "ticker": "GLW",
+      "sector": "Photonics",
+      "added_at": "2026-06-17T15:15:54.138711Z"
+    },
+    {
+      "ticker": "DELL",
+      "sector": "Infrastructure",
+      "added_at": "2026-06-17T15:15:54.138714Z"
+    },
+    {
+      "ticker": "SMCI",
+      "sector": "Infrastructure",
+      "added_at": "2026-06-17T15:15:54.138715Z"
+    },
+    {
+      "ticker": "ETN",
+      "sector": "Infrastructure",
+      "added_at": "2026-06-17T15:15:54.138717Z"
+    },
+    {
+      "ticker": "NBIS",
+      "sector": "Data Centers",
+      "added_at": "2026-06-17T15:15:54.138719Z"
+    },
+    {
+      "ticker": "NOW",
+      "sector": "Software",
+      "added_at": "2026-06-17T15:15:54.138721Z"
+    },
+    {
+      "ticker": "MDB",
+      "sector": "Software",
+      "added_at": "2026-06-17T15:15:54.138722Z"
+    },
+    {
+      "ticker": "CRM",
+      "sector": "Software",
+      "added_at": "2026-06-17T15:15:54.138723Z"
+    },
+    {
+      "ticker": "KTOS",
+      "sector": "Defense",
+      "added_at": "2026-06-17T15:15:54.138724Z"
+    },
+    {
+      "ticker": "AVAV",
+      "sector": "Defense",
+      "added_at": "2026-06-17T15:15:54.138725Z"
+    },
+    {
+      "ticker": "RCAT",
+      "sector": "Defense",
+      "added_at": "2026-06-17T15:15:54.138726Z"
+    },
+    {
+      "ticker": "ONDS",
+      "sector": "Drones",
+      "added_at": "2026-06-17T15:15:54.138728Z"
+    },
+    {
+      "ticker": "DPRO",
+      "sector": "Drones",
+      "added_at": "2026-06-17T15:15:54.138729Z"
+    },
+    {
+      "ticker": "UMAC",
+      "sector": "Drones",
+      "added_at": "2026-06-17T15:15:54.138730Z"
+    },
+    {
+      "ticker": "OUST",
+      "sector": "Robotics",
+      "added_at": "2026-06-17T15:15:54.138731Z"
+    },
+    {
+      "ticker": "SYM",
+      "sector": "Robotics",
+      "added_at": "2026-06-17T15:15:54.138732Z"
+    },
+    {
+      "ticker": "ISRG",
+      "sector": "Robotics",
+      "added_at": "2026-06-17T15:15:54.138733Z"
+    },
+    {
+      "ticker": "IONQ",
+      "sector": "Quantum",
+      "added_at": "2026-06-17T15:15:54.138735Z"
+    },
+    {
+      "ticker": "RGTI",
+      "sector": "Quantum",
+      "added_at": "2026-06-17T15:15:54.138736Z"
+    },
+    {
+      "ticker": "LEU",
+      "sector": "Nuclear",
+      "added_at": "2026-06-17T15:15:54.138737Z"
+    },
+    {
+      "ticker": "UUUU",
+      "sector": "Nuclear",
+      "added_at": "2026-06-17T15:15:54.138738Z"
+    },
+    {
+      "ticker": "CCJ",
+      "sector": "Nuclear",
+      "added_at": "2026-06-17T15:15:54.138739Z"
+    },
+    {
+      "ticker": "BE",
+      "sector": "Power",
+      "added_at": "2026-06-17T15:15:54.138741Z"
+    },
+    {
+      "ticker": "TLN",
+      "sector": "Power",
+      "added_at": "2026-06-17T15:15:54.138742Z"
+    },
+    {
+      "ticker": "HOOD",
+      "sector": "Fintech",
+      "added_at": "2026-06-17T15:15:54.138743Z"
+    },
+    {
+      "ticker": "SOFI",
+      "sector": "Fintech",
+      "added_at": "2026-06-17T15:15:54.138744Z"
+    },
+    {
+      "ticker": "AFRM",
+      "sector": "Fintech",
+      "added_at": "2026-06-17T15:15:54.138745Z"
+    },
+    {
+      "ticker": "FCX",
+      "sector": "Copper",
+      "added_at": "2026-06-17T15:15:54.138748Z"
+    },
+    {
+      "ticker": "TECK",
+      "sector": "Copper",
+      "added_at": "2026-06-17T15:15:54.138750Z"
+    },
+    {
+      "ticker": "JOBY",
+      "sector": "eVTOL",
+      "added_at": "2026-06-17T15:15:54.138751Z"
+    },
+    {
+      "ticker": "ACHR",
+      "sector": "eVTOL",
+      "added_at": "2026-06-17T15:15:54.138752Z"
+    },
+    {
+      "ticker": "SPACE",
+      "sector": "SpaceX",
+      "added_at": "2026-06-17T16:21:29.223155Z"
+    },
+    {
+      "ticker": "LLAP",
+      "sector": "Space",
+      "added_at": "2026-06-17T16:21:29.223659Z"
+    },
+    {
+      "ticker": "PL",
+      "sector": "Space",
+      "added_at": "2026-06-17T16:21:29.223674Z"
+    },
+    {
+      "ticker": "SATL",
+      "sector": "Space",
+      "added_at": "2026-06-17T16:21:29.223676Z"
+    },
+    {
+      "ticker": "VORB",
+      "sector": "Space",
+      "added_at": "2026-06-17T16:21:29.223678Z"
     }
   ]
 }

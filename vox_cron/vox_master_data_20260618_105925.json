@@ -1,0 +1,1263 @@
+{
+  "generated_at": "2026-06-18T10:59:13.292738",
+  "sources_checked": [
+    "market_regime",
+    "macro_signals",
+    "sector_momentum",
+    "sp500_sector_leaders",
+    "technical_signals",
+    "pattern_alerts",
+    "sentiment_scores",
+    "supply_chain_events",
+    "geopolitical_events",
+    "commodity_prices"
+  ],
+  "errors": [],
+  "data": {
+    "market_regime": "RISK_ON |         75 |     16.41 | Sideways  | 0.3799999999999999 | Holding    | Mixed signals across macro indicators | 2026-06-18 12:01:56.524969+00",
+    "macro_signals": "AI_DEMAND_NUCLEAR  |                90 | BULLISH          | Industrials   |         90 | AI-Demand Nuclear Thesis | 2026-06-18 15:40:22.081223+00\n AI_DEMAND_ENERGY   |                85 | BULLISH          | Utilities     |         85 | AI-Demand Macro Thesis   | 2026-06-18 15:40:22.057153+00\n YIELD_CURVE_NORMAL |              0.23 | BULLISH          | Financials    |         60 | Treasury spreads         | 2026-06-18 15:40:21.996245+00\n dxy                |          119.5073 | NEUTRAL          | All           |         50 | FRED                     | 2026-06-18 12:01:56.524969+00\n vix                |             16.41 | BULLISH          | All           |         50 | FRED                     | 2026-06-18 12:01:56.524969+00\n fed_rate           |              3.63 | NEUTRAL          | All           |         50 | FRED                     | 2026-06-18 12:01:56.524969+00\n copper             | 13483.75153846154 | BEARISH          | All           |         50 | FRED                     | 2026-06-18 12:01:56.524969+00\n oil_wti            |             84.65 | BULLISH          | All           |         50 | FRED                     | 2026-06-18 12:01:56.524969+00\n yield_10y          |              4.43 | NEUTRAL          | All           |         50 | FRED                     | 2026-06-18 12:01:56.524969+00\n yield_2y           |              4.05 | NEUTRAL          | All           |         50 | FRED                     | 2026-06-18 12:01:56.524969+00",
+    "sector_momentum": "Bitcoin Mining / Data Centers |      62.0 |             67 | {IREN}                     | 2026-06-18 15:40:22.402341+00\n Quantum                       |      60.4 |             60 | {MSFT,AMD,AMZN,NVDA,GOOGL} | 2026-06-17 13:37:18.859629+00\n Space                         |      60.0 |             60 | {SIDU}                     | 2026-06-17 13:37:19.086131+00\n AI Infrastructure             |      56.0 |             56 | {TE}                       | 2026-06-17 13:37:19.041596+00\n Cybersecurity                 |      55.0 |             55 | {CRWD}                     | 2026-06-17 13:37:18.837359+00\n Uncategorized                 |      54.1 |             54 | {SMH,VTI,QQQ,VOO,ARKX}     | 2026-06-18 15:40:22.101105+00\n ETF                           |      53.0 |             53 | {NAFTRAC.MX,NAFTRAC}       | 2026-06-08 13:31:00.696072+00\n Biotechnology                 |      53.0 |             53 | {SPRB}                     | 2026-06-18 15:40:22.421702+00\n Consumer Staples              |      51.0 |             51 | {COST}                     | 2026-06-17 13:37:18.882615+00\n Materials                     |      49.0 |             44 | {URNM}                     | 2026-06-18 15:40:22.490169+00",
+    "sp500_sector_leaders": "WDC    | Information Technology |          38.9700 |      88.898600 | 2026-06-17 15:02:47.058149\n CCL    | Consumer Discretionary |          18.8900 |      64.410000 | 2026-06-17 15:02:47.058149\n MU     | Information Technology |          14.4500 |      56.594800 | 2026-06-17 15:02:47.058149\n INTC   | Information Technology |           9.3500 |      46.656800 | 2026-06-17 15:02:47.058149\n HOOD   | Financials             |          11.9800 |      43.409800 | 2026-06-17 15:02:47.058149\n MRNA   | Health Care            |          20.4600 |      42.486500 | 2026-06-17 15:02:47.058149\n NCLH   | Consumer Discretionary |          13.4500 |      41.392300 | 2026-06-17 15:02:47.058149\n NEM    | Materials              |          16.8900 |      38.919800 | 2026-06-17 15:02:47.058149\n FCX    | Materials              |          13.0000 |      34.840600 | 2026-06-17 15:02:47.058149\n LUV    | Industrials            |          15.0700 |      31.892900 | 2026-06-17 15:02:47.058149\n UAL    | Industrials            |          15.3000 |      30.506000 | 2026-06-17 15:02:47.058149\n IP     | Materials              |          13.5000 |      29.112100 | 2026-06-17 15:02:47.058149\n VST    | Utilities              |          14.4900 |      25.609300 | 2026-06-17 15:02:47.058149\n COF    | Financials             |          12.9400 |      24.233000 | 2026-06-17 15:02:47.058149\n TSLA   | Consumer Discretionary |           6.0500 |      23.634200 | 2026-06-17 15:02:47.058149",
+    "technical_signals": "BNB      |    49 |              99 | {oversold_bounce,rsi_divergence} | 2026-06-12 21:19:32.669476+00\n META     |    49 |              99 | {oversold_bounce,rsi_divergence} | 2026-06-12 21:19:32.669476+00\n 0700.HK  |    48 |              98 | {oversold_bounce,rsi_divergence} | 2026-06-12 21:19:32.669476+00\n ADA      |    48 |              98 | {oversold_bounce,rsi_divergence} | 2026-06-12 21:19:32.669476+00\n MNST     |    46 |              96 | {oversold_bounce,rsi_divergence} | 2026-06-12 21:19:32.669476+00\n BIVI     |    45 |              95 | {oversold_bounce,rsi_divergence} | 2026-06-12 21:19:32.669476+00\n SNOW     |    45 |              95 | {oversold_bounce,rsi_divergence} | 2026-06-12 21:19:32.669476+00\n SOL-USD  |    42 |              92 | {oversold_bounce,rsi_divergence} | 2026-06-12 21:19:32.669476+00\n DASH     |    42 |              92 | {oversold_bounce,rsi_divergence} | 2026-06-12 21:19:32.669476+00\n QQQ      |    42 |              92 | {oversold_bounce,rsi_divergence} | 2026-06-12 21:19:32.669476+00\n WMT      |    42 |              92 | {oversold_bounce,rsi_divergence} | 2026-06-12 21:19:32.669476+00\n GOOGL    |    41 |              91 | {oversold_bounce,rsi_divergence} | 2026-06-12 21:19:32.669476+00\n AMD      |    40 |              90 | {oversold_bounce,rsi_divergence} | 2026-06-12 21:19:32.669476+00\n DOGE-USD |    40 |              90 | {oversold_bounce,rsi_divergence} | 2026-06-12 21:19:32.669476+00\n AVGO     |    38 |              88 | {oversold_bounce,rsi_divergence} | 2026-06-12 21:19:32.669476+00",
+    "pattern_alerts": "",
+    "sentiment_scores": "NVDA   |        69 |          0.40 | alphavantage | 2026-06-11 16:35:40.924044+00\n AAPL   |        65 |          0.34 | alphavantage | 2026-06-11 16:34:28.569848+00\n TSLA   |        60 |          0.36 | alphavantage | 2026-06-11 16:35:03.30465+00",
+    "supply_chain_events": "supply_disruption | copper    |        4 |                  | 2026-06-12 21:20:35.03628+00\n price_movement    | oil       |        3 |                  | 2026-06-12 21:20:35.03628+00\n demand_surge      | lithium   |        3 |                  | 2026-06-12 21:20:35.03628+00\n price_movement    | gold      |        2 |                  | 2026-06-12 21:20:35.03628+00\n price_movement    | silver    |        2 |                  | 2026-06-12 21:20:35.03628+00",
+    "geopolitical_events": "trade_war         | medium   | {NVDA,TSM,AAPL,AVGO} | 2026-06-07 02:45:29.466821+00\n sanctions         | low      | {XOM,CVX,OXY}        | 2026-06-07 02:45:29.466821+00\n election          | medium   | {UNH,JNJ,XOM,CVX}    | 2026-06-07 02:45:29.466821+00\n supply_disruption | low      | {FDX,UPS,AMZN}       | 2026-06-07 02:45:29.466821+00",
+    "commodity_prices": "SI     | Silver | 15.32 | 9.42857142857143 | metals   | 2026-06-10 10:27:56.203958+00\n SI     | Silver | 15.32 | 9.42857142857143 | metals   | 2026-06-10 18:30:42.960014+00\n SI     | Silver | 15.32 | 9.42857142857143 | metals   | 2026-06-10 06:25:53.452219+00\n SI     | Silver | 15.32 | 9.42857142857143 | metals   | 2026-06-10 10:27:31.697449+00\n SI     | Silver | 15.32 | 9.42857142857143 | metals   | 2026-06-10 14:29:22.208256+00\n SI     | Silver | 15.32 | 9.42857142857143 | metals   | 2026-06-10 14:29:50.525162+00\n SI     | Silver | 15.32 | 9.42857142857143 | metals   | 2026-06-10 02:24:27.917595+00\n SI     | Silver | 15.32 | 9.42857142857143 | metals   | 2026-06-10 02:24:51.616633+00\n SI     | Silver | 15.32 | 9.42857142857143 | metals   | 2026-06-10 06:26:15.934719+00\n SI     | Silver | 15.32 | 9.42857142857143 | metals   | 2026-06-10 18:31:29.435851+00"
+  },
+  "unified_grades": {
+    "TSM": {
+      "grade": 60,
+      "council": "HOLD",
+      "brokers": "{\"GBM Main\",IBKR}",
+      "sector": "Technology",
+      "value_usd": 9014.16,
+      "currency": "MXN",
+      "updated_at": "2026-06-18 15:40:20.605315+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": null,
+      "discrepancies": [],
+      "warnings": []
+    },
+    "QQQ": {
+      "grade": 60,
+      "council": "HOLD",
+      "brokers": "{\"GBM Main\",eToro,\"GBM USA\"}",
+      "sector": "",
+      "value_usd": 1616.84,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:20.501348+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": null,
+      "discrepancies": [],
+      "warnings": []
+    },
+    "VTI": {
+      "grade": 59,
+      "council": "HOLD",
+      "brokers": "{\"GBM Main\",eToro}",
+      "sector": "",
+      "value_usd": 3265.84,
+      "currency": "MXN",
+      "updated_at": "2026-06-18 15:40:20.254258+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "HOLD",
+        "grade": 69
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "SCCO": {
+      "grade": 59,
+      "council": "HOLD",
+      "brokers": "{eToro}",
+      "sector": "Basic Materials",
+      "value_usd": 1.42,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:19.597182+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": null,
+      "discrepancies": [],
+      "warnings": []
+    },
+    "MNST": {
+      "grade": 57,
+      "council": "HOLD",
+      "brokers": "{IBKR}",
+      "sector": "Consumer Defensive",
+      "value_usd": 0,
+      "currency": "USD",
+      "updated_at": "2026-06-17 23:19:14.053929+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 0
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "SMH": {
+      "grade": 57,
+      "council": "HOLD",
+      "brokers": "{\"GBM Main\",eToro}",
+      "sector": "",
+      "value_usd": 1196.44,
+      "currency": "MXN",
+      "updated_at": "2026-06-18 15:40:20.184334+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "HOLD",
+        "grade": 67
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "AMD": {
+      "grade": 57,
+      "council": "HOLD",
+      "brokers": "{eToro,\"GBM USA\",IBKR}",
+      "sector": "Technology",
+      "value_usd": 4534.06,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:20.571885+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": 69,
+      "trade_signal": null,
+      "discrepancies": [],
+      "warnings": []
+    },
+    "MS": {
+      "grade": 56,
+      "council": "HOLD",
+      "brokers": "{eToro}",
+      "sector": "Financial Services",
+      "value_usd": 541.65,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:19.224399+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": null,
+      "discrepancies": [],
+      "warnings": []
+    },
+    "APH": {
+      "grade": 56,
+      "council": "HOLD",
+      "brokers": "{eToro,\"GBM USA\"}",
+      "sector": "Technology",
+      "value_usd": 2747.52,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:20.367785+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": 70,
+      "trade_signal": {
+        "signal": "HOLD",
+        "grade": 70
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "QLYS": {
+      "grade": 56,
+      "council": "HOLD",
+      "brokers": "{eToro}",
+      "sector": "Technology",
+      "value_usd": 246.72,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:19.637232+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": null,
+      "discrepancies": [],
+      "warnings": []
+    },
+    "BIVI": {
+      "grade": 56,
+      "council": "HOLD",
+      "brokers": "{eToro}",
+      "sector": "Healthcare",
+      "value_usd": 12.4,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:19.815791+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": null,
+      "discrepancies": [],
+      "warnings": []
+    },
+    "OSCR": {
+      "grade": 55,
+      "council": "HOLD",
+      "brokers": "{eToro,\"GBM USA\"}",
+      "sector": "Healthcare",
+      "value_usd": 3093.76,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:20.483841+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": null,
+      "discrepancies": [],
+      "warnings": []
+    },
+    "AXS": {
+      "grade": 55,
+      "council": "HOLD",
+      "brokers": "{Binance}",
+      "sector": "Financial Services",
+      "value_usd": 58.42,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:21.039344+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": null,
+      "discrepancies": [],
+      "warnings": []
+    },
+    "CORZ": {
+      "grade": 55,
+      "council": "HOLD",
+      "brokers": "{eToro}",
+      "sector": "Technology",
+      "value_usd": 413.3,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:19.653626+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": null,
+      "discrepancies": [],
+      "warnings": []
+    },
+    "VOO": {
+      "grade": 54,
+      "council": "SELL",
+      "brokers": "{\"GBM Main\",eToro}",
+      "sector": "",
+      "value_usd": 4085.61,
+      "currency": "MXN",
+      "updated_at": "2026-06-18 15:40:20.235202+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "HOLD",
+        "grade": 69
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "SIDU": {
+      "grade": 54,
+      "council": "SELL",
+      "brokers": "{eToro}",
+      "sector": "Industrials",
+      "value_usd": 372.0,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:19.921656+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "WATCH",
+        "grade": 46
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "CPSH": {
+      "grade": 54,
+      "council": "SELL",
+      "brokers": "{\"GBM USA\"}",
+      "sector": "Technology",
+      "value_usd": 526.52,
+      "currency": "USD",
+      "updated_at": "2026-06-17 23:19:14.053929+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": null,
+      "discrepancies": [],
+      "warnings": []
+    },
+    "CRSP": {
+      "grade": 54,
+      "council": "SELL",
+      "brokers": "{\"GBM USA\"}",
+      "sector": "Healthcare",
+      "value_usd": 455.2,
+      "currency": "USD",
+      "updated_at": "2026-06-17 23:19:14.053929+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 0
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "DASH": {
+      "grade": 54,
+      "council": "SELL",
+      "brokers": "{eToro}",
+      "sector": "Consumer Cyclical",
+      "value_usd": 106.9,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:19.437466+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": 70,
+      "trade_signal": null,
+      "discrepancies": [],
+      "warnings": []
+    },
+    "IREN": {
+      "grade": 54,
+      "council": "SELL",
+      "brokers": "{Schwab,IBKR}",
+      "sector": "Bitcoin Mining / Data Centers",
+      "value_usd": 224.93,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:20.768744+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": null,
+      "discrepancies": [],
+      "warnings": []
+    },
+    "TE": {
+      "grade": 54,
+      "council": "SELL",
+      "brokers": "{eToro}",
+      "sector": "Industrials",
+      "value_usd": 529.65,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:19.686527+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": null,
+      "discrepancies": [],
+      "warnings": []
+    },
+    "CEG": {
+      "grade": 53,
+      "council": "SELL",
+      "brokers": "{eToro}",
+      "sector": "Utilities",
+      "value_usd": 365.18,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:19.414201+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": null,
+      "discrepancies": [],
+      "warnings": []
+    },
+    "CRWD": {
+      "grade": 53,
+      "council": "SELL",
+      "brokers": "{\"GBM Main\",eToro}",
+      "sector": "Technology",
+      "value_usd": 10721.29,
+      "currency": "MXN",
+      "updated_at": "2026-06-18 15:40:20.061152+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": 70,
+      "trade_signal": {
+        "signal": "HOLD",
+        "grade": 70
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "IBM": {
+      "grade": 53,
+      "council": "SELL",
+      "brokers": "{\"GBM Main\"}",
+      "sector": "Technology",
+      "value_usd": 1136.0,
+      "currency": "MXN",
+      "updated_at": "2026-06-17 23:19:14.053929+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "WATCH",
+        "grade": 47
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "ESTC": {
+      "grade": 52,
+      "council": "SELL",
+      "brokers": "{eToro}",
+      "sector": "Technology",
+      "value_usd": 792.58,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:19.671157+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 0
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "BNB": {
+      "grade": 52,
+      "council": "SELL",
+      "brokers": "{eToro,Binance}",
+      "sector": "Unknown",
+      "value_usd": 1720.78,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:20.904211+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 0
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "TSLA": {
+      "grade": 52,
+      "council": "SELL",
+      "brokers": "{\"GBM Main\",eToro}",
+      "sector": "Consumer Cyclical",
+      "value_usd": 8852.61,
+      "currency": "MXN",
+      "updated_at": "2026-06-18 15:40:20.199918+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 42
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "GBM O": {
+      "grade": 52,
+      "council": "SELL",
+      "brokers": "{\"GBM Main\"}",
+      "sector": "Unknown",
+      "value_usd": 0,
+      "currency": "",
+      "updated_at": "2026-06-18 15:40:20.271364+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 0
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "AVGO": {
+      "grade": 52,
+      "council": "SELL",
+      "brokers": "{\"GBM Main\",eToro}",
+      "sector": "Technology",
+      "value_usd": 794.37,
+      "currency": "MXN",
+      "updated_at": "2026-06-18 15:40:20.02033+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 43
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "CRWV": {
+      "grade": 52,
+      "council": "SELL",
+      "brokers": "{eToro}",
+      "sector": "Technology",
+      "value_usd": 727.93,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:19.799952+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": null,
+      "discrepancies": [],
+      "warnings": []
+    },
+    "SOL": {
+      "grade": 52,
+      "council": "SELL",
+      "brokers": "{Binance}",
+      "sector": "Unknown",
+      "value_usd": 525.17,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:20.919787+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 0
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "CBRS": {
+      "grade": 52,
+      "council": "SELL",
+      "brokers": "{eToro}",
+      "sector": "Unknown",
+      "value_usd": 315.37,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:19.853544+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 0
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "ADA": {
+      "grade": 52,
+      "council": "SELL",
+      "brokers": "{eToro}",
+      "sector": "Unknown",
+      "value_usd": 81.78,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:19.473378+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 0
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "AAPL": {
+      "grade": 51,
+      "council": "SELL",
+      "brokers": "{\"GBM Main\",eToro}",
+      "sector": "Technology",
+      "value_usd": 2179.24,
+      "currency": "MXN",
+      "updated_at": "2026-06-18 15:40:19.983885+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "TRIM",
+        "grade": 48
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "NVDA": {
+      "grade": 51,
+      "council": "SELL",
+      "brokers": "{\"GBM Main\",eToro}",
+      "sector": "Technology",
+      "value_usd": 7698.07,
+      "currency": "MXN",
+      "updated_at": "2026-06-18 15:40:20.136085+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "WATCH",
+        "grade": 45
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "ARKX": {
+      "grade": 51,
+      "council": "SELL",
+      "brokers": "{eToro}",
+      "sector": "",
+      "value_usd": 331.64,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:19.832505+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": null,
+      "discrepancies": [],
+      "warnings": []
+    },
+    "DOGE": {
+      "grade": 51,
+      "council": "SELL",
+      "brokers": "{eToro,Binance}",
+      "sector": "Unknown",
+      "value_usd": 1006.64,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:20.941173+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 0
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "NAFTRAC ISHRS": {
+      "grade": 51,
+      "council": "SELL",
+      "brokers": "{\"GBM Main\"}",
+      "sector": "",
+      "value_usd": 0,
+      "currency": "",
+      "updated_at": "2026-06-17 18:53:23.445272+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 0
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "SNOW": {
+      "grade": 51,
+      "council": "SELL",
+      "brokers": "{eToro}",
+      "sector": "Technology",
+      "value_usd": 1842.23,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:19.571855+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "HOLD",
+        "grade": 70
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "DDOG": {
+      "grade": 51,
+      "council": "SELL",
+      "brokers": "{eToro}",
+      "sector": "Technology",
+      "value_usd": 2691.06,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:19.724512+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": 73,
+      "trade_signal": null,
+      "discrepancies": [],
+      "warnings": []
+    },
+    "NAFTRAC": {
+      "grade": 51,
+      "council": "SELL",
+      "brokers": "{\"GBM Main\"}",
+      "sector": "Unknown",
+      "value_usd": 0,
+      "currency": "",
+      "updated_at": "2026-06-18 15:40:20.289132+00",
+      "source": "positions",
+      "watchlist_grade": 81,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 0
+      },
+      "discrepancies": [],
+      "warnings": [
+        {
+          "type": "WATCHLIST_INFLATION",
+          "message": "Watchlist grade (81) is 30 points higher than authoritative grade (51)",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    "HBAR": {
+      "grade": 50,
+      "council": "SELL",
+      "brokers": "{eToro,Binance}",
+      "sector": "Unknown",
+      "value_usd": 159.89,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:21.003431+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 0
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "SPOT": {
+      "grade": 50,
+      "council": "SELL",
+      "brokers": "{eToro}",
+      "sector": "Communication Services",
+      "value_usd": 1143.49,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:19.136785+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "TRIM",
+        "grade": 45
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "APP": {
+      "grade": 50,
+      "council": "SELL",
+      "brokers": "{IBKR}",
+      "sector": "Communication Services",
+      "value_usd": 0,
+      "currency": "USD",
+      "updated_at": "2026-06-17 23:19:14.053929+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "WATCH",
+        "grade": 46
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "JMIA": {
+      "grade": 50,
+      "council": "SELL",
+      "brokers": "{eToro}",
+      "sector": "Consumer Cyclical",
+      "value_usd": 585.13,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:19.513173+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": null,
+      "discrepancies": [],
+      "warnings": []
+    },
+    "GOOGL": {
+      "grade": 50,
+      "council": "SELL",
+      "brokers": "{\"GBM Main\"}",
+      "sector": "Communication Services",
+      "value_usd": 7233.94,
+      "currency": "MXN",
+      "updated_at": "2026-06-18 15:40:20.078637+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 43
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "A": {
+      "grade": 50,
+      "council": "SELL",
+      "brokers": "{eToro}",
+      "sector": "Healthcare",
+      "value_usd": 3.52,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:19.491907+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": null,
+      "discrepancies": [],
+      "warnings": []
+    },
+    "XLE": {
+      "grade": 49,
+      "council": "SELL",
+      "brokers": "{\"GBM USA\"}",
+      "sector": "",
+      "value_usd": 40.47,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:20.516118+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 37
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "MELI": {
+      "grade": 49,
+      "council": "SELL",
+      "brokers": "{\"GBM Main\"}",
+      "sector": "Consumer Cyclical",
+      "value_usd": 3225.97,
+      "currency": "MXN",
+      "updated_at": "2026-06-18 15:40:20.102595+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "HOLD",
+        "grade": 67
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "TRX": {
+      "grade": 49,
+      "council": "SELL",
+      "brokers": "{eToro}",
+      "sector": "Basic Materials",
+      "value_usd": 1438.85,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:19.333173+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 41
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "0700.HK": {
+      "grade": 49,
+      "council": "SELL",
+      "brokers": "{eToro}",
+      "sector": "Communication Services",
+      "value_usd": 1111.37,
+      "currency": "USD",
+      "updated_at": "2026-06-17 23:19:14.053929+00",
+      "source": "positions",
+      "watchlist_grade": 74,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 0
+      },
+      "discrepancies": [],
+      "warnings": [
+        {
+          "type": "WATCHLIST_INFLATION",
+          "message": "Watchlist grade (74) is 25 points higher than authoritative grade (49)",
+          "severity": "MEDIUM"
+        }
+      ]
+    },
+    "OKLO": {
+      "grade": 49,
+      "council": "SELL",
+      "brokers": "{eToro,\"GBM USA\"}",
+      "sector": "Utilities",
+      "value_usd": 644.04,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:20.404715+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": null,
+      "discrepancies": [],
+      "warnings": []
+    },
+    "POET": {
+      "grade": 49,
+      "council": "SELL",
+      "brokers": "{Schwab,eToro}",
+      "sector": "Technology",
+      "value_usd": 1791.09,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:20.788581+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "WATCH",
+        "grade": 53
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "COIN": {
+      "grade": 49,
+      "council": "SELL",
+      "brokers": "{eToro}",
+      "sector": "Financial Services",
+      "value_usd": 704.74,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:19.531769+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": null,
+      "discrepancies": [],
+      "warnings": []
+    },
+    "ETH": {
+      "grade": 48,
+      "council": "SELL",
+      "brokers": "{eToro,Binance}",
+      "sector": "",
+      "value_usd": 7671.02,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:20.88738+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 31
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "BNB-USD": {
+      "grade": 48,
+      "council": "SELL",
+      "brokers": "{eToro,Binance}",
+      "sector": "Crypto",
+      "value_usd": 1593.26,
+      "currency": "USD",
+      "updated_at": "2026-06-17 23:19:14.053929+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 0
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "WMT": {
+      "grade": 48,
+      "council": "SELL",
+      "brokers": "{eToro}",
+      "sector": "Consumer Defensive",
+      "value_usd": 1864.72,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:19.052508+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 43
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "PLTR": {
+      "grade": 48,
+      "council": "SELL",
+      "brokers": "{eToro}",
+      "sector": "Technology",
+      "value_usd": 660.19,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:19.781471+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 44
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "SOL-USD": {
+      "grade": 48,
+      "council": "SELL",
+      "brokers": "{Binance}",
+      "sector": "Crypto",
+      "value_usd": 405.29,
+      "currency": "USD",
+      "updated_at": "2026-06-17 23:19:14.053929+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 0
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "BIDU": {
+      "grade": 48,
+      "council": "SELL",
+      "brokers": "{eToro}",
+      "sector": "Communication Services",
+      "value_usd": 1789.42,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:19.111759+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 35
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "META": {
+      "grade": 47,
+      "council": "SELL",
+      "brokers": "{\"GBM Main\",\"GBM USA\"}",
+      "sector": "Communication Services",
+      "value_usd": 2952.64,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:20.38485+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 35
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "AMZN": {
+      "grade": 47,
+      "council": "SELL",
+      "brokers": "{\"GBM Main\"}",
+      "sector": "Consumer Cyclical",
+      "value_usd": 2699.71,
+      "currency": "MXN",
+      "updated_at": "2026-06-18 15:40:20.002434+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 43
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "COST": {
+      "grade": 47,
+      "council": "SELL",
+      "brokers": "{eToro}",
+      "sector": "Consumer Defensive",
+      "value_usd": 2420.75,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:19.161337+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 43
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "BYND": {
+      "grade": 47,
+      "council": "SELL",
+      "brokers": "{\"GBM Main\"}",
+      "sector": "Consumer Defensive",
+      "value_usd": 24.7,
+      "currency": "MXN",
+      "updated_at": "2026-06-18 15:40:20.037486+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": null,
+      "discrepancies": [],
+      "warnings": []
+    },
+    "ADA-USD": {
+      "grade": 47,
+      "council": "SELL",
+      "brokers": "{eToro}",
+      "sector": "Crypto",
+      "value_usd": 70.11,
+      "currency": "USD",
+      "updated_at": "2026-06-17 23:19:14.053929+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 0
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "MSFT": {
+      "grade": 47,
+      "council": "SELL",
+      "brokers": "{eToro}",
+      "sector": "Technology",
+      "value_usd": 1390.76,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:19.031374+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 41
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "SHOP": {
+      "grade": 47,
+      "council": "SELL",
+      "brokers": "{\"GBM Main\",eToro}",
+      "sector": "Technology",
+      "value_usd": 4594.24,
+      "currency": "MXN",
+      "updated_at": "2026-06-18 15:40:20.168979+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "HOLD",
+        "grade": 68
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "XRP": {
+      "grade": 46,
+      "council": "SELL",
+      "brokers": "{Binance}",
+      "sector": "",
+      "value_usd": 403.04,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:20.959405+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 38
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "DOGE-USD": {
+      "grade": 46,
+      "council": "SELL",
+      "brokers": "{eToro,Binance}",
+      "sector": "Crypto",
+      "value_usd": 896.46,
+      "currency": "USD",
+      "updated_at": "2026-06-17 23:19:14.053929+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 0
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "HBAR-USD": {
+      "grade": 45,
+      "council": "SELL",
+      "brokers": "{eToro,Binance}",
+      "sector": "Crypto",
+      "value_usd": 150.42,
+      "currency": "USD",
+      "updated_at": "2026-06-17 23:19:14.053929+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": {
+        "signal": "SELL",
+        "grade": 0
+      },
+      "discrepancies": [],
+      "warnings": []
+    },
+    "SPRB": {
+      "grade": 44,
+      "council": "SELL",
+      "brokers": "{Schwab}",
+      "sector": "Biotechnology",
+      "value_usd": 206.56,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:20.806434+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": null,
+      "discrepancies": [],
+      "warnings": []
+    },
+    "BTC": {
+      "grade": 43,
+      "council": "SELL",
+      "brokers": "{eToro,Binance}",
+      "sector": "",
+      "value_usd": 15483.16,
+      "currency": "USD",
+      "updated_at": "2026-06-18 15:40:20.871054+00",
+      "source": "positions",
+      "watchlist_grade": null,
+      "sp500_grade": null,
+      "trade_signal": null,
+      "discrepancies": [],
+      "warnings": []
+    }
+  }
+}

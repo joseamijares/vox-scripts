@@ -1,0 +1,9 @@
+🔧 **VOX Cron Monitor — Fri Jul 03 00:00**
+
+🔴 **Jobs**: 59 total | 55 OK | 0 error | 2 warning | 2 missing | 0 stale
+
+🔴 **Failed Jobs**
+  • `vox-ai-council`: Script not found: vox_cron/vox_council_research.py --run
+  • `vox-daily-research-brief`: Script not found: vox_cron/vox_daily_research_brief.py --run --model deepseek/deepseek-v4-flash
+
+📊 **Health Score**: 93%

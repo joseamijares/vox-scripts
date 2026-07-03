@@ -1,0 +1,15 @@
+🔧 **VOX Cron Monitor — Mon Jun 29 06:00**
+
+🟢 **Jobs**: 52 total | 50 OK | 0 error | 2 warning | 0 missing | 25 stale
+
+🟡 **Stale Jobs**
+  • `vox-alert-system`: Last run 2026-06-26T15:00:16.691531-06:00
+  • `vox-market-regime`: Last run 2026-06-26T06:00:55.421737-06:00
+  • `vox-position-review`: Last run 2026-06-26T07:00:10.553716-06:00
+  • `sp500-daily-sector-screen`: Last run 2026-06-26T14:15:14.385647-06:00
+  • `vox-macro-snapshot`: Last run 2026-06-26T06:01:52.434888-06:00
+
+⚠️ **Warnings**
+  • 1 tickers with stale grades (>7d)
+
+📊 **Health Score**: 96%

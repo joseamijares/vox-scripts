@@ -1,0 +1,18 @@
+🔧 **VOX Cron Monitor — Mon Jun 29 12:01**
+
+🔴 **Jobs**: 52 total | 51 OK | 1 error | 0 warning | 0 missing | 6 stale
+
+🔴 **Failed Jobs**
+  • `vox-top-opportunities-scanner`: Last run failed: Script exited with code 1
+
+🟡 **Stale Jobs**
+  • `vox-evening-digest`: Last run 2026-06-26T16:30:34.745810-06:00
+  • `vox-broker-reminder-friday`: Last run 2026-06-26T09:00:31.680560-06:00
+  • `vox-trader-digest-weekly`: Last run 2026-06-23T07:00:45.902206-06:00
+  • `vox-trader-expander-weekly`: Last run 2026-06-24T06:01:08.008550-06:00
+  • `vox-trader-midday-update`: Last run 2026-06-26T12:00:51.861995-06:00
+
+⚠️ **Warnings**
+  • 1 tickers with stale grades (>7d)
+
+📊 **Health Score**: 98%

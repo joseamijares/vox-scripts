@@ -1,0 +1,145 @@
+{
+  "checklist": {
+    "db_connection": true,
+    "all_tables_queried": true,
+    "cross_validated": true,
+    "external_research": "MANUAL_REQUIRED",
+    "social_research": "MANUAL_REQUIRED"
+  },
+  "data": {
+    "market_regime": {
+      "status": "OK",
+      "count": "39"
+    },
+    "sector_momentum": {
+      "status": "OK",
+      "count": "26"
+    },
+    "sp500_sector_leaders": {
+      "status": "OK",
+      "count": "58"
+    },
+    "technical_signals": {
+      "status": "OK",
+      "count": "126"
+    },
+    "sentiment_scores": {
+      "status": "OK",
+      "count": "61"
+    },
+    "vox_grades": {
+      "status": "OK",
+      "count": "23702"
+    },
+    "watchlist": {
+      "status": "OK",
+      "count": "1337"
+    },
+    "positions": {
+      "status": "OK",
+      "count": "79"
+    },
+    "pattern_alerts": {
+      "status": "OK",
+      "count": "95"
+    },
+    "trade_signals": {
+      "status": "OK",
+      "count": "514"
+    },
+    "macro_signals": {
+      "status": "OK",
+      "count": "11"
+    },
+    "sp500_grades": {
+      "status": "OK",
+      "count": "503"
+    },
+    "sp500_alerts": {
+      "status": "OK",
+      "count": "20"
+    },
+    "sp500_universe": {
+      "status": "OK",
+      "count": "503"
+    },
+    "commodity_prices": {
+      "status": "OK",
+      "count": "837"
+    },
+    "council_deliberations": {
+      "status": "OK",
+      "count": "747"
+    },
+    "cron_runs": {
+      "status": "OK",
+      "count": "110"
+    },
+    "geopolitical_events": {
+      "status": "OK",
+      "count": "4"
+    },
+    "supply_chain_events": {
+      "status": "OK",
+      "count": "5"
+    },
+    "weather_patterns": {
+      "status": "OK",
+      "count": "8778"
+    },
+    "weather_risks": {
+      "status": "OK",
+      "count": "5"
+    },
+    "alerts": {
+      "status": "OK",
+      "count": "39"
+    },
+    "journal": {
+      "status": "OK",
+      "count": "6"
+    },
+    "system_logs": {
+      "status": "OK",
+      "count": "1"
+    },
+    "watchlist_grades": {
+      "status": "OK",
+      "count": "27"
+    },
+    "watchlist_old": {
+      "status": "OK",
+      "count": "0"
+    },
+    "plays": {
+      "status": "OK",
+      "count": "16"
+    },
+    "broker_accounts": {
+      "status": "OK",
+      "count": "6"
+    },
+    "broker_holdings": {
+      "status": "OK",
+      "count": "18"
+    },
+    "broker_positions": {
+      "status": "OK",
+      "count": "135"
+    },
+    "broker_status": {
+      "status": "OK",
+      "count": "1"
+    },
+    "unified_grades": {
+      "status": "OK",
+      "count": "1366"
+    }
+  },
+  "errors": [],
+  "warnings": [
+    "Found 10 grade contradictions > 10 points"
+  ],
+  "can_recommend": true,
+  "timestamp": "2026-06-28T14:00:51.284507"
+}

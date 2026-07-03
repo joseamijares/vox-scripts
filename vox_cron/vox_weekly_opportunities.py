@@ -7,6 +7,11 @@ Run Sundays at 7 PM CT via cron.
 This is a simplified version that reads from existing VOX tables.
 For full 6-layer scoring, run the vox-python modules separately.
 """
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path.home() / ".hermes" / "scripts"))
+import hermes_secrets_bootstrap
+
 import json
 import os
 import sys

@@ -1,0 +1,467 @@
+{
+  "generated_at": "2026-06-16T00:00:15.010249",
+  "alert_count": 51,
+  "high": [
+    {
+      "ticker": "HBAR",
+      "previous_grade": 77,
+      "current_grade": 52,
+      "grade_change": -25,
+      "previous_council": "CORE BUY",
+      "current_council": "SELL",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "JMIA",
+      "previous_grade": 68,
+      "current_grade": 52,
+      "grade_change": -16,
+      "previous_council": "BUY",
+      "current_council": "SELL",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "IBM",
+      "previous_grade": 53,
+      "current_grade": 59,
+      "grade_change": 6,
+      "previous_council": "SELL",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "BIVI",
+      "previous_grade": 74,
+      "current_grade": 54,
+      "grade_change": -20,
+      "previous_council": "CORE BUY",
+      "current_council": "SELL",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "CEG",
+      "previous_grade": 74,
+      "current_grade": 50,
+      "grade_change": -24,
+      "previous_council": "CORE BUY",
+      "current_council": "SELL",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "PLTR",
+      "previous_grade": 74,
+      "current_grade": 54,
+      "grade_change": -20,
+      "previous_council": "CORE BUY",
+      "current_council": "SELL",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "COIN",
+      "previous_grade": 62,
+      "current_grade": 44,
+      "grade_change": -18,
+      "previous_council": "BUY",
+      "current_council": "SELL",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "CRWV",
+      "previous_grade": 59,
+      "current_grade": 54,
+      "grade_change": -5,
+      "previous_council": "HOLD",
+      "current_council": "SELL",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "COST",
+      "previous_grade": 68,
+      "current_grade": 64,
+      "grade_change": -4,
+      "previous_council": "BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "SMH",
+      "previous_grade": 65,
+      "current_grade": 57,
+      "grade_change": -8,
+      "previous_council": "BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "OKLO",
+      "previous_grade": 71,
+      "current_grade": 42,
+      "grade_change": -29,
+      "previous_council": "CORE BUY",
+      "current_council": "SELL",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "A",
+      "previous_grade": 76,
+      "current_grade": 60,
+      "grade_change": -16,
+      "previous_council": "CORE BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "DOGE",
+      "previous_grade": 80,
+      "current_grade": 51,
+      "grade_change": -29,
+      "previous_council": "CORE BUY",
+      "current_council": "SELL",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "BTC",
+      "previous_grade": 47,
+      "current_grade": 48,
+      "grade_change": 1,
+      "previous_council": "TRIM",
+      "current_council": "SELL",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "QQQ",
+      "previous_grade": 66,
+      "current_grade": 59,
+      "grade_change": -7,
+      "previous_council": "BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "CORZ",
+      "previous_grade": 76,
+      "current_grade": 60,
+      "grade_change": -16,
+      "previous_council": "CORE BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "AMD",
+      "previous_grade": 73,
+      "current_grade": 63,
+      "grade_change": -10,
+      "previous_council": "CORE BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "ADA",
+      "previous_grade": 79,
+      "current_grade": 51,
+      "grade_change": -28,
+      "previous_council": "CORE BUY",
+      "current_council": "SELL",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "SHOP",
+      "previous_grade": 70,
+      "current_grade": 60,
+      "grade_change": -10,
+      "previous_council": "CORE BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "VOO",
+      "previous_grade": 69,
+      "current_grade": 60,
+      "grade_change": -9,
+      "previous_council": "BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "CRWD",
+      "previous_grade": 69,
+      "current_grade": 58,
+      "grade_change": -11,
+      "previous_council": "BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "WMT",
+      "previous_grade": 68,
+      "current_grade": 64,
+      "grade_change": -4,
+      "previous_council": "BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "ETH",
+      "previous_grade": 47,
+      "current_grade": 49,
+      "grade_change": 2,
+      "previous_council": "TRIM",
+      "current_council": "SELL",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "CBRS",
+      "previous_grade": 65,
+      "current_grade": 58,
+      "grade_change": -7,
+      "previous_council": "BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "MELI",
+      "previous_grade": 54,
+      "current_grade": 57,
+      "grade_change": 3,
+      "previous_council": "SELL",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "TSLA",
+      "previous_grade": 71,
+      "current_grade": 51,
+      "grade_change": -20,
+      "previous_council": "CORE BUY",
+      "current_council": "SELL",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "BNB",
+      "previous_grade": 77,
+      "current_grade": 51,
+      "grade_change": -26,
+      "previous_council": "CORE BUY",
+      "current_council": "SELL",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "CRSP",
+      "previous_grade": 54,
+      "current_grade": 55,
+      "grade_change": 1,
+      "previous_council": "SELL",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "TRX",
+      "previous_grade": 56,
+      "current_grade": 54,
+      "grade_change": -2,
+      "previous_council": "HOLD",
+      "current_council": "SELL",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "VTI",
+      "previous_grade": 69,
+      "current_grade": 58,
+      "grade_change": -11,
+      "previous_council": "BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "OSCR",
+      "previous_grade": 69,
+      "current_grade": 57,
+      "grade_change": -12,
+      "previous_council": "BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "DDOG",
+      "previous_grade": 74,
+      "current_grade": 60,
+      "grade_change": -14,
+      "previous_council": "CORE BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "TE",
+      "previous_grade": 72,
+      "current_grade": 50,
+      "grade_change": -22,
+      "previous_council": "CORE BUY",
+      "current_council": "SELL",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "SIDU",
+      "previous_grade": 73,
+      "current_grade": 50,
+      "grade_change": -23,
+      "previous_council": "CORE BUY",
+      "current_council": "SELL",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "ARKX",
+      "previous_grade": 68,
+      "current_grade": 58,
+      "grade_change": -10,
+      "previous_council": "BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "NVDA",
+      "previous_grade": 82,
+      "current_grade": 62,
+      "grade_change": -20,
+      "previous_council": "CORE BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "QLYS",
+      "previous_grade": 74,
+      "current_grade": 63,
+      "grade_change": -11,
+      "previous_council": "CORE BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "DASH",
+      "previous_grade": 69,
+      "current_grade": 55,
+      "grade_change": -14,
+      "previous_council": "BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "SCCO",
+      "previous_grade": 66,
+      "current_grade": 72,
+      "grade_change": 6,
+      "previous_council": "BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "APH",
+      "previous_grade": 75,
+      "current_grade": 63,
+      "grade_change": -12,
+      "previous_council": "CORE BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "AAPL",
+      "previous_grade": 76,
+      "current_grade": 59,
+      "grade_change": -17,
+      "previous_council": "CORE BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "AVGO",
+      "previous_grade": 75,
+      "current_grade": 57,
+      "grade_change": -18,
+      "previous_council": "CORE BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "SNOW",
+      "previous_grade": 73,
+      "current_grade": 55,
+      "grade_change": -18,
+      "previous_council": "CORE BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "POET",
+      "previous_grade": 75,
+      "current_grade": 58,
+      "grade_change": -17,
+      "previous_council": "CORE BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "BIDU",
+      "previous_grade": 72,
+      "current_grade": 55,
+      "grade_change": -17,
+      "previous_council": "CORE BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "MSFT",
+      "previous_grade": 79,
+      "current_grade": 57,
+      "grade_change": -22,
+      "previous_council": "CORE BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "SPOT",
+      "previous_grade": 73,
+      "current_grade": 65,
+      "grade_change": -8,
+      "previous_council": "CORE BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "ESTC",
+      "previous_grade": 85,
+      "current_grade": 63,
+      "grade_change": -22,
+      "previous_council": "CORE BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    },
+    {
+      "ticker": "MS",
+      "previous_grade": 73,
+      "current_grade": 65,
+      "grade_change": -8,
+      "previous_council": "CORE BUY",
+      "current_council": "HOLD",
+      "severity": "HIGH"
+    }
+  ],
+  "medium": [
+    {
+      "ticker": "XRP",
+      "previous_grade": 46,
+      "current_grade": 51,
+      "grade_change": 5,
+      "previous_council": "SELL",
+      "current_council": "SELL",
+      "severity": "MEDIUM"
+    }
+  ],
+  "low": [
+    {
+      "ticker": "MIRROR_TOTAL",
+      "broker": "eToro",
+      "value_usd": 12149.57,
+      "severity": "LOW",
+      "message": "New position without grade: MIRROR_TOTAL in eToro"
+    }
+  ]
+}

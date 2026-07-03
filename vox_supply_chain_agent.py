@@ -8,6 +8,11 @@ Impacts: Retail (AMZN, WMT, TGT), Manufacturing (CAT, DE), Shipping (ZIM, MATX)
 v2: Writes to Railway Postgres commodity_prices table
 """
 
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path.home() / ".hermes" / "scripts"))
+import hermes_secrets_bootstrap
+
 import json, urllib.request, re, os
 from pathlib import Path
 from datetime import datetime, timezone

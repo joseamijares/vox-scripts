@@ -15,11 +15,35 @@ Then applies council logic based on grade thresholds:
 
 Run daily at 7 AM CT via cron.
 """
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path.home() / ".hermes" / "scripts"))
+import hermes_secrets_bootstrap
+
 import os
 import sys
 from datetime import datetime
 
 import psycopg2
+import json
+from pathlib import Path
+
+SCRIPT_DIR = Path.home() / ".hermes" / "scripts"
+
+def load_unified_grades():
+    """Load unified grades from single source of truth"""
+    unified_path = SCRIPT_DIR / "vox_unified_grades.json"
+    if not unified_path.exists():
+        return {}
+    with open(unified_path) as f:
+        return json.load(f)
+
+def get_unified_grade(ticker, unified_grades):
+    """Get grade from unified source"""
+    if ticker in unified_grades.get("grades", {}):
+        return unified_grades["grades"][ticker].get("grade", 0)
+    return 0
+
 
 # Load env from ~/.env (primary) and ~/.hermes/.env (fallback)
 for env_path in [os.path.expanduser("~/.env"), os.path.expanduser("~/.hermes/.env")]:

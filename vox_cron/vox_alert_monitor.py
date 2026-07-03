@@ -1,21 +1,31 @@
 #!/usr/bin/env python3
 """
-VOX Alert Monitor
+VOX Alert Monitor v2 - FIXED
+Uses vox_unified_grades.json as single source of truth
 Checks portfolio for stops, targets, concentration, and grade-based alerts.
 Run at 9 AM and 3 PM CT weekdays via cron.
 """
+
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path.home() / ".hermes" / "scripts"))
+import hermes_secrets_bootstrap
+
 import json
 import os
 import sys
 from datetime import datetime
+from pathlib import Path
 
 import psycopg2
+
+SCRIPT_DIR = Path.home() / ".hermes" / "scripts"
 
 DATABASE_URL = os.environ.get("DATABASE_URL")
 DB_HOST = os.environ.get("DB_HOST", "acela.proxy.rlwy.net")
 DB_PORT = os.environ.get("DB_PORT", "35577")
 DB_USER = os.environ.get("DB_USER", "postgres")
-DB_PASSWORD = os.environ.get("DB_PASSWORD")
+DB_PASSWORD = os.environ.get("DB_PASSWORD", "")
 DB_NAME = os.environ.get("DB_NAME", "railway")
 
 
@@ -32,6 +42,22 @@ def get_db():
     )
 
 
+def load_unified_grades():
+    """Load unified grades from single source of truth"""
+    unified_path = SCRIPT_DIR / "vox_unified_grades.json"
+    if not unified_path.exists():
+        return {}
+    with open(unified_path) as f:
+        return json.load(f)
+
+
+def get_unified_grade(ticker, unified_grades):
+    """Get grade from unified source"""
+    if ticker in unified_grades.get("grades", {}):
+        return unified_grades["grades"][ticker].get("grade", 0)
+    return 0
+
+
 def fetch_positions(cur):
     cur.execute("""
         SELECT ticker, shares, live_price, live_value, grade, council, sector, brokers, avg_cost
@@ -43,27 +69,18 @@ def fetch_positions(cur):
     return [dict(zip(cols, row)) for row in rows]
 
 
-def fetch_watchlist(cur):
-    cur.execute("""
-        SELECT ticker, grade, council, sector
-        FROM watchlist
-        WHERE grade >= 70
-        ORDER BY grade DESC
-    """)
-    cols = [desc[0] for desc in cur.description]
-    rows = cur.fetchall()
-    return [dict(zip(cols, row)) for row in rows]
-
-
-def calculate_alerts(positions, watchlist):
+def calculate_alerts(positions, unified_grades):
     total_aum = sum(p.get("live_value") or 0 for p in positions)
     alerts = []
 
     for p in positions:
+        ticker = p.get("ticker", "")
+        
+        # Use unified grade instead of stale Railway grade
+        grade = get_unified_grade(ticker, unified_grades)
+        
         value = p.get("live_value") or 0
-        grade = p.get("grade") or 0
         council = p.get("council") or "HOLD"
-        ticker = p["ticker"]
         concentration = value / total_aum if total_aum else 0
 
         # Critical: concentration
@@ -120,9 +137,11 @@ def generate_alert_digest():
     conn = get_db()
     cur = conn.cursor()
 
+    # Load unified grades
+    unified_grades = load_unified_grades()
+
     positions = fetch_positions(cur)
-    watchlist = fetch_watchlist(cur)
-    alerts = calculate_alerts(positions, watchlist)
+    alerts = calculate_alerts(positions, unified_grades)
 
     conn.close()
 
@@ -137,35 +156,17 @@ def generate_alert_digest():
     for i, p in enumerate(positions[:10], 1):
         value = float(p.get("live_value") or 0)
         pct = value / float(total_aum) if total_aum else 0
+        # Get unified grade
+        grade = get_unified_grade(p.get("ticker", ""), unified_grades)
         top_holdings.append({
             "rank": i,
             "ticker": p["ticker"],
             "value": value,
             "pct_aum": pct,
-            "grade": p.get("grade", "—"),
+            "grade": grade,
             "council": p.get("council", "—"),
             "sector": p.get("sector", "—"),
         })
-
-    # Systemic issues
-    systemic_issues = []
-    council_sell_high_grade = [a for a in action if a["type"] == "COUNCIL_SELL"]
-    if council_sell_high_grade:
-        # Check if any council SELL has grade >= 50
-        high_grade_count = 0
-        for a in council_sell_high_grade:
-            # Find matching position
-            for p in positions:
-                if p["ticker"] == a["ticker"]:
-                    grade = p.get("grade") or 0
-                    if grade >= 50:
-                        high_grade_count += 1
-                    break
-        if high_grade_count > 0:
-            systemic_issues.append({
-                "name": "Council Threshold Drift",
-                "detail": f"{high_grade_count} position(s) with council=SELL but grade ≥50. Council logic is misaligned with grade scale (50-59 = HOLD). Review but do NOT auto-liquidate.",
-            })
 
     digest = {
         "type": "alert_digest",
@@ -174,7 +175,6 @@ def generate_alert_digest():
             "total_positions": len(positions),
             "total_aum": float(total_aum),
             "top_holdings": top_holdings,
-            "systemic_issues": systemic_issues,
         },
         "alerts": {
             "critical": critical,
@@ -196,7 +196,7 @@ def format_digest(digest):
     all_alerts = critical + action + watch
 
     lines = [
-        f"# 🚨 VOX Alert Monitor — {digest['generated_at'][:10]}",
+        f"# 🚨 VOX Alert Monitor v2 — {digest['generated_at'][:10]}",
         "",
         f"**Portfolio:** {ps['total_positions']} positions | **AUM:** ${ps['total_aum']:,.0f}",
         f"**Alerts:** {digest['alert_count']} total ({len(critical)} critical, {len(action)} action, {len(watch)} watch)",
@@ -298,16 +298,8 @@ def format_digest(digest):
             )
         lines.append("")
 
-    # Systemic Issues
-    if ps.get("systemic_issues"):
-        lines.append("## ⚠️ Systemic Issues Flagged")
-        lines.append("")
-        for issue in ps["systemic_issues"]:
-            lines.append(f"1. **{issue['name']}** — {issue['detail']}")
-        lines.append("")
-
     lines.append("---")
-    lines.append(f"_Generated at {digest['generated_at']} | VOX Alert Monitor v1.1_")
+    lines.append(f"_Generated at {digest['generated_at']} | VOX Alert Monitor v2 (Unified)_")
     return "\n".join(lines)
 
 

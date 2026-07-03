@@ -4,6 +4,11 @@ VOX eToro Price Updater v3 — Updates broker_positions table (correct per-broke
 Fetches live prices from Yahoo Finance and updates the broker_positions table.
 """
 
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path.home() / ".hermes" / "scripts"))
+import hermes_secrets_bootstrap
+
 import os
 import psycopg2
 import yfinance as yf
@@ -15,7 +20,7 @@ DB_HOST = 'acela.proxy.rlwy.net'
 DB_PORT = 35577
 DB_NAME = 'railway'
 DB_USER = 'postgres'
-DB_PASS = os.environ.get('PGPASSWORD', 'hEJeasaJlhzFSVCIAgQqLDzqKCsUmqAS')
+DB_PASS = os.environ.get('PGPASSWORD', '')
 
 def get_yf_ticker(db_ticker, cursor):
     """Get the correct Yahoo Finance ticker from mapping table."""

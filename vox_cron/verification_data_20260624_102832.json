@@ -1,0 +1,27 @@
+{
+  "issues": [
+    "MSTR: VOX BUY(0) vs Unified TRIM(0)",
+    "ARKX: VOX BUY(0) vs Unified TRIM(0)",
+    "ARKX: VOX BUY(0) vs Unified TRIM(0)",
+    "ARKX: VOX BUY(0) vs Unified TRIM(0)",
+    "ARKX: VOX BUY(0) vs Unified TRIM(0)"
+  ],
+  "warnings": [
+    "BTC: Grade jumped 0 points (0 -> 0)",
+    "BTC: Grade jumped 0 points (0 -> 0)",
+    "CRWV: Grade jumped 0 points (0 -> 0)",
+    "CRWV: Grade jumped 0 points (0 -> 0)",
+    "RIOT: Grade jumped 0 points (0 -> 0)"
+  ],
+  "auto_fixed": [],
+  "stats": {
+    "accuracy_issues": 0,
+    "contradictions": 15,
+    "inflation_bugs": 0,
+    "stale_grades": 0,
+    "outliers": 20,
+    "coverage_gaps": 0,
+    "sync_issues": 0
+  },
+  "timestamp": "2026-06-24T10:28:32.248409"
+}
