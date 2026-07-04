@@ -91,6 +91,9 @@ _DEFAULT_PRICING = {
     "anthropic/claude-3-5-sonnet": {"input": 3.00, "output": 15.00},
     "deepseek/deepseek-v4-pro": {"input": 0.80, "output": 1.20},
     "deepseek/deepseek-chat": {"input": 0.10, "output": 0.25},
+    "deepseek/deepseek-v4-flash": {"input": 0.05, "output": 0.10},
+    "google/gemini-3.5-flash": {"input": 1.50, "output": 9.00},
+    "google/gemini-3.1-flash-lite": {"input": 0.25, "output": 1.50},
     "openai/gpt-4o": {"input": 2.50, "output": 10.00},
     "openai/gpt-4o-mini": {"input": 0.15, "output": 0.60},
 }
