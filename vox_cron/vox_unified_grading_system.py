@@ -39,7 +39,7 @@ class VoxUnifiedGradingSystem:
         self.db_port = '35577'
         self.db_user = 'postgres'
         self.db_name = 'railway'
-        self.db_password = ''
+        self.db_password = os.environ.get('PGPASSWORD') or os.environ.get('DB_PASSWORD') or ''
         self.grades = {}
         self.contradictions = []
         

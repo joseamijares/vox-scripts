@@ -352,6 +352,9 @@ class VoxCronStatusMonitor:
         # Failed jobs (excluding this monitor to avoid self-fulfilling failure loop)
         MONITOR_NAMES = {'vox-cron-monitor', 'vox_cron_status_monitor'}
         failed_jobs = [j for j in self.jobs if j.get('state') in ('ERROR', 'MISSING') and j.get('name') not in MONITOR_NAMES]
+        # Exclude monitor from error count for critical threshold
+        error_count = self.stats['error'] - sum(1 for j in self.jobs if j.get('state') == 'ERROR' and j.get('name') in MONITOR_NAMES)
+        error_count = max(0, error_count)
         if failed_jobs:
             lines.append("🔴 **Failed Jobs**")
             for job in failed_jobs[:10]:
@@ -442,9 +445,9 @@ class VoxCronStatusMonitor:
         
         # Exit with non-zero if critical issues (excluding monitor itself)
         MONITOR_NAMES = {'vox-cron-monitor', 'vox_cron_status_monitor'}
-        critical_count = self.stats['error'] + self.stats['missing_script']
-        if self.jobs and self.jobs[-1].get('name') in MONITOR_NAMES:
-            critical_count = max(0, critical_count - 1)
+        error_count = self.stats['error'] - sum(1 for j in self.jobs if j.get('state') == 'ERROR' and j.get('name') in MONITOR_NAMES)
+        error_count = max(0, error_count)
+        critical_count = error_count + self.stats['missing_script']
         if self.issues or critical_count > 0:
             print(f"\n🚨 CRITICAL ISSUES DETECTED")
             return 1
