@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-VOX Price History Backfill v1.0
+VOX Price History Backfill v1.1
 One-time script (not a cron) that backfills one year of daily closing prices
-for all tickers currently in vox_grades and positions.
+for all tickers currently in positions, broker_positions, and recent vox_grades.
 
 Uses Alpaca for eligible US equities and Yahoo Finance for fallback.
 Idempotent: only inserts missing dates.
@@ -21,9 +21,10 @@ import psycopg2
 # Reuse sync helpers and DB connection from the daily sync script
 sys.path.insert(0, str(Path(__file__).parent))
 from vox_price_history_sync import (
-    connect, ensure_tables, get_active_tickers, sync_tickers, BATCH_SIZE, is_valid_ticker
+    connect, ensure_tables, sync_tickers, is_valid_ticker
 )
 
+BATCH_SIZE = 10
 LOOKBACK_DAYS = 365
 
 
@@ -62,10 +63,11 @@ def main():
         total_inserted = 0
         total_failed = 0
         all_failed = []
+        total_batches = (len(tickers) - 1) // BATCH_SIZE + 1 if tickers else 0
 
         for i in range(0, len(tickers), BATCH_SIZE):
             batch = tickers[i:i+BATCH_SIZE]
-            print(f"Batch {i//BATCH_SIZE + 1}/{(len(tickers)-1)//BATCH_SIZE + 1}: {len(batch)} tickers")
+            print(f"Batch {i//BATCH_SIZE + 1}/{total_batches}: {len(batch)} tickers")
             inserted, failed, failed_tickers = sync_tickers(cur, batch, lookback_days=LOOKBACK_DAYS)
             total_inserted += inserted
             total_failed += failed
@@ -73,7 +75,7 @@ def main():
             conn.commit()
             elapsed = time.time() - start_time
             print(f"  elapsed {elapsed:.1f}s | inserted {total_inserted} | failed {total_failed}")
-            if elapsed > 3300:  # 55m hard guard; full run can be long
+            if elapsed > 3300:  # 55m hard guard
                 print("  Approaching 1h limit, stopping.")
                 break
             time.sleep(0.2)
