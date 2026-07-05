@@ -63,14 +63,48 @@ def ensure_tables(cur):
 
 
 def get_current_price(cur, ticker):
+    """Return live price from positions/vox_grades only if it matches price_history scale."""
     cur.execute("""
-        SELECT COALESCE(p.live_price, vg.current_price) AS price
+        SELECT p.live_price, vg.current_price
         FROM (SELECT %s AS ticker) q
         LEFT JOIN positions p ON p.ticker = q.ticker
         LEFT JOIN vox_grades vg ON vg.ticker = q.ticker
     """, (ticker,))
     r = cur.fetchone()
-    return r[0] if r else None
+    live = r[0] or r[1] if r else None
+    hist = latest_price(cur, ticker)
+    if live is None:
+        return hist
+    if hist is None:
+        return live
+    # Reject live price if it is more than 20x different from latest historical close (ticker collision)
+    try:
+        l = float(live)
+        h = float(hist)
+    except Exception:
+        return live
+    if h <= 0 or l <= 0:
+        return live
+    if max(l, h) / min(l, h) > 20:
+        return hist
+    return live
+
+
+def safe_return_pct(current, entry, max_abs=10000.0):
+    """Compute return % with sanity bounds and NaN/Inf guards."""
+    try:
+        c = float(current) if current is not None else 0.0
+        e = float(entry) if entry is not None else 0.0
+    except Exception:
+        return None
+    if e <= 0 or c <= 0 or c != c or e != e:
+        return None
+    ret = (c - e) / e * 100
+    if ret != ret or ret == float('inf') or ret == float('-inf'):
+        return None
+    if abs(ret) > max_abs:
+        return None
+    return round(ret, 4)
 
 
 def price_at_date(cur, ticker, as_of_date):
@@ -85,9 +119,31 @@ def price_at_date(cur, ticker, as_of_date):
     return r[0] if r else None
 
 
+def latest_price(cur, ticker):
+    """Return latest close price from price_history for a ticker."""
+    cur.execute("""
+        SELECT close FROM price_history
+        WHERE ticker = %s
+        ORDER BY date DESC
+        LIMIT 1
+    """, (ticker,))
+    r = cur.fetchone()
+    return r[0] if r else None
+
+
+def next_trading_day_price(cur, ticker, start_date, max_days=5):
+    """Return the first close price on or after start_date, within max_days."""
+    for offset in range(max_days + 1):
+        price = price_at_date(cur, ticker, start_date + timedelta(days=offset))
+        if price is not None:
+            return float(price)
+    return None
+
+
 def compute_forward_returns(cur, ticker, sig_date, entry_price):
     """Compute 1d/5d/20d/60d forward returns from entry_price using price_history only.
-    No live_price fallback, to avoid ticker-collision false signals (e.g. BTC stock vs BTC-USD crypto)."""
+    Uses next available trading day (handles weekends/holidays). No live_price fallback,
+    to avoid ticker-collision false signals (e.g. BTC stock vs BTC-USD crypto)."""
     from datetime import date
     today = date.today()
 
@@ -102,9 +158,9 @@ def compute_forward_returns(cur, ticker, sig_date, entry_price):
         target = sig_date + timedelta(days=days)
         if target > today:
             return None, None
-        price = price_at_date(cur, ticker, target)
+        price = next_trading_day_price(cur, ticker, target)
         if price is not None:
-            return float(price), 'history'
+            return price, 'history'
         return None, None
 
     r1d = r5d = r20d = r60d = None
@@ -171,7 +227,7 @@ def score_positions(cur):
         if ac <= 0:
             continue
         lp = float(live_price) if live_price is not None else 0.0
-        ret = round((lp - ac) / ac * 100, 4) if lp > 0 else None
+        ret = safe_return_pct(lp, ac, max_abs=10000.0)
         r1, r5, r20, r60, method = compute_forward_returns(cur, ticker, sig_date, ac)
         rows.append(("position", "portfolio", ticker, "LONG", sig_date, ac, lp,
                      r1, r5, r20, r60, ret, method, None))
@@ -190,7 +246,7 @@ def score_trader_calls(cur):
     rows = []
     for trader_name, ticker, call_type, sig_date, price_at_call in cur.fetchall():
         current = get_current_price(cur, ticker)
-        ret = round((current - price_at_call) / price_at_call * 100, 4) if price_at_call > 0 and current else None
+        ret = safe_return_pct(current, price_at_call, max_abs=10000.0)
         # Forward returns use price_history close at t-1 for consistency and to avoid synthetic price_at_call values
         entry = price_at_date(cur, ticker, sig_date - timedelta(days=1))
         r1, r5, r20, r60, method = compute_forward_returns(cur, ticker, sig_date, entry)
@@ -227,9 +283,10 @@ def score_council(cur):
         if entry is None:
             continue
         current = get_current_price(cur, ticker)
+        ret_since = safe_return_pct(current, entry, max_abs=10000.0)
         r1, r5, r20, r60, method = compute_forward_returns(cur, ticker, sig_date, entry)
         rows.append(("council", "vox-ai-council", ticker, action, sig_date, entry, current,
-                     r1, r5, r20, r60, None, method, None))
+                     r1, r5, r20, r60, ret_since, method, None))
     insert_performance(cur, rows)
 
 
@@ -246,9 +303,10 @@ def score_grades(cur):
             continue
         current = get_current_price(cur, ticker)
         bucket = "80-100" if grade >= 80 else "60-79" if grade >= 60 else "40-59" if grade >= 40 else "0-39"
+        ret_since = safe_return_pct(current, entry, max_abs=10000.0)
         r1, r5, r20, r60, method = compute_forward_returns(cur, ticker, sig_date, entry)
         rows.append(("unified_grade", "vox-unified", ticker, action, sig_date, entry, current,
-                     r1, r5, r20, r60, None, method, bucket))
+                     r1, r5, r20, r60, ret_since, method, bucket))
     insert_performance(cur, rows)
 
 
