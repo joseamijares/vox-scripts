@@ -175,15 +175,23 @@ def clean_records(records, source):
             dt = raw_date.date()
         else:
             dt = datetime.strptime(str(raw_date)[:10], '%Y-%m-%d').date()
+        def _float(v):
+            if v is None:
+                return None
+            try:
+                return float(v)
+            except Exception:
+                return None
+
         clean.append({
             'ticker': rec['ticker'].strip().upper(),
             'date': dt,
-            'open': rec.get('open') or rec.get('open_price'),
-            'high': rec.get('high') or rec.get('high_price'),
-            'low': rec.get('low') or rec.get('low_price'),
-            'close': close,
-            'volume': rec.get('volume'),
-            'adj_close': rec.get('adj_close') or rec.get('adj_close_price'),
+            'open': _float(rec.get('open') or rec.get('open_price')),
+            'high': _float(rec.get('high') or rec.get('high_price')),
+            'low': _float(rec.get('low') or rec.get('low_price')),
+            'close': close_val,
+            'volume': _float(rec.get('volume')),
+            'adj_close': _float(rec.get('adj_close') or rec.get('adj_close_price')),
             'source': source,
         })
     return clean

@@ -85,12 +85,18 @@ def price_at_date(cur, ticker, as_of_date):
     return r[0] if r else None
 
 
-def compute_forward_returns(cur, ticker, sig_date, current_price):
-    """Compute 1d/5d/20d/60d forward returns using price_history close prices.
-    Falls back to current live price for the latest window if history is missing."""
+def compute_forward_returns(cur, ticker, sig_date, entry_price):
+    """Compute 1d/5d/20d/60d forward returns from entry_price using price_history only.
+    No live_price fallback, to avoid ticker-collision false signals (e.g. BTC stock vs BTC-USD crypto)."""
     from datetime import date
     today = date.today()
-    live_price = get_current_price(cur, ticker)
+
+    try:
+        ep = float(entry_price) if entry_price is not None else 0.0
+    except Exception:
+        ep = 0.0
+    if ep <= 0:
+        return None, None, None, None, 'no_entry'
 
     def get_price_for_offset(days):
         target = sig_date + timedelta(days=days)
@@ -99,40 +105,33 @@ def compute_forward_returns(cur, ticker, sig_date, current_price):
         price = price_at_date(cur, ticker, target)
         if price is not None:
             return float(price), 'history'
-        # If target is the most recent date we can observe, fall back to live price
-        if target == today and live_price:
-            return float(live_price), 'live_price'
         return None, None
 
     r1d = r5d = r20d = r60d = None
-    method = 'live_price'
     p1, m1 = get_price_for_offset(1)
     p5, m5 = get_price_for_offset(5)
     p20, m20 = get_price_for_offset(20)
     p60, m60 = get_price_for_offset(60)
 
-    try:
-        cp = float(current_price) if current_price is not None else 0.0
-    except Exception:
-        cp = 0.0
-    if cp > 0:
-        current_price = cp
-        if p1 is not None:
-            r1d = round((p1 - current_price) / current_price * 100, 4)
-        if p5 is not None:
-            r5d = round((p5 - current_price) / current_price * 100, 4)
-        if p20 is not None:
-            r20d = round((p20 - current_price) / current_price * 100, 4)
-        if p60 is not None:
-            r60d = round((p60 - current_price) / current_price * 100, 4)
+    if p1 is not None:
+        r1d = round((p1 - ep) / ep * 100, 4)
+        if r1d != r1d:  # NaN guard
+            r1d = None
+    if p5 is not None:
+        r5d = round((p5 - ep) / ep * 100, 4)
+        if r5d != r5d:
+            r5d = None
+    if p20 is not None:
+        r20d = round((p20 - ep) / ep * 100, 4)
+        if r20d != r20d:
+            r20d = None
+    if p60 is not None:
+        r60d = round((p60 - ep) / ep * 100, 4)
+        if r60d != r60d:
+            r60d = None
 
     methods = {m for m in (m1, m5, m20, m60) if m}
-    if methods == {'history'}:
-        method = 'history'
-    elif 'history' in methods and 'live_price' in methods:
-        method = 'history_live'
-    elif live_price and not methods:
-        method = 'live_price'
+    method = 'history' if methods == {'history'} else 'live_price'
     return r1d, r5d, r20d, r60d, method
 
 
@@ -165,9 +164,16 @@ def score_positions(cur):
     """)
     rows = []
     for ticker, avg_cost, live_price, sig_date in cur.fetchall():
-        ret = round((live_price - avg_cost) / avg_cost * 100, 4) if avg_cost > 0 else None
-        r1, r5, r20, r60, method = compute_forward_returns(cur, ticker, sig_date, avg_cost)
-        rows.append(("position", "portfolio", ticker, "LONG", sig_date, avg_cost, live_price,
+        try:
+            ac = float(avg_cost) if avg_cost is not None else 0.0
+        except Exception:
+            ac = 0.0
+        if ac <= 0:
+            continue
+        lp = float(live_price) if live_price is not None else 0.0
+        ret = round((lp - ac) / ac * 100, 4) if lp > 0 else None
+        r1, r5, r20, r60, method = compute_forward_returns(cur, ticker, sig_date, ac)
+        rows.append(("position", "portfolio", ticker, "LONG", sig_date, ac, lp,
                      r1, r5, r20, r60, ret, method, None))
     insert_performance(cur, rows)
 
@@ -185,7 +191,9 @@ def score_trader_calls(cur):
     for trader_name, ticker, call_type, sig_date, price_at_call in cur.fetchall():
         current = get_current_price(cur, ticker)
         ret = round((current - price_at_call) / price_at_call * 100, 4) if price_at_call > 0 and current else None
-        r1, r5, r20, r60, method = compute_forward_returns(cur, ticker, sig_date, price_at_call)
+        # Forward returns use price_history close at t-1 for consistency and to avoid synthetic price_at_call values
+        entry = price_at_date(cur, ticker, sig_date - timedelta(days=1))
+        r1, r5, r20, r60, method = compute_forward_returns(cur, ticker, sig_date, entry)
         rows.append(("trader_call", trader_name, ticker, call_type, sig_date, price_at_call, current,
                      r1, r5, r20, r60, ret, method, None))
     insert_performance(cur, rows)
@@ -214,9 +222,13 @@ def score_council(cur):
     """)
     rows = []
     for ticker, action, sig_date in cur.fetchall():
+        # Council forward returns measured from close before deliberation; skip if no historical price
+        entry = price_at_date(cur, ticker, sig_date - timedelta(days=1))
+        if entry is None:
+            continue
         current = get_current_price(cur, ticker)
-        r1, r5, r20, r60, method = compute_forward_returns(cur, ticker, sig_date, current)
-        rows.append(("council", "vox-ai-council", ticker, action, sig_date, None, current,
+        r1, r5, r20, r60, method = compute_forward_returns(cur, ticker, sig_date, entry)
+        rows.append(("council", "vox-ai-council", ticker, action, sig_date, entry, current,
                      r1, r5, r20, r60, None, method, None))
     insert_performance(cur, rows)
 
@@ -229,10 +241,13 @@ def score_grades(cur):
     """)
     rows = []
     for ticker, action, grade, sig_date in cur.fetchall():
+        entry = price_at_date(cur, ticker, sig_date - timedelta(days=1))
+        if entry is None:
+            continue
         current = get_current_price(cur, ticker)
         bucket = "80-100" if grade >= 80 else "60-79" if grade >= 60 else "40-59" if grade >= 40 else "0-39"
-        r1, r5, r20, r60, method = compute_forward_returns(cur, ticker, sig_date, current)
-        rows.append(("unified_grade", "vox-unified", ticker, action, sig_date, None, current,
+        r1, r5, r20, r60, method = compute_forward_returns(cur, ticker, sig_date, entry)
+        rows.append(("unified_grade", "vox-unified", ticker, action, sig_date, entry, current,
                      r1, r5, r20, r60, None, method, bucket))
     insert_performance(cur, rows)
 
@@ -254,7 +269,29 @@ def aggregate_returns(cur):
     return cur.fetchall()
 
 
-def write_obsidian(agg, top_winners, top_losers, grade_bucket_agg):
+def aggregate_forward_returns(cur):
+    """Return 1d/5d/20d/60d forward return summary by signal type/action."""
+    cur.execute("""
+        SELECT
+            signal_type,
+            action,
+            COUNT(*) FILTER (WHERE return_1d IS NOT NULL) AS n_1d,
+            ROUND(AVG(return_1d)::numeric, 2) AS avg_1d,
+            COUNT(*) FILTER (WHERE return_5d IS NOT NULL) AS n_5d,
+            ROUND(AVG(return_5d)::numeric, 2) AS avg_5d,
+            COUNT(*) FILTER (WHERE return_20d IS NOT NULL) AS n_20d,
+            ROUND(AVG(return_20d)::numeric, 2) AS avg_20d,
+            COUNT(*) FILTER (WHERE return_60d IS NOT NULL) AS n_60d,
+            ROUND(AVG(return_60d)::numeric, 2) AS avg_60d
+        FROM signal_performance
+        WHERE snapshot_date = CURRENT_DATE
+        GROUP BY signal_type, action
+        ORDER BY signal_type, action
+    """)
+    return cur.fetchall()
+
+
+def write_obsidian(agg, forward_agg, top_winners, top_losers, grade_bucket_agg):
     OBSIDIAN_DIR.mkdir(parents=True, exist_ok=True)
     date_str = datetime.now().strftime("%Y-%m-%d")
     path = OBSIDIAN_DIR / f"SignalQuality-{date_str}.md"
@@ -262,13 +299,20 @@ def write_obsidian(agg, top_winners, top_losers, grade_bucket_agg):
     lines = [
         f"# VOX Signal Quality — {date_str}",
         "",
-        "## Aggregate by Signal Type + Action",
+        "## Aggregate by Signal Type + Action (since signal)",
         "| Signal Type | Action | Count | Avg Return % | Win Rate % |",
         "|-------------|--------|-------|--------------|------------|",
     ]
     for r in agg:
         signal_type, action, n, avg_return, win_rate = r
         lines.append(f"| {signal_type} | {action or ''} | {n} | {avg_return or ''} | {win_rate or ''} |")
+
+    lines.append("\n## Forward Return Alpha Decay (1d / 5d / 20d / 60d)")
+    lines.append("| Signal Type | Action | 1d n/avg | 5d n/avg | 20d n/avg | 60d n/avg |")
+    lines.append("|-------------|--------|----------|----------|-----------|-----------|")
+    for r in forward_agg:
+        signal_type, action, n1, a1, n5, a5, n20, a20, n60, a60 = r
+        lines.append(f"| {signal_type} | {action or ''} | {n1}/{a1 or ''} | {n5}/{a5 or ''} | {n20}/{a20 or ''} | {n60}/{a60 or ''} |")
 
     lines.append("\n## Grade Bucket Performance")
     lines.append("| Grade Bucket | Count | Avg Return % |")
@@ -335,7 +379,8 @@ def main():
         """)
         grade_bucket_agg = cur.fetchall()
 
-        path = write_obsidian(agg, top_winners, top_losers, grade_bucket_agg)
+        forward_agg = aggregate_forward_returns(cur)
+        path = write_obsidian(agg, forward_agg, top_winners, top_losers, grade_bucket_agg)
         print(f"Signal Quality Feedback: {len(agg)} aggregates")
         for r in agg:
             print(f"  {r[0]} / {r[1]}: n={r[2]}, avg={r[3]}%, win_rate={r[4]}%")
