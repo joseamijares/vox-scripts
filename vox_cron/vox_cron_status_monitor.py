@@ -296,9 +296,25 @@ class VoxCronStatusMonitor:
         else:
             print("  ✅ No NULL grades")
         
+        # Check earnings_calendar health
+        try:
+            earnings_health = db_query("""
+                SELECT COUNT(*) FROM earnings_calendar
+                WHERE report_date BETWEEN CURRENT_DATE AND CURRENT_DATE + INTERVAL '30 days'
+            """)
+            earnings_count = int(earnings_health[0][0]) if earnings_health else 0
+            if earnings_count == 0:
+                self.warnings.append("No upcoming earnings in earnings_calendar for next 30 days")
+                print("  ⚠️ No upcoming earnings in next 30 days")
+            else:
+                print(f"  ✅ {earnings_count} upcoming earnings in next 30 days")
+        except Exception as e:
+            self.warnings.append(f"earnings_calendar health check failed: {e}")
+            print(f"  ⚠️ earnings_calendar health check failed: {e}")
+
         # Check unified_grades freshness
         unified_fresh = db_query("""
-            SELECT COUNT(*) FROM unified_grades 
+            SELECT COUNT(*) FROM unified_grades
             WHERE computed_at > NOW() - INTERVAL '24 hours'
         """)
         unified_count = int(unified_fresh[0][0]) if unified_fresh else 0
@@ -307,6 +323,35 @@ class VoxCronStatusMonitor:
             print("  🔴 No unified grades in 24h")
         else:
             print(f"  ✅ {unified_count} unified grades fresh")
+
+        # Check price_history freshness for active tickers
+        try:
+            stale_price = db_query("""
+                SELECT COUNT(*) FROM (
+                    SELECT DISTINCT ticker FROM (
+                        SELECT ticker FROM vox_grades
+                        WHERE generated_at > NOW() - INTERVAL '30 days'
+                        UNION
+                        SELECT ticker FROM positions WHERE ticker IS NOT NULL
+                    ) active
+                ) a
+                LEFT JOIN (
+                    SELECT ticker, MAX(date) AS latest_date
+                    FROM price_history
+                    GROUP BY ticker
+                ) ph ON a.ticker = ph.ticker
+                WHERE ph.latest_date IS NULL
+                   OR ph.latest_date < CURRENT_DATE - INTERVAL '4 days'
+            """)
+            stale_price_count = int(stale_price[0][0]) if stale_price else 0
+            if stale_price_count > 0:
+                self.warnings.append(f"{stale_price_count} active tickers with stale/missing price_history (>4 days)")
+                print(f"  ⚠️ {stale_price_count} tickers with stale price history")
+            else:
+                print("  ✅ price_history is fresh for active tickers")
+        except Exception as e:
+            self.warnings.append(f"price_history freshness check failed: {e}")
+            print(f"  ⚠️ price_history freshness check failed: {e}")
     
     def check_script_syntax(self):
         """Quick syntax check on all vox_ scripts."""

@@ -23,13 +23,15 @@ sys.path.insert(0, str(Path.home() / ".hermes" / "scripts"))
 import hermes_secrets_bootstrap
 
 import os
+import sys
 import argparse
 import json
 import psycopg2
-import requests
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent))
+import vox_utils as vu
 from datetime import datetime, timedelta
 
-OPENROUTER_BASE = "https://openrouter.ai/api/v1"
 DEFAULT_MODEL = "deepseek/deepseek-v4-flash"
 FALLBACK_MODEL = "deepseek/deepseek-v4-pro"
 
@@ -125,17 +127,17 @@ INSTRUCTIONS:
 """
 
 
-def summarize(api_key: str, prompt: str, model: str) -> str:
-    headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
-    payload = {
-        "model": model,
-        "messages": [{"role": "user", "content": prompt}],
-        "temperature": 0.6,
-        "max_tokens": 600,
-    }
-    r = requests.post(f"{OPENROUTER_BASE}/chat/completions", headers=headers, json=payload, timeout=120)
-    r.raise_for_status()
-    return r.json()["choices"][0]["message"]["content"]
+def summarize(prompt: str, model: str) -> str:
+    result = vu.call_openrouter(
+        system_prompt="You are a senior research analyst writing a concise morning brief for an aggressive growth investor.",
+        user_prompt=prompt,
+        model=model,
+        max_tokens=600,
+        temperature=0.6,
+        script_name="vox_daily_research_brief.py",
+        notes=f"Daily research brief using {model}",
+    )
+    return result.get("content", "")
 
 
 def main():
@@ -164,17 +166,12 @@ def main():
         print("\nDry-run. Add --run to call OpenRouter.")
         return 0
 
-    api_key = os.environ.get("OPENROUTER_API_KEY")
-    if not api_key:
-        print("ERROR: OPENROUTER_API_KEY not set.")
-        return 1
-
     try:
-        brief = summarize(api_key, prompt, args.model)
+        brief = summarize(prompt, args.model)
     except Exception as e:
         print(f"ERROR with {args.model}: {e}")
         print(f"Trying fallback {FALLBACK_MODEL}...")
-        brief = summarize(api_key, prompt, FALLBACK_MODEL)
+        brief = summarize(prompt, FALLBACK_MODEL)
 
     print("\n=== DAILY BRIEF ===\n")
     print(brief)

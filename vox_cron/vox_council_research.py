@@ -33,7 +33,10 @@ import os
 import argparse
 import json
 import psycopg2
-import requests
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent))
+import vox_utils as vu
 from collections import Counter
 from datetime import datetime, timezone
 from typing import List, Dict
@@ -41,7 +44,6 @@ from typing import List, Dict
 import re
 
 
-OPENROUTER_BASE = "https://openrouter.ai/api/v1"
 MODELS = [
     {"name": "claude-sonnet-5", "id": "anthropic/claude-sonnet-5", "cost_in": 0.003, "cost_out": 0.015},
     {"name": "deepseek-v4-pro", "id": "deepseek/deepseek-v4-pro", "cost_in": 0.000435, "cost_out": 0.00087},
@@ -199,17 +201,17 @@ def _extract_json_array(text: str) -> List[Dict]:
     raise ValueError(f"Could not parse JSON objects from: {text[:200]}...")
 
 
-def call_openrouter(model_id: str, prompt: str, api_key: str) -> List[Dict]:
-    headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json", "HTTP-Referer": "https://vox.local", "X-Title": "VOX AI Council"}
-    payload = {
-        "model": model_id,
-        "messages": [{"role": "user", "content": prompt}],
-        "temperature": 0.4,
-        "max_tokens": 4096,
-    }
-    r = requests.post(f"{OPENROUTER_BASE}/chat/completions", headers=headers, json=payload, timeout=120)
-    r.raise_for_status()
-    content = r.json()["choices"][0]["message"]["content"]
+def call_openrouter(model_id: str, prompt: str) -> List[Dict]:
+    result = vu.call_openrouter(
+        system_prompt="",
+        user_prompt=prompt,
+        model=model_id,
+        max_tokens=4096,
+        temperature=0.4,
+        script_name="vox_council_research.py",
+        notes=f"AI Council call via model {model_id}",
+    )
+    content = result.get("content", "")
     return _extract_json_array(content)
 
 
@@ -365,18 +367,13 @@ def main():
         print("\nDry-run mode. Add --run to execute (requires OPENROUTER_API_KEY in env).")
         return 0
 
-    api_key = os.environ.get("OPENROUTER_API_KEY")
-    if not api_key:
-        print("ERROR: OPENROUTER_API_KEY not set. Cannot run council.")
-        return 1
-
     verdicts_by_model = {}
     for model in MODELS:
         if model["id"] not in args.models:
             continue
         print(f"\nCalling {model['name']} ({model['id']})...")
         try:
-            responses = call_openrouter(model["id"], prompt, api_key)
+            responses = call_openrouter(model["id"], prompt)
             verdicts_by_model[model["name"]] = responses
             print(f"  Got {len(responses)} verdicts")
         except Exception as e:

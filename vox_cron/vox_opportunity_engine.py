@@ -14,10 +14,13 @@ sys.path.insert(0, str(Path.home() / ".hermes" / "scripts"))
 import hermes_secrets_bootstrap
 
 import os
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent))
 import psycopg2
 import json
-import requests
 from datetime import datetime
+import vox_utils as vu
 
 DB_HOST = os.environ.get('DB_HOST', 'acela.proxy.rlwy.net')
 DB_PORT = os.environ.get('DB_PORT', '35577')
@@ -230,37 +233,31 @@ def deepseek_review(candidates, context):
     if not OPENROUTER_API_KEY or not candidates:
         return candidates
     system_prompt = """You are a strict quantitative review layer for a stock alert system. You receive candidate alerts with data fields. Your job is to reject any alert that:
-- Is based on mock, synthetic, or placeholder data
-- Has missing or zero scores that make it non-actionable
-- Is a defensive/boring sector (utilities, staples, telecom, REITs, gold, pharma) unless explicitly justified
-- Is a position with extreme P&L but tiny cost basis (data error)
-- Is a duplicate or low-conviction signal
+|- Is based on mock, synthetic, or placeholder data
+|- Has missing or zero scores that make it non-actionable
+|- Is a defensive/boring sector (utilities, staples, telecom, REITs, gold, pharma) unless explicitly justified
+|- Is a position with extreme P&L but tiny cost basis (data error)
+|- Is a duplicate or low-conviction signal
 Return a JSON object with key "approved" containing only the tickers you approve. Example: {"approved": ["TICKER1", "TICKER2"]}. If none are approved, return {"approved": []}. Do not include any other text."""
     user_prompt = f"Context: {context}\n\nCandidates:\n{json.dumps(candidates, indent=2, default=str)}\n\nReturn JSON only."
-    headers = {"Authorization": f"Bearer {OPENROUTER_API_KEY}", "Content-Type": "application/json"}
-    payload = {
-        "model": "deepseek/deepseek-v4-pro",
-        "messages": [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt}
-        ],
-        "temperature": 0.2,
-        "max_tokens": 2000
-    }
     try:
-        resp = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=payload, timeout=60)
-        if resp.status_code != 200:
-            print(f"DeepSeek review error {resp.status_code}: {resp.text}")
-            return candidates
-        data = resp.json()
-        content = data["choices"][0]["message"]["content"]
+        result = vu.call_openrouter(
+            system_prompt=system_prompt,
+            user_prompt=user_prompt,
+            model="deepseek/deepseek-v4-pro",
+            max_tokens=2000,
+            temperature=0.2,
+            script_name="vox_opportunity_engine.py",
+            notes="DeepSeek v4 Pro second-layer review",
+        )
+        content = result.get("content", "")
         # Extract JSON
         start = content.find('{')
         end = content.rfind('}')
         if start == -1 or end == -1:
             return candidates
-        result = json.loads(content[start:end+1])
-        approved = set(result.get('approved', []))
+        parsed = json.loads(content[start:end+1])
+        approved = set(parsed.get('approved', []))
         return [c for c in candidates if c.get('ticker') in approved]
     except Exception as e:
         print(f"DeepSeek review failed: {e}")
