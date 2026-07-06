@@ -34,6 +34,11 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
+try:
+    from croniter import croniter
+except Exception:
+    croniter = None
+
 # Load env
 ENV_PATH = os.path.expanduser("~/.hermes/.env")
 if os.path.exists(ENV_PATH):
@@ -49,8 +54,7 @@ DB_USER = os.environ.get("DB_USER", "postgres")
 DB_PASSWORD = os.environ.get("DB_PASSWORD", "")
 DB_NAME = os.environ.get("DB_NAME", "railway")
 
-SCRIPT_DIR = Path.home() / ".hermes" / "scripts"
-VOX_CRON_DIR = SCRIPT_DIR / "vox_cron"
+SCRIPT_DIR = Path.home() / ".hermes" / "scripts" / "vox_cron"
 HERMES_DIR = Path.home() / ".hermes"
 
 
@@ -103,81 +107,26 @@ class VoxCronStatusMonitor:
         }
         
     def load_cron_jobs(self):
-        """Load all cron jobs from Hermes live cron list output."""
-        print("🔍 Loading cron jobs from live cron list...")
+        """Load all cron jobs from Hermes live cron jobs.json."""
+        print("🔍 Loading cron jobs from Hermes cron jobs.json...")
         
-        try:
-            result = subprocess.run(
-                ["hermes", "cron", "list"],
-                capture_output=True, text=True, timeout=30
-            )
-            if result.returncode == 0:
-                self.jobs = self._parse_cron_list(result.stdout)
-                print(f"  ✅ Loaded {len(self.jobs)} jobs from live list")
-                return self.jobs
-        except Exception as e:
-            print(f"  ⚠️ Live list failed: {e}")
-        
-        # Fallback: read latest backup
-        backup_dir = HERMES_DIR / "skills" / ".curator_backups"
-        if backup_dir.exists():
-            backups = sorted(backup_dir.glob("*/cron-jobs.json"), reverse=True)
-            if backups:
-                with open(backups[0]) as f:
+        jobs_file = HERMES_DIR / "cron" / "jobs.json"
+        if jobs_file.exists():
+            try:
+                with open(jobs_file) as f:
                     data = json.load(f)
-                    self.jobs = data.get('jobs', [])
-                    print(f"  ✅ Loaded {len(self.jobs)} jobs from backup")
-                    return self.jobs
+                self.jobs = [j for j in data.get('jobs', []) if j.get('enabled', True)]
+                print(f"  ✅ Loaded {len(self.jobs)} enabled jobs from {jobs_file}")
+                return self.jobs
+            except Exception as e:
+                print(f"  ❌ Error loading {jobs_file}: {e}")
         
         # Fallback: scan scripts directory
-        print("  ⚠️ No backup found, scanning scripts directory...")
+        print("  ⚠️ No live cron jobs file found, scanning scripts directory...")
         scripts = list(SCRIPT_DIR.glob("vox_*.py"))
         self.jobs = [{'name': s.stem, 'script': s.name, 'enabled': True} for s in scripts]
         print(f"  ✅ Found {len(self.jobs)} scripts")
         return self.jobs
-    
-    def _parse_cron_list(self, output: str) -> List[Dict]:
-        """Parse hermes cron list text output into job dicts."""
-        jobs = []
-        current_job = {}
-        
-        for line in output.split('\n'):
-            line = line.strip()
-            if line.startswith('Name:'):
-                if current_job:
-                    jobs.append(current_job)
-                current_job = {'name': line.split('Name:')[1].strip()}
-            elif line.startswith('Script:'):
-                current_job['script'] = line.split('Script:')[1].strip()
-            elif line.startswith('Last run:'):
-                # Parse: "Last run:  2026-06-24T12:00:50.856888-06:00  ok"
-                # Or: "Last run:  2026-06-24T13:01:01.504869-06:00  error: Script exited with code 1"
-                rest = line.split('Last run:')[1].strip()
-                # Split by two spaces to separate timestamp from status
-                parts = rest.split('  ')
-                if len(parts) >= 2:
-                    current_job['last_run_at'] = parts[0].strip()
-                    status_part = parts[1].strip()
-                    # Status is before the colon (e.g., "error:" or "ok")
-                    if ':' in status_part:
-                        status = status_part.split(':')[0].strip()
-                        current_job['last_status'] = status
-                        current_job['last_error'] = ':'.join(status_part.split(':')[1:]).strip()
-                    else:
-                        current_job['last_status'] = status_part
-                elif len(parts) == 1:
-                    # Just timestamp, no status
-                    current_job['last_run_at'] = parts[0].strip()
-                    current_job['last_status'] = 'unknown'
-            elif line.startswith('Next run:'):
-                current_job['next_run_at'] = line.split('Next run:')[1].strip()
-            elif line.startswith('Schedule:'):
-                current_job['schedule'] = line.split('Schedule:')[1].strip()
-        
-        if current_job:
-            jobs.append(current_job)
-        
-        return jobs
     
     def check_job_status(self, job):
         """Check status of a single cron job."""
@@ -197,13 +146,11 @@ class VoxCronStatusMonitor:
             'issues': []
         }
         
-        # Check if script exists
+        # Check if script exists (handle both root and vox_cron/ paths)
         if script:
-            # Handle vox_cron/ prefix in script paths
-            script_name = script.replace('vox_cron/', '')
-            script_path = SCRIPT_DIR / script_name
+            script_path = SCRIPT_DIR / script
             if not script_path.exists():
-                script_path = SCRIPT_DIR / 'vox_cron' / script_name
+                script_path = Path.home() / ".hermes" / "scripts" / script
             if not script_path.exists():
                 status['state'] = 'MISSING'
                 status['issues'].append(f"Script not found: {script}")
@@ -215,32 +162,84 @@ class VoxCronStatusMonitor:
             status['state'] = 'ERROR'
             status['issues'].append(f"Last run failed: {last_error[:100] if last_error else 'Unknown error'}")
             self.stats['error'] += 1
-        elif last_status == 'ok':
+        elif last_status in ('ok', 'success'):
+            self.stats['ok'] += 1
+        elif last_status is None or last_status == 'null':
+            # Cron has not run yet (e.g., weekly jobs scheduled for future date)
+            status['state'] = 'PENDING'
             self.stats['ok'] += 1
         else:
             status['state'] = 'WARNING'
             status['issues'].append(f"Unknown status: {last_status}")
             self.stats['warning'] += 1
         
-        # Check if stale (> 48 hours since last run, adjusted for weekly schedules)
-        if last_run:
+        # Check staleness based on cron schedule, not fixed 48h
+        schedule = job.get('schedule', '')
+        if isinstance(schedule, dict):
+            schedule = schedule.get('expr') or schedule.get('display') or ''
+        if croniter and schedule:
             try:
-                last_run_dt = datetime.fromisoformat(last_run.replace('Z', '+00:00'))
-                schedule = job.get('schedule', '')
-                # Weekly jobs: allow up to 8 days + 6 hours slack
-                if schedule and ('* * 0' in schedule or '* * 1' in schedule or '* * 2' in schedule or
-                                 '* * 3' in schedule or '* * 4' in schedule or '* * 5' in schedule or
-                                 '* * 6' in schedule or '* * 7' in schedule):
-                    stale_threshold = timedelta(days=8, hours=6)
+                now = datetime.now().astimezone()
+                # Parse croniter from schedule using local time
+                itr = croniter(schedule, now - timedelta(days=1))
+                # Get last expected run before now
+                expected_last = itr.get_prev(datetime)
+                next_expected = itr.get_next(datetime)
+                # Previous get_next advances; get previous scheduled time before now
+                itr2 = croniter(schedule, now)
+                expected_last = itr2.get_prev(datetime)
+
+                if last_run and last_run not in ('null', None, ''):
+                    try:
+                        last_run_dt = datetime.fromisoformat(last_run.replace('Z', '+00:00'))
+                        # If last run is before the last scheduled occurrence, it's stale
+                        if last_run_dt < expected_last:
+                            status['issues'].append(f"Stale: last run {last_run}, expected after {expected_last.isoformat()}")
+                            if status['state'] in ('OK', 'PENDING'):
+                                if status['state'] == 'PENDING':
+                                    self.stats['ok'] -= 1
+                                status['state'] = 'STALE'
+                                self.stats['stale'] += 1
+                    except Exception:
+                        pass
                 else:
-                    stale_threshold = timedelta(hours=48)
-                if datetime.now().astimezone() - last_run_dt > stale_threshold:
-                    status['issues'].append(f"Stale: Last run {last_run}")
-                    if status['state'] == 'OK':
-                        status['state'] = 'STALE'
-                        self.stats['stale'] += 1
-            except:
-                pass
+                    # Never ran; stale only if the next scheduled run is already in the past
+                    next_expected = croniter(schedule, expected_last).get_next(datetime)
+                    if now > next_expected + timedelta(minutes=30):
+                        status['issues'].append(f"Stale: never ran, expected by {next_expected.isoformat()}")
+                        if status['state'] in ('OK', 'PENDING'):
+                            if status['state'] == 'PENDING':
+                                self.stats['ok'] -= 1
+                            status['state'] = 'STALE'
+                            self.stats['stale'] += 1
+            except Exception:
+                # Fallback: fixed 48h window if cron schedule is invalid
+                if last_run and last_run not in ('null', None, ''):
+                    try:
+                        last_run_dt = datetime.fromisoformat(last_run.replace('Z', '+00:00'))
+                        if datetime.now().astimezone() - last_run_dt > timedelta(hours=48):
+                            status['issues'].append(f"Stale: Last run {last_run}")
+                            if status['state'] in ('OK', 'PENDING'):
+                                if status['state'] == 'PENDING':
+                                    self.stats['ok'] -= 1
+                                status['state'] = 'STALE'
+                                self.stats['stale'] += 1
+                    except Exception:
+                        pass
+        else:
+            # No croniter or no schedule: keep 48h fallback for now
+            if last_run and last_run not in ('null', None, ''):
+                try:
+                    last_run_dt = datetime.fromisoformat(last_run.replace('Z', '+00:00'))
+                    if datetime.now().astimezone() - last_run_dt > timedelta(hours=48):
+                        status['issues'].append(f"Stale: Last run {last_run}")
+                        if status['state'] in ('OK', 'PENDING'):
+                            if status['state'] == 'PENDING':
+                                self.stats['ok'] -= 1
+                            status['state'] = 'STALE'
+                            self.stats['stale'] += 1
+                except Exception:
+                    pass
         
         return status
     
@@ -273,14 +272,10 @@ class VoxCronStatusMonitor:
         else:
             print("  ✅ No NaN values")
         
-        # Check stale grades - count tickers whose LATEST grade is stale
+        # Check stale grades
         stale = db_query("""
-            SELECT COUNT(*) FROM (
-                SELECT ticker, MAX(generated_at) as last_grade
-                FROM vox_grades
-                GROUP BY ticker
-                HAVING MAX(generated_at) < NOW() - INTERVAL '7 days'
-            ) sq
+            SELECT COUNT(DISTINCT ticker) FROM vox_grades
+            WHERE generated_at < NOW() - INTERVAL '7 days'
         """)
         stale_count = int(stale[0][0]) if stale else 0
         if stale_count > 0:
@@ -301,9 +296,25 @@ class VoxCronStatusMonitor:
         else:
             print("  ✅ No NULL grades")
         
+        # Check earnings_calendar health
+        try:
+            earnings_health = db_query("""
+                SELECT COUNT(*) FROM earnings_calendar
+                WHERE report_date BETWEEN CURRENT_DATE AND CURRENT_DATE + INTERVAL '30 days'
+            """)
+            earnings_count = int(earnings_health[0][0]) if earnings_health else 0
+            if earnings_count == 0:
+                self.warnings.append("No upcoming earnings in earnings_calendar for next 30 days")
+                print("  ⚠️ No upcoming earnings in next 30 days")
+            else:
+                print(f"  ✅ {earnings_count} upcoming earnings in next 30 days")
+        except Exception as e:
+            self.warnings.append(f"earnings_calendar health check failed: {e}")
+            print(f"  ⚠️ earnings_calendar health check failed: {e}")
+
         # Check unified_grades freshness
         unified_fresh = db_query("""
-            SELECT COUNT(*) FROM unified_grades 
+            SELECT COUNT(*) FROM unified_grades
             WHERE computed_at > NOW() - INTERVAL '24 hours'
         """)
         unified_count = int(unified_fresh[0][0]) if unified_fresh else 0
@@ -312,6 +323,35 @@ class VoxCronStatusMonitor:
             print("  🔴 No unified grades in 24h")
         else:
             print(f"  ✅ {unified_count} unified grades fresh")
+
+        # Check price_history freshness for active tickers
+        try:
+            stale_price = db_query("""
+                SELECT COUNT(*) FROM (
+                    SELECT DISTINCT ticker FROM (
+                        SELECT ticker FROM vox_grades
+                        WHERE generated_at > NOW() - INTERVAL '30 days'
+                        UNION
+                        SELECT ticker FROM positions WHERE ticker IS NOT NULL
+                    ) active
+                ) a
+                LEFT JOIN (
+                    SELECT ticker, MAX(date) AS latest_date
+                    FROM price_history
+                    GROUP BY ticker
+                ) ph ON a.ticker = ph.ticker
+                WHERE ph.latest_date IS NULL
+                   OR ph.latest_date < CURRENT_DATE - INTERVAL '4 days'
+            """)
+            stale_price_count = int(stale_price[0][0]) if stale_price else 0
+            if stale_price_count > 0:
+                self.warnings.append(f"{stale_price_count} active tickers with stale/missing price_history (>4 days)")
+                print(f"  ⚠️ {stale_price_count} tickers with stale price history")
+            else:
+                print("  ✅ price_history is fresh for active tickers")
+        except Exception as e:
+            self.warnings.append(f"price_history freshness check failed: {e}")
+            print(f"  ⚠️ price_history freshness check failed: {e}")
     
     def check_script_syntax(self):
         """Quick syntax check on all vox_ scripts."""
@@ -354,8 +394,12 @@ class VoxCronStatusMonitor:
         lines.append(f"{status_emoji} **Jobs**: {total} total | {ok} OK | {err} error | {warn} warning | {missing} missing | {stale} stale")
         lines.append("")
         
-        # Failed jobs
-        failed_jobs = [j for j in self.jobs if j.get('state') in ('ERROR', 'MISSING')]
+        # Failed jobs (excluding this monitor to avoid self-fulfilling failure loop)
+        MONITOR_NAMES = {'vox-cron-monitor', 'vox_cron_status_monitor'}
+        failed_jobs = [j for j in self.jobs if j.get('state') in ('ERROR', 'MISSING') and j.get('name') not in MONITOR_NAMES]
+        # Exclude monitor from error count for critical threshold
+        error_count = self.stats['error'] - sum(1 for j in self.jobs if j.get('state') == 'ERROR' and j.get('name') in MONITOR_NAMES)
+        error_count = max(0, error_count)
         if failed_jobs:
             lines.append("🔴 **Failed Jobs**")
             for job in failed_jobs[:10]:
@@ -363,7 +407,7 @@ class VoxCronStatusMonitor:
             lines.append("")
         
         # Stale jobs
-        stale_jobs = [j for j in self.jobs if j.get('state') == 'STALE']
+        stale_jobs = [j for j in self.jobs if j.get('state') == 'STALE' and j.get('name') not in MONITOR_NAMES]
         if stale_jobs:
             lines.append("🟡 **Stale Jobs**")
             for job in stale_jobs[:5]:
@@ -426,11 +470,11 @@ class VoxCronStatusMonitor:
         # Save outputs
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
         
-        report_file = VOX_CRON_DIR / f"cron_monitor_{timestamp}.txt"
+        report_file = SCRIPT_DIR / f"cron_monitor_{timestamp}.txt"
         with open(report_file, 'w') as f:
             f.write(report)
         
-        json_file = VOX_CRON_DIR / f"cron_monitor_{timestamp}.json"
+        json_file = SCRIPT_DIR / f"cron_monitor_{timestamp}.json"
         with open(json_file, 'w') as f:
             json.dump({
                 'jobs': self.jobs,
@@ -444,12 +488,12 @@ class VoxCronStatusMonitor:
         print(f"\n✅ Report: {report_file}")
         print(f"✅ Data: {json_file}")
         
-        # Exit with non-zero if critical issues — but exclude self to avoid
-        # self-referential failure loops (our own previous error is not a
-        # systemic issue that needs re-alerting every 6 hours).
-        non_self_errors = [j for j in self.jobs if j.get('status') == 'error' and j.get('name') != 'vox-cron-monitor']
-        non_self_issues = [i for i in self.issues if 'vox-cron-monitor' not in str(i)]
-        if non_self_issues or len(non_self_errors) > 0 or self.stats['missing_script'] > 0:
+        # Exit with non-zero if critical issues (excluding monitor itself)
+        MONITOR_NAMES = {'vox-cron-monitor', 'vox_cron_status_monitor'}
+        error_count = self.stats['error'] - sum(1 for j in self.jobs if j.get('state') == 'ERROR' and j.get('name') in MONITOR_NAMES)
+        error_count = max(0, error_count)
+        critical_count = error_count + self.stats['missing_script']
+        if self.issues or critical_count > 0:
             print(f"\n🚨 CRITICAL ISSUES DETECTED")
             return 1
         return 0
