@@ -6,12 +6,14 @@ Populates the daily log with real VOX data, multiple times per day.
 import os
 import sys
 import json
+import re
 from datetime import datetime, timedelta
 from pathlib import Path
 
 sys.path.insert(0, str(Path.home() / ".hermes" / "scripts"))
 import hermes_secrets_bootstrap
 from vox_cron.vox_utils import query_db, call_openrouter
+from vox_cron.vox_data_health import assess_data_health, health_summary
 
 OBSIDIAN_VOX = Path.home() / "Documents" / "Obsidian" / "VOX" / "vox"
 DAILY_DIR = OBSIDIAN_VOX / "memory" / "daily"
@@ -31,9 +33,11 @@ SYNC_LABELS = {0: "pre-market", 1: "midday", 2: "post-market"}
 VOX_WRITTEN_MARKER = "<!-- vox-written -->"
 FIELD_GUIDE_LINK = "[[FieldGuide|VOX Field Guide]]"
 
+THESIS_DIR = OBSIDIAN_VOX / "memory" / "theses"
+
 
 def ensure_dirs():
-    for d in [DAILY_DIR, DECISION_DIR, WEEKLY_DIR] + list(RESEARCH_DIRS.values()):
+    for d in [DAILY_DIR, DECISION_DIR, WEEKLY_DIR, THESIS_DIR] + list(RESEARCH_DIRS.values()):
         d.mkdir(parents=True, exist_ok=True)
 
 
@@ -333,18 +337,144 @@ def fill_section(content: str, heading: str, new_body: str) -> str:
     return content
 
 
+def update_frontmatter(content: str, source_grade_id: str = "", data_confidence: int = 0) -> str:
+    """Update or add YAML frontmatter fields."""
+    now = datetime.now().isoformat()
+    if content.startswith("---"):
+        # Extract existing frontmatter
+        parts = content.split("---", 2)
+        if len(parts) >= 3:
+            _, fm, rest = parts
+            fm_lines = [l for l in fm.splitlines() if l.strip() and not l.startswith("source_grade_id:") and not l.startswith("data_confidence:") and not l.startswith("generated_at:")]
+            fm_lines += [
+                f"source_grade_id: \"{source_grade_id}\"",
+                f"data_confidence: {data_confidence}",
+                f"generated_at: \"{now}\"",
+            ]
+            new_fm = "\n".join(fm_lines)
+            return f"---\n{new_fm}\n---\n{rest}"
+    # No frontmatter; add one
+    fm_lines = [
+        "---",
+        f"source_grade_id: \"{source_grade_id}\"",
+        f"data_confidence: {data_confidence}",
+        f"generated_at: \"{now}\"",
+        "---",
+        "",
+    ]
+    return "\n".join(fm_lines) + content
+
+
+def fallback_sections(health: dict) -> dict:
+    """When data confidence is LOW, produce conservative fallback sections."""
+    blocking_str = "; ".join(health["blocking"]) or "Data quality below threshold"
+    return {
+        "morning_intentions": f"- _Data confidence is LOW ({health['score']}/100). Morning intentions require fresh unified_grades. Blocking: {blocking_str}_",
+        "current_issues": f"| Data confidence gate | critical | Resolve: {blocking_str} |\n| Data quality too low for LLM synthesis | high | Refresh grades, price history, or required tables |",
+        "lessons_learned": f"- _When data confidence is below 50, do not generate new decision candidates. Wait for the next refresh cycle._",
+        "decision_candidates": "| Ticker | Decision | Source | Reason | Expected Edge |\n|--------|----------|--------|--------|---------------|\n| _NONE_ | Consider PASS | data_health | Low confidence | Preserve capital |",
+    }
+
+
 def generate_decision_candidates(section_text: str) -> str:
-    """Return candidate rows for the decision log table."""
+    """Return candidate rows for the decision log table, with thesis links."""
     body = normalize_candidates_section(section_text)
-    return body
+    return add_thesis_links_to_rows(body)
+
+
+def add_thesis_links_to_rows(rows_text: str) -> str:
+    """Add [[memory/theses/TICKER|TICKER]] links to candidate rows."""
+    lines = []
+    for line in rows_text.strip().splitlines():
+        cells = [c.strip() for c in line.strip("|").split("|")]
+        # Accept 5-column daily-candidate table or 6-column with Time
+        if len(cells) >= 5:
+            offset = 0 if len(cells) == 5 else 1
+            ticker = cells[offset]
+            if ticker and ticker not in ("_NONE_", "Ticker", ""):
+                ensure_thesis(ticker)
+                cells[offset] = f"[[memory/theses/{ticker}|{ticker}]]"
+            lines.append("| " + " | ".join(cells) + " |")
+        elif line.strip() and not line.strip().startswith("| Ticker") and not line.strip().startswith("|--------"):
+            lines.append(line)
+    return "\n".join(lines)
+
+
+def ticker_candidates_to_thesis_links(rows_text: str) -> str:
+    """Convert candidate rows into a list of thesis links for the daily note."""
+    links = []
+    for line in rows_text.strip().splitlines():
+        cells = [c.strip() for c in line.strip("|").split("|")]
+        if len(cells) >= 5:
+            offset = 0 if len(cells) == 5 else 1
+            ticker_raw = cells[offset]
+            # Strip any existing markdown link
+            ticker = ticker_raw.replace("[[", "").replace("]]", "").split("|")[-1]
+            if ticker and ticker not in ("_NONE_", "Ticker"):
+                links.append(f"- [[memory/theses/{ticker}|{ticker}]]")
+    return "\n".join(links) if links else "- _No candidates generated."
+
+
+def ensure_thesis(ticker: str) -> Path:
+    """Create a ticker thesis page if missing, with links to decision log and research notes."""
+    path = THESIS_DIR / f"{ticker}.md"
+    if path.exists():
+        return path
+    today = today_str()
+    template = f"""---
+ticker: "{ticker}"
+status: "watch"
+data_confidence: 0
+source_grade_id: ""
+generated_at: "{datetime.now().isoformat()}"
+---
+
+# Thesis — {ticker}
+
+**Status:** watch  
+**Why here:** Decision candidate from VOX daily compound on {today}.
+
+## Links
+- [[memory/decisions/{today}|Decision Log]]
+- [[SmartMoney/{latest_file_name(RESEARCH_DIRS['SmartMoney'])}|SmartMoney]]
+- [[SectorRotation/{latest_file_name(RESEARCH_DIRS['SectorRotation'])}|SectorRotation]]
+- [[Discovery/{latest_file_name(RESEARCH_DIRS['Discovery'])}|Discovery]]
+- [[Earnings/{latest_file_name(RESEARCH_DIRS['Earnings'])}|Earnings]]
+
+## Setup
+- _To be filled from daily log and research notes._
+
+## Trigger
+- _To be filled from Morning Intentions / Decision Candidates._
+
+## Invalidation
+- _To be filled._
+
+## Notes
+- Created by `vox_obsidian_compound.py` on {today}.
+"""
+    path.write_text(template)
+    return path
+
+
+def latest_file_name(folder: Path) -> str:
+    """Return latest filename in folder, or empty string."""
+    f = latest_file(folder)
+    return f.name if f else ""
 
 
 def ensure_daily_log():
-    """Create the daily log if missing."""
+    """Create the daily log if missing, with YAML frontmatter."""
     path = get_daily_log_path()
     if path.exists():
         return path
-    template = f"""# Daily Log — {today_str()}
+    template = f"""---
+source_grade_id: ""
+data_confidence: 0
+generated_at: "{datetime.now().isoformat()}"
+---
+
+# Daily Log — {today_str()}
 
 **Status:** active  
 **Owner:** Vox | Manual fields explained in {FIELD_GUIDE_LINK}
@@ -355,6 +485,14 @@ def ensure_daily_log():
 
 ## Decisions
 - [[memory/decisions/{today_str()}|Decision Log]]
+- [[memory/theses|All Theses]]
+
+## Decision Candidates
+| Ticker | Decision | Source | Reason | Expected Edge |
+|--------|----------|--------|--------|---------------|
+
+## Active Theses
+- _Links to theses generated today will appear here._
 
 ## Research Links
 
@@ -435,12 +573,42 @@ def sync_daily_log(sync_idx: int):
         after_section = parts[1].split("\n##", 1)
         content = parts[0] + "## Research Links" + research_links + "\n##" + after_section[1]
 
-    # Generate LLM-drafted manual sections
+    # Assess data health before using any data for LLM synthesis
+    health = assess_data_health()
+    health_md = health_summary(health)
+    confidence = health["score"]
+
+    # Stamp frontmatter on the daily note
+    content = update_frontmatter(content, source_grade_id="unified_grades", data_confidence=confidence)
+
+    # Insert health summary into What We Did block
+    actual_end_marker = f"<!-- vox-sync-end: {label} -->"
+    block = block.replace(
+        actual_end_marker,
+        f"**Data Health:**\n{health_md}\n\n{actual_end_marker}"
+    )
+    # Re-apply the replacement since `block` may have changed
+    if start_marker in content and end_marker in content:
+        before = content.split(start_marker, 1)[0]
+        after = content.split(end_marker, 1)[1]
+        content = before + block + after
+    else:
+        marker = "## What We Did\n"
+        if marker in content:
+            before, after = content.split(marker, 1)
+            content = before + marker + "\n" + block + after
+        else:
+            content += "\n\n" + block
+
+    # Generate LLM-drafted manual sections only if confidence >= 50 (MEDIUM)
     top_grades = db_recent_grades()
     alerts = db_recent_alerts()
     open_issues = db_open_issues()
     research_links_text = f"{smart_link} | {sector_link} | {discovery_link} | {news_link} | {earnings_link}"
-    sections = generate_llm_sections(sync_idx, top_grades, alerts, open_issues, research_links_text)
+    if confidence >= 50:
+        sections = generate_llm_sections(sync_idx, top_grades, alerts, open_issues + "\n- " + "\n- ".join(health["blocking"] + health["warnings"]), research_links_text)
+    else:
+        sections = fallback_sections(health)
 
     content = fill_section(content, "Morning Intentions", sections["morning_intentions"])
     # Reconstruct current issues table from the row-only section
@@ -451,6 +619,8 @@ def sync_daily_log(sync_idx: int):
         issues_table = "| Issue | Severity | Next Step |\n|-------|----------|-----------|\n| Stale grades accumulating | medium | Schedule grade refresh or reduce universe |\n"
     content = fill_section(content, "Current Issues", issues_table)
     content = fill_section(content, "Lessons Learned", sections["lessons_learned"])
+    content = fill_section(content, "Decision Candidates", sections["decision_candidates"])
+    content = fill_section(content, "Active Theses", ticker_candidates_to_thesis_links(sections["decision_candidates"]))
 
     # Generate decision candidates into the dedicated decision log
     candidate_rows = generate_decision_candidates(sections["decision_candidates"])
@@ -468,7 +638,19 @@ def ensure_decision_candidates(candidate_rows: str):
     # If candidates already written by machine, replace that block
     marker = "\n<!-- vox-candidates -->\n"
     end_marker = "\n<!-- vox-candidates-end -->\n"
-    block = marker + candidate_rows.rstrip() + end_marker
+    # Transform candidate rows into decision-log rows with time and empty outcome
+    time_str = datetime.now().strftime("%H:%M")
+    log_rows = []
+    for line in candidate_rows.strip().splitlines():
+        if line.strip() and not line.strip().startswith("|"):
+            continue
+        cells = [c.strip() for c in line.strip("|").split("|")]
+        if len(cells) >= 5 and cells[0] not in ("Ticker", "_NONE_"):
+            # 5-column daily format: Ticker, Decision, Source, Reason, Expected Edge
+            log_rows.append(f"| {time_str} | " + " | ".join(cells[:5]) + " | |")
+    if not log_rows:
+        log_rows.append(f"| {time_str} | _NONE_ | Consider PASS | data_health | Low confidence | Preserve capital | |")
+    block = marker + "\n".join(log_rows) + end_marker
     if marker in content and end_marker in content:
         before = content.split(marker, 1)[0]
         after = content.split(end_marker, 1)[1]
@@ -479,11 +661,17 @@ def ensure_decision_candidates(candidate_rows: str):
 
 
 def ensure_decision_log():
-    """Create today's decision registry if missing."""
+    """Create today's decision registry if missing, with YAML frontmatter."""
     path = DECISION_DIR / f"{today_str()}.md"
     if path.exists():
         return path
-    template = f"""# Decision Log — {today_str()}
+    template = f"""---
+source_grade_id: ""
+data_confidence: 0
+generated_at: "{datetime.now().isoformat()}"
+---
+
+# Decision Log — {today_str()}
 
 | Time | Ticker | Decision | Source | Reason | Expected Edge | Outcome (later) |
 |------|--------|----------|--------|--------|---------------|-----------------|

@@ -8,6 +8,7 @@ import os
 import shutil
 import sys
 import json
+import re
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -17,6 +18,9 @@ CRON_OUTPUT_DIR = Path.home() / ".hermes" / "cron" / "output"
 OBSIDIAN_VOX = Path.home() / "Documents" / "Obsidian" / "VOX" / "vox"
 DAILY_LOG_DIR = OBSIDIAN_VOX / "memory" / "daily"
 WEEKLY_AUDIT_DIR = OBSIDIAN_VOX / "system" / "audits"
+
+VOX_CRON = REPO_ROOT / "vox_cron"
+SCRIPT_ARCHIVE = VOX_CRON / "_archive"
 
 KEEP_DAYS = {
     "pycache": 0,       # always archive to today's bucket
@@ -196,6 +200,37 @@ def weekly_audit():
     return str(audit_path)
 
 
+def flag_version_creep():
+    """Detect new _vN.py duplicate scripts in vox_cron/ and emit an audit note."""
+    flagged = []
+    v_pattern = re.compile(r"_v\d+\.py$")
+    # Only scan top-level vox_cron/ scripts, not _archive/ or subdirectories
+    for p in VOX_CRON.glob("*.py"):
+        if p.is_file() and v_pattern.search(p.name):
+            flagged.append(str(p.relative_to(REPO_ROOT)))
+    if not flagged:
+        return None
+    today = datetime.now().strftime("%Y-%m-%d")
+    note_path = OBSIDIAN_VOX / "system" / "audits" / f"version-creep-{today}.md"
+    note_path.parent.mkdir(parents=True, exist_ok=True)
+    lines = [
+        f"# Version Creep Alert — {today}",
+        "",
+        "New `_vN.py` scripts detected in `vox_cron/`. These are candidates for consolidation or archiving.",
+        "",
+        "| Script | Action |",
+        "|--------|--------|",
+    ]
+    for f in sorted(flagged):
+        lines.append(f"| `{f}` | Review / consolidate |")
+    lines.extend([
+        "",
+        "Run `python3 vox_cron/audit_active_scripts.py` to determine if the old version is still referenced.",
+    ])
+    note_path.write_text("\n".join(lines))
+    return str(note_path)
+
+
 def main():
     ensure_dirs()
     bucket = today_bucket()
@@ -206,6 +241,7 @@ def main():
         "archived_cron_output": cleanup_cron_output(bucket),
         "daily_log_created": ensure_daily_log(),
         "weekly_audit": weekly_audit(),
+        "version_creep_note": flag_version_creep(),
     }
     print(json.dumps(report, indent=2, default=str))
 
