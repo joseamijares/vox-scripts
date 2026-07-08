@@ -28,6 +28,9 @@ RESEARCH_DIRS = {
 
 SYNC_LABELS = {0: "pre-market", 1: "midday", 2: "post-market"}
 
+VOX_WRITTEN_MARKER = "<!-- vox-written -->"
+FIELD_GUIDE_LINK = "[[FieldGuide|VOX Field Guide]]"
+
 
 def ensure_dirs():
     for d in [DAILY_DIR, DECISION_DIR, WEEKLY_DIR] + list(RESEARCH_DIRS.values()):
@@ -150,6 +153,192 @@ def get_daily_log_path() -> Path:
     return DAILY_DIR / f"{today_str()}.md"
 
 
+
+
+def generate_llm_sections(sync_idx: int, top_grades: str, alerts: str, open_issues: str, research_links: str) -> dict:
+    """Ask deepseek-v4-flash to draft Morning Intentions, Current Issues, Lessons, and Decision Candidates."""
+    label = SYNC_LABELS.get(sync_idx, "sync")
+    system_prompt = """You are Vox, an aggressive-growth investing assistant. You write concise, specific, actionable notes.
+Do not write generic motivational text. Every item must reference a real ticker, signal, or concrete trigger.
+Use markdown tables where requested. Be brief."""
+    user_prompt = f"""Generate content for the VOX daily log at the **{label}** sync on {today_str()}.
+
+Data available:
+
+**Top grades today:**
+{top_grades}
+
+**Alerts:**
+{alerts}
+
+**Open issues:**
+{open_issues}
+
+**Research links:**
+{research_links}
+
+Produce exactly these sections:
+
+## Morning Intentions
+- 2-3 bullet points. Only if {label} is pre-market. If not pre-market, write "_Generated at {label} sync — morning intentions already set._".
+- Each bullet: ticker, trigger, and invalidation.
+
+## Current Issues
+- A markdown table with columns: Issue, Severity, Next Step.
+- 2-4 rows from the data or known system blockers. Severity = critical/high/medium/low.
+
+## Lessons Learned
+- 1-3 bullet points. Synthesize from grades and alerts. If no actionable lesson, write "_No new lessons from this sync._".
+
+## Decision Candidates
+- A markdown table with columns: Ticker, Decision, Source, Reason, Expected Edge.
+- Proposed actions only; do NOT state they are executed. Use verbs like: "Consider BUY", "Consider TRIM", "Consider PASS".
+
+Format the entire response as markdown with the four section headers exactly as above."""
+    try:
+        result = call_openrouter(
+            system_prompt=system_prompt,
+            user_prompt=user_prompt,
+            model="deepseek/deepseek-v4-flash",
+            max_tokens=1500,
+            script_name="vox_obsidian_compound",
+            notes=f"llm_synthesis_{label}",
+        )
+        text = result.get("content", "")
+    except Exception as e:
+        text = f"""
+## Morning Intentions
+- _LLM synthesis failed: {e}_
+
+## Current Issues
+| Issue | Severity | Next Step |
+|-------|----------|-----------|
+| LLM synthesis failed | medium | Check API key and cost |
+
+## Lessons Learned
+- _No synthesis available._
+
+## Decision Candidates
+| Ticker | Decision | Source | Reason | Expected Edge |
+|--------|----------|--------|--------|---------------|
+"""
+    return parse_llm_sections(text)
+
+
+def parse_llm_sections(text: str) -> dict:
+    """Parse the LLM response into sections."""
+    sections = {
+        "morning_intentions": "- _No morning intentions generated._",
+        "current_issues": "| Issue | Severity | Next Step |\n|-------|----------|-----------|\n",
+        "lessons_learned": "- _No lessons generated._",
+        "decision_candidates": "| Ticker | Decision | Source | Reason | Expected Edge |\n|--------|----------|--------|--------|---------------|\n",
+    }
+    current = None
+    buffer = []
+    for line in text.splitlines():
+        stripped = line.strip()
+        if stripped.startswith("## Morning Intentions"):
+            current = "morning_intentions"
+            buffer = []
+        elif stripped.startswith("## Current Issues"):
+            if current:
+                sections[current] = "\n".join(buffer).strip()
+            current = "current_issues"
+            buffer = []
+        elif stripped.startswith("## Lessons Learned"):
+            if current:
+                sections[current] = "\n".join(buffer).strip()
+            current = "lessons_learned"
+            buffer = []
+        elif stripped.startswith("## Decision Candidates"):
+            if current:
+                sections[current] = "\n".join(buffer).strip()
+            current = "decision_candidates"
+            buffer = []
+        elif current and not stripped.startswith("## "):
+            buffer.append(line)
+    if current:
+        sections[current] = "\n".join(buffer).strip()
+    # Fallbacks: ensure key sections are never empty
+    default_issues = "| Issue | Severity | Next Step |\n|-------|----------|-----------|\n"
+    if not sections.get("current_issues", "").strip() or sections["current_issues"] == default_issues or sections["current_issues"] == default_issues.rstrip("\n"):
+        sections["current_issues"] = default_issues + "| Stale grades accumulating | medium | Schedule grade refresh or reduce universe |\n"
+    if not sections.get("lessons_learned", "").strip():
+        sections["lessons_learned"] = "- _No new lessons generated from this sync._"
+    return sections
+
+
+def normalize_issues_section(section: str) -> str:
+    """Remove markdown header/separator from current issues and return just rows."""
+    lines = []
+    for line in section.strip().splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("| Issue") or stripped.startswith("|-------"):
+            continue
+        lines.append(line)
+    return "\n".join(lines)
+
+
+def normalize_candidates_section(section: str) -> str:
+    """Remove markdown header/separator from decision candidates and return just rows."""
+    lines = []
+    for line in section.strip().splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("| Ticker") or stripped.startswith("|--------"):
+            continue
+        lines.append(line)
+    return "\n".join(lines)
+
+
+def extract_table_body(table_text: str) -> str:
+    """Remove markdown table header and separator lines."""
+    lines = [l for l in table_text.strip().splitlines() if l.strip() and not l.strip().startswith("| Issue") and not l.strip().startswith("| Ticker") and not l.strip().startswith("|-------")]
+    return "\n".join(lines)
+
+
+def section_body_is_empty(body: str) -> bool:
+    """Return True if section body has no human-written content."""
+    if not body.strip():
+        return True
+    if VOX_WRITTEN_MARKER in body:
+        return True
+    # Strip markdown table headers and list markers
+    stripped = body.strip()
+    lines = [l.strip() for l in stripped.splitlines() if l.strip()]
+    # If all remaining lines are table headers/separators, it's empty
+    for line in lines:
+        if not line.startswith("|"):
+            return False
+        # It's a table line; check if it's header or separator
+        cells = [c.strip() for c in line.strip("|").split("|")]
+        if cells and not all(c.replace("-", "") == "" or c in ("Issue", "Severity", "Next Step", "Ticker", "Decision", "Source", "Reason", "Expected Edge") for c in cells):
+            return False
+    return True
+
+
+def fill_section(content: str, heading: str, new_body: str) -> str:
+    """Replace a section body if it is empty or previously auto-generated."""
+    marker = f"## {heading}\n"
+    if marker not in content:
+        return content
+    parts = content.split(marker, 1)
+    before = parts[0]
+    after_parts = parts[1].split("\n##", 1)
+    after = "\n##" + after_parts[1] if len(after_parts) > 1 else ""
+    body = after_parts[0]
+    # If body is empty, auto-generated, or just a table header, overwrite
+    if section_body_is_empty(body):
+        new_body = new_body.strip() + "\n" + VOX_WRITTEN_MARKER + "\n"
+        return before + marker + "\n" + new_body + "\n" + after
+    return content
+
+
+def generate_decision_candidates(section_text: str) -> str:
+    """Return candidate rows for the decision log table."""
+    body = normalize_candidates_section(section_text)
+    return body
+
+
 def ensure_daily_log():
     """Create the daily log if missing."""
     path = get_daily_log_path()
@@ -158,7 +347,7 @@ def ensure_daily_log():
     template = f"""# Daily Log — {today_str()}
 
 **Status:** active  
-**Owner:** Vox
+**Owner:** Vox | Manual fields explained in {FIELD_GUIDE_LINK}
 
 ## Morning Intentions
 
@@ -246,8 +435,47 @@ def sync_daily_log(sync_idx: int):
         after_section = parts[1].split("\n##", 1)
         content = parts[0] + "## Research Links" + research_links + "\n##" + after_section[1]
 
+    # Generate LLM-drafted manual sections
+    top_grades = db_recent_grades()
+    alerts = db_recent_alerts()
+    open_issues = db_open_issues()
+    research_links_text = f"{smart_link} | {sector_link} | {discovery_link} | {news_link} | {earnings_link}"
+    sections = generate_llm_sections(sync_idx, top_grades, alerts, open_issues, research_links_text)
+
+    content = fill_section(content, "Morning Intentions", sections["morning_intentions"])
+    # Reconstruct current issues table from the row-only section
+    issues_body = normalize_issues_section(sections["current_issues"])
+    if issues_body.strip():
+        issues_table = "| Issue | Severity | Next Step |\n|-------|----------|-----------|\n" + issues_body + "\n"
+    else:
+        issues_table = "| Issue | Severity | Next Step |\n|-------|----------|-----------|\n| Stale grades accumulating | medium | Schedule grade refresh or reduce universe |\n"
+    content = fill_section(content, "Current Issues", issues_table)
+    content = fill_section(content, "Lessons Learned", sections["lessons_learned"])
+
+    # Generate decision candidates into the dedicated decision log
+    candidate_rows = generate_decision_candidates(sections["decision_candidates"])
+    ensure_decision_candidates(candidate_rows)
+
     path.write_text(content)
     return path
+
+
+def ensure_decision_candidates(candidate_rows: str):
+    """Append or overwrite machine-generated decision candidates to today's decision log."""
+    path = DECISION_DIR / f"{today_str()}.md"
+    ensure_decision_log()
+    content = path.read_text()
+    # If candidates already written by machine, replace that block
+    marker = "\n<!-- vox-candidates -->\n"
+    end_marker = "\n<!-- vox-candidates-end -->\n"
+    block = marker + candidate_rows.rstrip() + end_marker
+    if marker in content and end_marker in content:
+        before = content.split(marker, 1)[0]
+        after = content.split(end_marker, 1)[1]
+        content = before + block + after
+    else:
+        content = content.rstrip() + block
+    path.write_text(content)
 
 
 def ensure_decision_log():
