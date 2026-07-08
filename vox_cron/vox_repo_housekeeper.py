@@ -128,24 +128,28 @@ def cleanup_cron_output(bucket: Path):
 
 
 def ensure_daily_log():
-    """Create a daily Obsidian log if missing."""
+    """Create a minimal daily Obsidian log stub if missing; compound system owns content."""
     today = datetime.now().strftime("%Y-%m-%d")
     log_path = DAILY_LOG_DIR / f"{today}.md"
     if log_path.exists():
         return None
-    template = f"""# Session Log — {today}
+    template = f"""# Daily Log — {today}
 
 **Status:** active  
 **Owner:** Vox
 
+## Morning Intentions
+
 ## What We Did
-- (auto-generated at midnight; add manual notes here)
+
+## Decisions
+- [[memory/decisions/{today}|Decision Log]]
+
+## Research Links
 
 ## Current Issues
 | Issue | Severity | Next Step |
 |-------|----------|-----------|
-
-## Files Changed
 
 ## Lessons Learned
 
