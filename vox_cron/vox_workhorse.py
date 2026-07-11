@@ -21,9 +21,8 @@ import hermes_secrets_bootstrap
 sys.path.insert(0, str(Path.home() / ".hermes" / "scripts" / "vox_cron"))
 from vox_utils import call_openrouter
 
-DEFAULT_WORKHORSE = "moonshotai/kimi-k2"
+DEFAULT_WORKHORSE = "deepseek/deepseek-v4-pro"
 WORKHORSE_FALLBACKS = [
-    "deepseek/deepseek-v4-pro",
     "deepseek/deepseek-v4-flash",
 ]
 

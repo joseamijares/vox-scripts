@@ -94,7 +94,6 @@ _DEFAULT_PRICING = {
     "deepseek/deepseek-v4-flash": {"input": 0.05, "output": 0.10},
     "google/gemini-3.5-flash": {"input": 1.50, "output": 9.00},
     "google/gemini-3.1-flash-lite": {"input": 0.25, "output": 1.50},
-    "moonshotai/kimi-k2": {"input": 0.10, "output": 0.30},
     "openai/gpt-4o": {"input": 2.50, "output": 10.00},
     "openai/gpt-4o-mini": {"input": 0.15, "output": 0.60},
     "openai/gpt-5.6-terra-pro": {"input": 2.00, "output": 10.00},

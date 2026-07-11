@@ -2,7 +2,7 @@
 """
 VOX Watchlist Thesis Updater
 Fetches watchlist entries with missing/null one-line theses, uses the workhorse router
-(moonshotai/kimi-k2 with fallback) to draft a concise one-line thesis per ticker, and writes:
+(deepseek-v4-pro with deepseek-v4-flash fallback) to draft a concise one-line thesis per ticker, and writes:
 1. `watchlist.thesis` in the database (only if currently blank or marked as auto-generated)
 2. Atomic ticker pages in Obsidian `memory/theses/{TICKER}.md` (appends a machine-drafted block)
 Preserves user-edited notes by only overwriting the `<!-- vox-thesis -->` block.
