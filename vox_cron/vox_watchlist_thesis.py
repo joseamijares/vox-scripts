@@ -110,10 +110,15 @@ def draft_thesis(ticker, name, context_text) -> str:
 {context_text}
 
 Write one concise thesis line for {ticker} ({name or ticker})."""
-    result = workhorse_draft(system_prompt, user_prompt, max_tokens=80, temperature=0.35,
-                             script_name="vox_watchlist_thesis")
-    content = result.get('content') or ''
-    content = content.strip().replace('\n', ' ')
+    # Retry transient empty responses from the workhorse chain
+    content = ""
+    for attempt in range(3):
+        result = workhorse_draft(system_prompt, user_prompt, max_tokens=120, temperature=0.35,
+                                 script_name="vox_watchlist_thesis")
+        content = str(result.get("content") or "").strip()
+        if content:
+            break
+    content = content.replace('\n', ' ')
     # Strip surrounding quotes if the model returned quoted text
     if len(content) >= 2 and content[0] == '"' and content[-1] == '"':
         content = content[1:-1]
