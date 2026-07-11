@@ -19,7 +19,8 @@ from vox_utils import call_openrouter
 
 
 def hy3_draft(system_prompt: str, user_prompt: str, max_tokens: int = 800, temperature: float = 0.3,
-              script_name: str = "hy3_workhorse", fallback_model: str = "deepseek/deepseek-v4-flash") -> dict:
+              script_name: str = "hy3_workhorse", fallback_model: str = "deepseek/deepseek-v4-flash",
+              cheap_hy3: str = "tencent/hy3-preview") -> dict:
     """Call hy3:free with a system prompt and fall back if content is missing."""
     # Enforce content field usage
     full_system = (
@@ -27,14 +28,25 @@ def hy3_draft(system_prompt: str, user_prompt: str, max_tokens: int = 800, tempe
         + "\n\nIMPORTANT: Provide your final answer in the 'content' field. "
         "Do not leave content empty."
     )
-    result = call_openrouter(full_system, user_prompt, model="tencent/hy3:free",
-                             max_tokens=max_tokens, temperature=temperature, script_name=script_name)
-    if not result.get("content") or not str(result.get("content")).strip():
-        result = call_openrouter(system_prompt, user_prompt, model=fallback_model,
-                                 max_tokens=max_tokens, temperature=temperature, script_name=script_name + "_fallback")
-        result["fallback"] = True
-    else:
-        result["fallback"] = False
+    # For the free endpoint, strip any system output-field instructions because it tends to echo them.
+    free_system = system_prompt.strip()
+    models = ["tencent/hy3:free", cheap_hy3, fallback_model]
+    result: dict = {}
+    for model in models:
+        sys_to_use = free_system if model.endswith(":free") else full_system
+        result = call_openrouter(sys_to_use, user_prompt, model=model,
+                                 max_tokens=max_tokens, temperature=temperature, script_name=script_name)
+        content = str(result.get("content") or "").strip()
+        reasoning = str(result.get("reasoning") or "").strip()
+        if not content and reasoning:
+            content = reasoning
+        if content:
+            result["content"] = content
+            result["fallback"] = model != "tencent/hy3:free"
+            return result
+    # Final fallback (should never reach if fallback_model works)
+    result["content"] = content
+    result["fallback"] = True
     return result
 
 

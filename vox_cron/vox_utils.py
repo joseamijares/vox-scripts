@@ -94,11 +94,15 @@ _DEFAULT_PRICING = {
     "deepseek/deepseek-v4-flash": {"input": 0.05, "output": 0.10},
     "google/gemini-3.5-flash": {"input": 1.50, "output": 9.00},
     "google/gemini-3.1-flash-lite": {"input": 0.25, "output": 1.50},
+    "moonshotai/kimi-k2": {"input": 0.10, "output": 0.30},
     "openai/gpt-4o": {"input": 2.50, "output": 10.00},
     "openai/gpt-4o-mini": {"input": 0.15, "output": 0.60},
+    "openai/gpt-5.6-terra-pro": {"input": 2.00, "output": 10.00},
     "tencent/hy3:free": {"input": 0.00, "output": 0.00},
     "tencent/hy3-20260706:free": {"input": 0.00, "output": 0.00},
-    "tencent/hy3": {"input": 0.00, "output": 0.00},
+    "tencent/hy3": {"input": 0.14, "output": 0.58},
+    "tencent/hy3-20260706": {"input": 0.14, "output": 0.58},
+    "tencent/hy3-preview": {"input": 0.063, "output": 0.21},
 }
 
 
@@ -451,7 +455,8 @@ def call_openrouter(
         "completion_tokens": completion_tokens,
         "total_tokens": total_tokens,
         "cost_usd": cost_breakdown["total_cost"],
-        "content": data["choices"][0]["message"]["content"],
+        "content": data["choices"][0]["message"].get("content"),
+        "reasoning": data["choices"][0]["message"].get("reasoning"),
     }
 
 
