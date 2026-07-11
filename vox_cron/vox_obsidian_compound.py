@@ -14,6 +14,7 @@ sys.path.insert(0, str(Path.home() / ".hermes" / "scripts"))
 import hermes_secrets_bootstrap
 from vox_cron.vox_utils import query_db, call_openrouter
 from vox_cron.vox_data_health import assess_data_health, health_summary
+from vox_cron.vox_hy3_workhorse import hy3_draft
 
 OBSIDIAN_VOX = Path.home() / "Documents" / "Obsidian" / "VOX" / "vox"
 DAILY_DIR = OBSIDIAN_VOX / "memory" / "daily"
@@ -200,13 +201,13 @@ Produce exactly these sections:
 
 Format the entire response as markdown with the four section headers exactly as above."""
     try:
-        result = call_openrouter(
+        result = hy3_draft(
             system_prompt=system_prompt,
             user_prompt=user_prompt,
-            model="deepseek/deepseek-v4-flash",
             max_tokens=1500,
+            temperature=0.3,
             script_name="vox_obsidian_compound",
-            notes=f"llm_synthesis_{label}",
+            fallback_model="deepseek/deepseek-v4-flash",
         )
         text = result.get("content", "")
     except Exception as e:

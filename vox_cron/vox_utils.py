@@ -96,6 +96,9 @@ _DEFAULT_PRICING = {
     "google/gemini-3.1-flash-lite": {"input": 0.25, "output": 1.50},
     "openai/gpt-4o": {"input": 2.50, "output": 10.00},
     "openai/gpt-4o-mini": {"input": 0.15, "output": 0.60},
+    "tencent/hy3:free": {"input": 0.00, "output": 0.00},
+    "tencent/hy3-20260706:free": {"input": 0.00, "output": 0.00},
+    "tencent/hy3": {"input": 0.00, "output": 0.00},
 }
 
 
