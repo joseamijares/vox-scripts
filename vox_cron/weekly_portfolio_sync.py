@@ -272,6 +272,13 @@ def sync_etoro():
             instrument_id = pos.get('instrumentID')
             instrument = instruments.get(instrument_id, {})
             ticker = instrument.get('symbolFull', instrument_id)
+            name = (instrument.get('instrumentDisplayName') or '').upper()
+            # CRITICAL: eToro crypto VAULTA uses symbolFull='A' (collides with Agilent)
+            if instrument_id == 100022 or (ticker == 'A' and 'VAULTA' in name):
+                ticker = 'VAULTA'
+            # Skip copy-trading legs if mirrorID set on main list (mirrors handled separately later)
+            if pos.get('mirrorID'):
+                continue
             
             # Skip positions without a valid ticker
             if not ticker or ticker == instrument_id:

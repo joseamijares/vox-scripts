@@ -82,11 +82,17 @@ def update_etoro_prices():
         try:
             shares_float = float(shares) if shares else 0
             
-            # Skip MIRROR_TOTAL and CASH - these are special entries
-            if ticker in ['MIRROR_TOTAL', 'CASH']:
-                if old_live_value_usd:
-                    total_value_usd += float(old_live_value_usd)
-                print(f"  ⏭️  {ticker}: ${old_live_value_usd or 0:,.2f} (skipped - manual entry)")
+            # Skip special entries and known Yahoo mis-maps
+            # VAULTA was previously stored as ticker "A" and Yahoo priced it as Agilent (~$134)
+            # destroying a ~$300 crypto position into a fake ~$7k "SELL".
+            SKIP_YF = {
+                "MIRROR_TOTAL", "CASH", "VAULTA",
+                "A",  # never price bare A via Yahoo for eToro — collision with VAULTA crypto
+            }
+            if ticker in SKIP_YF or (shares_float or 0) <= 0:
+                if old_live_value_usd and (shares_float or 0) > 0 or ticker in ("MIRROR_TOTAL", "CASH"):
+                    total_value_usd += float(old_live_value_usd or 0)
+                print(f"  ⏭️  {ticker}: ${old_live_value_usd or 0:,.2f} (skipped - special/no-yf)")
                 continue
             
             # Get correct Yahoo Finance ticker
