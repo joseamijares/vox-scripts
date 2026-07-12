@@ -46,113 +46,181 @@ def get_db_connection():
     )
 
 def sync_binance():
-    """Sync Binance positions"""
+    """Sync Binance positions.
+
+    Rules:
+    - Aggregate LD* earn tokens into base asset (prevents BTC + LDBTC double-count)
+    - Price via USDT tickers
+    - Zero out Binance rows not present in this pull (stale cleanup)
+    """
     print("📊 Syncing Binance...")
-    
+
     api_key = os.environ.get('BINANCE_API_KEY')
     api_secret = os.environ.get('BINANCE_API_SECRET')
-    
     if not api_key or not api_secret:
+        # Fall back to .env load
+        env_path = Path.home() / ".hermes" / ".env"
+        if env_path.exists():
+            for line in env_path.read_text().splitlines():
+                if line.startswith("BINANCE_API_KEY="):
+                    api_key = line.split("=", 1)[1].strip().strip('"').strip("'")
+                    os.environ["BINANCE_API_KEY"] = api_key
+                elif line.startswith("BINANCE_API_SECRET="):
+                    api_secret = line.split("=", 1)[1].strip().strip('"').strip("'")
+                    os.environ["BINANCE_API_SECRET"] = api_secret
+
+    if not api_key or not api_secret or api_key.startswith("***"):
         print("❌ Missing Binance credentials")
         return 0
-    
+
     base_url = "https://api.binance.com"
-    
-    # Get account info
-    timestamp = int(time.time() * 1000)
-    query_string = f"timestamp={timestamp}"
-    signature = hmac.new(
-        api_secret.encode('utf-8'),
-        query_string.encode('utf-8'),
-        hashlib.sha256
-    ).hexdigest()
-    
     headers = {"X-MBX-APIKEY": api_key}
-    
+
+    # Align local clock to Binance server time (avoids -1021 recvWindow errors)
+    try:
+        server_time = int(requests.get(f"{base_url}/api/v3/time", timeout=10).json()["serverTime"])
+        local_time = int(time.time() * 1000)
+        time_offset = server_time - local_time
+    except Exception:
+        time_offset = 0
+
+    timestamp = int(time.time() * 1000) + time_offset
+    query_string = f"timestamp={timestamp}&recvWindow=60000"
+    signature = hmac.new(
+        api_secret.encode("utf-8"),
+        query_string.encode("utf-8"),
+        hashlib.sha256,
+    ).hexdigest()
+
     response = requests.get(
         f"{base_url}/api/v3/account?{query_string}&signature={signature}",
         headers=headers,
-        timeout=30
+        timeout=30,
     )
-    
     if response.status_code != 200:
-        print(f"❌ Binance API error: {response.status_code}")
+        print(f"❌ Binance API error: {response.status_code} {response.text[:200]}")
         return 0
-    
-    data = response.json()
-    balances = data.get('balances', [])
-    
-    conn = get_db_connection()
-    cur = conn.cursor()
-    
-    imported = 0
-    for balance in balances:
-        asset = balance.get('asset', '')
-        free = Decimal(balance.get('free', '0'))
-        locked = Decimal(balance.get('locked', '0'))
-        total = free + locked
-        
+
+    # Price map once
+    prices = {}
+    try:
+        for t in requests.get(f"{base_url}/api/v3/ticker/price", timeout=30).json():
+            sym = t.get("symbol", "")
+            if sym.endswith("USDT"):
+                prices[sym[:-4]] = Decimal(str(t.get("price", 0)))
+    except Exception as e:
+        print(f"⚠️ price map error: {e}")
+
+    stable = {
+        "USDT", "FDUSD", "BUSD", "USDC", "TUSD", "DAI", "USD1", "USDS",
+        "USDE", "EURI", "AEUR", "RLUSD", "XUSD", "BFUSD",
+    }
+
+    # Aggregate by base asset: LD* -> base
+    aggregated = {}
+    for balance in response.json().get("balances", []):
+        asset = balance.get("asset", "")
+        total = Decimal(str(balance.get("free", "0"))) + Decimal(str(balance.get("locked", "0")))
         if total <= 0:
             continue
-        
-        # Handle "LD" prefix (Lending/Dual investment)
-        base_asset = asset
-        if asset.startswith('LD'):
-            base_asset = asset[2:]
-        
-        # Get USD price
-        price = Decimal('0')
-        value = Decimal('0')
-        
-        if base_asset != 'USDT':
-            ticker = f"{base_asset}USDT"
-            try:
-                price_response = requests.get(
-                    f"{base_url}/api/v3/ticker/price?symbol={ticker}",
-                    timeout=10
-                )
-                if price_response.status_code == 200:
-                    price_data = price_response.json()
-                    price = Decimal(str(price_data.get('price', 0)))
-                    value = total * price
-            except:
-                pass
+        base = asset[2:] if asset.startswith("LD") else asset
+        if base.startswith("LD"):  # nested safety
+            base = base[2:]
+        if base not in aggregated:
+            aggregated[base] = {"qty": Decimal("0"), "sources": []}
+        aggregated[base]["qty"] += total
+        aggregated[base]["sources"].append(asset)
+
+    conn = get_db_connection()
+    cur = conn.cursor()
+    now = datetime.now()
+    live_tickers = set()
+    imported = 0
+    total_usd = Decimal("0")
+
+    for base, data in aggregated.items():
+        qty = data["qty"]
+        if base in stable:
+            price = Decimal("1")
+        elif base in ("BETH", "WBETH"):
+            price = prices.get("ETH", Decimal("0"))
+        elif base == "WBTC":
+            price = prices.get("BTC", Decimal("0"))
+        elif base.startswith("1000") and base[4:] in prices:
+            price = prices[base[4:]] / Decimal("1000")
         else:
-            price = Decimal('1')
-            value = total
-        
-        if value < 0.5:
+            price = prices.get(base, Decimal("0"))
+
+        value = qty * price
+        if value < Decimal("0.5"):
             continue
-        
-        # Get grade and council
-        cur.execute("SELECT grade, council, sector FROM positions WHERE ticker = %s", (base_asset,))
+
+        live_tickers.add(base)
+        cur.execute("SELECT grade, council, sector FROM positions WHERE ticker = %s", (base,))
         result = cur.fetchone()
         grade, council, sector = result if result else (None, None, None)
-        
-        cur.execute("""
-            INSERT INTO broker_positions 
-            (broker, ticker, shares, live_price, live_value, currency, live_value_usd, grade, council, sector, source, last_sync_at)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-            ON CONFLICT (broker, ticker) 
+
+        cur.execute(
+            """
+            INSERT INTO broker_positions
+            (broker, ticker, shares, live_price, live_value, currency, live_value_usd,
+             grade, council, sector, source, last_sync_at, price_source, updated_at)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, NOW())
+            ON CONFLICT (broker, ticker)
             DO UPDATE SET
                 shares = EXCLUDED.shares,
                 live_price = EXCLUDED.live_price,
                 live_value = EXCLUDED.live_value,
                 live_value_usd = EXCLUDED.live_value_usd,
-                grade = EXCLUDED.grade,
-                council = EXCLUDED.council,
-                sector = EXCLUDED.sector,
+                grade = COALESCE(EXCLUDED.grade, broker_positions.grade),
+                council = COALESCE(EXCLUDED.council, broker_positions.council),
+                sector = COALESCE(EXCLUDED.sector, broker_positions.sector),
                 source = EXCLUDED.source,
                 last_sync_at = EXCLUDED.last_sync_at,
+                price_source = EXCLUDED.price_source,
                 updated_at = NOW()
-        """, ('Binance', asset, total, price, value, 'USD', float(value), grade, council, sector, 'api', datetime.now()))
-        
+            """,
+            (
+                "Binance", base, float(qty), float(price), float(value), "USD",
+                float(value), grade, council, sector, "api", now, "binance_usdt",
+            ),
+        )
         imported += 1
-    
+        total_usd += value
+        print(f"  ✅ {base}: {float(qty):.8f} @ ${float(price):,.4f} = ${float(value):,.2f} src={data['sources']}")
+
+    # Zero stale Binance rows (incl old LD* tickers)
+    if live_tickers:
+        cur.execute(
+            """
+            UPDATE broker_positions
+            SET shares = 0, live_value = 0, live_value_usd = 0, updated_at = NOW(),
+                source = 'api_stale_zero'
+            WHERE broker = 'Binance'
+              AND ticker <> ALL(%s)
+              AND COALESCE(shares, 0) > 0
+            """,
+            (list(live_tickers),),
+        )
+        zeroed = cur.rowcount
+        if zeroed:
+            print(f"  🧹 Zeroed {zeroed} stale Binance rows")
+
+    # Touch broker_accounts
+    try:
+        cur.execute(
+            """
+            UPDATE broker_accounts
+            SET last_sync_at = NOW(), updated_at = NOW()
+            WHERE broker = 'Binance'
+            """
+        )
+    except Exception:
+        pass
+
     conn.commit()
     conn.close()
-    
-    print(f"✅ Synced {imported} Binance positions")
+    print(f"✅ Synced {imported} Binance base assets | total ${float(total_usd):,.2f}")
     return imported
 
 def sync_etoro():
