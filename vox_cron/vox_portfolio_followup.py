@@ -1,29 +1,21 @@
 #!/usr/bin/env python3
-"""VOX Portfolio Follow-up — weekly/biweekly sell + freshness report.
+"""VOX Portfolio Follow-up — mandate-aware sell + sleeve drift + broker freshness.
 
-Designed for multi-broker book:
-  API: eToro, Binance, Bitso
-  Manual: GBM Main, GBM USA, Schwab, IBKR
-
-Rules:
-- SELL/TRIM action alerts only when weight >= 2.5% of consolidated portfolio
-- Grade-based flags still listed, but small dust is noise-tagged
-- Empty stdout only if nothing actionable AND no stale brokers (silent ok)
-
-Cron: weekly Monday 8:00 CT recommended, deliver origin.
+JOS-189 / JOS-192
 """
 from __future__ import annotations
 
 import json
-import os
 import sys
-from datetime import datetime, timezone
+from datetime import datetime
 from pathlib import Path
 
 sys.path.insert(0, str(Path.home() / ".hermes" / "scripts"))
-import hermes_secrets_bootstrap  # noqa: F401
+try:
+    import hermes_secrets_bootstrap  # noqa: F401
+except Exception:
+    pass
 
-# Reuse dashboard generator
 sys.path.insert(0, str(Path.home() / ".hermes" / "scripts" / "vox_cron"))
 from generate_dashboard import generate_dashboard_data, MIN_SELL_WEIGHT_PCT  # noqa: E402
 
@@ -32,25 +24,44 @@ OBS = Path.home() / "Documents" / "Obsidian" / "VOX" / "vox" / "memory" / "weekl
 
 
 def main() -> int:
+    # Rebuild consolidated positions first when possible
+    try:
+        from vox_rebuild_positions import rebuild
+        rebuild()
+    except Exception as e:
+        print(f"(rebuild skipped: {e})", file=sys.stderr)
+
     data = generate_dashboard_data()
     day = datetime.now().strftime("%Y-%m-%d")
     sells = data["actions"]["sell_now"]
     trims = data["actions"]["trim_review"]
+    watches = data["actions"].get("watch") or []
     stale = data["stale_brokers"]
     manual = data["manual_update_needed"]
+    sleeves = (data.get("sleeve_snapshot") or {}).get("sleeves") or []
 
     lines = []
     lines.append(f"📡 **VOX Portfolio Follow-up — {day}**")
     lines.append("")
-    lines.append(f"AUM (consolidated): **${data['grand_total']:,.0f}** | Positions: **{data['total_positions']}** | Avg grade: **{data['avg_grade']:.1f}**")
+    lines.append(
+        f"AUM: **${data['grand_total']:,.0f}** | Positions: **{data['total_positions']}** | "
+        f"Avg grade: **{data['avg_grade']:.1f}**"
+    )
+    lines.append(f"_Mandate: {data.get('mandate', 'top-tier balanced')}_")
     lines.append("")
 
-    # Broker health
     lines.append("## Broker status")
-    for b, meta in sorted(data["integration_status"].items(), key=lambda x: -(x[1].get("total_usd") or 0)):
+    for b, meta in sorted(
+        data["integration_status"].items(),
+        key=lambda x: -(x[1].get("total_usd") or 0),
+    ):
         age = meta.get("sync_age_days")
         age_s = f"{age}d" if age is not None else "—"
-        flag = " 🔴" if meta.get("health") in ("STALE", "MISSING", "UNKNOWN") else (" 🟡" if meta.get("health") == "AGING" else " ✅")
+        flag = (
+            " 🔴"
+            if meta.get("health") in ("STALE", "MISSING", "UNKNOWN")
+            else (" 🟡" if meta.get("health") == "AGING" else " ✅")
+        )
         lines.append(
             f"- {flag} **{b}**: {meta.get('health')} | ${meta.get('total_usd') or 0:,.0f} | "
             f"{meta.get('mode')} | sync age {age_s}"
@@ -62,30 +73,52 @@ def main() -> int:
         lines.append("Send Excel/photo for: **" + ", ".join(manual) + "**")
         lines.append("")
 
-    # SELL actions
-    lines.append(f"## SELL now (≥{MIN_SELL_WEIGHT_PCT}% weight)")
-    if sells:
-        for s in sells:
-            lines.append(
-                f"- 🔴 **{s['ticker']}** — {s['council']} grade {s['grade']} | "
-                f"${s['value_usd']:,.0f} ({s['weight_pct']}%) | {s['brokers']}"
-            )
-    else:
-        lines.append("- None above weight threshold")
+    # Sleeve drift
+    lines.append("## Sleeve drift (vs target)")
+    lines.append("| Sleeve | Now % | Target % | Gap |")
+    lines.append("|--------|------:|---------:|----:|")
+    for s in sorted(sleeves, key=lambda x: x.get("sleeve") or ""):
+        if s["sleeve"] in ("OTHER",) and s["now_pct"] < 0.1:
+            continue
+        gap = s["gap_pp"]
+        mark = " 🔴" if abs(gap) >= 8 else (" 🟡" if abs(gap) >= 4 else "")
+        lines.append(
+            f"| {s['sleeve']}{mark} | {s['now_pct']:.1f}% | {s['target_pct']:.0f}% | {gap:+.1f}pp |"
+        )
     lines.append("")
 
-    lines.append(f"## TRIM review (≥{MIN_SELL_WEIGHT_PCT}% weight)")
-    if trims:
-        for s in trims:
+    lines.append(f"## SELL now (≥{MIN_SELL_WEIGHT_PCT}% or material junk)")
+    if sells:
+        for s in sells:
+            why = "; ".join((s.get("reasons") or [])[:2]) or s.get("council") or ""
             lines.append(
-                f"- 🟡 **{s['ticker']}** — {s['council']} grade {s['grade']} | "
-                f"${s['value_usd']:,.0f} ({s['weight_pct']}%) | {s['brokers']}"
+                f"- 🔴 **{s['ticker']}** — grade {s['grade']} | "
+                f"${s['value_usd']:,.0f} ({s['weight_pct']}%) | {s.get('sleeve')} | {why}"
             )
     else:
         lines.append("- None")
     lines.append("")
 
-    # Core holdings
+    lines.append(f"## TRIM review")
+    if trims:
+        for s in trims:
+            why = "; ".join((s.get("reasons") or [])[:2]) or ""
+            lines.append(
+                f"- 🟡 **{s['ticker']}** — grade {s['grade']} | "
+                f"${s['value_usd']:,.0f} ({s['weight_pct']}%) | {s.get('sleeve')} | {why}"
+            )
+    else:
+        lines.append("- None")
+    lines.append("")
+
+    # Explicit protected names note
+    lines.append("## Protected / do-not-auto-sell")
+    lines.append("- **COST, APH, WMT, quality megacaps** — compounders/core")
+    lines.append("- **SPCX** — SpaceX theme (not SPAC ETF)")
+    lines.append("- **BTC/ETH** — core crypto (trim only if oversized)")
+    lines.append("- Multi-broker ownership is **never** a sell reason")
+    lines.append("")
+
     lines.append("## Largest holdings")
     for p in data["all_positions"][:10]:
         lines.append(
@@ -93,22 +126,17 @@ def main() -> int:
             f"g{p['grade']} {p['council']}"
         )
     lines.append("")
-    lines.append("_Noise filter: P&L/sell actions only if position ≥2.5% portfolio. Grade flags still tracked._")
-    lines.append("_When you send weekly/biweekly exports, I refresh manual brokers then re-run this follow-up._")
+    lines.append("_Policy: `vox_portfolio_policy.py` · Rebuild: `vox_rebuild_positions.py`_")
 
     report = "\n".join(lines)
-
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     (OUT_DIR / f"portfolio_followup_{day}.md").write_text(report + "\n")
-    (OUT_DIR / f"portfolio_followup_{day}.json").write_text(json.dumps(data, indent=2, default=str))
-
+    (OUT_DIR / f"portfolio_followup_{day}.json").write_text(
+        json.dumps(data, indent=2, default=str)
+    )
     OBS.mkdir(parents=True, exist_ok=True)
     (OBS / f"PortfolioFollowup-{day}.md").write_text(report + "\n")
-
-    # Always print for deliver:origin weekly visibility
     print(report)
-
-    # Exit 0 always on successful generation (Pattern 9b)
     return 0
 
 

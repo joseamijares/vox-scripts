@@ -98,7 +98,10 @@ def generate_dashboard_data():
             u.tech_score
         FROM positions p
         LEFT JOIN unified_grades u ON u.ticker = p.ticker
-        WHERE COALESCE(p.shares, 0) > 0
+        WHERE (
+            COALESCE(p.shares, 0) > 0
+            OR (p.ticker = 'MIRROR_TOTAL' AND COALESCE(p.live_value_usd, p.live_value, 0) > 0)
+          )
           AND COALESCE(
             NULLIF(CASE WHEN p.live_value_usd::text = 'NaN' THEN NULL ELSE p.live_value_usd END, 0),
             NULLIF(p.live_value, 0),
@@ -141,8 +144,11 @@ def generate_dashboard_data():
                currency, grade, council, sector, source,
                last_sync_at, updated_at, price_source
         FROM broker_positions
-        WHERE COALESCE(shares, 0) > 0
-          AND ticker NOT IN ('MIRROR_TOTAL', 'CASH')
+        WHERE ticker NOT IN ('CASH')
+          AND (
+            COALESCE(shares, 0) > 0
+            OR (ticker = 'MIRROR_TOTAL' AND COALESCE(live_value_usd, live_value, 0) > 0)
+          )
         ORDER BY broker, value_usd DESC NULLS LAST
         """
     )
@@ -249,38 +255,67 @@ def generate_dashboard_data():
                 "top_positions": [],
             }
 
-    # ---- Action buckets (weight filter for P&L/sell noise) ----
+    # ---- Action buckets (mandate-aware; multi-broker never a sell reason) ----
+    try:
+        from vox_portfolio_policy import classify_action, sleeve_snapshot, sleeve_for
+    except ImportError:
+        from pathlib import Path as _P
+        import sys as _sys
+        _sys.path.insert(0, str(_P.home() / ".hermes" / "scripts" / "vox_cron"))
+        from vox_portfolio_policy import classify_action, sleeve_snapshot, sleeve_for
+
     sell_actions = []
     trim_actions = []
     hold_strong = []
+    watch_actions = []
     for p in all_positions:
         g = p.get("grade")
         c = (p.get("council") or "").upper()
         w = p.get("weight_pct") or 0
+        n_brokers = len(p.get("brokers") or [])
+        decision = classify_action(
+            p["ticker"], g, c, p["value_usd"], w, n_brokers=n_brokers,
+            min_weight_pct=MIN_SELL_WEIGHT_PCT,
+        )
         row = {
-            "ticker": p["ticker"],
+            "ticker": decision["ticker"],
             "grade": g,
             "council": c,
             "value_usd": p["value_usd"],
             "weight_pct": w,
             "brokers": p["brokers"],
+            "decision": decision["decision"],
+            "sleeve": decision["sleeve"],
+            "reasons": decision.get("reasons") or [],
+            "keep": decision.get("keep") or [],
+            "label": decision.get("label"),
         }
-        if c == "SELL" or (g is not None and g < 40):
-            if w >= MIN_SELL_WEIGHT_PCT:
+        if decision["decision"] == "SELL":
+            if w >= MIN_SELL_WEIGHT_PCT or p["value_usd"] >= 200:
                 sell_actions.append(row)
             else:
                 row["note"] = f"below {MIN_SELL_WEIGHT_PCT}% weight — noise filter"
-                trim_actions.append(row)  # keep visible but not action
-        elif c == "TRIM" or (g is not None and 40 <= g < 50):
-            if w >= MIN_SELL_WEIGHT_PCT:
                 trim_actions.append(row)
-        elif c in ("BUY", "STRONG_BUY", "ACCUMULATE") or (g is not None and g >= 65):
+        elif decision["decision"] == "TRIM":
+            if w >= MIN_SELL_WEIGHT_PCT or p["value_usd"] >= 400:
+                trim_actions.append(row)
+        elif decision["decision"] == "WATCH":
+            watch_actions.append(row)
+        elif decision["decision"] in ("HOLD", "HOLD_BUCKET") and (
+            c in ("BUY", "STRONG_BUY", "ACCUMULATE", "CORE BUY") or (g is not None and g >= 60) or decision["sleeve"] in ("QUALITY", "INDEX")
+        ):
             if w >= 1.0:
                 hold_strong.append(row)
 
     sell_actions.sort(key=lambda x: -x["value_usd"])
     trim_actions.sort(key=lambda x: -x["value_usd"])
     hold_strong.sort(key=lambda x: -x["value_usd"])
+    watch_actions.sort(key=lambda x: -x["value_usd"])
+
+    sleeve_data = sleeve_snapshot(
+        [{"ticker": p["ticker"], "value_usd": p["value_usd"]} for p in all_positions],
+        grand_total,
+    )
 
     all_grades = [p["grade"] for p in all_positions if p["grade"] is not None]
     councils = defaultdict(float)
@@ -300,6 +335,7 @@ def generate_dashboard_data():
         "grand_total": round(grand_total, 2),
         "broker_book_total": round(broker_book_total, 2),
         "note": "grand_total uses consolidated positions; broker_book_total sums broker_positions (can double-count multi-broker names if not de-duped).",
+        "mandate": "top-tier balanced ~20% aim; quality compounders OK; multi-broker never a sell reason",
         "total_positions": len(all_positions),
         "avg_grade": round(sum(all_grades) / len(all_grades), 1) if all_grades else 0,
         "grade_distribution": {
@@ -312,12 +348,15 @@ def generate_dashboard_data():
         "broker_summary": broker_summary,
         "stale_brokers": stale_brokers,
         "manual_update_needed": [b for b, v in broker_summary.items() if v.get("needs_manual_update")],
+        "sleeve_snapshot": sleeve_data,
         "actions": {
             "min_weight_pct": MIN_SELL_WEIGHT_PCT,
             "sell_now": sell_actions,
-            "trim_review": [t for t in trim_actions if t.get("weight_pct", 0) >= MIN_SELL_WEIGHT_PCT],
+            "trim_review": [t for t in trim_actions if not t.get("note")],
             "noise_small_sells": [t for t in trim_actions if t.get("note")],
+            "watch": watch_actions[:20],
             "core_holds": hold_strong[:15],
+            "policy": "vox_portfolio_policy.py",
         },
         "top_grades": top_grades,
         "bottom_grades": bottom_grades,

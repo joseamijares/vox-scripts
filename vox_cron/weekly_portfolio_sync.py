@@ -459,7 +459,14 @@ def main():
     
     # Generate report
     generate_weekly_report()
-    
+
+    # Rebuild consolidated positions from broker truth
+    try:
+        from vox_rebuild_positions import rebuild
+        rebuild()
+    except Exception as e:
+        print(f"⚠️ positions rebuild skipped: {e}")
+
     print("\n" + "=" * 80)
     print("✅ WEEKLY SYNC COMPLETE")
     print("=" * 80)
