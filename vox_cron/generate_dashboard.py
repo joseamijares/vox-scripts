@@ -1,49 +1,80 @@
-import sys
-from pathlib import Path
-sys.path.insert(0, str(Path.home() / ".hermes" / "scripts"))
-import hermes_secrets_bootstrap
+#!/usr/bin/env python3
+"""VOX Portfolio Dashboard generator.
 
-import os, psycopg2, json
-from collections import defaultdict
-from datetime import datetime
-from decimal import Decimal
+Sources:
+- positions: consolidated book (grades/council/AUM view)
+- broker_positions: per-broker truth + sync freshness
+
+Outputs:
+- ~/.hermes/scripts/vox_cron/portfolio_dashboard.json
+- Obsidian daily PortfolioDashboard note
+"""
+from __future__ import annotations
+
 import json
+import os
+import sys
+from collections import defaultdict
+from datetime import datetime, timezone
 from pathlib import Path
+
+sys.path.insert(0, str(Path.home() / ".hermes" / "scripts"))
+import hermes_secrets_bootstrap  # noqa: F401
+
+import psycopg2
 
 SCRIPT_DIR = Path.home() / ".hermes" / "scripts"
+OUT_JSON = SCRIPT_DIR / "vox_cron" / "portfolio_dashboard.json"
+MIN_SELL_WEIGHT_PCT = 2.5
 
-def load_unified_grades():
-    """Load unified grades from single source of truth"""
-    unified_path = SCRIPT_DIR / "vox_unified_grades.json"
-    if not unified_path.exists():
-        return {}
-    with open(unified_path) as f:
-        return json.load(f)
+# Integration map for dashboard health
+BROKER_META = {
+    "eToro": {"mode": "API + price updater", "manual": False},
+    "Binance": {"mode": "API", "manual": False},
+    "Bitso": {"mode": "API", "manual": False},
+    "GBM Main": {"mode": "Manual Excel", "manual": True},
+    "GBM USA": {"mode": "Manual Excel", "manual": True},
+    "Schwab": {"mode": "Manual Excel/Photo", "manual": True},
+    "IBKR": {"mode": "Manual Excel/Photo", "manual": True},
+}
 
-def get_unified_grade(ticker, unified_grades):
-    """Get grade from unified source"""
-    if ticker in unified_grades.get("grades", {}):
-        return unified_grades["grades"][ticker].get("grade", 0)
-    return 0
-
-
-def get_db_password():
-    return os.environ.get('DB_PASSWORD', os.environ.get('PGPASSWORD', ''))
 
 def get_db_connection():
+    pwd = os.environ.get("DB_PASSWORD") or os.environ.get("PGPASSWORD") or ""
+    if not pwd or len(pwd) < 10:
+        env_path = Path.home() / ".hermes" / ".env"
+        if env_path.exists():
+            for line in env_path.read_text().splitlines():
+                if line.startswith("PGPASSWORD=") or line.startswith("DB_PASSWORD="):
+                    pwd = line.split("=", 1)[1].strip().strip('"').strip("'")
+                    break
     return psycopg2.connect(
-        host='acela.proxy.rlwy.net',
-        port=35577,
-        database='railway',
-        user='postgres',
-        password=get_db_password()
+        host=os.environ.get("PGHOST", "acela.proxy.rlwy.net"),
+        port=int(os.environ.get("PGPORT", "35577")),
+        database=os.environ.get("PGDATABASE", "railway"),
+        user=os.environ.get("PGUSER", "postgres"),
+        password=pwd,
+        connect_timeout=20,
     )
+
+
+def _f(x):
+    try:
+        if x is None:
+            return None
+        v = float(x)
+        if v != v:  # NaN
+            return None
+        return v
+    except Exception:
+        return None
+
 
 def generate_dashboard_data():
     conn = get_db_connection()
     cur = conn.cursor()
 
-    # Prefer live_value_usd when valid; fall back to live_value. Join unified grades.
+    # ---- Consolidated positions ----
     cur.execute(
         """
         SELECT
@@ -67,101 +98,246 @@ def generate_dashboard_data():
             u.tech_score
         FROM positions p
         LEFT JOIN unified_grades u ON u.ticker = p.ticker
-        WHERE COALESCE(
+        WHERE COALESCE(p.shares, 0) > 0
+          AND COALESCE(
             NULLIF(CASE WHEN p.live_value_usd::text = 'NaN' THEN NULL ELSE p.live_value_usd END, 0),
             NULLIF(p.live_value, 0),
             0
-        ) > 0
+          ) > 0
         ORDER BY value_usd DESC NULLS LAST
         """
     )
 
-    broker_data = defaultdict(list)
+    all_positions = []
     for row in cur.fetchall():
         (
             ticker, shares, price, value, grade, council, sector, brokers,
             updated_at, unified_grade, vox_grade, tech_score
         ) = row
-        broker = brokers[0] if brokers else 'Unknown'
-        broker_data[broker].append({
-            'ticker': ticker,
-            'shares': float(shares) if shares else 0,
-            'price': float(price) if price else 0,
-            'value_usd': float(value) if value else 0,
-            'grade': float(grade) if grade is not None else None,
-            'council': council,
-            'sector': sector,
-            'brokers': brokers,
-            'last_sync': updated_at.isoformat() if updated_at else None,
-            'unified_grade': float(unified_grade) if unified_grade is not None else None,
-            'vox_grade': float(vox_grade) if vox_grade is not None else None,
-            'tech_score': float(tech_score) if tech_score is not None else None,
+        all_positions.append({
+            "ticker": ticker,
+            "shares": _f(shares) or 0,
+            "price": _f(price) or 0,
+            "value_usd": _f(value) or 0,
+            "grade": _f(grade),
+            "council": council,
+            "sector": sector,
+            "brokers": list(brokers) if brokers else [],
+            "last_sync": updated_at.isoformat() if updated_at else None,
+            "unified_grade": _f(unified_grade),
+            "vox_grade": _f(vox_grade),
+            "tech_score": _f(tech_score),
         })
 
-    # Calculate summary metrics
-    summary = {}
-    grand_total = 0
+    grand_total = sum(p["value_usd"] for p in all_positions)
+    for p in all_positions:
+        p["weight_pct"] = round(p["value_usd"] * 100 / grand_total, 2) if grand_total else 0
 
-    for broker, positions in broker_data.items():
-        total = sum(p['value_usd'] for p in positions)
-        grand_total += total
+    # ---- Broker positions truth ----
+    cur.execute(
+        """
+        SELECT broker, ticker, shares, avg_cost, live_price,
+               COALESCE(live_value_usd, live_value, 0) AS value_usd,
+               currency, grade, council, sector, source,
+               last_sync_at, updated_at, price_source
+        FROM broker_positions
+        WHERE COALESCE(shares, 0) > 0
+          AND ticker NOT IN ('MIRROR_TOTAL', 'CASH')
+        ORDER BY broker, value_usd DESC NULLS LAST
+        """
+    )
+    broker_rows = cur.fetchall()
+    broker_summary = {}
+    broker_positions = defaultdict(list)
+    for row in broker_rows:
+        (
+            broker, ticker, shares, avg_cost, live_price, value_usd,
+            currency, grade, council, sector, source,
+            last_sync_at, updated_at, price_source
+        ) = row
+        item = {
+            "ticker": ticker,
+            "shares": _f(shares) or 0,
+            "avg_cost": _f(avg_cost),
+            "price": _f(live_price) or 0,
+            "value_usd": _f(value_usd) or 0,
+            "currency": currency,
+            "grade": _f(grade),
+            "council": council,
+            "sector": sector,
+            "source": source,
+            "last_sync": last_sync_at.isoformat() if last_sync_at else None,
+            "last_price_update": updated_at.isoformat() if updated_at else None,
+            "price_source": price_source,
+        }
+        broker_positions[broker].append(item)
 
-        grades = [p['grade'] for p in positions if p['grade'] is not None]
-        avg_grade = sum(grades) / len(grades) if grades else 0
+    now = datetime.now(timezone.utc)
+    for broker, items in broker_positions.items():
+        total = sum(i["value_usd"] for i in items)
+        grades = [i["grade"] for i in items if i["grade"] is not None]
+        syncs = [i["last_sync"] for i in items if i["last_sync"]]
+        prices = [i["last_price_update"] for i in items if i["last_price_update"]]
+        last_sync = max(syncs) if syncs else None
+        last_price = max(prices) if prices else None
 
-        councils = defaultdict(float)
-        for p in positions:
-            if p['council'] and p['value_usd'] > 0:
-                councils[p['council']] += p['value_usd']
+        def age_days(iso):
+            if not iso:
+                return None
+            try:
+                dt = datetime.fromisoformat(iso.replace("Z", "+00:00"))
+                if dt.tzinfo is None:
+                    dt = dt.replace(tzinfo=timezone.utc)
+                return (now - dt).total_seconds() / 86400
+            except Exception:
+                return None
 
-        summary[broker] = {
-            'positions': len(positions),
-            'total_usd': total,
-            'avg_grade': avg_grade,
-            'councils': dict(councils),
-            'top_positions': sorted(positions, key=lambda x: x['value_usd'], reverse=True)[:10]
+        sync_age = age_days(last_sync)
+        price_age = age_days(last_price)
+        meta = BROKER_META.get(broker, {"mode": "Unknown", "manual": True})
+        # For API brokers, price freshness can keep health OK even if share-sync is older.
+        # For manual brokers, share-sync age is authoritative.
+        ref_age = sync_age
+        if not meta.get("manual"):
+            ages = [a for a in (sync_age, price_age) if a is not None]
+            ref_age = min(ages) if ages else None
+
+        if ref_age is None:
+            health = "UNKNOWN"
+        elif ref_age <= 2:
+            health = "FRESH"
+        elif ref_age <= 10:
+            health = "AGING"
+        else:
+            health = "STALE"
+
+        needs_manual = False
+        if meta.get("manual"):
+            needs_manual = health in ("STALE", "AGING", "UNKNOWN", "MISSING")
+        else:
+            # API broker: only flag manual help if both share-sync and prices are stale
+            needs_manual = (sync_age is None or sync_age > 14) and (price_age is None or price_age > 3)
+
+        broker_summary[broker] = {
+            "positions": len(items),
+            "total_usd": round(total, 2),
+            "avg_grade": round(sum(grades) / len(grades), 1) if grades else None,
+            "last_sync": last_sync,
+            "last_price_update": last_price,
+            "sync_age_days": round(sync_age, 1) if sync_age is not None else None,
+            "price_age_days": round(price_age, 1) if price_age is not None else None,
+            "health": health,
+            "integration_mode": meta["mode"],
+            "needs_manual_update": needs_manual,
+            "top_positions": sorted(items, key=lambda x: x["value_usd"], reverse=True)[:10],
         }
 
-    # Overall metrics
-    all_positions = []
-    for positions in broker_data.values():
-        all_positions.extend(positions)
+    # Ensure all known brokers appear even if empty
+    for broker, meta in BROKER_META.items():
+        if broker not in broker_summary:
+            broker_summary[broker] = {
+                "positions": 0,
+                "total_usd": 0,
+                "avg_grade": None,
+                "last_sync": None,
+                "last_price_update": None,
+                "sync_age_days": None,
+                "price_age_days": None,
+                "health": "MISSING",
+                "integration_mode": meta["mode"],
+                "needs_manual_update": True,
+                "top_positions": [],
+            }
 
-    all_grades = [p['grade'] for p in all_positions if p['grade'] is not None]
-    all_councils = defaultdict(float)
+    # ---- Action buckets (weight filter for P&L/sell noise) ----
+    sell_actions = []
+    trim_actions = []
+    hold_strong = []
     for p in all_positions:
-        if p['council'] and p['value_usd'] > 0:
-            all_councils[p['council']] += p['value_usd']
+        g = p.get("grade")
+        c = (p.get("council") or "").upper()
+        w = p.get("weight_pct") or 0
+        row = {
+            "ticker": p["ticker"],
+            "grade": g,
+            "council": c,
+            "value_usd": p["value_usd"],
+            "weight_pct": w,
+            "brokers": p["brokers"],
+        }
+        if c == "SELL" or (g is not None and g < 40):
+            if w >= MIN_SELL_WEIGHT_PCT:
+                sell_actions.append(row)
+            else:
+                row["note"] = f"below {MIN_SELL_WEIGHT_PCT}% weight — noise filter"
+                trim_actions.append(row)  # keep visible but not action
+        elif c == "TRIM" or (g is not None and 40 <= g < 50):
+            if w >= MIN_SELL_WEIGHT_PCT:
+                trim_actions.append(row)
+        elif c in ("BUY", "STRONG_BUY", "ACCUMULATE") or (g is not None and g >= 65):
+            if w >= 1.0:
+                hold_strong.append(row)
 
-    # Top / bottom by grade for quick scan
-    graded = [p for p in all_positions if p['grade'] is not None]
-    top_grades = sorted(graded, key=lambda x: x['grade'], reverse=True)[:10]
-    bottom_grades = sorted(graded, key=lambda x: x['grade'])[:10]
+    sell_actions.sort(key=lambda x: -x["value_usd"])
+    trim_actions.sort(key=lambda x: -x["value_usd"])
+    hold_strong.sort(key=lambda x: -x["value_usd"])
+
+    all_grades = [p["grade"] for p in all_positions if p["grade"] is not None]
+    councils = defaultdict(float)
+    for p in all_positions:
+        if p["council"] and p["value_usd"] > 0:
+            councils[p["council"]] += p["value_usd"]
+
+    graded = [p for p in all_positions if p["grade"] is not None]
+    top_grades = sorted(graded, key=lambda x: x["grade"], reverse=True)[:10]
+    bottom_grades = sorted(graded, key=lambda x: x["grade"])[:10]
+
+    broker_book_total = sum(v["total_usd"] for v in broker_summary.values())
+    stale_brokers = [b for b, v in broker_summary.items() if v["health"] in ("STALE", "MISSING", "UNKNOWN")]
 
     dashboard_data = {
-        'generated_at': datetime.now().isoformat(),
-        'grand_total': grand_total,
-        'total_positions': len(all_positions),
-        'avg_grade': sum(all_grades) / len(all_grades) if all_grades else 0,
-        'grade_distribution': {
-            'A (80-100)': len([g for g in all_grades if g >= 80]),
-            'B (60-79)': len([g for g in all_grades if 60 <= g < 80]),
-            'C (40-59)': len([g for g in all_grades if 40 <= g < 60]),
-            'D (0-39)': len([g for g in all_grades if g < 40])
+        "generated_at": datetime.now().isoformat(),
+        "grand_total": round(grand_total, 2),
+        "broker_book_total": round(broker_book_total, 2),
+        "note": "grand_total uses consolidated positions; broker_book_total sums broker_positions (can double-count multi-broker names if not de-duped).",
+        "total_positions": len(all_positions),
+        "avg_grade": round(sum(all_grades) / len(all_grades), 1) if all_grades else 0,
+        "grade_distribution": {
+            "A (80-100)": len([g for g in all_grades if g >= 80]),
+            "B (60-79)": len([g for g in all_grades if 60 <= g < 80]),
+            "C (40-59)": len([g for g in all_grades if 40 <= g < 60]),
+            "D (0-39)": len([g for g in all_grades if g < 40]),
         },
-        'council_distribution': dict(all_councils),
-        'broker_summary': summary,
-        'top_grades': top_grades,
-        'bottom_grades': bottom_grades,
-        'all_positions': sorted(all_positions, key=lambda x: x['value_usd'], reverse=True)[:50]
+        "council_distribution": dict(councils),
+        "broker_summary": broker_summary,
+        "stale_brokers": stale_brokers,
+        "manual_update_needed": [b for b, v in broker_summary.items() if v.get("needs_manual_update")],
+        "actions": {
+            "min_weight_pct": MIN_SELL_WEIGHT_PCT,
+            "sell_now": sell_actions,
+            "trim_review": [t for t in trim_actions if t.get("weight_pct", 0) >= MIN_SELL_WEIGHT_PCT],
+            "noise_small_sells": [t for t in trim_actions if t.get("note")],
+            "core_holds": hold_strong[:15],
+        },
+        "top_grades": top_grades,
+        "bottom_grades": bottom_grades,
+        "all_positions": sorted(all_positions, key=lambda x: x["value_usd"], reverse=True)[:80],
+        "integration_status": {
+            b: {
+                "mode": meta["mode"],
+                "manual": meta["manual"],
+                "health": broker_summary.get(b, {}).get("health"),
+                "total_usd": broker_summary.get(b, {}).get("total_usd"),
+                "sync_age_days": broker_summary.get(b, {}).get("sync_age_days"),
+            }
+            for b, meta in BROKER_META.items()
+        },
     }
 
-    # Save to JSON
-    output_path = os.path.expanduser('~/.hermes/scripts/vox_cron/portfolio_dashboard.json')
-    with open(output_path, 'w') as f:
-        json.dump(dashboard_data, f, indent=2, default=str)
+    OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
+    OUT_JSON.write_text(json.dumps(dashboard_data, indent=2, default=str))
 
-    # Also mirror a compact Obsidian daily portfolio snapshot
+    # Obsidian mirror
     try:
         obsidian = Path.home() / "Documents" / "Obsidian" / "VOX" / "vox" / "memory" / "daily"
         obsidian.mkdir(parents=True, exist_ok=True)
@@ -170,33 +346,78 @@ def generate_dashboard_data():
             f"# Portfolio Dashboard — {day}",
             "",
             f"- Generated: `{dashboard_data['generated_at']}`",
-            f"- AUM: **${dashboard_data['grand_total']:,.0f}**",
+            f"- Consolidated AUM: **${dashboard_data['grand_total']:,.0f}**",
             f"- Positions: **{dashboard_data['total_positions']}**",
             f"- Avg grade: **{dashboard_data['avg_grade']:.1f}**",
+            f"- Stale brokers: **{', '.join(stale_brokers) if stale_brokers else 'none'}**",
             "",
-            "## Council mix (by $)",
+            "## Broker health",
+            "",
+            "| Broker | Mode | Health | Value | Sync age (d) | Manual? |",
+            "|--------|------|--------|-------|--------------|---------|",
         ]
-        for k, v in sorted(dashboard_data['council_distribution'].items(), key=lambda x: -x[1]):
-            md.append(f"- {k}: ${v:,.0f}")
-        md += ["", "## Top grades"]
-        for p in top_grades[:8]:
-            md.append(f"- {p['ticker']}: {p['grade']} ({p['council']}) ${p['value_usd']:,.0f}")
-        md += ["", "## Weak grades"]
-        for p in bottom_grades[:8]:
-            md.append(f"- {p['ticker']}: {p['grade']} ({p['council']}) ${p['value_usd']:,.0f}")
-        (obsidian / f"PortfolioDashboard-{day}.md").write_text("\n".join(md) + "\n")
-        print(f"✅ Obsidian snapshot: {obsidian / f'PortfolioDashboard-{day}.md'}")
+        for b, v in sorted(broker_summary.items(), key=lambda x: -x[1]["total_usd"]):
+            md.append(
+                f"| {b} | {v['integration_mode']} | {v['health']} | ${v['total_usd']:,.0f} | "
+                f"{v['sync_age_days'] if v['sync_age_days'] is not None else '—'} | "
+                f"{'YES' if v['needs_manual_update'] else 'no'} |"
+            )
+
+        md += ["", f"## SELL now (≥{MIN_SELL_WEIGHT_PCT}% weight)", ""]
+        if sell_actions:
+            for s in sell_actions:
+                md.append(
+                    f"- **{s['ticker']}** grade {s['grade']} {s['council']} "
+                    f"${s['value_usd']:,.0f} ({s['weight_pct']}%) — {s['brokers']}"
+                )
+        else:
+            md.append("- None above weight threshold")
+
+        md += ["", f"## TRIM review (≥{MIN_SELL_WEIGHT_PCT}% weight)", ""]
+        trims = dashboard_data["actions"]["trim_review"]
+        if trims:
+            for s in trims:
+                md.append(
+                    f"- **{s['ticker']}** grade {s['grade']} {s['council']} "
+                    f"${s['value_usd']:,.0f} ({s['weight_pct']}%)"
+                )
+        else:
+            md.append("- None")
+
+        md += ["", "## Top holdings", ""]
+        for p in all_positions[:12]:
+            md.append(
+                f"- {p['ticker']}: ${p['value_usd']:,.0f} ({p['weight_pct']}%) "
+                f"grade {p['grade']} {p['council']} {p['brokers']}"
+            )
+
+        md += [
+            "",
+            "## How to update manual brokers",
+            "- GBM Main / GBM USA: send Excel export",
+            "- Schwab / IBKR: send Excel or clear screenshot",
+            "- Bitso/eToro/Binance: API path (auto when credentials healthy)",
+            "",
+            f"Raw JSON: `{OUT_JSON}`",
+        ]
+        path = obsidian / f"PortfolioDashboard-{day}.md"
+        path.write_text("\n".join(md) + "\n")
+        print(f"✅ Obsidian snapshot: {path}")
     except Exception as e:
         print(f"Obsidian mirror warning: {e}")
 
-    print(f"✅ Dashboard data saved to {output_path}")
-
     conn.close()
+    print(f"✅ Dashboard data saved to {OUT_JSON}")
     return dashboard_data
+
 
 if __name__ == "__main__":
     data = generate_dashboard_data()
-    print(f"\n📊 Portfolio Dashboard Generated")
-    print(f"Grand Total: ${data['grand_total']:,.2f}")
-    print(f"Total Positions: {data['total_positions']}")
-    print(f"Average Grade: {data['avg_grade']:.1f}")
+    print("\n📊 Portfolio Dashboard Generated")
+    print(f"Consolidated AUM: ${data['grand_total']:,.2f}")
+    print(f"Positions: {data['total_positions']}")
+    print(f"Avg grade: {data['avg_grade']:.1f}")
+    print(f"Stale brokers: {', '.join(data['stale_brokers']) or 'none'}")
+    print(f"SELL now (≥{MIN_SELL_WEIGHT_PCT}%): {len(data['actions']['sell_now'])}")
+    for s in data["actions"]["sell_now"][:8]:
+        print(f"  • {s['ticker']} {s['council']} ${s['value_usd']:,.0f} ({s['weight_pct']}%)")
