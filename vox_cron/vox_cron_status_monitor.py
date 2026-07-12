@@ -272,17 +272,21 @@ class VoxCronStatusMonitor:
         else:
             print("  ✅ No NaN values")
         
-        # Check stale grades
+        # Check stale grades — latest row per ticker only (Pattern 7)
         stale = db_query("""
-            SELECT COUNT(DISTINCT ticker) FROM vox_grades
-            WHERE generated_at < NOW() - INTERVAL '7 days'
+            SELECT COUNT(*) FROM (
+                SELECT ticker, MAX(generated_at) AS last_grade
+                FROM vox_grades
+                GROUP BY ticker
+                HAVING MAX(generated_at) < NOW() - INTERVAL '7 days'
+            ) sq
         """)
         stale_count = int(stale[0][0]) if stale else 0
         if stale_count > 0:
-            self.warnings.append(f"{stale_count} tickers with stale grades (>7d)")
-            print(f"  ⚠️ {stale_count} stale grades")
+            self.warnings.append(f"{stale_count} tickers with latest grade older than 7d")
+            print(f"  ⚠️ {stale_count} tickers with stale latest grades")
         else:
-            print("  ✅ All grades fresh")
+            print("  ✅ All latest grades fresh (<7d)")
         
         # Check null grades in positions
         null_grades = db_query("""
