@@ -425,6 +425,28 @@ def synthesize(mode: str, payload: Dict[str, Any]) -> Dict[str, Any]:
 def _heuristic_synth(mode: str, payload: Dict[str, Any], err: str = "") -> Dict[str, Any]:
     bullets = []
     tickers = []
+    if mode == "morning":
+        parts = payload.get("domain_synth") or {}
+        for name, synth in parts.items():
+            if not isinstance(synth, dict):
+                continue
+            if synth.get("headline"):
+                bullets.append(f"[{name}] {synth.get('headline')}")
+            for b in (synth.get("bullets") or [])[:2]:
+                bullets.append(f"[{name}] {b}")
+            tickers.extend(synth.get("tickers") or [])
+        ctx = payload.get("vox_context") or {}
+        for s in (ctx.get("sector_proxies") or [])[:4]:
+            bullets.append(f"Tape {s.get('ticker')}: {s.get('d1_pct')}%")
+        return {
+            "material": True,
+            "severity": "med" if bullets else "low",
+            "bullets": bullets[:8] or ["Markets open — review sleeve drift + quality core"],
+            "tickers": sorted(set(tickers))[:15],
+            "actions": ["Review portfolio follow-up", "Check policy/tariff headlines"],
+            "headline": "Morning intelligence merge",
+            "err": err,
+        }
     if mode == "weather":
         for a in (payload.get("alerts") or [])[:5]:
             bullets.append(f"{a.get('severity')}: {a.get('event')} — {a.get('area','')[:60]}")
