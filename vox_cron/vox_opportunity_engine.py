@@ -220,6 +220,9 @@ def massive_opportunities(cur):
         ticker, grade, live_value, sector, council, tech_score, avg_cost, live_price = row
         if tech_score >= 60:
             pnl = (live_price - avg_cost) / avg_cost * 100 if avg_cost > 0 else 0
+            # Anti-chase: held winners already up hard are NOT new opportunities
+            if pnl >= 40:
+                continue
             qualified.append({
                 'ticker': ticker, 'grade': grade, 'live_value': live_value,
                 'sector': sector, 'council': council, 'technical_score': tech_score,
@@ -286,13 +289,14 @@ def main():
     approved_tickers = {a['ticker'] for a in approved_new_alerts}
     approved_massive = deepseek_review(massive, "Massive portfolio opportunities (grade >= 65, technical >= 60, size >= $2K)")
 
-    print(f"Scanned: 19,356 tickers | Filtered: grade ≥ 65 + BUY/STRONG_BUY/ACCUMULATE")
+    print(f"Scanned: full grade universe | Filter: grade ≥ 65 + BUY/STRONG_BUY/ACCUMULATE")
     print(f"Top 100 stored. {len(aggressive)} aggressive plays.")
     print(f"Market regime: {regime} (confidence: {confidence}%)")
-    print(f"Massive opportunities: {len(massive)} found, {len(approved_massive)} approved by DeepSeek")
+    print(f"Held setups (not chase, PnL<40%): {len(massive)} found, {len(approved_massive)} approved")
+    print("NOTE: Grades = hygiene ranking. Not auto-deploy. Prefer Outside-Ideas for new capital.")
 
     if approved_new_alerts:
-        print(f"\n🚨 {len(approved_new_alerts)} NEW HIGH-CONVICTION ALERTS (80+)")
+        print(f"\n🚨 {len(approved_new_alerts)} NEW HIGH-GRADE ALERTS (hygiene ≥80 — size carefully)")
         for a in approved_new_alerts[:5]:
             emoji = "🔥" if a.get('is_aggressive') else ""
             print(f"  {emoji} **{a['ticker']}** — {a['action']} | Grade: {a['grade']} | Sector: {a.get('sector', 'Unknown')}")
@@ -302,15 +306,22 @@ def main():
         conn.commit()
 
     if approved_massive:
-        print(f"\n🚀 {len(approved_massive)} MASSIVE OPPORTUNITY SETUPS")
+        print(f"\n📌 {len(approved_massive)} HELD QUALITY (hold/trim size — not 'buy more' theater)")
         for opp in approved_massive[:5]:
             pnl_emoji = "🟢" if opp['pnl'] > 0 else "🔴"
             print(f"  **{opp['ticker']}** — {opp['council']} | Grade: {opp['grade']} | Tech: {opp['technical_score']}")
             print(f"    Position: ${opp['live_value']:,.0f} | P&L: {pnl_emoji} {opp['pnl']:+.1f}%")
+    else:
+        print("\n📌 Held quality chase-filtered: none (or all winners already extended)")
+
+    # Prefer pointing to outside ideas file if present
+    outside = Path.home() / "Documents/Obsidian/VOX/vox/memory/brain/Outside-Ideas-LATEST.md"
+    if outside.exists():
+        print(f"\n🌍 New capital ideas: see Outside-Ideas-LATEST (not held)")
 
     # 4. Top 15 aggressive
     seen = set()
-    print(f"\n**TOP 15 AGGRESSIVE PLAYS:**")
+    print(f"\n**TOP 15 HIGH GRADES (hygiene list — not trade signals):**")
     print("-" * 60)
     count = 0
     for opp in aggressive:

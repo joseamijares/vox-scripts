@@ -470,11 +470,49 @@ def render_markdown(payload: Dict[str, Any]) -> str:
         why = "; ".join(a["reasons"][:2]) if a["reasons"] else "size"
         lines.append(f"- **{a['ticker']}** {a['weight_pct']:.1f}% — {why}")
 
-    lines += ["", "### ADD on weakness (no chase)", "_Only if capital freed from cleanup / cash_"]
+    lines += ["", "### ADD on weakness — **owned** quality (bucket A rebalance)", "_Only if capital freed from cleanup / cash. Grades = hygiene, not auto-deploy._"]
     for a in actions["add_on_weakness"][:8]:
         lines.append(
             f"- **{a['ticker']}** g{a['grade']} {a['sleeve']} {a['weight_pct']:.1f}% — {a.get('note','accumulate dips')}"
         )
+
+    # Outside-book ideas (bucket B) if scanner has run
+    outside = OBS_BRAIN / "Outside-Ideas-LATEST.md"
+    if outside.exists():
+        lines += [
+            "",
+            "### NEW capital — outside book (bucket B)",
+            "_From Outside-Ideas-LATEST · not held · anti-chase · see full note_",
+        ]
+        try:
+            ot = outside.read_text().splitlines()
+            in_a = False
+            n = 0
+            for ln in ot:
+                if ln.startswith("## Tier A"):
+                    in_a = True
+                    continue
+                if in_a and ln.startswith("## "):
+                    break
+                if in_a and ln.startswith("| **") and n < 6:
+                    # | **TICKER** | grade | ...
+                    parts = [p.strip() for p in ln.strip("|").split("|")]
+                    if parts and parts[0].startswith("**"):
+                        t = parts[0].replace("**", "").strip()
+                        g = parts[1] if len(parts) > 1 else "?"
+                        rs = parts[2] if len(parts) > 2 else "?"
+                        lines.append(f"- **{t}** g{g} rs{rs} (not held)")
+                        n += 1
+            if n == 0:
+                lines.append("- _See Outside-Ideas-LATEST (no Tier A rows parsed)_")
+        except Exception:
+            lines.append("- _Outside-Ideas-LATEST present but unreadable_")
+    else:
+        lines += [
+            "",
+            "### NEW capital — outside book (bucket B)",
+            "- _Run `vox_outside_ideas_run.py` (JOS-208) — not yet generated_",
+        ]
 
     # Full book
     lines += [
@@ -502,10 +540,11 @@ def render_markdown(payload: Dict[str, Any]) -> str:
         "- [ ] Update theses for any pivot",
         "",
         "## How VOX uses this brain daily",
-        "1. Read Brain-LATEST + Breaking-LATEST + data health",
-        "2. Respect LONG core — do not churn",
-        "3. Push SHORT cleanups and MEDIUM rebalance only",
-        "4. Suggest plays you execute — VOX does not auto-trade",
+        "1. Read Brain-LATEST + PortfolioGrades + Outside-Ideas + Breaking (if material)",
+        "2. Grades = hygiene ranking — not proven trade edge",
+        "3. Respect LONG core — do not churn",
+        "4. Bucket A = rebalance owned · Bucket B = outside ideas",
+        "5. Suggest plays you execute — VOX does not auto-trade",
         "",
         f"_Source: vox_portfolio_brain.py · mandate vox_portfolio_policy.py_",
     ]
@@ -559,41 +598,50 @@ def render_html(payload: Dict[str, Any]) -> str:
 <title>VOX Portfolio Brain {esc(day)}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <style>
-body{{font-family:ui-sans-serif,system-ui,sans-serif;background:#0b1220;color:#e6edf7;margin:0;padding:24px;}}
-h1,h2{{color:#7dd3fc}} a{{color:#93c5fd}}
-.card{{background:#111827;border:1px solid #1f2937;border-radius:12px;padding:16px;margin:12px 0;}}
+:root {{
+  --bg:#0b0e11; --card:#15181d; --text:#f0f2f5; --muted:#8b929e;
+  --border:rgba(255,255,255,.06); --profit:#4ade80; --loss:#f87171; --accent:#7c9cff;
+}}
+*{{box-sizing:border-box}}
+body{{font-family:ui-sans-serif,system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);margin:0;padding:24px;line-height:1.45}}
+h1{{font-size:1.75rem;font-weight:600;letter-spacing:-.03em;margin:0 0 .25rem}}
+h2{{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 1rem}}
+.muted{{color:var(--muted);font-size:.875rem}}
+.card{{background:var(--card);border-radius:10px;padding:16px 18px;margin:12px 0}}
+.kpi{{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}}
+.kpi div{{background:var(--card);padding:14px 16px;border-radius:10px;min-width:120px}}
+.kpi .lab{{font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}}
+.kpi b{{display:block;margin-top:4px;font-family:ui-monospace,monospace;font-size:1.25rem;font-variant-numeric:tabular-nums}}
 table{{width:100%;border-collapse:collapse;font-size:13px}}
-th,td{{border-bottom:1px solid #1f2937;padding:6px 8px;text-align:left}}
-th{{color:#94a3b8;font-weight:600}}
-tr.sell{{background:rgba(239,68,68,.08)}} tr.trim{{background:rgba(245,158,11,.08)}}
-tr.hold,tr.hold_bucket{{background:transparent}}
-.bar-row{{display:flex;align-items:center;gap:8px;margin:4px 0}}
-.lab{{width:110px;font-size:12px;color:#94a3b8}}
-.bar{{height:12px;background:linear-gradient(90deg,#0ea5e9,#22d3ee);border-radius:6px}}
-.pct{{width:50px;font-size:12px}}
-.kpi{{display:flex;gap:16px;flex-wrap:wrap}}
-.kpi div{{background:#0f172a;padding:12px 16px;border-radius:10px;border:1px solid #1e293b}}
-.muted{{color:#94a3b8;font-size:13px}}
+th{{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:500;padding:8px;border-bottom:1px solid var(--border)}}
+td{{padding:8px;border-bottom:1px solid var(--border);font-variant-numeric:tabular-nums}}
+tr:hover td{{background:rgba(255,255,255,.02)}}
+.bar-row{{display:flex;align-items:center;gap:8px;margin:6px 0}}
+.lab{{width:110px;font-size:12px;color:var(--muted)}}
+.bar{{height:6px;background:var(--accent);border-radius:3px;opacity:.85}}
+.pct{{width:48px;font-size:12px;font-family:ui-monospace,monospace;color:var(--muted)}}
+ul{{margin:0;padding-left:1.1rem}} li{{margin:.35rem 0}}
+a{{color:var(--accent)}}
 </style></head><body>
 <h1>VOX Portfolio Brain — {esc(day)}</h1>
 <p class="muted">Balanced mandate · not day-trading · VOX plans · you execute · AUM <b>${aum:,.0f}</b> · {len(book)} positions</p>
 <div class="kpi">
-  <div><div class="muted">AUM</div><b>${aum:,.0f}</b></div>
-  <div><div class="muted">Positions</div><b>{len(book)}</b></div>
-  <div><div class="muted">LONG wt</div><b>{payload['strategies']['LONG']['weight_pct']:.1f}%</b></div>
-  <div><div class="muted">MEDIUM wt</div><b>{payload['strategies']['MEDIUM']['weight_pct']:.1f}%</b></div>
-  <div><div class="muted">SHORT wt</div><b>{payload['strategies']['SHORT']['weight_pct']:.1f}%</b></div>
+  <div><div class="lab">AUM</div><b>${aum:,.0f}</b></div>
+  <div><div class="lab">Positions</div><b>{len(book)}</b></div>
+  <div><div class="lab">LONG</div><b>{payload['strategies']['LONG']['weight_pct']:.1f}%</b></div>
+  <div><div class="lab">MEDIUM</div><b>{payload['strategies']['MEDIUM']['weight_pct']:.1f}%</b></div>
+  <div><div class="lab">SHORT</div><b>{payload['strategies']['SHORT']['weight_pct']:.1f}%</b></div>
 </div>
 <div class="card"><h2>Sectors</h2>{bars}
-<table><thead><tr><th>Sector</th><th>W%</th><th>Value</th><th>#</th><th>Bar</th></tr></thead>
+<table><thead><tr><th>Sector</th><th>W%</th><th>Value</th><th>#</th></tr></thead>
 <tbody>{sec_rows}</tbody></table></div>
 <div class="card"><h2>Execute — material SELL</h2><ul>{sells}</ul>
-<h2>ADD on weakness</h2><ul>{adds}</ul></div>
+<h2 style="margin-top:1.25rem">ADD on weakness</h2><ul>{adds}</ul></div>
 <div class="card"><h2>Full positions</h2>
 <table><thead><tr>
 <th>Ticker</th><th>W%</th><th>Value</th><th>Grade</th><th>Council</th><th>Sleeve</th><th>Horizon</th><th>Decision</th><th>Brokers</th>
 </tr></thead><tbody>{pos_rows}</tbody></table></div>
-<p class="muted">Generated by vox_portfolio_brain.py</p>
+<p class="muted">vox_portfolio_brain · Linear dark tokens</p>
 </body></html>"""
 
 
@@ -758,9 +806,12 @@ def main() -> int:
         lines.append("· none ≥2.5%")
     for a in mt[:6]:
         lines.append(f"· {a['ticker']} {a['weight_pct']:.1f}%")
-    lines.append("**ADD on weakness:**")
-    for a in payload["actions"]["add_on_weakness"][:5]:
+    lines.append("**ADD owned (bucket A):**")
+    for a in payload["actions"]["add_on_weakness"][:4]:
         lines.append(f"· {a['ticker']} g{a['grade']} {a['sleeve']}")
+    outside = Path.home() / "Documents/Obsidian/VOX/vox/memory/brain/Outside-Ideas-LATEST.md"
+    if outside.exists():
+        lines.append("**NEW outside (bucket B):** see Outside-Ideas-LATEST")
     lines += [
         "",
         f"Sectors top: " + ", ".join(f"{x['sector']} {x['weight_pct']:.0f}%" for x in payload["sectors"][:5]),
