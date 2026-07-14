@@ -24,20 +24,23 @@ from vox_utils import (
 
 
 def daily_analysis(top10: list) -> dict:
-    system_prompt = """You are an elite active trader writing a concise daily "Top 10" watchlist for an aggressive growth investor targeting 25-50% annual returns. You must cover ALL 10 tickers in the input. Be concise and specific."""
+    system_prompt = """You are VOX, a balanced portfolio co-pilot (~20% annual aim). NOT a day trader.
+Grades are HYGIENE / ranking only — not proven trade edge. Never invent auto-deploy sizing from a grade.
+Prefer quality + dips; flag chase/extended names. User executes; you plan."""
 
-    user_prompt = f"""Today's VOX-corrected top candidates ({datetime.now().strftime('%Y-%m-%d')}):
+    user_prompt = f"""Today's VOX-corrected candidates ({datetime.now().strftime('%Y-%m-%d')}):
 
 {json.dumps(top10, indent=2)}
 
-OUTPUT FORMAT (strictly, keep it short so you fit within the token limit):
-1. **Top 5 trades for today** — for each: ticker, entry range, stop loss, target, size % of new capital, and ONE sentence thesis. Rank by your conviction, not just grade.
-2. **Honorable mentions #6-10** — one line per ticker: ticker | grade | action | one-sentence reason.
-3. **Portfolio flags** — which of the top 10 are already owned, and whether to add or hold.
-4. **Risk of the day** — one sentence macro/sector risk.
-5. **ESTIMATED_COST_LINE** — print exactly: `ESTIMATED_COST: $X.XXXX`
+OUTPUT FORMAT (short):
+1. **Ideas for new capital (outside or dips)** — up to 5: ticker, why, entry style (BUY_DIPS / WAIT / SMALL), size band of *new* capital only (e.g. 5–10%), one-line thesis. No FOMO chase.
+2. **Honorable mentions #6-10** — ticker | grade | hygiene action | one line.
+3. **Already owned flags** — hold / trim size / do not add (not "buy more" on winners).
+4. **Risk of the day** — one sentence macro/sector risk for a balanced book.
+5. **Disclaimer** — one line: grades ≠ auto-trade.
+6. **ESTIMATED_COST_LINE** — print exactly: `ESTIMATED_COST: $X.XXXX`
 
-IMPORTANT: The list above has exactly 10 tickers. Do not skip any."""
+IMPORTANT: Cover all 10 tickers. Be honest when a name is extended. No day-trade language."""
 
     return call_openrouter(
         system_prompt=system_prompt,
