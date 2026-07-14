@@ -243,8 +243,43 @@ def main():
         "weekly_audit": weekly_audit(),
         "version_creep_note": flag_version_creep(),
     }
-    print(json.dumps(report, indent=2, default=str))
+
+    # Human Telegram/local summary (not raw JSON)
+    day = datetime.now().strftime("%Y-%m-%d")
+    n_py = len(report["archived_pycache"] or [])
+    n_log = len(report["archived_logs"] or [])
+    n_alert = len(report["archived_alert_state"] or [])
+    n_cron = len(report["archived_cron_output"] or [])
+    total = n_py + n_log + n_alert + n_cron
+
+    lines = [
+        f"🧹 **VOX Housekeeper — {day}**",
+        f"Archived **{total}** item(s) → `~/.hermes/archive/{datetime.now().strftime('%Y-%m/%d')}`",
+        "",
+        f"· `__pycache__`: {n_py}",
+        f"· logs: {n_log}",
+        f"· alert state: {n_alert}",
+        f"· cron output: {n_cron}",
+        f"· daily log: `{Path(report['daily_log_created']).name if report.get('daily_log_created') else '—'}`",
+    ]
+    if report.get("weekly_audit"):
+        lines.append(f"· weekly audit: `{Path(report['weekly_audit']).name}`")
+    if report.get("version_creep_note"):
+        lines.append(f"· ⚠️ version-creep note: `{Path(report['version_creep_note']).name}`")
+    if total == 0 and not report.get("version_creep_note"):
+        lines.append("")
+        lines.append("_Quiet night — nothing material to clean._")
+
+    print("\n".join(lines))
+    # Machine-readable sidecar for debugging (not delivered if we only print human form)
+    try:
+        side = ARCHIVE_ROOT / datetime.now().strftime("%Y-%m/%d") / "housekeeper-report.json"
+        side.parent.mkdir(parents=True, exist_ok=True)
+        side.write_text(json.dumps(report, indent=2, default=str))
+    except Exception:
+        pass
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main() or 0)

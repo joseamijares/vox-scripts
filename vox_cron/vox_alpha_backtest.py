@@ -224,7 +224,8 @@ def compute_metrics(trades, per_horizon=True):
 
 
 def run_backtest(analyst_id, start_date, end_date, universe='signals',
-                 notional=10000, stop_loss_pct=0.08, max_holding_days=20):
+                 notional=10000, stop_loss_pct=0.08, max_holding_days=20,
+                 quiet=False):
     conn = connect_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
 
@@ -274,9 +275,10 @@ def run_backtest(analyst_id, start_date, end_date, universe='signals',
         """, (json.dumps(metrics), run_id))
         conn.commit()
 
-        print(f"Backtest complete: {run_id}")
-        print(f"Signals: {len(signals)} | Trades: {len(trades)}")
-        print(json.dumps(metrics, indent=2))
+        if not quiet:
+            print(f"Backtest complete: {run_id}")
+            print(f"Signals: {len(signals)} | Trades: {len(trades)}")
+            print(json.dumps(metrics, indent=2))
         return run_id, metrics
 
     except Exception as e:

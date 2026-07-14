@@ -5,7 +5,7 @@ Merges vox_top_opportunities_scanner + vox_massive_opportunity.
 - Scans all vox_grades for top 100 opportunities
 - Scans portfolio positions for massive opportunities (grade≥65, technical≥60, size≥$2K, not crisis)
 - Adds DeepSeek v4 Pro second-layer review for high-conviction alerts
-- Outputs unified report; exits 1 only when DeepSeek-approved actionable alerts exist
+- Outputs unified report; exits 0 always on success (stdout is the alert body)
 """
 
 import sys
@@ -329,7 +329,9 @@ def main():
         print(f"{count:2d}. {ticker:6s} | Grade: {grade:2d} | {action:12s} | Tech: {tech_str}{tag}")
 
     conn.close()
-    return 1 if (approved_new_alerts or approved_massive) else 0
+    # Always exit 0 on successful scan — actionable content is in stdout.
+    # (Exit 1 was previously used as an "alert" flag but marks the cron as failed.)
+    return 0
 
 
 if __name__ == "__main__":
