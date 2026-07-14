@@ -95,9 +95,20 @@ def generate_dashboard_data():
             p.updated_at,
             u.unified_grade,
             u.vox_grade,
-            u.tech_score
+            u.tech_score,
+            l.technical_score,
+            l.fundamental_score,
+            l.macro_score,
+            l.sentiment_score
         FROM positions p
         LEFT JOIN unified_grades u ON u.ticker = p.ticker
+        LEFT JOIN LATERAL (
+            SELECT technical_score, fundamental_score, macro_score, sentiment_score
+            FROM vox_grades vg
+            WHERE vg.ticker = p.ticker
+            ORDER BY generated_at DESC
+            LIMIT 1
+        ) l ON TRUE
         WHERE (
             COALESCE(p.shares, 0) > 0
             OR (p.ticker = 'MIRROR_TOTAL' AND COALESCE(p.live_value_usd, p.live_value, 0) > 0)
@@ -115,14 +126,39 @@ def generate_dashboard_data():
     for row in cur.fetchall():
         (
             ticker, shares, price, value, grade, council, sector, brokers,
-            updated_at, unified_grade, vox_grade, tech_score
+            updated_at, unified_grade, vox_grade, tech_score,
+            technical_score, fundamental_score, macro_score, sentiment_score,
         ) = row
+        tech = _f(technical_score)
+        fund = _f(fundamental_score)
+        mac = _f(macro_score)
+        sent = _f(sentiment_score)
+        g = _f(grade)
+        # Research score for dashboard
+        if any(x is not None for x in (tech, fund, mac, sent, g)):
+            research_score = round(
+                (tech or 50) * 0.30
+                + (fund or 50) * 0.25
+                + (mac or 50) * 0.20
+                + (sent or 50) * 0.15
+                + (g or 50) * 0.10,
+                1,
+            )
+        else:
+            research_score = None
         all_positions.append({
             "ticker": ticker,
             "shares": _f(shares) or 0,
             "price": _f(price) or 0,
             "value_usd": _f(value) or 0,
-            "grade": _f(grade),
+            "grade": g,
+            "research_score": research_score,
+            "layer_scores": {
+                "technical": tech,
+                "fundamental": fund,
+                "macro": mac,
+                "sentiment": sent,
+            },
             "council": council,
             "sector": sector,
             "brokers": list(brokers) if brokers else [],
@@ -388,6 +424,7 @@ def generate_dashboard_data():
             f"- Consolidated AUM: **${dashboard_data['grand_total']:,.0f}**",
             f"- Positions: **{dashboard_data['total_positions']}**",
             f"- Avg grade: **{dashboard_data['avg_grade']:.1f}**",
+            f"- Avg research score: **{(sum(p['research_score'] for p in all_positions if p.get('research_score') is not None) / max(1, len([p for p in all_positions if p.get('research_score') is not None]))):.1f}**",
             f"- Stale brokers: **{', '.join(stale_brokers) if stale_brokers else 'none'}**",
             "",
             "## Broker health",
@@ -423,12 +460,35 @@ def generate_dashboard_data():
         else:
             md.append("- None")
 
-        md += ["", "## Top holdings", ""]
-        for p in all_positions[:12]:
+        md += ["", "## Top holdings (with research score)", ""]
+        for p in all_positions[:15]:
+            rs = p.get("research_score")
+            rs_s = f" research {rs}" if rs is not None else ""
+            layers = p.get("layer_scores") or {}
+            layer_s = ""
+            if layers.get("technical") is not None:
+                layer_s = f" · T{layers.get('technical'):.0f}/F{layers.get('fundamental') or 0:.0f}/M{layers.get('macro') or 0:.0f}/S{layers.get('sentiment') or 0:.0f}"
             md.append(
                 f"- {p['ticker']}: ${p['value_usd']:,.0f} ({p['weight_pct']}%) "
-                f"grade {p['grade']} {p['council']} {p['brokers']}"
+                f"grade {p['grade']}{rs_s}{layer_s} {p['council']} {p['brokers']}"
             )
+
+        # Research leaders
+        researched = [p for p in all_positions if p.get("research_score") is not None]
+        if researched:
+            md += ["", "## Research score leaders", ""]
+            for p in sorted(researched, key=lambda x: -x["research_score"])[:10]:
+                md.append(
+                    f"- **{p['ticker']}** research **{p['research_score']}** grade {p['grade']} "
+                    f"({p['weight_pct']}%)"
+                )
+            md += ["", "## Research score laggards (≥$200)", ""]
+            lags = [p for p in researched if p["value_usd"] >= 200]
+            for p in sorted(lags, key=lambda x: x["research_score"])[:10]:
+                md.append(
+                    f"- **{p['ticker']}** research **{p['research_score']}** grade {p['grade']} "
+                    f"${p['value_usd']:,.0f}"
+                )
 
         md += [
             "",
@@ -438,6 +498,7 @@ def generate_dashboard_data():
             "- Bitso/eToro/Binance: API path (auto when credentials healthy)",
             "",
             f"Raw JSON: `{OUT_JSON}`",
+            f"Full grade report: `memory/brain/PortfolioGrades-LATEST`",
         ]
         path = obsidian / f"PortfolioDashboard-{day}.md"
         path.write_text("\n".join(md) + "\n")
