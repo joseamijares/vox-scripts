@@ -793,13 +793,18 @@ def main() -> int:
         f"AUM **${aum:,.0f}** · {len(payload['positions'])} positions · not day-trading",
         f"LONG {s['LONG']['weight_pct']:.0f}% · MED {s['MEDIUM']['weight_pct']:.0f}% · SHORT {s['SHORT']['weight_pct']:.0f}%",
         "",
-        "**Material SELL:**",
+        "**Material SELL (≥2.5%):**",
     ]
-    ms = payload["actions"]["material_sell"]
+    ms = [a for a in payload["actions"]["material_sell"] if a["weight_pct"] >= 2.5]
+    junk = [a for a in payload["actions"]["material_sell"] if a["weight_pct"] < 2.5]
     if not ms:
         lines.append("· none ≥2.5%")
     for a in ms[:6]:
         lines.append(f"· {a['ticker']} {a['weight_pct']:.1f}% g{a['grade']}")
+    if junk:
+        lines.append("**Cleanup junk (<2.5%, ≥$500):**")
+        for a in junk[:6]:
+            lines.append(f"· {a['ticker']} ${a['value_usd']:,.0f} g{a['grade']}")
     lines.append("**Material TRIM:**")
     mt = payload["actions"]["material_trim"]
     if not mt:
