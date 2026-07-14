@@ -27,6 +27,7 @@ RESEARCH_DIRS = {
     "SignalQuality": Path.home() / "Documents" / "Obsidian" / "VOX" / "SignalQuality",
     "NewsBriefs": Path.home() / "Documents" / "Obsidian" / "VOX" / "NewsBriefs",
     "Earnings": Path.home() / "Documents" / "Obsidian" / "VOX" / "Earnings",
+    "Brain": Path.home() / "Documents" / "Obsidian" / "VOX" / "vox" / "memory" / "brain",
 }
 
 SYNC_LABELS = {0: "pre-market", 1: "midday", 2: "post-market"}
@@ -599,7 +600,7 @@ def sync_daily_log(sync_idx: int):
             content += "\n\n" + block
 
     # Update research links section once per day (replace placeholder)
-    research_links = f"\n**Research today:** {smart_link} | {sector_link} | {discovery_link} | {news_link} | {earnings_link} | [[memory/decisions/Breaking-LATEST|Breaking Shock]]\n"
+    research_links = f"\n**Research today:** {smart_link} | {sector_link} | {discovery_link} | {news_link} | {earnings_link} | [[memory/brain/Brain-LATEST|Portfolio Brain]] | [[memory/decisions/Breaking-LATEST|Breaking Shock]]\n"
     if "## Research Links" in content:
         parts = content.split("## Research Links", 1)
         after_section = parts[1].split("\n##", 1)
