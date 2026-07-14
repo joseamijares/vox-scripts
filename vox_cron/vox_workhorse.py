@@ -2,9 +2,10 @@
 """
 VOX Workhorse Router
 Configurable heavy-lift router for high-volume, low-stakes VOX tasks.
-Defaults to moonshotai/kimi-k2 as the cheap, reliable workhorse, with fallback
-chains for speed and quality. Thinking/reasoning tasks use Sonnet 5 or
-openai/gpt-5.6-terra-pro.
+Defaults to deepseek/deepseek-v4-pro (or x-ai/grok-4.3) as workhorse,
+alongside OpenRouter (deepseek, kimi) and direct xAI Grok options.
+Grok 4.3 for workhorse tasks, Grok 4.5 for brain/high-stakes.
+Thinking/reasoning tasks use Sonnet 5, gpt-5.6-terra-pro, or grok-4.5.
 
 Never use this router for:
 - Final investment decisions
@@ -21,14 +22,17 @@ import hermes_secrets_bootstrap
 sys.path.insert(0, str(Path.home() / ".hermes" / "scripts" / "vox_cron"))
 from vox_utils import call_openrouter
 
-DEFAULT_WORKHORSE = "deepseek/deepseek-v4-pro"
+DEFAULT_WORKHORSE = "deepseek/deepseek-v4-pro"  # alternatives: "x-ai/grok-4.3", "moonshotai/kimi-k2"
 WORKHORSE_FALLBACKS = [
     "deepseek/deepseek-v4-flash",
+    "x-ai/grok-4.3",   # direct Grok workhorse via OpenRouter
 ]
 
 THINKING_MODELS = [
     "anthropic/claude-sonnet-5",
     "openai/gpt-5.6-terra-pro",
+    # Grok 4.5 brain is Hermes default via direct xai-oauth (not on OpenRouter).
+    # Use workhorse x-ai/grok-4.3 for OpenRouter path when needed.
 ]
 
 

@@ -1,196 +1,196 @@
 {
-  "generated_at": "2026-07-12T11:45:06.791190",
-  "grand_total": 187894.57,
-  "broker_book_total": 187894.58,
+  "generated_at": "2026-07-13T18:00:38.263322",
+  "grand_total": 88228.09,
+  "broker_book_total": 186488.57,
   "note": "grand_total uses consolidated positions; broker_book_total sums broker_positions (can double-count multi-broker names if not de-duped).",
   "mandate": "top-tier balanced ~20% aim; quality compounders OK; multi-broker never a sell reason",
-  "total_positions": 81,
-  "avg_grade": 52.8,
+  "total_positions": 80,
+  "avg_grade": 52.9,
   "grade_distribution": {
     "A (80-100)": 0,
     "B (60-79)": 15,
-    "C (40-59)": 65,
+    "C (40-59)": 64,
     "D (0-39)": 1
   },
   "council_distribution": {
-    "HOLD": 133589.14999999994,
-    "SELL": 44660.040000000015,
     "MIRROR": 9055.52,
-    "BUY": 589.86
+    "HOLD": 55637.43,
+    "SELL": 23164.110000000008,
+    "BUY": 371.03
   },
   "broker_summary": {
     "Binance": {
-      "positions": 20,
-      "total_usd": 15635.84,
+      "positions": 19,
+      "total_usd": 15320.49,
       "avg_grade": 49.3,
-      "last_sync": "2026-07-12T08:19:13.949581+00:00",
-      "last_price_update": "2026-07-12T14:19:14.046522+00:00",
-      "sync_age_days": 0.4,
-      "price_age_days": 0.1,
+      "last_sync": "2026-07-13T07:00:05.887033+00:00",
+      "last_price_update": "2026-07-13T13:00:05.980643+00:00",
+      "sync_age_days": 0.7,
+      "price_age_days": 0.5,
       "health": "FRESH",
       "integration_mode": "API",
       "needs_manual_update": false,
       "top_positions": [
         {
           "ticker": "BTC",
-          "shares": 0.15297195,
+          "shares": 0.15297201,
           "avg_cost": null,
-          "price": 63982.52,
-          "value_usd": 9787.530850314,
+          "price": 62623.0,
+          "value_usd": 9579.56618223,
           "currency": "USD",
           "grade": 47.0,
           "council": "SELL",
           "sector": null,
           "source": "api",
-          "last_sync": "2026-07-12T08:19:13.949581+00:00",
-          "last_price_update": "2026-07-12T14:19:14.046522+00:00",
+          "last_sync": "2026-07-13T07:00:05.887033+00:00",
+          "last_price_update": "2026-07-13T13:00:05.980643+00:00",
           "price_source": "binance_usdt"
         },
         {
           "ticker": "ETH",
-          "shares": 2.45695075,
+          "shares": 2.45695128,
           "avg_cost": null,
-          "price": 1805.22,
-          "value_usd": 4435.336632915,
+          "price": 1771.87,
+          "value_usd": 4353.3982644936,
           "currency": "USD",
           "grade": 48.0,
           "council": "SELL",
           "sector": null,
           "source": "api",
-          "last_sync": "2026-07-12T08:19:13.949581+00:00",
-          "last_price_update": "2026-07-12T14:19:14.046522+00:00",
+          "last_sync": "2026-07-13T07:00:05.887033+00:00",
+          "last_price_update": "2026-07-13T13:00:05.980643+00:00",
           "price_source": "binance_usdt"
         },
         {
           "ticker": "BNB",
-          "shares": 1.04698202,
+          "shares": 1.04698958,
           "avg_cost": null,
-          "price": 579.62,
-          "value_usd": 606.8517184324,
+          "price": 568.41,
+          "value_usd": 595.1193471678,
           "currency": "USD",
           "grade": 47.0,
           "council": "SELL",
           "sector": "Unknown",
           "source": "api",
-          "last_sync": "2026-07-12T08:19:13.949581+00:00",
-          "last_price_update": "2026-07-12T14:19:14.046522+00:00",
+          "last_sync": "2026-07-13T07:00:05.887033+00:00",
+          "last_price_update": "2026-07-13T13:00:05.980643+00:00",
           "price_source": "binance_usdt"
         },
         {
           "ticker": "XRP",
           "shares": 304.39042786,
           "avg_cost": null,
-          "price": 1.0966,
-          "value_usd": 333.794543191276,
+          "price": 1.0736,
+          "value_usd": 326.793563350496,
           "currency": "USD",
           "grade": 43.0,
           "council": "SELL",
           "sector": null,
           "source": "api",
-          "last_sync": "2026-07-12T08:19:13.949581+00:00",
-          "last_price_update": "2026-07-12T14:19:14.046522+00:00",
+          "last_sync": "2026-07-13T07:00:05.887033+00:00",
+          "last_price_update": "2026-07-13T13:00:05.980643+00:00",
           "price_source": "binance_usdt"
         },
         {
           "ticker": "DOGE",
           "shares": 4185.74322016,
           "avg_cost": null,
-          "price": 0.07328,
-          "value_usd": 306.7312631733248,
+          "price": 0.07211,
+          "value_usd": 301.8339436057376,
           "currency": "USD",
           "grade": 47.0,
           "council": "SELL",
           "sector": "Unknown",
           "source": "api",
-          "last_sync": "2026-07-12T08:19:13.949581+00:00",
-          "last_price_update": "2026-07-12T14:19:14.046522+00:00",
+          "last_sync": "2026-07-13T07:00:05.887033+00:00",
+          "last_price_update": "2026-07-13T13:00:05.980643+00:00",
           "price_source": "binance_usdt"
         },
         {
           "ticker": "HBAR",
           "shares": 1669.02682985,
           "avg_cost": null,
-          "price": 0.06759,
-          "value_usd": 112.8095234295615,
+          "price": 0.06694,
+          "value_usd": 111.724655990159,
           "currency": "USD",
           "grade": 45.0,
           "council": "SELL",
           "sector": "Unknown",
           "source": "api",
-          "last_sync": "2026-07-12T08:19:13.949581+00:00",
-          "last_price_update": "2026-07-12T14:19:14.046522+00:00",
+          "last_sync": "2026-07-13T07:00:05.887033+00:00",
+          "last_price_update": "2026-07-13T13:00:05.980643+00:00",
           "price_source": "binance_usdt"
         },
         {
           "ticker": "SOL",
-          "shares": 0.29488302,
+          "shares": 0.29567704,
           "avg_cost": null,
-          "price": 76.97,
-          "value_usd": 22.6971460494,
+          "price": 75.84,
+          "value_usd": 22.4241467136,
           "currency": "USD",
           "grade": 51.0,
           "council": "SELL",
           "sector": "Unknown",
           "source": "api",
-          "last_sync": "2026-07-12T08:19:13.949581+00:00",
-          "last_price_update": "2026-07-12T14:19:14.046522+00:00",
+          "last_sync": "2026-07-13T07:00:05.887033+00:00",
+          "last_price_update": "2026-07-13T13:00:05.980643+00:00",
           "price_source": "binance_usdt"
         },
         {
           "ticker": "AXS",
-          "shares": 15.3390794,
+          "shares": 15.34059232,
           "avg_cost": null,
-          "price": 0.995,
-          "value_usd": 15.262384003,
+          "price": 0.983,
+          "value_usd": 15.07980225056,
           "currency": "USD",
           "grade": 58.0,
           "council": "HOLD",
           "sector": "Financial Services",
           "source": "api",
-          "last_sync": "2026-07-12T08:19:13.949581+00:00",
-          "last_price_update": "2026-07-12T14:19:14.046522+00:00",
+          "last_sync": "2026-07-13T07:00:05.887033+00:00",
+          "last_price_update": "2026-07-13T13:00:05.980643+00:00",
           "price_source": "binance_usdt"
         },
         {
           "ticker": "BONK",
           "shares": 844336.12,
           "avg_cost": null,
-          "price": 4.02e-06,
-          "value_usd": 3.3942312024,
+          "price": 3.91e-06,
+          "value_usd": 3.3013542292,
           "currency": "USD",
           "grade": 50.0,
           "council": "HOLD",
           "sector": null,
           "source": "api",
-          "last_sync": "2026-07-12T08:19:13.949581+00:00",
-          "last_price_update": "2026-07-12T14:19:14.046522+00:00",
+          "last_sync": "2026-07-13T07:00:05.887033+00:00",
+          "last_price_update": "2026-07-13T13:00:05.980643+00:00",
           "price_source": "binance_usdt"
         },
         {
           "ticker": "PENGU",
           "shares": 342.30769039,
           "avg_cost": null,
-          "price": 0.006065,
-          "value_usd": 2.07609614221535,
+          "price": 0.005954,
+          "value_usd": 2.03809998858206,
           "currency": "USD",
           "grade": 50.0,
           "council": "HOLD",
           "sector": null,
           "source": "api",
-          "last_sync": "2026-07-12T08:19:13.949581+00:00",
-          "last_price_update": "2026-07-12T14:19:14.046522+00:00",
+          "last_sync": "2026-07-13T07:00:05.887033+00:00",
+          "last_price_update": "2026-07-13T13:00:05.980643+00:00",
           "price_source": "binance_usdt"
         }
       ]
     },
     "Bitso": {
       "positions": 3,
-      "total_usd": 787.21,
+      "total_usd": 771.53,
       "avg_grade": 48.3,
-      "last_sync": "2026-07-12T08:18:55.922590+00:00",
-      "last_price_update": "2026-07-12T14:18:56.019069+00:00",
-      "sync_age_days": 0.4,
-      "price_age_days": 0.1,
+      "last_sync": "2026-07-13T07:00:16.285378+00:00",
+      "last_price_update": "2026-07-13T13:00:16.382089+00:00",
+      "sync_age_days": 0.7,
+      "price_age_days": 0.5,
       "health": "FRESH",
       "integration_mode": "API",
       "needs_manual_update": false,
@@ -199,56 +199,56 @@
           "ticker": "BTC",
           "shares": 0.00915464,
           "avg_cost": null,
-          "price": 63971.0,
-          "value_usd": 585.63147544,
+          "price": 62604.0,
+          "value_usd": 573.11708256,
           "currency": "USD",
           "grade": 47.0,
           "council": "SELL",
           "sector": null,
           "source": "api",
-          "last_sync": "2026-07-12T08:18:55.922590+00:00",
-          "last_price_update": "2026-07-12T14:18:56.019069+00:00",
+          "last_sync": "2026-07-13T07:00:16.285378+00:00",
+          "last_price_update": "2026-07-13T13:00:16.382089+00:00",
           "price_source": "bitso"
         },
         {
           "ticker": "DOGE",
           "shares": 2342.61859145,
           "avg_cost": null,
-          "price": 0.073354,
-          "value_usd": 171.84044415722332,
+          "price": 0.072202,
+          "value_usd": 169.1417475398729,
           "currency": "USD",
           "grade": 47.0,
           "council": "SELL",
           "sector": "Unknown",
           "source": "api",
-          "last_sync": "2026-07-12T08:18:55.922590+00:00",
-          "last_price_update": "2026-07-12T14:18:56.019069+00:00",
+          "last_sync": "2026-07-13T07:00:16.285378+00:00",
+          "last_price_update": "2026-07-13T13:00:16.382089+00:00",
           "price_source": "bitso"
         },
         {
           "ticker": "SOL",
-          "shares": 0.38613524,
+          "shares": 0.38634366,
           "avg_cost": null,
-          "price": 77.021,
-          "value_usd": 29.74052232004,
+          "price": 75.76,
+          "value_usd": 29.2693956816,
           "currency": "USD",
           "grade": 51.0,
           "council": "SELL",
           "sector": "Unknown",
           "source": "api",
-          "last_sync": "2026-07-12T08:18:55.922590+00:00",
-          "last_price_update": "2026-07-12T14:18:56.019069+00:00",
+          "last_sync": "2026-07-13T07:00:16.285378+00:00",
+          "last_price_update": "2026-07-13T13:00:16.382089+00:00",
           "price_source": "bitso"
         }
       ]
     },
     "eToro": {
       "positions": 50,
-      "total_usd": 78753.61,
+      "total_usd": 77678.63,
       "avg_grade": 51.1,
       "last_sync": "2026-07-12T09:18:35.038126+00:00",
-      "last_price_update": "2026-07-12T15:52:08.184630+00:00",
-      "sync_age_days": 0.4,
+      "last_price_update": "2026-07-13T22:11:22.902767+00:00",
+      "sync_age_days": 1.6,
       "price_age_days": 0.1,
       "health": "FRESH",
       "integration_mode": "API + price updater",
@@ -258,16 +258,16 @@
           "ticker": "VOO",
           "shares": 16.099182,
           "avg_cost": 405.94485269995704,
-          "price": 693.86,
-          "value_usd": 11170.578422519999,
+          "price": 688.5,
+          "value_usd": 11084.286806999999,
           "currency": "USD",
           "grade": 57.0,
           "council": "HOLD",
           "sector": "",
           "source": "api",
           "last_sync": "2026-07-12T09:18:35.038126+00:00",
-          "last_price_update": "2026-07-12T15:52:08.184630+00:00",
-          "price_source": "etoro_amount"
+          "last_price_update": "2026-07-13T22:11:22.902767+00:00",
+          "price_source": "yahoo"
         },
         {
           "ticker": "MIRROR_TOTAL",
@@ -288,121 +288,121 @@
           "ticker": "BTC",
           "shares": 0.063367,
           "avg_cost": 96201.98669054871,
-          "price": 64167.94,
-          "value_usd": 4066.1298539800005,
+          "price": 62082.96,
+          "value_usd": 3934.01092632,
           "currency": "USD",
           "grade": 47.0,
           "council": "SELL",
           "sector": null,
           "source": "api",
           "last_sync": "2026-07-12T09:18:35.038126+00:00",
-          "last_price_update": "2026-07-12T15:52:08.184630+00:00",
-          "price_source": "etoro_amount"
+          "last_price_update": "2026-07-13T22:11:22.902767+00:00",
+          "price_source": "yahoo_no_sanity"
         },
         {
           "ticker": "QQQ",
           "shares": 5.136035,
           "avg_cost": 464.7920556328958,
-          "price": 725.51,
-          "value_usd": 3726.2447528499997,
+          "price": 711.74,
+          "value_usd": 3655.5215509,
           "currency": "USD",
           "grade": 55.0,
           "council": "HOLD",
           "sector": "",
           "source": "api",
           "last_sync": "2026-07-12T09:18:35.038126+00:00",
-          "last_price_update": "2026-07-12T15:52:08.184630+00:00",
-          "price_source": "etoro_amount"
-        },
-        {
-          "ticker": "AMD",
-          "shares": 5.213067,
-          "avg_cost": 160.18,
-          "price": 557.89,
-          "value_usd": 2908.3179486299996,
-          "currency": "USD",
-          "grade": 58.0,
-          "council": "HOLD",
-          "sector": "Technology",
-          "source": "api",
-          "last_sync": "2026-07-12T09:18:35.038126+00:00",
-          "last_price_update": "2026-07-12T15:52:08.184630+00:00",
-          "price_source": "etoro_amount"
+          "last_price_update": "2026-07-13T22:11:22.902767+00:00",
+          "price_source": "yahoo"
         },
         {
           "ticker": "VTI",
           "shares": 7.731377,
           "avg_cost": 248.44727165898132,
-          "price": 372.69,
-          "value_usd": 2881.40689413,
+          "price": 369.78,
+          "value_usd": 2858.9085870599997,
           "currency": "USD",
           "grade": 58.0,
           "council": "HOLD",
           "sector": "",
           "source": "api",
           "last_sync": "2026-07-12T09:18:35.038126+00:00",
-          "last_price_update": "2026-07-12T15:52:08.184630+00:00",
-          "price_source": "etoro_amount"
+          "last_price_update": "2026-07-13T22:11:22.902767+00:00",
+          "price_source": "yahoo"
+        },
+        {
+          "ticker": "AMD",
+          "shares": 5.213067,
+          "avg_cost": 160.18,
+          "price": 534.39,
+          "value_usd": 2785.81087413,
+          "currency": "USD",
+          "grade": 58.0,
+          "council": "HOLD",
+          "sector": "Technology",
+          "source": "api",
+          "last_sync": "2026-07-12T09:18:35.038126+00:00",
+          "last_price_update": "2026-07-13T22:11:22.902767+00:00",
+          "price_source": "yahoo"
         },
         {
           "ticker": "ETH",
           "shares": 1.493582,
           "avg_cost": 3802.7288323081693,
-          "price": 1822.73,
-          "value_usd": 2722.39671886,
+          "price": 1764.1,
+          "value_usd": 2634.8280062,
           "currency": "USD",
           "grade": 48.0,
           "council": "SELL",
           "sector": null,
           "source": "api",
           "last_sync": "2026-07-12T09:18:35.038126+00:00",
-          "last_price_update": "2026-07-12T15:52:08.184630+00:00",
-          "price_source": "etoro_amount"
+          "last_price_update": "2026-07-13T22:11:22.902767+00:00",
+          "price_source": "yahoo_no_sanity"
         },
         {
           "ticker": "CRWD",
           "shares": 12.502928,
           "avg_cost": 63.985,
-          "price": 187.18,
-          "value_usd": 2340.29806304,
+          "price": 187.91,
+          "value_usd": 2349.42520048,
           "currency": "USD",
           "grade": 59.0,
           "council": "HOLD",
           "sector": "Technology",
           "source": "api",
           "last_sync": "2026-07-12T09:18:35.038126+00:00",
-          "last_price_update": "2026-07-12T15:52:08.184630+00:00",
-          "price_source": "etoro_amount"
+          "last_price_update": "2026-07-13T22:11:22.902767+00:00",
+          "price_source": "yahoo"
         },
         {
           "ticker": "DDOG",
           "shares": 8.888521,
           "avg_cost": 86.41,
-          "price": 257.54,
-          "value_usd": 2289.14969834,
+          "price": 260.24,
+          "value_usd": 2313.14870504,
           "currency": "USD",
           "grade": 56.0,
           "council": "HOLD",
           "sector": "Technology",
           "source": "api",
           "last_sync": "2026-07-12T09:18:35.038126+00:00",
-          "last_price_update": "2026-07-12T15:52:08.184630+00:00",
-          "price_source": "etoro_amount"
+          "last_price_update": "2026-07-13T22:11:22.902767+00:00",
+          "price_source": "yahoo"
         },
         {
           "ticker": "COST",
           "shares": 2.489538,
           "avg_cost": 514.151655965886,
-          "price": 916.25,
-          "value_usd": 2281.0391925,
+          "price": 926.43,
+          "value_usd": 2306.38268934,
           "currency": "USD",
           "grade": 45.0,
           "council": "SELL",
           "sector": "Consumer Defensive",
           "source": "api",
           "last_sync": "2026-07-12T09:18:35.038126+00:00",
-          "last_price_update": "2026-07-12T15:52:08.184630+00:00",
-          "price_source": "etoro_amount"
+          "last_price_update": "2026-07-13T22:11:22.902767+00:00",
+          "price_source": "yahoo"
         }
       ]
     },
@@ -412,8 +412,8 @@
       "avg_grade": 58.6,
       "last_sync": "2026-06-15T10:40:20.844214+00:00",
       "last_price_update": "2026-06-08T18:15:23.335032+00:00",
-      "sync_age_days": 27.3,
-      "price_age_days": 34.0,
+      "sync_age_days": 28.6,
+      "price_age_days": 35.2,
       "health": "STALE",
       "integration_mode": "Manual Excel",
       "needs_manual_update": true,
@@ -576,8 +576,8 @@
       "avg_grade": 58.0,
       "last_sync": "2026-06-15T10:41:40.818590+00:00",
       "last_price_update": "2026-06-08T18:15:23.852355+00:00",
-      "sync_age_days": 27.3,
-      "price_age_days": 34.0,
+      "sync_age_days": 28.6,
+      "price_age_days": 35.2,
       "health": "STALE",
       "integration_mode": "Manual Excel",
       "needs_manual_update": true,
@@ -725,8 +725,8 @@
       "avg_grade": 62.0,
       "last_sync": "2026-06-15T10:45:44.855583+00:00",
       "last_price_update": "2026-06-08T18:15:24.278954+00:00",
-      "sync_age_days": 27.3,
-      "price_age_days": 34.0,
+      "sync_age_days": 28.6,
+      "price_age_days": 35.2,
       "health": "STALE",
       "integration_mode": "Manual Excel/Photo",
       "needs_manual_update": true,
@@ -784,8 +784,8 @@
       "avg_grade": 52.7,
       "last_sync": "2026-06-15T11:07:25.190662+00:00",
       "last_price_update": "2026-06-15T17:07:24.426783+00:00",
-      "sync_age_days": 27.3,
-      "price_age_days": 27.0,
+      "sync_age_days": 28.5,
+      "price_age_days": 28.3,
       "health": "STALE",
       "integration_mode": "Manual Excel/Photo",
       "needs_manual_update": true,
@@ -851,63 +851,71 @@
     "Schwab"
   ],
   "sleeve_snapshot": {
-    "aum": 187894.56999999986,
+    "aum": 88228.08999999998,
     "sleeves": [
       {
         "sleeve": "QUALITY",
-        "now_usd": 53293.7,
-        "now_pct": 28.36,
+        "now_usd": 18802.55,
+        "now_pct": 21.31,
         "target_pct": 45.0,
-        "gap_pp": 16.64,
-        "gap_usd": 31258.86
+        "gap_pp": 23.69,
+        "gap_usd": 20900.09
       },
       {
         "sleeve": "MOMENTUM",
-        "now_usd": 52045.55,
-        "now_pct": 27.7,
+        "now_usd": 27269.82,
+        "now_pct": 30.91,
         "target_pct": 12.0,
-        "gap_pp": -15.7,
-        "gap_usd": -29498.2
-      },
-      {
-        "sleeve": "EXIT",
-        "now_usd": 9071.92,
-        "now_pct": 4.83,
-        "target_pct": 0.0,
-        "gap_pp": -4.83,
-        "gap_usd": -9071.92
-      },
-      {
-        "sleeve": "THEME",
-        "now_usd": 7288.72,
-        "now_pct": 3.88,
-        "target_pct": 8.0,
-        "gap_pp": 4.12,
-        "gap_usd": 7742.85
-      },
-      {
-        "sleeve": "INDEX",
-        "now_usd": 30524.64,
-        "now_pct": 16.25,
-        "target_pct": 20.0,
-        "gap_pp": 3.75,
-        "gap_usd": 7054.27
-      },
-      {
-        "sleeve": "CRYPTO_CORE",
-        "now_usd": 21597.02,
-        "now_pct": 11.49,
-        "target_pct": 8.0,
-        "gap_pp": -3.49,
-        "gap_usd": -6565.45
+        "gap_pp": -18.91,
+        "gap_usd": -16682.45
       },
       {
         "sleeve": "CRYPTO_ALT",
-        "now_usd": 5017.5,
-        "now_pct": 2.67,
+        "now_usd": 10253.96,
+        "now_pct": 11.62,
         "target_pct": 0.0,
-        "gap_pp": -2.67,
-        "gap_usd": -5017.5
+        "gap_pp": -11.62,
+        "gap_usd": -10253.96
+      },
+      {
+        "sleeve": "EXIT",
+        "now_usd": 7808.88,
+        "now_pct": 8.85,
+        "target_pct": 0.0,
+        "gap_pp": -8.85,
+        "gap_usd": -7808.88
+      },
+      {
+        "sleeve": "INDEX",
+        "now_usd": 9960.82,
+        "now_pct": 11.29,
+        "target_pct": 20.0,
+        "gap_pp": 8.71,
+        "gap_usd": 7684.8
+      },
+      {
+        "sleeve": "CRYPTO_CORE",
+        "now_usd": 72.92,
+        "now_pct": 0.08,
+        "target_pct": 8.0,
+        "gap_pp": 7.92,
+        "gap_usd": 6985.33
+      },
+      {
+        "sleeve": "COPY",
+        "now_usd": 9055.52,
+        "now_pct": 10.26,
+        "target_pct": 5.0,
+        "gap_pp": -5.26,
+        "gap_usd": -4644.12
+      },
+      {
+        "sleeve": "THEME",
+        "now_usd": 5003.62,
+        "now_pct": 5.67,
+        "target_pct": 8.0,
+        "gap_pp": 2.33,
+        "gap_usd": 2054.63
       },
       {
         "sleeve": "CASH",
@@ -915,15 +923,7 @@
         "now_pct": 0.0,
         "target_pct": 2.0,
         "gap_pp": 2.0,
-        "gap_usd": 3757.89
-      },
-      {
-        "sleeve": "COPY",
-        "now_usd": 9055.52,
-        "now_pct": 4.82,
-        "target_pct": 5.0,
-        "gap_pp": 0.18,
-        "gap_usd": 339.21
+        "gap_usd": 1764.56
       }
     ],
     "targets": {
@@ -944,36 +944,18 @@
     "min_weight_pct": 2.5,
     "sell_now": [
       {
-        "ticker": "BIDU",
-        "grade": 49.0,
+        "ticker": "XRP",
+        "grade": 43.0,
         "council": "SELL",
-        "value_usd": 1570.65,
-        "weight_pct": 0.84,
+        "value_usd": 3628.33,
+        "weight_pct": 4.11,
         "brokers": [
-          "eToro"
+          "Binance"
         ],
         "decision": "SELL",
-        "sleeve": "EXIT",
+        "sleeve": "CRYPTO_ALT",
         "reasons": [
-          "fails top-tier bar / low-quality clutter"
-        ],
-        "keep": [],
-        "label": null
-      },
-      {
-        "ticker": "POET",
-        "grade": 48.0,
-        "council": "SELL",
-        "value_usd": 1494.65,
-        "weight_pct": 0.8,
-        "brokers": [
-          "Schwab",
-          "eToro"
-        ],
-        "decision": "SELL",
-        "sleeve": "EXIT",
-        "reasons": [
-          "fails top-tier bar / low-quality clutter"
+          "non-core crypto alt under balanced book"
         ],
         "keep": [],
         "label": null
@@ -982,8 +964,8 @@
         "ticker": "TRX",
         "grade": 42.0,
         "council": "SELL",
-        "value_usd": 1442.36,
-        "weight_pct": 0.77,
+        "value_usd": 3356.01,
+        "weight_pct": 3.8,
         "brokers": [
           "eToro"
         ],
@@ -996,11 +978,28 @@
         "label": null
       },
       {
+        "ticker": "BIDU",
+        "grade": 49.0,
+        "council": "SELL",
+        "value_usd": 1515.19,
+        "weight_pct": 1.72,
+        "brokers": [
+          "eToro"
+        ],
+        "decision": "SELL",
+        "sleeve": "EXIT",
+        "reasons": [
+          "fails top-tier bar / low-quality clutter"
+        ],
+        "keep": [],
+        "label": null
+      },
+      {
         "ticker": "BNB",
         "grade": 47.0,
         "council": "SELL",
-        "value_usd": 1176.35,
-        "weight_pct": 0.63,
+        "value_usd": 1152.88,
+        "weight_pct": 1.31,
         "brokers": [
           "Binance",
           "eToro"
@@ -1014,11 +1013,29 @@
         "label": null
       },
       {
+        "ticker": "POET",
+        "grade": 48.0,
+        "council": "SELL",
+        "value_usd": 961.34,
+        "weight_pct": 1.09,
+        "brokers": [
+          "Schwab",
+          "eToro"
+        ],
+        "decision": "SELL",
+        "sleeve": "EXIT",
+        "reasons": [
+          "fails top-tier bar / low-quality clutter"
+        ],
+        "keep": [],
+        "label": null
+      },
+      {
         "ticker": "DOGE",
         "grade": 47.0,
         "council": "SELL",
-        "value_usd": 959.29,
-        "weight_pct": 0.51,
+        "value_usd": 941.46,
+        "weight_pct": 1.07,
         "brokers": [
           "Binance",
           "Bitso",
@@ -1036,8 +1053,8 @@
         "ticker": "CRWV",
         "grade": 43.0,
         "council": "SELL",
-        "value_usd": 891.67,
-        "weight_pct": 0.47,
+        "value_usd": 835.99,
+        "weight_pct": 0.95,
         "brokers": [
           "eToro"
         ],
@@ -1053,25 +1070,8 @@
         "ticker": "TE",
         "grade": 47.0,
         "council": "SELL",
-        "value_usd": 855.93,
-        "weight_pct": 0.46,
-        "brokers": [
-          "eToro"
-        ],
-        "decision": "SELL",
-        "sleeve": "EXIT",
-        "reasons": [
-          "fails top-tier bar / low-quality clutter"
-        ],
-        "keep": [],
-        "label": null
-      },
-      {
-        "ticker": "JMIA",
-        "grade": 47.0,
-        "council": "SELL",
-        "value_usd": 589.34,
-        "weight_pct": 0.31,
+        "value_usd": 818.44,
+        "weight_pct": 0.93,
         "brokers": [
           "eToro"
         ],
@@ -1087,8 +1087,25 @@
         "ticker": "DASH",
         "grade": 54.0,
         "council": "SELL",
-        "value_usd": 581.05,
-        "weight_pct": 0.31,
+        "value_usd": 574.48,
+        "weight_pct": 0.65,
+        "brokers": [
+          "eToro"
+        ],
+        "decision": "SELL",
+        "sleeve": "EXIT",
+        "reasons": [
+          "fails top-tier bar / low-quality clutter"
+        ],
+        "keep": [],
+        "label": null
+      },
+      {
+        "ticker": "JMIA",
+        "grade": 47.0,
+        "council": "SELL",
+        "value_usd": 564.96,
+        "weight_pct": 0.64,
         "brokers": [
           "eToro"
         ],
@@ -1104,8 +1121,8 @@
         "ticker": "COIN",
         "grade": 44.0,
         "council": "SELL",
-        "value_usd": 540.82,
-        "weight_pct": 0.29,
+        "value_usd": 535.15,
+        "weight_pct": 0.61,
         "brokers": [
           "eToro"
         ],
@@ -1121,8 +1138,8 @@
         "ticker": "CRSP",
         "grade": 54.0,
         "council": "SELL",
-        "value_usd": 460.97,
-        "weight_pct": 0.25,
+        "value_usd": 442.02,
+        "weight_pct": 0.5,
         "brokers": [
           "GBM USA"
         ],
@@ -1135,28 +1152,11 @@
         "label": null
       },
       {
-        "ticker": "XRP",
-        "grade": 43.0,
-        "council": "SELL",
-        "value_usd": 333.79,
-        "weight_pct": 0.18,
-        "brokers": [
-          "Binance"
-        ],
-        "decision": "SELL",
-        "sleeve": "CRYPTO_ALT",
-        "reasons": [
-          "non-core crypto alt under balanced book"
-        ],
-        "keep": [],
-        "label": null
-      },
-      {
         "ticker": "VAULTA",
         "grade": 45.0,
         "council": "HOLD",
         "value_usd": 300.0,
-        "weight_pct": 0.16,
+        "weight_pct": 0.34,
         "brokers": [
           "eToro"
         ],
@@ -1167,64 +1167,27 @@
         ],
         "keep": [],
         "label": "VAULTA crypto (eToro) \u2014 NOT Agilent"
-      },
-      {
-        "ticker": "SPRB",
-        "grade": 49.0,
-        "council": "SELL",
-        "value_usd": 206.76,
-        "weight_pct": 0.11,
-        "brokers": [
-          "Schwab"
-        ],
-        "decision": "SELL",
-        "sleeve": "EXIT",
-        "reasons": [
-          "fails top-tier bar / low-quality clutter"
-        ],
-        "keep": [],
-        "label": null
       }
     ],
     "trim_review": [
       {
-        "ticker": "BTC",
-        "grade": 47.0,
-        "council": "SELL",
-        "value_usd": 14439.29,
-        "weight_pct": 7.68,
-        "brokers": [
-          "Binance",
-          "Bitso",
-          "eToro"
-        ],
-        "decision": "TRIM",
-        "sleeve": "CRYPTO_CORE",
-        "reasons": [
-          "BTC overweight 7.7% vs ~5% target"
-        ],
-        "keep": [
-          "core crypto beta"
-        ],
-        "label": null
-      },
-      {
-        "ticker": "CRWD",
-        "grade": 57.0,
+        "ticker": "AMD",
+        "grade": 60.0,
         "council": "HOLD",
-        "value_usd": 13142.58,
-        "weight_pct": 6.99,
+        "value_usd": 8255.8,
+        "weight_pct": 9.36,
         "brokers": [
-          "GBM Main",
+          "GBM USA",
+          "IBKR",
           "eToro"
         ],
         "decision": "TRIM",
         "sleeve": "MOMENTUM",
         "reasons": [
-          "above size cap 6%"
+          "above size cap 5%"
         ],
         "keep": [
-          "grade OK 57.0"
+          "grade OK 60.0"
         ],
         "label": null
       },
@@ -1232,8 +1195,8 @@
         "ticker": "OKLO",
         "grade": 47.0,
         "council": "SELL",
-        "value_usd": 1336.06,
-        "weight_pct": 0.71,
+        "value_usd": 1133.73,
+        "weight_pct": 1.28,
         "brokers": [
           "GBM USA",
           "eToro"
@@ -1250,8 +1213,8 @@
         "ticker": "ARKG",
         "grade": 55.0,
         "council": "HOLD",
-        "value_usd": 773.06,
-        "weight_pct": 0.41,
+        "value_usd": 759.21,
+        "weight_pct": 0.86,
         "brokers": [
           "eToro"
         ],
@@ -1268,8 +1231,8 @@
         "ticker": "IONQ",
         "grade": 45.0,
         "council": "SELL",
-        "value_usd": 709.41,
-        "weight_pct": 0.38,
+        "value_usd": 643.94,
+        "weight_pct": 0.73,
         "brokers": [
           "eToro"
         ],
@@ -1285,29 +1248,11 @@
         "ticker": "IREN",
         "grade": 61.0,
         "council": "HOLD",
-        "value_usd": 681.15,
-        "weight_pct": 0.36,
+        "value_usd": 429.33,
+        "weight_pct": 0.49,
         "brokers": [
           "IBKR",
           "Schwab"
-        ],
-        "decision": "TRIM",
-        "sleeve": "EXIT",
-        "reasons": [
-          "fails top-tier bar / low-quality clutter",
-          "grade not terrible \u2014 cut size"
-        ],
-        "keep": [],
-        "label": null
-      },
-      {
-        "ticker": "CPSH",
-        "grade": 64.0,
-        "council": "BUY",
-        "value_usd": 589.86,
-        "weight_pct": 0.31,
-        "brokers": [
-          "GBM USA"
         ],
         "decision": "TRIM",
         "sleeve": "EXIT",
@@ -1321,11 +1266,29 @@
     ],
     "noise_small_sells": [
       {
+        "ticker": "SPRB",
+        "grade": 49.0,
+        "council": "SELL",
+        "value_usd": 194.56,
+        "weight_pct": 0.22,
+        "brokers": [
+          "Schwab"
+        ],
+        "decision": "SELL",
+        "sleeve": "EXIT",
+        "reasons": [
+          "fails top-tier bar / low-quality clutter"
+        ],
+        "keep": [],
+        "label": null,
+        "note": "below 2.5% weight \u2014 noise filter"
+      },
+      {
         "ticker": "SIDU",
         "grade": 49.0,
         "council": "SELL",
-        "value_usd": 172.8,
-        "weight_pct": 0.09,
+        "value_usd": 165.2,
+        "weight_pct": 0.19,
         "brokers": [
           "eToro"
         ],
@@ -1343,7 +1306,7 @@
         "grade": 52.0,
         "council": "SELL",
         "value_usd": 123.31,
-        "weight_pct": 0.07,
+        "weight_pct": 0.14,
         "brokers": [
           "GBM Main"
         ],
@@ -1360,8 +1323,8 @@
         "ticker": "XLE",
         "grade": 51.0,
         "council": "SELL",
-        "value_usd": 38.57,
-        "weight_pct": 0.02,
+        "value_usd": 39.21,
+        "weight_pct": 0.04,
         "brokers": [
           "GBM USA"
         ],
@@ -1378,7 +1341,7 @@
         "ticker": "BIVI",
         "grade": 54.0,
         "council": "SELL",
-        "value_usd": 16.96,
+        "value_usd": 12.18,
         "weight_pct": 0.01,
         "brokers": [
           "eToro"
@@ -1393,10 +1356,46 @@
         "note": "below 2.5% weight \u2014 noise filter"
       },
       {
+        "ticker": "XPL",
+        "grade": 50.0,
+        "council": "HOLD",
+        "value_usd": 5.87,
+        "weight_pct": 0.01,
+        "brokers": [
+          "Binance"
+        ],
+        "decision": "SELL",
+        "sleeve": "CRYPTO_ALT",
+        "reasons": [
+          "dust crypto alt \u2014 clean up"
+        ],
+        "keep": [],
+        "label": null,
+        "note": "below 2.5% weight \u2014 noise filter"
+      },
+      {
         "ticker": "BONK",
         "grade": 50.0,
         "council": "HOLD",
-        "value_usd": 3.39,
+        "value_usd": 3.3,
+        "weight_pct": 0,
+        "brokers": [
+          "Binance"
+        ],
+        "decision": "SELL",
+        "sleeve": "CRYPTO_ALT",
+        "reasons": [
+          "dust crypto alt \u2014 clean up"
+        ],
+        "keep": [],
+        "label": null,
+        "note": "below 2.5% weight \u2014 noise filter"
+      },
+      {
+        "ticker": "ALLO",
+        "grade": 50.0,
+        "council": "HOLD",
+        "value_usd": 3.05,
         "weight_pct": 0,
         "brokers": [
           "Binance"
@@ -1414,25 +1413,7 @@
         "ticker": "PENGU",
         "grade": 50.0,
         "council": "HOLD",
-        "value_usd": 2.08,
-        "weight_pct": 0,
-        "brokers": [
-          "Binance"
-        ],
-        "decision": "SELL",
-        "sleeve": "CRYPTO_ALT",
-        "reasons": [
-          "dust crypto alt \u2014 clean up"
-        ],
-        "keep": [],
-        "label": null,
-        "note": "below 2.5% weight \u2014 noise filter"
-      },
-      {
-        "ticker": "KAITO",
-        "grade": 50.0,
-        "council": "HOLD",
-        "value_usd": 1.55,
+        "value_usd": 2.04,
         "weight_pct": 0,
         "brokers": [
           "Binance"
@@ -1450,7 +1431,25 @@
         "ticker": "KITE",
         "grade": 50.0,
         "council": "HOLD",
-        "value_usd": 1.44,
+        "value_usd": 1.75,
+        "weight_pct": 0,
+        "brokers": [
+          "Binance"
+        ],
+        "decision": "SELL",
+        "sleeve": "CRYPTO_ALT",
+        "reasons": [
+          "dust crypto alt \u2014 clean up"
+        ],
+        "keep": [],
+        "label": null,
+        "note": "below 2.5% weight \u2014 noise filter"
+      },
+      {
+        "ticker": "KAITO",
+        "grade": 50.0,
+        "council": "HOLD",
+        "value_usd": 1.62,
         "weight_pct": 0,
         "brokers": [
           "Binance"
@@ -1486,7 +1485,7 @@
         "ticker": "SCCO",
         "grade": 54.0,
         "council": "SELL",
-        "value_usd": 1.3,
+        "value_usd": 1.29,
         "weight_pct": 0,
         "brokers": [
           "eToro"
@@ -1501,28 +1500,10 @@
         "note": "below 2.5% weight \u2014 noise filter"
       },
       {
-        "ticker": "FF",
-        "grade": 50.0,
-        "council": "HOLD",
-        "value_usd": 0.94,
-        "weight_pct": 0,
-        "brokers": [
-          "Binance"
-        ],
-        "decision": "SELL",
-        "sleeve": "CRYPTO_ALT",
-        "reasons": [
-          "dust crypto alt \u2014 clean up"
-        ],
-        "keep": [],
-        "label": null,
-        "note": "below 2.5% weight \u2014 noise filter"
-      },
-      {
         "ticker": "NXPC",
         "grade": 50.0,
         "council": "HOLD",
-        "value_usd": 0.89,
+        "value_usd": 0.87,
         "weight_pct": 0,
         "brokers": [
           "Binance"
@@ -1540,43 +1521,7 @@
         "ticker": "NIGHT",
         "grade": 50.0,
         "council": "HOLD",
-        "value_usd": 0.86,
-        "weight_pct": 0,
-        "brokers": [
-          "Binance"
-        ],
-        "decision": "SELL",
-        "sleeve": "CRYPTO_ALT",
-        "reasons": [
-          "dust crypto alt \u2014 clean up"
-        ],
-        "keep": [],
-        "label": null,
-        "note": "below 2.5% weight \u2014 noise filter"
-      },
-      {
-        "ticker": "XPL",
-        "grade": 50.0,
-        "council": "HOLD",
-        "value_usd": 0.71,
-        "weight_pct": 0,
-        "brokers": [
-          "Binance"
-        ],
-        "decision": "SELL",
-        "sleeve": "CRYPTO_ALT",
-        "reasons": [
-          "dust crypto alt \u2014 clean up"
-        ],
-        "keep": [],
-        "label": null,
-        "note": "below 2.5% weight \u2014 noise filter"
-      },
-      {
-        "ticker": "ALLO",
-        "grade": 50.0,
-        "council": "HOLD",
-        "value_usd": 0.58,
+        "value_usd": 0.84,
         "weight_pct": 0,
         "brokers": [
           "Binance"
@@ -1594,25 +1539,7 @@
         "ticker": "VANA",
         "grade": 50.0,
         "council": "HOLD",
-        "value_usd": 0.55,
-        "weight_pct": 0,
-        "brokers": [
-          "Binance"
-        ],
-        "decision": "SELL",
-        "sleeve": "CRYPTO_ALT",
-        "reasons": [
-          "dust crypto alt \u2014 clean up"
-        ],
-        "keep": [],
-        "label": null,
-        "note": "below 2.5% weight \u2014 noise filter"
-      },
-      {
-        "ticker": "HUMA",
-        "grade": 50.0,
-        "council": "HOLD",
-        "value_usd": 0.5,
+        "value_usd": 0.54,
         "weight_pct": 0,
         "brokers": [
           "Binance"
@@ -1632,8 +1559,8 @@
         "ticker": "TECK",
         "grade": 50.0,
         "council": "SELL",
-        "value_usd": 1067.74,
-        "weight_pct": 0.57,
+        "value_usd": 1043.55,
+        "weight_pct": 1.18,
         "brokers": [
           "eToro"
         ],
@@ -1649,8 +1576,8 @@
         "ticker": "CEG",
         "grade": 48.0,
         "council": "SELL",
-        "value_usd": 718.36,
-        "weight_pct": 0.38,
+        "value_usd": 735.64,
+        "weight_pct": 0.83,
         "brokers": [
           "eToro"
         ],
@@ -1665,84 +1592,11 @@
     ],
     "core_holds": [
       {
-        "ticker": "VOO",
-        "grade": 58.0,
-        "council": "HOLD",
-        "value_usd": 15271.15,
-        "weight_pct": 8.13,
-        "brokers": [
-          "GBM Main",
-          "eToro"
-        ],
-        "decision": "HOLD",
-        "sleeve": "INDEX",
-        "reasons": [],
-        "keep": [
-          "grade OK 58.0"
-        ],
-        "label": null
-      },
-      {
-        "ticker": "TSM",
-        "grade": 65.0,
-        "council": "HOLD",
-        "value_usd": 9528.59,
-        "weight_pct": 5.07,
-        "brokers": [
-          "GBM Main",
-          "IBKR"
-        ],
-        "decision": "HOLD",
-        "sleeve": "QUALITY",
-        "reasons": [],
-        "keep": [
-          "quality compounder / top-tier core"
-        ],
-        "label": null
-      },
-      {
-        "ticker": "NVDA",
-        "grade": 57.0,
-        "council": "HOLD",
-        "value_usd": 8799.23,
-        "weight_pct": 4.68,
-        "brokers": [
-          "GBM Main",
-          "eToro"
-        ],
-        "decision": "HOLD",
-        "sleeve": "QUALITY",
-        "reasons": [],
-        "keep": [
-          "quality compounder / top-tier core"
-        ],
-        "label": null
-      },
-      {
-        "ticker": "AMD",
-        "grade": 60.0,
-        "council": "HOLD",
-        "value_usd": 8541.73,
-        "weight_pct": 4.55,
-        "brokers": [
-          "GBM USA",
-          "IBKR",
-          "eToro"
-        ],
-        "decision": "HOLD",
-        "sleeve": "MOMENTUM",
-        "reasons": [],
-        "keep": [
-          "grade OK 60.0"
-        ],
-        "label": null
-      },
-      {
         "ticker": "QQQ",
         "grade": 59.0,
         "council": "HOLD",
-        "value_usd": 7590.76,
-        "weight_pct": 4.04,
+        "value_usd": 7384.75,
+        "weight_pct": 8.37,
         "brokers": [
           "GBM Main",
           "GBM USA",
@@ -1757,64 +1611,11 @@
         "label": null
       },
       {
-        "ticker": "GOOGL",
-        "grade": 67.0,
-        "council": "HOLD",
-        "value_usd": 7291.43,
-        "weight_pct": 3.88,
-        "brokers": [
-          "GBM Main"
-        ],
-        "decision": "HOLD",
-        "sleeve": "QUALITY",
-        "reasons": [],
-        "keep": [
-          "quality compounder / top-tier core"
-        ],
-        "label": null
-      },
-      {
-        "ticker": "SHOP",
-        "grade": 60.0,
-        "council": "HOLD",
-        "value_usd": 6382.33,
-        "weight_pct": 3.4,
-        "brokers": [
-          "GBM Main",
-          "eToro"
-        ],
-        "decision": "HOLD",
-        "sleeve": "MOMENTUM",
-        "reasons": [],
-        "keep": [
-          "grade OK 60.0"
-        ],
-        "label": null
-      },
-      {
-        "ticker": "VTI",
-        "grade": 58.0,
-        "council": "HOLD",
-        "value_usd": 6193.41,
-        "weight_pct": 3.3,
-        "brokers": [
-          "GBM Main",
-          "eToro"
-        ],
-        "decision": "HOLD",
-        "sleeve": "INDEX",
-        "reasons": [],
-        "keep": [
-          "grade OK 58.0"
-        ],
-        "label": null
-      },
-      {
         "ticker": "META",
         "grade": 67.0,
         "council": "HOLD",
-        "value_usd": 5924.8,
-        "weight_pct": 3.15,
+        "value_usd": 6563.07,
+        "weight_pct": 7.44,
         "brokers": [
           "GBM Main",
           "GBM USA"
@@ -1831,8 +1632,8 @@
         "ticker": "APH",
         "grade": 63.0,
         "council": "HOLD",
-        "value_usd": 5176.28,
-        "weight_pct": 2.75,
+        "value_usd": 5095.65,
+        "weight_pct": 5.78,
         "brokers": [
           "GBM USA",
           "eToro"
@@ -1847,63 +1648,11 @@
         "label": null
       },
       {
-        "ticker": "AAPL",
-        "grade": 57.0,
-        "council": "HOLD",
-        "value_usd": 3825.0,
-        "weight_pct": 2.04,
-        "brokers": [
-          "GBM Main",
-          "eToro"
-        ],
-        "decision": "HOLD",
-        "sleeve": "QUALITY",
-        "reasons": [],
-        "keep": [
-          "quality compounder / top-tier core"
-        ],
-        "label": null
-      },
-      {
-        "ticker": "MELI",
-        "grade": 54.0,
-        "council": "SELL",
-        "value_usd": 3277.71,
-        "weight_pct": 1.74,
-        "brokers": [
-          "GBM Main"
-        ],
-        "decision": "HOLD",
-        "sleeve": "QUALITY",
-        "reasons": [],
-        "keep": [
-          "quality compounder / top-tier core"
-        ],
-        "label": null
-      },
-      {
-        "ticker": "AMZN",
-        "grade": 54.0,
-        "council": "HOLD",
-        "value_usd": 2668.28,
-        "weight_pct": 1.42,
-        "brokers": [
-          "GBM Main"
-        ],
-        "decision": "HOLD",
-        "sleeve": "QUALITY",
-        "reasons": [],
-        "keep": [
-          "quality compounder / top-tier core"
-        ],
-        "label": null
-      },
-      {
         "ticker": "COST",
         "grade": 45.0,
         "council": "HOLD",
-        "value_usd": 2281.04,
-        "weight_pct": 1.21,
+        "value_usd": 2305.32,
+        "weight_pct": 2.61,
         "brokers": [
           "eToro"
         ],
@@ -1915,6 +1664,75 @@
           "steady compounder \u2014 user mandate keep/grow"
         ],
         "label": null
+      },
+      {
+        "ticker": "WMT",
+        "grade": 41.0,
+        "council": "SELL",
+        "value_usd": 1816.23,
+        "weight_pct": 2.06,
+        "brokers": [
+          "eToro"
+        ],
+        "decision": "HOLD",
+        "sleeve": "QUALITY",
+        "reasons": [],
+        "keep": [
+          "quality compounder / top-tier core",
+          "quality retail compounder \u2014 small core OK"
+        ],
+        "label": null
+      },
+      {
+        "ticker": "CBRS",
+        "grade": 60.0,
+        "council": "HOLD",
+        "value_usd": 1398.89,
+        "weight_pct": 1.59,
+        "brokers": [
+          "eToro"
+        ],
+        "decision": "HOLD",
+        "sleeve": "INDEX",
+        "reasons": [],
+        "keep": [
+          "grade OK 60.0"
+        ],
+        "label": null
+      },
+      {
+        "ticker": "MNST",
+        "grade": 72.0,
+        "council": "HOLD",
+        "value_usd": 970.7,
+        "weight_pct": 1.1,
+        "brokers": [
+          "GBM Main"
+        ],
+        "decision": "HOLD",
+        "sleeve": "QUALITY",
+        "reasons": [],
+        "keep": [
+          "quality compounder / top-tier core"
+        ],
+        "label": null
+      },
+      {
+        "ticker": "NUTX",
+        "grade": 62.0,
+        "council": "HOLD",
+        "value_usd": 880.26,
+        "weight_pct": 1.0,
+        "brokers": [
+          "eToro"
+        ],
+        "decision": "HOLD",
+        "sleeve": "MOMENTUM",
+        "reasons": [],
+        "keep": [
+          "grade OK 62.0"
+        ],
+        "label": null
       }
     ],
     "policy": "vox_portfolio_policy.py"
@@ -1923,42 +1741,25 @@
     {
       "ticker": "MNST",
       "shares": 10.0,
-      "price": 1573.0,
-      "value_usd": 898.86,
+      "price": 97.06999969482422,
+      "value_usd": 970.7,
       "grade": 72.0,
       "council": "HOLD",
       "sector": "Consumer Defensive",
       "brokers": [
         "GBM Main"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 62.0,
       "vox_grade": 60.0,
       "tech_score": 63.0,
-      "weight_pct": 0.48
-    },
-    {
-      "ticker": "GOOGL",
-      "shares": 20.0,
-      "price": 6380.0,
-      "value_usd": 7291.43,
-      "grade": 67.0,
-      "council": "HOLD",
-      "sector": "Communication Services",
-      "brokers": [
-        "GBM Main"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 58.0,
-      "vox_grade": 66.0,
-      "tech_score": 35.0,
-      "weight_pct": 3.88
+      "weight_pct": 1.1
     },
     {
       "ticker": "META",
       "shares": 9.99355265,
-      "price": 5453.596262722897,
-      "value_usd": 5924.8,
+      "price": 656.72998046875,
+      "value_usd": 6563.07,
       "grade": 67.0,
       "council": "HOLD",
       "sector": "Communication Services",
@@ -1966,34 +1767,68 @@
         "GBM Main",
         "GBM USA"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 62.0,
       "vox_grade": 63.0,
       "tech_score": 62.0,
-      "weight_pct": 3.15
+      "weight_pct": 7.44
+    },
+    {
+      "ticker": "GOOGL",
+      "shares": 20.0,
+      "price": 352.5299987792969,
+      "value_usd": 387.78,
+      "grade": 67.0,
+      "council": "HOLD",
+      "sector": "Communication Services",
+      "brokers": [
+        "GBM Main"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 52.0,
+      "vox_grade": 54.0,
+      "tech_score": 35.0,
+      "weight_pct": 0.44
     },
     {
       "ticker": "QLYS",
       "shares": 2.204585,
-      "price": 152.69,
-      "value_usd": 336.62,
+      "price": 151.42999267578125,
+      "value_usd": 333.84,
       "grade": 66.0,
       "council": "HOLD",
       "sector": "Technology",
       "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 68.0,
       "vox_grade": 66.0,
       "tech_score": 69.0,
-      "weight_pct": 0.18
+      "weight_pct": 0.38
+    },
+    {
+      "ticker": "ESTC",
+      "shares": 12.158054,
+      "price": 62.470001220703125,
+      "value_usd": 759.51,
+      "grade": 65.0,
+      "council": "HOLD",
+      "sector": "Technology",
+      "brokers": [
+        "eToro"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 65.0,
+      "vox_grade": 65.0,
+      "tech_score": 65.0,
+      "weight_pct": 0.86
     },
     {
       "ticker": "TSM",
       "shares": 22.0,
-      "price": 7248.815,
-      "value_usd": 9528.59,
+      "price": 421.67999267578125,
+      "value_usd": 510.23,
       "grade": 65.0,
       "council": "HOLD",
       "sector": "Technology",
@@ -2001,68 +1836,51 @@
         "GBM Main",
         "IBKR"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 60.0,
       "vox_grade": 65.0,
       "tech_score": 56.0,
-      "weight_pct": 5.07
-    },
-    {
-      "ticker": "ESTC",
-      "shares": 12.158054,
-      "price": 60.24,
-      "value_usd": 732.4,
-      "grade": 65.0,
-      "council": "HOLD",
-      "sector": "Technology",
-      "brokers": [
-        "eToro"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 65.0,
-      "vox_grade": 65.0,
-      "tech_score": 65.0,
-      "weight_pct": 0.39
+      "weight_pct": 0.58
     },
     {
       "ticker": "APP",
       "shares": 1.0,
-      "price": 9115.0,
-      "value_usd": 520.86,
+      "price": 443.0,
+      "value_usd": 443.0,
       "grade": 65.0,
       "council": "HOLD",
       "sector": "Communication Services",
       "brokers": [
         "GBM Main"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 53.0,
       "vox_grade": 56.0,
       "tech_score": 50.0,
-      "weight_pct": 0.28
+      "weight_pct": 0.5
     },
     {
       "ticker": "CPSH",
       "shares": 82.26797256,
-      "price": 7.17,
-      "value_usd": 589.86,
+      "price": 4.510000228881836,
+      "value_usd": 371.03,
       "grade": 64.0,
       "council": "BUY",
       "sector": "Technology",
       "brokers": [
         "GBM USA"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 36.0,
       "vox_grade": 42.0,
       "tech_score": 31.0,
-      "weight_pct": 0.31
+      "weight_pct": 0.42
     },
     {
       "ticker": "APH",
       "shares": 32.66231882,
-      "price": 158.47869408977252,
-      "value_usd": 5176.28,
+      "price": 156.00999450683594,
+      "value_usd": 5095.65,
       "grade": 63.0,
       "council": "HOLD",
       "sector": "Technology",
@@ -2070,28 +1888,28 @@
         "GBM USA",
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 55.0,
       "vox_grade": 54.0,
       "tech_score": 56.0,
-      "weight_pct": 2.75
+      "weight_pct": 5.78
     },
     {
       "ticker": "NUTX",
       "shares": 4.920423,
-      "price": 183.91,
-      "value_usd": 904.91,
+      "price": 178.89999389648438,
+      "value_usd": 880.26,
       "grade": 62.0,
       "council": "HOLD",
       "sector": "Healthcare",
       "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 64.0,
       "vox_grade": 62.0,
       "tech_score": 65.0,
-      "weight_pct": 0.48
+      "weight_pct": 1.0
     }
   ],
   "bottom_grades": [
@@ -2106,147 +1924,147 @@
       "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T14:00:13.008583+00:00",
       "unified_grade": null,
       "vox_grade": null,
       "tech_score": null,
-      "weight_pct": 4.82
+      "weight_pct": 10.26
     },
     {
       "ticker": "WMT",
       "shares": 15.820106,
-      "price": 113.9,
-      "value_usd": 1801.91,
+      "price": 114.80500030517578,
+      "value_usd": 1816.23,
       "grade": 41.0,
       "council": "SELL",
       "sector": "Consumer Defensive",
       "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 35.0,
       "vox_grade": 41.0,
       "tech_score": 29.0,
-      "weight_pct": 0.96
+      "weight_pct": 2.06
     },
     {
       "ticker": "TRX",
       "shares": 4357.316843,
-      "price": 0.3310204,
-      "value_usd": 1442.36,
+      "price": 0.7702000141143799,
+      "value_usd": 3356.01,
       "grade": 42.0,
       "council": "SELL",
       "sector": "Basic Materials",
       "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 36.0,
       "vox_grade": 42.0,
       "tech_score": 29.0,
-      "weight_pct": 0.77
-    },
-    {
-      "ticker": "SPCX",
-      "shares": 9.631659,
-      "price": 145.3,
-      "value_usd": 1399.48,
-      "grade": 43.0,
-      "council": "SELL",
-      "sector": "SpaceX",
-      "brokers": [
-        "eToro"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 43.0,
-      "vox_grade": 43.0,
-      "tech_score": null,
-      "weight_pct": 0.74
-    },
-    {
-      "ticker": "CRWV",
-      "shares": 10.032241,
-      "price": 88.88,
-      "value_usd": 891.67,
-      "grade": 43.0,
-      "council": "SELL",
-      "sector": "Technology",
-      "brokers": [
-        "eToro"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 42.0,
-      "vox_grade": 43.0,
-      "tech_score": 41.0,
-      "weight_pct": 0.47
+      "weight_pct": 3.8
     },
     {
       "ticker": "XRP",
       "shares": 304.39042786,
-      "price": 1.0966,
-      "value_usd": 333.79,
+      "price": 11.920000076293945,
+      "value_usd": 3628.33,
       "grade": 43.0,
       "council": "SELL",
       "sector": null,
       "brokers": [
         "Binance"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 39.0,
       "vox_grade": 43.0,
       "tech_score": 35.0,
-      "weight_pct": 0.18
+      "weight_pct": 4.11
+    },
+    {
+      "ticker": "SPCX",
+      "shares": 9.631659,
+      "price": 139.22000122070312,
+      "value_usd": 1340.92,
+      "grade": 43.0,
+      "council": "SELL",
+      "sector": "SpaceX",
+      "brokers": [
+        "eToro"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 43.0,
+      "vox_grade": 43.0,
+      "tech_score": null,
+      "weight_pct": 1.52
+    },
+    {
+      "ticker": "CRWV",
+      "shares": 10.032241,
+      "price": 83.33000183105469,
+      "value_usd": 835.99,
+      "grade": 43.0,
+      "council": "SELL",
+      "sector": "Technology",
+      "brokers": [
+        "eToro"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 42.0,
+      "vox_grade": 43.0,
+      "tech_score": 41.0,
+      "weight_pct": 0.95
     },
     {
       "ticker": "COIN",
       "shares": 3.399905,
-      "price": 159.07,
-      "value_usd": 540.82,
+      "price": 157.39999389648438,
+      "value_usd": 535.15,
       "grade": 44.0,
       "council": "SELL",
       "sector": "Financial Services",
       "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 42.0,
       "vox_grade": 44.0,
       "tech_score": 41.0,
-      "weight_pct": 0.29
+      "weight_pct": 0.61
     },
     {
       "ticker": "COST",
       "shares": 2.489538,
-      "price": 916.25,
-      "value_usd": 2281.04,
+      "price": 926.0040283203125,
+      "value_usd": 2305.32,
       "grade": 45.0,
       "council": "HOLD",
       "sector": "Consumer Defensive",
       "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 37.0,
       "vox_grade": 45.0,
       "tech_score": 29.0,
-      "weight_pct": 1.21
+      "weight_pct": 2.61
     },
     {
       "ticker": "IONQ",
       "shares": 16.551724,
-      "price": 42.86,
-      "value_usd": 709.41,
+      "price": 38.904998779296875,
+      "value_usd": 643.94,
       "grade": 45.0,
       "council": "SELL",
       "sector": "Technology",
       "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 42.0,
-      "vox_grade": 52.0,
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 38.0,
+      "vox_grade": 45.0,
       "tech_score": 31.0,
-      "weight_pct": 0.38
+      "weight_pct": 0.73
     },
     {
       "ticker": "VAULTA",
@@ -2259,87 +2077,14 @@
       "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T14:00:13.008583+00:00",
       "unified_grade": null,
       "vox_grade": null,
       "tech_score": null,
-      "weight_pct": 0.16
+      "weight_pct": 0.34
     }
   ],
   "all_positions": [
-    {
-      "ticker": "VOO",
-      "shares": 22.099182,
-      "price": 3752.6537598776285,
-      "value_usd": 15271.15,
-      "grade": 58.0,
-      "council": "HOLD",
-      "sector": "",
-      "brokers": [
-        "GBM Main",
-        "eToro"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 64.0,
-      "vox_grade": 57.0,
-      "tech_score": 71.0,
-      "weight_pct": 8.13
-    },
-    {
-      "ticker": "BTC",
-      "shares": 0.22549359,
-      "price": 64034.158042958115,
-      "value_usd": 14439.29,
-      "grade": 47.0,
-      "council": "SELL",
-      "sector": null,
-      "brokers": [
-        "Binance",
-        "Bitso",
-        "eToro"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 52.0,
-      "vox_grade": 47.0,
-      "tech_score": 56.0,
-      "weight_pct": 7.68
-    },
-    {
-      "ticker": "CRWD",
-      "shares": 28.502928,
-      "price": 6714.40836053896,
-      "value_usd": 13142.58,
-      "grade": 57.0,
-      "council": "HOLD",
-      "sector": "Technology",
-      "brokers": [
-        "GBM Main",
-        "eToro"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 68.0,
-      "vox_grade": 59.0,
-      "tech_score": 77.0,
-      "weight_pct": 6.99
-    },
-    {
-      "ticker": "TSM",
-      "shares": 22.0,
-      "price": 7248.815,
-      "value_usd": 9528.59,
-      "grade": 65.0,
-      "council": "HOLD",
-      "sector": "Technology",
-      "brokers": [
-        "GBM Main",
-        "IBKR"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 60.0,
-      "vox_grade": 65.0,
-      "tech_score": 56.0,
-      "weight_pct": 5.07
-    },
     {
       "ticker": "MIRROR_TOTAL",
       "shares": 0,
@@ -2351,35 +2096,17 @@
       "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T14:00:13.008583+00:00",
       "unified_grade": null,
       "vox_grade": null,
       "tech_score": null,
-      "weight_pct": 4.82
-    },
-    {
-      "ticker": "NVDA",
-      "shares": 42.126541,
-      "price": 3231.7359046725433,
-      "value_usd": 8799.23,
-      "grade": 57.0,
-      "council": "HOLD",
-      "sector": "Technology",
-      "brokers": [
-        "GBM Main",
-        "eToro"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 60.0,
-      "vox_grade": 65.0,
-      "tech_score": 56.0,
-      "weight_pct": 4.68
+      "weight_pct": 10.26
     },
     {
       "ticker": "AMD",
       "shares": 15.448156049999998,
-      "price": 552.9310835470878,
-      "value_usd": 8541.73,
+      "price": 534.4199829101562,
+      "value_usd": 8255.8,
       "grade": 60.0,
       "council": "HOLD",
       "sector": "Technology",
@@ -2388,35 +2115,17 @@
         "IBKR",
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 68.0,
       "vox_grade": 58.0,
       "tech_score": 77.0,
-      "weight_pct": 4.55
-    },
-    {
-      "ticker": "TSLA",
-      "shares": 20.18246,
-      "price": 6321.510850986451,
-      "value_usd": 8129.56,
-      "grade": 56.0,
-      "council": "HOLD",
-      "sector": "Consumer Cyclical",
-      "brokers": [
-        "GBM Main",
-        "eToro"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 56.0,
-      "vox_grade": 56.0,
-      "tech_score": 56.0,
-      "weight_pct": 4.33
+      "weight_pct": 9.36
     },
     {
       "ticker": "QQQ",
       "shares": 10.37591699,
-      "price": 4228.334078011345,
-      "value_usd": 7590.76,
+      "price": 711.719970703125,
+      "value_usd": 7384.75,
       "grade": 59.0,
       "council": "HOLD",
       "sector": "",
@@ -2425,88 +2134,17 @@
         "GBM USA",
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 63.0,
       "vox_grade": 55.0,
       "tech_score": 71.0,
-      "weight_pct": 4.04
-    },
-    {
-      "ticker": "GOOGL",
-      "shares": 20.0,
-      "price": 6380.0,
-      "value_usd": 7291.43,
-      "grade": 67.0,
-      "council": "HOLD",
-      "sector": "Communication Services",
-      "brokers": [
-        "GBM Main"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 58.0,
-      "vox_grade": 66.0,
-      "tech_score": 35.0,
-      "weight_pct": 3.88
-    },
-    {
-      "ticker": "ETH",
-      "shares": 3.95053275,
-      "price": 1811.840023798056,
-      "value_usd": 7157.73,
-      "grade": 48.0,
-      "council": "SELL",
-      "sector": null,
-      "brokers": [
-        "Binance",
-        "eToro"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 55.0,
-      "vox_grade": 48.0,
-      "tech_score": 62.0,
-      "weight_pct": 3.81
-    },
-    {
-      "ticker": "SHOP",
-      "shares": 57.606691,
-      "price": 1391.0770176877545,
-      "value_usd": 6382.33,
-      "grade": 60.0,
-      "council": "HOLD",
-      "sector": "Technology",
-      "brokers": [
-        "GBM Main",
-        "eToro"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 68.0,
-      "vox_grade": 58.0,
-      "tech_score": 77.0,
-      "weight_pct": 3.4
-    },
-    {
-      "ticker": "VTI",
-      "shares": 16.731377000000002,
-      "price": 3636.3657871154296,
-      "value_usd": 6193.41,
-      "grade": 58.0,
-      "council": "HOLD",
-      "sector": "",
-      "brokers": [
-        "GBM Main",
-        "eToro"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 64.0,
-      "vox_grade": 58.0,
-      "tech_score": 71.0,
-      "weight_pct": 3.3
+      "weight_pct": 8.37
     },
     {
       "ticker": "META",
       "shares": 9.99355265,
-      "price": 5453.596262722897,
-      "value_usd": 5924.8,
+      "price": 656.72998046875,
+      "value_usd": 6563.07,
       "grade": 67.0,
       "council": "HOLD",
       "sector": "Communication Services",
@@ -2514,17 +2152,17 @@
         "GBM Main",
         "GBM USA"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 62.0,
       "vox_grade": 63.0,
       "tech_score": 62.0,
-      "weight_pct": 3.15
+      "weight_pct": 7.44
     },
     {
       "ticker": "OSCR",
       "shares": 181.76509363,
-      "price": 29.318235954133456,
-      "value_usd": 5329.03,
+      "price": 31.610000610351562,
+      "value_usd": 5745.59,
       "grade": 57.0,
       "council": "HOLD",
       "sector": "Healthcare",
@@ -2532,17 +2170,17 @@
         "GBM USA",
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 62.0,
       "vox_grade": 57.0,
       "tech_score": 67.0,
-      "weight_pct": 2.84
+      "weight_pct": 6.51
     },
     {
       "ticker": "APH",
       "shares": 32.66231882,
-      "price": 158.47869408977252,
-      "value_usd": 5176.28,
+      "price": 156.00999450683594,
+      "value_usd": 5095.65,
       "grade": 63.0,
       "council": "HOLD",
       "sector": "Technology",
@@ -2550,259 +2188,187 @@
         "GBM USA",
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 55.0,
       "vox_grade": 54.0,
       "tech_score": 56.0,
-      "weight_pct": 2.75
+      "weight_pct": 5.78
     },
     {
-      "ticker": "AAPL",
-      "shares": 12.645164000000001,
-      "price": 2970.856930956372,
-      "value_usd": 3825.0,
-      "grade": 57.0,
-      "council": "HOLD",
-      "sector": "Technology",
-      "brokers": [
-        "GBM Main",
-        "eToro"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 65.0,
-      "vox_grade": 59.0,
-      "tech_score": 71.0,
-      "weight_pct": 2.04
-    },
-    {
-      "ticker": "MELI",
-      "shares": 2.0,
-      "price": 28680.0,
-      "value_usd": 3277.71,
-      "grade": 54.0,
+      "ticker": "XRP",
+      "shares": 304.39042786,
+      "price": 11.920000076293945,
+      "value_usd": 3628.33,
+      "grade": 43.0,
       "council": "SELL",
-      "sector": "Consumer Cyclical",
+      "sector": null,
       "brokers": [
-        "GBM Main"
+        "Binance"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 62.0,
-      "vox_grade": 56.0,
-      "tech_score": 69.0,
-      "weight_pct": 1.74
-    },
-    {
-      "ticker": "AMZN",
-      "shares": 11.0,
-      "price": 4244.99,
-      "value_usd": 2668.28,
-      "grade": 54.0,
-      "council": "HOLD",
-      "sector": "Consumer Cyclical",
-      "brokers": [
-        "GBM Main"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 54.0,
-      "vox_grade": 52.0,
-      "tech_score": 56.0,
-      "weight_pct": 1.42
-    },
-    {
-      "ticker": "DDOG",
-      "shares": 8.888521,
-      "price": 257.54,
-      "value_usd": 2289.15,
-      "grade": 56.0,
-      "council": "HOLD",
-      "sector": "Technology",
-      "brokers": [
-        "eToro"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 62.0,
-      "vox_grade": 56.0,
-      "tech_score": 69.0,
-      "weight_pct": 1.22
-    },
-    {
-      "ticker": "COST",
-      "shares": 2.489538,
-      "price": 916.25,
-      "value_usd": 2281.04,
-      "grade": 45.0,
-      "council": "HOLD",
-      "sector": "Consumer Defensive",
-      "brokers": [
-        "eToro"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 37.0,
-      "vox_grade": 45.0,
-      "tech_score": 29.0,
-      "weight_pct": 1.21
-    },
-    {
-      "ticker": "SMH",
-      "shares": 3.286074,
-      "price": 7012.35267258741,
-      "value_usd": 2057.67,
-      "grade": 59.0,
-      "council": "HOLD",
-      "sector": "",
-      "brokers": [
-        "GBM Main",
-        "eToro"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 52.0,
-      "vox_grade": 49.0,
-      "tech_score": 56.0,
-      "weight_pct": 1.1
-    },
-    {
-      "ticker": "SNOW",
-      "shares": 7.442155,
-      "price": 261.45,
-      "value_usd": 1945.75,
-      "grade": 58.0,
-      "council": "HOLD",
-      "sector": "Technology",
-      "brokers": [
-        "eToro"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 60.0,
-      "vox_grade": 58.0,
-      "tech_score": 63.0,
-      "weight_pct": 1.04
-    },
-    {
-      "ticker": "WMT",
-      "shares": 15.820106,
-      "price": 113.9,
-      "value_usd": 1801.91,
-      "grade": 41.0,
-      "council": "SELL",
-      "sector": "Consumer Defensive",
-      "brokers": [
-        "eToro"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 35.0,
-      "vox_grade": 41.0,
-      "tech_score": 29.0,
-      "weight_pct": 0.96
-    },
-    {
-      "ticker": "BIDU",
-      "shares": 13.363853,
-      "price": 117.53,
-      "value_usd": 1570.65,
-      "grade": 49.0,
-      "council": "SELL",
-      "sector": "Communication Services",
-      "brokers": [
-        "eToro"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 50.0,
-      "vox_grade": 49.0,
-      "tech_score": 50.0,
-      "weight_pct": 0.84
-    },
-    {
-      "ticker": "POET",
-      "shares": 120.01722699999999,
-      "price": 12.453613483087725,
-      "value_usd": 1494.65,
-      "grade": 48.0,
-      "council": "SELL",
-      "sector": "Technology",
-      "brokers": [
-        "Schwab",
-        "eToro"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 39.0,
-      "vox_grade": 47.0,
-      "tech_score": 31.0,
-      "weight_pct": 0.8
-    },
-    {
-      "ticker": "CBRS",
-      "shares": 6.831515,
-      "price": 215.07999999999998,
-      "value_usd": 1469.32,
-      "grade": 60.0,
-      "council": "HOLD",
-      "sector": "Technology",
-      "brokers": [
-        "eToro"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 52.0,
-      "vox_grade": 60.0,
-      "tech_score": 44.0,
-      "weight_pct": 0.78
+      "vox_grade": 43.0,
+      "tech_score": 35.0,
+      "weight_pct": 4.11
     },
     {
       "ticker": "TRX",
       "shares": 4357.316843,
-      "price": 0.3310204,
-      "value_usd": 1442.36,
+      "price": 0.7702000141143799,
+      "value_usd": 3356.01,
       "grade": 42.0,
       "council": "SELL",
       "sector": "Basic Materials",
       "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 36.0,
       "vox_grade": 42.0,
       "tech_score": 29.0,
-      "weight_pct": 0.77
+      "weight_pct": 3.8
+    },
+    {
+      "ticker": "DDOG",
+      "shares": 8.888521,
+      "price": 260.29998779296875,
+      "value_usd": 2313.68,
+      "grade": 56.0,
+      "council": "HOLD",
+      "sector": "Technology",
+      "brokers": [
+        "eToro"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 62.0,
+      "vox_grade": 56.0,
+      "tech_score": 69.0,
+      "weight_pct": 2.62
+    },
+    {
+      "ticker": "COST",
+      "shares": 2.489538,
+      "price": 926.0040283203125,
+      "value_usd": 2305.32,
+      "grade": 45.0,
+      "council": "HOLD",
+      "sector": "Consumer Defensive",
+      "brokers": [
+        "eToro"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 37.0,
+      "vox_grade": 45.0,
+      "tech_score": 29.0,
+      "weight_pct": 2.61
+    },
+    {
+      "ticker": "SNOW",
+      "shares": 7.442155,
+      "price": 268.7300109863281,
+      "value_usd": 1999.93,
+      "grade": 58.0,
+      "council": "HOLD",
+      "sector": "Technology",
+      "brokers": [
+        "eToro"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 60.0,
+      "vox_grade": 58.0,
+      "tech_score": 63.0,
+      "weight_pct": 2.27
+    },
+    {
+      "ticker": "WMT",
+      "shares": 15.820106,
+      "price": 114.80500030517578,
+      "value_usd": 1816.23,
+      "grade": 41.0,
+      "council": "SELL",
+      "sector": "Consumer Defensive",
+      "brokers": [
+        "eToro"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 35.0,
+      "vox_grade": 41.0,
+      "tech_score": 29.0,
+      "weight_pct": 2.06
+    },
+    {
+      "ticker": "AXS",
+      "shares": 15.34059232,
+      "price": 114.55999755859375,
+      "value_usd": 1757.42,
+      "grade": 58.0,
+      "council": "HOLD",
+      "sector": "Financial Services",
+      "brokers": [
+        "Binance"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 64.0,
+      "vox_grade": 58.0,
+      "tech_score": 69.0,
+      "weight_pct": 1.99
+    },
+    {
+      "ticker": "BIDU",
+      "shares": 13.363853,
+      "price": 113.37999725341797,
+      "value_usd": 1515.19,
+      "grade": 49.0,
+      "council": "SELL",
+      "sector": "Communication Services",
+      "brokers": [
+        "eToro"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 50.0,
+      "vox_grade": 49.0,
+      "tech_score": 50.0,
+      "weight_pct": 1.72
+    },
+    {
+      "ticker": "CBRS",
+      "shares": 6.831515,
+      "price": 204.77000427246094,
+      "value_usd": 1398.89,
+      "grade": 60.0,
+      "council": "HOLD",
+      "sector": "Technology",
+      "brokers": [
+        "eToro"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 52.0,
+      "vox_grade": 60.0,
+      "tech_score": 44.0,
+      "weight_pct": 1.59
     },
     {
       "ticker": "SPCX",
       "shares": 9.631659,
-      "price": 145.3,
-      "value_usd": 1399.48,
+      "price": 139.22000122070312,
+      "value_usd": 1340.92,
       "grade": 43.0,
       "council": "SELL",
       "sector": "SpaceX",
       "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 43.0,
       "vox_grade": 43.0,
       "tech_score": null,
-      "weight_pct": 0.74
-    },
-    {
-      "ticker": "OKLO",
-      "shares": 24.73230023,
-      "price": 54.020643455851335,
-      "value_usd": 1336.06,
-      "grade": 47.0,
-      "council": "SELL",
-      "sector": "Utilities",
-      "brokers": [
-        "GBM USA",
-        "eToro"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 38.0,
-      "vox_grade": 39.0,
-      "tech_score": 37.0,
-      "weight_pct": 0.71
+      "weight_pct": 1.52
     },
     {
       "ticker": "BNB",
-      "shares": 2.0272140199999997,
-      "price": 580.2776096587967,
-      "value_usd": 1176.35,
+      "shares": 2.02722158,
+      "price": 568.7001208263579,
+      "value_usd": 1152.88,
       "grade": 47.0,
       "council": "SELL",
       "sector": "Unknown",
@@ -2810,68 +2376,104 @@
         "Binance",
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T14:00:13.008583+00:00",
       "unified_grade": 48.0,
       "vox_grade": 47.0,
       "tech_score": 49.0,
-      "weight_pct": 0.63
+      "weight_pct": 1.31
+    },
+    {
+      "ticker": "OKLO",
+      "shares": 24.73230023,
+      "price": 45.84000015258789,
+      "value_usd": 1133.73,
+      "grade": 47.0,
+      "council": "SELL",
+      "sector": "Utilities",
+      "brokers": [
+        "GBM USA",
+        "eToro"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 38.0,
+      "vox_grade": 39.0,
+      "tech_score": 37.0,
+      "weight_pct": 1.28
     },
     {
       "ticker": "SPOT",
       "shares": 2.318557,
-      "price": 479.77,
-      "value_usd": 1112.37,
+      "price": 479.7799987792969,
+      "value_usd": 1112.4,
       "grade": 57.0,
       "council": "HOLD",
       "sector": "Communication Services",
       "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 58.0,
       "vox_grade": 57.0,
       "tech_score": 59.0,
-      "weight_pct": 0.59
+      "weight_pct": 1.26
     },
     {
       "ticker": "TECK",
       "shares": 17.849174,
-      "price": 59.82,
-      "value_usd": 1067.74,
+      "price": 58.46500015258789,
+      "value_usd": 1043.55,
       "grade": 50.0,
       "council": "SELL",
       "sector": "Basic Materials",
       "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 42.0,
       "vox_grade": 50.0,
       "tech_score": 35.0,
-      "weight_pct": 0.57
+      "weight_pct": 1.18
     },
     {
-      "ticker": "IBM",
-      "shares": 4.0,
-      "price": 4575.0,
-      "value_usd": 1045.71,
-      "grade": 53.0,
-      "council": "SELL",
-      "sector": "Technology",
+      "ticker": "MNST",
+      "shares": 10.0,
+      "price": 97.06999969482422,
+      "value_usd": 970.7,
+      "grade": 72.0,
+      "council": "HOLD",
+      "sector": "Consumer Defensive",
       "brokers": [
         "GBM Main"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 57.0,
-      "vox_grade": 55.0,
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 62.0,
+      "vox_grade": 60.0,
       "tech_score": 63.0,
-      "weight_pct": 0.56
+      "weight_pct": 1.1
+    },
+    {
+      "ticker": "POET",
+      "shares": 120.01722699999999,
+      "price": 8.010000228881836,
+      "value_usd": 961.34,
+      "grade": 48.0,
+      "council": "SELL",
+      "sector": "Technology",
+      "brokers": [
+        "Schwab",
+        "eToro"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 40.0,
+      "vox_grade": 48.0,
+      "tech_score": 31.0,
+      "weight_pct": 1.09
     },
     {
       "ticker": "DOGE",
       "shares": 13046.578177610001,
-      "price": 0.07352810455459825,
-      "value_usd": 959.29,
+      "price": 0.07216149212666248,
+      "value_usd": 941.46,
       "grade": 47.0,
       "council": "SELL",
       "sector": "Unknown",
@@ -2880,204 +2482,361 @@
         "Bitso",
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T14:00:13.008583+00:00",
       "unified_grade": 26.0,
       "vox_grade": 47.0,
       "tech_score": 5.0,
-      "weight_pct": 0.51
+      "weight_pct": 1.07
     },
     {
       "ticker": "NUTX",
       "shares": 4.920423,
-      "price": 183.91,
-      "value_usd": 904.91,
+      "price": 178.89999389648438,
+      "value_usd": 880.26,
       "grade": 62.0,
       "council": "HOLD",
       "sector": "Healthcare",
       "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 64.0,
       "vox_grade": 62.0,
       "tech_score": 65.0,
-      "weight_pct": 0.48
+      "weight_pct": 1.0
     },
     {
-      "ticker": "MNST",
-      "shares": 10.0,
-      "price": 1573.0,
-      "value_usd": 898.86,
-      "grade": 72.0,
+      "ticker": "VOO",
+      "shares": 22.099182,
+      "price": 688.530029296875,
+      "value_usd": 836.88,
+      "grade": 58.0,
       "council": "HOLD",
-      "sector": "Consumer Defensive",
+      "sector": "",
       "brokers": [
-        "GBM Main"
+        "GBM Main",
+        "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 62.0,
-      "vox_grade": 60.0,
-      "tech_score": 63.0,
-      "weight_pct": 0.48
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 64.0,
+      "vox_grade": 57.0,
+      "tech_score": 71.0,
+      "weight_pct": 0.95
     },
     {
       "ticker": "CRWV",
       "shares": 10.032241,
-      "price": 88.88,
-      "value_usd": 891.67,
+      "price": 83.33000183105469,
+      "value_usd": 835.99,
       "grade": 43.0,
       "council": "SELL",
       "sector": "Technology",
       "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 42.0,
       "vox_grade": 43.0,
       "tech_score": 41.0,
-      "weight_pct": 0.47
+      "weight_pct": 0.95
     },
     {
       "ticker": "TE",
       "shares": 124.953049,
-      "price": 6.85,
-      "value_usd": 855.93,
+      "price": 6.550000190734863,
+      "value_usd": 818.44,
       "grade": 47.0,
       "council": "SELL",
       "sector": "Industrials",
       "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 44.0,
-      "vox_grade": 49.0,
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 42.0,
+      "vox_grade": 47.0,
       "tech_score": 38.0,
-      "weight_pct": 0.46
+      "weight_pct": 0.93
     },
     {
       "ticker": "CRDO",
       "shares": 3.258655,
-      "price": 257.79,
-      "value_usd": 840.05,
-      "grade": 58.0,
-      "council": "HOLD",
-      "sector": null,
-      "brokers": [
-        "eToro"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 58.0,
-      "vox_grade": 61.0,
-      "tech_score": 56.0,
-      "weight_pct": 0.45
-    },
-    {
-      "ticker": "AVGO",
-      "shares": 2.0,
-      "price": 6780.0,
-      "value_usd": 774.86,
-      "grade": 56.0,
+      "price": 236.55999755859375,
+      "value_usd": 770.87,
+      "grade": 59.0,
       "council": "HOLD",
       "sector": "Technology",
       "brokers": [
-        "GBM Main"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 59.0,
-      "vox_grade": 62.0,
-      "tech_score": 56.0,
-      "weight_pct": 0.41
-    },
-    {
-      "ticker": "ARKG",
-      "shares": 18.709073,
-      "price": 41.32,
-      "value_usd": 773.06,
-      "grade": 55.0,
-      "council": "HOLD",
-      "sector": null,
-      "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 55.0,
-      "vox_grade": 55.0,
-      "tech_score": null,
-      "weight_pct": 0.41
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 58.0,
+      "vox_grade": 61.0,
+      "tech_score": 56.0,
+      "weight_pct": 0.87
     },
     {
       "ticker": "ESTC",
       "shares": 12.158054,
-      "price": 60.24,
-      "value_usd": 732.4,
+      "price": 62.470001220703125,
+      "value_usd": 759.51,
       "grade": 65.0,
       "council": "HOLD",
       "sector": "Technology",
       "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 65.0,
       "vox_grade": 65.0,
       "tech_score": 65.0,
-      "weight_pct": 0.39
+      "weight_pct": 0.86
     },
     {
-      "ticker": "MU",
-      "shares": 0.743005,
-      "price": 979.3,
-      "value_usd": 727.62,
-      "grade": 60.0,
+      "ticker": "ARKG",
+      "shares": 18.709073,
+      "price": 40.58000183105469,
+      "value_usd": 759.21,
+      "grade": 55.0,
       "council": "HOLD",
-      "sector": "Technology",
+      "sector": null,
       "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 58.0,
-      "vox_grade": 60.0,
-      "tech_score": 56.0,
-      "weight_pct": 0.39
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 66.0,
+      "vox_grade": 55.0,
+      "tech_score": 77.0,
+      "weight_pct": 0.86
     },
     {
       "ticker": "CEG",
       "shares": 2.857648,
-      "price": 251.38,
-      "value_usd": 718.36,
+      "price": 257.42999267578125,
+      "value_usd": 735.64,
       "grade": 48.0,
       "council": "SELL",
       "sector": "Utilities",
       "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 44.0,
       "vox_grade": 48.0,
       "tech_score": 41.0,
-      "weight_pct": 0.38
+      "weight_pct": 0.83
+    },
+    {
+      "ticker": "MU",
+      "shares": 0.743005,
+      "price": 937.0,
+      "value_usd": 696.2,
+      "grade": 60.0,
+      "council": "HOLD",
+      "sector": "Technology",
+      "brokers": [
+        "eToro"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 58.0,
+      "vox_grade": 60.0,
+      "tech_score": 56.0,
+      "weight_pct": 0.79
     },
     {
       "ticker": "IONQ",
       "shares": 16.551724,
-      "price": 42.86,
-      "value_usd": 709.41,
+      "price": 38.904998779296875,
+      "value_usd": 643.94,
       "grade": 45.0,
       "council": "SELL",
       "sector": "Technology",
       "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 42.0,
-      "vox_grade": 52.0,
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 38.0,
+      "vox_grade": 45.0,
       "tech_score": 31.0,
-      "weight_pct": 0.38
+      "weight_pct": 0.73
+    },
+    {
+      "ticker": "SE",
+      "shares": 5.584096,
+      "price": 110.72000122070312,
+      "value_usd": 618.27,
+      "grade": 59.0,
+      "council": "HOLD",
+      "sector": "Consumer Cyclical",
+      "brokers": [
+        "eToro"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 64.0,
+      "vox_grade": 59.0,
+      "tech_score": 69.0,
+      "weight_pct": 0.7
+    },
+    {
+      "ticker": "DASH",
+      "shares": 3.029154,
+      "price": 189.64999389648438,
+      "value_usd": 574.48,
+      "grade": 54.0,
+      "council": "SELL",
+      "sector": "Consumer Cyclical",
+      "brokers": [
+        "eToro"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 62.0,
+      "vox_grade": 54.0,
+      "tech_score": 69.0,
+      "weight_pct": 0.65
+    },
+    {
+      "ticker": "JMIA",
+      "shares": 84.070735,
+      "price": 6.71999979019165,
+      "value_usd": 564.96,
+      "grade": 47.0,
+      "council": "SELL",
+      "sector": "Consumer Cyclical",
+      "brokers": [
+        "eToro"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 48.0,
+      "vox_grade": 47.0,
+      "tech_score": 50.0,
+      "weight_pct": 0.64
+    },
+    {
+      "ticker": "COIN",
+      "shares": 3.399905,
+      "price": 157.39999389648438,
+      "value_usd": 535.15,
+      "grade": 44.0,
+      "council": "SELL",
+      "sector": "Financial Services",
+      "brokers": [
+        "eToro"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 42.0,
+      "vox_grade": 44.0,
+      "tech_score": 41.0,
+      "weight_pct": 0.61
+    },
+    {
+      "ticker": "TSM",
+      "shares": 22.0,
+      "price": 421.67999267578125,
+      "value_usd": 510.23,
+      "grade": 65.0,
+      "council": "HOLD",
+      "sector": "Technology",
+      "brokers": [
+        "GBM Main",
+        "IBKR"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 60.0,
+      "vox_grade": 65.0,
+      "tech_score": 56.0,
+      "weight_pct": 0.58
+    },
+    {
+      "ticker": "NVDA",
+      "shares": 42.126541,
+      "price": 203.47999572753906,
+      "value_usd": 471.45,
+      "grade": 57.0,
+      "council": "HOLD",
+      "sector": "Technology",
+      "brokers": [
+        "GBM Main",
+        "eToro"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 60.0,
+      "vox_grade": 65.0,
+      "tech_score": 56.0,
+      "weight_pct": 0.53
+    },
+    {
+      "ticker": "NBIS",
+      "shares": 2.161224,
+      "price": 210.5399932861328,
+      "value_usd": 455.02,
+      "grade": 55.0,
+      "council": "HOLD",
+      "sector": "Communication Services",
+      "brokers": [
+        "eToro"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 56.0,
+      "vox_grade": 55.0,
+      "tech_score": 56.0,
+      "weight_pct": 0.52
+    },
+    {
+      "ticker": "APP",
+      "shares": 1.0,
+      "price": 443.0,
+      "value_usd": 443.0,
+      "grade": 65.0,
+      "council": "HOLD",
+      "sector": "Communication Services",
+      "brokers": [
+        "GBM Main"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 53.0,
+      "vox_grade": 56.0,
+      "tech_score": 50.0,
+      "weight_pct": 0.5
+    },
+    {
+      "ticker": "CRSP",
+      "shares": 8.73043648,
+      "price": 50.630001068115234,
+      "value_usd": 442.02,
+      "grade": 54.0,
+      "council": "SELL",
+      "sector": "Healthcare",
+      "brokers": [
+        "GBM USA"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 50.0,
+      "vox_grade": 48.0,
+      "tech_score": 52.0,
+      "weight_pct": 0.5
+    },
+    {
+      "ticker": "TSLA",
+      "shares": 20.18246,
+      "price": 394.75,
+      "value_usd": 438.19,
+      "grade": 56.0,
+      "council": "HOLD",
+      "sector": "Consumer Cyclical",
+      "brokers": [
+        "GBM Main",
+        "eToro"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 56.0,
+      "vox_grade": 56.0,
+      "tech_score": 56.0,
+      "weight_pct": 0.5
     },
     {
       "ticker": "IREN",
       "shares": 11.0,
-      "price": 61.93545454545454,
-      "value_usd": 681.15,
+      "price": 39.029998779296875,
+      "value_usd": 429.33,
       "grade": 61.0,
       "council": "HOLD",
       "sector": "Financial Services",
@@ -3085,181 +2844,98 @@
         "IBKR",
         "Schwab"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 38.0,
       "vox_grade": 42.0,
       "tech_score": 35.0,
-      "weight_pct": 0.36
+      "weight_pct": 0.49
     },
     {
-      "ticker": "SE",
-      "shares": 5.584096,
-      "price": 111.14,
-      "value_usd": 620.62,
-      "grade": 59.0,
+      "ticker": "SHOP",
+      "shares": 57.606691,
+      "price": 124.7699966430664,
+      "value_usd": 395.32,
+      "grade": 60.0,
       "council": "HOLD",
-      "sector": "Consumer Cyclical",
+      "sector": "Technology",
       "brokers": [
+        "GBM Main",
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 64.0,
-      "vox_grade": 59.0,
-      "tech_score": 69.0,
-      "weight_pct": 0.33
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 68.0,
+      "vox_grade": 58.0,
+      "tech_score": 77.0,
+      "weight_pct": 0.45
+    },
+    {
+      "ticker": "GOOGL",
+      "shares": 20.0,
+      "price": 352.5299987792969,
+      "value_usd": 387.78,
+      "grade": 67.0,
+      "council": "HOLD",
+      "sector": "Communication Services",
+      "brokers": [
+        "GBM Main"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 52.0,
+      "vox_grade": 54.0,
+      "tech_score": 35.0,
+      "weight_pct": 0.44
     },
     {
       "ticker": "CPSH",
       "shares": 82.26797256,
-      "price": 7.17,
-      "value_usd": 589.86,
+      "price": 4.510000228881836,
+      "value_usd": 371.03,
       "grade": 64.0,
       "council": "BUY",
       "sector": "Technology",
       "brokers": [
         "GBM USA"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 36.0,
       "vox_grade": 42.0,
       "tech_score": 31.0,
-      "weight_pct": 0.31
+      "weight_pct": 0.42
     },
     {
-      "ticker": "JMIA",
-      "shares": 84.070735,
-      "price": 7.01,
-      "value_usd": 589.34,
-      "grade": 47.0,
-      "council": "SELL",
-      "sector": "Consumer Cyclical",
-      "brokers": [
-        "eToro"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 46.0,
-      "vox_grade": 42.0,
-      "tech_score": 50.0,
-      "weight_pct": 0.31
-    },
-    {
-      "ticker": "DASH",
-      "shares": 3.029154,
-      "price": 191.82,
-      "value_usd": 581.05,
-      "grade": 54.0,
-      "council": "SELL",
-      "sector": "Consumer Cyclical",
-      "brokers": [
-        "eToro"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 62.0,
-      "vox_grade": 54.0,
-      "tech_score": 69.0,
-      "weight_pct": 0.31
-    },
-    {
-      "ticker": "COIN",
-      "shares": 3.399905,
-      "price": 159.07,
-      "value_usd": 540.82,
-      "grade": 44.0,
-      "council": "SELL",
-      "sector": "Financial Services",
-      "brokers": [
-        "eToro"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 42.0,
-      "vox_grade": 44.0,
-      "tech_score": 41.0,
-      "weight_pct": 0.29
-    },
-    {
-      "ticker": "APP",
-      "shares": 1.0,
-      "price": 9115.0,
-      "value_usd": 520.86,
-      "grade": 65.0,
+      "ticker": "VTI",
+      "shares": 16.731377000000002,
+      "price": 369.79998779296875,
+      "value_usd": 340.3,
+      "grade": 58.0,
       "council": "HOLD",
-      "sector": "Communication Services",
+      "sector": "",
       "brokers": [
-        "GBM Main"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 53.0,
-      "vox_grade": 56.0,
-      "tech_score": 50.0,
-      "weight_pct": 0.28
-    },
-    {
-      "ticker": "NBIS",
-      "shares": 2.161224,
-      "price": 219.65,
-      "value_usd": 474.71,
-      "grade": 55.0,
-      "council": "HOLD",
-      "sector": "Communication Services",
-      "brokers": [
+        "GBM Main",
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 56.0,
-      "vox_grade": 55.0,
-      "tech_score": 56.0,
-      "weight_pct": 0.25
-    },
-    {
-      "ticker": "CRSP",
-      "shares": 8.73043648,
-      "price": 52.8,
-      "value_usd": 460.97,
-      "grade": 54.0,
-      "council": "SELL",
-      "sector": "Healthcare",
-      "brokers": [
-        "GBM USA"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 49.0,
-      "vox_grade": 46.0,
-      "tech_score": 52.0,
-      "weight_pct": 0.25
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 64.0,
+      "vox_grade": 58.0,
+      "tech_score": 71.0,
+      "weight_pct": 0.39
     },
     {
       "ticker": "QLYS",
       "shares": 2.204585,
-      "price": 152.69,
-      "value_usd": 336.62,
+      "price": 151.42999267578125,
+      "value_usd": 333.84,
       "grade": 66.0,
       "council": "HOLD",
       "sector": "Technology",
       "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 68.0,
       "vox_grade": 66.0,
       "tech_score": 69.0,
-      "weight_pct": 0.18
-    },
-    {
-      "ticker": "XRP",
-      "shares": 304.39042786,
-      "price": 1.0966,
-      "value_usd": 333.79,
-      "grade": 43.0,
-      "council": "SELL",
-      "sector": null,
-      "brokers": [
-        "Binance"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 39.0,
-      "vox_grade": 43.0,
-      "tech_score": 35.0,
-      "weight_pct": 0.18
+      "weight_pct": 0.38
     },
     {
       "ticker": "VAULTA",
@@ -3272,51 +2948,121 @@
       "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T14:00:13.008583+00:00",
       "unified_grade": null,
       "vox_grade": null,
       "tech_score": null,
-      "weight_pct": 0.16
+      "weight_pct": 0.34
+    },
+    {
+      "ticker": "CRWD",
+      "shares": 28.502928,
+      "price": 187.8699951171875,
+      "value_usd": 294.52,
+      "grade": 57.0,
+      "council": "HOLD",
+      "sector": "Technology",
+      "brokers": [
+        "GBM Main",
+        "eToro"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 68.0,
+      "vox_grade": 59.0,
+      "tech_score": 77.0,
+      "weight_pct": 0.33
+    },
+    {
+      "ticker": "AAPL",
+      "shares": 12.645164000000001,
+      "price": 317.4200134277344,
+      "value_usd": 220.76,
+      "grade": 57.0,
+      "council": "HOLD",
+      "sector": "Technology",
+      "brokers": [
+        "GBM Main",
+        "eToro"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 65.0,
+      "vox_grade": 59.0,
+      "tech_score": 71.0,
+      "weight_pct": 0.25
+    },
+    {
+      "ticker": "MELI",
+      "shares": 2.0,
+      "price": 1868.8699951171875,
+      "value_usd": 205.58,
+      "grade": 54.0,
+      "council": "SELL",
+      "sector": "Consumer Cyclical",
+      "brokers": [
+        "GBM Main"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 62.0,
+      "vox_grade": 56.0,
+      "tech_score": 69.0,
+      "weight_pct": 0.23
     },
     {
       "ticker": "SPRB",
       "shares": 4.0,
-      "price": 51.69,
-      "value_usd": 206.76,
+      "price": 48.63999938964844,
+      "value_usd": 194.56,
       "grade": 49.0,
       "council": "SELL",
       "sector": "Healthcare",
       "brokers": [
         "Schwab"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 40.0,
       "vox_grade": 39.0,
       "tech_score": 41.0,
-      "weight_pct": 0.11
+      "weight_pct": 0.22
     },
     {
       "ticker": "SIDU",
       "shares": 80.0,
-      "price": 2.16,
-      "value_usd": 172.8,
+      "price": 2.065000057220459,
+      "value_usd": 165.2,
       "grade": 49.0,
       "council": "SELL",
       "sector": "Industrials",
       "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 40.0,
       "vox_grade": 49.0,
       "tech_score": 31.0,
-      "weight_pct": 0.09
+      "weight_pct": 0.19
+    },
+    {
+      "ticker": "AMZN",
+      "shares": 11.0,
+      "price": 247.3699951171875,
+      "value_usd": 149.66,
+      "grade": 54.0,
+      "council": "HOLD",
+      "sector": "Consumer Cyclical",
+      "brokers": [
+        "GBM Main"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 54.0,
+      "vox_grade": 52.0,
+      "tech_score": 56.0,
+      "weight_pct": 0.17
     },
     {
       "ticker": "HBAR",
       "shares": 1863.70331285,
-      "price": 0.06761089135987018,
-      "value_usd": 126.01,
+      "price": 0.06692119777611684,
+      "value_usd": 124.72,
       "grade": 45.0,
       "council": "SELL",
       "sector": "Unknown",
@@ -3324,11 +3070,11 @@
         "Binance",
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T14:00:13.008583+00:00",
       "unified_grade": 34.0,
       "vox_grade": 45.0,
       "tech_score": 24.0,
-      "weight_pct": 0.07
+      "weight_pct": 0.14
     },
     {
       "ticker": "GBM O",
@@ -3341,34 +3087,104 @@
       "brokers": [
         "GBM Main"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T14:00:13.008583+00:00",
       "unified_grade": 6.0,
       "vox_grade": 50.0,
       "tech_score": -39.0,
-      "weight_pct": 0.07
+      "weight_pct": 0.14
+    },
+    {
+      "ticker": "SMH",
+      "shares": 3.286074,
+      "price": 585.6300048828125,
+      "value_usd": 105.84,
+      "grade": 59.0,
+      "council": "HOLD",
+      "sector": "",
+      "brokers": [
+        "GBM Main",
+        "eToro"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 52.0,
+      "vox_grade": 49.0,
+      "tech_score": 56.0,
+      "weight_pct": 0.12
+    },
+    {
+      "ticker": "FF",
+      "shares": 15.57498472,
+      "price": 4.699999809265137,
+      "value_usd": 73.2,
+      "grade": 50.0,
+      "council": "HOLD",
+      "sector": "Basic Materials",
+      "brokers": [
+        "Binance"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 59.0,
+      "vox_grade": 53.0,
+      "tech_score": 65.0,
+      "weight_pct": 0.08
     },
     {
       "ticker": "ADA",
       "shares": 434.829194,
-      "price": 0.1647,
-      "value_usd": 71.62,
+      "price": 0.15940000000000001,
+      "value_usd": 69.31,
       "grade": 48.0,
       "council": "SELL",
       "sector": "Unknown",
       "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T14:00:13.008583+00:00",
       "unified_grade": 48.0,
       "vox_grade": 48.0,
       "tech_score": 48.0,
-      "weight_pct": 0.04
+      "weight_pct": 0.08
+    },
+    {
+      "ticker": "ETH",
+      "shares": 3.95053328,
+      "price": 16.889999389648438,
+      "value_usd": 66.72,
+      "grade": 48.0,
+      "council": "SELL",
+      "sector": null,
+      "brokers": [
+        "Binance",
+        "eToro"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 55.0,
+      "vox_grade": 48.0,
+      "tech_score": 62.0,
+      "weight_pct": 0.08
+    },
+    {
+      "ticker": "IBM",
+      "shares": 4.0,
+      "price": 290.3800048828125,
+      "value_usd": 63.88,
+      "grade": 53.0,
+      "council": "SELL",
+      "sector": "Technology",
+      "brokers": [
+        "GBM Main"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 61.0,
+      "vox_grade": 63.0,
+      "tech_score": 63.0,
+      "weight_pct": 0.07
     },
     {
       "ticker": "SOL",
-      "shares": 0.68101826,
-      "price": 76.9989168417305,
-      "value_usd": 52.44,
+      "shares": 0.6820207,
+      "price": 75.79468247107455,
+      "value_usd": 51.69,
       "grade": 51.0,
       "council": "SELL",
       "sector": "Unknown",
@@ -3376,126 +3192,145 @@
         "Binance",
         "Bitso"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T14:00:13.008583+00:00",
       "unified_grade": 34.0,
       "vox_grade": 51.0,
       "tech_score": 17.0,
-      "weight_pct": 0.03
+      "weight_pct": 0.06
+    },
+    {
+      "ticker": "AVGO",
+      "shares": 2.0,
+      "price": 384.0299987792969,
+      "value_usd": 42.24,
+      "grade": 56.0,
+      "council": "HOLD",
+      "sector": "Technology",
+      "brokers": [
+        "GBM Main"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 59.0,
+      "vox_grade": 62.0,
+      "tech_score": 56.0,
+      "weight_pct": 0.05
     },
     {
       "ticker": "XLE",
       "shares": 0.69093582,
-      "price": 55.82,
-      "value_usd": 38.57,
+      "price": 56.75,
+      "value_usd": 39.21,
       "grade": 51.0,
       "council": "SELL",
       "sector": null,
       "brokers": [
         "GBM USA"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 48.0,
       "vox_grade": 53.0,
       "tech_score": 44.0,
-      "weight_pct": 0.02
-    },
-    {
-      "ticker": "BYND",
-      "shares": 33.0,
-      "price": 12.67,
-      "value_usd": 23.89,
-      "grade": 55.0,
-      "council": "HOLD",
-      "sector": "Consumer Defensive",
-      "brokers": [
-        "GBM Main"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 36.0,
-      "vox_grade": 42.0,
-      "tech_score": 29.0,
-      "weight_pct": 0.01
+      "weight_pct": 0.04
     },
     {
       "ticker": "BIVI",
       "shares": 7.470294,
-      "price": 2.27,
-      "value_usd": 16.96,
+      "price": 1.63100004196167,
+      "value_usd": 12.18,
       "grade": 54.0,
       "council": "SELL",
       "sector": "Healthcare",
       "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 66.0,
       "vox_grade": 54.0,
       "tech_score": 77.0,
       "weight_pct": 0.01
     },
     {
-      "ticker": "AXS",
-      "shares": 15.3390794,
-      "price": 0.995,
-      "value_usd": 15.26,
-      "grade": 58.0,
+      "ticker": "BTC",
+      "shares": 0.22549365,
+      "price": 27.514999389648438,
+      "value_usd": 6.2,
+      "grade": 47.0,
+      "council": "SELL",
+      "sector": null,
+      "brokers": [
+        "Binance",
+        "Bitso",
+        "eToro"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 52.0,
+      "vox_grade": 47.0,
+      "tech_score": 56.0,
+      "weight_pct": 0.01
+    },
+    {
+      "ticker": "XPL",
+      "shares": 7.79786091,
+      "price": 0.7527999877929688,
+      "value_usd": 5.87,
+      "grade": 50.0,
       "council": "HOLD",
-      "sector": "Financial Services",
+      "sector": "Basic Materials",
       "brokers": [
         "Binance"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 64.0,
-      "vox_grade": 58.0,
-      "tech_score": 69.0,
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 52.0,
+      "vox_grade": 54.0,
+      "tech_score": 50.0,
       "weight_pct": 0.01
     },
     {
       "ticker": "BONK",
       "shares": 844336.12,
-      "price": 4.02e-06,
-      "value_usd": 3.39,
+      "price": 3.91e-06,
+      "value_usd": 3.3,
       "grade": 50.0,
       "council": "HOLD",
       "sector": null,
       "brokers": [
         "Binance"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T14:00:13.008583+00:00",
       "unified_grade": null,
       "vox_grade": null,
       "tech_score": null,
+      "weight_pct": 0.0
+    },
+    {
+      "ticker": "ALLO",
+      "shares": 1.57635099,
+      "price": 1.934999942779541,
+      "value_usd": 3.05,
+      "grade": 50.0,
+      "council": "HOLD",
+      "sector": "Healthcare",
+      "brokers": [
+        "Binance"
+      ],
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 47.0,
+      "vox_grade": 47.0,
+      "tech_score": 47.0,
       "weight_pct": 0.0
     },
     {
       "ticker": "PENGU",
       "shares": 342.30769039,
-      "price": 0.006064999999999999,
-      "value_usd": 2.08,
+      "price": 0.005954,
+      "value_usd": 2.04,
       "grade": 50.0,
       "council": "HOLD",
       "sector": null,
       "brokers": [
         "Binance"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": null,
-      "vox_grade": null,
-      "tech_score": null,
-      "weight_pct": 0.0
-    },
-    {
-      "ticker": "KAITO",
-      "shares": 2.33047496,
-      "price": 0.6642,
-      "value_usd": 1.55,
-      "grade": 50.0,
-      "council": "HOLD",
-      "sector": null,
-      "brokers": [
-        "Binance"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T14:00:13.008583+00:00",
       "unified_grade": null,
       "vox_grade": null,
       "tech_score": null,
@@ -3504,15 +3339,32 @@
     {
       "ticker": "KITE",
       "shares": 12.44740338,
-      "price": 0.1156,
-      "value_usd": 1.44,
+      "price": 0.1408,
+      "value_usd": 1.75,
       "grade": 50.0,
       "council": "HOLD",
       "sector": null,
       "brokers": [
         "Binance"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T14:00:13.008583+00:00",
+      "unified_grade": null,
+      "vox_grade": null,
+      "tech_score": null,
+      "weight_pct": 0.0
+    },
+    {
+      "ticker": "KAITO",
+      "shares": 2.33047496,
+      "price": 0.6934,
+      "value_usd": 1.62,
+      "grade": 50.0,
+      "council": "HOLD",
+      "sector": null,
+      "brokers": [
+        "Binance"
+      ],
+      "last_sync": "2026-07-13T14:00:13.008583+00:00",
       "unified_grade": null,
       "vox_grade": null,
       "tech_score": null,
@@ -3521,7 +3373,7 @@
     {
       "ticker": "MORPHO",
       "shares": 0.6631036,
-      "price": 2.008,
+      "price": 2.013,
       "value_usd": 1.33,
       "grade": 50.0,
       "council": "HOLD",
@@ -3529,7 +3381,7 @@
       "brokers": [
         "Binance"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T14:00:13.008583+00:00",
       "unified_grade": null,
       "vox_grade": null,
       "tech_score": null,
@@ -3538,49 +3390,49 @@
     {
       "ticker": "SCCO",
       "shares": 0.007379,
-      "price": 175.83,
-      "value_usd": 1.3,
+      "price": 174.47000122070312,
+      "value_usd": 1.29,
       "grade": 54.0,
       "council": "SELL",
       "sector": "Basic Materials",
       "brokers": [
         "eToro"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
       "unified_grade": 48.0,
       "vox_grade": 54.0,
       "tech_score": 41.0,
       "weight_pct": 0.0
     },
     {
-      "ticker": "FF",
-      "shares": 15.57498472,
-      "price": 0.06047,
-      "value_usd": 0.94,
-      "grade": 50.0,
+      "ticker": "BYND",
+      "shares": 33.0,
+      "price": 0.6305000185966492,
+      "value_usd": 1.14,
+      "grade": 55.0,
       "council": "HOLD",
-      "sector": null,
+      "sector": "Consumer Defensive",
       "brokers": [
-        "Binance"
+        "GBM Main"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 59.0,
-      "vox_grade": 53.0,
-      "tech_score": 65.0,
+      "last_sync": "2026-07-13T21:00:24.950879+00:00",
+      "unified_grade": 36.0,
+      "vox_grade": 42.0,
+      "tech_score": 29.0,
       "weight_pct": 0.0
     },
     {
       "ticker": "NXPC",
       "shares": 3.41387102,
-      "price": 0.2615,
-      "value_usd": 0.89,
+      "price": 0.2546,
+      "value_usd": 0.87,
       "grade": 50.0,
       "council": "HOLD",
       "sector": null,
       "brokers": [
         "Binance"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T14:00:13.008583+00:00",
       "unified_grade": null,
       "vox_grade": null,
       "tech_score": null,
@@ -3589,66 +3441,32 @@
     {
       "ticker": "NIGHT",
       "shares": 28.19843848,
-      "price": 0.0305,
-      "value_usd": 0.86,
+      "price": 0.02973,
+      "value_usd": 0.84,
       "grade": 50.0,
       "council": "HOLD",
       "sector": null,
       "brokers": [
         "Binance"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T14:00:13.008583+00:00",
       "unified_grade": null,
       "vox_grade": null,
       "tech_score": null,
       "weight_pct": 0.0
     },
     {
-      "ticker": "XPL",
-      "shares": 7.79786091,
-      "price": 0.09162,
-      "value_usd": 0.71,
-      "grade": 50.0,
-      "council": "HOLD",
-      "sector": null,
-      "brokers": [
-        "Binance"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 50.0,
-      "vox_grade": 49.0,
-      "tech_score": 50.0,
-      "weight_pct": 0.0
-    },
-    {
-      "ticker": "ALLO",
-      "shares": 1.57635099,
-      "price": 0.3693,
-      "value_usd": 0.58,
-      "grade": 50.0,
-      "council": "HOLD",
-      "sector": null,
-      "brokers": [
-        "Binance"
-      ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
-      "unified_grade": 50.0,
-      "vox_grade": 52.0,
-      "tech_score": 47.0,
-      "weight_pct": 0.0
-    },
-    {
       "ticker": "VANA",
       "shares": 0.45441194,
-      "price": 1.2059999999999997,
-      "value_usd": 0.55,
+      "price": 1.178,
+      "value_usd": 0.54,
       "grade": 50.0,
       "council": "HOLD",
       "sector": null,
       "brokers": [
         "Binance"
       ],
-      "last_sync": "2026-07-12T17:44:53.940382+00:00",
+      "last_sync": "2026-07-13T14:00:13.008583+00:00",
       "unified_grade": null,
       "vox_grade": null,
       "tech_score": null,
@@ -3660,50 +3478,50 @@
       "mode": "API + price updater",
       "manual": false,
       "health": "FRESH",
-      "total_usd": 78753.61,
-      "sync_age_days": 0.4
+      "total_usd": 77678.63,
+      "sync_age_days": 1.6
     },
     "Binance": {
       "mode": "API",
       "manual": false,
       "health": "FRESH",
-      "total_usd": 15635.84,
-      "sync_age_days": 0.4
+      "total_usd": 15320.49,
+      "sync_age_days": 0.7
     },
     "Bitso": {
       "mode": "API",
       "manual": false,
       "health": "FRESH",
-      "total_usd": 787.21,
-      "sync_age_days": 0.4
+      "total_usd": 771.53,
+      "sync_age_days": 0.7
     },
     "GBM Main": {
       "mode": "Manual Excel",
       "manual": true,
       "health": "STALE",
       "total_usd": 71814.36,
-      "sync_age_days": 27.3
+      "sync_age_days": 28.6
     },
     "GBM USA": {
       "mode": "Manual Excel",
       "manual": true,
       "health": "STALE",
       "total_usd": 17870.63,
-      "sync_age_days": 27.3
+      "sync_age_days": 28.6
     },
     "Schwab": {
       "mode": "Manual Excel/Photo",
       "manual": true,
       "health": "STALE",
       "total_usd": 1609.18,
-      "sync_age_days": 27.3
+      "sync_age_days": 28.5
     },
     "IBKR": {
       "mode": "Manual Excel/Photo",
       "manual": true,
       "health": "STALE",
       "total_usd": 1423.75,
-      "sync_age_days": 27.3
+      "sync_age_days": 28.6
     }
   }
 }

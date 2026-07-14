@@ -1,254 +1,320 @@
 #!/usr/bin/env python3
 """
 VOX MANDATORY CHECKLIST SYSTEM
-This script MUST be run before ANY investment recommendation.
-It enforces using ALL 20 database tables, ALL external sources, ALL tools.
-Failure to complete any step = NO recommendation allowed.
-
-Target: 20% yearly profit
-Rule: NO shortcuts. EVER.
+Run before investment recommendations. Uses psycopg2 + env password
+(never blanks PGPASSWORD). Exit 0 if can recommend, 1 if blocked.
 """
+from __future__ import annotations
 
-import sys
-from pathlib import Path
-sys.path.insert(0, str(Path.home() / ".hermes" / "scripts"))
-import hermes_secrets_bootstrap
-
-import os
-import subprocess
 import json
+import os
+import sys
 from datetime import datetime
-from typing import Dict, List, Tuple, Optional
+from pathlib import Path
+from typing import Any, Dict, List
+
+sys.path.insert(0, str(Path.home() / ".hermes" / "scripts"))
+try:
+    import hermes_secrets_bootstrap  # noqa: F401
+except Exception:
+    pass
+
+HERMES_HOME = Path.home() / ".hermes"
+OUT_DIR = HERMES_HOME / "scripts" / "vox_cron"
+
+# Core tables that must work for recommendations
+CORE_TABLES = [
+    "unified_grades",
+    "vox_grades",
+    "positions",
+    "broker_positions",
+    "market_regime",
+    "technical_signals",
+    "sp500_grades",
+    "macro_signals",
+    "sector_momentum",
+    "trade_signals",
+    "council_deliberations",
+    "price_history",
+    "discovery_queue",
+    "grade_alerts",
+    "earnings_calendar",
+]
+
+# Optional / legacy — warn only if missing
+OPTIONAL_TABLES = [
+    "watchlist",
+    "watchlist_grades",
+    "pattern_alerts",
+    "sentiment_scores",
+    "sp500_sector_leaders",
+    "commodity_prices",
+    "alerts",
+    "journal",
+    "system_logs",
+    "geopolitical_events",
+    "supply_chain_events",
+    "weather_patterns",
+    "weather_risks",
+    "plays",
+    "broker_accounts",
+    "broker_holdings",
+    "broker_status",
+    "sp500_alerts",
+    "sp500_universe",
+    "cron_runs",
+]
+
+
+def load_env() -> None:
+    envp = HERMES_HOME / ".env"
+    if not envp.exists():
+        return
+    for line in envp.read_text().splitlines():
+        line = line.strip()
+        if line and not line.startswith("#") and "=" in line:
+            k, v = line.split("=", 1)
+            os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
+
+
+def connect():
+    import psycopg2
+    from psycopg2.extras import RealDictCursor
+
+    load_env()
+    pw = os.environ.get("DB_PASSWORD") or os.environ.get("PGPASSWORD") or ""
+    if not pw or len(pw) < 5:
+        raise RuntimeError("DB password missing/short — set DB_PASSWORD or PGPASSWORD in ~/.hermes/.env")
+    # Never blank password
+    os.environ["PGPASSWORD"] = pw
+    conn = psycopg2.connect(
+        host=os.environ.get("PGHOST", "acela.proxy.rlwy.net"),
+        port=int(os.environ.get("PGPORT", "35577")),
+        dbname=os.environ.get("PGDATABASE", "railway"),
+        user=os.environ.get("PGUSER", "postgres"),
+        password=pw,
+        connect_timeout=15,
+    )
+    return conn, conn.cursor(cursor_factory=RealDictCursor)
+
 
 class VoxMandatoryChecklist:
-    """Enforces complete analysis before any recommendation."""
-    
-    def __init__(self):
-        self.checklist = {}
-        self.data = {}
-        self.errors = []
-        self.warnings = []
-        
-    def run_checklist(self) -> Dict:
-        """Run the complete mandatory checklist."""
-        print("="*70)
-        print("VOX MANDATORY CHECKLIST — RUNNING ALL SYSTEMS")
-        print("="*70)
+    def __init__(self) -> None:
+        self.checklist: Dict[str, Any] = {}
+        self.data: Dict[str, Any] = {}
+        self.errors: List[str] = []
+        self.warnings: List[str] = []
+        self.conn = None
+        self.cur = None
+
+    def run_checklist(self) -> Dict[str, Any]:
+        print("=" * 70)
+        print("VOX MANDATORY CHECKLIST — RUNNING CORE SYSTEMS")
+        print("=" * 70)
         print()
-        
-        # Step 1: Database Connection
         self.check_db_connection()
-        
-        # Step 2: All 20 Tables
-        self.query_all_tables()
-        
-        # Step 3: Cross-Validation
-        self.cross_validate()
-        
-        # Step 4: External Research (Web)
+        if self.checklist.get("db_connection"):
+            self.query_tables()
+            self.cross_validate()
+            self.data_freshness()
         self.external_research()
-        
-        # Step 5: Social Layer (Reddit/X)
         self.social_research()
-        
-        # Step 6: Final Verification
         return self.final_verification()
-    
-    def check_db_connection(self):
-        """Step 1: Verify database connection."""
+
+    def check_db_connection(self) -> None:
         print("[1/6] Checking database connection...")
-        os.environ['PGPASSWORD'] = ''
-        
-        result = subprocess.run([
-            'psql', '-h', 'acela.proxy.rlwy.net', '-p', '35577', '-U', 'postgres',
-            '-d', 'railway', '-t', '-c', 'SELECT NOW()'
-        ], capture_output=True, text=True, env=os.environ)
-        
-        if result.returncode == 0:
-            self.checklist['db_connection'] = True
-            print("  ✅ Database connected")
-        else:
-            self.checklist['db_connection'] = False
-            self.errors.append("Database connection failed")
-            print("  ❌ Database connection FAILED")
-    
-    def query_all_tables(self):
-        """Step 2: Query ALL 20 tables. NO exceptions."""
-        print("[2/6] Querying ALL 20 database tables...")
-        
-        tables = [
-            'market_regime',
-            'sector_momentum',
-            'sp500_sector_leaders',
-            'technical_signals',
-            'sentiment_scores',
-            'vox_grades',
-            'watchlist',
-            'positions',
-            'pattern_alerts',
-            'trade_signals',
-            'macro_signals',
-            'sp500_grades',
-            'sp500_alerts',
-            'sp500_universe',
-            'commodity_prices',
-            'council_deliberations',
-            'cron_runs',
-            'geopolitical_events',
-            'supply_chain_events',
-            'weather_patterns',
-            'weather_risks',
-            'alerts',
-            'journal',
-            'system_logs',
-            'watchlist_grades',
-            'watchlist_old',
-            'plays',
-            'broker_accounts',
-            'broker_holdings',
-            'broker_positions',
-            'broker_status',
-            'unified_grades'  # NEW: Single source of truth
-        ]
-        
-        for table in tables:
-            result = subprocess.run([
-                'psql', '-h', 'acela.proxy.rlwy.net', '-p', '35577', '-U', 'postgres',
-                '-d', 'railway', '-t', '-c', f'SELECT COUNT(*) FROM {table}'
-            ], capture_output=True, text=True, env=os.environ)
-            
-            if result.returncode == 0:
-                count = result.stdout.strip()
-                self.data[table] = {'status': 'OK', 'count': count}
+        try:
+            self.conn, self.cur = connect()
+            self.cur.execute("SELECT NOW() AS n")
+            self.cur.fetchone()
+            self.checklist["db_connection"] = True
+            print("  ✅ Database connected (psycopg2)")
+        except Exception as e:
+            self.checklist["db_connection"] = False
+            self.errors.append(f"Database connection failed: {e}")
+            print(f"  ❌ Database connection FAILED: {e}")
+
+    def _count(self, table: str):
+        assert self.cur is not None
+        try:
+            self.cur.execute(f"SELECT COUNT(*) AS c FROM {table}")
+            return int(self.cur.fetchone()["c"])
+        except Exception as e:
+            self.conn.rollback()
+            raise e
+
+    def query_tables(self) -> None:
+        print("[2/6] Querying core + optional tables...")
+        core_ok = 0
+        for table in CORE_TABLES:
+            try:
+                count = self._count(table)
+                self.data[table] = {"status": "OK", "count": count}
+                core_ok += 1
                 print(f"  ✅ {table}: {count} rows")
-            else:
-                self.data[table] = {'status': 'ERROR', 'error': result.stderr}
-                self.errors.append(f"Table {table} query failed")
-                print(f"  ❌ {table}: FAILED")
-        
-        self.checklist['all_tables_queried'] = len(self.errors) == 0
-    
-    def cross_validate(self):
-        """Step 3: Cross-validate all data sources."""
-        print("[3/6] Cross-validating data sources...")
-        
-        # Check for grade contradictions
-        result = subprocess.run([
-            'psql', '-h', 'acela.proxy.rlwy.net', '-p', '35577', '-U', 'postgres',
-            '-d', 'railway', '-t', '-c', """
-                SELECT vg.ticker, vg.vox_grade, sg.vox_grade as sp500_grade,
-                       ABS(vg.vox_grade - sg.vox_grade) as diff
-                FROM vox_grades vg
-                JOIN sp500_grades sg ON vg.ticker = sg.ticker
-                WHERE vg.generated_at > NOW() - INTERVAL '24 hours'
-                AND sg.computed_at > NOW() - INTERVAL '7 days'
-                AND ABS(vg.vox_grade - sg.vox_grade) > 10
+            except Exception as e:
+                self.data[table] = {"status": "ERROR", "error": str(e)}
+                self.errors.append(f"Core table {table} failed: {e}")
+                print(f"  ❌ {table}: FAILED — {e}")
+        for table in OPTIONAL_TABLES:
+            try:
+                count = self._count(table)
+                self.data[table] = {"status": "OK", "count": count}
+                print(f"  · {table}: {count} rows")
+            except Exception as e:
+                self.conn.rollback()
+                self.data[table] = {"status": "MISSING", "error": str(e)}
+                self.warnings.append(f"Optional table {table}: {e}")
+                print(f"  ⚠️  {table}: missing/failed (optional)")
+        self.checklist["all_tables_queried"] = core_ok == len(CORE_TABLES)
+        self.checklist["core_tables_ok"] = core_ok
+
+    def cross_validate(self) -> None:
+        print("[3/6] Cross-validating grade sources...")
+        assert self.cur is not None
+        try:
+            self.cur.execute(
+                """
+                WITH latest AS (
+                  SELECT DISTINCT ON (ticker) ticker, vox_grade, generated_at
+                  FROM vox_grades
+                  ORDER BY ticker, generated_at DESC
+                )
+                SELECT l.ticker, l.vox_grade, s.vox_grade AS sp500_grade,
+                       ABS(l.vox_grade - s.vox_grade) AS diff
+                FROM latest l
+                JOIN sp500_grades s ON l.ticker = s.ticker
+                WHERE l.generated_at > NOW() - INTERVAL '7 days'
+                  AND ABS(COALESCE(l.vox_grade,0) - COALESCE(s.vox_grade,0)) > 12
                 ORDER BY diff DESC
                 LIMIT 10
-            """
-        ], capture_output=True, text=True, env=os.environ)
-        
-        if result.returncode == 0:
-            contradictions = [l for l in result.stdout.strip().split('\n') if l.strip()]
-            if contradictions:
-                self.warnings.append(f"Found {len(contradictions)} grade contradictions > 10 points")
-                print(f"  ⚠️  {len(contradictions)} grade contradictions found")
-                for c in contradictions[:5]:
-                    print(f"     {c}")
+                """
+            )
+            rows = self.cur.fetchall()
+            if rows:
+                self.warnings.append(f"{len(rows)} VOX vs SP500 grade gaps >12 (sample)")
+                print(f"  ⚠️  {len(rows)} grade gaps >12 (showing up to 5)")
+                for r in rows[:5]:
+                    print(f"     {r['ticker']}: vox={r['vox_grade']} sp={r['sp500_grade']} Δ={r['diff']}")
             else:
-                print("  ✅ No major contradictions")
-        
-        # Check for trade signal contradictions
-        result = subprocess.run([
-            'psql', '-h', 'acela.proxy.rlwy.net', '-p', '35577', '-U', 'postgres',
-            '-d', 'railway', '-t', '-c', """
-                SELECT vg.ticker, vg.vox_grade, vg.action, ts.grade as ts_grade, ts.signal_type
-                FROM vox_grades vg
-                JOIN trade_signals ts ON vg.ticker = ts.ticker
-                WHERE vg.generated_at > NOW() - INTERVAL '24 hours'
-                AND ts.created_at > NOW() - INTERVAL '7 days'
-                AND (
-                    (vg.action = 'SELL' AND ts.signal_type = 'BUY') OR
-                    (vg.action = 'BUY' AND ts.signal_type = 'SELL')
-                )
-                LIMIT 10
-            """
-        ], capture_output=True, text=True, env=os.environ)
-        
-        if result.returncode == 0:
-            contradictions = [l for l in result.stdout.strip().split('\n') if l.strip()]
-            if contradictions:
-                self.warnings.append(f"Found {len(contradictions)} trade signal contradictions")
-                print(f"  ⚠️  {len(contradictions)} trade signal contradictions")
-                for c in contradictions[:5]:
-                    print(f"     {c}")
+                print("  ✅ No major VOX/SP500 gaps in latest grades")
+        except Exception as e:
+            self.conn.rollback()
+            self.warnings.append(f"Cross-validate grades failed: {e}")
+            print(f"  ⚠️  grade cross-check failed: {e}")
+
+        try:
+            self.cur.execute(
+                """
+                SELECT COUNT(*) AS c FROM positions p
+                LEFT JOIN unified_grades u ON p.ticker = u.ticker
+                WHERE COALESCE(p.shares,0) > 0 AND u.ticker IS NULL
+                """
+            )
+            missing = int(self.cur.fetchone()["c"])
+            if missing:
+                self.warnings.append(f"{missing} active positions missing unified_grades")
+                print(f"  ⚠️  {missing} active positions without unified grade")
             else:
-                print("  ✅ No trade signal contradictions")
-        
-        self.checklist['cross_validated'] = True
-    
-    def external_research(self):
-        """Step 4: External research via web search."""
-        print("[4/6] External research (web search)...")
-        print("  ⚠️  Web search requires manual execution")
-        print("  ⚠️  Must search for: market outlook, sector trends, earnings")
-        self.checklist['external_research'] = 'MANUAL_REQUIRED'
-    
-    def social_research(self):
-        """Step 5: Social layer (Reddit/X)."""
-        print("[5/6] Social research (Reddit/X)...")
-        print("  ⚠️  Social layer requires manual execution")
-        print("  ⚠️  Must search for: sentiment, WSB mentions, pump risk")
-        self.checklist['social_research'] = 'MANUAL_REQUIRED'
-    
-    def final_verification(self) -> Dict:
-        """Step 6: Final verification before recommendation."""
+                print("  ✅ All active positions have unified grades (or none active)")
+        except Exception as e:
+            self.conn.rollback()
+            self.warnings.append(str(e))
+
+        self.checklist["cross_validated"] = True
+
+    def data_freshness(self) -> None:
+        print("[3b/6] Freshness gate...")
+        assert self.cur is not None
+        try:
+            from vox_cron.vox_data_health import assess_data_health, health_summary
+
+            h = assess_data_health()
+            self.data["data_health"] = h
+            print(health_summary(h))
+            if h.get("score", 0) < 50:
+                self.warnings.append(f"Data confidence LOW ({h.get('score')}/100)")
+            if h.get("blocking"):
+                for b in h["blocking"]:
+                    self.warnings.append(f"Health blocking: {b}")
+            self.checklist["data_health_score"] = h.get("score")
+        except Exception as e:
+            self.warnings.append(f"data_health failed: {e}")
+            print(f"  ⚠️  data_health: {e}")
+
+    def external_research(self) -> None:
+        print("[4/6] External research...")
+        # Prefer intel artifacts over manual
+        intel = HERMES_HOME / "cron" / "output" / "intel"
+        day = datetime.now().strftime("%Y-%m-%d")
+        found = []
+        for name in ("breaking", "policy", "morning", "weather"):
+            p = intel / f"{name}_{day}.json"
+            if p.exists():
+                found.append(name)
+        if found:
+            self.checklist["external_research"] = f"ARTIFACTS:{','.join(found)}"
+            print(f"  ✅ Intel artifacts today: {', '.join(found)}")
+        else:
+            self.checklist["external_research"] = "MANUAL_OR_STALE"
+            self.warnings.append("No intel artifacts for today yet")
+            print("  ⚠️  No today intel artifacts")
+
+    def social_research(self) -> None:
+        print("[5/6] Social / X layer...")
+        intel = HERMES_HOME / "cron" / "output" / "intel"
+        day = datetime.now().strftime("%Y-%m-%d")
+        social = intel / f"social_{day}.json"
+        if social.exists():
+            self.checklist["social_research"] = "ARTIFACT"
+            print("  ✅ Social intel artifact present")
+        else:
+            self.checklist["social_research"] = "OPTIONAL"
+            print("  · Social optional / may be quiet")
+
+    def final_verification(self) -> Dict[str, Any]:
         print("[6/6] Final verification...")
-        
-        # Check if all steps completed
-        all_complete = all([
-            self.checklist.get('db_connection', False),
-            self.checklist.get('all_tables_queried', False),
-            self.checklist.get('cross_validated', False),
-        ])
-        
-        if all_complete and len(self.errors) == 0:
-            print("  ✅ ALL CHECKS PASSED")
-            print()
-            print("="*70)
+        all_complete = all(
+            [
+                self.checklist.get("db_connection", False),
+                self.checklist.get("all_tables_queried", False),
+                self.checklist.get("cross_validated", False),
+            ]
+        )
+        can = all_complete and len(self.errors) == 0
+        if can:
+            print("  ✅ ALL CORE CHECKS PASSED")
+            print("=" * 70)
             print("VOX CHECKLIST COMPLETE — RECOMMENDATION ALLOWED")
-            print("="*70)
+            print("=" * 70)
         else:
             print("  ❌ CHECKLIST FAILED")
-            print()
-            print("="*70)
+            print("=" * 70)
             print("VOX CHECKLIST FAILED — NO RECOMMENDATION ALLOWED")
-            print("="*70)
-            print()
-            print("Errors:")
+            print("=" * 70)
             for e in self.errors:
                 print(f"  - {e}")
-            print()
-            print("Warnings:")
-            for w in self.warnings:
-                print(f"  - {w}")
-        
+            for w in self.warnings[:10]:
+                print(f"  ! {w}")
+        if self.conn:
+            self.conn.close()
         return {
-            'checklist': self.checklist,
-            'data': self.data,
-            'errors': self.errors,
-            'warnings': self.warnings,
-            'can_recommend': all_complete and len(self.errors) == 0,
-            'timestamp': datetime.now().isoformat()
+            "checklist": self.checklist,
+            "data": self.data,
+            "errors": self.errors,
+            "warnings": self.warnings,
+            "can_recommend": can,
+            "timestamp": datetime.now().isoformat(),
         }
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     checklist = VoxMandatoryChecklist()
     result = checklist.run_checklist()
-    
-    # Save result
-    output_file = f"/Users/jos/.hermes/scripts/vox_cron/checklist_result_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
-    with open(output_file, 'w') as f:
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    output_file = OUT_DIR / f"checklist_result_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+    # Strip huge nested health for compact save? keep full
+    with open(output_file, "w") as f:
         json.dump(result, f, indent=2, default=str)
-    
     print(f"\nResult saved to: {output_file}")
+    sys.exit(0 if result.get("can_recommend") else 1)

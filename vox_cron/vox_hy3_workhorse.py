@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """
 VOX hy3:free Workhorse Router
-Tests and routes tasks to tencent/hy3:free (or fallback) for heavy-lift, low-risk work
-where Sonnet 5 handles architecture/review and paid models handle high-stakes synthesis.
+Routes to cheap workhorses (hy3:free, deepseek, x-ai/grok-4.3) for heavy-lift low-risk work.
+Grok 4.3 (x-ai) available as workhorse alongside OpenRouter/Kimi options.
+Grok 4.5 reserved for brain/high-stakes (via Hermes default or x-ai/grok-4.5).
 
 Strategy:
-- Use hy3:free for structured drafting, summarization, classification, and ranking at scale.
+- Use hy3:free / grok-4.3 for structured drafting, summarization, classification, ranking at scale.
 - Always validate output shape before downstream use.
-- Fallback to deepseek-v4-flash or Sonnet 5 if hy3:free returns null content or malformed JSON.
+- Fallback chain includes deepseek-v4-flash and Grok options.
 """
 import sys
 from pathlib import Path
@@ -19,7 +20,8 @@ from vox_utils import call_openrouter
 
 
 def hy3_draft(system_prompt: str, user_prompt: str, max_tokens: int = 800, temperature: float = 0.3,
-              script_name: str = "hy3_workhorse", fallback_model: str = "deepseek/deepseek-v4-flash",
+              script_name: str = "hy3_workhorse",
+              fallback_model: str = "deepseek/deepseek-v4-flash",  # or "x-ai/grok-4.3"
               cheap_hy3: str = "tencent/hy3-preview") -> dict:
     """Call hy3:free with a system prompt and fall back if content is missing."""
     # Enforce content field usage
@@ -30,7 +32,7 @@ def hy3_draft(system_prompt: str, user_prompt: str, max_tokens: int = 800, tempe
     )
     # For the free endpoint, strip any system output-field instructions because it tends to echo them.
     free_system = system_prompt.strip()
-    models = ["tencent/hy3:free", cheap_hy3, fallback_model]
+    models = ["tencent/hy3:free", cheap_hy3, fallback_model, "x-ai/grok-4.3"]
     result: dict = {}
     for model in models:
         sys_to_use = free_system if model.endswith(":free") else full_system

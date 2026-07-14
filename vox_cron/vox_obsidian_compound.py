@@ -145,13 +145,44 @@ def db_cost_summary() -> str:
 
 
 def db_open_issues() -> str:
-    """Pull stale grades and any known issues."""
-    rows = query_db("""
-        SELECT COUNT(*) FROM vox_grades WHERE generated_at < NOW() - INTERVAL '7 days' OR generated_at IS NULL
-    """)
+    """Pull real issues: latest-per-ticker stale grades, broker staleness, breaking shocks."""
+    lines = []
+    # Pattern 7: latest per ticker only
+    rows = query_db(
+        """
+        SELECT COUNT(*) FROM (
+          SELECT ticker FROM vox_grades
+          GROUP BY ticker
+          HAVING MAX(generated_at) < NOW() - INTERVAL '7 days' OR MAX(generated_at) IS NULL
+        ) s
+        """
+    )
     stale = rows[0][0] if rows else 0
     stale = int(stale.strip()) if isinstance(stale, str) else int(stale)
-    return f"- {stale} stale grades (>7 days)"
+    lines.append(f"- {stale} tickers with latest grade older than 7d")
+
+    rows2 = query_db(
+        """
+        SELECT broker, MAX(last_sync_at)
+        FROM broker_positions
+        GROUP BY broker
+        HAVING MAX(last_sync_at) < NOW() - INTERVAL '7 days'
+        ORDER BY MAX(last_sync_at)
+        """
+    )
+    if rows2:
+        stale_brokers = ", ".join(f"{r[0]} ({r[1]})" for r in rows2)
+        lines.append(f"- Stale brokers (>7d): {stale_brokers}")
+
+    breaking = Path.home() / "Documents" / "Obsidian" / "VOX" / "vox" / "memory" / "decisions" / "Breaking-LATEST.md"
+    if breaking.exists():
+        age_h = (datetime.now().timestamp() - breaking.stat().st_mtime) / 3600
+        head = ""
+        for line in breaking.read_text().splitlines():
+            if line.startswith("**Headline:**") or line.startswith("**Severity:**"):
+                head += line + " "
+        lines.append(f"- Breaking note ({age_h:.1f}h old): {head.strip()[:180] or 'see [[memory/decisions/Breaking-LATEST]]'}")
+    return "\n".join(lines) if lines else "- No open issues"
 
 
 def get_daily_log_path() -> Path:
@@ -568,7 +599,7 @@ def sync_daily_log(sync_idx: int):
             content += "\n\n" + block
 
     # Update research links section once per day (replace placeholder)
-    research_links = f"\n**Research today:** {smart_link} | {sector_link} | {discovery_link} | {news_link} | {earnings_link}\n"
+    research_links = f"\n**Research today:** {smart_link} | {sector_link} | {discovery_link} | {news_link} | {earnings_link} | [[memory/decisions/Breaking-LATEST|Breaking Shock]]\n"
     if "## Research Links" in content:
         parts = content.split("## Research Links", 1)
         after_section = parts[1].split("\n##", 1)

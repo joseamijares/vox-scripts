@@ -102,6 +102,11 @@ _DEFAULT_PRICING = {
     "tencent/hy3": {"input": 0.14, "output": 0.58},
     "tencent/hy3-20260706": {"input": 0.14, "output": 0.58},
     "tencent/hy3-preview": {"input": 0.063, "output": 0.21},
+    # Grok via xAI (brain + workhorse) - added per user request
+    "x-ai/grok-4.5": {"input": 2.50, "output": 12.00},  # OpenRouter slug for Grok 4.5 (brain)
+    "x-ai/grok-4.3": {"input": 1.00, "output": 5.00},   # OpenRouter slug for Grok 4.3 (workhorse)
+    "grok-4.5": {"input": 2.50, "output": 12.00},      # direct xai-oauth
+    "grok-4.3": {"input": 1.00, "output": 5.00},       # direct xai-oauth workhorse
 }
 
 
