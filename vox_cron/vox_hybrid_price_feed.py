@@ -441,6 +441,7 @@ def update_prices(ticker_map, table='positions', use_yahoo_fallback=True):
                                 ELSE shares * %s
                             END,
                             price_source = %s,
+                            price_asof = NOW(),
                             updated_at = NOW()
                         WHERE ticker = %s
                     """, (price, price, price, price, source, ticker))
