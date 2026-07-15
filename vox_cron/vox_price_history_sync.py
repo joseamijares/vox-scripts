@@ -197,173 +197,248 @@ def clean_records(records, source):
     return clean
 
 
-def persist_records(cur, records):
-    """Insert only new dates; ignore conflicts."""
+def persist_records(cur, records, upsert: bool = True):
+    """Insert new dates; by default UPSERT so corrections/late bars overwrite stale."""
     if not records:
         return 0
     inserted = 0
     for rec in records:
-        cur.execute("""
-            INSERT INTO price_history
-            (ticker, date, open, high, low, close, volume, adj_close, source)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
-            ON CONFLICT (ticker, date) DO NOTHING
-        """, (
-            rec['ticker'], rec['date'], rec['open'], rec['high'],
-            rec['low'], rec['close'], rec['volume'], rec['adj_close'], rec['source']
-        ))
+        if upsert:
+            cur.execute(
+                """
+                INSERT INTO price_history
+                (ticker, date, open, high, low, close, volume, adj_close, source)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+                ON CONFLICT (ticker, date) DO UPDATE SET
+                  open = EXCLUDED.open,
+                  high = EXCLUDED.high,
+                  low = EXCLUDED.low,
+                  close = EXCLUDED.close,
+                  volume = EXCLUDED.volume,
+                  adj_close = EXCLUDED.adj_close,
+                  source = EXCLUDED.source
+                """,
+                (
+                    rec["ticker"],
+                    rec["date"],
+                    rec["open"],
+                    rec["high"],
+                    rec["low"],
+                    rec["close"],
+                    rec["volume"],
+                    rec["adj_close"],
+                    rec["source"],
+                ),
+            )
+        else:
+            cur.execute(
+                """
+                INSERT INTO price_history
+                (ticker, date, open, high, low, close, volume, adj_close, source)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+                ON CONFLICT (ticker, date) DO NOTHING
+                """,
+                (
+                    rec["ticker"],
+                    rec["date"],
+                    rec["open"],
+                    rec["high"],
+                    rec["low"],
+                    rec["close"],
+                    rec["volume"],
+                    rec["adj_close"],
+                    rec["source"],
+                ),
+            )
         if cur.rowcount > 0:
             inserted += 1
     return inserted
 
 
+def fetch_yahoo_chart_bars(tickers, range_="2mo"):
+    """Primary Yahoo path via chart API (fresher than yfinance history)."""
+    from vox_price_quote import yahoo_chart
+
+    records_by_ticker = {}
+    for t in tickers:
+        try:
+            _meta, rows = yahoo_chart(t, range_=range_, interval="1d")
+            if rows:
+                records_by_ticker[t] = rows
+        except Exception as e:
+            print(f"  ⚠️ Yahoo chart error for {t}: {e}")
+        time.sleep(0.08)
+    return records_by_ticker
+
+
+def fetch_yahoo_bars(tickers, period="60d"):
+    """Fetch daily bars — chart API first, yfinance fallback."""
+    if not tickers:
+        return {}
+    # map period-ish to chart range
+    range_ = "2mo" if period in ("60d", "2mo", "1mo") else "3mo"
+    chart = fetch_yahoo_chart_bars(tickers, range_=range_)
+    missing = [t for t in tickers if t not in chart]
+    if not missing:
+        return chart
+    # fallback yfinance for leftovers
+    for t in missing:
+        try:
+            tk = yf.Ticker(t)
+            hist = tk.history(period=period, interval="1d", timeout=8)
+            if hist is None or hist.empty:
+                continue
+            records = []
+            for idx, row in hist.iterrows():
+                dt = idx.date() if hasattr(idx, "date") else idx
+                records.append(
+                    {
+                        "ticker": t,
+                        "date": dt,
+                        "open": row.get("Open"),
+                        "high": row.get("High"),
+                        "low": row.get("Low"),
+                        "close": row.get("Close"),
+                        "volume": row.get("Volume"),
+                        "adj_close": row.get("Adj Close"),
+                        "source": "yahoo",
+                    }
+                )
+            if records:
+                chart[t] = records
+        except Exception as e:
+            print(f"  ⚠️ Yahoo yf error for {t}: {e}")
+        time.sleep(0.05)
+    return chart
+
+
 def mark_unavailable(cur, ticker, reason):
-    cur.execute("""
+    cur.execute(
+        """
         INSERT INTO price_unavailable (ticker, reason)
         VALUES (%s, %s)
         ON CONFLICT (ticker) DO UPDATE SET
             reason = EXCLUDED.reason,
             updated_at = NOW(),
             fail_count = price_unavailable.fail_count + 1
-    """, (ticker, reason))
+        """,
+        (ticker, reason),
+    )
+
 
 def fetch_alpaca_bars(tickers, start, end):
-    """Fetch daily bars from Alpaca for a list of tickers.
-    Returns dict {ticker: [records]}."""
+    """Fetch daily bars from Alpaca for a list of tickers. Returns dict {ticker: [records]}."""
     if not ALPACA_API_KEY or not ALPACA_SECRET_KEY or not tickers:
         return {}
     headers = {
-        'APCA-API-KEY-ID': ALPACA_API_KEY,
-        'APCA-API-SECRET-KEY': ALPACA_SECRET_KEY
+        "APCA-API-KEY-ID": ALPACA_API_KEY,
+        "APCA-API-SECRET-KEY": ALPACA_SECRET_KEY,
     }
     records_by_ticker = {}
-    # Alpaca bars endpoint supports up to 100 symbols per request
     for i in range(0, len(tickers), 100):
-        batch = tickers[i:i+100]
-        symbols = ','.join(urllib.parse.quote(s, safe='') for s in batch)
-        url = f"{ALPACA_DATA_URL}/v2/stocks/bars?symbols={symbols}&timeframe=1Day&start={start}&end={end}&limit=1000&adjustment=all"
+        batch = tickers[i : i + 100]
+        symbols = ",".join(urllib.parse.quote(s, safe="") for s in batch)
+        url = (
+            f"{ALPACA_DATA_URL}/v2/stocks/bars?symbols={symbols}"
+            f"&timeframe=1Day&start={start}&end={end}&limit=1000&adjustment=all"
+        )
         try:
             r = requests.get(url, headers=headers, timeout=30)
             if r.status_code != 200:
                 print(f"  ⚠️ Alpaca bars error {r.status_code}: {r.text[:200]}")
                 continue
             data = r.json()
-            bars_by_symbol = data.get('bars', {})
+            bars_by_symbol = data.get("bars", {})
             for symbol, bars in bars_by_symbol.items():
                 records = []
                 for bar in bars:
-                    t = bar.get('t')
+                    t = bar.get("t")
                     if not t:
                         continue
-                    dt = datetime.fromisoformat(t.replace('Z', '+00:00')).date()
-                    records.append({
-                        'ticker': symbol,
-                        'date': dt,
-                        'open': bar.get('o'),
-                        'high': bar.get('h'),
-                        'low': bar.get('l'),
-                        'close': bar.get('c'),
-                        'volume': bar.get('v'),
-                        'adj_close': bar.get('c'),  # adjustment=all returns split-adjusted
-                    })
+                    dt = datetime.fromisoformat(t.replace("Z", "+00:00")).date()
+                    records.append(
+                        {
+                            "ticker": symbol,
+                            "date": dt,
+                            "open": bar.get("o"),
+                            "high": bar.get("h"),
+                            "low": bar.get("l"),
+                            "close": bar.get("c"),
+                            "volume": bar.get("v"),
+                            "adj_close": bar.get("c"),
+                            "source": "alpaca",
+                        }
+                    )
                 records_by_ticker[symbol] = records
         except Exception as e:
             print(f"  ⚠️ Alpaca bars request error: {e}")
     return records_by_ticker
 
 
-def fetch_yahoo_bars(tickers, period='60d'):
-    """Fetch daily bars from Yahoo Finance per ticker with timeout. Returns dict {ticker: [records]}."""
-    if not tickers:
-        return {}
-    records_by_ticker = {}
-    for t in tickers:
-        try:
-            tk = yf.Ticker(t)
-            hist = tk.history(period=period, interval='1d', timeout=5)
-            if hist is None or hist.empty:
-                continue
-            records = []
-            for idx, row in hist.iterrows():
-                dt = idx.date() if hasattr(idx, 'date') else idx
-                records.append({
-                    'ticker': t,
-                    'date': dt,
-                    'open': row.get('Open'),
-                    'high': row.get('High'),
-                    'low': row.get('Low'),
-                    'close': row.get('Close'),
-                    'volume': row.get('Volume'),
-                    'adj_close': row.get('Adj Close'),
-                })
-            records_by_ticker[t] = records
-        except Exception as e:
-            print(f"  ⚠️ Yahoo bars error for {t}: {e}")
-        time.sleep(0.05)
-    return records_by_ticker
-
-
 def fetch_batch_with_retry(tickers, start, end, retries=MAX_RETRIES):
-    """Try Alpaca first, then Yahoo, with retries and backoff."""
+    """Try Yahoo chart first (fresh), then Alpaca, then yfinance fallback."""
     for attempt in range(retries):
-        # Alpaca: only eligible symbols
+        # Primary: Yahoo chart API (most reliable for same-day crash visibility)
+        result = fetch_yahoo_bars(tickers, period="60d")
+        if result:
+            return result, "yahoo_chart"
         eligible = [t for t in tickers if is_alpaca_eligible(t)]
         if eligible:
             result = fetch_alpaca_bars(eligible, start, end)
             if result:
-                return result, 'alpaca'
-        # Fallback: Yahoo for all
-        result = fetch_yahoo_bars(tickers, period='60d')
-        if result:
-            return result, 'yahoo'
+                return result, "alpaca"
         if attempt < retries - 1:
-            sleep = 2 ** attempt
+            sleep = 2**attempt
             print(f"  ⏳ Retry {attempt+1} after {sleep}s")
             time.sleep(sleep)
-    return {}, 'failed'
+    return {}, "failed"
 
 
 def sync_tickers(cur, tickers, lookback_days=DAYS_BACK):
-    """Sync price_history for a list of tickers, inserting only missing dates."""
+    """Sync price_history — always refresh last ~7 calendar days (UPSERT)."""
     if not tickers:
         return 0, 0, []
     end = date.today()
     start = end - timedelta(days=lookback_days + 5)
-
-    # Determine which tickers already have recent history
+    # Force refresh if latest bar older than today OR we want rolling week upsert
+    FORCE_REFRESH_DAYS = 7
     latest_dates = latest_history_dates(cur, tickers)
     need_fetch = []
     for t in tickers:
         latest = latest_dates.get(t)
-        if latest is None or (end - latest).days > 1:
-            need_fetch.append(t)
-    if not need_fetch:
-        print(f"  All {len(tickers)} tickers already up to date")
-        return 0, 0, []
+        if latest is None or (end - latest).days >= 0:
+            # always include if not same-day bar, or always for force window
+            if latest is None or (end - latest).days > 0 or True:
+                need_fetch.append(t)
+    # Always fetch all in batch for correctness after IBM-class misses
+    need_fetch = list(tickers)
 
-    print(f"  Fetching bars for {len(need_fetch)}/{len(tickers)} tickers (missing recent dates)")
-    results, source = fetch_batch_with_retry(need_fetch, start.isoformat(), end.isoformat())
+    print(f"  Fetching/upserting bars for {len(need_fetch)} tickers (last {lookback_days}d + force refresh)")
+    results, source = fetch_batch_with_retry(
+        need_fetch, start.isoformat(), end.isoformat()
+    )
 
     inserted = 0
     failed = 0
     failed_tickers = []
+    cutoff = end - timedelta(days=FORCE_REFRESH_DAYS)
     for t in need_fetch:
         records = results.get(t, [])
         if not records:
-            # Try Yahoo individually if batch failed for this ticker
-            recs, src = fetch_batch_with_retry([t], start.isoformat(), end.isoformat(), retries=1)
+            recs, src = fetch_batch_with_retry(
+                [t], start.isoformat(), end.isoformat(), retries=1
+            )
             records = recs.get(t, [])
             if records:
                 source = src
         if records:
             cleaned = clean_records(records, source)
-            # Filter out dates already present
-            existing = latest_history_dates(cur, [t])
-            cleaned = [r for r in cleaned if r['date'] > existing.get(t, date.min)]
+            # Upsert entire lookback window (fixes stale same-day / missed crash bars)
+            cleaned = [r for r in cleaned if r["date"] >= start]
             if cleaned:
-                inserted += persist_records(cur, cleaned)
+                inserted += persist_records(cur, cleaned, upsert=True)
         else:
-            mark_unavailable(cur, t, 'no bars returned')
+            mark_unavailable(cur, t, "no bars returned")
             failed += 1
             failed_tickers.append(t)
     return inserted, failed, failed_tickers
