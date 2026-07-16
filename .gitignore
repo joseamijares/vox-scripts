@@ -12,3 +12,9 @@ __pycache__/
 *.pem
 cache/
 tmp/
+# local clutter archives
+_archive/
+vox_cron/_archive/
+__pycache__/
+*.pyc
+
