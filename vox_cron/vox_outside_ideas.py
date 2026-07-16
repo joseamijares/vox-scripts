@@ -13,6 +13,7 @@ import os
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Dict
 
 import psycopg2
 from psycopg2.extras import RealDictCursor
@@ -84,6 +85,21 @@ def ret_map(cur, days: int):
     return out
 
 
+def load_fmp_scores(cur) -> Dict[str, float]:
+    try:
+        cur.execute(
+            """
+            SELECT DISTINCT ON (ticker) UPPER(ticker) t, fund_score
+            FROM fmp_fundamentals
+            WHERE fund_score IS NOT NULL
+            ORDER BY ticker, updated_at DESC NULLS LAST
+            """
+        )
+        return {r["t"]: float(r["fund_score"]) for r in cur.fetchall() if r.get("t")}
+    except Exception:
+        return {}
+
+
 def load_candidates(cur):
     cur.execute(
         """
@@ -115,7 +131,7 @@ def research_score(row):
     return 0.30 * t + 0.25 * f + 0.20 * m + 0.15 * s + 0.10 * g
 
 
-def classify(row, ret_5, ret_63):
+def classify(row, ret_5, ret_63, fmp_score=None):
     t = row["ticker"].upper()
     r5 = ret_5.get(t)
     r63 = ret_63.get(t)
@@ -140,14 +156,28 @@ def classify(row, ret_5, ret_63):
     if tech >= 95 and fund < 55:
         flags.append("tech_hot_fund_soft")
 
+    # Phase 3 fund honesty
+    if fmp_score is None:
+        flags.append("fund=unknown")  # FMP free mid-cap gap
+    else:
+        flags.append(f"fmp={fmp_score:.0f}")
+
     if chase:
         tier = "C"
     elif missing_ret:
         tier = "B"
-    elif g >= 70 and fund >= 55 and rs >= 65 and tech < 98:
+    # Tier A requires known fund path: either grade fund decent AND fmp present OR strong grade fund
+    elif g >= 70 and fund >= 55 and rs >= 65 and tech < 98 and fmp_score is not None:
         tier = "A"
-    elif g >= 68 and fund >= 52 and rs >= 62:
+    elif g >= 70 and fund >= 70 and rs >= 68 and tech < 98:
+        # grade fund hygiene strong enough without FMP
         tier = "A"
+        flags.append("tierA_via_grade_fund")
+    elif g >= 68 and fund >= 52 and rs >= 62 and fmp_score is not None:
+        tier = "A"
+    elif g >= 68 and fund >= 70 and rs >= 65:
+        tier = "A"
+        flags.append("tierA_via_grade_fund")
     elif g >= 65 and rs >= 60:
         tier = "B"
     else:
@@ -161,6 +191,7 @@ def main():
     held = held_tickers(cur)
     ret_5 = ret_map(cur, 5)
     ret_63 = ret_map(cur, 63)
+    fmp = load_fmp_scores(cur)
     rows = load_candidates(cur)
     conn.close()
 
@@ -174,7 +205,8 @@ def main():
         # skip obvious non-equities junk
         if len(t) > 6:
             continue
-        tier, chase, flags, rs, r5, r63 = classify(row, ret_5, ret_63)
+        fmp_score = fmp.get(t)
+        tier, chase, flags, rs, r5, r63 = classify(row, ret_5, ret_63, fmp_score)
         ideas.append(
             {
                 "ticker": t,
@@ -182,6 +214,8 @@ def main():
                 "research": round(rs, 1),
                 "tech": row.get("technical_score"),
                 "fund": row.get("fundamental_score"),
+                "fmp_fund": fmp_score,
+                "fund_label": "known" if fmp_score is not None else "unknown",
                 "macro": row.get("macro_score"),
                 "sent": row.get("sentiment_score"),
                 "action": row.get("action"),
@@ -217,33 +251,37 @@ def main():
         "",
         f"**Generated:** {now}",
         f"**Held excluded:** {len(held)} · **Candidates ranked:** {len(ideas)}",
+        f"**FMP known:** {sum(1 for i in ideas if i.get('fund_label')=='known')} · **fund=unknown:** {sum(1 for i in ideas if i.get('fund_label')=='unknown')}",
         "",
         "> Grades = **hygiene / ranking**, not auto-deploy. Outside-book only. Anti-chase applied.",
         "> Bucket **B** in capital plan = new ideas. Bucket **A** = rebalance owned quality (not listed here).",
+        "> **Fund honesty:** FMP free = mega only. Mid-caps without FMP are tagged `fund=unknown` (not fake precision).",
         "",
         "## Tier A — cleanest new ideas (prefer)",
         "",
-        "| Ticker | Grade | Research | T | F | Entry | Notes |",
-        "|--------|------:|---------:|--:|--:|-------|-------|",
+        "| Ticker | Grade | Research | T | F | FMP | Entry | Notes |",
+        "|--------|------:|---------:|--:|--:|-----:|-------|-------|",
     ]
     for i in tier_a:
+        fmp_c = f"{i['fmp_fund']:.0f}" if i.get("fmp_fund") is not None else "unknown"
         lines.append(
             f"| **{i['ticker']}** | {i['grade']:.0f} | {i['research']:.1f} | "
-            f"{i['tech'] or '—'} | {i['fund'] or '—'} | {i['entry']} | {i.get('sector') or ''} |"
+            f"{i['tech'] or '—'} | {i['fund'] or '—'} | {fmp_c} | {i['entry']} | {i.get('sector') or ''} |"
         )
     if not tier_a:
-        lines.append("| — | | | | | | no clean A this run |")
+        lines.append("| — | | | | | | | no clean A this run |")
 
     lines += [
         "",
-        "## Tier B — secondary (size small)",
+        "## Tier B — secondary (size small; often fund=unknown)",
         "",
-        "| Ticker | Grade | Research | Entry | Notes |",
-        "|--------|------:|---------:|-------|-------|",
+        "| Ticker | Grade | Research | FMP | Entry | Notes |",
+        "|--------|------:|---------:|-----:|-------|-------|",
     ]
     for i in tier_b:
+        fmp_c = f"{i['fmp_fund']:.0f}" if i.get("fmp_fund") is not None else "unknown"
         lines.append(
-            f"| {i['ticker']} | {i['grade']:.0f} | {i['research']:.1f} | {i['entry']} | {i.get('sector') or ''} |"
+            f"| {i['ticker']} | {i['grade']:.0f} | {i['research']:.1f} | {fmp_c} | {i['entry']} | {i.get('sector') or ''} |"
         )
 
     lines += [
@@ -266,8 +304,10 @@ def main():
         "## How Hermes should use this",
         "1. New capital → pick from **Tier A**, then B",
         "2. Never treat Tier C as market orders",
-        "3. Rebalance adds to **owned** quality are separate (Brain sleeve repair)",
-        "4. Still not day-trading; size for balanced mandate",
+        "3. Prefer **FMP known** over fund=unknown when sizing",
+        "4. Rebalance adds to **owned** quality are separate (Brain sleeve repair)",
+        "5. Still not day-trading; size for balanced mandate",
+        "6. Optional: FMP Starter unlocks mid-cap fund scores (not required)",
         "",
         f"JSON: `~/.hermes/cron/output/brain/OutsideIdeas-{day}.json`",
     ]

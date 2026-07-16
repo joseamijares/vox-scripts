@@ -137,14 +137,21 @@ def build_decision_object(
             t = row["ticker"]
             if t in held_tickers:
                 continue
-            bucket_b.append(f"**{t}** TierA hygiene {row.get('grade','?')} — prefer first")
+            note = row.get("notes") or ""
+            fund_tag = "fund=unknown" if "unknown" in note.lower() else ""
+            bucket_b.append(
+                f"**{t}** TierA hygiene {row.get('grade','?')} {fund_tag} — prefer first".strip()
+            )
         for row in tiers.get("B") or []:
             t = row["ticker"]
             if t in held_tickers:
                 continue
             if len(bucket_b) >= 8:
                 break
-            bucket_b.append(f"**{t}** TierB hygiene {row.get('grade','?')} — small size")
+            # Phase 3: label unknown when FMP missing (default for free tier midcaps)
+            bucket_b.append(
+                f"**{t}** TierB hygiene {row.get('grade','?')} fund=unknown — small size"
+            )
         for row in tiers.get("C") or []:
             t = row["ticker"]
             rejects.append(f"**{t}** TierC chase/extended — dips only or skip")
