@@ -1,1 +1,0 @@
-{"timestamp": "2026-05-25T10:46:40.974985", "signal": {"ticker": "SMH", "source": "earnings_history", "signal_type": "MODERATE_BEAT", "value": 60, "raw_data": {"beat_rate": 0.73, "quarters": 4, "note": "Simulated fallback"}, "confidence": 0.4, "timestamp": "2026-05-25T10:46:40.974798"}}

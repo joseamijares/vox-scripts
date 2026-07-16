@@ -1,1 +1,0 @@
-{"timestamp": "2026-05-24T22:16:53.215593", "signal": {"ticker": "COST", "source": "earnings_history", "signal_type": "MODERATE_BEAT", "value": 60, "raw_data": {"beat_rate": 0.5, "quarters": 4, "note": "Simulated fallback"}, "confidence": 0.4, "timestamp": "2026-05-24T22:16:53.215207"}}

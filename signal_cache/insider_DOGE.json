@@ -1,1 +1,0 @@
-{"timestamp": "2026-05-24T22:16:47.023223", "signal": {"ticker": "DOGE", "source": "insider", "signal_type": "INSIDER_SELL", "value": 40, "raw_data": {"buy_pct": 0.35, "note": "Simulated \u2014 use FMP or SEC API for real data"}, "confidence": 0.3, "timestamp": "2026-05-24T22:16:47.022950"}}

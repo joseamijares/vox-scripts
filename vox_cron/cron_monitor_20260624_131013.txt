@@ -1,8 +1,0 @@
-🔧 **VOX Cron Monitor — Wed Jun 24 13:10**
-
-🟢 **Jobs**: 44 total | 0 OK | 0 error | 44 warning | 0 missing | 0 stale
-
-⚠️ **Warnings**
-  • 551 tickers with stale grades (>7d)
-
-📊 **Health Score**: 0%

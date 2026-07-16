@@ -1,1 +1,0 @@
-{"timestamp": "2026-05-25T10:46:38.400752", "signal": {"ticker": "TSM", "source": "insider", "signal_type": "INSIDER_SELL", "value": 40, "raw_data": {"buy_pct": 0.47, "note": "Simulated \u2014 use FMP or SEC API for real data"}, "confidence": 0.3, "timestamp": "2026-05-25T10:46:38.400669"}}

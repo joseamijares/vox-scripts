@@ -1,1 +1,0 @@
-{"timestamp": "2026-05-25T11:01:59.185553", "signal": {"ticker": "DDOG", "source": "insider", "signal_type": "NEUTRAL", "value": 50, "raw_data": {"buy_pct": 0.5, "note": "Simulated \u2014 use FMP or SEC API for real data"}, "confidence": 0.3, "timestamp": "2026-05-25T11:01:59.185340"}}

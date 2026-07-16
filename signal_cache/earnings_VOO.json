@@ -1,1 +1,0 @@
-{"timestamp": "2026-05-24T22:16:54.790350", "signal": {"ticker": "VOO", "source": "earnings_history", "signal_type": "CONSISTENT_BEAT", "value": 80, "raw_data": {"beat_rate": 0.75, "quarters": 4, "note": "Simulated fallback"}, "confidence": 0.4, "timestamp": "2026-05-24T22:16:54.789528"}}

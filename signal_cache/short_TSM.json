@@ -1,1 +1,0 @@
-{"timestamp": "2026-05-25T10:46:38.400894", "signal": {"ticker": "TSM", "source": "short_interest", "signal_type": "ELEVATED_SHORT", "value": 45, "raw_data": {"short_pct": 11, "note": "Simulated \u2014 use FMP or Ortex for real data"}, "confidence": 0.3, "timestamp": "2026-05-25T10:46:38.400820"}}

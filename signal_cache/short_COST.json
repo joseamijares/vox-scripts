@@ -1,1 +1,0 @@
-{"timestamp": "2026-05-24T22:16:52.877583", "signal": {"ticker": "COST", "source": "short_interest", "signal_type": "NORMAL_SHORT", "value": 50, "raw_data": {"short_pct": 7, "note": "Simulated \u2014 use FMP or Ortex for real data"}, "confidence": 0.3, "timestamp": "2026-05-24T22:16:52.877349"}}

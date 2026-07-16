@@ -1,1 +1,0 @@
-{"timestamp": "2026-05-25T14:32:24.470430", "signal": {"ticker": "BTC", "source": "options_flow", "signal_type": "BULLISH_FLOW", "value": 80, "raw_data": {"call_put_ratio": 24.0, "contracts": 50}, "confidence": 0.6, "timestamp": "2026-05-25T14:32:24.469009"}}

@@ -1,5 +1,0 @@
-🔧 **VOX Cron Monitor — Thu Jul 02 20:14**
-
-🟢 **Jobs**: 57 total | 55 OK | 0 error | 2 warning | 0 missing | 0 stale
-
-📊 **Health Score**: 96%

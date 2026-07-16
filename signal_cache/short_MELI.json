@@ -1,1 +1,0 @@
-{"timestamp": "2026-05-25T10:46:34.227747", "signal": {"ticker": "MELI", "source": "short_interest", "signal_type": "ELEVATED_SHORT", "value": 45, "raw_data": {"short_pct": 15, "note": "Simulated \u2014 use FMP or Ortex for real data"}, "confidence": 0.3, "timestamp": "2026-05-25T10:46:34.227543"}}

@@ -1,1 +1,0 @@
-{"timestamp": "2026-05-25T10:46:35.699551", "signal": {"ticker": "AAPL", "source": "earnings_history", "signal_type": "FREQUENT_MISS", "value": 40, "raw_data": {"beat_rate": 0.48000000000000004, "quarters": 4, "note": "Simulated fallback"}, "confidence": 0.4, "timestamp": "2026-05-25T10:46:35.698803"}}

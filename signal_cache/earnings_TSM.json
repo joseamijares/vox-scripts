@@ -1,1 +1,0 @@
-{"timestamp": "2026-05-25T10:46:38.735942", "signal": {"ticker": "TSM", "source": "earnings_history", "signal_type": "MODERATE_BEAT", "value": 60, "raw_data": {"beat_rate": 0.5700000000000001, "quarters": 4, "note": "Simulated fallback"}, "confidence": 0.4, "timestamp": "2026-05-25T10:46:38.735831"}}
