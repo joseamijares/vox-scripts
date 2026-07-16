@@ -2,7 +2,7 @@
 """
 VOX single entrypoint — agentic-friendly CLI.
 
-  python3 vox.py status|ops|prices|secrets|test|help
+  python3 vox.py status|ops|prices|secrets|test|morning|advisor|compound|help
 """
 from __future__ import annotations
 
@@ -146,6 +146,10 @@ def cmd_morning() -> int:
     return _run("vox_cron/vox_morning_context.py", timeout=300)
 
 
+def cmd_advisor() -> int:
+    return _run("vox_cron/vox_k3_advisor.py", timeout=400)
+
+
 def cmd_compound() -> int:
     return _run("vox_cron/vox_compound_loop.py", timeout=120)
 
@@ -154,7 +158,7 @@ def main():
     cmd = (sys.argv[1] if len(sys.argv) > 1 else "help").lower()
     if cmd in ("help", "-h", "--help"):
         print(__doc__)
-        print("Commands: status | ops | prices | secrets | test | morning | compound | help")
+        print("Commands: status | ops | prices | secrets | test | morning | advisor | compound | help")
         return 0
     table = {
         "status": cmd_status,
@@ -163,6 +167,7 @@ def main():
         "secrets": cmd_secrets,
         "test": cmd_test,
         "morning": cmd_morning,
+        "advisor": cmd_advisor,
         "compound": cmd_compound,
     }
     if cmd not in table:

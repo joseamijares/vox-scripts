@@ -354,11 +354,38 @@ def main():
     else:
         lines.append("_No Breaking-LATEST.md_")
 
+    # K3 soft advisor snip (never SSOT)
+    k3_path = OBS / "K3-Advisor-LATEST.md"
+    k3_lines = []
+    if k3_path.exists():
+        age_h = (now.timestamp() - k3_path.stat().st_mtime) / 3600
+        body = [ln for ln in k3_path.read_text(errors="replace").splitlines() if ln.strip()]
+        # prefer one-liner / section 6 / last bullets
+        grab = False
+        for ln in body:
+            if "one-liner" in ln.lower() or ln.startswith("## 6") or "Blind risks" in ln or ln.startswith("## 5"):
+                grab = True
+            if grab:
+                k3_lines.append(ln)
+            if len(k3_lines) >= 12:
+                break
+        if not k3_lines:
+            k3_lines = body[4:14]
+        if age_h > 96:
+            k3_lines = [f"_Advisor file stale ({age_h:.0f}h) — run `python3 vox.py advisor`_"] + k3_lines[:6]
+
+    lines += ["", "## K3 Advisor (soft — not SSOT)"]
+    if k3_lines:
+        lines.extend(k3_lines[:12])
+    else:
+        lines.append("_No K3-Advisor-LATEST.md — run `python3 vox.py advisor` (Kimi Coding k3)_")
+
     # FullSystem demoted — history only, not SSOT
     lines += [
         "",
         "## Archive note",
         "- FullSystem-Top10 is **not** decision SSOT (may be stale). Use **Decision Object** above.",
+        "- K3 Advisor is **critique only** — does not override Do today / Decision Object.",
     ]
 
     lines += ["", "## Data warnings"]

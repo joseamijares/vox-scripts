@@ -44,6 +44,7 @@ ALLOWLIST = {
     "vox-repo-housekeeper",
     "vox-compound-weekly",
     "vox-cron-survival-monthly",
+    "vox-k3-advisor",
 }
 
 DECISION_TG = {
