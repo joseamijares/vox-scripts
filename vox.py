@@ -142,11 +142,15 @@ def cmd_test() -> int:
     return 0 if fails == 0 else 1
 
 
+def cmd_compound() -> int:
+    return _run("vox_cron/vox_compound_loop.py", timeout=120)
+
+
 def main():
     cmd = (sys.argv[1] if len(sys.argv) > 1 else "help").lower()
     if cmd in ("help", "-h", "--help"):
         print(__doc__)
-        print("Commands: status | ops | prices | secrets | test | help")
+        print("Commands: status | ops | prices | secrets | test | compound | help")
         return 0
     table = {
         "status": cmd_status,
@@ -154,6 +158,7 @@ def main():
         "prices": cmd_prices,
         "secrets": cmd_secrets,
         "test": cmd_test,
+        "compound": cmd_compound,
     }
     if cmd not in table:
         print("unknown command", cmd)
