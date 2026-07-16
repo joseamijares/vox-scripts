@@ -6,14 +6,15 @@
 
 ```bash
 cd ~/.hermes/scripts
-python3 vox.py status|ops|prices|secrets|test|compound
+python3 vox.py status|ops|prices|secrets|test|morning|compound
 ```
 
 ## Daily human path
-1. **Telegram:** Daily Ops Card (07:45 CT M–F) + Breaking only when material  
-2. Execute ≤5 broker actions  
-3. Dashboard for book truth  
-4. Ask Hermes for X research (`x_search`) or deep dives on demand  
+1. **06:15** Morning research pack (local file → context)
+2. **07:45** Telegram **Ops Card** (embeds morning snip)
+3. Breaking 09/12/16 if material
+4. Execute ≤5 broker actions
+5. Ask Hermes for extra X/`x_search` anytime
 
 ## Models
 | Role | Stack |
@@ -32,12 +33,14 @@ python3 vox.py status|ops|prices|secrets|test|compound
 | FMP | Free mega; Starter optional mid-caps |
 | Yahoo chart | Primary free prices / history UPSERT |
 
-## Crons (lean — 2026-07-16)
-**Telegram (3):** `vox-daily-ops-card` · `vox-intel-breaking` · `vox-intel-breaking-weekend`  
+## Crons (lean — final 2026-07-16)
+**Telegram (3):** `vox-daily-ops-card` · `vox-intel-breaking` (9/12/16) · weekend breaking  
 
-**Local:** brain, outside, grades, pricing×, hybrid, etoro, FMP, health, housekeeper, compound, thesis, survival, obsidian  
+**Local pricing:** held-intraday + EOD (canonical) · hybrid grades · etoro 4h  
+**Local intel files:** brain · outside · weekly-grade  
+**Plumbing:** FMP · health · housekeeper · compound · thesis · survival · obsidian  
 
-See `Obsidian/system/Cron-Audit-2026-07-16.md`.
+Paused: price-history-sync (redundant w/ EOD UPSERT), councils, signal packs, etc.
 
 ## Pipelines
 ```

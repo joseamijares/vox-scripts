@@ -253,8 +253,6 @@ def main():
         warnings.append(f"FMP fund rows only {fmp_n} (mega-cap free tier)")
     if (regime.get("confidence") or 0) and float(regime.get("confidence") or 0) <= 55:
         warnings.append("Regime table low-info (NEUTRAL/low conf) — ignore for decisions")
-    # secrets
-    op_note = "1Password migrate blocked until `op` works; secrets still partly in .env"
 
     # ── Markdown ──
     lines = [
@@ -292,6 +290,37 @@ def main():
     else:
         lines.append("_No Outside-Ideas-LATEST.md_")
 
+    # Morning research pack (06:15)
+    morning = OBS / "Morning-Context-LATEST.md"
+    morn_lines = []
+    if morning.exists():
+        body = [ln for ln in morning.read_text(errors="replace").splitlines() if ln.strip()]
+        # prefer synthesis section if present
+        in_synth = False
+        for ln in body:
+            if "Analyst synthesis" in ln or "synthesis" in ln.lower() and ln.startswith("#"):
+                in_synth = True
+                continue
+            if in_synth:
+                if ln.startswith("## ") and "synthesis" not in ln.lower():
+                    break
+                morn_lines.append(ln)
+            if len(morn_lines) >= 14:
+                break
+        if not morn_lines:
+            # markets table + first bullets
+            for ln in body:
+                if ln.startswith("| SPY") or ln.startswith("| QQQ") or ln.startswith("| XLE") or ln.startswith("- "):
+                    morn_lines.append(ln)
+                if len(morn_lines) >= 12:
+                    break
+
+    lines += ["", "## Morning research context"]
+    if morn_lines:
+        lines.extend(morn_lines[:14])
+    else:
+        lines.append("_No Morning-Context-LATEST.md yet (runs 06:15 CT)_")
+
     lines += ["", "## Breaking / macro tape"]
     if brk_lines:
         lines.extend(f"- {ln}" for ln in brk_lines[:6])
@@ -307,7 +336,6 @@ def main():
     lines += ["", "## Data warnings"]
     for w in warnings:
         lines.append(f"- ⚠️ {w}")
-    lines.append(f"- ⚠️ {op_note}")
     if null_asof[:8]:
         lines.append(f"- Missing asof sample: {', '.join(null_asof[:12])}")
 
@@ -323,7 +351,7 @@ def main():
         "- positions (live, day_chg, price_asof)",
         "- price_history max date",
         "- fmp_fundamentals count",
-        "- Brain / Outside / Breaking / Top10 files",
+        "- Morning-Context / Brain / Outside / Breaking / Top10 files",
         "- market_regime (low weight)",
         "",
         "_Hygiene only · multi-broker never a sell reason · no day-trade FOMO_",
