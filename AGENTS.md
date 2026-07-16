@@ -10,18 +10,18 @@ python3 vox.py status|ops|prices|secrets|test|morning|compound
 ```
 
 ## Daily human path
-1. **06:15** Morning research pack (local file → context)
-2. **07:45** Telegram **Ops Card** (embeds morning snip)
+1. **06:15** Morning research pack (local)
+2. **07:45** Telegram **Ops Card** (Decision Object)
 3. Breaking 09/12/16 if material
 4. Execute ≤5 broker actions
-5. Ask Hermes for extra X/`x_search` anytime
+5. Ask Hermes for X/`x_search` anytime
 
 ## Models
 | Role | Stack |
 |------|--------|
 | Chat / research | **Grok 4.5 · xai-oauth** |
-| X research | **`x_search`** (same stack; no X MCP required) |
-| Batch scripts | DeepSeek v4 via OpenRouter |
+| X research | **`x_search`** (no X MCP required) |
+| Batch scripts | DeepSeek via OpenRouter |
 | Subagents | Kimi k2.6 |
 | Councils | **Dead** |
 
@@ -29,40 +29,37 @@ python3 vox.py status|ops|prices|secrets|test|morning|compound
 | Source | Status |
 |--------|--------|
 | Secrets | Vault **Vox Hermes Vault** → env |
-| Alpaca | **Live keys OK** (dual-check / US marks) |
-| FMP | Free mega; Starter optional mid-caps |
-| Yahoo chart | Primary free prices / history UPSERT |
+| Alpaca | Live US marks (price owner) |
+| FMP free | Mega fund; mid = `fund=unknown` |
+| Yahoo chart | History + global/crypto |
 
-## Crons (lean — final 2026-07-16)
-**Telegram (3):** `vox-daily-ops-card` · `vox-intel-breaking` (9/12/16) · weekend breaking  
+## Crons (Phase 4 allowlist)
+**Telegram (3):** Ops Card · Breaking · Breaking weekend  
 
-**Local pricing:** `pricing_refresh` only (held+EOD) · grades mode via hybrid wrapper · etoro adapter 4h  
-**Local intel files:** brain · outside · weekly-grade  
-**Plumbing:** FMP · health · housekeeper · compound · thesis · survival · obsidian  
+**Local:** morning · outside · brain-daily · obsidian · pricing held/EOD · etoro adapter · FMP · weekly-grade · health · housekeeper · compound · survival  
 
-Paused: price-history-sync (redundant w/ EOD UPSERT), councils, signal packs, etc.
+**Paused:** hybrid-full · brain-weekly · thesis-stubs · councils · master-data · price-history-sync · …
+
+Monthly: `vox_cron_survival.py` fails if anything off-allowlist is enabled.
 
 ## Pipelines
 ```
-vault→env → prices → FMP free → brain/outside/breaking (files)
-  → Ops Card (Telegram) → you execute → weekly compound (real breaks)
+vault→env → pricing_refresh (owner) → FMP free
+  → morning + outside + brain (files)
+  → Ops Card Decision Object (Telegram)
+  → you execute → weekly compound (real breaks)
 ```
 
 ## Rules
 - Multi-broker never a sell reason  
-- Grades = hygiene  
+- Grades = hygiene only  
 - Material SELL ≥2.5% AUM  
-- Anti-chase  
-- Soft X intel never overrides book  
-- No token-rotate nags unless you ask  
+- Anti-chase; soft intel never ranks alone  
+- fund=unknown when FMP missing  
+- No new cron without allowlist + this file  
+
+## Architecture
+Phases 1–4 done. See `Architecture-Target-2026-07-16.md` · `Price-Owner-Phase2.md` · `Cron-Survival-LATEST.md`
 
 ## Ready
-**YES — use daily.** Optional: FMP Starter, merge price jobs later.
-
-## Architecture (audit)
-See Obsidian `system/Architecture-Target-2026-07-16.md`:
-- Grades = hygiene filter only
-- Ops Card = single Decision Object
-- Soft intel never ranks alone
-- Target: one price owner · Bucket A/B only · confidence badge
-- Next build when asked: Phase 1 (Top-N inside Ops, fail closed)
+**YES — use daily.**
