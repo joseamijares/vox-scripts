@@ -58,3 +58,11 @@ vault→env → prices → FMP free → brain/outside/breaking (files)
 
 ## Ready
 **YES — use daily.** Optional: FMP Starter, merge price jobs later.
+
+## Architecture (audit)
+See Obsidian `system/Architecture-Target-2026-07-16.md`:
+- Grades = hygiene filter only
+- Ops Card = single Decision Object
+- Soft intel never ranks alone
+- Target: one price owner · Bucket A/B only · confidence badge
+- Next build when asked: Phase 1 (Top-N inside Ops, fail closed)
