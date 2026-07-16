@@ -143,6 +143,15 @@ def classify(row, ret_5, ret_63, fmp_score=None):
     if r5 is not None and r5 >= 12:
         chase = True
         flags.append(f"1w +{r5:.0f}%")
+    # Extended runners: 3m still hot even if not ≥50, especially tech-hot
+    tech = float(row.get("technical_score") or 50)
+    if r63 is not None and r63 >= 35 and tech >= 85:
+        chase = True
+        flags.append(f"extended 3m +{r63:.0f}% tech{tech:.0f}")
+    # Catching knives: sharp 1w dump after prior extension is not free money
+    if r5 is not None and r5 <= -15 and r63 is not None and r63 >= 25:
+        chase = True
+        flags.append(f"knife 1w {r5:.0f}% after 3m +{r63:.0f}%")
     # Missing returns → cannot prove not-chase; never Tier A
     missing_ret = r63 is None and r5 is None
     if missing_ret:
