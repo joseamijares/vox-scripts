@@ -15,8 +15,10 @@ import sys
 from collections import defaultdict
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+import re
 
 sys.path.insert(0, str(Path.home() / ".hermes" / "scripts"))
+sys.path.insert(0, str(Path.home() / ".hermes" / "scripts" / "vox_cron"))
 try:
     import hermes_secrets_bootstrap  # noqa: F401
 except Exception:
@@ -24,6 +26,8 @@ except Exception:
 
 import psycopg2
 from psycopg2.extras import RealDictCursor
+
+from vox_decision_object import build_decision_object, format_decision_md
 
 OBS = Path.home() / "Documents/Obsidian/VOX/vox/memory/brain"
 OUT = OBS / "Daily-Ops-LATEST.md"
@@ -239,7 +243,7 @@ def main():
                 + ", ".join(f"{t} {c:+.0f}%" for t, c, _, __ in ups)
             )
     if t10:
-        actions.append("New capital: see Top 10 card (V / HWM / XLE / ADBE first quality+structure)")
+        actions.append("New capital: see **Decision Object Bucket B** below (not stale FullSystem file)")
     if not actions:
         actions.append("No material action — hold quality, skip noise")
 
@@ -254,13 +258,34 @@ def main():
     if (regime.get("confidence") or 0) and float(regime.get("confidence") or 0) <= 55:
         warnings.append("Regime table low-info (NEUTRAL/low conf) — ignore for decisions")
 
+    held_tickers = {
+        (r["ticker"] or "").upper()
+        for r in rows
+        if (r["ticker"] or "").upper() not in ("MIRROR_TOTAL", "CASH")
+    }
+    decision = build_decision_object(
+        cur,
+        aum=aum,
+        energy_w=energy_w,
+        crypto_w=crypto_w,
+        tech_w=tech_w,
+        pricing_ok=pricing_ok,
+        null_asof=null_asof,
+        stale=stale,
+        fmp_n=fmp_n,
+        held_tickers=held_tickers,
+        now=now,
+    )
+
     # ── Markdown ──
+    conf = decision["confidence"]
+    conf_emoji = {"GREEN": "🟢", "YELLOW": "🟡", "RED": "🔴"}.get(conf, "⚪")
     lines = [
         f"# Daily Ops Card — {now.strftime('%Y-%m-%d')}",
         "",
-        f"_Generated {ct_note} · single briefing · not auto-trade_",
+        f"_Generated {ct_note} · **Decision Object SSOT** · not auto-trade_",
         "",
-        "## Snapshot",
+        f"## Snapshot · Confidence {conf_emoji} **{conf}**",
         f"- **AUM:** ${aum:,.0f} · **positions:** {npos}",
         f"- **Tech ~{tech_w:.0f}%** · **Energy ~{energy_w:.0f}%** · **Crypto ~{crypto_w:.0f}%**",
         f"- **Pricing:** {'OK-ish' if pricing_ok else 'NEEDS REFRESH'} · history max `{ph_max}` · FMP rows `{fmp_n}`",
@@ -270,6 +295,8 @@ def main():
     ]
     for i, a in enumerate(actions[:5], 1):
         lines.append(f"{i}. {a}")
+
+    lines += [""] + format_decision_md(decision)
     lines += ["", "## Big day moves (|%| ≥ 8)"]
     if not big:
         lines.append("_None material in book_")
@@ -327,11 +354,12 @@ def main():
     else:
         lines.append("_No Breaking-LATEST.md_")
 
-    lines += ["", "## Top 10 research card (snip)"]
-    if t10:
-        lines.extend(t10[:8])
-    else:
-        lines.append("_No FullSystem-Top10-LATEST.md_")
+    # FullSystem demoted — history only, not SSOT
+    lines += [
+        "",
+        "## Archive note",
+        "- FullSystem-Top10 is **not** decision SSOT (may be stale). Use **Decision Object** above.",
+    ]
 
     lines += ["", "## Data warnings"]
     for w in warnings:
@@ -342,17 +370,14 @@ def main():
     lines += [
         "",
         "## Action loop",
-        "1. Decide from **Do today** only",
+        "1. Decide from **Do today** + **Decision Object** only",
         "2. Execute in brokers (you)",
-        "3. Re-import / hybrid prices",
+        "3. Re-import / prices",
         "4. Re-run this card tomorrow — compare",
         "",
-        "## Sources used",
-        "- positions (live, day_chg, price_asof)",
-        "- price_history max date",
-        "- fmp_fundamentals count",
-        "- Morning-Context / Brain / Outside / Breaking / Top10 files",
-        "- market_regime (low weight)",
+        "## Sources used (hard)",
+        "- positions · price_asof · Outside-Ideas · Morning-Context · hygiene grades",
+        "- FMP count (mega free) · Breaking soft only",
         "",
         "_Hygiene only · multi-broker never a sell reason · no day-trade FOMO_",
         "",
@@ -367,13 +392,21 @@ def main():
 
     # Telegram-friendly short stdout
     short = [
-        f"VOX OPS {now.strftime('%Y-%m-%d')}",
+        f"VOX OPS {now.strftime('%Y-%m-%d')} {conf_emoji}{conf}",
         f"AUM ${aum:,.0f} · Tech {tech_w:.0f}% · Energy {energy_w:.0f}% · Crypto {crypto_w:.0f}%",
         f"Pricing {'OK' if pricing_ok else 'REFRESH'} · FMP {fmp_n} · big moves {len(big)}",
         "DO:",
     ]
     for i, a in enumerate(actions[:5], 1):
         short.append(f" {i}. {a}")
+    # bucket B one-liner
+    b_tickers = []
+    for x in decision.get("bucket_b") or []:
+        m = re.search(r"\*\*([A-Z0-9.\-]+)\*\*", x)
+        if m:
+            b_tickers.append(m.group(1))
+    if b_tickers and conf != "RED":
+        short.append("B: " + " · ".join(b_tickers[:8]))
     if big[:5]:
         short.append("MOVES: " + " · ".join(f"{t} {c:+.0f}%" for t, c, _, __ in big[:5]))
     if warnings:
@@ -381,7 +414,7 @@ def main():
     short.append(f"Full: {OUT}")
     print("\n".join(short))
     print("\n---\n")
-    print(text[:2500])
+    print(text[:2800])
     return 0
 
 
