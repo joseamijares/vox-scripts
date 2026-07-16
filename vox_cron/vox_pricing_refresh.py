@@ -1,17 +1,33 @@
 #!/usr/bin/env python3
 """
-VOX Pricing Architecture v1
-- Ensures positions.price_asof / prev_close / day_chg_pct columns
-- Refreshes live prices via Yahoo chart (+ Alpaca when available)
-- UPSERTs recent price_history
-- Dual-source check when |day_chg| >= 8%
-- Writes price_feed_log audit trail
+VOX Pricing — SINGLE OWNER (Phase 2)
+
+Canonical writer for:
+  - positions.live_price / price_asof / prev_close / day_chg_pct / price_source
+  - price_history UPSERT
+  - price_feed_log
+  - optional vox_grades.current_price (mode=grades)
+
+Order of live marks:
+  1) Alpaca snapshots (US equities) when keys present
+  2) Yahoo chart (history + global/crypto/MX aliases)
+  3) Dual-check on |day%| >= 8% (Alpaca vs Yahoo)
+
+Adapters:
+  - eToro: separate job (broker-specific), does not own book marks for non-eToro
+  - hybrid_price_feed*: thin wrappers or paused — do not write competing truth
+
+Modes:
+  held | eod | universe | grades | ticker SYM
 """
 from __future__ import annotations
 
 import os
 import sys
 import time
+import urllib.parse
+import urllib.request
+import json
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
@@ -26,12 +42,10 @@ except Exception:
 import psycopg2
 from psycopg2.extras import RealDictCursor
 
-from vox_price_quote import live_quote, yahoo_chart
+from vox_price_quote import yahoo_chart
 
 BIG_MOVE_PCT = 8.0
-STALE_MINUTES = 30
 
-# Yahoo chart symbols for common non-US / crypto holdings
 YAHOO_ALIAS = {
     "BTC": "BTC-USD",
     "ETH": "ETH-USD",
@@ -55,6 +69,8 @@ YAHOO_ALIAS = {
     "VAULTA": "VAULTA-USD",
 }
 
+CRYPTO = set(YAHOO_ALIAS.keys()) - {"NAFTRAC"}
+
 
 def connect():
     return psycopg2.connect(
@@ -73,9 +89,7 @@ def ensure_schema(cur):
         ALTER TABLE positions
           ADD COLUMN IF NOT EXISTS price_asof TIMESTAMPTZ,
           ADD COLUMN IF NOT EXISTS prev_close NUMERIC(14,6),
-          ADD COLUMN IF NOT EXISTS day_chg_pct NUMERIC(10,4);
-
-        ALTER TABLE positions
+          ADD COLUMN IF NOT EXISTS day_chg_pct NUMERIC(10,4),
           ADD COLUMN IF NOT EXISTS price_source VARCHAR(40);
 
         CREATE TABLE IF NOT EXISTS price_feed_log (
@@ -103,7 +117,11 @@ def held_tickers(cur) -> List[str]:
            OR COALESCE(shares, 0) > 0
         """
     )
-    return [r["t"] for r in cur.fetchall() if r["t"] and r["t"] not in ("MIRROR_TOTAL", "CASH")]
+    return [
+        r["t"]
+        for r in cur.fetchall()
+        if r["t"] and r["t"] not in ("MIRROR_TOTAL", "CASH") and " " not in r["t"]
+    ]
 
 
 def universe_tickers(cur, limit: int = 200) -> List[str]:
@@ -125,6 +143,94 @@ def universe_tickers(cur, limit: int = 200) -> List[str]:
         (limit,),
     )
     return [r["t"] for r in cur.fetchall()]
+
+
+def grades_stale_tickers(cur, limit: int = 200) -> List[str]:
+    cur.execute(
+        """
+        SELECT DISTINCT ON (ticker) ticker, current_price, generated_at
+        FROM vox_grades
+        ORDER BY ticker, generated_at DESC
+        """
+    )
+    out = []
+    cutoff = datetime.now() - timedelta(days=7)
+    for r in cur.fetchall():
+        t = (r["ticker"] or "").upper()
+        if not t or " " in t:
+            continue
+        px = r.get("current_price")
+        gen = r.get("generated_at")
+        if px is None or float(px or 0) <= 0 or gen is None or gen < cutoff:
+            out.append(t)
+        if len(out) >= limit:
+            break
+    return out
+
+
+def alpaca_keys() -> Tuple[str, str]:
+    return (
+        os.environ.get("ALPACA_API_KEY") or "",
+        os.environ.get("ALPACA_SECRET_KEY") or "",
+    )
+
+
+def is_us_equity_symbol(t: str) -> bool:
+    t = (t or "").upper().strip()
+    if not t or t in CRYPTO or t in YAHOO_ALIAS:
+        return False
+    if " " in t or "-" in t or "/" in t or t.startswith("$"):
+        return False
+    return t.isalnum()
+
+
+def fetch_alpaca_batch(tickers: List[str]) -> Dict[str, float]:
+    """Live US marks from Alpaca data API. Returns {TICKER: price}."""
+    key, sec = alpaca_keys()
+    if not key or not sec:
+        return {}
+    eligible = [t.upper().strip() for t in tickers if is_us_equity_symbol(t)]
+    if not eligible:
+        return {}
+    headers = {
+        "APCA-API-KEY-ID": key,
+        "APCA-API-SECRET-KEY": sec,
+        "Accept": "application/json",
+    }
+    prices: Dict[str, float] = {}
+    for i in range(0, len(eligible), 80):
+        batch = eligible[i : i + 80]
+        symbols = ",".join(urllib.parse.quote(s, safe="") for s in batch)
+        url = f"https://data.alpaca.markets/v2/stocks/snapshots?symbols={symbols}"
+        try:
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=45) as r:
+                data = json.loads(r.read().decode())
+            # API may return {snapshots: {...}} or flat dict
+            snaps = data.get("snapshots") if isinstance(data, dict) and "snapshots" in data else data
+            if not isinstance(snaps, dict):
+                continue
+            for symbol, snapshot in snaps.items():
+                if not isinstance(snapshot, dict):
+                    continue
+                try:
+                    trade = snapshot.get("latestTrade") or {}
+                    price = float(trade.get("p") or 0)
+                    if price <= 0:
+                        quote = snapshot.get("latestQuote") or {}
+                        bp = float(quote.get("bp") or 0)
+                        ap = float(quote.get("ap") or 0)
+                        if bp > 0 and ap > 0:
+                            price = (bp + ap) / 2
+                    if price > 0:
+                        prices[symbol.upper()] = price
+                except Exception:
+                    continue
+        except Exception as e:
+            print(f"  ⚠️ Alpaca batch error: {e}")
+        time.sleep(0.15)
+    print(f"  Alpaca live marks: {len(prices)}/{len(eligible)} US symbols")
+    return prices
 
 
 def upsert_history(cur, ticker: str, bars: list, source: str = "yahoo_chart") -> int:
@@ -156,100 +262,135 @@ def upsert_history(cur, ticker: str, bars: list, source: str = "yahoo_chart") ->
     return n
 
 
-def dual_check(ticker: str, price: float, day_chg: Optional[float]) -> Tuple[float, str, str]:
-    """If big move, try Alpaca snapshot; return (price, source, notes)."""
-    notes = ""
-    source = "yahoo_chart"
-    if day_chg is None or abs(day_chg) < BIG_MOVE_PCT:
-        return price, source, notes
-
-    # try alpaca
-    try:
-        from vox_hybrid_price_feed import fetch_alpaca_prices
-
-        ap = fetch_alpaca_prices([ticker])
-        if ticker in ap and ap[ticker] > 0:
-            apx = float(ap[ticker])
-            # if within 3% of yahoo, keep yahoo; else note disagreement
-            if price > 0 and abs(apx - price) / price > 0.03:
-                notes = f"dual_disagree yahoo={price:.2f} alpaca={apx:.2f}"
-                # prefer alpaca for US if disagreement large on crash days
-                price = apx
-                source = "alpaca_dual"
-            else:
-                notes = f"dual_ok alpaca={apx:.2f}"
-                source = "yahoo_chart+alpaca"
-    except Exception as e:
-        notes = f"dual_skip {e}"
-    return price, source, notes
-
-
-def refresh_ticker(cur, ticker: str, history_days: int = 45) -> Optional[dict]:
+def refresh_ticker(
+    cur,
+    ticker: str,
+    history_days: int = 45,
+    alpaca_cache: Optional[Dict[str, float]] = None,
+    update_positions: bool = True,
+    update_grades: bool = False,
+) -> Optional[dict]:
     t = (ticker or "").strip().upper()
     if not t or " " in t or t in ("MIRROR_TOTAL", "CASH"):
         return {"ticker": ticker, "error": "skip_invalid_symbol"}
     ysym = YAHOO_ALIAS.get(t, t)
+    alpaca_cache = alpaca_cache or {}
     try:
         range_ = "2mo" if history_days >= 40 else "1mo"
         meta, bars = yahoo_chart(ysym, range_=range_, interval="1d")
         if not bars:
+            # last resort: alpaca-only live without history
+            if t in alpaca_cache:
+                px = float(alpaca_cache[t])
+                asof = datetime.now(timezone.utc)
+                if update_positions:
+                    cur.execute(
+                        """
+                        UPDATE positions
+                        SET live_price=%s, live_value=shares*%s,
+                            live_value_usd=CASE WHEN currency='MXN' THEN shares*%s*0.055 ELSE shares*%s END,
+                            price_source='alpaca_only', price_asof=%s, updated_at=NOW()
+                        WHERE UPPER(ticker)=%s
+                        """,
+                        (px, px, px, px, asof, t),
+                    )
+                return {"ticker": t, "price": px, "source": "alpaca_only", "day_chg_pct": None}
             return None
-        # store history under book ticker (not yahoo alias)
-        for b in bars:
-            b["ticker"] = t
+
         upsert_history(cur, t, bars[-history_days:], "yahoo_chart")
 
-        px = meta.get("regularMarketPrice") or bars[-1]["close"]
-        # Prefer last completed bar as anchor for day% — meta previousClose is often wrong
         last_bar = float(bars[-1]["close"])
         bar_prev = float(bars[-2]["close"]) if len(bars) >= 2 else None
         meta_prev = meta.get("previousClose") or meta.get("chartPreviousClose")
         prev = bar_prev
         if meta_prev is not None and bar_prev is not None:
             mp = float(meta_prev)
-            # if meta prev is close to bar_prev, ok; else trust bars
             if abs(mp - bar_prev) / max(bar_prev, 1e-9) <= 0.03:
                 prev = mp
-        elif meta_prev is not None and bar_prev is None:
+        elif meta_prev is not None:
             prev = float(meta_prev)
 
-        px = float(px)
-        # if live is wildly off last bar (bad print), clamp to last bar for book marks
-        if last_bar > 0 and abs(px - last_bar) / last_bar > 0.5:
-            px = last_bar
+        y_live = meta.get("regularMarketPrice") or last_bar
+        y_live = float(y_live)
+        if last_bar > 0 and abs(y_live - last_bar) / last_bar > 0.5:
+            y_live = last_bar
+
+        source = "yahoo_chart"
+        notes = ""
+        px = y_live
+
+        # Prefer Alpaca for US live mark when available
+        if t in alpaca_cache and alpaca_cache[t] > 0:
+            apx = float(alpaca_cache[t])
+            if y_live > 0 and abs(apx - y_live) / y_live > 0.03:
+                notes = f"prefer_alpaca yahoo={y_live:.2f}"
+                px = apx
+                source = "alpaca"
+            else:
+                px = apx
+                source = "alpaca+yahoo"
+                notes = "alpaca_primary"
+
         chg = 100.0 * (px - prev) / prev if prev else None
 
-        px, source, notes = dual_check(t, px, chg)
-        if prev:
-            chg = 100.0 * (px - prev) / prev
+        # Dual-check big moves if only yahoo so far
+        if (
+            chg is not None
+            and abs(chg) >= BIG_MOVE_PCT
+            and source.startswith("yahoo")
+            and t in alpaca_cache
+        ):
+            apx = float(alpaca_cache[t])
+            if y_live > 0 and abs(apx - y_live) / y_live > 0.03:
+                notes = f"dual_disagree yahoo={y_live:.2f} alpaca={apx:.2f}"
+                px = apx
+                source = "alpaca_dual"
+                chg = 100.0 * (px - prev) / prev if prev else chg
+            else:
+                notes = (notes + " dual_ok").strip()
+
         if ysym != t:
             notes = (notes + f" alias={ysym}").strip()
 
         asof = datetime.now(timezone.utc)
-        cur.execute(
-            """
-            UPDATE positions
-            SET live_price = %s,
-                live_value = shares * %s,
-                live_value_usd = CASE
-                  WHEN currency = 'MXN' THEN shares * %s * 0.055
-                  ELSE shares * %s
-                END,
-                price_source = %s,
-                price_asof = %s,
-                prev_close = %s,
-                day_chg_pct = %s,
-                updated_at = NOW()
-            WHERE UPPER(ticker) = %s
-            """,
-            (px, px, px, px, source, asof, prev, chg, t),
-        )
+        if update_positions:
+            cur.execute(
+                """
+                UPDATE positions
+                SET live_price = %s,
+                    live_value = shares * %s,
+                    live_value_usd = CASE
+                      WHEN currency = 'MXN' THEN shares * %s * 0.055
+                      ELSE shares * %s
+                    END,
+                    price_source = %s,
+                    price_asof = %s,
+                    prev_close = %s,
+                    day_chg_pct = %s,
+                    updated_at = NOW()
+                WHERE UPPER(ticker) = %s
+                """,
+                (px, px, px, px, source, asof, prev, chg, t),
+            )
+        if update_grades:
+            cur.execute(
+                """
+                UPDATE vox_grades SET current_price = %s
+                WHERE ticker = %s
+                  AND id IN (
+                    SELECT id FROM vox_grades WHERE ticker = %s
+                    ORDER BY generated_at DESC LIMIT 1
+                  )
+                """,
+                (px, t, t),
+            )
+
         cur.execute(
             """
             INSERT INTO price_feed_log (ticker, price, prev_close, day_chg_pct, source, notes)
             VALUES (%s,%s,%s,%s,%s,%s)
             """,
-            (t, px, prev, chg, source, notes or "refresh"),
+            (t, px, prev, chg, source, notes or "pricing_owner"),
         )
         return {
             "ticker": t,
@@ -270,12 +411,15 @@ def refresh_ticker(cur, ticker: str, history_days: int = 45) -> Optional[dict]:
         return {"ticker": t, "error": str(e)[:160]}
 
 
-def main():
+def main() -> int:
     mode = sys.argv[1] if len(sys.argv) > 1 else "held"
     conn = connect()
     cur = conn.cursor(cursor_factory=RealDictCursor)
     ensure_schema(cur)
     conn.commit()
+
+    update_positions = True
+    update_grades = False
 
     if mode == "held":
         tickers = held_tickers(cur)
@@ -283,13 +427,27 @@ def main():
         tickers = universe_tickers(cur, 250)
     elif mode == "eod":
         tickers = universe_tickers(cur, 400)
+    elif mode == "grades":
+        tickers = grades_stale_tickers(cur, 200)
+        update_positions = False
+        update_grades = True
+    elif mode == "ticker" and len(sys.argv) > 2:
+        tickers = [sys.argv[2].upper()]
     else:
         tickers = held_tickers(cur)
 
-    print(f"💰 VOX Pricing Refresh — mode={mode} tickers={len(tickers)}")
+    print(f"💰 VOX Pricing OWNER — mode={mode} tickers={len(tickers)}")
+    alpaca_cache = fetch_alpaca_batch(tickers)
+
     ok, err, big = 0, 0, []
     for i, t in enumerate(tickers):
-        r = refresh_ticker(cur, t)
+        r = refresh_ticker(
+            cur,
+            t,
+            alpaca_cache=alpaca_cache,
+            update_positions=update_positions,
+            update_grades=update_grades,
+        )
         if r and "error" not in r:
             ok += 1
             if r.get("day_chg_pct") is not None and abs(r["day_chg_pct"]) >= BIG_MOVE_PCT:
@@ -302,14 +460,14 @@ def main():
             print(f"  ❌ {t} {r}")
         if i % 20 == 19:
             conn.commit()
-        time.sleep(0.12)
+        time.sleep(0.10)
     conn.commit()
 
-    print(f"Done ok={ok} err={err} big_moves={len(big)}")
+    print(f"Done ok={ok} err={err} big_moves={len(big)} alpaca_cache={len(alpaca_cache)}")
     if big:
         print("Big moves:")
         for r in sorted(big, key=lambda x: abs(x.get("day_chg_pct") or 0), reverse=True)[:15]:
-            print(f"  {r['ticker']:6} {r['day_chg_pct']:+6.1f}%  ${r['price']:.2f}")
+            print(f"  {r['ticker']:6} {r['day_chg_pct']:+6.1f}%  ${r['price']:.2f}  {r['source']}")
     conn.close()
     return 0 if ok else 1
 

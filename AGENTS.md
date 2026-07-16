@@ -36,7 +36,7 @@ python3 vox.py status|ops|prices|secrets|test|morning|compound
 ## Crons (lean — final 2026-07-16)
 **Telegram (3):** `vox-daily-ops-card` · `vox-intel-breaking` (9/12/16) · weekend breaking  
 
-**Local pricing:** held-intraday + EOD (canonical) · hybrid grades · etoro 4h  
+**Local pricing:** `pricing_refresh` only (held+EOD) · grades mode via hybrid wrapper · etoro adapter 4h  
 **Local intel files:** brain · outside · weekly-grade  
 **Plumbing:** FMP · health · housekeeper · compound · thesis · survival · obsidian  
 
