@@ -1,0 +1,361 @@
+#!/usr/bin/env python3
+"""
+VOX Daily Ops Card — single source of truth for the day.
+
+Aggregates: book · pricing health · big movers · material plan · outside ideas ·
+breaking · data warnings. Writes Obsidian + stdout (cron deliver).
+
+Usage:
+  python3 vox_cron/vox_daily_ops_card.py
+"""
+from __future__ import annotations
+
+import os
+import sys
+from collections import defaultdict
+from datetime import datetime, timezone, timedelta
+from pathlib import Path
+
+sys.path.insert(0, str(Path.home() / ".hermes" / "scripts"))
+try:
+    import hermes_secrets_bootstrap  # noqa: F401
+except Exception:
+    pass
+
+import psycopg2
+from psycopg2.extras import RealDictCursor
+
+OBS = Path.home() / "Documents/Obsidian/VOX/vox/memory/brain"
+OUT = OBS / "Daily-Ops-LATEST.md"
+ARCHIVE_DIR = OBS / "ops-archive"
+CRYPTO = {
+    "BTC", "ETH", "SOL", "XRP", "DOGE", "ADA", "BNB", "TRX", "HBAR", "AVAX",
+    "DOT", "BONK", "PENGU", "VAULTA", "VANA", "MORPHO",
+}
+MATERIAL_W = 2.5  # % AUM for material sells
+
+
+def connect():
+    return psycopg2.connect(
+        host=os.environ.get("DB_HOST") or os.environ.get("PGHOST", "acela.proxy.rlwy.net"),
+        port=int(os.environ.get("DB_PORT") or os.environ.get("PGPORT", 35577)),
+        dbname=os.environ.get("DB_NAME") or os.environ.get("PGDATABASE", "railway"),
+        user=os.environ.get("DB_USER") or os.environ.get("PGUSER", "postgres"),
+        password=os.environ.get("DB_PASSWORD") or os.environ.get("PGPASSWORD"),
+        connect_timeout=25,
+    )
+
+
+def read_snip(path: Path, n: int = 12) -> list[str]:
+    if not path.exists():
+        return []
+    lines = path.read_text(errors="replace").splitlines()
+    # skip empty / pure headers noise
+    body = [ln for ln in lines if ln.strip()]
+    return body[:n]
+
+
+def main():
+    now = datetime.now(timezone.utc)
+    ct_note = now.strftime("%Y-%m-%d %H:%M UTC")
+    conn = connect()
+    cur = conn.cursor(cursor_factory=RealDictCursor)
+
+    # ── Book ──
+    cur.execute(
+        """
+        SELECT ticker, shares, avg_cost,
+               COALESCE(live_price, 0) live_price,
+               COALESCE(live_value_usd, live_value, 0) v,
+               grade, council, sector, price_asof, price_source,
+               prev_close, day_chg_pct
+        FROM positions
+        WHERE COALESCE(live_value_usd, live_value, 0) > 0
+           OR COALESCE(shares, 0) > 0
+        ORDER BY COALESCE(live_value_usd, live_value, 0) DESC
+        """
+    )
+    rows = cur.fetchall()
+    aum = sum(float(r["v"] or 0) for r in rows) or 1.0
+    npos = len(rows)
+    sector_w = defaultdict(float)
+    crypto_w = 0.0
+    for r in rows:
+        t = (r["ticker"] or "").upper()
+        w = 100.0 * float(r["v"] or 0) / aum
+        sector_w[r.get("sector") or "Unknown"] += w
+        if t in CRYPTO:
+            crypto_w += w
+
+    tech_w = sum(v for k, v in sector_w.items() if "tech" in (k or "").lower())
+    energy_w = sum(v for k, v in sector_w.items() if "energy" in (k or "").lower())
+
+    # ── Pricing health ──
+    stale = []
+    null_asof = []
+    big = []
+    for r in rows:
+        t = (r["ticker"] or "").upper()
+        if t in ("MIRROR_TOTAL", "CASH"):
+            continue
+        asof = r.get("price_asof")
+        if asof is None:
+            null_asof.append(t)
+        else:
+            age_h = (now - asof.replace(tzinfo=timezone.utc) if asof.tzinfo is None else now - asof).total_seconds() / 3600
+            # market hours freshness: 2h; after hours: 18h still "session-fresh"
+            if age_h > 18:
+                stale.append((t, age_h))
+        chg = r.get("day_chg_pct")
+        if chg is not None and abs(float(chg)) >= 8:
+            big.append((t, float(chg), float(r["live_price"] or 0), float(r["v"] or 0)))
+
+    big.sort(key=lambda x: abs(x[1]), reverse=True)
+
+    # ── Material names (weight) ──
+    material = []
+    for r in rows:
+        t = (r["ticker"] or "").upper()
+        if t in ("MIRROR_TOTAL", "CASH"):
+            continue
+        w = 100.0 * float(r["v"] or 0) / aum
+        if w >= MATERIAL_W:
+            material.append(
+                {
+                    "ticker": t,
+                    "w": w,
+                    "v": float(r["v"] or 0),
+                    "grade": r.get("grade"),
+                    "council": r.get("council"),
+                    "day": float(r["day_chg_pct"]) if r.get("day_chg_pct") is not None else None,
+                }
+            )
+    material.sort(key=lambda x: -x["w"])
+
+    # weak material (grade soft)
+    weak = [m for m in material if (m["grade"] or 50) < 45]
+    junk = []
+    for r in rows:
+        t = (r["ticker"] or "").upper()
+        v = float(r["v"] or 0)
+        g = r.get("grade")
+        if t in CRYPTO and t not in ("BTC", "ETH"):
+            if v >= 200:
+                junk.append((t, v, "alt crypto"))
+        elif g is not None and g < 40 and v >= 400:
+            junk.append((t, v, f"grade {g}"))
+
+    junk.sort(key=lambda x: -x[1])
+
+    # ── FMP coverage ──
+    try:
+        cur.execute("SELECT COUNT(*) c FROM fmp_fundamentals")
+        row = cur.fetchone()
+        fmp_n = int(row["c"]) if row else 0
+    except Exception:
+        fmp_n = 0
+
+    cur.execute("SELECT MAX(date) d FROM price_history")
+    ph_row = cur.fetchone() or {}
+    ph_max = ph_row.get("d")
+
+    # ── Regime ──
+    cur.execute(
+        "SELECT regime, confidence, description FROM market_regime ORDER BY created_at DESC LIMIT 1"
+    )
+    regime = cur.fetchone() or {}
+
+    conn.close()
+
+    # ── Files ──
+    brain = OBS / "Brain-LATEST.md"
+    outside = OBS / "Outside-Ideas-LATEST.md"
+    breaking = Path.home() / "Documents/Obsidian/VOX/vox/memory/decisions/Breaking-LATEST.md"
+    if not breaking.exists():
+        breaking = Path.home() / "Documents/Obsidian/VOX/vox/memory/intel"
+        # latest morning
+        cands = sorted(breaking.glob("morning-*.md"), reverse=True) if breaking.exists() else []
+        breaking = cands[0] if cands else Path("/dev/null")
+    top10 = OBS / "FullSystem-Top10-LATEST.md"
+
+    # Outside pick lines
+    outside_lines = []
+    if outside.exists():
+        for ln in outside.read_text(errors="replace").splitlines():
+            if any(x in ln for x in ("Tier A", "Tier B", "**", "| ")):
+                outside_lines.append(ln.strip())
+            if len(outside_lines) >= 10:
+                break
+
+    # Breaking first meaningful bullets
+    brk_lines = []
+    bp = Path.home() / "Documents/Obsidian/VOX/vox/memory/decisions/Breaking-LATEST.md"
+    if bp.exists():
+        for ln in bp.read_text(errors="replace").splitlines():
+            s = ln.strip()
+            if s.startswith(("#", ">", "---")):
+                continue
+            if s:
+                brk_lines.append(s)
+            if len(brk_lines) >= 6:
+                break
+
+    # Top10 first table rows
+    t10 = []
+    if top10.exists():
+        for ln in top10.read_text(errors="replace").splitlines():
+            if ln.strip().startswith("|") and "Ticker" not in ln and "---" not in ln:
+                t10.append(ln.strip())
+            if len(t10) >= 10:
+                break
+
+    # ── Actions (rule-based, honest) ──
+    actions = []
+    if crypto_w >= 10:
+        actions.append(
+            f"TRIM crypto sleeve (~{crypto_w:.0f}% AUM) — alts first; keep BTC/ETH core only if thesis holds"
+        )
+    if energy_w < 1:
+        actions.append("STRUCTURE: add energy sleeve (XLE) — book nearly 0% energy")
+    if junk:
+        jn = ", ".join(f"{t} (${v:.0f})" for t, v, _ in junk[:5])
+        actions.append(f"CLEANUP junk/weak: {jn}")
+    if weak:
+        actions.append(
+            "REVIEW material weak grades: "
+            + ", ".join(f"{m['ticker']} g{m['grade']} {m['w']:.1f}%" for m in weak[:5])
+        )
+    if big:
+        downs = [b for b in big if b[1] <= -8][:4]
+        ups = [b for b in big if b[1] >= 8][:3]
+        if downs:
+            actions.append(
+                "EVENT downs (no FOMO reverse): "
+                + ", ".join(f"{t} {c:+.0f}%" for t, c, _, __ in downs)
+            )
+        if ups:
+            actions.append(
+                "Hot names — do not chase: "
+                + ", ".join(f"{t} {c:+.0f}%" for t, c, _, __ in ups)
+            )
+    if t10:
+        actions.append("New capital: see Top 10 card (V / HWM / XLE / ADBE first quality+structure)")
+    if not actions:
+        actions.append("No material action — hold quality, skip noise")
+
+    pricing_ok = len(null_asof) <= 5 and len(stale) <= 10
+    warnings = []
+    if null_asof:
+        warnings.append(f"{len(null_asof)} names missing price_asof")
+    if stale:
+        warnings.append(f"{len(stale)} names price_asof >18h")
+    if fmp_n < 30:
+        warnings.append(f"FMP fund rows only {fmp_n} (mega-cap free tier)")
+    if (regime.get("confidence") or 0) and float(regime.get("confidence") or 0) <= 55:
+        warnings.append("Regime table low-info (NEUTRAL/low conf) — ignore for decisions")
+    # secrets
+    op_note = "1Password migrate blocked until `op` works; secrets still partly in .env"
+
+    # ── Markdown ──
+    lines = [
+        f"# Daily Ops Card — {now.strftime('%Y-%m-%d')}",
+        "",
+        f"_Generated {ct_note} · single briefing · not auto-trade_",
+        "",
+        "## Snapshot",
+        f"- **AUM:** ${aum:,.0f} · **positions:** {npos}",
+        f"- **Tech ~{tech_w:.0f}%** · **Energy ~{energy_w:.0f}%** · **Crypto ~{crypto_w:.0f}%**",
+        f"- **Pricing:** {'OK-ish' if pricing_ok else 'NEEDS REFRESH'} · history max `{ph_max}` · FMP rows `{fmp_n}`",
+        f"- **Regime (ignore if mushy):** {regime.get('regime')} ({regime.get('confidence')})",
+        "",
+        "## Do today (max 5)",
+    ]
+    for i, a in enumerate(actions[:5], 1):
+        lines.append(f"{i}. {a}")
+    lines += ["", "## Big day moves (|%| ≥ 8)"]
+    if not big:
+        lines.append("_None material in book_")
+    else:
+        for t, c, px, v in big[:12]:
+            lines.append(f"- **{t}** {c:+.1f}% @ ${px:.2f} · book ${v:,.0f}")
+
+    lines += ["", "## Material weights (≥2.5%)"]
+    for m in material[:15]:
+        day = f"{m['day']:+.1f}%" if m["day"] is not None else "—"
+        lines.append(
+            f"- **{m['ticker']}** {m['w']:.1f}% · ${m['v']:,.0f} · g{m['grade'] or '—'} · {m['council'] or '—'} · day {day}"
+        )
+
+    lines += ["", "## Outside ideas (file snip)"]
+    if outside_lines:
+        lines.extend(f"- {ln}" for ln in outside_lines[:8])
+    else:
+        lines.append("_No Outside-Ideas-LATEST.md_")
+
+    lines += ["", "## Breaking / macro tape"]
+    if brk_lines:
+        lines.extend(f"- {ln}" for ln in brk_lines[:6])
+    else:
+        lines.append("_No Breaking-LATEST.md_")
+
+    lines += ["", "## Top 10 research card (snip)"]
+    if t10:
+        lines.extend(t10[:8])
+    else:
+        lines.append("_No FullSystem-Top10-LATEST.md_")
+
+    lines += ["", "## Data warnings"]
+    for w in warnings:
+        lines.append(f"- ⚠️ {w}")
+    lines.append(f"- ⚠️ {op_note}")
+    if null_asof[:8]:
+        lines.append(f"- Missing asof sample: {', '.join(null_asof[:12])}")
+
+    lines += [
+        "",
+        "## Action loop",
+        "1. Decide from **Do today** only",
+        "2. Execute in brokers (you)",
+        "3. Re-import / hybrid prices",
+        "4. Re-run this card tomorrow — compare",
+        "",
+        "## Sources used",
+        "- positions (live, day_chg, price_asof)",
+        "- price_history max date",
+        "- fmp_fundamentals count",
+        "- Brain / Outside / Breaking / Top10 files",
+        "- market_regime (low weight)",
+        "",
+        "_Hygiene only · multi-broker never a sell reason · no day-trade FOMO_",
+        "",
+    ]
+
+    text = "\n".join(lines) + "\n"
+    OBS.mkdir(parents=True, exist_ok=True)
+    ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
+    OUT.write_text(text)
+    arch = ARCHIVE_DIR / f"Daily-Ops-{now.strftime('%Y-%m-%d')}.md"
+    arch.write_text(text)
+
+    # Telegram-friendly short stdout
+    short = [
+        f"VOX OPS {now.strftime('%Y-%m-%d')}",
+        f"AUM ${aum:,.0f} · Tech {tech_w:.0f}% · Energy {energy_w:.0f}% · Crypto {crypto_w:.0f}%",
+        f"Pricing {'OK' if pricing_ok else 'REFRESH'} · FMP {fmp_n} · big moves {len(big)}",
+        "DO:",
+    ]
+    for i, a in enumerate(actions[:5], 1):
+        short.append(f" {i}. {a}")
+    if big[:5]:
+        short.append("MOVES: " + " · ".join(f"{t} {c:+.0f}%" for t, c, _, __ in big[:5]))
+    if warnings:
+        short.append("WARN: " + "; ".join(warnings[:3]))
+    short.append(f"Full: {OUT}")
+    print("\n".join(short))
+    print("\n---\n")
+    print(text[:2500])
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

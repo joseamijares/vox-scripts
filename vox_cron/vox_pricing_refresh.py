@@ -31,6 +31,30 @@ from vox_price_quote import live_quote, yahoo_chart
 BIG_MOVE_PCT = 8.0
 STALE_MINUTES = 30
 
+# Yahoo chart symbols for common non-US / crypto holdings
+YAHOO_ALIAS = {
+    "BTC": "BTC-USD",
+    "ETH": "ETH-USD",
+    "SOL": "SOL-USD",
+    "XRP": "XRP-USD",
+    "DOGE": "DOGE-USD",
+    "ADA": "ADA-USD",
+    "BNB": "BNB-USD",
+    "TRX": "TRX-USD",
+    "HBAR": "HBAR-USD",
+    "AVAX": "AVAX-USD",
+    "DOT": "DOT-USD",
+    "BONK": "BONK-USD",
+    "PENGU": "PENGU-USD",
+    "VANA": "VANA-USD",
+    "MORPHO": "MORPHO-USD",
+    "NAFTRAC": "NAFTRAC.MX",
+    "KAITO": "KAITO-USD",
+    "NIGHT": "NIGHT-USD",
+    "NXPC": "NXPC-USD",
+    "VAULTA": "VAULTA-USD",
+}
+
 
 def connect():
     return psycopg2.connect(
@@ -161,12 +185,19 @@ def dual_check(ticker: str, price: float, day_chg: Optional[float]) -> Tuple[flo
 
 
 def refresh_ticker(cur, ticker: str, history_days: int = 45) -> Optional[dict]:
+    t = (ticker or "").strip().upper()
+    if not t or " " in t or t in ("MIRROR_TOTAL", "CASH"):
+        return {"ticker": ticker, "error": "skip_invalid_symbol"}
+    ysym = YAHOO_ALIAS.get(t, t)
     try:
         range_ = "2mo" if history_days >= 40 else "1mo"
-        meta, bars = yahoo_chart(ticker, range_=range_, interval="1d")
+        meta, bars = yahoo_chart(ysym, range_=range_, interval="1d")
         if not bars:
             return None
-        upsert_history(cur, ticker, bars[-history_days:], "yahoo_chart")
+        # store history under book ticker (not yahoo alias)
+        for b in bars:
+            b["ticker"] = t
+        upsert_history(cur, t, bars[-history_days:], "yahoo_chart")
 
         px = meta.get("regularMarketPrice") or bars[-1]["close"]
         # Prefer last completed bar as anchor for day% — meta previousClose is often wrong
@@ -188,9 +219,11 @@ def refresh_ticker(cur, ticker: str, history_days: int = 45) -> Optional[dict]:
             px = last_bar
         chg = 100.0 * (px - prev) / prev if prev else None
 
-        px, source, notes = dual_check(ticker, px, chg)
+        px, source, notes = dual_check(t, px, chg)
         if prev:
             chg = 100.0 * (px - prev) / prev
+        if ysym != t:
+            notes = (notes + f" alias={ysym}").strip()
 
         asof = datetime.now(timezone.utc)
         cur.execute(
@@ -209,17 +242,17 @@ def refresh_ticker(cur, ticker: str, history_days: int = 45) -> Optional[dict]:
                 updated_at = NOW()
             WHERE UPPER(ticker) = %s
             """,
-            (px, px, px, px, source, asof, prev, chg, ticker),
+            (px, px, px, px, source, asof, prev, chg, t),
         )
         cur.execute(
             """
             INSERT INTO price_feed_log (ticker, price, prev_close, day_chg_pct, source, notes)
             VALUES (%s,%s,%s,%s,%s,%s)
             """,
-            (ticker, px, prev, chg, source, notes or "refresh"),
+            (t, px, prev, chg, source, notes or "refresh"),
         )
         return {
-            "ticker": ticker,
+            "ticker": t,
             "price": px,
             "prev_close": prev,
             "day_chg_pct": chg,
@@ -232,9 +265,9 @@ def refresh_ticker(cur, ticker: str, history_days: int = 45) -> Optional[dict]:
             INSERT INTO price_feed_log (ticker, price, source, notes)
             VALUES (%s, NULL, 'error', %s)
             """,
-            (ticker, str(e)[:200]),
+            (t, str(e)[:200]),
         )
-        return {"ticker": ticker, "error": str(e)[:160]}
+        return {"ticker": t, "error": str(e)[:160]}
 
 
 def main():
