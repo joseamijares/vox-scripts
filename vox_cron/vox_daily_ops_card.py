@@ -95,19 +95,29 @@ def main():
     energy_w = sum(v for k, v in sector_w.items() if "energy" in (k or "").lower())
 
     # ── Pricing health ──
+    # Ignore unpriceable junk / broker shells so confidence isn't false YELLOW
+    JUNK_ASOF = {
+        "MIRROR_TOTAL", "CASH", "GBM O", "BI 270121", "TOTAL",
+    }
+    def _priceable(t: str) -> bool:
+        if not t or t in JUNK_ASOF:
+            return False
+        if " " in t:  # broker note symbols
+            return False
+        return True
+
     stale = []
     null_asof = []
     big = []
     for r in rows:
         t = (r["ticker"] or "").upper()
-        if t in ("MIRROR_TOTAL", "CASH"):
+        if not _priceable(t):
             continue
         asof = r.get("price_asof")
         if asof is None:
             null_asof.append(t)
         else:
             age_h = (now - asof.replace(tzinfo=timezone.utc) if asof.tzinfo is None else now - asof).total_seconds() / 3600
-            # market hours freshness: 2h; after hours: 18h still "session-fresh"
             if age_h > 18:
                 stale.append((t, age_h))
         chg = r.get("day_chg_pct")

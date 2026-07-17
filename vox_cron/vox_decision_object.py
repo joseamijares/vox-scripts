@@ -60,10 +60,23 @@ def build_decision_object(
 ) -> Dict[str, Any]:
     now = now or datetime.now(timezone.utc)
 
+    # Material pricing only — ignore broker shells / spaces / dust crypto aliases
+    def _material_null(t: str) -> bool:
+        if not t or t in ("MIRROR_TOTAL", "CASH", "GBM O", "BI 270121", "TOTAL"):
+            return False
+        if " " in t:
+            return False
+        return True
+
+    null_mat = [t for t in (null_asof or []) if _material_null(t)]
+    # dust crypto often unpriced — don't fail the book on them if value-unknown at gate level
+    DUST = {"PENGU", "KITE", "MORPHO", "VANA", "BONK", "NIGHT", "NXPC", "KAITO"}
+    null_mat = [t for t in null_mat if t not in DUST]
+
     # Confidence gates
     gates = {
         "book": aum > 1000,
-        "pricing": pricing_ok and len(null_asof) <= 8,
+        "pricing": pricing_ok and len(null_mat) <= 5,
         "morning": (OBS / "Morning-Context-LATEST.md").exists()
         and (now.timestamp() - (OBS / "Morning-Context-LATEST.md").stat().st_mtime) < 36 * 3600,
         "outside": (OBS / "Outside-Ideas-LATEST.md").exists()
