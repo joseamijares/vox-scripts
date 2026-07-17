@@ -179,8 +179,6 @@ def main():
     )
     regime = cur.fetchone() or {}
 
-    conn.close()
-
     # ── Files ──
     brain = OBS / "Brain-LATEST.md"
     outside = OBS / "Outside-Ideas-LATEST.md"
@@ -286,6 +284,10 @@ def main():
         held_tickers=held_tickers,
         now=now,
     )
+    try:
+        conn.close()
+    except Exception:
+        pass
 
     # ── Markdown ──
     conf = decision["confidence"]

@@ -84,24 +84,49 @@ def build_decision_object(
         "grades_fresh": False,
     }
     try:
+        # Prior ops queries may have aborted the transaction — recover first
+        try:
+            cur.execute("SELECT 1")
+            cur.fetchone()
+        except Exception:
+            try:
+                cur.connection.rollback()
+            except Exception:
+                pass
         cur.execute("SELECT MAX(generated_at) AS m FROM vox_grades")
         m = cur.fetchone()
         mx = None
         if m is not None:
-            if isinstance(m, dict):
-                mx = m.get("m")
-            else:
-                mx = m[0]
+            try:
+                mx = m["m"]
+            except Exception:
+                try:
+                    mx = m.get("m") if hasattr(m, "get") else None
+                except Exception:
+                    mx = None
+            if mx is None:
+                try:
+                    mx = list(m.values())[0]
+                except Exception:
+                    try:
+                        mx = m[0]
+                    except Exception:
+                        mx = None
         if mx is not None:
             if getattr(mx, "tzinfo", None) is None:
                 mx = mx.replace(tzinfo=timezone.utc)
             age = (now - mx).total_seconds()
-            # Naive DB timestamps sometimes look "in the future" vs true UTC — treat as fresh
             if age < 0:
-                gates["grades_fresh"] = age > -12 * 3600  # within 12h ahead = clock skew OK
+                gates["grades_fresh"] = age > -12 * 3600
             else:
                 gates["grades_fresh"] = age < 7 * 86400
-    except Exception as e:
+        # debug optional
+        # print('grades mx', mx, 'age', age if mx else None, 'fresh', gates['grades_fresh'])
+    except Exception:
+        try:
+            cur.connection.rollback()
+        except Exception:
+            pass
         gates["grades_fresh"] = False
 
     n_ok = sum(1 for v in gates.values() if v)
