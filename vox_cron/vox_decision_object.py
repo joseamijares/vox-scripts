@@ -84,15 +84,21 @@ def build_decision_object(
         "grades_fresh": False,
     }
     try:
-        cur.execute("SELECT MAX(generated_at) m FROM vox_grades")
+        cur.execute("SELECT MAX(generated_at) AS m FROM vox_grades")
         m = cur.fetchone()
-        mx = m["m"] if m and isinstance(m, dict) else (m[0] if m else None)
-        if mx:
+        mx = None
+        if m is not None:
+            if isinstance(m, dict):
+                mx = m.get("m")
+            else:
+                mx = m[0]
+        if mx is not None:
             if getattr(mx, "tzinfo", None) is None:
                 mx = mx.replace(tzinfo=timezone.utc)
-            gates["grades_fresh"] = (now - mx).total_seconds() < 7 * 86400
-    except Exception:
-        pass
+            age = (now - mx).total_seconds()
+            gates["grades_fresh"] = age < 7 * 86400 and age >= 0
+    except Exception as e:
+        gates["grades_fresh"] = False
 
     n_ok = sum(1 for v in gates.values() if v)
     if n_ok >= 4 and gates["book"] and gates["pricing"]:
