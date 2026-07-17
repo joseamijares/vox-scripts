@@ -96,7 +96,11 @@ def build_decision_object(
             if getattr(mx, "tzinfo", None) is None:
                 mx = mx.replace(tzinfo=timezone.utc)
             age = (now - mx).total_seconds()
-            gates["grades_fresh"] = age < 7 * 86400 and age >= 0
+            # Naive DB timestamps sometimes look "in the future" vs true UTC — treat as fresh
+            if age < 0:
+                gates["grades_fresh"] = age > -12 * 3600  # within 12h ahead = clock skew OK
+            else:
+                gates["grades_fresh"] = age < 7 * 86400
     except Exception as e:
         gates["grades_fresh"] = False
 
