@@ -2,7 +2,14 @@
 """
 VOX single entrypoint — agentic-friendly CLI.
 
-  python3 vox.py status|ops|prices|secrets|test|morning|advisor|compound|help
+  python3 vox.py status|ops|prices|secrets|test|morning|advisor|bakeoff|compound|help
+
+Advisor (soft only — never Ops SSOT):
+  python3 vox.py advisor                  # Kimi k3 (cron default)
+  python3 vox.py advisor --model sonnet5  # best hard critique (bakeoff winner)
+  python3 vox.py advisor --model glm52    # draft only
+  python3 vox.py advisor --model all      # run three
+  python3 vox.py bakeoff                  # full A/B rubric
 """
 from __future__ import annotations
 
@@ -147,7 +154,13 @@ def cmd_morning() -> int:
 
 
 def cmd_advisor() -> int:
-    return _run("vox_cron/vox_k3_advisor.py", timeout=400)
+    # pass-through: --model k3|sonnet5|glm52|all
+    extra = sys.argv[2:]
+    return _run("vox_cron/vox_k3_advisor.py", args=extra, timeout=900)
+
+
+def cmd_bakeoff() -> int:
+    return _run("vox_cron/vox_advisor_bakeoff.py", timeout=900)
 
 
 def cmd_compound() -> int:
@@ -158,7 +171,10 @@ def main():
     cmd = (sys.argv[1] if len(sys.argv) > 1 else "help").lower()
     if cmd in ("help", "-h", "--help"):
         print(__doc__)
-        print("Commands: status | ops | prices | secrets | test | morning | advisor | compound | help")
+        print(
+            "Commands: status | ops | prices | secrets | test | morning | "
+            "advisor [--model k3|sonnet5|glm52|all] | bakeoff | compound | help"
+        )
         return 0
     table = {
         "status": cmd_status,
@@ -168,6 +184,7 @@ def main():
         "test": cmd_test,
         "morning": cmd_morning,
         "advisor": cmd_advisor,
+        "bakeoff": cmd_bakeoff,
         "compound": cmd_compound,
     }
     if cmd not in table:

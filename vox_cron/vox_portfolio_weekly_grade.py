@@ -55,7 +55,12 @@ CRYPTO_YF = {
     "NXPC": "NXPC-USD",
 }
 
-SKIP = {"MIRROR_TOTAL", "CASH", "BI 270121", "GBM O", "VAULTA", "SPCX"}  # no reliable Yahoo
+# Non-US equity / ETF Yahoo symbols (book ticker stays canonical in DB)
+EQUITY_YF = {
+    "NAFTRAC": "NAFTRAC.MX",
+}
+
+SKIP = {"MIRROR_TOTAL", "CASH", "BI 270121", "GBM O"}  # shells / non-yahoo book rows
 
 
 def load_env() -> None:
@@ -89,6 +94,8 @@ def yf_symbol(ticker: str) -> str:
     t = normalize_ticker(ticker)
     if t in CRYPTO_YF:
         return CRYPTO_YF[t]
+    if t in EQUITY_YF:
+        return EQUITY_YF[t]
     if t.endswith("-USD"):
         return t
     return t
@@ -519,13 +526,28 @@ def main() -> int:
         print("Skipping live grade — using existing vox_grades")
 
     # sync
+    # Reconnect — long yfinance loops often drop the Railway proxy connection
+    try:
+        conn.close()
+    except Exception:
+        pass
+    conn = connect()
     cur2 = conn.cursor()
     try:
         n = sync_positions_and_unified(cur2, conn)
         print(f"Synced positions rows: {n}")
     except Exception as e:
-        conn.rollback()
-        print(f"Unified upsert failed ({e}); fallback…")
+        try:
+            conn.rollback()
+        except Exception:
+            pass
+        print(f"Unified upsert failed ({e}); reconnect + fallback…")
+        try:
+            conn.close()
+        except Exception:
+            pass
+        conn = connect()
+        cur2 = conn.cursor()
         n = sync_positions_fallback(cur2, conn)
         print(f"Fallback synced: {n}")
 

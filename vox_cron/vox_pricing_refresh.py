@@ -71,6 +71,43 @@ YAHOO_ALIAS = {
 
 CRYPTO = set(YAHOO_ALIAS.keys()) - {"NAFTRAC"}
 
+# Book tickers whose Yahoo feed is MXN-quoted. Marks stored in USD for AUM consistency.
+MXN_NATIVE = {"NAFTRAC"}
+
+# Fallback only if FX fetch fails (≈1/18.2)
+_MXN_USD_FALLBACK = 0.055
+_fx_cache: Dict[str, float] = {}
+
+
+def mxn_to_usd_rate() -> float:
+    """Live MXN→USD. Prefer MXNUSD=X, else invert USDMXN=X."""
+    if "mxn_usd" in _fx_cache:
+        return _fx_cache["mxn_usd"]
+    rate = None
+    try:
+        meta, bars = yahoo_chart("MXNUSD=X", range_="5d", interval="1d")
+        px = meta.get("regularMarketPrice")
+        if px is None and bars:
+            px = bars[-1]["close"]
+        if px and float(px) > 0.01:
+            rate = float(px)
+    except Exception:
+        rate = None
+    if rate is None:
+        try:
+            meta, bars = yahoo_chart("USDMXN=X", range_="5d", interval="1d")
+            px = meta.get("regularMarketPrice")
+            if px is None and bars:
+                px = bars[-1]["close"]
+            if px and float(px) > 1:
+                rate = 1.0 / float(px)
+        except Exception:
+            rate = None
+    if rate is None or rate <= 0:
+        rate = _MXN_USD_FALLBACK
+    _fx_cache["mxn_usd"] = rate
+    return rate
+
 
 def connect():
     return psycopg2.connect(
@@ -284,15 +321,16 @@ def refresh_ticker(
                 px = float(alpaca_cache[t])
                 asof = datetime.now(timezone.utc)
                 if update_positions:
+                    fx = mxn_to_usd_rate()
                     cur.execute(
                         """
                         UPDATE positions
                         SET live_price=%s, live_value=shares*%s,
-                            live_value_usd=CASE WHEN currency='MXN' THEN shares*%s*0.055 ELSE shares*%s END,
+                            live_value_usd=CASE WHEN currency='MXN' THEN shares*%s*%s ELSE shares*%s END,
                             price_source='alpaca_only', price_asof=%s, updated_at=NOW()
                         WHERE UPPER(ticker)=%s
                         """,
-                        (px, px, px, px, asof, t),
+                        (px, px, px, fx, px, asof, t),
                     )
                 return {"ticker": t, "price": px, "source": "alpaca_only", "day_chg_pct": None}
             return None
@@ -310,13 +348,23 @@ def refresh_ticker(
         elif meta_prev is not None:
             prev = float(meta_prev)
 
-        y_live = meta.get("regularMarketPrice") or last_bar
-        y_live = float(y_live)
-        if last_bar > 0 and abs(y_live - last_bar) / last_bar > 0.5:
-            y_live = last_bar
-
         source = "yahoo_chart"
         notes = ""
+
+        y_live = meta.get("regularMarketPrice") or last_bar
+        y_live = float(y_live)
+        # Trust daily bar over meta when they diverge materially (NAFTRAC.MX meta
+        # has returned junk mid-price while bars stay on the real MXN close).
+        diverge_lim = 0.08 if (t in MXN_NATIVE or (ysym or "").endswith(".MX")) else 0.5
+        if last_bar > 0 and abs(y_live - last_bar) / last_bar > diverge_lim:
+            y_live = last_bar
+            notes = (notes + f" prefer_bar meta={meta.get('regularMarketPrice')}").strip()
+
+        # Prefer bar-to-bar prev for MXN-native (meta previousClose often USD-mixed junk)
+        if t in MXN_NATIVE or (ysym or "").endswith(".MX"):
+            if bar_prev is not None:
+                prev = bar_prev
+
         px = y_live
 
         # Prefer Alpaca for US live mark when available
@@ -352,26 +400,75 @@ def refresh_ticker(
         if ysym != t:
             notes = (notes + f" alias={ysym}").strip()
 
+        # MXN-native (e.g. NAFTRAC.MX): day% from native bars; store USD marks for book AUM.
+        # Prior bug: hardcoded *0.055 on live_value_usd while live_price sometimes left in MXN
+        # and prev_close mixed units → fake −30% day moves and junk Ops shocks.
+        native_px = px
+        native_prev = prev
+        currency_hint = None
+        if t in MXN_NATIVE or (ysym or "").endswith(".MX"):
+            fx = mxn_to_usd_rate()
+            # day% must use native MXN only
+            chg = (
+                100.0 * (native_px - native_prev) / native_prev
+                if native_prev
+                else chg
+            )
+            px = native_px * fx
+            prev = native_prev * fx if native_prev is not None else None
+            currency_hint = "MXN"
+            notes = (notes + f" mxn_native fx={fx:.6f} native={native_px:.4f}").strip()
+            source = f"{source}+mxn_usd"
+
         asof = datetime.now(timezone.utc)
         if update_positions:
-            cur.execute(
-                """
-                UPDATE positions
-                SET live_price = %s,
-                    live_value = shares * %s,
-                    live_value_usd = CASE
-                      WHEN currency = 'MXN' THEN shares * %s * 0.055
-                      ELSE shares * %s
-                    END,
-                    price_source = %s,
-                    price_asof = %s,
-                    prev_close = %s,
-                    day_chg_pct = %s,
-                    updated_at = NOW()
-                WHERE UPPER(ticker) = %s
-                """,
-                (px, px, px, px, source, asof, prev, chg, t),
-            )
+            if currency_hint == "MXN":
+                cur.execute(
+                    """
+                    UPDATE positions
+                    SET live_price = %s,
+                        live_value = shares * %s,
+                        live_value_usd = shares * %s,
+                        currency = COALESCE(NULLIF(currency,''), 'MXN'),
+                        price_source = %s,
+                        price_asof = %s,
+                        prev_close = %s,
+                        day_chg_pct = %s,
+                        updated_at = NOW()
+                    WHERE UPPER(ticker) = %s
+                    """,
+                    (px, px, px, source[:40], asof, prev, chg, t),
+                )
+            else:
+                cur.execute(
+                    """
+                    UPDATE positions
+                    SET live_price = %s,
+                        live_value = shares * %s,
+                        live_value_usd = CASE
+                          WHEN currency = 'MXN' THEN shares * %s * %s
+                          ELSE shares * %s
+                        END,
+                        price_source = %s,
+                        price_asof = %s,
+                        prev_close = %s,
+                        day_chg_pct = %s,
+                        updated_at = NOW()
+                    WHERE UPPER(ticker) = %s
+                    """,
+                    (
+                        px,
+                        px,
+                        px,
+                        mxn_to_usd_rate(),
+                        px,
+                        source[:40],
+                        asof,
+                        prev,
+                        chg,
+                        t,
+                    ),
+                )
         if update_grades:
             cur.execute(
                 """
