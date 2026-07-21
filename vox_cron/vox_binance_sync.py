@@ -119,6 +119,15 @@ def fetch_portfolio(key: str, secret: str) -> Tuple[list, float]:
         if total > 0:
             spot[b["asset"]] = total
 
+    # LD* spot balances ARE Flexible Earn (legacy encoding). Simple-Earn flex API
+    # returns the same coins again — merging both double-counts (~2x book).
+    has_ld = any(a.startswith("LD") and len(a) > 2 for a in spot)
+    spot_liquid = 0
+    for a, q in spot.items():
+        if a.startswith("LD"):
+            continue
+        spot_liquid += q * resolve_price(a, prices)
+
     flex: Dict[str, float] = {}
     locked: Dict[str, float] = {}
     try:
@@ -158,10 +167,20 @@ def fetch_portfolio(key: str, secret: str) -> Tuple[list, float]:
             a = a[2:]
         merged[a] = merged.get(a, 0.0) + qty
 
-    for a, q in spot.items():
-        add(a, q)
-    for a, q in flex.items():
-        add(a, q)
+    # Prefer Simple-Earn flex API + non-LD spot + locked.
+    # If flex API empty but LD* present, fall back to decoding LD* only.
+    if flex:
+        for a, q in spot.items():
+            if a.startswith("LD"):
+                continue  # skip LD* — counted via flex
+            add(a, q)
+        for a, q in flex.items():
+            add(a, q)
+        mode = "spot_liquid+flex+locked"
+    else:
+        for a, q in spot.items():
+            add(a, q)  # includes LD* → base
+        mode = "spot_incl_LD+locked"
     for a, q in locked.items():
         add(a, q)
 
@@ -174,6 +193,10 @@ def fetch_portfolio(key: str, secret: str) -> Tuple[list, float]:
         if val >= MIN_USD:
             rows.append({"ticker": asset, "shares": qty, "price": px, "value": val})
     rows.sort(key=lambda x: x["value"], reverse=True)
+    print(
+        f"  mode={mode} has_ld={has_ld} spot_liquid~${spot_liquid:,.0f} "
+        f"flex_n={len(flex)} locked_n={len(locked)}"
+    )
     return rows, total_usd
 
 
