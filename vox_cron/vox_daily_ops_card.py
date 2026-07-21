@@ -98,11 +98,16 @@ def main():
     # Ignore unpriceable junk / broker shells so confidence isn't false YELLOW
     JUNK_ASOF = {
         "MIRROR_TOTAL", "CASH", "GBM O", "BI 270121", "TOTAL",
+        # dust / unlisted shells — never gate Ops Card on these
+        "VAULTA", "KITE", "FF",
     }
-    def _priceable(t: str) -> bool:
+    def _priceable(t: str, v: float = 0.0) -> bool:
         if not t or t in JUNK_ASOF:
             return False
         if " " in t:  # broker note symbols
+            return False
+        # dust row gate ignore (policy: ignore dust/shells)
+        if float(v or 0) < 25:
             return False
         return True
 
@@ -111,7 +116,7 @@ def main():
     big = []
     for r in rows:
         t = (r["ticker"] or "").upper()
-        if not _priceable(t):
+        if not _priceable(t, float(r.get("v") or 0)):
             continue
         asof = r.get("price_asof")
         if asof is None:

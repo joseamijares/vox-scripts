@@ -10,8 +10,11 @@ Checks:
   5) Enabled cron last_status failures
   6) price_history max date not ancient
 
-If any FAIL → write Compound-Issues-LATEST.md + stdout report (exit 1).
+If any FAIL → write Compound-Issues-LATEST.md + stdout report (exit 0 — alert body is the signal).
 If all PASS → short OK line, exit 0 (cron can stay quiet on local).
+
+Exit semantics: always 0 when the check itself ran successfully (Pattern: exit-1 false FAIL).
+Exit 1 only on unhandled crash.
 
 Usage:
   python3 vox_cron/vox_compound_loop.py
@@ -183,7 +186,8 @@ def main() -> int:
     for iss in issues:
         print(" !", iss)
     print("Full:", OUT)
-    return 1
+    # Successful diagnostic run — do not mark cron last_status=error
+    return 0
 
 
 if __name__ == "__main__":

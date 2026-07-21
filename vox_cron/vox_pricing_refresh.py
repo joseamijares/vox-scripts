@@ -46,6 +46,18 @@ from vox_price_quote import yahoo_chart
 
 BIG_MOVE_PCT = 8.0
 
+# Never block held pricing on shells / unlisted dust (Ops Card same policy)
+SKIP_TICKERS = {
+    "MIRROR_TOTAL",
+    "CASH",
+    "GBM O",
+    "BI 270121",
+    "TOTAL",
+    "VAULTA",  # no reliable Yahoo/Alpaca mark
+    "KITE",
+    "FF",
+}
+
 YAHOO_ALIAS = {
     "BTC": "BTC-USD",
     "ETH": "ETH-USD",
@@ -154,11 +166,13 @@ def held_tickers(cur) -> List[str]:
            OR COALESCE(shares, 0) > 0
         """
     )
-    return [
-        r["t"]
-        for r in cur.fetchall()
-        if r["t"] and r["t"] not in ("MIRROR_TOTAL", "CASH") and " " not in r["t"]
-    ]
+    out = []
+    for r in cur.fetchall():
+        t = (r.get("t") or "").upper().strip()
+        if not t or " " in t or t in SKIP_TICKERS:
+            continue
+        out.append(t)
+    return out
 
 
 def universe_tickers(cur, limit: int = 200) -> List[str]:
@@ -299,6 +313,69 @@ def upsert_history(cur, ticker: str, bars: list, source: str = "yahoo_chart") ->
     return n
 
 
+def _alpaca_only_update(
+    cur,
+    t: str,
+    px: float,
+    update_positions: bool,
+    note: str = "alpaca_only",
+) -> dict:
+    """Live mark from Alpaca when Yahoo is down/timeout/bad request."""
+    asof = datetime.now(timezone.utc)
+    prev = None
+    chg = None
+    try:
+        cur.execute(
+            """
+            SELECT close FROM price_history
+            WHERE UPPER(ticker)=%s
+            ORDER BY date DESC
+            LIMIT 2
+            """,
+            (t,),
+        )
+        rows = cur.fetchall() or []
+        if len(rows) >= 2 and rows[1].get("close") is not None:
+            prev = float(rows[1]["close"])
+            if prev > 0:
+                chg = 100.0 * (px - prev) / prev
+        elif len(rows) == 1 and rows[0].get("close") is not None:
+            prev = float(rows[0]["close"])
+    except Exception:
+        prev = None
+        chg = None
+    if update_positions:
+        fx = mxn_to_usd_rate()
+        cur.execute(
+            """
+            UPDATE positions
+            SET live_price=%s, live_value=shares*%s,
+                live_value_usd=CASE WHEN currency='MXN' THEN shares*%s*%s ELSE shares*%s END,
+                price_source=%s, price_asof=%s, prev_close=%s, day_chg_pct=%s, updated_at=NOW()
+            WHERE UPPER(ticker)=%s
+            """,
+            (px, px, px, fx, px, note[:40], asof, prev, chg, t),
+        )
+    try:
+        cur.execute(
+            """
+            INSERT INTO price_feed_log (ticker, price, prev_close, day_chg_pct, source, notes)
+            VALUES (%s,%s,%s,%s,%s,%s)
+            """,
+            (t, px, prev, chg, note[:40], "yahoo_fallback"),
+        )
+    except Exception:
+        pass
+    return {
+        "ticker": t,
+        "price": px,
+        "prev_close": prev,
+        "day_chg_pct": chg,
+        "source": note,
+        "notes": "yahoo_fallback",
+    }
+
+
 def refresh_ticker(
     cur,
     ticker: str,
@@ -308,31 +385,27 @@ def refresh_ticker(
     update_grades: bool = False,
 ) -> Optional[dict]:
     t = (ticker or "").strip().upper()
-    if not t or " " in t or t in ("MIRROR_TOTAL", "CASH"):
+    if not t or " " in t or t in SKIP_TICKERS:
         return {"ticker": ticker, "error": "skip_invalid_symbol"}
     ysym = YAHOO_ALIAS.get(t, t)
     alpaca_cache = alpaca_cache or {}
     try:
         range_ = "2mo" if history_days >= 40 else "1mo"
-        meta, bars = yahoo_chart(ysym, range_=range_, interval="1d")
+        try:
+            meta, bars = yahoo_chart(ysym, range_=range_, interval="1d", timeout=12)
+        except Exception as ye:
+            # Prefer Alpaca live when Yahoo 400/404/timeout — do not stall the whole held run
+            if t in alpaca_cache and float(alpaca_cache[t] or 0) > 0:
+                return _alpaca_only_update(
+                    cur, t, float(alpaca_cache[t]), update_positions, note="alpaca_only"
+                )
+            raise ye
         if not bars:
             # last resort: alpaca-only live without history
-            if t in alpaca_cache:
-                px = float(alpaca_cache[t])
-                asof = datetime.now(timezone.utc)
-                if update_positions:
-                    fx = mxn_to_usd_rate()
-                    cur.execute(
-                        """
-                        UPDATE positions
-                        SET live_price=%s, live_value=shares*%s,
-                            live_value_usd=CASE WHEN currency='MXN' THEN shares*%s*%s ELSE shares*%s END,
-                            price_source='alpaca_only', price_asof=%s, updated_at=NOW()
-                        WHERE UPPER(ticker)=%s
-                        """,
-                        (px, px, px, fx, px, asof, t),
-                    )
-                return {"ticker": t, "price": px, "source": "alpaca_only", "day_chg_pct": None}
+            if t in alpaca_cache and float(alpaca_cache[t] or 0) > 0:
+                return _alpaca_only_update(
+                    cur, t, float(alpaca_cache[t]), update_positions, note="alpaca_only"
+                )
             return None
 
         upsert_history(cur, t, bars[-history_days:], "yahoo_chart")
@@ -510,6 +583,11 @@ def refresh_ticker(
 
 def main() -> int:
     mode = sys.argv[1] if len(sys.argv) > 1 else "held"
+    # line-buffer friendly for cron logs
+    try:
+        sys.stdout.reconfigure(line_buffering=True)  # type: ignore[attr-defined]
+    except Exception:
+        pass
     conn = connect()
     cur = conn.cursor(cursor_factory=RealDictCursor)
     ensure_schema(cur)
@@ -517,13 +595,16 @@ def main() -> int:
 
     update_positions = True
     update_grades = False
+    history_days = 45
 
     if mode == "held":
         tickers = held_tickers(cur)
+        history_days = 12  # intraday: live marks matter more than deep history
     elif mode == "universe":
         tickers = universe_tickers(cur, 250)
     elif mode == "eod":
         tickers = universe_tickers(cur, 400)
+        history_days = 45
     elif mode == "grades":
         tickers = grades_stale_tickers(cur, 200)
         update_positions = False
@@ -533,40 +614,65 @@ def main() -> int:
     else:
         tickers = held_tickers(cur)
 
-    print(f"💰 VOX Pricing OWNER — mode={mode} tickers={len(tickers)}")
+    print(f"💰 VOX Pricing OWNER — mode={mode} tickers={len(tickers)} history_days={history_days}", flush=True)
     alpaca_cache = fetch_alpaca_batch(tickers)
 
     ok, err, big = 0, 0, []
     for i, t in enumerate(tickers):
-        r = refresh_ticker(
-            cur,
-            t,
-            alpaca_cache=alpaca_cache,
-            update_positions=update_positions,
-            update_grades=update_grades,
-        )
+        t0 = time.time()
+        try:
+            r = refresh_ticker(
+                cur,
+                t,
+                history_days=history_days,
+                alpaca_cache=alpaca_cache,
+                update_positions=update_positions,
+                update_grades=update_grades,
+            )
+        except Exception as e:
+            r = {"ticker": t, "error": str(e)[:160]}
+            try:
+                conn.rollback()
+            except Exception:
+                pass
+        dt = time.time() - t0
         if r and "error" not in r:
             ok += 1
-            if r.get("day_chg_pct") is not None and abs(r["day_chg_pct"]) >= BIG_MOVE_PCT:
+            if r.get("day_chg_pct") is not None and abs(float(r["day_chg_pct"])) >= BIG_MOVE_PCT:
                 big.append(r)
                 print(
-                    f"  ⚠️ {t} {r['day_chg_pct']:+.1f}% @ {r['price']:.2f} ({r['source']}) {r.get('notes') or ''}"
+                    f"  ⚠️ {t} {r['day_chg_pct']:+.1f}% @ {r['price']:.2f} ({r['source']}) {r.get('notes') or ''} {dt:.1f}s",
+                    flush=True,
                 )
+            elif i % 10 == 0:
+                print(f"  … {i+1}/{len(tickers)} last={t} {dt:.1f}s", flush=True)
         else:
             err += 1
-            print(f"  ❌ {t} {r}")
-        if i % 20 == 19:
-            conn.commit()
-        time.sleep(0.10)
-    conn.commit()
+            print(f"  ❌ {t} {r} {dt:.1f}s", flush=True)
+        # commit often — long uncommitted txs looked like hangs
+        if i % 5 == 4:
+            try:
+                conn.commit()
+            except Exception as ce:
+                print(f"  ⚠️ commit: {ce}", flush=True)
+                try:
+                    conn.rollback()
+                except Exception:
+                    pass
+        time.sleep(0.05)
+    try:
+        conn.commit()
+    except Exception:
+        pass
 
-    print(f"Done ok={ok} err={err} big_moves={len(big)} alpaca_cache={len(alpaca_cache)}")
+    print(f"Done ok={ok} err={err} big_moves={len(big)} alpaca_cache={len(alpaca_cache)}", flush=True)
     if big:
-        print("Big moves:")
+        print("Big moves:", flush=True)
         for r in sorted(big, key=lambda x: abs(x.get("day_chg_pct") or 0), reverse=True)[:15]:
-            print(f"  {r['ticker']:6} {r['day_chg_pct']:+6.1f}%  ${r['price']:.2f}  {r['source']}")
+            print(f"  {r['ticker']:6} {r['day_chg_pct']:+6.1f}%  ${r['price']:.2f}  {r['source']}", flush=True)
     conn.close()
-    return 0 if ok else 1
+    # Successful run if any marks landed (partial ok is not a cron FAIL)
+    return 0 if ok > 0 or not tickers else 1
 
 
 if __name__ == "__main__":
