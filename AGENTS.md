@@ -50,7 +50,7 @@ python3 vox.py bakeoff                  # full A/B rubric
 ## Crons (Phase 4 allowlist)
 **Telegram (3):** Ops Card · Breaking · Breaking weekend  
 
-**Local:** morning · **k3-advisor** (soft) · outside · brain-daily · obsidian · pricing held/EOD · etoro adapter · FMP · weekly-grade · health · housekeeper · compound · survival  
+**Local:** morning · **k3-advisor** (soft) · outside · brain-daily · obsidian · pricing held/EOD · etoro adapter · **binance+bitso daily** · FMP · weekly-grade · health · housekeeper · compound · survival  
 
 **Paused:** hybrid-full · brain-weekly · thesis-stubs · councils · master-data · price-history-sync · …
 

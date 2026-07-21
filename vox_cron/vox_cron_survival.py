@@ -35,6 +35,7 @@ ALLOWLIST = {
     "vox-pricing-held-intraday",
     "vox-pricing-eod",
     "vox-etoro-price-sync-v3",
+    "vox-crypto-broker-sync",  # Binance + Bitso API → broker_positions
     # Fund free
     "vox-fmp-fund-enrich",
     # Hygiene refresh
