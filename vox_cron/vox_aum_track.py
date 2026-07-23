@@ -607,30 +607,8 @@ def main() -> int:
     # if WTD used days=0 path already handled; if monday-distance and delta_block with 0
     if (date.fromisoformat(day).weekday()) > 0:
         mon = date.fromisoformat(day) - timedelta(days=date.fromisoformat(day).weekday())
-        # recompute WTD vs monday snap explicitly
-        cur = nearest_snap(snaps, day, 0) or nearest_snap(snaps, day, 2)
-        prev = nearest_snap(snaps, mon.isoformat(), 3)
-        if cur and prev and prev.get("day") != cur.get("day"):
-            a0, a1 = float(prev["aum"]), float(cur["aum"])
-            raw = a1 - a0
-            flows = cashflow_between(prev["day"], cur["day"])
-            pct = raw / a0 * 100 if a0 else 0
-            perf = raw - flows
-            blocks["wtd"] = {
-                "label": "WTD",
-                "ok": True,
-                "from_day": prev["day"],
-                "to_day": cur["day"],
-                "from_aum": round(a0, 2),
-                "to_aum": round(a1, 2),
-                "delta_usd": round(raw, 2),
-                "delta_pct": round(pct, 2),
-                "cashflow_usd": round(flows, 2),
-                "perf_usd": round(perf, 2),
-                "perf_pct": round(perf / a0 * 100, 2) if a0 else 0,
-                "delta_str": f"{raw:+,.0f} ({pct:+.2f}%)",
-                "perf_str": f"{perf:+,.0f} ({(perf/a0*100):+.2f}%)" if a0 else f"{raw:+,.0f}",
-            }
+        days_since_mon = (date.fromisoformat(day) - mon).days
+        blocks["wtd"] = delta_block(snaps, day, days_since_mon, "WTD")
 
     mtm = mtm_estimate(book["held"], lookback_trading_days=args.lookback)
     md = render(book, snaps, blocks, mtm)
