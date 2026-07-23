@@ -314,6 +314,21 @@ def main():
         # keep actions lean — full section later
         pass
 
+    # AUM WTD/WoW on Ops Card
+    aum_path = OBS / "AUM-Track-LATEST.md"
+    aum_snip = []
+    if aum_path.exists():
+        body = aum_path.read_text(errors="replace").splitlines()
+        for ln in body:
+            if ln.startswith("- **DoD:**") or ln.startswith("- **WTD:**") or ln.startswith("- **WoW:**"):
+                aum_snip.append(ln.lstrip("- ").strip())
+            if "MTM" in ln and "EST" not in ln and ln.strip().startswith("- **~"):
+                aum_snip.append(ln.lstrip("- ").strip())
+            if len(aum_snip) >= 4:
+                break
+    if aum_snip:
+        actions.append("AUM track: " + " · ".join(s.replace("**", "") for s in aum_snip[:3]))
+
     if t10:
         actions.append("New capital: see **Decision Object Bucket B** below (not stale FullSystem file)")
     if not actions:

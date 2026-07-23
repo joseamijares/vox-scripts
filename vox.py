@@ -17,6 +17,11 @@ Decision log (JOS-269 — you execute):
   python3 vox.py log did "BUY ALAB small" --ticker ALAB --broker GBM
   python3 vox.py log skip 1 --reason "wait multi-broker re-import"
   python3 vox.py log thesis DUOL --side short --reason "AI disruption"
+
+AUM track (daily snaps + WTD/WoW + MTM estimate):
+  python3 vox.py aum
+  python3 vox.py aum --cashflow 5000 --note "deposit GBM"
+  python3 vox.py aum --lookback 5
 """
 from __future__ import annotations
 
@@ -181,6 +186,11 @@ def cmd_log() -> int:
     return _run("vox_cron/vox_decision_log.py", args=extra, timeout=120)
 
 
+def cmd_aum() -> int:
+    extra = sys.argv[2:] if len(sys.argv) > 2 else []
+    return _run("vox_cron/vox_aum_track.py", args=extra, timeout=180)
+
+
 def main():
     cmd = (sys.argv[1] if len(sys.argv) > 1 else "help").lower()
     if cmd in ("help", "-h", "--help"):
@@ -188,7 +198,7 @@ def main():
         print(
             "Commands: status | ops | prices | secrets | test | morning | "
             "advisor [--model k3|sonnet5|glm52|all] | bakeoff | compound | "
-            "log [seed|status|did|skip|thesis] | help"
+            "log [seed|status|did|skip|thesis] | aum [--cashflow N] | help"
         )
         return 0
     table = {
@@ -202,6 +212,7 @@ def main():
         "bakeoff": cmd_bakeoff,
         "compound": cmd_compound,
         "log": cmd_log,
+        "aum": cmd_aum,
     }
     if cmd not in table:
         print("unknown command", cmd)

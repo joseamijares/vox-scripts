@@ -54,6 +54,8 @@ ALLOWLIST = {
     "vox-intel-ingest",
     "vox-intel-distill",
     "vox-earnings-desk",
+    # AUM daily track (WTD/WoW snaps)
+    "vox-aum-track",
 }
 
 DECISION_TG = {
