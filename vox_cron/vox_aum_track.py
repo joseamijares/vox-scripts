@@ -255,6 +255,19 @@ def delta_block(snaps: list[dict], today: str, days: int, label: str) -> dict:
             "current_day": cur.get("day"),
             "current_aum": cur.get("aum"),
         }
+    # Avoid mixing estimate backfill with live AUM (apples/oranges)
+    if bool(prev.get("estimate")) != bool(cur.get("estimate")):
+        return {
+            "label": label,
+            "ok": False,
+            "note": (
+                f"mixed basis ({'est' if prev.get('estimate') else 'live'} "
+                f"{prev.get('day')} → {'est' if cur.get('estimate') else 'live'} {cur.get('day')}) "
+                "— wait for 2+ live daily snaps"
+            ),
+            "from_day": prev.get("day"),
+            "to_day": cur.get("day"),
+        }
     a0 = float(prev["aum"])
     a1 = float(cur["aum"])
     raw = a1 - a0
@@ -276,6 +289,7 @@ def delta_block(snaps: list[dict], today: str, days: int, label: str) -> dict:
         "perf_pct": round(perf_pct, 2),
         "delta_str": f"{raw:+,.0f} ({pct:+.2f}%)",
         "perf_str": f"{perf:+,.0f} ({perf_pct:+.2f}%)" if flows else f"{raw:+,.0f} ({pct:+.2f}%)",
+        "estimate": bool(cur.get("estimate") or prev.get("estimate")),
     }
 
 
