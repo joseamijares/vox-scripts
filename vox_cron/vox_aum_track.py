@@ -555,6 +555,45 @@ def backfill_mtm_snaps(held: list[dict], trading_days: int = 7) -> int:
     return added
 
 
+def telegram_card(book: dict, blocks: dict, mtm: dict) -> str:
+    """Compact VOX Alerts card (broadcast bot)."""
+    day = book["day"]
+    lines = [
+        f"VOX AUM · {day}",
+        f"AUM ${book['aum']:,.0f} · {book['n']} names",
+        f"Tech {book['tech_pct']}% · Energy {book['energy_pct']}% · Crypto {book['crypto_pct']}%",
+        "",
+    ]
+    for key in ("dod", "wtd", "wow"):
+        b = blocks.get(key) or {}
+        lab = b.get("label") or key.upper()
+        if b.get("ok"):
+            extra = ""
+            if b.get("cashflow_usd"):
+                extra = f" · perf {b.get('perf_str')}"
+            est = " · est" if b.get("estimate") else ""
+            lines.append(f"{lab}: {b.get('delta_str')}{extra}{est}")
+        else:
+            note = (b.get("note") or "n/a")[:48]
+            lines.append(f"{lab}: n/a")
+    if mtm.get("ok"):
+        lines.append("")
+        lines.append(f"MTM~{mtm.get('lookback_trading_days')}d EST: {mtm.get('delta_str')}")
+        lines.append(f"{mtm.get('from_date')} → {mtm.get('to_date')}")
+        tops = mtm.get("top_contrib") or []
+        if tops:
+            bits = [f"{c['ticker']} {c['delta']:+,.0f}" for c in tops[:5]]
+            lines.append("Drivers: " + " · ".join(bits))
+    else:
+        lines.append(f"MTM: n/a ({(mtm.get('note') or '')[:40]})")
+    lines += [
+        "",
+        "Soft track only — not trade orders",
+        "Full: Obsidian AUM-Track-LATEST",
+    ]
+    return "\n".join(lines)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--no-save", action="store_true", help="compute only, do not write snap")
@@ -567,6 +606,17 @@ def main() -> int:
         default=0,
         metavar="N",
         help="seed N trading-day estimate snaps from price_history (test/bootstrap)",
+    )
+    ap.add_argument(
+        "--send",
+        action="store_true",
+        default=None,
+        help="force send to VOX alerts bot",
+    )
+    ap.add_argument(
+        "--no-send",
+        action="store_true",
+        help="do not send Telegram (files only)",
     )
     args = ap.parse_args()
 
@@ -597,14 +647,12 @@ def main() -> int:
         snaps = upsert_snap(book, note=args.note)
 
     day = book["day"]
-    # DoD: 1 calendar day back
     blocks = {
         "dod": delta_block(snaps, day, 1, "DoD"),
         "wtd": wtd_block(snaps, day),
         "wow": delta_block(snaps, day, 7, "WoW"),
         "mom": delta_block(snaps, day, 30, "MoM"),
     }
-    # if WTD used days=0 path already handled; if monday-distance and delta_block with 0
     if (date.fromisoformat(day).weekday()) > 0:
         mon = date.fromisoformat(day) - timedelta(days=date.fromisoformat(day).weekday())
         days_since_mon = (date.fromisoformat(day) - mon).days
@@ -626,6 +674,7 @@ def main() -> int:
     OUT_JSON.write_text(json.dumps(payload, indent=2, default=str) + "\n")
     (OBS / f"AUM-Track-{day}.md").write_text(md)
 
+    card = telegram_card(book, blocks, mtm)
     print(f"AUM TRACK {day}")
     print(f"AUM ${book['aum']:,.0f} · n={book['n']} · snaps={len(snaps)}")
     for k in ("dod", "wtd", "wow", "mom"):
@@ -641,6 +690,32 @@ def main() -> int:
     else:
         print(f"  MTM: n/a ({mtm.get('note')})")
     print(f"Wrote {OUT_MD}")
+
+    # Default: send on cron/normal runs; --no-send for local file-only
+    do_send = True
+    if args.no_send:
+        do_send = False
+    if args.send:
+        do_send = True
+    if os.environ.get("VOX_AUM_NO_SEND") == "1":
+        do_send = False
+
+    if do_send:
+        try:
+            from vox_broadcast import send_broadcast, broadcast_configured
+        except Exception:
+            from vox_cron.vox_broadcast import send_broadcast, broadcast_configured  # type: ignore
+        if not broadcast_configured():
+            print("BROADCAST skip: TELEGRAM_BROADCAST_* not configured")
+        else:
+            ok, info = send_broadcast(card)
+            print(f"BROADCAST {'OK' if ok else 'FAIL'}: {info}")
+            if not ok:
+                return 1
+    else:
+        print("BROADCAST skipped (--no-send)")
+        print("--- card ---")
+        print(card)
     return 0
 
 

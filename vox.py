@@ -18,10 +18,11 @@ Decision log (JOS-269 — you execute):
   python3 vox.py log skip 1 --reason "wait multi-broker re-import"
   python3 vox.py log thesis DUOL --side short --reason "AI disruption"
 
-AUM track (daily snaps + WTD/WoW + MTM estimate):
+AUM track (daily snaps + WTD/WoW + MTM estimate → VOX alerts bot):
   python3 vox.py aum
   python3 vox.py aum --cashflow 5000 --note "deposit GBM"
   python3 vox.py aum --lookback 5
+  python3 vox.py aum --no-send          # files only
 """
 from __future__ import annotations
 

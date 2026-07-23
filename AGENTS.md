@@ -60,7 +60,10 @@ python3 vox.py log thesis TICKER --side long|short
 ## Crons (Phase 4 allowlist)
 **Telegram Hermes (3):** Ops Card · Breaking · Breaking weekend  
 
-**Telegram broadcast bot (1):** `vox-weekly-monitor` — Sunday AUM + best plays + Radar snips via `TELEGRAM_BROADCAST_*`
+**Telegram broadcast bot (`@Vox_alertsbot_bot`):**
+- `vox-weekly-monitor` — Sunday AUM + best plays + Radar
+- `vox-aum-track` — daily AUM / WTD / MTM card (16:30 CT M–F)
+- Self-send via `TELEGRAM_BROADCAST_*` · Hermes `deliver=local`
 
 **Local:** morning · **radar-board** · **intel-ingest/distill** · **earnings-desk** · **k3-advisor** (soft) · outside · brain-daily · obsidian · pricing held/EOD · etoro adapter · **binance+bitso daily** · FMP · weekly-grade · health · housekeeper · compound · survival  
 
