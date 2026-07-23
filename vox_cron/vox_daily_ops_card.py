@@ -10,6 +10,7 @@ Usage:
 """
 from __future__ import annotations
 
+import json
 import os
 import sys
 from collections import defaultdict
@@ -255,6 +256,64 @@ def main():
                 "Hot names — do not chase: "
                 + ", ".join(f"{t} {c:+.0f}%" for t, c, _, __ in ups)
             )
+
+    # Radar Board → EVENT earnings (held this week)
+    radar_path = Path.home() / ".hermes" / "cron" / "output" / "brain" / "RadarBoard-LATEST.json"
+    radar = {}
+    if radar_path.exists():
+        try:
+            radar = json.loads(radar_path.read_text())
+        except Exception:
+            radar = {}
+    earn_held = (radar.get("earnings") or {}).get("held") or []
+    # Prefer earnings desk if fresher/richer
+    desk_path = Path.home() / ".hermes" / "cron" / "output" / "intel" / "EarningsDesk-LATEST.json"
+    desk = {}
+    if desk_path.exists():
+        try:
+            desk = json.loads(desk_path.read_text())
+        except Exception:
+            desk = {}
+    if desk.get("held"):
+        earn_held = [
+            {
+                "ticker": r.get("ticker"),
+                "date": r.get("date"),
+                "status": "REPORTED" if r.get("reported") else "UPCOMING",
+                "book_w": r.get("book_w"),
+            }
+            for r in desk["held"]
+        ]
+    if earn_held:
+        bits = []
+        for e in earn_held[:6]:
+            st = e.get("status") or ""
+            bits.append(f"{e.get('ticker')} {e.get('date')}{('*' if st=='REPORTED' or e.get('reported') else '')}")
+        actions.append("EVENT earnings (held): " + ", ".join(bits))
+    ai_veto = (radar.get("disruption") or {}).get("outside_veto") or []
+    if ai_veto:
+        actions.append("AI veto Outside longs: " + ", ".join(ai_veto[:8]))
+
+    # Intel digest headline (soft)
+    intel_path = OBS / "Intel-Digest-LATEST.md"
+    intel_snip = []
+    if intel_path.exists():
+        body = [ln for ln in intel_path.read_text(errors="replace").splitlines() if ln.strip()]
+        grab = False
+        for ln in body:
+            if ln.startswith("## Book-relevant"):
+                grab = True
+                continue
+            if grab and ln.startswith("## "):
+                break
+            if grab and ln.startswith("-"):
+                intel_snip.append(ln)
+            if len(intel_snip) >= 4:
+                break
+    if intel_snip:
+        # keep actions lean — full section later
+        pass
+
     if t10:
         actions.append("New capital: see **Decision Object Bucket B** below (not stale FullSystem file)")
     if not actions:
@@ -333,6 +392,51 @@ def main():
         lines.extend(f"- {ln}" for ln in outside_lines[:8])
     else:
         lines.append("_No Outside-Ideas-LATEST.md_")
+
+    # Radar Board snips (earnings + AI + shorts) — not SSOT
+    lines += ["", "## Radar Board (earnings · AI · shorts — not SSOT)"]
+    if radar or desk:
+        if earn_held:
+            lines.append(
+                "- **Held earnings:** "
+                + ", ".join(
+                    f"{e.get('ticker')} {e.get('date')}"
+                    + (f" w={e.get('book_w')}" if e.get("book_w") else "")
+                    for e in earn_held[:8]
+                )
+            )
+        earn_w = (radar.get("earnings") or {}).get("watch") or []
+        if earn_w:
+            lines.append(
+                "- **Watch earnings:** "
+                + ", ".join(f"{e.get('ticker')} {e.get('date')}" for e in earn_w[:6])
+            )
+        if not earn_held and not earn_w:
+            lines.append("- Earnings window: _none detected / calendar sparse_")
+        if ai_veto:
+            lines.append("- **AI veto Outside longs:** " + ", ".join(ai_veto[:10]))
+        shorts = ((radar.get("shorts") or {}).get("candidates") or [])[:5]
+        if shorts:
+            lines.append(
+                "- **Short candidates (cap-aware):** "
+                + ", ".join(f"{s.get('ticker')}({s.get('score')})" for s in shorts)
+            )
+        lines.append(f"- Full: `{OBS / 'Radar-Board-LATEST.md'}` · `{OBS / 'Earnings-Desk-LATEST.md'}`")
+    else:
+        lines.append("_No Radar/Earnings desk yet — run intel spine / radar scripts_")
+
+    # Intel digest
+    lines += ["", "## Intel digest (soft — not SSOT)"]
+    if intel_snip:
+        lines.extend(intel_snip[:5])
+        lines.append(f"- Full: `{intel_path}`")
+    elif intel_path.exists():
+        # first bullets anywhere
+        body = [ln for ln in intel_path.read_text(errors="replace").splitlines() if ln.startswith("- ")]
+        lines.extend(body[:4] or ["_Digest present but empty bullets_"])
+        lines.append(f"- Full: `{intel_path}`")
+    else:
+        lines.append("_No Intel-Digest-LATEST.md — run `vox_intel_ingest` + `vox_intel_distill`_")
 
     # Morning research pack (06:15)
     morning = OBS / "Morning-Context-LATEST.md"
@@ -451,6 +555,12 @@ def main():
             b_tickers.append(m.group(1))
     if b_tickers and conf != "RED":
         short.append("B: " + " · ".join(b_tickers[:8]))
+    if earn_held[:4]:
+        short.append(
+            "EARN: " + " · ".join(f"{e.get('ticker')} {e.get('date')}" for e in earn_held[:4])
+        )
+    if ai_veto[:6]:
+        short.append("AI-VETO: " + " · ".join(ai_veto[:6]))
     if big[:5]:
         short.append("MOVES: " + " · ".join(f"{t} {c:+.0f}%" for t, c, _, __ in big[:5]))
     if warnings:

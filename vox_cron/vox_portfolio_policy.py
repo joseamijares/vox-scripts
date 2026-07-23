@@ -67,6 +67,19 @@ SLEEVE_TARGETS = {
     "EXIT": 0.0,
     "OTHER": 0.0,
     "SATELLITE": 0.0,
+    # Gross short notional cap (candidates only — not auto-trade)
+    "SHORT": 0.08,
+}
+
+# Short sleeve policy (Radar D) — thesis required; AI-disruption preferred over weak grades
+SHORT_POLICY = {
+    "gross_max_pct": 8.0,
+    "per_name_max_pct": 2.0,
+    "horizon": "weeks–months · not day-trade",
+    "require_thesis_and_kill": True,
+    "prefer": "AI disruption / broken model (Radar Board)",
+    "forbid": "Shorting QUALITY_HOLD on narrative alone",
+    "multi_broker_never_cover_reason": True,
 }
 
 # Soft single-name caps (fraction of book) for drift reporting

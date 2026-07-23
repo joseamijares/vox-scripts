@@ -259,7 +259,24 @@ def call_openrouter(model: str, prompt: str, temperature: float = 0.3) -> tuple:
 def call_advisor(model_key: str, prompt: str) -> tuple:
     cfg = ADVISOR_MODELS[model_key]
     if cfg["path"] == "kimi":
-        return call_k3(prompt)
+        try:
+            return call_k3(prompt)
+        except Exception as e:
+            # Kimi coding API intermittent 403 in headless cron — soft fallback
+            # DeepSeek is batch workhorse; never SSOT. Label output clearly.
+            analysis, usage = call_openrouter(
+                os.environ.get("VOX_K3_FALLBACK_MODEL", "deepseek/deepseek-chat"),
+                prompt,
+                temperature=0.3,
+            )
+            usage = dict(usage or {})
+            usage["_fallback_from"] = f"kimi_failed:{e}"
+            usage["_provider"] = "openrouter-fallback"
+            header = (
+                f"_⚠️ Kimi k3 unavailable (`{e}`). Soft fallback via OpenRouter "
+                f"`{usage.get('_model') or 'deepseek'}`. Still **not SSOT**._\n\n"
+            )
+            return header + analysis, usage
     return call_openrouter(cfg["model"], prompt)
 
 

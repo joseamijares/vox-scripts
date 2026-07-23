@@ -46,6 +46,14 @@ ALLOWLIST = {
     "vox-compound-weekly",
     "vox-cron-survival-monthly",
     "vox-k3-advisor",
+    # Broadcast bot (self-send; Hermes deliver=local)
+    "vox-weekly-monitor",
+    # Radar Board panels A–E (feeds weekly + Ops EVENT; not a council)
+    "vox-radar-board",
+    # Intel Spine Phase 1+2 (JOS-267)
+    "vox-intel-ingest",
+    "vox-intel-distill",
+    "vox-earnings-desk",
 }
 
 DECISION_TG = {
@@ -53,6 +61,7 @@ DECISION_TG = {
     "vox-intel-breaking",
     "vox-intel-breaking-weekend",
 }
+# Note: vox-weekly-monitor uses TELEGRAM_BROADCAST_* self-send, not Hermes origin.
 
 # Explicitly dead forever (if re-enabled → zombie)
 NEVER = {
@@ -131,7 +140,7 @@ def main() -> int:
         "",
         "## Anti-slop rules",
         "1. Do **not** re-enable NEVER list (councils, master-data, top10-claude, price-history-sync…)",
-        "2. Telegram only: Ops Card + Breaking (+ weekend)",
+        "2. Hermes Telegram only: Ops Card + Breaking (+ weekend). Weekly monitor = broadcast bot (local deliver).",
         "3. Price owner = `pricing_refresh` only; eToro = adapter",
         "4. If a job does not feed Ops/Decision for 30 days → pause",
         "5. New cron requires: allowlist edit + AGENTS.md note",
@@ -148,7 +157,7 @@ def main() -> int:
         "| 09–15 :15 | pricing held |",
         "| 09/12/16 | breaking (TG if material) |",
         "| 15:45 | pricing EOD |",
-        "| Sun | weekly grade · compound · survival monthly (1st) |",
+        "| Sun | weekly grade · **weekly monitor (broadcast bot)** · compound · survival monthly (1st) |",
         "",
     ]
     OUT.parent.mkdir(parents=True, exist_ok=True)

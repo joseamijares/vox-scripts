@@ -131,12 +131,31 @@ def research_score(row):
     return 0.30 * t + 0.25 * f + 0.20 * m + 0.15 * s + 0.10 * g
 
 
-def classify(row, ret_5, ret_63, fmp_score=None):
+def load_ai_veto() -> tuple[set[str], set[str]]:
+    """From Radar Board disruption panel — veto / caution tickers."""
+    veto, caution = set(), set()
+    path = Path.home() / ".hermes" / "cron" / "output" / "brain" / "RadarBoard-LATEST.json"
+    if not path.exists():
+        # hard fallback curated high-risk (DUOL/CHGG class) if radar not built yet
+        return {"DUOL", "CHGG"}, {"COUR", "UDMY", "PATH", "WIX", "SQSP", "OPEN"}
+    try:
+        data = json.loads(path.read_text())
+        d = data.get("disruption") or {}
+        veto = {str(x).upper() for x in (d.get("outside_veto") or [])}
+        caution = {str(x).upper() for x in (d.get("outside_caution") or [])}
+    except Exception:
+        veto, caution = {"DUOL", "CHGG"}, set()
+    return veto, caution
+
+
+def classify(row, ret_5, ret_63, fmp_score=None, ai_veto=None, ai_caution=None):
     t = row["ticker"].upper()
     r5 = ret_5.get(t)
     r63 = ret_63.get(t)
     chase = False
     flags = []
+    ai_veto = ai_veto or set()
+    ai_caution = ai_caution or set()
     if r63 is not None and r63 >= 50:
         chase = True
         flags.append(f"3m +{r63:.0f}%")
@@ -171,6 +190,14 @@ def classify(row, ret_5, ret_63, fmp_score=None):
     else:
         flags.append(f"fmp={fmp_score:.0f}")
 
+    # AI disruption ledger (Radar Board) — hygiene grades do NOT model product death
+    if t in ai_veto:
+        flags.append("AI_VETO_LONG")
+        # never Tier A/B long idea — surface as Tier C / skip
+        return "C", True, flags, rs, r5, r63
+    if t in ai_caution:
+        flags.append("AI_CAUTION")
+
     if chase:
         tier = "C"
     elif missing_ret:
@@ -191,6 +218,10 @@ def classify(row, ret_5, ret_63, fmp_score=None):
         tier = "B"
     else:
         tier = "B"
+    # caution names cannot be Tier A
+    if t in ai_caution and tier == "A":
+        tier = "B"
+        flags.append("ai_caution_demote_A")
     return tier, chase, flags, rs, r5, r63
 
 
@@ -203,6 +234,7 @@ def main():
     fmp = load_fmp_scores(cur)
     rows = load_candidates(cur)
     conn.close()
+    ai_veto, ai_caution = load_ai_veto()
 
     ideas = []
     for row in rows:
@@ -215,7 +247,14 @@ def main():
         if len(t) > 6:
             continue
         fmp_score = fmp.get(t)
-        tier, chase, flags, rs, r5, r63 = classify(row, ret_5, ret_63, fmp_score)
+        tier, chase, flags, rs, r5, r63 = classify(
+            row, ret_5, ret_63, fmp_score, ai_veto=ai_veto, ai_caution=ai_caution
+        )
+        entry = "BUY_DIPS_ONLY" if chase else "NEW_IDEA"
+        if "AI_VETO_LONG" in flags:
+            entry = "AI_VETO_SKIP"
+        elif "AI_CAUTION" in flags:
+            entry = "AI_CAUTION_SMALL_ONLY"
         ideas.append(
             {
                 "ticker": t,
@@ -234,7 +273,7 @@ def main():
                 "flags": flags,
                 "ret_1w": None if r5 is None else round(r5, 1),
                 "ret_3m": None if r63 is None else round(r63, 1),
-                "entry": "BUY_DIPS_ONLY" if chase else "NEW_IDEA",
+                "entry": entry,
             }
         )
 
@@ -265,6 +304,7 @@ def main():
         "> Grades = **hygiene / ranking**, not auto-deploy. Outside-book only. Anti-chase applied.",
         "> Bucket **B** in capital plan = new ideas. Bucket **A** = rebalance owned quality (not listed here).",
         "> **Fund honesty:** FMP free = mega only. Mid-caps without FMP are tagged `fund=unknown` (not fake precision).",
+        f"> **AI disruption:** VETO longs {', '.join(sorted(ai_veto)) or '—'} · CAUTION {', '.join(sorted(ai_caution)) or '—'} (Radar Board — not a council).",
         "",
         "## Tier A — cleanest new ideas (prefer)",
         "",
@@ -308,6 +348,19 @@ def main():
             f"{', '.join(i['flags'])} |"
         )
 
+    # AI veto surface (even if not in candidate table this run)
+    veto_ideas = [i for i in ideas if "AI_VETO_LONG" in (i.get("flags") or [])][:10]
+    lines += [
+        "",
+        "## AI disruption veto / caution (from Radar Board)",
+        f"- **VETO longs:** {', '.join(sorted(ai_veto)) or '—'}",
+        f"- **CAUTION:** {', '.join(sorted(ai_caution)) or '—'}",
+    ]
+    if veto_ideas:
+        for i in veto_ideas:
+            lines.append(
+                f"- ~~{i['ticker']}~~ g{i['grade']:.0f} blocked — {', '.join(i.get('flags') or [])}"
+            )
     lines += [
         "",
         "## How Hermes should use this",
@@ -317,6 +370,7 @@ def main():
         "4. Rebalance adds to **owned** quality are separate (Brain sleeve repair)",
         "5. Still not day-trading; size for balanced mandate",
         "6. Optional: FMP Starter unlocks mid-cap fund scores (not required)",
+        "7. **AI_VETO_LONG** names are never clean Outside longs (e.g. DUOL/CHGG class)",
         "",
         f"JSON: `~/.hermes/cron/output/brain/OutsideIdeas-{day}.json`",
     ]
@@ -344,6 +398,7 @@ def main():
     # Telegram-friendly short
     print(f"🌍 **VOX Outside Ideas — {day}**")
     print(f"Held excluded: {len(held)} · Grades = hygiene only")
+    print(f"AI veto: {', '.join(sorted(ai_veto)) or '—'} · caution: {', '.join(sorted(ai_caution)) or '—'}")
     print("")
     print("**Tier A (new capital):**")
     for i in tier_a[:6]:
@@ -353,7 +408,7 @@ def main():
     print("")
     print("**Tier B:** " + ", ".join(i["ticker"] for i in tier_b[:8]) if tier_b else "**Tier B:** —")
     if dips:
-        print("**Dips only:** " + ", ".join(f"{i['ticker']}" for i in dips[:6]))
+        print("**Dips only / blocked:** " + ", ".join(f"{i['ticker']}" for i in dips[:8]))
     print("")
     print(f"Full: Obsidian `memory/brain/Outside-Ideas-LATEST`")
     return 0

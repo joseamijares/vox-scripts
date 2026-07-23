@@ -2,14 +2,21 @@
 """
 VOX single entrypoint — agentic-friendly CLI.
 
-  python3 vox.py status|ops|prices|secrets|test|morning|advisor|bakeoff|compound|help
+  python3 vox.py status|ops|prices|secrets|test|morning|advisor|bakeoff|compound|log|help
 
 Advisor (soft only — never Ops SSOT):
-  python3 vox.py advisor                  # Kimi k3 (cron default)
+  python3 vox.py advisor                  # Kimi k3 (cron default; DeepSeek fallback)
   python3 vox.py advisor --model sonnet5  # best hard critique (bakeoff winner)
   python3 vox.py advisor --model glm52    # draft only
   python3 vox.py advisor --model all      # run three
   python3 vox.py bakeoff                  # full A/B rubric
+
+Decision log (JOS-269 — you execute):
+  python3 vox.py log                      # seed today from Ops Card
+  python3 vox.py log status
+  python3 vox.py log did "BUY ALAB small" --ticker ALAB --broker GBM
+  python3 vox.py log skip 1 --reason "wait multi-broker re-import"
+  python3 vox.py log thesis DUOL --side short --reason "AI disruption"
 """
 from __future__ import annotations
 
@@ -25,7 +32,6 @@ sys.path.insert(0, str(ROOT))
 def _run(script: str, args: list[str] | None = None, timeout: int = 300) -> int:
     cmd = [sys.executable, str(ROOT / script)] + (args or [])
     env = os.environ.copy()
-    # ensure secrets
     try:
         import hermes_secrets_bootstrap  # noqa: F401
     except Exception:
@@ -39,6 +45,7 @@ def cmd_status() -> int:
     import hermes_secrets_bootstrap  # noqa: F401
     import psycopg2
     from psycopg2.extras import RealDictCursor
+    from datetime import datetime
 
     print("=== VOX STATUS ===")
     print(f"secrets DB_HOST={bool(os.environ.get('DB_HOST'))} FMP={bool(os.environ.get('FMP_API_KEY'))}")
@@ -74,6 +81,9 @@ def cmd_status() -> int:
 
     ops = Path.home() / "Documents/Obsidian/VOX/vox/memory/brain/Daily-Ops-LATEST.md"
     print("ops_card", "present" if ops.exists() else "MISSING", ops)
+    dec = Path.home() / "Documents/Obsidian/VOX/vox/memory/decisions"
+    dpath = dec / f"{datetime.now().strftime('%Y-%m-%d')}.md"
+    print("decision_log_today", "present" if dpath.exists() else "MISSING", dpath)
     return 0
 
 
@@ -154,7 +164,6 @@ def cmd_morning() -> int:
 
 
 def cmd_advisor() -> int:
-    # pass-through: --model k3|sonnet5|glm52|all
     extra = sys.argv[2:]
     return _run("vox_cron/vox_k3_advisor.py", args=extra, timeout=900)
 
@@ -167,13 +176,19 @@ def cmd_compound() -> int:
     return _run("vox_cron/vox_compound_loop.py", timeout=120)
 
 
+def cmd_log() -> int:
+    extra = sys.argv[2:] if len(sys.argv) > 2 else []
+    return _run("vox_cron/vox_decision_log.py", args=extra, timeout=120)
+
+
 def main():
     cmd = (sys.argv[1] if len(sys.argv) > 1 else "help").lower()
     if cmd in ("help", "-h", "--help"):
         print(__doc__)
         print(
             "Commands: status | ops | prices | secrets | test | morning | "
-            "advisor [--model k3|sonnet5|glm52|all] | bakeoff | compound | help"
+            "advisor [--model k3|sonnet5|glm52|all] | bakeoff | compound | "
+            "log [seed|status|did|skip|thesis] | help"
         )
         return 0
     table = {
@@ -186,6 +201,7 @@ def main():
         "advisor": cmd_advisor,
         "bakeoff": cmd_bakeoff,
         "compound": cmd_compound,
+        "log": cmd_log,
     }
     if cmd not in table:
         print("unknown command", cmd)

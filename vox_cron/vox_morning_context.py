@@ -24,7 +24,7 @@ import sys
 import time
 import urllib.parse
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -162,11 +162,12 @@ def fmp_news(limit: int = 12) -> List[Dict[str, str]]:
                     "title": str(item.get("title") or "")[:160],
                     "symbol": str(item.get("symbol") or item.get("site") or "")[:20],
                     "published": str(item.get("publishedDate") or item.get("date") or "")[:19],
+                    "source": "fmp",
                 }
             )
         return out
     except Exception as e:
-        return [{"title": f"(FMP news unavailable: {e})", "symbol": "", "published": ""}]
+        return [{"title": f"(FMP news unavailable: {e})", "symbol": "", "published": "", "source": "fmp_err"}]
 
 
 def fmp_general_news(limit: int = 8) -> List[Dict[str, str]]:
@@ -184,6 +185,7 @@ def fmp_general_news(limit: int = 8) -> List[Dict[str, str]]:
                 "title": str(i.get("title") or "")[:160],
                 "symbol": str(i.get("site") or "")[:20],
                 "published": str(i.get("publishedDate") or "")[:19],
+                "source": "fmp",
             }
             for i in data[:limit]
         ]
@@ -191,9 +193,84 @@ def fmp_general_news(limit: int = 8) -> List[Dict[str, str]]:
         return []
 
 
+def finnhub_general_news(limit: int = 12) -> List[Dict[str, str]]:
+    key = os.environ.get("FINNHUB_API_KEY", "").strip()
+    if not key:
+        return []
+    url = f"https://finnhub.io/api/v1/news?category=general&token={key}"
+    try:
+        with urllib.request.urlopen(url, timeout=20) as r:
+            data = json.loads(r.read().decode())
+        if not isinstance(data, list):
+            return []
+        out = []
+        for i in data[:limit]:
+            out.append(
+                {
+                    "title": str(i.get("headline") or "")[:160],
+                    "symbol": str(i.get("source") or "")[:20],
+                    "published": str(i.get("datetime") or "")[:19],
+                    "source": "finnhub",
+                }
+            )
+        return [x for x in out if x["title"]]
+    except Exception as e:
+        return [{"title": f"(Finnhub news unavailable: {e})", "symbol": "", "published": "", "source": "finnhub_err"}]
+
+
+def finnhub_company_news(symbols: List[str], days: int = 3, per: int = 3) -> List[Dict[str, str]]:
+    key = os.environ.get("FINNHUB_API_KEY", "").strip()
+    if not key:
+        return []
+    end = datetime.now(timezone.utc).date()
+    start = end - timedelta(days=days)
+    out: List[Dict[str, str]] = []
+    for sym in symbols[:12]:
+        url = (
+            f"https://finnhub.io/api/v1/company-news?symbol={sym}"
+            f"&from={start.isoformat()}&to={end.isoformat()}&token={key}"
+        )
+        try:
+            with urllib.request.urlopen(url, timeout=15) as r:
+                data = json.loads(r.read().decode())
+            if not isinstance(data, list):
+                continue
+            for i in data[:per]:
+                out.append(
+                    {
+                        "title": str(i.get("headline") or "")[:160],
+                        "symbol": sym,
+                        "published": str(i.get("datetime") or "")[:19],
+                        "source": "finnhub",
+                    }
+                )
+        except Exception:
+            continue
+        time.sleep(0.05)
+    return out
+
+
+def gather_news(held_top: List[str]) -> tuple:
+    """Prefer live Finnhub when FMP free tier is 402/empty."""
+    stock = fmp_news(12)
+    gen = fmp_general_news(8)
+    fmp_dead = (
+        not stock
+        or (stock and "unavailable" in (stock[0].get("title") or "").lower())
+        or (stock and "402" in (stock[0].get("title") or ""))
+    )
+    if fmp_dead:
+        gen = finnhub_general_news(12)
+        stock = finnhub_company_news(held_top, days=4, per=2)
+        if not stock:
+            stock = [{"title": "(no company headlines)", "symbol": "", "published": "", "source": "none"}]
+    return stock, gen
+
+
 def load_breaking_snippet() -> str:
     # prefer latest decision / report file
     candidates = [
+        Path.home() / "Documents/Obsidian/VOX/vox/memory/decisions/Breaking-LATEST.md",
         OBS / "Breaking-LATEST.md",
         OBS / "breaking-latest.md",
         Path.home() / "Documents/Obsidian/VOX/vox/memory/intel/Breaking-LATEST.md",
@@ -294,8 +371,16 @@ def main() -> int:
     except Exception as e:
         book["error"] = str(e)
 
-    stock_news = fmp_news(12)
-    gen_news = fmp_general_news(8)
+    # held top tickers for company news
+    held_syms = []
+    for r in book.get("top") or []:
+        if isinstance(r, dict) and r.get("ticker"):
+            held_syms.append(str(r["ticker"]).upper())
+        elif isinstance(r, (list, tuple)) and r:
+            held_syms.append(str(r[0]).upper())
+    if not held_syms:
+        held_syms = ["GOOGL", "NVDA", "TSLA", "AMD", "META", "MSFT"]
+    stock_news, gen_news = gather_news(held_syms)
     breaking = load_breaking_snippet()
 
     # raw context for LLM
@@ -353,7 +438,10 @@ def main() -> int:
             f"- {r['ticker']}: ${float(r['v']):,.0f} ({100*float(r['v'])/max(float(book.get('aum') or 1),1):.1f}%)"
         )
 
-    lines += ["", "## News (FMP free)"]
+    lines += ["", "## News (Finnhub/FMP)"]
+    srcs = sorted({n.get("source") or "?" for n in (stock_news + gen_news) if n.get("source")})
+    if srcs:
+        lines.append(f"_sources: {', '.join(srcs)}_")
     for n in stock_news[:10]:
         if n.get("title"):
             lines.append(f"- [{n.get('symbol') or '—'}] {n['title']}")
@@ -366,6 +454,25 @@ def main() -> int:
 
     if breaking:
         lines += ["", "## Prior breaking snippet", "```", breaking[:900], "```"]
+
+    # Intel spine digest (if present)
+    intel = OBS / "Intel-Digest-LATEST.md"
+    if intel.exists():
+        ibody = [ln for ln in intel.read_text(errors="replace").splitlines() if ln.strip()]
+        snip = []
+        grab = False
+        for ln in ibody:
+            if "Book-relevant" in ln:
+                grab = True
+                continue
+            if grab and ln.startswith("## ") and "Book" not in ln:
+                break
+            if grab:
+                snip.append(ln)
+            if len(snip) >= 8:
+                break
+        if snip:
+            lines += ["", "## Intel spine digest (soft)", *snip[:8]]
 
     if synth:
         lines += ["", "## Analyst synthesis (DeepSeek · book-focused)", synth, ""]
